@@ -1,6 +1,6 @@
 id: 2020_mydland_whitson_carlsen_dahouk_yusra_bopvt_vs_comp
-title: "Black-Oil and Compositional Reservoir Simulation of Gas-Based EOR in Tight Unconventionals"
-page_title: "Mydland, Whitson, Carlsen, Dahouk, Yusra (2020) - BOPVT vs COMP Gas-EOR Simulation"
+title: Black-Oil and Compositional Reservoir Simulation of Gas-Based EOR in Tight Unconventionals
+page_title: Mydland, Whitson, Carlsen, Dahouk, Yusra (2020) - BOPVT vs COMP Gas-EOR Simulation
 authors:
 - Stian Mydland
 - Curtis H. Whitson
@@ -8,12 +8,12 @@ authors:
 - Mohamad Majzoub Dahouk
 - Ilina Yusra
 whitson_index: 1
-authors_affiliation: "NTNU / Whitson AS"
-venue: "Unconventional Resources Technology Conference, Austin, 20-22 July 2020"
-paper_number: "URTeC-2765"
-doi: "10.15530/urtec-2020-2765"
+authors_affiliation: NTNU / Whitson AS
+venue: Unconventional Resources Technology Conference, Austin, 20-22 July 2020
+paper_number: URTeC-2765
+doi: 10.15530/urtec-2020-2765
 citations: 7
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - BOPVT vs COMP
 - HnP Simulation

@@ -1,17 +1,17 @@
 id: 2022_carlsen_whitson_nrta_complex_fractures_part1
-title: "Numerical RTA Extended to Complex Fracture Systems: Part 1"
-page_title: "Carlsen & Whitson (2022) - Numerical RTA Part 1 (Theory)"
+title: 'Numerical RTA Extended to Complex Fracture Systems: Part 1'
+page_title: Carlsen & Whitson (2022) - Numerical RTA Part 1 (Theory)
 authors:
 - Mathias Lia Carlsen
 - Curtis H. Whitson
 whitson_index: 1
 authors_affiliation: Whitson AS
-venue: "Unconventional Resources Technology Conference, Houston, June 2022"
-paper_number: "URTeC-3718584"
-doi: "10.15530/urtec-2022-3718584"
+venue: Unconventional Resources Technology Conference, Houston, June 2022
+paper_number: URTeC-3718584
+doi: 10.15530/urtec-2022-3718584
 citations: 8
-citations_source: OpenAlex
-funding: "Numerical RTA JIP, Innovation Norway, and Norwegian Research Council"
+citations_source: OpenAlex (DOI)
+funding: Numerical RTA JIP, Innovation Norway, and Norwegian Research Council
 tags:
 - Fractional RTA
 - Acuña δ-Parameter

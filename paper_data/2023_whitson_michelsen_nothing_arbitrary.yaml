@@ -10,7 +10,7 @@ paper_number: null
 doi: 10.1016/j.fluid.2023.113907
 funding: null
 citations: 1
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Michelsen
 - Negative Flash

@@ -75,4 +75,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD / postdoc with Curtis, then Petrostreamz. Lead author.</p><p><strong>Wahyu Astutik</strong> — Petrostreamz; chalk-CO<sub>2</sub> modelling. Also co-author on Hoffmann-Astutik-Rasmussen-Whitson 2016 SPE-184119 diluent-injection optimisation.</p><p><strong>Seyyed Ali Alavian</strong> — PERA / whitson. Long-standing collaborator on CO<sub>2</sub> recovery and diffusion in chalk.</p><p><strong>L. Siagalas, D. Olsen</strong> — Geological Survey of Denmark / Greenland (GEUS). Chalk core characterisation and experimental apparatus.</p><p><strong>V. S. Suicmez</strong> — Maersk Oil and Gas; operator perspective and JCR7 industry coordination.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

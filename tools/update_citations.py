@@ -19,21 +19,27 @@ After running, re-render the per-paper summaries with:
 Usage:
   python3 tools/update_citations.py                # update only papers that
                                                    # currently have no usable
-                                                   # citation count (the
-                                                   # default - the safe option)
-  python3 tools/update_citations.py --all          # refresh every paper
-                                                   # (heavier on OpenAlex)
+                                                   # citation count
+  python3 tools/update_citations.py --refresh      # fast refresh: hit only the
+                                                   # source recorded as
+                                                   # citations_source for each
+                                                   # paper (~3x faster than --all)
+  python3 tools/update_citations.py --all          # query every source for every
+                                                   # paper - slow but thorough
   python3 tools/update_citations.py --dry-run      # show what would change
                                                    # without writing anything
-  python3 tools/update_citations.py --mailto X     # override the polite-pool
-                                                   # email passed to OpenAlex
+
+Three citation sources are queried (OpenAlex, Semantic Scholar, Crossref),
+each via three lookup methods (recorded DOI, constructed DOI from paper
+number, paper-number search with Whitson-author filter). The MAX count is
+kept; the specific source that supplied it is stored as `citations_source`
+on the YAML, e.g. "OpenAlex (DOI)" or "Semantic Scholar (constructed DOI)".
 
 Citation-count semantics:
   int  > 0 - a real count; use this for display
-  int = 0  - OpenAlex returned 0 (or 'not in OpenAlex' after search). Treated
-             as "no badge to show" in index.html JS.
-  None     - never looked up, or lookup failed
-  str      - legacy editorial value; not overwritten unless --all
+  int = 0  - all sources returned 0. Treated as "no badge to show" in JS.
+  None     - never looked up, or all sources failed
+  str      - legacy editorial value; replaced on next run
 """
 from __future__ import annotations
 
@@ -100,7 +106,9 @@ def is_valid_doi(s: str) -> bool:
     )
 
 
-def lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
+# ---------- OpenAlex ----------
+
+def openalex_lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
     if not is_valid_doi(doi):
         return None
     data = openalex_get(f"https://api.openalex.org/works/doi:{urllib.parse.quote(doi)}", mailto)
@@ -109,8 +117,7 @@ def lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
     return data.get("cited_by_count")
 
 
-def _result_has_whitson(result: dict) -> bool:
-    """Verify an OpenAlex search hit by requiring 'Whitson' in its author list."""
+def _oa_result_has_whitson(result: dict) -> bool:
     for a in result.get("authorships") or []:
         author = (a.get("author") or {}).get("display_name") or ""
         if "whitson" in author.lower():
@@ -118,8 +125,7 @@ def _result_has_whitson(result: dict) -> bool:
     return False
 
 
-def search_for(query: str, mailto: str, require_whitson: bool = True) -> Optional[int]:
-    """Full-text search; returns the count for the FIRST hit that includes Whitson as author."""
+def openalex_search(query: str, mailto: str) -> Optional[int]:
     data = openalex_get(
         f"https://api.openalex.org/works?search={urllib.parse.quote(query)}&per-page=5",
         mailto,
@@ -127,9 +133,72 @@ def search_for(query: str, mailto: str, require_whitson: bool = True) -> Optiona
     if not data:
         return None
     for r in data.get("results") or []:
-        if not require_whitson or _result_has_whitson(r):
+        if _oa_result_has_whitson(r):
             return r.get("cited_by_count")
     return None
+
+
+# ---------- Semantic Scholar ----------
+
+def semanticscholar_get(url: str) -> Optional[dict]:
+    req = urllib.request.Request(url, headers={"User-Agent": "curtis-career-citation-sweep"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.load(resp)
+    except Exception:
+        return None
+
+
+def _ss_result_has_whitson(result: dict) -> bool:
+    for a in result.get("authors") or []:
+        if "whitson" in (a.get("name") or "").lower():
+            return True
+    return False
+
+
+def semanticscholar_lookup_by_doi(doi: str) -> Optional[int]:
+    if not is_valid_doi(doi):
+        return None
+    data = semanticscholar_get(
+        f"https://api.semanticscholar.org/graph/v1/paper/DOI:{urllib.parse.quote(doi)}?fields=citationCount,authors"
+    )
+    if not data:
+        return None
+    return data.get("citationCount")
+
+
+def semanticscholar_search(query: str) -> Optional[int]:
+    data = semanticscholar_get(
+        f"https://api.semanticscholar.org/graph/v1/paper/search?query={urllib.parse.quote(query)}&limit=5&fields=citationCount,authors,title,year"
+    )
+    if not data:
+        return None
+    for r in data.get("data") or []:
+        if _ss_result_has_whitson(r):
+            return r.get("citationCount")
+    return None
+
+
+# ---------- Crossref ----------
+
+def crossref_get(url: str, mailto: str) -> Optional[dict]:
+    """Crossref API. Polite-pool via mailto in URL or User-Agent."""
+    full = f"{url}{'&' if '?' in url else '?'}mailto={urllib.parse.quote(mailto)}"
+    req = urllib.request.Request(full, headers={"User-Agent": f"curtis-career-citation-sweep ({mailto})"})
+    try:
+        with urllib.request.urlopen(req, timeout=15) as resp:
+            return json.load(resp)
+    except Exception:
+        return None
+
+
+def crossref_lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
+    if not is_valid_doi(doi):
+        return None
+    data = crossref_get(f"https://api.crossref.org/works/{urllib.parse.quote(doi)}", mailto)
+    if not data:
+        return None
+    return (data.get("message") or {}).get("is-referenced-by-count")
 
 
 def construct_doi(paper_number: str, year: int) -> Optional[str]:
@@ -158,40 +227,103 @@ def construct_doi(paper_number: str, year: int) -> Optional[str]:
     return None
 
 
-def needs_update(citations, mode: str) -> bool:
+def is_paper(d: dict) -> bool:
+    """
+    True if this entry represents a paper / conference contribution / journal
+    article that should plausibly have a citation count. False for books,
+    monographs, internal notes, industry-magazine summaries, and HOT-forum /
+    AAPG / IBC tutorials.
+
+    A paper qualifies if either:
+      - it has a recognisable SPE / URTeC / IPTC / EUR / SCA-style paper number
+      - OR it has a valid DOI (covers journal articles like 1992 FPE Soreide-
+        Whitson, 1993 IECR Riazi-Whitson, 2023 FPE Michelsen recollection,
+        etc. that don't carry an SPE conference number)
+    """
+    pn = (d.get("paper_number") or "").strip()
+    if pn and re.match(r"^(SPE|URTeC|IPTC|EUR|SCA|JPSE|FPE)[-\s]?\d", pn, re.I):
+        return True
+    if is_valid_doi(d.get("doi") or ""):
+        return True
+    return False
+
+
+def needs_update(d: dict, mode: str) -> bool:
+    citations = d.get("citations")
+    if not is_paper(d):
+        return False  # skip non-papers entirely
     if mode == "all":
         return True
-    # default: --missing-only
     return citations is None or citations == "not catalogued" or isinstance(citations, str)
 
 
-def resolve_citation(paper: dict, mailto: str) -> tuple[Optional[int], str]:
+SOURCE_QUERIES_ALL = [
+    ("OpenAlex (DOI)", "openalex", "doi"),
+    ("OpenAlex (constructed DOI)", "openalex", "constructed_doi"),
+    ("OpenAlex (search)", "openalex", "search"),
+    ("Semantic Scholar (DOI)", "semanticscholar", "doi"),
+    ("Semantic Scholar (constructed DOI)", "semanticscholar", "constructed_doi"),
+    ("Semantic Scholar (search)", "semanticscholar", "search"),
+    ("Crossref (DOI)", "crossref", "doi"),
+    ("Crossref (constructed DOI)", "crossref", "constructed_doi"),
+]
+
+
+def _query_one(source: str, method: str, doi: str, constructed: str, paper_number: str, mailto: str) -> Optional[int]:
+    """Run a single (source, method) query and return the citation count or None."""
+    target_doi = doi if method == "doi" else (constructed if method == "constructed_doi" else None)
+    if method in ("doi", "constructed_doi"):
+        if not target_doi:
+            return None
+        if source == "openalex":
+            return openalex_lookup_by_doi(target_doi, mailto)
+        if source == "semanticscholar":
+            return semanticscholar_lookup_by_doi(target_doi)
+        if source == "crossref":
+            return crossref_lookup_by_doi(target_doi, mailto)
+    if method == "search":
+        if not paper_number:
+            return None
+        if source == "openalex":
+            return openalex_search(paper_number, mailto)
+        if source == "semanticscholar":
+            return semanticscholar_search(paper_number)
+    return None
+
+
+def resolve_citation(paper: dict, mailto: str, only_source: Optional[str] = None) -> tuple[Optional[int], str, list[tuple[int, str]]]:
     """
-    Try a DOI lookup, then a constructed-DOI lookup, then a paper-number search.
-    Returns (count, source_label) - count may be None if all attempts failed.
+    Look up citation count and return (best_count, best_label, all_hits).
+
+    If `only_source` is set (a label like "OpenAlex (DOI)"), only that single
+    query is executed - the fast-refresh path. Otherwise all eight queries
+    run and we take the MAX of whatever returns.
     """
     year = paper.get("year") or (int(paper["id"][:4]) if paper.get("id", "")[:4].isdigit() else None)
-
     doi = (paper.get("doi") or "").strip()
     paper_number = (paper.get("paper_number") or "").strip()
-
-    if doi:
-        c = lookup_by_doi(doi, mailto)
-        if c is not None:
-            return c, f"DOI lookup ({doi})"
-
     constructed = construct_doi(paper_number, year)
-    if constructed and constructed.lower() != doi.lower():
-        c = lookup_by_doi(constructed, mailto)
-        if c is not None:
-            return c, f"constructed DOI ({constructed})"
+    if constructed and constructed.lower() == doi.lower():
+        constructed = None
 
-    if paper_number:
-        c = search_for(paper_number, mailto)
-        if c is not None:
-            return c, f"paper-number search ({paper_number})"
+    hits: list[tuple[int, str]] = []
+    queries = [q for q in SOURCE_QUERIES_ALL if only_source is None or q[0] == only_source]
 
-    return None, "no hit"
+    for label, source, method in queries:
+        c = _query_one(source, method, doi, constructed or "", paper_number, mailto)
+        if c is not None:
+            hits.append((c, label))
+
+    if not hits:
+        return None, "no hit", []
+
+    best_count = max(c for c, _ in hits)
+    winners = [label for c, label in hits if c == best_count]
+    # Prefer OpenAlex > Semantic Scholar > Crossref for the recorded best-source
+    # tag when several sources tie at the max.
+    rank = {"OpenAlex": 0, "Semantic Scholar": 1, "Crossref": 2}
+    winners.sort(key=lambda w: rank.get(w.split(" (")[0], 99))
+    return best_count, winners[0], hits
 
 
 # ------------------------------------------------------------------- in-place file patchers
@@ -244,8 +376,13 @@ def patch_index_html(paper_number: str, new_count: int) -> bool:
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument("--all", action="store_true",
-                    help="Refresh every paper, not just those missing a count.")
+    grp = ap.add_mutually_exclusive_group()
+    grp.add_argument("--all", action="store_true",
+                     help="Re-query every source for every paper. Slow, thorough.")
+    grp.add_argument("--refresh", action="store_true",
+                     help="Fast refresh: for each paper, hit only the source tagged "
+                          "as `citations_source` from the previous run. Falls back to "
+                          "full multi-source lookup for any paper with no recorded source.")
     ap.add_argument("--dry-run", action="store_true",
                     help="Show what would change without writing anything.")
     ap.add_argument("--mailto", default=DEFAULT_MAILTO,
@@ -256,20 +393,28 @@ def main():
                     help="Only process the first N papers needing an update (for testing)")
     args = ap.parse_args()
 
-    mode = "all" if args.all else "missing-only"
+    mode = "all" if args.all else ("refresh" if args.refresh else "missing-only")
     yamls = sorted(DATA_DIR.glob("*.yaml"))
 
     targets = []
+    skipped_non_papers = 0
     for f in yamls:
         d = load_yaml(f)
-        if needs_update(d.get("citations"), mode):
-            targets.append((f, d))
+        if not is_paper(d):
+            skipped_non_papers += 1
+            continue
+        # In refresh mode, examine every paper (we re-hit each one's recorded
+        # best source). In missing-only mode, skip papers that already have a
+        # usable int count.
+        if mode == "missing-only" and not needs_update(d, mode):
+            continue
+        targets.append((f, d))
 
     if args.limit:
         targets = targets[: args.limit]
 
     print(f"Mode: {mode}{'  (dry-run)' if args.dry_run else ''}")
-    print(f"Candidate papers: {len(targets)} / {len(yamls)}")
+    print(f"Candidate papers: {len(targets)} / {len(yamls)}  (skipped {skipped_non_papers} non-paper entries)")
     print(f"OpenAlex mailto: {args.mailto}")
     print()
 
@@ -277,26 +422,36 @@ def main():
     no_hit = 0
     for f, d in targets:
         pid = d["id"]
-        prev = d.get("citations")
-        count, source = resolve_citation(d, args.mailto)
+        prev_count = d.get("citations")
+        prev_source = d.get("citations_source")
+
+        # In refresh mode, hit only the recorded best source. If no source is
+        # recorded yet (first run), fall back to a full multi-source lookup.
+        only = None
+        if mode == "refresh" and prev_source and prev_source in {q[0] for q in SOURCE_QUERIES_ALL}:
+            only = prev_source
+
+        count, source_label, all_hits = resolve_citation(d, args.mailto, only_source=only)
         time.sleep(args.sleep)
 
         if count is None:
-            print(f"  [   no hit] {pid}  (prev={prev!r})")
+            print(f"  [   no hit] {pid}  (prev={prev_count!r}, source={prev_source!r})")
             no_hit += 1
             continue
 
-        if count == prev:
-            print(f"  [unchanged] {pid}  {count}  via {source}")
+        # Build a compact "via" string showing all hits for the diff log.
+        hits_str = ", ".join(f"{c}@{lbl}" for c, lbl in sorted(all_hits, key=lambda x: -x[0]))
+
+        if count == prev_count and source_label == prev_source:
+            print(f"  [unchanged] {pid}  {count}  best={source_label}  [{hits_str}]")
             continue
 
-        print(f"  [  UPDATED] {pid}  {prev!r} -> {count}  via {source}")
+        print(f"  [  UPDATED] {pid}  {prev_count!r} -> {count}  best={source_label}  [{hits_str}]")
         if args.dry_run:
             continue
 
-        # Persist
         d["citations"] = count
-        d["citations_source"] = "OpenAlex"
+        d["citations_source"] = source_label
         write_yaml(f, d)
         patch_jsonl(pid, d.get("paper_number") or "", count)
         if d.get("paper_number"):

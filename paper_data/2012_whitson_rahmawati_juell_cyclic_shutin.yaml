@@ -66,4 +66,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Silvya Dewi Rahmawati</strong> — NTNU PhD student under Curtis and Bjarne Foss. Co-author on the 2009 constant-shut-in precursor and the 2010 SPE-130768 multi-field IAM benchmark.</p><p><strong>Aleksander Oma Juell</strong> — NTNU PhD student under Curtis. Co-author on the 2009 SPE-121252 IAM benchmark and the 2011 SPE-146066 layered backpressure equation. Three-paper sequence with Curtis on layered and cyclic-shut-in gas-well operations.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

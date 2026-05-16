@@ -9,7 +9,7 @@ paper_number: SPE/DOE 12634
 doi: 10.2118/12634-MS
 funding: null
 citations: 15
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - EOS Tuning
 - Critical Properties

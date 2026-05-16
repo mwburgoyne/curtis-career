@@ -1,18 +1,18 @@
 id: 2021_mydland_carlsen_whitson_gas_hnp_pvt_experiment
-title: "The Gas Huff-n-Puff PVT Experiment"
-page_title: "Mydland, Carlsen, Whitson (2021) - The Gas HnP PVT Experiment"
+title: The Gas Huff-n-Puff PVT Experiment
+page_title: Mydland, Carlsen, Whitson (2021) - The Gas HnP PVT Experiment
 authors:
 - Stian Mydland
 - Mathias Lia Carlsen
 - Curtis H. Whitson
 whitson_index: 2
-authors_affiliation: "Whitson AS / NTNU"
-venue: "Unconventional Resources Technology Conference, Houston, 26-28 July 2021"
-paper_number: "URTeC-5016"
-doi: "10.15530/urtec-2021-5016"
-citations: 0
-citations_source: OpenAlex
-funding: "Innovation Norway and Norwegian Research Council; acknowledges Keong Aik Lau (Stratum Reservoir) for discussions"
+authors_affiliation: Whitson AS / NTNU
+venue: Unconventional Resources Technology Conference, Houston, 26-28 July 2021
+paper_number: URTeC-5016
+doi: 10.15530/urtec-2021-5016
+citations: 1
+citations_source: Crossref (DOI)
+funding: Innovation Norway and Norwegian Research Council; acknowledges Keong Aik Lau (Stratum Reservoir) for discussions
 tags:
 - HnP PVT Experiment
 - CVI/CVD Hybrid

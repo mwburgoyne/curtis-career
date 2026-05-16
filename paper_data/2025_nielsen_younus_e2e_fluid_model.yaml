@@ -11,7 +11,7 @@ venue: 2025 SPE Europe Energy Conference and Exhibition
 paper_number: SPE-225470-MS
 doi: null
 funding: null
-citations: 0
+citations: 1
 tags:
 - E2E Workflow
 - Volve Field
@@ -78,4 +78,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Markus Hays Nielsen</strong> — Curtis's son, Whitson AS and NTNU. Petroleum engineer; M.Sc. (NTNU, ~2020) on BIPs and phase behaviour. Specialises in PVT uncertainty and EOS-development methodology. First author on this paper as well as on SPE-220699 (forward compositional uncertainty); co-author on SPE-217328 (separator-sample QC) and on the 2023 SPE-214437 underground-hydrogen-storage paper. <strong>Bilal Younus</strong> — Whitson AS senior engineer, first author of URTeC-551 (field-wide EOS) and SPE-211391 (GC QC); the field-wide-EOS framework is his work. <strong>Curtis H. Whitson</strong> — method authority and acknowledged contributor.</p>
-citations_source: OpenAlex
+citations_source: Semantic Scholar (constructed DOI)

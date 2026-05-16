@@ -1,17 +1,17 @@
 id: 2022_younus_whitson_martinsen_compositional_uncertainties
-title: "Compositional Uncertainties in Laboratory PVT Data"
-page_title: "Younus, Whitson, Martinsen (2022) - Compositional Uncertainties in Lab PVT Data"
+title: Compositional Uncertainties in Laboratory PVT Data
+page_title: Younus, Whitson, Martinsen (2022) - Compositional Uncertainties in Lab PVT Data
 authors:
 - Bilal Younus
 - Curtis H. Whitson
 - Sissel Ø. Martinsen
 whitson_index: 1
-authors_affiliation: "Whitson AS / NTNU"
-venue: "ADIPEC, Abu Dhabi, UAE, 2022"
-paper_number: "SPE-211391-MS"
-doi: "10.2118/211391-MS"
+authors_affiliation: Whitson AS / NTNU
+venue: ADIPEC, Abu Dhabi, UAE, 2022
+paper_number: SPE-211391-MS
+doi: 10.2118/211391-MS
 citations: 4
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Lab PVT QC
 - GC Compositional Uncertainty

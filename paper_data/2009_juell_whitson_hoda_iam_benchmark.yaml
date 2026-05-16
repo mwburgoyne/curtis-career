@@ -61,4 +61,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Aleksander Oma Juell</strong> — NTNU PhD student under Curtis; gas-cycling benchmarks; later co-author on the 2013 LRS NPV-optimisation paper.</p><p><strong>Mohammad Faizul Hoda</strong> — PERA. Earlier co-author of the 2003 IPA03 Belanak stream-management paper.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

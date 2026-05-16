@@ -1,6 +1,6 @@
 id: 2021_carlsen_bowie_dahouk_mydland_whitson_yusra_numerical_rta
-title: "Numerical RTA in Tight Unconventionals"
-page_title: "Carlsen, Bowie, Dahouk, Mydland, Whitson, Yusra (2021) - Numerical RTA"
+title: Numerical RTA in Tight Unconventionals
+page_title: Carlsen, Bowie, Dahouk, Mydland, Whitson, Yusra (2021) - Numerical RTA
 authors:
 - Mathias Lia Carlsen
 - B. Bowie
@@ -9,12 +9,12 @@ authors:
 - Curtis H. Whitson
 - Ilina Yusra
 whitson_index: 4
-authors_affiliation: "Whitson AS / Apache Corporation"
-venue: "SPE Annual Technical Conference and Exhibition, Dubai, 21-23 September 2021"
-paper_number: "SPE-205884-MS"
-doi: "10.2118/205884-MS"
+authors_affiliation: Whitson AS / Apache Corporation
+venue: SPE Annual Technical Conference and Exhibition, Dubai, 21-23 September 2021
+paper_number: SPE-205884-MS
+doi: 10.2118/205884-MS
 citations: 16
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Numerical RTA
 - LFP'

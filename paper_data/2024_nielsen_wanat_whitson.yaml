@@ -11,7 +11,7 @@ paper_number: SPE-220699-MS
 doi: 10.2118/220699-MS
 funding: null
 citations: 1
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Compositional Uncertainty
 - Forward Propagation

@@ -79,4 +79,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Walter J. Jurus</strong> — NTNU PhD under joint Whitson and Golan supervision. Shale-gas hydraulic fracturing and water-flow modelling.</p><p><strong>Michael Golan</strong> — NTNU professor of petroleum production and Curtis's long-standing collaborator. Co-author with Curtis on the <em>Well Performance</em> textbook (Golan-Whitson 1986, second edition 2003) and supervisor of multiple NTNU PhD students with Curtis. Production-engineering expertise complementary to Curtis's PVT focus.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

@@ -11,7 +11,7 @@ paper_number: SPE-217328-MS
 doi: 10.2118/217328-MS
 funding: null
 citations: 1
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Separator Sampling
 - ECM Correction

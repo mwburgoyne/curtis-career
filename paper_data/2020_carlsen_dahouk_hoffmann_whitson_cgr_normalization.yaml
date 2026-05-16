@@ -12,7 +12,7 @@ paper_number: SPE-199982-MS
 doi: 10.2118/199982-MS
 funding: null
 citations: 1
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - CGR Normalization
 - Common Surface Process

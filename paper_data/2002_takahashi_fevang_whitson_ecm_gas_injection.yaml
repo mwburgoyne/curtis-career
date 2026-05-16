@@ -64,4 +64,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>K. Takahashi</strong> — BUNDUQ Co. Ltd. (Abu Dhabi National Oil Company / Qatar Petroleum joint operator).</p><p><strong>Øivind Fevang</strong> — PERA. The Fevang-Whitson partnership through gas-condensate, ECM, and now multi-sample EOS work.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

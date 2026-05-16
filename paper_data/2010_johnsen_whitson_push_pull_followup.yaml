@@ -66,4 +66,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Sverre Gullikstad Johnsen</strong> — NTNU PhD (2007), co-supervised by Curtis. Two TIPM papers on push-pull tracer test analysis (2008, 2010). Subsequent career at SINTEF on computational fluid dynamics and porous-media flow.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)

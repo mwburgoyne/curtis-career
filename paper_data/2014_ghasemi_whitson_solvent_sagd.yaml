@@ -66,4 +66,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the third paper, integrating the BO-proxy framework with the EOS fluid model into a coupled-system optimisation.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

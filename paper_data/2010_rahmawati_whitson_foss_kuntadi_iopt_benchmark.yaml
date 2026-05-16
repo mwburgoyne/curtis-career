@@ -11,7 +11,7 @@ venue: SPE EUROPEC/EAGE Annual Conference, Barcelona, 14-17 June 2010
 paper_number: SPE-130768
 doi: null
 funding: null
-citations: 11
+citations: 12
 tags:
 - IAM
 - Multi-Field Benchmark
@@ -61,4 +61,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Silvya Dewi Rahmawati</strong> — NTNU PhD student under Curtis and Bjarne Foss on WAG injection and integrated optimisation.</p><p><strong>Bjarne Foss</strong> — NTNU Engineering Cybernetics Department. Foss's optimisation expertise complements Curtis's reservoir engineering on the IAM problem.</p><p><strong>Arif Kuntadi</strong> — co-author also on the 2005 IPTC-10692 Khuff paper and the 2012 SPE-159400 delumping paper with Whitson and Hoda.</p>
-citations_source: OpenAlex
+citations_source: Semantic Scholar (constructed DOI)

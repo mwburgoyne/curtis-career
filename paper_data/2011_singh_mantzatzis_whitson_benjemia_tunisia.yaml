@@ -62,4 +62,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — PERA. Long-running collaborator on BOPVT and now multi-zone EOS workflows.</p><p><strong>K. Mantzatzis</strong> — PERA. Co-author on the iterative cleanup methodology.</p><p><strong>R. Benjemia</strong> — OMV Tunisia operator side.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

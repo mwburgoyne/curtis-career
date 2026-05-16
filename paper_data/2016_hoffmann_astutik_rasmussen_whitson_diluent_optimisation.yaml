@@ -71,4 +71,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>A. Hoffmann</strong> — Petrostreamz; NTNU MSc thesis under Curtis was the theoretical basis. First-author lead on the MILP formulation.</p><p><strong>Wahyu Astutik</strong> — Petrostreamz. Also co-author on Ghasemi-Astutik-Alavian-Whitson 2016 SPE-179550 CO<sub>2</sub>-diffusion-in-Ekofisk-chalk.</p><p><strong>F. Rasmussen</strong> — Statoil; operator perspective and field-data validation.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

@@ -10,7 +10,7 @@ paper_number: SPE-28000-MS
 doi: 10.2118/28000-MS
 funding: null
 citations: 96
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Compositional Grading
 - Gibbs-Duhem

@@ -64,4 +64,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Arif Kuntadi</strong> — NTNU PhD under Curtis. Thesis: Stream Conversion Technology and Gas Condensate Field Development (2012). Subsequent co-author on Kuntadi-Whitson-Hoda 2012 SPE-159400 (this paper) and Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark.</p><p><strong>Mohammad Faizul (Faiz) Hoda</strong> — Petrostreamz / whitson. Software architect for Pipe-It / Streamz; originator of the 2002 BOz delumping method. Co-author with Curtis on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, this paper, and Hoda-Whitson 2013 SPE-164334.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

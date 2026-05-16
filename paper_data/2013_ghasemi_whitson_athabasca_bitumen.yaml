@@ -71,4 +71,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the second paper of the series and the fluid-model anchor underneath all subsequent solvent-augmented thermal work.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

@@ -1,6 +1,6 @@
 id: 2023_nielsen_arekhov_whitson_clemens_zhainakov_wegner_uhs
-title: "Fluid Modeling of Underground Hydrogen Storage in a Depleted Natural Gas Field"
-page_title: "Nielsen, Arekhov, Whitson, Clemens, Zhainakov, Wegner (2023) - UHS Fluid Modelling"
+title: Fluid Modeling of Underground Hydrogen Storage in a Depleted Natural Gas Field
+page_title: Nielsen, Arekhov, Whitson, Clemens, Zhainakov, Wegner (2023) - UHS Fluid Modelling
 authors:
 - Markus H. Nielsen
 - V. Arekhov
@@ -9,12 +9,12 @@ authors:
 - T. Zhainakov
 - J. Wegner
 whitson_index: 2
-authors_affiliation: "Whitson AS / OMV E&P / HOT Microfluidics"
-venue: "EUROPEC 2023, Vienna, June 2023"
-paper_number: "SPE-214437-MS"
-doi: "10.2118/214437-MS"
+authors_affiliation: Whitson AS / OMV E&P / HOT Microfluidics
+venue: EUROPEC 2023, Vienna, June 2023
+paper_number: SPE-214437-MS
+doi: 10.2118/214437-MS
 citations: 8
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - Underground Hydrogen Storage
 - UHS

@@ -69,4 +69,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>G. Lei</strong> — FMC Technologies; industry collaborator. First author bringing the production-engineering and economic-classification perspective.</p><p><strong>N. Cheng</strong> — Statoil; operator perspective and reservoir-engineering input.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

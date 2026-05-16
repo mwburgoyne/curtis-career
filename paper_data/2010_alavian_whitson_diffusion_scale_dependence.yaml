@@ -9,7 +9,7 @@ venue: 2010 SPE Improved Oil Recovery Symposium, Tulsa, 24-28 April 2010
 paper_number: SPE-129666
 doi: null
 funding: null
-citations: 11
+citations: 12
 tags:
 - CO2 Injection
 - Fractured Reservoir
@@ -68,4 +68,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Sayyed Ahmad Alavian</strong> — NTNU PhD student under Curtis. This paper plus the 2005 and 2009 papers form the three-part Alavian-Whitson CO<sub>2</sub>-EOR series; the 2014 Alavian-Whitson-Martinsen SPE-170912 component-lumping paper is the fourth in the sequence.</p>
-citations_source: OpenAlex
+citations_source: Semantic Scholar (constructed DOI)

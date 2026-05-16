@@ -62,4 +62,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>A. Kuntadi</strong> — NTNU PhD student; co-author on the 2012 SPE-159400 delumping paper with Whitson and Hoda.</p>
-citations_source: OpenAlex
+citations_source: OpenAlex (constructed DOI)

@@ -9,7 +9,7 @@ paper_number: SPE-11200-PA
 doi: 10.2118/11200-PA
 funding: null
 citations: 80
-citations_source: OpenAlex
+citations_source: OpenAlex (DOI)
 tags:
 - C7+ Sensitivity
 - EOS Tuning
