@@ -7,7 +7,7 @@ authors:
 authors_affiliation: NTNU
 venue: International Petroleum Technology Conference, Kuala Lumpur, 10-12 December 2014
 paper_number: IPTC-18033
-doi: null
+doi: 10.2523/IPTC-18033-MS
 funding: null
 citations: 7
 tags:
@@ -66,4 +66,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the third paper, integrating the BO-proxy framework with the EOS fluid model into a coupled-system optimisation.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

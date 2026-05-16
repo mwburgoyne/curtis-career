@@ -489,23 +489,48 @@ def patch_jsonl(paper_id: str, paper_number: str, new_count: int) -> bool:
     return changed
 
 
+def _paper_number_variants(pn: str) -> list[str]:
+    """Produce the likely forms of a paper number that might be in index.html.
+    The YAML might say 'SPE 15482' while index.html has 'SPE-15482-PA'; this
+    is forgiving so patch_index_html doesn't silently miss."""
+    if not pn:
+        return []
+    pn = pn.strip()
+    # Strip any trailing parenthetical notes
+    pn = re.sub(r"\s*\([^)]*\)\s*$", "", pn).strip()
+    candidates = {pn}
+    # Normalise space -> hyphen
+    candidates.add(re.sub(r"^(SPE|URTeC|IPTC|SCA|EUR)\s+(\d)", r"\1-\2", pn, flags=re.I))
+    # If SPE number with no suffix, also try -MS and -PA forms
+    m = re.match(r"^SPE[-\s]?(\d+)$", pn, re.I)
+    if m:
+        candidates.update({f"SPE-{m.group(1)}", f"SPE-{m.group(1)}-MS", f"SPE-{m.group(1)}-PA"})
+    # If SPE number with explicit -MS, also try the bare form and -PA
+    m = re.match(r"^SPE[-\s]?(\d+)-MS$", pn, re.I)
+    if m:
+        candidates.update({f"SPE-{m.group(1)}", f"SPE-{m.group(1)}-PA"})
+    return list(candidates)
+
+
 def patch_index_html(paper_number: str, new_count: int) -> bool:
     """
     Replace the citations field in the index.html JS papers array entry that
-    has this paper_number. Targets the literal pattern:
-        "paper_number": "X", "citations": <something>,
+    matches the given paper number. Tries several reasonable variants of the
+    paper number so the patch doesn't silently miss when YAML and index.html
+    use slightly different forms (space vs hyphen, presence/absence of -MS,
+    trailing parentheticals).
     """
     if not paper_number:
         return False
     content = INDEX.read_text()
-    # Match the entry by paper_number and replace just the citations value
-    pattern = re.compile(
-        r'("paper_number":\s*"' + re.escape(paper_number) + r'",\s*"citations":\s*)(null|"[^"]*"|\d+)'
-    )
-    new_content, n = pattern.subn(lambda m: f'{m.group(1)}{new_count}', content)
-    if n:
-        INDEX.write_text(new_content)
-        return True
+    for variant in _paper_number_variants(paper_number):
+        pattern = re.compile(
+            r'("paper_number":\s*"' + re.escape(variant) + r'",\s*"citations":\s*)(null|"[^"]*"|\d+)'
+        )
+        new_content, n = pattern.subn(lambda m: f'{m.group(1)}{new_count}', content)
+        if n:
+            INDEX.write_text(new_content)
+            return True
     return False
 
 

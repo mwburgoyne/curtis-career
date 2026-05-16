@@ -7,7 +7,7 @@ authors:
 authors_affiliation: PERA / NTNU
 venue: SPE EUROPEC/EAGE Annual Conference and Exhibition, Amsterdam, 8-11 June 2009
 paper_number: SPE-120743
-doi: null
+doi: 10.2118/120743-MS
 funding: null
 citations: 2
 tags:
@@ -60,4 +60,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — PERA. Long-running BOPVT and gas-injection collaborator with Curtis since 2000.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

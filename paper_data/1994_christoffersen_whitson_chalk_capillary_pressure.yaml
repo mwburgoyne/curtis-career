@@ -6,7 +6,7 @@ authors:
 - Curtis H. Whitson
 authors_affiliation: University of Trondheim
 venue: null
-paper_number: SPE-26673-MS (later in SPE Formation Evaluation)
+paper_number: SPE-26673-MS
 doi: 10.2118/26673-PA
 funding: null
 citations: 29
@@ -63,4 +63,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Kjell R. Christoffersen</strong> — NTH PhD student under Curtis, then Statoil Research Centre. Built the thin-membrane apparatus described here. Christoffersen ran the 1989-1991 constant-volume-diffusion experiments that motivated Curtis's 1992 collaboration with Michelsen on the CVD interpretation code.</p>
-citations_source: Semantic Scholar (constructed DOI)
+citations_source: Semantic Scholar (DOI)

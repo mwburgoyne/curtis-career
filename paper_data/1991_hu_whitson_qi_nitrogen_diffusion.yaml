@@ -7,10 +7,10 @@ authors:
 - Y. Qi
 authors_affiliation: null
 venue: null
-paper_number: SPE-21893-MS (unsolicited manuscript, August 1990; 21 pages)
+paper_number: SPE-21893-MS
 doi: 10.3997/2214-4609.201411277
 funding: Fina Exploration Norway
-citations: 27
+citations: 31
 tags:
 - Nitrogen Injection
 - Fractured Reservoir
@@ -72,4 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>H. Hu</strong> — Visiting researcher; Norwegian Institute of Technology connection during the 1989-1991 nitrogen-diffusion programme.</p><p><strong>Y. Qi</strong> — Norwegian Institute of Technology, co-investigator on the Ekofisk nitrogen programme.</p><p><strong>Fina Exploration Norway</strong> — project funder. Fina (later Total) operated Ekofisk-related assets in the early 1990s. The 1994 Whitson-Belery SPE-28000 paper on compositional grading was the further fruit of the Fina collaboration with Paul Belery.</p>
-citations_source: Crossref (title+author)
+citations_source: OpenAlex (DOI)

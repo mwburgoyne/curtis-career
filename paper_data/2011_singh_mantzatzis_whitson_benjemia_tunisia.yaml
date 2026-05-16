@@ -9,7 +9,7 @@ authors:
 authors_affiliation: PERA / OMV
 venue: SPE EUROPEC/EAGE Annual Conference and Exhibition, Vienna, 23-26 May 2011
 paper_number: SPE-143612
-doi: null
+doi: 10.2118/143612-MS
 funding: null
 citations: 5
 tags:
@@ -62,4 +62,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — PERA. Long-running collaborator on BOPVT and now multi-zone EOS workflows.</p><p><strong>K. Mantzatzis</strong> — PERA. Co-author on the iterative cleanup methodology.</p><p><strong>R. Benjemia</strong> — OMV Tunisia operator side.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

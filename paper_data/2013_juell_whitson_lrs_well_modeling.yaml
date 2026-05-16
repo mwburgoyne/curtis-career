@@ -7,7 +7,7 @@ authors:
 authors_affiliation: NTNU
 venue: SPE Annual Technical Conference and Exhibition, New Orleans, 30 September - 2 October 2013
 paper_number: SPE-166380
-doi: null
+doi: 10.2118/166380-MS
 funding: null
 citations: 20
 tags:
@@ -70,4 +70,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Aleksander Oma Juell</strong> — NTNU PhD under Curtis. Four-paper sequence with Whitson: Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, Juell-Whitson 2011 SPE-146066 layered backpressure equation, Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control, and this 2013 paper integrating LRS modelling with economic optimisation - the culminating paper of his PhD.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

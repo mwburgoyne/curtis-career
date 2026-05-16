@@ -9,7 +9,7 @@ authors:
 authors_affiliation: PERA, BP Exploration Colombia, ECOPETROL, NTNU
 venue: SPE Annual Technical Conference and Exhibition, Florence, 19-22 September 2010
 paper_number: SPE-135085
-doi: null
+doi: 10.2118/135085-MS
 funding: null
 citations: 8
 tags:
@@ -72,4 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Sissel Ø. Martinsen</strong> — PERA / Whitson AS. Long-time Whitson colleague; field-wide EOS model development practice.</p><p><strong>I. Castiblanco and R. Osorio</strong> — BP Exploration Colombia / ECOPETROL operator side.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

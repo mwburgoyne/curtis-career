@@ -65,4 +65,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Michael J. Fetkovich</strong> (Phillips Petroleum, lead author) — the IPR and decline-curve figure of post-war reservoir engineering. The 1969 derivation was his. <strong>D.E. Reese</strong> (Phillips Petroleum) — co-author on the field-applications side. <strong>Curtis Whitson</strong> (Whitson AS / NTH, third author) — brought the water-phase compressibility integration via the parallel Søreide-Whitson EOS-for-brine work. The Phillips connection appears repeatedly through Curtis's career: Phillips operated Ekofisk and many of the North Sea fields where Curtis was running PVT studies through the 1980s and early 1990s.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

@@ -8,7 +8,7 @@ authors:
 authors_affiliation: FMC Technologies / Statoil / NTNU-PERA
 venue: SPE/EAGE European Unconventional Conference and Exhibition, Vienna, 25-27 February 2014
 paper_number: SPE-167788
-doi: null
+doi: 10.2118/167788-MS
 funding: null
 citations: 15
 tags:
@@ -69,4 +69,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>G. Lei</strong> — FMC Technologies; industry collaborator. First author bringing the production-engineering and economic-classification perspective.</p><p><strong>N. Cheng</strong> — Statoil; operator perspective and reservoir-engineering input.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

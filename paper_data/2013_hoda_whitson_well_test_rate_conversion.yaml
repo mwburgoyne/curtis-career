@@ -7,7 +7,7 @@ authors:
 authors_affiliation: Petrostreamz / NTNU
 venue: SPE Middle East Oil and Gas Show and Exhibition, Manama, Bahrain, 10-13 March 2013
 paper_number: SPE-164334
-doi: null
+doi: 10.2118/164334-MS
 funding: null
 citations: 10
 tags:
@@ -68,4 +68,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohammad Faizul (Faiz) Hoda</strong> — Petrostreamz / whitson, then NTNU. Originator of the 2002 BOz delumping method. Software architect for the Pipe-It / Streamz IAM stack. Co-author with Curtis on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, Kuntadi-Whitson-Hoda 2012 SPE-159400 dynamic delumping, and this paper. Three-paper sequence completing the simulator-side and measurement-side stream-conversion stack.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

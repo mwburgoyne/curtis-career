@@ -8,7 +8,7 @@ authors:
 authors_affiliation: null
 venue: SPE Annual Technical Conference and Exhibition, Houston, 26-29 September 2004
 paper_number: SPE-90379
-doi: null
+doi: 10.2118/90379-MS
 funding: null
 citations: 32
 tags:
@@ -66,4 +66,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Lars Høier</strong> — NTH/NTNU PhD graduate, the Høier of the 1998, 2001, and 2004 compositional-grading papers. Co-recipient with Curtis of the 2001 SPE Cedric K. Fergusson Medal.</p><p><strong>N. Cheng</strong> — co-author. Statoil at the time of the Smørbukk South study.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

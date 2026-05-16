@@ -7,7 +7,7 @@ authors:
 authors_affiliation: NTNU
 venue: SPE Europec featured at 80th EAGE Conference and Exhibition, Copenhagen, 11-14 June 2018
 paper_number: SPE-190797
-doi: null
+doi: 10.2118/190797-MS
 funding: null
 citations: 0
 tags:
@@ -68,4 +68,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Fahd Alqahtani</strong> — King Saud University PhD candidate on sabbatical at NTNU under Curtis. Co-author on this paper and on the 2018 URTeC-2882502 well-box-heterogeneity prospectus, both during the sabbatical year.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

@@ -8,9 +8,9 @@ whitson_index: 1
 authors_affiliation: Whitson AS
 venue: SPE Annual Technical Conference and Exhibition, Houston, October 2022
 paper_number: SPE-210420-MS
-doi: 10.2118/210420-MS
-citations: 1
-citations_source: OpenAlex (DOI)
+doi: 10.15530/urtec-2022-3718584
+citations: 7
+citations_source: Crossref (title+author)
 funding: Numerical RTA JIP, Innovation Norway, and Norwegian Research Council
 tags:
 - Fractional RTA

@@ -6,7 +6,7 @@ authors:
 - Sigmund Sognesand
 authors_affiliation: NTH
 venue: 61st SPE Annual Technical Conference and Exhibition, New Orleans, 5-8 October 1986
-paper_number: SPE 15482
+paper_number: SPE-15482
 doi: 10.2118/15482-PA
 funding: null
 citations: 5
@@ -61,4 +61,4 @@ sections:
 - heading: Key References
   body_html: |-
     <p><strong>Sigmund Sognesand</strong> was an NTH collaborator on the gas-well analysis side. The paper draws on the rigorous-superposition machinery van Everdingen and Meyer published in 1971, extended to handle drawdown plus buildup data in a single linear fit and to decompose total skin into mechanical and non-Darcy components.</p>
-citations_source: Semantic Scholar (constructed DOI)
+citations_source: Semantic Scholar (DOI)

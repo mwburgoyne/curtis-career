@@ -7,7 +7,7 @@ authors:
 authors_affiliation: NTNU
 venue: SPE Annual Technical Conference and Exhibition, Denver, 30 October - 2 November 2011
 paper_number: SPE-147072
-doi: null
+doi: 10.2118/147072-MS
 funding: VISTA / Statoil ASA
 citations: 7
 tags:
@@ -63,4 +63,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

@@ -13,7 +13,7 @@ authors:
 authors_affiliation: Whitson AS / NTNU
 venue: SPE Annual Technical Conference and Exhibition, Calgary, 30 September - 2 October 2019
 paper_number: SPE-196056
-doi: null
+doi: 10.2118/196056-MS
 funding: Innovation Norway technology-development funding
 citations: 10
 tags:
@@ -78,4 +78,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; NTNU. First author and lead of the NRTA / LRS workflow series 2019-2022.</p><p><strong>Stian Mydland</strong> — Whitson AS engineer; NTNU PhD. Co-author on numerous Whitson-AS LRS papers.</p><p><strong>Bilal Younus</strong> — Whitson AS engineer. First-author of the companion URTeC-551 Field-wide EOS paper.</p><p><strong>Ali Alavian, Sissel Ø. Martinsen, Kameshwar Singh, Ilina Yusra</strong> — Whitson AS engineers; long-standing Whitson-group collaborators continuing into the post-2017 Whitson AS era.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)

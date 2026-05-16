@@ -8,9 +8,9 @@ authors:
 authors_affiliation: NTNU / PERA
 venue: SPE EUROPEC/EAGE Annual Conference and Exhibition, Amsterdam, 8-11 June 2009
 paper_number: SPE-121252
-doi: null
+doi: 10.2118/121252-MS
 funding: null
-citations: 11
+citations: 12
 tags:
 - IAM
 - Integrated Asset Modelling
@@ -61,4 +61,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Aleksander Oma Juell</strong> — NTNU PhD student under Curtis; gas-cycling benchmarks; later co-author on the 2013 LRS NPV-optimisation paper.</p><p><strong>Mohammad Faizul Hoda</strong> — PERA. Earlier co-author of the 2003 IPA03 Belanak stream-management paper.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: Semantic Scholar (search)

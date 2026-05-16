@@ -7,7 +7,7 @@ authors:
 authors_affiliation: NTNU / PERA
 venue: 2009 SPE/EAGE Reservoir Characterization and Simulation Conference, Abu Dhabi, 19-21 October 2009
 paper_number: SPE-125362
-doi: null
+doi: 10.2118/125362-MS
 funding: null
 citations: 10
 tags:
@@ -61,4 +61,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Sayyed Ahmad Alavian</strong> — NTNU PhD student under Curtis. Three-paper CO<sub>2</sub>-EOR series with Curtis (2005 IPTC-10641 Haft Kel field-scale, 2009 SPE-125362 lab reinterpretation, 2010 SPE-129666 scale-dependence) plus the 2014 SPE-170912 component-lumping paper with Whitson and Martinsen.</p>
-citations_source: OpenAlex (constructed DOI)
+citations_source: OpenAlex (DOI)
