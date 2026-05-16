@@ -201,30 +201,48 @@ def crossref_lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
     return (data.get("message") or {}).get("is-referenced-by-count")
 
 
-def construct_doi(paper_number: str, year: int) -> Optional[str]:
+def construct_dois(paper_number: str, year: Optional[int]) -> list[str]:
     """
-    Try to synthesise a DOI from a paper number.
+    Try to synthesise possible DOIs from a paper number. Returns a list of
+    candidates - when the suffix is ambiguous (no -MS / -PA on the source
+    number) we return BOTH so the caller can try each.
 
-    SPE conference paper:   SPE-12233-MS    -> 10.2118/12233-MS
-    SPE journal:            SPE-12233-PA    -> 10.2118/12233-PA
-    URTeC:                  URTeC-539       -> 10.15530/urtec-{year}-539
-    IPTC:                   IPTC-19596-MS   -> 10.2523/IPTC-19596-MS
-    EUR:                    EUR-183         -> 10.2118/EUR-183
+    SPE conference paper:   SPE-12233-MS or 'SPE 12233'  -> [10.2118/12233-MS, 10.2118/12233-PA]
+    SPE journal accepted:   SPE-12233-PA                  -> [10.2118/12233-PA]
+    URTeC:                  URTeC-539                     -> [10.15530/urtec-{year}-539]
+    IPTC:                   IPTC-19596-MS or 'IPTC 19596' -> [10.2523/IPTC-19596-MS]
     """
     if not paper_number:
-        return None
+        return []
     pn = paper_number.strip()
-    m = re.match(r"^SPE-(\d+)(?:-(MS|PA))?$", pn, re.I)
+
+    # SPE: accept "SPE-NNNN", "SPE NNNN", "SPE-NNNN-MS", "SPE-NNNN-PA"
+    m = re.match(r"^SPE[-\s]?(\d+)(?:[-\s]?(MS|PA))?$", pn, re.I)
     if m:
-        suffix = (m.group(2) or "MS").upper()
-        return f"10.2118/{m.group(1)}-{suffix}"
-    m = re.match(r"^URTeC-(\d+)$", pn, re.I)
+        num = m.group(1)
+        suffix = (m.group(2) or "").upper()
+        if suffix:
+            return [f"10.2118/{num}-{suffix}"]
+        # Suffix ambiguous - return both common variants
+        return [f"10.2118/{num}-MS", f"10.2118/{num}-PA"]
+
+    # URTeC
+    m = re.match(r"^URTeC[-\s]?(\d+)$", pn, re.I)
     if m and year:
-        return f"10.15530/urtec-{year}-{m.group(1)}"
-    m = re.match(r"^IPTC-(\d+)(?:-MS)?$", pn, re.I)
+        return [f"10.15530/urtec-{year}-{m.group(1)}"]
+
+    # IPTC
+    m = re.match(r"^IPTC[-\s]?(\d+)(?:[-\s]?MS)?$", pn, re.I)
     if m:
-        return f"10.2523/IPTC-{m.group(1)}-MS"
-    return None
+        return [f"10.2523/IPTC-{m.group(1)}-MS"]
+
+    return []
+
+
+# Back-compat wrapper - any old callers using construct_doi() still work
+def construct_doi(paper_number: str, year: Optional[int]) -> Optional[str]:
+    cands = construct_dois(paper_number, year)
+    return cands[0] if cands else None
 
 
 def is_paper(d: dict) -> bool:
@@ -269,31 +287,53 @@ SOURCE_QUERIES_ALL = [
 ]
 
 
-def _query_one(source: str, method: str, doi: str, constructed: str, paper_number: str, mailto: str) -> Optional[int]:
-    """Run a single (source, method) query and return the citation count or None."""
-    target_doi = doi if method == "doi" else (constructed if method == "constructed_doi" else None)
-    if method in ("doi", "constructed_doi"):
-        if not target_doi:
-            return None
-        if source == "openalex":
-            return openalex_lookup_by_doi(target_doi, mailto)
-        if source == "semanticscholar":
-            return semanticscholar_lookup_by_doi(target_doi)
-        if source == "crossref":
-            return crossref_lookup_by_doi(target_doi, mailto)
-    if method == "search":
-        if not paper_number:
-            return None
-        if source == "openalex":
-            return openalex_search(paper_number, mailto)
-        if source == "semanticscholar":
-            return semanticscholar_search(paper_number)
+def _lookup_doi(source: str, doi: str, mailto: str) -> Optional[int]:
+    if source == "openalex":
+        return openalex_lookup_by_doi(doi, mailto)
+    if source == "semanticscholar":
+        return semanticscholar_lookup_by_doi(doi)
+    if source == "crossref":
+        return crossref_lookup_by_doi(doi, mailto)
     return None
 
 
-def resolve_citation(paper: dict, mailto: str, only_source: Optional[str] = None) -> tuple[Optional[int], str, list[tuple[int, str]]]:
+def _query_one(
+    source: str, method: str, doi: str, constructed_list: list[str],
+    paper_number: str, mailto: str,
+) -> tuple[Optional[int], Optional[str]]:
+    """Run a single (source, method) query and return (count, doi_used)."""
+    if method == "doi":
+        if not doi:
+            return None, None
+        return _lookup_doi(source, doi, mailto), doi
+    if method == "constructed_doi":
+        # Try each candidate in turn, return the FIRST one that succeeds.
+        for cand in constructed_list:
+            if cand and cand.lower() != doi.lower():
+                c = _lookup_doi(source, cand, mailto)
+                if c is not None:
+                    return c, cand
+        return None, None
+    if method == "search":
+        if not paper_number:
+            return None, None
+        if source == "openalex":
+            return openalex_search(paper_number, mailto), None
+        if source == "semanticscholar":
+            return semanticscholar_search(paper_number), None
+    return None, None
+
+
+def resolve_citation(
+    paper: dict, mailto: str, only_source: Optional[str] = None,
+) -> tuple[Optional[int], str, list[tuple[int, str]], Optional[str]]:
     """
-    Look up citation count and return (best_count, best_label, all_hits).
+    Look up citation count. Returns (best_count, best_label, all_hits, working_doi).
+
+    - all_hits is a list of (count, source_label) pairs for the diff log.
+    - working_doi is the DOI that succeeded for the winning lookup, which
+      may differ from the YAML's recorded DOI (the caller uses it to heal
+      stale or wrong DOIs - e.g. when the YAML has -MS but only -PA exists).
 
     If `only_source` is set (a label like "OpenAlex (DOI)"), only that single
     query is executed - the fast-refresh path. Otherwise all eight queries
@@ -301,29 +341,33 @@ def resolve_citation(paper: dict, mailto: str, only_source: Optional[str] = None
     """
     year = paper.get("year") or (int(paper["id"][:4]) if paper.get("id", "")[:4].isdigit() else None)
     doi = (paper.get("doi") or "").strip()
+    if not is_valid_doi(doi):
+        doi = ""
     paper_number = (paper.get("paper_number") or "").strip()
-    constructed = construct_doi(paper_number, year)
-    if constructed and constructed.lower() == doi.lower():
-        constructed = None
+    constructed_list = construct_dois(paper_number, year)
+    # Filter out any candidate identical to the recorded DOI
+    constructed_list = [c for c in constructed_list if c.lower() != doi.lower()]
 
-    hits: list[tuple[int, str]] = []
+    hits: list[tuple[int, str, Optional[str]]] = []  # (count, label, doi_used)
     queries = [q for q in SOURCE_QUERIES_ALL if only_source is None or q[0] == only_source]
 
     for label, source, method in queries:
-        c = _query_one(source, method, doi, constructed or "", paper_number, mailto)
+        c, doi_used = _query_one(source, method, doi, constructed_list, paper_number, mailto)
         if c is not None:
-            hits.append((c, label))
+            hits.append((c, label, doi_used))
 
     if not hits:
-        return None, "no hit", []
+        return None, "no hit", [], None
 
-    best_count = max(c for c, _ in hits)
-    winners = [label for c, label in hits if c == best_count]
-    # Prefer OpenAlex > Semantic Scholar > Crossref for the recorded best-source
-    # tag when several sources tie at the max.
+    best_count = max(c for c, _, _ in hits)
+    winners = [(label, doi_used) for c, label, doi_used in hits if c == best_count]
+    # Prefer OpenAlex > Semantic Scholar > Crossref when several tie at the max.
     rank = {"OpenAlex": 0, "Semantic Scholar": 1, "Crossref": 2}
-    winners.sort(key=lambda w: rank.get(w.split(" (")[0], 99))
-    return best_count, winners[0], hits
+    winners.sort(key=lambda w: rank.get(w[0].split(" (")[0], 99))
+    best_label, best_doi = winners[0]
+    # Return all hits as 2-tuples (count, label) for the diff log;
+    # the working DOI is separate so the caller can heal the YAML if needed.
+    return best_count, best_label, [(c, l) for c, l, _ in hits], best_doi
 
 
 # ------------------------------------------------------------------- in-place file patchers
@@ -431,7 +475,7 @@ def main():
         if mode == "refresh" and prev_source and prev_source in {q[0] for q in SOURCE_QUERIES_ALL}:
             only = prev_source
 
-        count, source_label, all_hits = resolve_citation(d, args.mailto, only_source=only)
+        count, source_label, all_hits, working_doi = resolve_citation(d, args.mailto, only_source=only)
         time.sleep(args.sleep)
 
         if count is None:
@@ -442,16 +486,26 @@ def main():
         # Build a compact "via" string showing all hits for the diff log.
         hits_str = ", ".join(f"{c}@{lbl}" for c, lbl in sorted(all_hits, key=lambda x: -x[0]))
 
-        if count == prev_count and source_label == prev_source:
+        # Heal stale DOI: if the lookup worked via a different DOI than the
+        # one recorded in the YAML, update the YAML to the working one.
+        prev_doi = (d.get("doi") or "").strip()
+        doi_changed = False
+        if working_doi and is_valid_doi(working_doi) and working_doi.lower() != prev_doi.lower():
+            doi_changed = True
+
+        if count == prev_count and source_label == prev_source and not doi_changed:
             print(f"  [unchanged] {pid}  {count}  best={source_label}  [{hits_str}]")
             continue
 
-        print(f"  [  UPDATED] {pid}  {prev_count!r} -> {count}  best={source_label}  [{hits_str}]")
+        doi_note = f"  doi: {prev_doi or '(none)'} -> {working_doi}" if doi_changed else ""
+        print(f"  [  UPDATED] {pid}  {prev_count!r} -> {count}  best={source_label}  [{hits_str}]{doi_note}")
         if args.dry_run:
             continue
 
         d["citations"] = count
         d["citations_source"] = source_label
+        if doi_changed:
+            d["doi"] = working_doi
         write_yaml(f, d)
         patch_jsonl(pid, d.get("paper_number") or "", count)
         if d.get("paper_number"):
