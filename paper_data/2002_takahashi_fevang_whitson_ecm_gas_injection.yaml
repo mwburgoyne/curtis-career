@@ -10,7 +10,7 @@ venue: 10th Abu Dhabi International Petroleum Exhibition and Conference, 13-16 O
 paper_number: SPE-78483
 doi: null
 funding: null
-citations: null
+citations: 1
 tags:
 - ECM
 - Gas Injection
@@ -64,3 +64,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>K. Takahashi</strong> — BUNDUQ Co. Ltd. (Abu Dhabi National Oil Company / Qatar Petroleum joint operator).</p><p><strong>Øivind Fevang</strong> — PERA. The Fevang-Whitson partnership through gas-condensate, ECM, and now multi-sample EOS work.</p>
+citations_source: OpenAlex

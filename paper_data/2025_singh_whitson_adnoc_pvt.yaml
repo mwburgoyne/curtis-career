@@ -15,7 +15,7 @@ venue: SPE Advances in Integrated Reservoir Modelling and Field Development Conf
 paper_number: SPE-225405-MS
 doi: null
 funding: null
-citations: New (2025)
+citations: 0
 tags:
 - Communicating Reservoirs
 - Tracer Methodology
@@ -72,3 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>K. A. Khan, M. Y. Alklih, R. Alwaeel, N. Aljneibi, M. M. Abdelrahman, A. Al Tenaiji</strong> — ADNOC Onshore, Abu Dhabi; the operator team responsible for the field characterisation, the EOS tuning, the simulation runs, and the operational interpretation. <strong>Kameshwar Singh</strong> — Whitson AS senior engineer; provided the tracer methodology and BOPVT-consistency framework. <strong>Curtis H. Whitson</strong> — method authority on the tracer workflow and the doubled-EOS validation; SPE Lucas Gold Medal (2011) and AIME Honorary Member (2023).</p>
+citations_source: OpenAlex

@@ -9,7 +9,7 @@ venue: SPE EUROPEC/EAGE Annual Conference and Exhibition, Amsterdam, 8-11 June 2
 paper_number: SPE-120743
 doi: null
 funding: null
-citations: null
+citations: 2
 tags:
 - Gas Injection
 - IOR S-Curve
@@ -60,3 +60,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — PERA. Long-running BOPVT and gas-injection collaborator with Curtis since 2000.</p>
+citations_source: OpenAlex

@@ -9,7 +9,7 @@ venue: SPE Annual Technical Conference and Exhibition, Denver, 30 October - 2 No
 paper_number: SPE-147072
 doi: null
 funding: VISTA / Statoil ASA
-citations: null
+citations: 7
 tags:
 - SAGD
 - Steam-Assisted Gravity Drainage
@@ -63,3 +63,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018.</p>
+citations_source: OpenAlex

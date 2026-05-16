@@ -9,7 +9,7 @@ venue: SPE Europec featured at 79th EAGE Conference and Exhibition, Paris, 12-15
 paper_number: SPE-185791
 doi: null
 funding: Norwegian Research Council SkatteFUNN programme
-citations: null
+citations: 0
 tags:
 - Synthetic Fluid
 - Gas Condensate
@@ -69,3 +69,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — PERA / whitson. Curtis's long-standing PhD co-author and senior engineer collaborator. Six-paper-plus collaboration spanning 2000 through 2025, covering BOPVT consistency, gas-condensate pseudopressure, gas-injection IOR, layered systems, Tunisia field characterisation, synthetic-fluid design (this paper), and the recent SPE-225382 and ADNOC SPE-225405 papers.</p>
+citations_source: OpenAlex

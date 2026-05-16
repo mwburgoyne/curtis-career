@@ -9,7 +9,7 @@ venue: 13th SPE Symposium on Reservoir Simulation, San Antonio, TX, 12-15 Februa
 paper_number: SPE-29115
 doi: null
 funding: null
-citations: null
+citations: 25
 tags:
 - Gas Injection
 - Miscibility
@@ -72,3 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>C. L. Hearn</strong> — co-author. Operator-side gas-injection engineering on the Safah evaluation.</p><p><strong>Aaron A. Zick</strong> — acknowledged for the 1993 unpublished multicell multicontact algorithm. The same Aaron Zick of the November 1985 Trondheim pizzeria dinner that introduced Curtis to the negative-flash construction.</p>
+citations_source: OpenAlex

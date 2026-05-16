@@ -13,7 +13,7 @@ venue: Unconventional Resources Technology Conference, Denver, 22-24 July 2019
 paper_number: URTeC-551
 doi: 10.15530/urtec-2019-1234
 funding: null
-citations: null
+citations: 21
 tags:
 - Field-Wide EOS
 - Common EOS
@@ -79,3 +79,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p>Whitson AS senior-engineer team: Bilal Younus (first author), Ali Alavian, Mathias Lia Carlsen, Sissel Ø. Martinsen, Kameshwar Singh. All long-standing Whitson-group collaborators continuing the post-2017 Whitson AS commercial methodology into the open literature.</p>
+citations_source: OpenAlex

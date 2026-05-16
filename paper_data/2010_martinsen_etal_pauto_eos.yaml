@@ -11,7 +11,7 @@ venue: SPE Annual Technical Conference and Exhibition, Florence, 19-22 September
 paper_number: SPE-135085
 doi: null
 funding: null
-citations: null
+citations: 8
 tags:
 - EOS Tuning
 - Pauto Field
@@ -72,3 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Sissel Ø. Martinsen</strong> — PERA / Whitson AS. Long-time Whitson colleague; field-wide EOS model development practice.</p><p><strong>I. Castiblanco and R. Osorio</strong> — BP Exploration Colombia / ECOPETROL operator side.</p>
+citations_source: OpenAlex

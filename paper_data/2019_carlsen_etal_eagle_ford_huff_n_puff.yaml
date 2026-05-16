@@ -18,7 +18,7 @@ venue: Unconventional Resources Technology Conference, Denver, 22-24 July 2019
 paper_number: URTeC-539
 doi: 10.15530/urtec-2019-539
 funding: Innovation Norway
-citations: null
+citations: 34
 tags:
 - Huff-n-Puff
 - EOR
@@ -77,3 +77,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p>Whitson AS team: Mathias Lia Carlsen (first author), Mohamad M. Dahouk, Bilal Younus, Ilina Yusra, Stian Mydland - all senior engineers continuing into the post-2017 Whitson AS era.</p><p>EP Energy team: E. Kerr, J. Nohavitza, M. Thuesen, J. H. Drozd, R. Ambrose - operator-side collaborators providing the Eagle Ford pilot data and field-validation context.</p>
+citations_source: OpenAlex

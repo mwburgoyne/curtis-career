@@ -10,7 +10,7 @@ venue: SPE Advances in Integrated Reservoir Modelling and Field Development Conf
 paper_number: SPE-225382-MS
 doi: null
 funding: null
-citations: New (2025)
+citations: 0
 tags:
 - BOPVT
 - CCE
@@ -64,3 +64,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Kameshwar Singh</strong> — Whitson AS senior engineer, Curtis's long-running BOPVT collaborator since 2000 across SPE-63087, SPE-109596, SPE-117930, SPE-120743, SPE-143612, and SPE-166380. <strong>Markus Hays Nielsen</strong> — Curtis's son. Whitson AS engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. Co-author SPE-217328 / SPE-220699 / SPE-225470. <strong>Curtis H. Whitson</strong> — method-design and editorial role.</p>
+citations_source: OpenAlex

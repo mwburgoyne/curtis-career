@@ -9,7 +9,7 @@ venue: SPE Annual Technical Conference and Exhibition, New Orleans, 30 September
 paper_number: SPE-166380
 doi: null
 funding: null
-citations: null
+citations: 20
 tags:
 - Liquid-Rich Shale
 - Half-Fracture Symmetry
@@ -70,3 +70,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Aleksander Oma Juell</strong> — NTNU PhD under Curtis. Four-paper sequence with Whitson: Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, Juell-Whitson 2011 SPE-146066 layered backpressure equation, Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control, and this 2013 paper integrating LRS modelling with economic optimisation - the culminating paper of his PhD.</p>
+citations_source: OpenAlex

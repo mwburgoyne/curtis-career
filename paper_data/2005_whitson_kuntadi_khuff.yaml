@@ -9,7 +9,7 @@ venue: International Petroleum Technology Conference, Doha, 21-23 November 2005
 paper_number: IPTC-10692
 doi: null
 funding: null
-citations: null
+citations: 45
 tags:
 - Khuff
 - Gas Condensate
@@ -62,3 +62,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>A. Kuntadi</strong> — NTNU PhD student; co-author on the 2012 SPE-159400 delumping paper with Whitson and Hoda.</p>
+citations_source: OpenAlex

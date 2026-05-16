@@ -15,7 +15,7 @@ venue: SPE Reservoir Evaluation and Engineering, Vol. 21 No. 1, pp. 122-136, Feb
 paper_number: SPE-180102-PA
 doi: 10.2118/180102-PA
 funding: JCR7 Joint Chalk Research Consortium
-citations: null
+citations: 19
 tags:
 - CO2 Injection
 - Fracture/Matrix Cell
@@ -72,3 +72,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p>Same multi-organisation team as the 2016 and 2017 papers: Mohsen Ghasemi and Wahyu Astutik (Petrostreamz), Seyyed Ali Alavian (PERA), L. Sigalas and D. Olsen (GEUS chalk-core specialists), and V. S. Suicmez (Maersk Oil and Gas). The three-paper sequence (2016, 2017, 2018) covers static-CVD apparatus, composite-core extension, and the fracture/matrix flow cell with density-matched n-C10.</p>
+citations_source: OpenAlex

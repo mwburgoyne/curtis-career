@@ -10,7 +10,7 @@ venue: SPE Annual Technical Conference and Exhibition, Houston, 26-29 September 
 paper_number: SPE-90379
 doi: null
 funding: null
-citations: null
+citations: 32
 tags:
 - Undersaturated Gas-Oil
 - Compositional Grading
@@ -66,3 +66,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Lars Høier</strong> — NTH/NTNU PhD graduate, the Høier of the 1998, 2001, and 2004 compositional-grading papers. Co-recipient with Curtis of the 2001 SPE Cedric K. Fergusson Medal.</p><p><strong>N. Cheng</strong> — co-author. Statoil at the time of the Smørbukk South study.</p>
+citations_source: OpenAlex

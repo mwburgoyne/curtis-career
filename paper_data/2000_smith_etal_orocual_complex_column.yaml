@@ -12,7 +12,7 @@ venue: SPE Annual Technical Conference and Exhibition, Dallas, 1-4 October 2000
 paper_number: SPE-63088
 doi: null
 funding: null
-citations: null
+citations: 3
 tags:
 - Complex Column
 - Orocual
@@ -69,3 +69,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>R. W. Smith and W. A. Bard</strong> — Integrated Reservoir Management, Inc. (IRMI). Operator-engineering side of the Orocual workflow.</p><p><strong>C. Lugo, I. Yemez, A. Guerini</strong> — PDVSA team.</p><p><strong>Øivind Fevang</strong> — co-author with Curtis on the PVT methodology, three years after the 1997 Fergusson-Medal Fevang-Whitson SPE-30714.</p>
+citations_source: OpenAlex

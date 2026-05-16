@@ -11,7 +11,7 @@ venue: SPE Europec featured at 78th EAGE Conference and Exhibition, Vienna, 30 M
 paper_number: SPE-180140
 doi: null
 funding: null
-citations: null
+citations: 3
 tags:
 - Shale Reserve Forecasting
 - Model Consistency
@@ -78,3 +78,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Carlos Coll</strong> — BG Group operator perspective. Industry validation of the HM-anchored DCA / RTA framework.</p><p><strong>Mohamad M. Dahouk</strong> — Petrostreamz / whitson. Long-time Whitson-group collaborator on shale workflows. Co-author on Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 NRTA paper.</p><p><strong>Aleksander Oma Juell</strong> — Petrostreamz; NTNU PhD under Curtis. Fifth Whitson co-authored paper (after 2009 IAM benchmark, 2011 layered backpressure, 2012 cyclic shut-in control, 2013 LRS well modelling).</p>
+citations_source: OpenAlex

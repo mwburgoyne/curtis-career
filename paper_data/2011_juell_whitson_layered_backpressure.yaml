@@ -9,7 +9,7 @@ venue: SPE Annual Technical Conference and Exhibition, Denver, 30 October - 2 No
 paper_number: SPE-146066
 doi: null
 funding: null
-citations: null
+citations: 9
 tags:
 - Backpressure Equation
 - Layered Gas Reservoir
@@ -65,3 +65,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Aleksander Oma Juell</strong> — NTNU M.Sc. then PhD under Curtis. Co-author with Whitson on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, this paper, and Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control. Three-paper sequence on layered-gas-well monitoring and optimisation.</p>
+citations_source: OpenAlex

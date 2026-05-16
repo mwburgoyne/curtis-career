@@ -9,7 +9,7 @@ venue: International Petroleum Technology Conference, Kuala Lumpur, 10-12 Decemb
 paper_number: IPTC-18033
 doi: null
 funding: null
-citations: null
+citations: 7
 tags:
 - Solvent-SAGD
 - SA-SAGD
@@ -66,3 +66,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the third paper, integrating the BO-proxy framework with the EOS fluid model into a coupled-system optimisation.</p>
+citations_source: OpenAlex

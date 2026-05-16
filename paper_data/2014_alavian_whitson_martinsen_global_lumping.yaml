@@ -10,7 +10,7 @@ venue: SPE Annual Technical Conference and Exhibition, Amsterdam, 27-29 October 
 paper_number: SPE-170912
 doi: null
 funding: null
-citations: null
+citations: 24
 tags:
 - EOS Lumping
 - Pseudoisation
@@ -67,3 +67,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Seyyed Ali Alavian</strong> — PERA / whitson. Long-standing Whitson-group collaborator. Co-author with Curtis on 2005 CO<sub>2</sub> recovery mechanisms in fractured reservoirs, 2009 SPE-125362 CO<sub>2</sub>-injection in chalk, 2010 SPE-129637 diffusion in CO<sub>2</sub>-flooded fractured reservoirs, and this 2014 lumping paper.</p><p><strong>Sissel Ø. Martinsen</strong> — PERA / NTNU. Co-author with Curtis on the 2010 Pauto Colombia multi-compartment EOS characterisation (Martinsen et al.) and this paper.</p>
+citations_source: OpenAlex

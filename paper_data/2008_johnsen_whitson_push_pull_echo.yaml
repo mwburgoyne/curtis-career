@@ -9,7 +9,7 @@ venue: <em>Transport in Porous Media</em>, Vol. 77, pp. 399-415 (2008)
 paper_number: null
 doi: 10.1007/s11242-008-9266-0
 funding: null
-citations: null
+citations: 3
 tags:
 - Push-Pull Test
 - Tracer Test
@@ -61,3 +61,4 @@ sections:
 - heading: Key Collaborator
   body_html: |-
     <p><strong>Sverre Gullikstad Johnsen</strong> — NTNU PhD graduate (2007) with Curtis as co-supervisor. Two TIPM papers with Curtis on push-pull tracer test analysis. Subsequent career in computational fluid dynamics and porous-media flow at SINTEF.</p>
+citations_source: OpenAlex
