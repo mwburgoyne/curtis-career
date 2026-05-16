@@ -201,38 +201,116 @@ def crossref_lookup_by_doi(doi: str, mailto: str) -> Optional[int]:
     return (data.get("message") or {}).get("is-referenced-by-count")
 
 
+_STOPWORDS = {
+    "the", "a", "an", "and", "or", "of", "for", "in", "on", "at", "by",
+    "with", "to", "from", "into", "is", "are", "was", "were", "be", "been",
+    "being", "as", "this", "that", "these", "those", "it", "its", "their",
+    "his", "her", "our", "your", "we", "you", "they", "but", "not", "no",
+    "via", "based", "using", "use", "used", "use", "case", "cases",
+    "study", "studies", "paper", "discussion", "comments",
+}
+
+
+def _title_words(t: str) -> set[str]:
+    return {w.lower() for w in re.findall(r"[A-Za-z]{4,}", t or "") if w.lower() not in _STOPWORDS}
+
+
+def _cr_result_authors_match(result: dict, expected_surnames: list[str]) -> bool:
+    """Check that every expected surname appears somewhere in the Crossref
+    result's author family-name list. Tokenise each family name on whitespace
+    so a Crossref-parsed family of 'H. Whitson' still matches 'Whitson'."""
+    if not expected_surnames:
+        return False
+    found_tokens: set[str] = set()
+    for a in result.get("author") or []:
+        fam = (a.get("family") or "").lower()
+        for tok in re.split(r"\s+", fam):
+            tok = tok.strip(".,")
+            if tok:
+                found_tokens.add(tok)
+    return all(s.lower() in found_tokens for s in expected_surnames)
+
+
+def _cr_title_overlap_ok(result: dict, expected_title: str) -> bool:
+    """Require enough title content-word overlap that we're confident the
+    Crossref hit is actually the same paper. Stops Whitson-only / Whitson-
+    Fevang-Saevareid false positives where two of their papers exist."""
+    cand_title = (result.get("title") or [""])[0] if result.get("title") else ""
+    cand_words = _title_words(cand_title)
+    expected_words = _title_words(expected_title)
+    if not expected_words or not cand_words:
+        return False
+    overlap = expected_words & cand_words
+    # Require either >=3 content-word overlap OR >=50% of expected words
+    return len(overlap) >= 3 or (len(overlap) / len(expected_words) >= 0.5)
+
+
+def crossref_title_author_search(title: str, expected_surnames: list[str], year: Optional[int], mailto: str) -> tuple[Optional[int], Optional[str]]:
+    """
+    Crossref title+author search. Hits are accepted only if (1) every expected
+    surname appears in the author list AND (2) the title has substantial
+    content-word overlap with the expected title. The year filter narrows
+    Crossref's candidate set to year +/- 1.
+    """
+    if not title or not expected_surnames:
+        return None, None
+    title_q = " ".join(re.findall(r"[A-Za-z]{3,}", title)[:8])
+    if not title_q:
+        return None, None
+    author_q = "+".join(s for s in expected_surnames)
+    url = (
+        "https://api.crossref.org/works"
+        f"?query.title={urllib.parse.quote(title_q)}"
+        f"&query.author={urllib.parse.quote(author_q)}"
+        f"&rows=5"
+    )
+    if year:
+        url += f"&filter=from-pub-date:{year-1},until-pub-date:{year+1}"
+    data = crossref_get(url, mailto)
+    if not data:
+        return None, None
+    for r in (data.get("message") or {}).get("items", [])[:5]:
+        if _cr_result_authors_match(r, expected_surnames) and _cr_title_overlap_ok(r, title):
+            return r.get("is-referenced-by-count"), r.get("DOI")
+    return None, None
+
+
 def construct_dois(paper_number: str, year: Optional[int]) -> list[str]:
     """
     Try to synthesise possible DOIs from a paper number. Returns a list of
-    candidates - when the suffix is ambiguous (no -MS / -PA on the source
+    candidates; when the suffix is ambiguous (no -MS / -PA on the source
     number) we return BOTH so the caller can try each.
 
-    SPE conference paper:   SPE-12233-MS or 'SPE 12233'  -> [10.2118/12233-MS, 10.2118/12233-PA]
-    SPE journal accepted:   SPE-12233-PA                  -> [10.2118/12233-PA]
-    URTeC:                  URTeC-539                     -> [10.15530/urtec-{year}-539]
-    IPTC:                   IPTC-19596-MS or 'IPTC 19596' -> [10.2523/IPTC-19596-MS]
+    The regexes peel off the first SPE/URTeC/IPTC token they see, so a
+    paper_number like "SPE-10224 (original manuscript Nov 1982)" still
+    matches as if it were just "SPE-10224".
     """
     if not paper_number:
         return []
     pn = paper_number.strip()
 
-    # SPE: accept "SPE-NNNN", "SPE NNNN", "SPE-NNNN-MS", "SPE-NNNN-PA"
-    m = re.match(r"^SPE[-\s]?(\d+)(?:[-\s]?(MS|PA))?$", pn, re.I)
+    # SPE: accept "SPE-NNNN", "SPE NNNN", "SPE-NNNN-MS", "SPE-NNNN-PA".
+    # Trailing noise (parenthetical notes etc.) is allowed and ignored.
+    # Always return BOTH -MS and -PA variants because many SPE papers get
+    # registered under both forms - the manuscript (-MS) for the conference
+    # presentation and the accepted paper (-PA) for the journal version.
+    # Listed in priority order: the explicitly-stated form first.
+    m = re.match(r"^SPE[-\s]?(\d+)(?:[-\s]?(MS|PA))?\b", pn, re.I)
     if m:
         num = m.group(1)
         suffix = (m.group(2) or "").upper()
-        if suffix:
-            return [f"10.2118/{num}-{suffix}"]
-        # Suffix ambiguous - return both common variants
+        if suffix == "PA":
+            return [f"10.2118/{num}-PA", f"10.2118/{num}-MS"]
+        # Default (no suffix or -MS): try -MS first, then -PA
         return [f"10.2118/{num}-MS", f"10.2118/{num}-PA"]
 
     # URTeC
-    m = re.match(r"^URTeC[-\s]?(\d+)$", pn, re.I)
+    m = re.match(r"^URTeC[-\s]?(\d+)\b", pn, re.I)
     if m and year:
         return [f"10.15530/urtec-{year}-{m.group(1)}"]
 
     # IPTC
-    m = re.match(r"^IPTC[-\s]?(\d+)(?:[-\s]?MS)?$", pn, re.I)
+    m = re.match(r"^IPTC[-\s]?(\d+)(?:[-\s]?MS)?\b", pn, re.I)
     if m:
         return [f"10.2523/IPTC-{m.group(1)}-MS"]
 
@@ -284,6 +362,7 @@ SOURCE_QUERIES_ALL = [
     ("Semantic Scholar (search)", "semanticscholar", "search"),
     ("Crossref (DOI)", "crossref", "doi"),
     ("Crossref (constructed DOI)", "crossref", "constructed_doi"),
+    ("Crossref (title+author)", "crossref", "title_author"),
 ]
 
 
@@ -299,7 +378,8 @@ def _lookup_doi(source: str, doi: str, mailto: str) -> Optional[int]:
 
 def _query_one(
     source: str, method: str, doi: str, constructed_list: list[str],
-    paper_number: str, mailto: str,
+    paper_number: str, title: str, expected_surnames: list[str],
+    year: Optional[int], mailto: str,
 ) -> tuple[Optional[int], Optional[str]]:
     """Run a single (source, method) query and return (count, doi_used)."""
     if method == "doi":
@@ -307,7 +387,6 @@ def _query_one(
             return None, None
         return _lookup_doi(source, doi, mailto), doi
     if method == "constructed_doi":
-        # Try each candidate in turn, return the FIRST one that succeeds.
         for cand in constructed_list:
             if cand and cand.lower() != doi.lower():
                 c = _lookup_doi(source, cand, mailto)
@@ -321,6 +400,9 @@ def _query_one(
             return openalex_search(paper_number, mailto), None
         if source == "semanticscholar":
             return semanticscholar_search(paper_number), None
+    if method == "title_author":
+        if source == "crossref":
+            return crossref_title_author_search(title, expected_surnames, year, mailto)
     return None, None
 
 
@@ -344,15 +426,27 @@ def resolve_citation(
     if not is_valid_doi(doi):
         doi = ""
     paper_number = (paper.get("paper_number") or "").strip()
+    title = (paper.get("title") or "").strip()
+    # Author surnames for the Crossref title+author search. Just take the
+    # last token of each author name; Curtis Whitson's surname is included
+    # since he's on every paper.
+    expected_surnames: list[str] = []
+    for a in (paper.get("authors") or []):
+        if a:
+            expected_surnames.append(a.strip().split()[-1])
+    expected_surnames = list(dict.fromkeys(expected_surnames))  # de-dup, keep order
+
     constructed_list = construct_dois(paper_number, year)
-    # Filter out any candidate identical to the recorded DOI
     constructed_list = [c for c in constructed_list if c.lower() != doi.lower()]
 
     hits: list[tuple[int, str, Optional[str]]] = []  # (count, label, doi_used)
     queries = [q for q in SOURCE_QUERIES_ALL if only_source is None or q[0] == only_source]
 
     for label, source, method in queries:
-        c, doi_used = _query_one(source, method, doi, constructed_list, paper_number, mailto)
+        c, doi_used = _query_one(
+            source, method, doi, constructed_list, paper_number,
+            title, expected_surnames, year, mailto,
+        )
         if c is not None:
             hits.append((c, label, doi_used))
 

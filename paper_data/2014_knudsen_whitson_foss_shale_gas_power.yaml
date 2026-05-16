@@ -8,9 +8,9 @@ authors:
 authors_affiliation: NTNU
 venue: Energy (Elsevier), Vol. 78, pp. 165-182, December 2014
 paper_number: null
-doi: 10.1016/j.energy.2014.09.092
+doi: 10.1016/j.energy.2014.09.076
 funding: null
-citations: null
+citations: 34
 tags:
 - Shale Gas
 - Distributed Storage
@@ -68,3 +68,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Brage Rugstad Knudsen</strong> — NTNU PhD student under Bjarne Foss; shale-gas optimisation. Two-paper sequence with Curtis: 2012 ADCHEM (8-well pad MILP with Turner-rate constraints) and this 2014 Energy paper (field-scale Lagrangian-relaxation extension).</p><p><strong>Bjarne Foss</strong> — NTNU Engineering Cybernetics. Optimisation expertise. Also Curtis's collaborator on the Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark and the Knudsen-Foss-Whitson-Conn 2012 ADCHEM paper.</p>
+citations_source: Crossref (title+author)

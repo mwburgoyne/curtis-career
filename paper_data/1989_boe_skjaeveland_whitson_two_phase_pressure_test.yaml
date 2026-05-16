@@ -8,9 +8,9 @@ authors:
 authors_affiliation: Norwegian Institute of Technology
 venue: <em>SPE Formation Evaluation</em>, December 1989, pp. 604-610
 paper_number: SPE-10224 (original manuscript Nov 1982; first presented 1981 SPE ATCE, San Antonio)
-doi: null
+doi: 10.2118/10224-PA
 funding: null
-citations: null
+citations: 85
 tags:
 - Two-Phase Pseudopressure
 - Well Testing
@@ -67,3 +67,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>A. Bøe</strong> — Rogaland Research Institute, Stavanger.</p><p><strong>Svein M. Skjæveland</strong> — Rogaland University Centre (now University of Stavanger). Long-time petroleum engineer and capillary-pressure researcher; was Curtis's colleague during the Rogaland years.</p>
+citations_source: OpenAlex (constructed DOI)
