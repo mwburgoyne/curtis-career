@@ -1,517 +1,456 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>The Career Arc of Professor Curtis Hays Whitson</title>
-<link rel="stylesheet" href="assets/style.css">
+<link href="assets/style.css" rel="stylesheet"/>
 </head>
 <body class="page-index">
-
 <!-- ===== HERO ===== -->
 <header class="hero">
-  <div class="hero-inner">
-    <div class="hero-logo">
-      <img src="assets/whitson_logo.png" alt="whitson">
-    </div>
-    <div class="hero-text">
-      <h1>The Career Arc of Professor Curtis Hays Whitson</h1>
-      <p class="subtitle">Norwegian University of Science and Technology (NTNU), Trondheim<br>Founder, whitson AS<br>Five decades of compositional reservoir engineering (1974&ndash;present)</p>
-    </div>
-    <div class="hero-portrait">
-      <img src="assets/curtis.png" alt="Professor Curtis Hays Whitson">
-    </div>
-  </div>
+<div class="hero-inner">
+<div class="hero-logo">
+<img alt="whitson" src="assets/whitson_logo.png"/>
+</div>
+<div class="hero-text">
+<h1>The Career Arc of Professor Curtis Hays Whitson</h1>
+<p class="subtitle">Norwegian University of Science and Technology (NTNU), Trondheim<br/>Founder, whitson AS<br/>Five decades of compositional reservoir engineering (1974–present)</p>
+</div>
+<div class="hero-portrait">
+<img alt="Professor Curtis Hays Whitson" src="assets/curtis.png"/>
+</div>
+</div>
 </header>
-
 <!-- ===== INTRODUCTION ===== -->
 <div class="intro-section">
-  <p>Curtis Whitson is the person most working reservoir engineers turn to when a PVT problem stops behaving. He has spent fifty years on the heavy end of reservoir fluids, the equations of state that describe them, the simulators that consume those equations, and the wells that produce the answers. Born in Oklahoma in 1956. Stanford 1974 under Muz Standing. NTH/NTNU since 1978. PhD in Trondheim 1984. Whitson AS founded 1988. Still teaching at NTNU, still consulting through whitson, still publishing.</p>
-  <p>If you have ever run a compositional reservoir simulator, you have run Whitson's work. The 1983 SPE-12233 method for heptanes-plus characterisation is the default in every commercial PVT package. The 1989 negative flash with Michael Michelsen is in every flash routine. The 1992 Søreide-Whitson brine EOS is the EOS-brine framework, picked up by carbon-capture and geothermal modellers as well as petroleum engineers. The 1996 Fevang-Whitson three-region model is how gas-condensate wells get sized. The 2000 SPE Phase Behavior monograph with Michael Brule is the textbook. The 2012 Whitson-Sunjerga paper defined the liquid-rich-shale PVT problem that operators are still working through. Each of those is a foundation paper. Most authors get one of those in a career.</p>
-  <p>What this page is. A chronological tour through the body of work, organised in four phases, with each paper linked to its own technical summary. A list of the people Curtis has built the framework with. A pass at the personal anecdotes the academic atoms don't capture - the Italian pizzeria where Aaron Zick first sketched the negative flash, the green ink on beige paper the next morning at DTU, the doctor's-ring story, the 1992 Gibbs-Duhem conversation. Built from a structured corpus of Curtis's published work, with his eventual factcheck to follow.</p>
-  <div class="expertise-quote">
-    &ldquo;... his deep mathematical understanding, and my lack thereof; my fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics.&rdquo; <span style="display:block; font-style:normal; font-size:0.85em; color:#5a6a7a; margin-top:6px;">&mdash; Curtis Whitson, abstract of his 2024 Michelsen recollection</span>
-  </div>
+<p>Curtis Whitson is the person most working reservoir engineers turn to when a PVT problem stops behaving. He has spent fifty years on the heavy end of reservoir fluids, the equations of state that describe them, the simulators that consume those equations, and the wells that produce the answers. Born in Oklahoma in 1956. Stanford 1974 under Muz Standing. NTH/NTNU since 1978. PhD in Trondheim 1984. Whitson AS founded 1988. Still teaching at NTNU, still consulting through whitson, still publishing.</p>
+<p>If you have ever run a compositional reservoir simulator, you have run Whitson's work. The 1983 SPE-12233 method for heptanes-plus characterisation is the default in every commercial PVT package. The 1989 negative flash with Michael Michelsen is in every flash routine. The 1992 Søreide-Whitson brine EOS is the EOS-brine framework, picked up by carbon-capture and geothermal modellers as well as petroleum engineers. The 1996 Fevang-Whitson three-region model is how gas-condensate wells get sized. The 2000 SPE Phase Behavior monograph with Michael Brule is the textbook. The 2012 Whitson-Sunjerga paper defined the liquid-rich-shale PVT problem that operators are still working through. Each of those is a foundation paper. Most authors get one of those in a career.</p>
+<p>What this page is. A chronological tour through the body of work, organised in four phases, with each paper linked to its own technical summary. A list of the people Curtis has built the framework with. A pass at the personal anecdotes the academic atoms don't capture - the Italian pizzeria where Aaron Zick first sketched the negative flash, the green ink on beige paper the next morning at DTU, the doctor's-ring story, the 1992 Gibbs-Duhem conversation. Built from a structured corpus of Curtis's published work, with his eventual factcheck to follow.</p>
+<div class="expertise-quote">
+    “... his deep mathematical understanding, and my lack thereof; my fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics.” <span style="display:block; font-style:normal; font-size:0.85em; color:#5a6a7a; margin-top:6px;">— Curtis Whitson, abstract of his 2024 Michelsen recollection</span>
 </div>
-
+</div>
 <!-- ===== QUICK STATS ===== -->
 <div class="container">
-  <div class="stats-bar">
-    <div class="stat-item">
-      <span class="stat-number" id="paper-count-stat">89</span>
-      <span class="stat-label">Papers covered on this page (more coming)</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">1974&ndash;present</span>
-      <span class="stat-label">Active career span (Stanford to today)</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">446</span>
-      <span class="stat-label">Citations of the 1983 C7+ characterisation paper (the most cited)</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">~100</span>
-      <span class="stat-label">Free Whitson Academy YouTube courses on PVT and EOS</span>
-    </div>
-  </div>
-
-  <!-- ===== TIMELINE VISUALIZATION ===== -->
-  <h2 class="section-header">Publication Timeline</h2>
-  <div class="timeline-container">
-    <div class="timeline-svg-wrap" id="timeline-svg-wrap"></div>
-    <div class="timeline-legend">
-      <div class="legend-item"><span class="legend-dot" style="background:#6b46c1;"></span> Phase 1: Stanford to Trondheim (1974&ndash;1983)</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#c53030;"></span> Phase 2: Building the PVT Framework (1983&ndash;1995)</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#2b6cb0;"></span> Phase 3: Gas Condensate &amp; the Monograph (1995&ndash;2010)</div>
-      <div class="legend-item"><span class="legend-dot" style="background:#276749;"></span> Phase 4: Shale, AI Era, Knowledge Capture (2010&ndash;present)</div>
-    </div>
-  </div>
-
-  <!-- ===== CAREER ARC BY PHASE ===== -->
-  <h2 class="section-header">Career Arc</h2>
-
-  <!-- Phase 1 -->
-  <div class="phase-section phase1-bar">
-    <div class="phase-header" onclick="togglePhase(this)">
-      <h3>Phase 1: Stanford and the Move to Trondheim (1974&ndash;1983)</h3>
-      <span class="phase-toggle">&#9660;</span>
-    </div>
-    <div class="phase-teaser">
-      <p>Stanford under Standing for four years, then Trondheim. The 1979 lab manuals that NTNU still uses, the 1981 Whitson-Torp CVD paper that put Curtis on the SPE map, the 1980 EUR-183 precursor, and the 1983 SPE-12233 flagship were all written in this stretch. Curtis was 27 when SPE-12233 came out; he was still a PhD candidate.</p>
-    </div>
-    <span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">&#9660;</span></span>
-    <div class="phase-content">
-      <div class="phase-body">
-        <p>Curtis was born in Oklahoma in 1956. He came to <strong>Stanford University</strong> in 1974 to study petroleum engineering and joined the group of <strong>Marshall B. &ldquo;Muz&rdquo; Standing</strong>, the phase-behaviour pioneer who had come to Stanford from Chevron Research and was himself Donald Katz's first PhD graduate at the University of Michigan in 1941. The lineage that runs through Curtis's professional life starts here: Katz to Standing, Standing to Whitson. Curtis stayed four years.</p>
-
-        <div class="phase-meta-box">
-          <strong>Stanford 1974&ndash;1978.</strong> BSc Petroleum Engineering. The 1977 lab-core report at Stanford is the earliest paper in the public record. Curtis's work in this period laid the empirical foundations for the C7+ characterisation that would come later.
+<div class="stats-bar">
+<div class="stat-item">
+<span class="stat-number" id="paper-count-stat">89</span>
+<span class="stat-label">Papers covered on this page (more coming)</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">1974–present</span>
+<span class="stat-label">Active career span (Stanford to today)</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">446</span>
+<span class="stat-label">Citations of the 1983 C7+ characterisation paper (the most cited)</span>
+</div>
+<div class="stat-item">
+<span class="stat-number">~100</span>
+<span class="stat-label">Free Whitson Academy YouTube courses on PVT and EOS</span>
+</div>
+</div>
+<!-- ===== TIMELINE VISUALIZATION ===== -->
+<h2 class="section-header">Publication Timeline</h2>
+<div class="timeline-container">
+<div class="timeline-svg-wrap" id="timeline-svg-wrap"></div>
+<div class="timeline-legend">
+<div class="legend-item"><span class="legend-dot" style="background:#6b46c1;"></span> Phase 1: Stanford to Trondheim (1974–1983)</div>
+<div class="legend-item"><span class="legend-dot" style="background:#c53030;"></span> Phase 2: Building the PVT Framework (1983–1995)</div>
+<div class="legend-item"><span class="legend-dot" style="background:#2b6cb0;"></span> Phase 3: Gas Condensate &amp; the Monograph (1995–2010)</div>
+<div class="legend-item"><span class="legend-dot" style="background:#276749;"></span> Phase 4: Shale, AI Era, Knowledge Capture (2010–present)</div>
+</div>
+</div>
+<!-- ===== CAREER ARC BY PHASE ===== -->
+<h2 class="section-header">Career Arc</h2>
+<!-- Phase 1 -->
+<div class="phase-section phase1-bar">
+<div class="phase-header" onclick="togglePhase(this)">
+<h3>Phase 1: Stanford and the Move to Trondheim (1974–1983)</h3>
+<span class="phase-toggle">▼</span>
+</div>
+<div class="phase-teaser">
+<p>Stanford under Standing for four years, then Trondheim. The 1979 lab manuals that NTNU still uses, the 1981 Whitson-Torp CVD paper that put Curtis on the SPE map, the 1980 EUR-183 precursor, and the 1983 SPE-12233 flagship were all written in this stretch. Curtis was 27 when SPE-12233 came out; he was still a PhD candidate.</p>
+</div>
+<span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">▼</span></span>
+<div class="phase-content">
+<div class="phase-body">
+<p>Curtis was born in Oklahoma in 1956. He came to <strong>Stanford University</strong> in 1974 to study petroleum engineering and joined the group of <strong>Marshall B. “Muz” Standing</strong>, the phase-behaviour pioneer who had come to Stanford from Chevron Research and was himself Donald Katz's first PhD graduate at the University of Michigan in 1941. The lineage that runs through Curtis's professional life starts here: Katz to Standing, Standing to Whitson. Curtis stayed four years.</p>
+<div class="phase-meta-box">
+<strong>Stanford 1974–1978.</strong> BSc Petroleum Engineering. The 1977 lab-core report at Stanford is the earliest paper in the public record. Curtis's work in this period laid the empirical foundations for the C7+ characterisation that would come later.
         </div>
-
-        <p>In 1978 Curtis moved to <strong>Trondheim</strong> and joined the <strong>Norwegian Institute of Technology</strong> (NTH, now NTNU). The 1979 <em>Reservoarteknikk 1, Laboratory Manual</em> and 1980 <em>Reservoarteknikk II Lecture notes</em> are the foundational teaching documents he built when he arrived. Norwegian petroleum-engineering students still use the framework he established.</p>
-
-        <div class="phase-meta-box">
-          <strong>The 1979 NTH notes.</strong> Two unpublished pedagogical notes from his first year at NTH show the pattern that defines Curtis's work. The permeability-distribution note gives the closed-form Abramowitz-Stegun rational approximation for the inverse normal CDF and a symmetry trick that halves the work for 99-layer reservoirs. The relative-permeability-ratio note extends Knopp's 1965 water-oil construction to gas-oil and gas-water systems with a three-region log-linear equation. Both papers do the same thing in different domains: name the distribution, find the coordinate system in which each piece is linear, let regression do the work.
+<p>In 1978 Curtis moved to <strong>Trondheim</strong> and joined the <strong>Norwegian Institute of Technology</strong> (NTH, now NTNU). The 1979 <em>Reservoarteknikk 1, Laboratory Manual</em> and 1980 <em>Reservoarteknikk II Lecture notes</em> are the foundational teaching documents he built when he arrived. Norwegian petroleum-engineering students still use the framework he established.</p>
+<div class="phase-meta-box">
+<strong>The 1979 NTH notes.</strong> Two unpublished pedagogical notes from his first year at NTH show the pattern that defines Curtis's work. The permeability-distribution note gives the closed-form Abramowitz-Stegun rational approximation for the inverse normal CDF and a symmetry trick that halves the work for 99-layer reservoirs. The relative-permeability-ratio note extends Knopp's 1965 water-oil construction to gas-oil and gas-water systems with a three-region log-linear equation. Both papers do the same thing in different domains: name the distribution, find the coordinate system in which each piece is linear, let regression do the work.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>The 1980 EUR-183 precursor.</strong> Presented at the European Offshore Petroleum Conference in London when Curtis was 24. The first published version of the three-parameter gamma distribution for C7+ molar mass, Riazi-Daubert critical-property correlations with constant Watson K, and a Sturge's-rule regrouping scheme. Three years later this matures into SPE-12233.
+<div class="phase-influence-box">
+<strong>The 1980 EUR-183 precursor.</strong> Presented at the European Offshore Petroleum Conference in London when Curtis was 24. The first published version of the three-parameter gamma distribution for C7+ molar mass, Riazi-Daubert critical-property correlations with constant Watson K, and a Sturge's-rule regrouping scheme. Three years later this matures into SPE-12233.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>SPE-10067 (1981).</strong> The Whitson-Torp constant-volume-depletion paper. The first SPE paper most reservoir engineers associate with Curtis. Material balance applied to measured CVD vapour compositions and liquid saturations recovers liquid compositions, K-values, densities, and the C7+ molecular mass of each phase without the costly liquid-removal flashes of Dodson-Goodwill-Mayer 1953. The Hoffman log <em>Kp</em> vs <em>F</em> plot becomes a data-quality test. 177 citations.
+<div class="phase-meta-box">
+<strong>SPE-10067 (1981).</strong> The Whitson-Torp constant-volume-depletion paper. The first SPE paper most reservoir engineers associate with Curtis. Material balance applied to measured CVD vapour compositions and liquid saturations recovers liquid compositions, K-values, densities, and the C7+ molecular mass of each phase without the costly liquid-removal flashes of Dodson-Goodwill-Mayer 1953. The Hoffman log <em>Kp</em> vs <em>F</em> plot becomes a data-quality test. 177 citations.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>SPE-12233 (1983) &mdash; the flagship.</strong> &ldquo;Characterizing Hydrocarbon Plus Fractions.&rdquo; The most cited paper of Curtis's career (446 OpenAlex citations). The three-parameter gamma distribution for C7+ molar mass, Gauss-Laguerre quadrature for selecting pseudocomponents, Riazi-Daubert correlations with Watson K anchoring, and refitted constants for high boiling points. Forty years on, every commercial reservoir simulator and PVT package implements this method by default. Sole author. Written while Curtis was still a PhD candidate at NTH.
+<div class="phase-influence-box">
+<strong>SPE-12233 (1983) — the flagship.</strong> “Characterizing Hydrocarbon Plus Fractions.” The most cited paper of Curtis's career (446 OpenAlex citations). The three-parameter gamma distribution for C7+ molar mass, Gauss-Laguerre quadrature for selecting pseudocomponents, Riazi-Daubert correlations with Watson K anchoring, and refitted constants for high boiling points. Forty years on, every commercial reservoir simulator and PVT package implements this method by default. Sole author. Written while Curtis was still a PhD candidate at NTH.
         </div>
-
-        <p>The phase also includes serious commercial work for the major Norwegian operators. The 1980 Sleipner study, the 1981 Phillips Albuskjell study, and similar reports for Norsk Hydro and Saga Petroleum (Tommeliten 1983, Belanak 1985, Ekofisk 1985, Eldfisk 1985, Midgard 1986) are confidential and not listed here individually. They are evidence that Curtis was already the operator-trusted authority on North Sea PVT before he had finished his PhD.</p>
-
-        <p>Six papers from Curtis's flagship 1983 work, together with the 1984 SPE-11200 sensitivity analysis and SPE-12634 critical-property paper, are detailed in the publication list below. The 1981 Haaland MS thesis at NTH, which Curtis advised (with Glasø as official supervisor), experimentally validated the 1980 method on five North Sea oils and fed back into the wider alpha range that appears in SPE-12233 two years later. A clean example of the student-advisor feedback loop refining a published method.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Phase 2 -->
-  <div class="phase-section phase2-bar">
-    <div class="phase-header" onclick="togglePhase(this)">
-      <h3>Phase 2: Building the PVT Framework (1983&ndash;1995)</h3>
-      <span class="phase-toggle">&#9660;</span>
-    </div>
-    <div class="phase-teaser">
-      <p>The decade everything got built. Negative flash with Michelsen. Brine EOS with Søreide. Diffusion correlation with Riazi. Compositional grading with Belery. Generalised black-oil with da Silva. High-pressure gas material balance with Fetkovich. Gas-condensate sampling and well deliverability with Fevang. Whitson AS founded along the way to put a name on the consulting work that had already been running.</p>
-    </div>
-    <span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">&#9660;</span></span>
-    <div class="phase-content">
-      <div class="phase-body">
-        <p>Curtis defended his PhD at NTH in 1984. The external examination committee was <strong>Michael L. Michelsen</strong> (DTU) and <strong>Khalid Aziz</strong> (Stanford). Six years later, on a Trondheim visit, Michelsen quipped about the doctor's ring Curtis had just collected from the jewelry store: <em>&ldquo;Do you have a doctor's degree.&rdquo;</em> Curtis answered yes, mentioned the 1984 defence, and asked Michelsen when he had received his. Michelsen's answer: <em>&ldquo;never.&rdquo;</em> A shock. Curtis had not known. Michelsen never had a PhD.</p>
-
-        <div class="phase-meta-box">
-          <strong>Whitson AS founded, 1988.</strong> The earliest published trace of the consulting practice is the byline on the 1984 SPE-11200 paper: &ldquo;Rogaland Regional College&rdquo; with the footnote &ldquo;Now with Whitson Oil Inc.&rdquo; A one-person consulting outfit was already operating under Curtis's name by 1982&ndash;83. Whitson AS was incorporated in 1988 and runs today simply as <em>whitson</em>, with offices in Trondheim and Houston.
+<p>The phase also includes serious commercial work for the major Norwegian operators. The 1980 Sleipner study, the 1981 Phillips Albuskjell study, and similar reports for Norsk Hydro and Saga Petroleum (Tommeliten 1983, Belanak 1985, Ekofisk 1985, Eldfisk 1985, Midgard 1986) are confidential and not listed here individually. They are evidence that Curtis was already the operator-trusted authority on North Sea PVT before he had finished his PhD.</p>
+<p>Six papers from Curtis's flagship 1983 work, together with the 1984 SPE-11200 sensitivity analysis and SPE-12634 critical-property paper, are detailed in the publication list below. The 1981 Haaland MS thesis at NTH, which Curtis advised (with Glasø as official supervisor), experimentally validated the 1980 method on five North Sea oils and fed back into the wider alpha range that appears in SPE-12233 two years later. A clean example of the student-advisor feedback loop refining a published method.</p>
+</div>
+</div>
+</div>
+<!-- Phase 2 -->
+<div class="phase-section phase2-bar">
+<div class="phase-header" onclick="togglePhase(this)">
+<h3>Phase 2: Building the PVT Framework (1983–1995)</h3>
+<span class="phase-toggle">▼</span>
+</div>
+<div class="phase-teaser">
+<p>The decade everything got built. Negative flash with Michelsen. Brine EOS with Søreide. Diffusion correlation with Riazi. Compositional grading with Belery. Generalised black-oil with da Silva. High-pressure gas material balance with Fetkovich. Gas-condensate sampling and well deliverability with Fevang. Whitson AS founded along the way to put a name on the consulting work that had already been running.</p>
+</div>
+<span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">▼</span></span>
+<div class="phase-content">
+<div class="phase-body">
+<p>Curtis defended his PhD at NTH in 1984. The external examination committee was <strong>Michael L. Michelsen</strong> (DTU) and <strong>Khalid Aziz</strong> (Stanford). Six years later, on a Trondheim visit, Michelsen quipped about the doctor's ring Curtis had just collected from the jewelry store: <em>“Do you have a doctor's degree.”</em> Curtis answered yes, mentioned the 1984 defence, and asked Michelsen when he had received his. Michelsen's answer: <em>“never.”</em> A shock. Curtis had not known. Michelsen never had a PhD.</p>
+<div class="phase-meta-box">
+<strong>Whitson AS founded, 1988.</strong> The earliest published trace of the consulting practice is the byline on the 1984 SPE-11200 paper: “Rogaland Regional College” with the footnote “Now with Whitson Oil Inc.” A one-person consulting outfit was already operating under Curtis's name by 1982–83. Whitson AS was incorporated in 1988 and runs today simply as <em>whitson</em>, with offices in Trondheim and Houston.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>The negative flash &mdash; the green ink on beige paper.</strong> In November 1985 Aaron Zick visited NTH and explained to Curtis over a three-hour dinner at an Italian pizzeria in Trondheim how he had been solving the two-phase flash for vapour or liquid phase fractions less than zero or greater than one in his Arco EOS software. Curtis named it the negative flash. In 1988, at his first DTU meeting with Michelsen (introduced by Jan Reffstrup), Curtis asked if Michelsen had done flash calculations in the single-phase region. Michelsen's reply: <em>&ldquo;I fail to see the interest or use of such calculations.&rdquo;</em> The next morning Michelsen telephoned and asked Curtis to drop by. When he arrived, Michelsen had five to six pages <em>&ldquo;written in green ink on beige paper&rdquo;</em>: the entire saddle-point interpretation of the negative flash on the Gibbs energy surface, the convergence proof, and a request to write the paper together. Whitson and Michelsen 1989, <em>Fluid Phase Equilibria</em> 53, 51&ndash;71. Implemented in every commercial flash routine since.
+<div class="phase-influence-box">
+<strong>The negative flash — the green ink on beige paper.</strong> In November 1985 Aaron Zick visited NTH and explained to Curtis over a three-hour dinner at an Italian pizzeria in Trondheim how he had been solving the two-phase flash for vapour or liquid phase fractions less than zero or greater than one in his Arco EOS software. Curtis named it the negative flash. In 1988, at his first DTU meeting with Michelsen (introduced by Jan Reffstrup), Curtis asked if Michelsen had done flash calculations in the single-phase region. Michelsen's reply: <em>“I fail to see the interest or use of such calculations.”</em> The next morning Michelsen telephoned and asked Curtis to drop by. When he arrived, Michelsen had five to six pages <em>“written in green ink on beige paper”</em>: the entire saddle-point interpretation of the negative flash on the Gibbs energy surface, the convergence proof, and a request to write the paper together. Whitson and Michelsen 1989, <em>Fluid Phase Equilibria</em> 53, 51–71. Implemented in every commercial flash routine since.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>Banff 1989 &mdash; red-and-black methane.</strong> On the trip to present the negative-flash paper at PPEPPD, Curtis and Michelsen stopped at <strong>Larry C. Young's</strong> home in Calgary. After dinner Curtis raised composition-dependent binary interaction parameters. Michelsen said only that he would have to think about it. Next morning at breakfast he had the argument: if you split methane molecules into red and black subsets with identical properties, a thermodynamically consistent mixing rule must give the same answer. Linear composition-dependent BIPs failed the test. The Michelsen-Kistenmacher 1990 FPE paper followed. The red-and-black-methane test effectively ended that approach.
+<div class="phase-meta-box">
+<strong>Banff 1989 — red-and-black methane.</strong> On the trip to present the negative-flash paper at PPEPPD, Curtis and Michelsen stopped at <strong>Larry C. Young's</strong> home in Calgary. After dinner Curtis raised composition-dependent binary interaction parameters. Michelsen said only that he would have to think about it. Next morning at breakfast he had the argument: if you split methane molecules into red and black subsets with identical properties, a thermodynamically consistent mixing rule must give the same answer. Linear composition-dependent BIPs failed the test. The Michelsen-Kistenmacher 1990 FPE paper followed. The red-and-black-methane test effectively ended that approach.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>The Søreide-Whitson brine EOS (1992).</strong> One of the most-used EOS-brine frameworks in petroleum engineering and now well beyond it. Extends Peng-Robinson to handle hydrocarbons, CO2, N2, and H2S with pure water and NaCl brine. Modified alpha function reproduces water and brine vapour pressures within 0.2% from 15 to 325&deg;C and 0 to 5 M NaCl. Asymmetric BIPs for the aqueous and non-aqueous phases (acknowledged thermodynamically inconsistent but empirically necessary). The CO2/brine correlation has been picked up well outside petroleum engineering in carbon capture and storage and geothermal applications. 335 citations.
+<div class="phase-influence-box">
+<strong>The Søreide-Whitson brine EOS (1992).</strong> One of the most-used EOS-brine frameworks in petroleum engineering and now well beyond it. Extends Peng-Robinson to handle hydrocarbons, CO2, N2, and H2S with pure water and NaCl brine. Modified alpha function reproduces water and brine vapour pressures within 0.2% from 15 to 325°C and 0 to 5 M NaCl. Asymmetric BIPs for the aqueous and non-aqueous phases (acknowledged thermodynamically inconsistent but empirically necessary). The CO2/brine correlation has been picked up well outside petroleum engineering in carbon capture and storage and geothermal applications. 335 citations.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>The Gibbs-Duhem moment (1992).</strong> On a Michelsen visit to Trondheim, Curtis described his approach to the isothermal chemical-gravity equilibrium problem: Newton on pressure, GDEM-accelerated successive substitution on composition, both subject to equilibrium constraints and mole fractions summing to one. Michelsen's response was <em>&ldquo;ja&rdquo;</em>, followed by the comment that <em>the summation to 1 constraint followed from the Gibbs-Duhem equation</em>. Curtis didn't fully grasp what that meant until he wrote it up. The result is the famous paragraph in Whitson and Belery 1994 (SPE-28000): the gradient calculation can jump from any reference depth to any target depth in one step, even when a saturated gas-oil contact lies between them.
+<div class="phase-meta-box">
+<strong>The Gibbs-Duhem moment (1992).</strong> On a Michelsen visit to Trondheim, Curtis described his approach to the isothermal chemical-gravity equilibrium problem: Newton on pressure, GDEM-accelerated successive substitution on composition, both subject to equilibrium constraints and mole fractions summing to one. Michelsen's response was <em>“ja”</em>, followed by the comment that <em>the summation to 1 constraint followed from the Gibbs-Duhem equation</em>. Curtis didn't fully grasp what that meant until he wrote it up. The result is the famous paragraph in Whitson and Belery 1994 (SPE-28000): the gradient calculation can jump from any reference depth to any target depth in one step, even when a saturated gas-oil contact lies between them.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>Fevang-Whitson gas-condensate work, 1994&ndash;1996.</strong> Curtis's NTH PhD student <strong>Øivind Fevang</strong>. The 1994 SPE-28829 paper introduced the Equilibrium Contact Mixing framework for gas-condensate sampling and the counterintuitive recommendation that gas coning during an oil test is the preferred sampling design. The 1996 SPE-30714 paper on well deliverability is the landmark: three-region radial flow (two-phase near-wellbore with constant flowing GOR, condensate buildup gas-only on the CVD curve, single-phase gas above dewpoint) and the three-part pseudopressure rate equation that has been the practical industry standard for thirty years. 364 citations.
+<div class="phase-influence-box">
+<strong>Fevang-Whitson gas-condensate work, 1994–1996.</strong> Curtis's NTH PhD student <strong>Øivind Fevang</strong>. The 1994 SPE-28829 paper introduced the Equilibrium Contact Mixing framework for gas-condensate sampling and the counterintuitive recommendation that gas coning during an oil test is the preferred sampling design. The 1996 SPE-30714 paper on well deliverability is the landmark: three-region radial flow (two-phase near-wellbore with constant flowing GOR, condensate buildup gas-only on the CVD curve, single-phase gas above dewpoint) and the three-part pseudopressure rate equation that has been the practical industry standard for thirty years. 364 citations.
         </div>
-
-        <p>Other Phase 2 contributions that landed: the 1986 SPE-15482 variable-rate well-test paper with Sognesand (rigorous van Everdingen-Meyer superposition with the appropriate dimensionless pressure solution, not the late-time log approximation); the 1988 SPE-18315 Generalised Black-Oil formulation with da Silva and Søreide; the 1991 SPE-22921 high-pressure gas material-balance paper with Fetkovich and Reese; the 1993 Riazi-Whitson dense-fluid diffusion correlation in <em>Industrial &amp; Engineering Chemistry Research</em>; the 1994 Christoffersen-Whitson capillary-pressure work (with the long-running CVD experimental programme at NTH); the 1994 Hearn-Whitson EOR paper; and the year-long 1989&ndash;1992 collaboration with Michelsen on the constant-volume-diffusion problem from Christoffersen's PhD, which Michelsen called <em>&ldquo;a fun problem.&rdquo;</em></p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Phase 3 -->
-  <div class="phase-section phase3-bar">
-    <div class="phase-header" onclick="togglePhase(this)">
-      <h3>Phase 3: Gas Condensate, Black-Oil PVT, EOR, and the Monograph (1995&ndash;2010)</h3>
-      <span class="phase-toggle">&#9660;</span>
-    </div>
-    <div class="phase-teaser">
-      <p>The monograph year. <em>Phase Behavior</em> with Michael Brule, SPE Monograph Volume 20, the textbook everyone has on the shelf. Then a decade of pushing it forwards: the Høier compositional-grading series, the Singh BOPVT series, the Alavian CO2-EOR work for fractured carbonates, a peer paper with Keith Coats on conformance versus dispersion. Whitson Academy on YouTube started near the end of this stretch, and the courses on the channel cover most of what is in the monograph and quite a bit that is not.</p>
-    </div>
-    <span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">&#9660;</span></span>
-    <div class="phase-content">
-      <div class="phase-body">
-
-        <div class="phase-influence-box">
-          <strong>The 2000 SPE Monograph &mdash; <em>Phase Behavior</em> by Whitson and Brule.</strong> SPE Monograph Volume 20. The most cited textbook in compositional reservoir engineering. Nine chapters and four appendices spanning volumetric and phase behaviour, gas and oil properties, EOS calculations, heptanes-plus characterisation, conventional PVT measurements, black-oil PVT formulations, gas-injection processes, water-hydrocarbon systems, and worked examples. The matured presentation of everything Curtis and the collaborators had built across Phase 1 and Phase 2. The reference text for every NTNU petroleum-engineering MSc, the anchor of the Whitson Academy courses, and the foundation every commercial PVT package's developer reaches for.
+<p>Other Phase 2 contributions that landed: the 1986 SPE-15482 variable-rate well-test paper with Sognesand (rigorous van Everdingen-Meyer superposition with the appropriate dimensionless pressure solution, not the late-time log approximation); the 1988 SPE-18315 Generalised Black-Oil formulation with da Silva and Søreide; the 1991 SPE-22921 high-pressure gas material-balance paper with Fetkovich and Reese; the 1993 Riazi-Whitson dense-fluid diffusion correlation in <em>Industrial &amp; Engineering Chemistry Research</em>; the 1994 Christoffersen-Whitson capillary-pressure work (with the long-running CVD experimental programme at NTH); the 1994 Hearn-Whitson EOR paper; and the year-long 1989–1992 collaboration with Michelsen on the constant-volume-diffusion problem from Christoffersen's PhD, which Michelsen called <em>“a fun problem.”</em></p>
+</div>
+</div>
+</div>
+<!-- Phase 3 -->
+<div class="phase-section phase3-bar">
+<div class="phase-header" onclick="togglePhase(this)">
+<h3>Phase 3: Gas Condensate, Black-Oil PVT, EOR, and the Monograph (1995–2010)</h3>
+<span class="phase-toggle">▼</span>
+</div>
+<div class="phase-teaser">
+<p>The monograph year. <em>Phase Behavior</em> with Michael Brule, SPE Monograph Volume 20, the textbook everyone has on the shelf. Then a decade of pushing it forwards: the Høier compositional-grading series, the Singh BOPVT series, the Alavian CO2-EOR work for fractured carbonates, a peer paper with Keith Coats on conformance versus dispersion. Whitson Academy on YouTube started near the end of this stretch, and the courses on the channel cover most of what is in the monograph and quite a bit that is not.</p>
+</div>
+<span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">▼</span></span>
+<div class="phase-content">
+<div class="phase-body">
+<div class="phase-influence-box">
+<strong>The 2000 SPE Monograph — <em>Phase Behavior</em> by Whitson and Brule.</strong> SPE Monograph Volume 20. The most cited textbook in compositional reservoir engineering. Nine chapters and four appendices spanning volumetric and phase behaviour, gas and oil properties, EOS calculations, heptanes-plus characterisation, conventional PVT measurements, black-oil PVT formulations, gas-injection processes, water-hydrocarbon systems, and worked examples. The matured presentation of everything Curtis and the collaborators had built across Phase 1 and Phase 2. The reference text for every NTNU petroleum-engineering MSc, the anchor of the Whitson Academy courses, and the foundation every commercial PVT package's developer reaches for.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>The Hoier-Whitson compositional-grading series.</strong> Lars Høier was Curtis's PhD student. SPE-49269 (1998), SPE-63085 (2001), SPE-90379 (2004). Three papers on isothermal and thermal compositional gradients in petroleum reservoirs, with thermal-diffusion treatment, gas-oil contact search procedures, and case studies on North Sea volatile oils. The series builds directly on Whitson-Belery 1994.
+<div class="phase-meta-box">
+<strong>The Hoier-Whitson compositional-grading series.</strong> Lars Høier was Curtis's PhD student. SPE-49269 (1998), SPE-63085 (2001), SPE-90379 (2004). Three papers on isothermal and thermal compositional gradients in petroleum reservoirs, with thermal-diffusion treatment, gas-oil contact search procedures, and case studies on North Sea volatile oils. The series builds directly on Whitson-Belery 1994.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>The Singh-Whitson modified-black-oil series.</strong> Kameshwar Singh has been a long-running collaborator since the late 1990s, still co-authoring with Curtis in 2025. SPE-63087 Fevang-Singh-Whitson (2000), SPE-109596 Singh et al (2007), SPE-117930 Singh-Whitson (2008), SPE-120743 Singh-Whitson (2009), SPE-143612 Singh-Whitson-Benjemia (2011). A consistent black-oil PVT framework extending the 1988 Whitson-da Silva-Soreide GBO formulation into a generation of practical operator deployments. The line continues into Phase 4 via the 2017 synthetic-gas-condensate paper SPE-185791 and the 2025 ADIPEC pair SPE-225382 and SPE-225405.
+<div class="phase-meta-box">
+<strong>The Singh-Whitson modified-black-oil series.</strong> Kameshwar Singh has been a long-running collaborator since the late 1990s, still co-authoring with Curtis in 2025. SPE-63087 Fevang-Singh-Whitson (2000), SPE-109596 Singh et al (2007), SPE-117930 Singh-Whitson (2008), SPE-120743 Singh-Whitson (2009), SPE-143612 Singh-Whitson-Benjemia (2011). A consistent black-oil PVT framework extending the 1988 Whitson-da Silva-Soreide GBO formulation into a generation of practical operator deployments. The line continues into Phase 4 via the 2017 synthetic-gas-condensate paper SPE-185791 and the 2025 ADIPEC pair SPE-225382 and SPE-225405.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>The Alavian-Whitson CO2 EOR series.</strong> Sayyed Ahmad Alavian's NTNU PhD. IPTC-10641 (2005), SPE-125362 (2009), SPE-129666 (2010), SPE-170912 (2014). Numerical modelling of CO2 injection in fractured chalk reservoirs, with the Ekofisk-era diffusion machinery feeding directly into modern CO2 EOR practice.
+<div class="phase-meta-box">
+<strong>The Alavian-Whitson CO2 EOR series.</strong> Sayyed Ahmad Alavian's NTNU PhD. IPTC-10641 (2005), SPE-125362 (2009), SPE-129666 (2010), SPE-170912 (2014). Numerical modelling of CO2 injection in fractured chalk reservoirs, with the Ekofisk-era diffusion machinery feeding directly into modern CO2 EOR practice.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>Coats-Whitson-Thomas (2004).</strong> SPE-90390. Keith H. Coats was the author of the SENSOR reservoir simulator and arguably the most influential reservoir-simulation engineer of his generation. This paper on conformance-as-dispersion is one of the relatively rare peer-to-peer Whitson collaborations rather than supervisor-to-student.
+<div class="phase-meta-box">
+<strong>Coats-Whitson-Thomas (2004).</strong> SPE-90390. Keith H. Coats was the author of the SENSOR reservoir simulator and arguably the most influential reservoir-simulation engineer of his generation. This paper on conformance-as-dispersion is one of the relatively rare peer-to-peer Whitson collaborations rather than supervisor-to-student.
         </div>
-
-        <p>Other Phase 3 work covered here: the 1997 IBC Whitson-Fevang gas-condensate-bound paper, the 1999 SCA-40899 Saevareid-Whitson-Fevang work, the 2003 TIPM Whitson-Fevang-Saevareid follow-up, and the 2006 Whitson SPE Handbook chapter on compositional simulation. The Juell-Whitson-Hoda integrated asset modelling series (2009&ndash;2010) and the Rahmawati WAG-injection optimisation work (2010&ndash;2013) round out the NTNU student-led research running through the period.</p>
-
-        <p>The <strong>Whitson Academy</strong> YouTube channel was founded around 2012, near the boundary between this phase and the next. It now hosts approximately 100 free courses on PVT, EOS, gas condensate, black-oil PVT, pipe flow, and reservoir engineering. The Whitson Wiki at <a href="https://wiki.whitson.com/" target="_blank">wiki.whitson.com</a> is the searchable companion. Both are free and public.</p>
-      </div>
-    </div>
-  </div>
-
-  <!-- Phase 4 -->
-  <div class="phase-section phase4-bar">
-    <div class="phase-header" onclick="togglePhase(this)">
-      <h3>Phase 4: Liquid-Rich Shale, the AI Era, and Knowledge Capture (2010&ndash;present)</h3>
-      <span class="phase-toggle">&#9660;</span>
-    </div>
-    <div class="phase-teaser">
-      <p>Shale changed the question. Producing oil-gas ratios were two orders of magnitude below in-situ values, conventional sampling was useless, and the practical PVT framework had not been written yet. Curtis wrote it in 2012 with Snjezana Sunjerga and has been refining it since with Carlsen, Mydland, Younus, Alqahtani, Singh, Dahouk, Yusra, and his son Markus. Forty-seven Phase-4 papers extend the framework into well-box heterogeneity, surface-process discipline, unconventional EOR, numerical rate-transient analysis, compositional-uncertainty propagation, and even underground hydrogen storage. The 2023 tribute to Michael Michelsen is the most personal paper of his career and reads like nothing else he has published. Curtis is still teaching, still consulting, still publishing.</p>
-    </div>
-    <span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">&#9660;</span></span>
-    <div class="phase-content">
-      <div class="phase-body">
-
-        <div class="phase-influence-box">
-          <strong>SPE-155499 (2012) &mdash; the liquid-rich shale (LRS) paper.</strong> Whitson and Sunjerga. The paper that defined the LRS PVT problem: producing oil-gas ratios run 2&ndash;50 times below in-situ values due to ultra-low permeability and large drawdown. Introduces the dimensionless producing OGR <em>r<sub>pD</sub></em> as oil-recovery efficiency, the multi-mixture CCE laboratory test that replaces CVD for LRS sampling, EOS development from production data when conventional sampling fails, black-oil table extrapolation to the critical point for single-phase initialisation, and the rule that sampling must be early and at minimum drawdown. Every later unconventional PVT study on the page traces back to this paper. 147 citations.
+<p>Other Phase 3 work covered here: the 1997 IBC Whitson-Fevang gas-condensate-bound paper, the 1999 SCA-40899 Saevareid-Whitson-Fevang work, the 2003 TIPM Whitson-Fevang-Saevareid follow-up, and the 2006 Whitson SPE Handbook chapter on compositional simulation. The Juell-Whitson-Hoda integrated asset modelling series (2009–2010) and the Rahmawati WAG-injection optimisation work (2010–2013) round out the NTNU student-led research running through the period.</p>
+<p>The <strong>Whitson Academy</strong> YouTube channel was founded around 2012, near the boundary between this phase and the next. It now hosts approximately 100 free courses on PVT, EOS, gas condensate, black-oil PVT, pipe flow, and reservoir engineering. The Whitson Wiki at <a href="https://wiki.whitson.com/" target="_blank">wiki.whitson.com</a> is the searchable companion. Both are free and public.</p>
+</div>
+</div>
+</div>
+<!-- Phase 4 -->
+<div class="phase-section phase4-bar">
+<div class="phase-header" onclick="togglePhase(this)">
+<h3>Phase 4: Liquid-Rich Shale, the AI Era, and Knowledge Capture (2010–present)</h3>
+<span class="phase-toggle">▼</span>
+</div>
+<div class="phase-teaser">
+<p>Shale changed the question. Producing oil-gas ratios were two orders of magnitude below in-situ values, conventional sampling was useless, and the practical PVT framework had not been written yet. Curtis wrote it in 2012 with Snjezana Sunjerga and has been refining it since with Carlsen, Mydland, Younus, Alqahtani, Singh, Dahouk, Yusra, and his son Markus. Forty-seven Phase-4 papers extend the framework into well-box heterogeneity, surface-process discipline, unconventional EOR, numerical rate-transient analysis, compositional-uncertainty propagation, and even underground hydrogen storage. The 2023 tribute to Michael Michelsen is the most personal paper of his career and reads like nothing else he has published. Curtis is still teaching, still consulting, still publishing.</p>
+</div>
+<span class="phase-read-more" onclick="togglePhase(this)">Read more <span class="read-more-arrow">▼</span></span>
+<div class="phase-content">
+<div class="phase-body">
+<div class="phase-influence-box">
+<strong>SPE-155499 (2012) — the liquid-rich shale (LRS) paper.</strong> Whitson and Sunjerga. The paper that defined the LRS PVT problem: producing oil-gas ratios run 2–50 times below in-situ values due to ultra-low permeability and large drawdown. Introduces the dimensionless producing OGR <em>r<sub>pD</sub></em> as oil-recovery efficiency, the multi-mixture CCE laboratory test that replaces CVD for LRS sampling, EOS development from production data when conventional sampling fails, black-oil table extrapolation to the critical point for single-phase initialisation, and the rule that sampling must be early and at minimum drawdown. Every later unconventional PVT study on the page traces back to this paper. 147 citations.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2010&ndash;2014 the Alavian-Ghasemi-Singh-Juell cluster.</strong> Curtis through the early 2010s with NTNU PhD students and whitson colleagues. Alavian on CO<sub>2</sub>-EOR in chalk (SPE-125362, SPE-129666, SPE-170912 global-component-lumping with Martinsen). Ghasemi on SAGD and bitumen (SPE-147072 black-oil-proxy, SPE-165416 Athabasca, SPE-175022 compositional variation, IPTC-18033 solvent-SAGD). Juell-Whitson on backpressure equations for layered gas (SPE-146066) and LRS well modelling (SPE-166380, SPE-153073 cyclic shut-in). Singh-Whitson continuing the BOPVT line into the 2011 OMV Tunisia application (SPE-143612). Martinsen et al. SPE-135085 Pauto Complex Colombia in 2010 quietly establishes the field-wide-fluid-characterisation framework that becomes the load-bearing concept ten years later.
+<div class="phase-meta-box">
+<strong>2010–2014 the Alavian-Ghasemi-Singh-Juell cluster.</strong> Curtis through the early 2010s with NTNU PhD students and whitson colleagues. Alavian on CO<sub>2</sub>-EOR in chalk (SPE-125362, SPE-129666, SPE-170912 global-component-lumping with Martinsen). Ghasemi on SAGD and bitumen (SPE-147072 black-oil-proxy, SPE-165416 Athabasca, SPE-175022 compositional variation, IPTC-18033 solvent-SAGD). Juell-Whitson on backpressure equations for layered gas (SPE-146066) and LRS well modelling (SPE-166380, SPE-153073 cyclic shut-in). Singh-Whitson continuing the BOPVT line into the 2011 OMV Tunisia application (SPE-143612). Martinsen et al. SPE-135085 Pauto Complex Colombia in 2010 quietly establishes the field-wide-fluid-characterisation framework that becomes the load-bearing concept ten years later.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2014&ndash;2017 EOS lumping, chalk-CO<sub>2</sub>, and synthetic gas condensate.</strong> Alavian-Whitson-Martinsen 2014 SPE-170912 global component lumping. Ghasemi-Astutik-Alavian-Whitson chalk-CO<sub>2</sub> trilogy (SPE-179550, SPE-180102-PA, JPSE 2017) building experimental and EOS framework for North Sea chalk CO<sub>2</sub> injection at reservoir conditions. Singh-Whitson 2017 SPE-185791 synthetic fluid selection for high-pressure GC flow tests. Hoffmann-Astutik-Rasmussen-Whitson 2016 SPE-184119 diluent-injection optimisation for heavy oil. The chalk-CO<sub>2</sub> series consolidates lab apparatus and EOS workflows that are still cited by operators planning CCS-in-depleted-chalk-reservoir projects.
+<div class="phase-meta-box">
+<strong>2014–2017 EOS lumping, chalk-CO<sub>2</sub>, and synthetic gas condensate.</strong> Alavian-Whitson-Martinsen 2014 SPE-170912 global component lumping. Ghasemi-Astutik-Alavian-Whitson chalk-CO<sub>2</sub> trilogy (SPE-179550, SPE-180102-PA, JPSE 2017) building experimental and EOS framework for North Sea chalk CO<sub>2</sub> injection at reservoir conditions. Singh-Whitson 2017 SPE-185791 synthetic fluid selection for high-pressure GC flow tests. Hoffmann-Astutik-Rasmussen-Whitson 2016 SPE-184119 diluent-injection optimisation for heavy oil. The chalk-CO<sub>2</sub> series consolidates lab apparatus and EOS workflows that are still cited by operators planning CCS-in-depleted-chalk-reservoir projects.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2018&ndash;2019 LRS in operation.</strong> Whitson-Alqahtani-Chuparova 2018 URTeC-2882502 lays out the well-box concept: parasequence-scale fluid plus petrophysical heterogeneity as the right resolution for liquid-rich-shale modelling. Alqahtani-Whitson 2018 SPE-190797 on molar distributions. Carlsen et al. 2019 SPE-196056 names <em>in-situ representative</em> vs <em>reservoir representative</em> samples and corrects the industry misconception that only the former are usable for EOS development. Carlsen et al. 2019 URTeC-539 introduces the CVI-CVD HnP-PVT experiment. Younus-Whitson-Alavian-Carlsen-Martinsen-Singh 2019 URTeC-551 publishes the Field-Wide Equation of State Model Development methodology that becomes the common backbone for every paper after it: one tuned EOS across all the wells in a basin, not per-well per-sample.
+<div class="phase-meta-box">
+<strong>2018–2019 LRS in operation.</strong> Whitson-Alqahtani-Chuparova 2018 URTeC-2882502 lays out the well-box concept: parasequence-scale fluid plus petrophysical heterogeneity as the right resolution for liquid-rich-shale modelling. Alqahtani-Whitson 2018 SPE-190797 on molar distributions. Carlsen et al. 2019 SPE-196056 names <em>in-situ representative</em> vs <em>reservoir representative</em> samples and corrects the industry misconception that only the former are usable for EOS development. Carlsen et al. 2019 URTeC-539 introduces the CVI-CVD HnP-PVT experiment. Younus-Whitson-Alavian-Carlsen-Martinsen-Singh 2019 URTeC-551 publishes the Field-Wide Equation of State Model Development methodology that becomes the common backbone for every paper after it: one tuned EOS across all the wells in a basin, not per-well per-sample.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>2020 surface-process triplet.</strong> Three Whitson-AS papers in twelve months that together discipline the upstream-to-rate-data side of unconventional reservoir analysis. <strong>IPTC-19596</strong> Carlsen-Dahouk-Mydland-Whitson formalises a three-tier compositional-tracking method hierarchy (Methods 1/2/3 keyed to data availability) and adds Method 3, a no-regression direct-recombination wellstream-prediction technique validated within line thickness across four fluid types. <strong>IPTC-19775</strong> Carlsen-Whitson quantifies separator-oil shrinkage with the exact <em>R<sub>p</sub> = R<sub>p,sep</sub>/SF + FF</em> decomposition and shows that constant-SF practice biases STO rates by up to 20% in near-critical wells. <strong>SPE-199982</strong> Carlsen-Dahouk-Hoffmann-Whitson names CGR normalisation as the rate correction that operators must apply before invoking exotic physics (pore confinement, gas adsorption, fluid heterogeneity) to explain anomalous declining-CGR signatures in shale wells. Pairs with the field-wide EOS as basin-scale rate-reporting infrastructure.
+<div class="phase-influence-box">
+<strong>2020 surface-process triplet.</strong> Three Whitson-AS papers in twelve months that together discipline the upstream-to-rate-data side of unconventional reservoir analysis. <strong>IPTC-19596</strong> Carlsen-Dahouk-Mydland-Whitson formalises a three-tier compositional-tracking method hierarchy (Methods 1/2/3 keyed to data availability) and adds Method 3, a no-regression direct-recombination wellstream-prediction technique validated within line thickness across four fluid types. <strong>IPTC-19775</strong> Carlsen-Whitson quantifies separator-oil shrinkage with the exact <em>R<sub>p</sub> = R<sub>p,sep</sub>/SF + FF</em> decomposition and shows that constant-SF practice biases STO rates by up to 20% in near-critical wells. <strong>SPE-199982</strong> Carlsen-Dahouk-Hoffmann-Whitson names CGR normalisation as the rate correction that operators must apply before invoking exotic physics (pore confinement, gas adsorption, fluid heterogeneity) to explain anomalous declining-CGR signatures in shale wells. Pairs with the field-wide EOS as basin-scale rate-reporting infrastructure.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2020&ndash;2021 unconventional EOR cluster.</strong> Mydland-Yusra-Whitson-Dahouk-Carlsen 2020 SPE-200396 names the HnP vs F2F mechanism dichotomy: HnP is <em>mixing</em> on the shattered volume (governed by first-contact miscibility); F2F is <em>displacement</em> on the inter-fracture matrix (governed by multi-contact miscibility). The counter-intuitive corollary is that MCM is irrelevant for HnP (the cyclic same-well geometry erases any miscible-front benefit). Mydland-Whitson-Carlsen-Dahouk-Yusra 2020 URTeC-2765 shows BOPVT systematically overpredicts HnP recovery and provides the recurrently-changing-table fix via CVI/CVD compositions for a 34&ndash;36&times; speedup over fully compositional simulation. Carlsen et al. 2020 URTeC-2869 ("HnP Second Take") field-validates the shattered-volume hypothesis via the wellstream-C<sub>7+</sub> signature in an Eagle Ford gas-condensate-area pilot with EP Energy. Mydland-Carlsen-Whitson 2021 URTeC-5016 dedicates eighteen pages to the Gas HnP PVT Experiment protocol with the <em>E<sub>HnP</sub></em> EOR-efficiency KPI and the mixing-vs-vaporisation cycle-by-cycle decomposition.
+<div class="phase-meta-box">
+<strong>2020–2021 unconventional EOR cluster.</strong> Mydland-Yusra-Whitson-Dahouk-Carlsen 2020 SPE-200396 names the HnP vs F2F mechanism dichotomy: HnP is <em>mixing</em> on the shattered volume (governed by first-contact miscibility); F2F is <em>displacement</em> on the inter-fracture matrix (governed by multi-contact miscibility). The counter-intuitive corollary is that MCM is irrelevant for HnP (the cyclic same-well geometry erases any miscible-front benefit). Mydland-Whitson-Carlsen-Dahouk-Yusra 2020 URTeC-2765 shows BOPVT systematically overpredicts HnP recovery and provides the recurrently-changing-table fix via CVI/CVD compositions for a 34–36× speedup over fully compositional simulation. Carlsen et al. 2020 URTeC-2869 ("HnP Second Take") field-validates the shattered-volume hypothesis via the wellstream-C<sub>7+</sub> signature in an Eagle Ford gas-condensate-area pilot with EP Energy. Mydland-Carlsen-Whitson 2021 URTeC-5016 dedicates eighteen pages to the Gas HnP PVT Experiment protocol with the <em>E<sub>HnP</sub></em> EOR-efficiency KPI and the mixing-vs-vaporisation cycle-by-cycle decomposition.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>Well-box heterogeneity and the LRS history-match non-uniqueness theorem.</strong> Alqahtani-Khan-Chuparova-Whitson 2020 SPE-200014 carries the 2018 well-box prospectus through to numerical proof: with a two-layer non-communicating MFHW Eagle Ford simulation, <em>k</em><sub>max</sub>/<em>k</em><sub>min</sub> &lt; 10 is the threshold below which arithmetic-average single-symmetry-element modelling reproduces full-heterogeneity producing-GOR behaviour (~three orders of magnitude CPU saving). Names fluid-heterogeneity-only differential depletion as a mechanism distinct from the classical petrophysical-contrast version. The fundamental non-uniqueness result: well-level production data cannot constrain the layered architecture without vertical fluid sampling. Alqahtani-Dahouk-Whitson-Chuparova 2020 URTeC-2545 field-validates the theorem on a real Eagle Ford well, quantifies a 10&ndash;30% EUR forecast spread across equally-good history matches, and delivers ensemble forecasting as the operational response.
+<div class="phase-meta-box">
+<strong>Well-box heterogeneity and the LRS history-match non-uniqueness theorem.</strong> Alqahtani-Khan-Chuparova-Whitson 2020 SPE-200014 carries the 2018 well-box prospectus through to numerical proof: with a two-layer non-communicating MFHW Eagle Ford simulation, <em>k</em><sub>max</sub>/<em>k</em><sub>min</sub> &lt; 10 is the threshold below which arithmetic-average single-symmetry-element modelling reproduces full-heterogeneity producing-GOR behaviour (~three orders of magnitude CPU saving). Names fluid-heterogeneity-only differential depletion as a mechanism distinct from the classical petrophysical-contrast version. The fundamental non-uniqueness result: well-level production data cannot constrain the layered architecture without vertical fluid sampling. Alqahtani-Dahouk-Whitson-Chuparova 2020 URTeC-2545 field-validates the theorem on a real Eagle Ford well, quantifies a 10–30% EUR forecast spread across equally-good history matches, and delivers ensemble forecasting as the operational response.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>2021&ndash;2022 numerical rate-transient analysis (NRTA) series.</strong> Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 generalises the Bowie-Ewert 2020 numerically-assisted RTA from single-phase oil to all fluid systems via the modified linear flow parameter <em>LFP'</em> = <em>LFP</em>&times;&radic;&phi; and the saturation-weighted total formation volume factor <em>B<sub>ti</sub></em>. Names three fundamental equivalence relationships (same <em>LFP'</em> &rarr; same IA rates; same <em>LFP'/OOIP</em> &rarr; same GOR and water-cut trajectories; same both &rarr; identical performance). The 2022 follow-up Carlsen-Whitson pair (URTeC-3718584 Part 1 theory and SPE-210420 Part 2 application) extends the framework to fracture-spacing-heterogeneous geometries via the Acu&ntilde;a fractal-network <em>&delta;</em> parameter, identifies the <em>b</em>&nbsp;=&nbsp;1/(1&nbsp;&minus;&nbsp;&delta;) relationship between Arps-hyperbolic-decline and fractional-RTA, and reconciles classical NRTA, Thompson-Ruddick multiphase flowing material balance, and fractional RTA on the Crow well from the SPE data repository. The series is dedicated to Mike Fetkovich.
+<div class="phase-influence-box">
+<strong>2021–2022 numerical rate-transient analysis (NRTA) series.</strong> Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 generalises the Bowie-Ewert 2020 numerically-assisted RTA from single-phase oil to all fluid systems via the modified linear flow parameter <em>LFP'</em> = <em>LFP</em>×√φ and the saturation-weighted total formation volume factor <em>B<sub>ti</sub></em>. Names three fundamental equivalence relationships (same <em>LFP'</em> → same IA rates; same <em>LFP'/OOIP</em> → same GOR and water-cut trajectories; same both → identical performance). The 2022 follow-up Carlsen-Whitson pair (URTeC-3718584 Part 1 theory and SPE-210420 Part 2 application) extends the framework to fracture-spacing-heterogeneous geometries via the Acuña fractal-network <em>δ</em> parameter, identifies the <em>b</em> = 1/(1 − δ) relationship between Arps-hyperbolic-decline and fractional-RTA, and reconciles classical NRTA, Thompson-Ruddick multiphase flowing material balance, and fractional RTA on the Crow well from the SPE data repository. The series is dedicated to Mike Fetkovich.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2022&ndash;2024 compositional-uncertainty triptych.</strong> Younus-Whitson-Martinsen 2022 SPE-211391 introduces the four-source GC compositional-uncertainty taxonomy (baseline shift, internal standard, component MW, GOR recombination) and the <em>C<sub>x</sub></em> diagnostic plot that QCs new samples against a field-wide gamma model. Whitson-Younus-Nielsen 2023 SPE-217328 is the middle paper: after seventy years where the Hoffman log <em>K<sub>p</sub></em>-vs-<em>F</em> plot could only flag inconsistent separator samples, the paper introduces the first quantitative correction method, adapting the Fevang-Whitson 1994 ECM framework from cross-sample reservoir-fluid reconstruction to single-sample QC. Synthetic-error injection tests recover corrected wellstream compositions within 0.2 mol% of exact under heavy laboratory errors. Nielsen-Wanat-Whitson 2024 SPE-220699 (with Ed Wanat of ExxonMobil) completes the programme by propagating compositional uncertainty forward through phase-behaviour calculations and demonstrating that recombination-GOR error dominates over all other compositional-uncertainty sources. Three papers, one operational framework.
+<div class="phase-meta-box">
+<strong>2022–2024 compositional-uncertainty triptych.</strong> Younus-Whitson-Martinsen 2022 SPE-211391 introduces the four-source GC compositional-uncertainty taxonomy (baseline shift, internal standard, component MW, GOR recombination) and the <em>C<sub>x</sub></em> diagnostic plot that QCs new samples against a field-wide gamma model. Whitson-Younus-Nielsen 2023 SPE-217328 is the middle paper: after seventy years where the Hoffman log <em>K<sub>p</sub></em>-vs-<em>F</em> plot could only flag inconsistent separator samples, the paper introduces the first quantitative correction method, adapting the Fevang-Whitson 1994 ECM framework from cross-sample reservoir-fluid reconstruction to single-sample QC. Synthetic-error injection tests recover corrected wellstream compositions within 0.2 mol% of exact under heavy laboratory errors. Nielsen-Wanat-Whitson 2024 SPE-220699 (with Ed Wanat of ExxonMobil) completes the programme by propagating compositional uncertainty forward through phase-behaviour calculations and demonstrating that recombination-GOR error dominates over all other compositional-uncertainty sources. Three papers, one operational framework.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2023 energy-transition turn &mdash; underground hydrogen storage.</strong> Nielsen-Arekhov-Whitson-Clemens-Zhainakov-Wegner 2023 SPE-214437 applies the same PVT-engineering discipline Curtis built up across forty years to a new domain: hydrogen-hydrocarbon mixtures stored in a depleted Austrian natural gas field. First-authored by Markus Hays Nielsen with OMV E&amp;P (operator) and HOT Microfluidics (microfluidic PVT lab) collaborators. Publishes the first complete PR EOS + Pen&eacute;loux + Jaubert-BIP parameter set for H<sub>2</sub>-hydrocarbon UHS mixtures, names the LBC viscosity tuning via H<sub>2</sub> critical-temperature reduction, and documents the anomalous near-constant H<sub>2</sub>-hydrocarbon mixture viscosity at high H<sub>2</sub> content as a failure mode for both LBC and Pedersen viscosity models. Same EOS framework, same lab-PVT QC discipline, new molecule.
+<div class="phase-meta-box">
+<strong>2023 energy-transition turn — underground hydrogen storage.</strong> Nielsen-Arekhov-Whitson-Clemens-Zhainakov-Wegner 2023 SPE-214437 applies the same PVT-engineering discipline Curtis built up across forty years to a new domain: hydrogen-hydrocarbon mixtures stored in a depleted Austrian natural gas field. First-authored by Markus Hays Nielsen with OMV E&amp;P (operator) and HOT Microfluidics (microfluidic PVT lab) collaborators. Publishes the first complete PR EOS + Penéloux + Jaubert-BIP parameter set for H<sub>2</sub>-hydrocarbon UHS mixtures, names the LBC viscosity tuning via H<sub>2</sub> critical-temperature reduction, and documents the anomalous near-constant H<sub>2</sub>-hydrocarbon mixture viscosity at high H<sub>2</sub> content as a failure mode for both LBC and Pedersen viscosity models. Same EOS framework, same lab-PVT QC discipline, new molecule.
         </div>
-
-        <div class="phase-influence-box">
-          <strong>&ldquo;Nothing Arbitrary&rdquo; (2024).</strong> Curtis's most personal paper. <em>Fluid Phase Equilibria</em> 577, 113907. A chronological recollection of his thirty-five-year haphazard relationship with Michael Michelsen, who died 26 August 2020. The Italian pizzeria with Zick in 1985, the green ink on beige paper in 1988, the red-and-black methane in Banff 1989, the doctor's ring exchange in Trondheim 1990, the Gibbs-Duhem moment in 1992, the constant-volume-diffusion code Michelsen called &ldquo;fun,&rdquo; the September 1992 transient-well solution sent by mail, and the 3 June 2020 last email about binary interaction parameters and demixing, three months before Michelsen's death. The title captures Curtis's view of what made Michelsen's papers different. The abstract is the line everyone quotes: <em>&ldquo;fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics.&rdquo;</em>
+<div class="phase-influence-box">
+<strong>“Nothing Arbitrary” (2024).</strong> Curtis's most personal paper. <em>Fluid Phase Equilibria</em> 577, 113907. A chronological recollection of his thirty-five-year haphazard relationship with Michael Michelsen, who died 26 August 2020. The Italian pizzeria with Zick in 1985, the green ink on beige paper in 1988, the red-and-black methane in Banff 1989, the doctor's ring exchange in Trondheim 1990, the Gibbs-Duhem moment in 1992, the constant-volume-diffusion code Michelsen called “fun,” the September 1992 transient-well solution sent by mail, and the 3 June 2020 last email about binary interaction parameters and demixing, three months before Michelsen's death. The title captures Curtis's view of what made Michelsen's papers different. The abstract is the line everyone quotes: <em>“fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics.”</em>
+</div>
+<div class="phase-meta-box">
+<strong>2025 ADIPEC papers.</strong> Three papers landed at ADIPEC 2025 from the whitson team: SPE-225382 Singh-Whitson-Nielsen on comparing BOPVT tables against laboratory PVT data, SPE-225470 Nielsen-Younus on end-to-end fluid-model development for the Volve field, and SPE-225405 Singh-Whitson on diagnostic tracking of produced gas and condensate for gas-oil communication at an ADNOC asset. The compositional-uncertainty and field-wide-EOS threads from the 2019–2024 cluster carry directly into the new work.
         </div>
-
-        <div class="phase-meta-box">
-          <strong>2025 ADIPEC papers.</strong> Three papers landed at ADIPEC 2025 from the whitson team: SPE-225382 Singh-Whitson-Nielsen on comparing BOPVT tables against laboratory PVT data, SPE-225470 Nielsen-Younus on end-to-end fluid-model development for the Volve field, and SPE-225405 Singh-Whitson on diagnostic tracking of produced gas and condensate for gas-oil communication at an ADNOC asset. The compositional-uncertainty and field-wide-EOS threads from the 2019&ndash;2024 cluster carry directly into the new work.
-        </div>
-
-        <p>Curtis continues to teach six courses at NTNU (TPG4150 Reservoir Recovery Techniques, TPG4145 Reservoir Fluids and Flow, PG8604 Enhanced Oil Recovery, and three specialisation/master's courses), to consult through whitson, and to publish.</p>
-
-        <!-- CURTIS REVIEW: any anecdotes from the 2010s or 2020s Curtis would like to add - the founding of Whitson Academy, the whitson team scale-up, the move into AI-assisted knowledge capture? -->
-
-      </div>
-    </div>
-  </div>
-
-  <!-- ===== HONOURS & AWARDS ===== -->
-  <h2 class="section-header">Honours and Awards</h2>
-  <div class="awards-section">
-    <p class="awards-intro">Curtis is a two-time SPE Cedric K. Fergusson Medallist (1997, 2001), holds the SPE Anthony F. Lucas Gold Medal (the SPE's top technical honour), was elected to the Norwegian Academy of Technological Sciences (2012), and received AIME Honorary Membership (2023). Whitson Academy and Whitson Wiki, which are free and which working engineers actually use, are not awards but they belong on this list anyway. <!-- CURTIS REVIEW: any other recognitions, distinguished-lecturer years, honorary doctorates, special-issue dedications -->.</p>
-
-    <div class="award-entry">
-      <span class="award-year">1996</span>
-      <div>
-        <div class="award-name">Best Paper Award &mdash; SPE Reservoir Engineering</div>
-        <div class="award-desc">For the Fevang-Whitson three-region gas-condensate well-deliverability paper (SPE-30714), which has been the practical industry standard for thirty years. <!-- CURTIS REVIEW: confirm this was the 1996 SPE Reservoir Engineering best paper, not a different category --></div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">1997</span>
-      <div>
-        <div class="award-name">Cedric K. Fergusson Medal &mdash; Society of Petroleum Engineers</div>
-        <div class="award-desc">First of two. Awarded to Curtis and &Oslash;ivind Fevang for outstanding peer-reviewed work, recognising the Fevang-Whitson gas-condensate framework.</div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">2001</span>
-      <div>
-        <div class="award-name">Cedric K. Fergusson Medal &mdash; Society of Petroleum Engineers (second time)</div>
-        <div class="award-desc">Awarded to Curtis and Lars H&oslash;ier for the compositional-grading series. Curtis is a two-time recipient of the Fergusson Medal, a distinction shared by very few SPE members. <!-- CURTIS REVIEW: confirm 2001 vs 2002 year and the specific paper that won --></div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">2011</span>
-      <div>
-        <div class="award-name">Anthony F. Lucas Gold Medal &mdash; Society of Petroleum Engineers</div>
-        <div class="award-desc">SPE's highest technical award. Citation: <em>&ldquo;For his contributions in compositional analysis that are a major reason for the large growth in compositional reservoir simulation.&rdquo;</em></div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">2012</span>
-      <div>
-        <div class="award-name">Elected Member &mdash; Norwegian Academy of Technological Sciences</div>
-        <div class="award-desc">Elected to NTVA (Norges Tekniske Vitenskapsakademi) in recognition of contributions to engineering science. The Norwegian equivalent of fellowship in a national academy of engineering.</div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">~2012</span>
-      <div>
-        <div class="award-name">Whitson Academy YouTube channel founded</div>
-        <div class="award-desc">Approximately 100 free courses on PVT, EOS, gas condensate, black-oil PVT, pipe flow, and reservoir engineering. With the companion Whitson Wiki (wiki.whitson.com), it is one of the largest free educational resources in petroleum engineering and is used worldwide.</div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">2023</span>
-      <div>
-        <div class="award-name">AIME Honorary Membership</div>
-        <div class="award-desc">The citation: <em>&ldquo;For his foremost technical achievement in petroleum fluid characterization, which enables compositional reservoir simulation, and for his influential consulting services, classroom and online industrial courses to share his profound knowledge and experiences with petroleum engineers.&rdquo;</em></div>
-      </div>
-    </div>
-
-    <div class="award-entry">
-      <span class="award-year">&nbsp;</span>
-      <div>
-        <div class="award-name">SPE Distinguished Member</div>
-        <div class="award-desc">Recognised by the Society of Petroleum Engineers for sustained, outstanding service and contributions to the petroleum engineering profession.</div>
-      </div>
-    </div>
-
-    <!-- CURTIS REVIEW: any other awards, SPE distinguished lecturer years, honorary doctorates, university medals, special-issue dedications - please add and we'll backfill. -->
-  </div>
-
-  <!-- ===== BROWSE & FILTER PUBLICATIONS (collapsible) ===== -->
-  <h2 class="section-header ref-section-header" onclick="toggleRefSection(this)">
+<p>Curtis continues to teach six courses at NTNU (TPG4150 Reservoir Recovery Techniques, TPG4145 Reservoir Fluids and Flow, PG8604 Enhanced Oil Recovery, and three specialisation/master's courses), to consult through whitson, and to publish.</p>
+<!-- CURTIS REVIEW: any anecdotes from the 2010s or 2020s Curtis would like to add - the founding of Whitson Academy, the whitson team scale-up, the move into AI-assisted knowledge capture? -->
+</div>
+</div>
+</div>
+<!-- ===== HONOURS & AWARDS ===== -->
+<h2 class="section-header">Honours and Awards</h2>
+<div class="awards-section">
+<p class="awards-intro">Curtis is a two-time SPE Cedric K. Fergusson Medallist (1997, 2001), holds the SPE Anthony F. Lucas Gold Medal (the SPE's top technical honour), was elected to the Norwegian Academy of Technological Sciences (2012), and received AIME Honorary Membership (2023). Whitson Academy and Whitson Wiki, which are free and which working engineers actually use, are not awards but they belong on this list anyway. <!-- CURTIS REVIEW: any other recognitions, distinguished-lecturer years, honorary doctorates, special-issue dedications -->.</p>
+<div class="award-entry">
+<span class="award-year">1996</span>
+<div>
+<div class="award-name">Best Paper Award — SPE Reservoir Engineering</div>
+<div class="award-desc">For the Fevang-Whitson three-region gas-condensate well-deliverability paper (SPE-30714), which has been the practical industry standard for thirty years. <!-- CURTIS REVIEW: confirm this was the 1996 SPE Reservoir Engineering best paper, not a different category --></div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">1997</span>
+<div>
+<div class="award-name">Cedric K. Fergusson Medal — Society of Petroleum Engineers</div>
+<div class="award-desc">First of two. Awarded to Curtis and Øivind Fevang for outstanding peer-reviewed work, recognising the Fevang-Whitson gas-condensate framework.</div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">2001</span>
+<div>
+<div class="award-name">Cedric K. Fergusson Medal — Society of Petroleum Engineers (second time)</div>
+<div class="award-desc">Awarded to Curtis and Lars Høier for the compositional-grading series. Curtis is a two-time recipient of the Fergusson Medal, a distinction shared by very few SPE members. <!-- CURTIS REVIEW: confirm 2001 vs 2002 year and the specific paper that won --></div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">2011</span>
+<div>
+<div class="award-name">Anthony F. Lucas Gold Medal — Society of Petroleum Engineers</div>
+<div class="award-desc">SPE's highest technical award. Citation: <em>“For his contributions in compositional analysis that are a major reason for the large growth in compositional reservoir simulation.”</em></div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">2012</span>
+<div>
+<div class="award-name">Elected Member — Norwegian Academy of Technological Sciences</div>
+<div class="award-desc">Elected to NTVA (Norges Tekniske Vitenskapsakademi) in recognition of contributions to engineering science. The Norwegian equivalent of fellowship in a national academy of engineering.</div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">~2012</span>
+<div>
+<div class="award-name">Whitson Academy YouTube channel founded</div>
+<div class="award-desc">Approximately 100 free courses on PVT, EOS, gas condensate, black-oil PVT, pipe flow, and reservoir engineering. With the companion Whitson Wiki (wiki.whitson.com), it is one of the largest free educational resources in petroleum engineering and is used worldwide.</div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year">2023</span>
+<div>
+<div class="award-name">AIME Honorary Membership</div>
+<div class="award-desc">The citation: <em>“For his foremost technical achievement in petroleum fluid characterization, which enables compositional reservoir simulation, and for his influential consulting services, classroom and online industrial courses to share his profound knowledge and experiences with petroleum engineers.”</em></div>
+</div>
+</div>
+<div class="award-entry">
+<span class="award-year"> </span>
+<div>
+<div class="award-name">SPE Distinguished Member</div>
+<div class="award-desc">Recognised by the Society of Petroleum Engineers for sustained, outstanding service and contributions to the petroleum engineering profession.</div>
+</div>
+</div>
+<!-- CURTIS REVIEW: any other awards, SPE distinguished lecturer years, honorary doctorates, university medals, special-issue dedications - please add and we'll backfill. -->
+</div>
+<!-- ===== BROWSE & FILTER PUBLICATIONS (collapsible) ===== -->
+<h2 class="section-header ref-section-header" onclick="toggleRefSection(this)">
     Browse and Filter Publications
-    <span class="ref-toggle">&#9660;</span>
-  </h2>
-  <p class="ref-section-hint">Click to browse all <span id="total-count-hint">89</span> publications with co-author and theme filters. More papers are being added.</p>
-  <div class="ref-section-content" id="ref-section-content">
-    <div class="controls-panel">
-      <div class="filter-section">
-        <label for="coauthor-select">Filter by Co-Author</label>
-        <select id="coauthor-select">
-          <option value="">-- All Co-Authors --</option>
-        </select>
-      </div>
-      <div class="filter-section">
-        <label>Filter by Theme</label>
-        <div class="theme-buttons" id="theme-buttons">
-          <button class="theme-btn show-all active" data-theme="">Show All</button>
-        </div>
-      </div>
-      <div class="filter-status" id="filter-status">
+    <span class="ref-toggle">▼</span>
+</h2>
+<p class="ref-section-hint">Click to browse all <span id="total-count-hint">89</span> publications with co-author and theme filters. More papers are being added.</p>
+<div class="ref-section-content" id="ref-section-content">
+<div class="controls-panel">
+<div class="filter-section">
+<label for="coauthor-select">Filter by Co-Author</label>
+<select id="coauthor-select">
+<option value="">-- All Co-Authors --</option>
+</select>
+</div>
+<div class="filter-section">
+<label>Filter by Theme</label>
+<div class="theme-buttons" id="theme-buttons">
+<button class="theme-btn show-all active" data-theme="">Show All</button>
+</div>
+</div>
+<div class="filter-status" id="filter-status">
         Showing <span class="count" id="showing-count">89</span> of <span id="total-count">89</span> publications
       </div>
-    </div>
+</div>
+<h3 style="color: #003366; font-size: 1.1em; margin: 0 0 16px; padding-bottom: 6px; border-bottom: 1px solid #e8ecf0;">Publication List</h3>
+<div class="pub-table-wrap" id="pub-list"></div>
+</div>
+<!-- ===== COLLABORATOR NETWORK ===== -->
+<h2 class="section-header">Key Collaborators</h2>
+<div class="collab-section">
+<p>None of the work on this page is solo. The list below names the people whose work appears next to Curtis's. Standing at the start, Michelsen across the middle, a long parade of NTNU PhD students through the 1990s and 2000s, and the whitson team that has been writing the recent papers. Anyone whose name appears in the publication list belongs here; the cards below are the longer-running or more pivotal partnerships.</p>
+<div class="collab-grid">
 
-    <h3 style="color: #003366; font-size: 1.1em; margin: 0 0 16px; padding-bottom: 6px; border-bottom: 1px solid #e8ecf0;">Publication List</h3>
-    <div class="pub-table-wrap" id="pub-list"></div>
-  </div>
 
-  <!-- ===== COLLABORATOR NETWORK ===== -->
-  <h2 class="section-header">Key Collaborators</h2>
-  <div class="collab-section">
-    <p>None of the work on this page is solo. The list below names the people whose work appears next to Curtis's. Standing at the start, Michelsen across the middle, a long parade of NTNU PhD students through the 1990s and 2000s, and the whitson team that has been writing the recent papers. Anyone whose name appears in the publication list belongs here; the cards below are the longer-running or more pivotal partnerships.</p>
-    <div class="collab-grid">
-      <div class="collab-card">
-        <div class="collab-name">Marshall B. Standing</div>
-        <div class="collab-period">1974&ndash;1978 (Stanford)</div>
-        <div class="collab-role">Curtis's BSc supervisor at Stanford. Donald Katz's first PhD graduate (Michigan 1941). The phase-behaviour pioneer whose K-value correlations from the 1940s and 1970s are still embedded in commercial software. The first link of the lineage that runs through Curtis's professional life.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Khalid Aziz</div>
-        <div class="collab-period">1984 (PhD committee)</div>
-        <div class="collab-role">Stanford professor of petroleum engineering, external committee member on Curtis's 1984 NTH PhD defence (with Michelsen). Long-time figure in reservoir simulation.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Michael L. Michelsen</div>
-        <div class="collab-period">1985&ndash;2020 (DTU)</div>
-        <div class="collab-role">The thirty-five-year haphazard relationship documented in Curtis's 2024 FPE recollection. The negative flash (1989), the red-and-black methane consistency test (1989), the Gibbs-Duhem grading shortcut (1992), unpublished constant-volume-diffusion code and transient-well-performance solutions (1992), the BIPs question in the last email (June 2020). Died 26 August 2020.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Aaron A. Zick</div>
-        <div class="collab-period">1985 (Trondheim)</div>
-        <div class="collab-role">Visited NTH in November 1985 and explained the Rachford-Rice construction with phase fractions outside [0,1] over a three-hour Italian-pizzeria dinner in Trondheim. The seed of the negative flash. Declined first authorship when offered.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Stein B. Torp</div>
-        <div class="collab-period">1981 (NTH)</div>
-        <div class="collab-role">NTH colleague, co-author of the 1981 SPE-10067 constant-volume-depletion paper. The first SPE paper most reservoir engineers associate with Curtis.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Ingolf Søreide</div>
-        <div class="collab-period">1988&ndash;1992 (NTH)</div>
-        <div class="collab-role">Curtis's PhD student in the late 1980s. Co-author of the 1988 Generalised Black-Oil paper (SPE-18315), the 1989 capillary-flash note, and the 1992 Søreide-Whitson brine EOS in <em>Fluid Phase Equilibria</em>. By 1992 at Norsk Hydro.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Flavio da Silva</div>
-        <div class="collab-period">1988&ndash;1994 (Petrofina/Total)</div>
-        <div class="collab-role">Co-author of the 1988 GBO paper and the Petrofina collaborator on Ekofisk compositional-grading and nitrogen-injection work that fed into the 1994 Whitson-Belery paper.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Mohammad R. Riazi</div>
-        <div class="collab-period">1993 (collaboration)</div>
-        <div class="collab-role">Co-author of the 1980 Riazi-Daubert critical-property correlations that underpin Curtis's 1983 C7+ characterisation, and again co-author of the 1993 Riazi-Whitson IECR dense-fluid diffusion paper that became the default liquid-phase diffusion option in commercial simulators.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Kjell Christoffersen</div>
-        <div class="collab-period">1989&ndash;1994 (NTH)</div>
-        <div class="collab-role">Curtis's PhD student. The Ruska PVT cell constant-volume-diffusion experiments at Ekofisk for nitrogen EOR, and the 1994 SPE-26673 capillary-pressure paper. The experiments that motivated Michelsen to write the collocation-based diffusion code in 1992.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Paul Belery</div>
-        <div class="collab-period">1993&ndash;1994 (Petrofina/Total)</div>
-        <div class="collab-role">Petrofina collaborator. Co-author of the 1994 SPE-28000 compositional-gradients paper that contains the famous Gibbs-Duhem shortcut paragraph from Curtis's 1992 Trondheim conversation with Michelsen.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">&Oslash;ivind Fevang</div>
-        <div class="collab-period">1992&ndash;2003 (NTH/whitson)</div>
-        <div class="collab-role">Curtis's NTH PhD student 1992&ndash;1995. The three-region gas-condensate well-deliverability model (SPE-30714, 1996) is the centrepiece of his dissertation and the practical industry standard for gas-condensate near-wellbore flow. The Fevang-Whitson partnership extended through the late 1990s.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Michael R. Brule</div>
-        <div class="collab-period">2000 (Monograph)</div>
-        <div class="collab-role">Co-author of the 2000 SPE Monograph <em>Phase Behavior</em>, the magnum opus.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Lars H&oslash;ier</div>
-        <div class="collab-period">1995&ndash;2004 (NTH/NTNU)</div>
-        <div class="collab-role">Curtis's PhD student. Compositional-grading series SPE-49269 (1998), SPE-63085 (2001), SPE-90379 (2004) extending the Whitson-Belery 1994 framework.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Kameshwar Singh</div>
-        <div class="collab-period">2000&ndash;present (whitson)</div>
-        <div class="collab-role">Long-running BOPVT collaborator. The Singh-Whitson modified-black-oil series SPE-63087 (2000), SPE-109596 (2007), SPE-117930 (2008), SPE-120743 (2009), and SPE-143612 (2011), then continuing through the 2017 SPE-185791 synthetic-gas-condensate paper into the 2025 ADIPEC pair SPE-225382 (BOPVT vs lab-PVT comparison, Singh-Whitson-Nielsen) and SPE-225405 (ADNOC tracer-based diagnostic tracking, Singh-Whitson). Twenty-five years of BOPVT work alongside Curtis.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Sayyed Ahmad Alavian</div>
-        <div class="collab-period">2005&ndash;2014 (NTNU)</div>
-        <div class="collab-role">Curtis's NTNU PhD student. CO2-EOR series IPTC-10641 (2005), SPE-125362 (2009), SPE-129666 (2010), SPE-170912 (2014). Numerical modelling of CO2 injection in fractured chalk reservoirs.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Keith H. Coats</div>
-        <div class="collab-period">2004&ndash;2009 (peer)</div>
-        <div class="collab-role">Author of the SENSOR reservoir simulator and one of the most influential reservoir-simulation engineers of his generation. Co-authored the SPE-90390 conformance-as-dispersion paper with Curtis and Larry Thomas. A peer collaboration rather than supervisor-to-student.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Mohammad Ghasemi</div>
-        <div class="collab-period">2011&ndash;2021 (NTNU)</div>
-        <div class="collab-role">NTNU postdoc and PhD. SAGD, chalk CO2 injection, heavy-oil PVT characterisation. Long-running collaborator through the 2010s.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Snjezana Sunjerga</div>
-        <div class="collab-period">2012 (NTNU/whitson)</div>
-        <div class="collab-role">Co-author of the 2012 SPE-155499 paper that defined the liquid-rich-shale PVT problem.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Mathias L. Carlsen</div>
-        <div class="collab-period">2019&ndash;present (whitson)</div>
-        <div class="collab-role">Senior whitson engineer. First-author of the 2019&ndash;2022 unconventional-PVT methodology sequence: URTeC-539 (HnP CVI-CVD framework, 2019), SPE-196056 (LRS fluid sampling, 2019), the 2020 surface-process triplet (IPTC-19596 compositional tracking, IPTC-19775 separator shrinkage, SPE-199982 CGR normalisation), URTeC-2869 (HnP Second Take, 2020), URTeC-2765 (BOPVT vs COMP, 2020), SPE-205884 (Numerical RTA, 2021), and the NRTA Part 1 / Part 2 fractional-RTA pair (URTeC-3718584 and SPE-210420, 2022). The architect of the modern whitson-AS unconventional toolkit on top of the Whitson-Sunjerga 2012 LRS framework.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Stian Mydland</div>
-        <div class="collab-period">2020&ndash;present (whitson / NTNU)</div>
-        <div class="collab-role">whitson AS engineer; NTNU PhD. Lead of the unconventional-EOR mechanisms work. First-author SPE-200396 (HnP vs F2F mechanisms with shattered-volume premise and T<sub>ex,MOD</sub> dual-porosity multiplier, 2020), URTeC-2765 (BOPVT vs compositional reservoir simulation of gas-based EOR, 2020), and URTeC-5016 (the Gas HnP PVT Experiment with E<sub>HnP</sub> KPI and mixing/vaporisation decomposition, 2021). Co-author across the broader 2020&ndash;2022 unconventional cluster.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Mohamad Majzoub Dahouk</div>
-        <div class="collab-period">2020&ndash;present (whitson)</div>
-        <div class="collab-role">whitson AS engineer. Co-author across the 2020&ndash;2022 unconventional cluster: the surface-process triplet (IPTC-19596, IPTC-19775, SPE-199982), the HnP Second Take, BOPVT-vs-COMP, the 2020 well-box heterogeneity field paper (URTeC-2545), and the 2021 Numerical RTA paper (SPE-205884). The connective engineering layer in much of the recent Whitson-AS published work.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Bilal Younus</div>
-        <div class="collab-period">2019&ndash;present (whitson)</div>
-        <div class="collab-role">whitson AS senior engineer. First-author of URTeC-551 (the Field-Wide EOS Development paper, 2019) that became the common-backbone EOS for the unconventional cluster, and SPE-211391 (the gamma-model GC-error taxonomy with the C<sub>x</sub> diagnostic plot, 2022). Co-author of SPE-217328 (separator-sample QC, 2023) and the broader 2022&ndash;2024 compositional-uncertainty triptych.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Ilina Yusra</div>
-        <div class="collab-period">2019&ndash;present (whitson)</div>
-        <div class="collab-role">whitson AS engineer. Co-author across the 2019&ndash;2022 unconventional cluster, including URTeC-539, SPE-196056, SPE-200396 (HnP/F2F mechanisms), URTeC-2765, URTeC-2869, and SPE-205884 (Numerical RTA). Long-standing collaborator on the liquid-rich-shale workflow papers.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Fahd Alqahtani</div>
-        <div class="collab-period">2018&ndash;2020 (NTNU)</div>
-        <div class="collab-role">NTNU PhD candidate (King Saud University funding). Lead of the well-box fluid-heterogeneity series with Curtis: the 2018 URTeC-2882502 prospectus (Whitson-Alqahtani-Chuparova), the 2018 SPE-190797 molar-distributions-of-equilibrium-systems paper, and the 2020 numerical and field validation papers SPE-200014 and URTeC-2545 that established the <em>k</em><sub>max</sub>/<em>k</em><sub>min</sub> &lt; 10 threshold and the LRS history-match non-uniqueness theorem.</div>
-      </div>
-      <div class="collab-card">
-        <div class="collab-name">Snj&oacute;lfur &Oslash;rn Martinsen</div>
-        <div class="collab-period">2010&ndash;present (whitson)</div>
-        <div class="collab-role">whitson AS senior engineer. Co-author of the 2010 SPE-135085 Pauto-Complex advanced-fluid-characterisation paper that established the PVT framework underpinning the later field-wide-EOS development. Continuing collaborator on the 2014 global-component-lumping paper (SPE-170912 Alavian-Whitson-Martinsen), the 2019 URTeC-551 field-wide EOS, the 2019 SPE-196056 LRS sampling paper, and the 2022 SPE-211391 compositional-uncertainty paper.</div>
-      </div>
-      <div class="collab-card" style="border-top-color: #D97706;">
-        <div class="collab-name">Markus Hays Nielsen</div>
-        <div class="collab-period">2019&ndash;present</div>
-        <div class="collab-role">Curtis's son. Petroleum engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. The June 2020 last email from Michelsen, three months before his death, was about Markus's thesis. Whitson AS engineer specialising in PVT uncertainty and EOS development. First-author SPE-214437 (2023, Underground Hydrogen Storage with OMV E&amp;P and HOT Microfluidics), SPE-220699 (2024, compositional-uncertainty forward propagation with Ed Wanat of ExxonMobil), and SPE-225470 (2025, end-to-end fluid-model development); co-author SPE-217328 (2023) and SPE-225382 (2025). Listed on bylines as M.H. Nielsen. <!-- CURTIS REVIEW: confirm M.H. Nielsen on the SPE bylines resolves to Markus Hays Nielsen. --></div>
-      </div>
-      <!-- CURTIS REVIEW: who else belongs here? Especially long-term whitson team members and operator collaborators not surfaced above. -->
-    </div>
-  </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- CURTIS REVIEW: who else belongs here? Especially long-term whitson team members and operator collaborators not surfaced above. -->
+<div class="collab-card">
+<div class="collab-name">Marshall B. Standing</div>
+<div class="collab-period">1974–1978 (Stanford)</div>
+<div class="collab-role">Curtis's BSc supervisor at Stanford. Donald Katz's first PhD graduate (Michigan 1941). The phase-behaviour pioneer whose K-value correlations from the 1940s and 1970s are still embedded in commercial software. The first link of the lineage that runs through Curtis's professional life.</div>
+</div><div class="collab-card">
+<div class="collab-name">Stein B. Torp</div>
+<div class="collab-period">1981 (NTH)</div>
+<div class="collab-role">NTH colleague, co-author of the 1981 SPE-10067 constant-volume-depletion paper. The first SPE paper most reservoir engineers associate with Curtis.</div>
+</div><div class="collab-card">
+<div class="collab-name">Khalid Aziz</div>
+<div class="collab-period">1984 (PhD committee)</div>
+<div class="collab-role">Stanford professor of petroleum engineering, external committee member on Curtis's 1984 NTH PhD defence (with Michelsen). Long-time figure in reservoir simulation.</div>
+</div><div class="collab-card">
+<div class="collab-name">Michael L. Michelsen</div>
+<div class="collab-period">1985–2020 (DTU)</div>
+<div class="collab-role">The thirty-five-year haphazard relationship documented in Curtis's 2024 FPE recollection. The negative flash (1989), the red-and-black methane consistency test (1989), the Gibbs-Duhem grading shortcut (1992), unpublished constant-volume-diffusion code and transient-well-performance solutions (1992), the BIPs question in the last email (June 2020). Died 26 August 2020.</div>
+</div><div class="collab-card">
+<div class="collab-name">Aaron A. Zick</div>
+<div class="collab-period">1985 (Trondheim)</div>
+<div class="collab-role">Visited NTH in November 1985 and explained the Rachford-Rice construction with phase fractions outside [0,1] over a three-hour Italian-pizzeria dinner in Trondheim. The seed of the negative flash. Declined first authorship when offered.</div>
+</div><div class="collab-card">
+<div class="collab-name">Flavio da Silva</div>
+<div class="collab-period">1988–1994 (Petrofina/Total)</div>
+<div class="collab-role">Co-author of the 1988 GBO paper and the Petrofina collaborator on Ekofisk compositional-grading and nitrogen-injection work that fed into the 1994 Whitson-Belery paper.</div>
+</div><div class="collab-card">
+<div class="collab-name">Ingolf Søreide</div>
+<div class="collab-period">1988–1992 (NTH)</div>
+<div class="collab-role">Curtis's PhD student in the late 1980s. Co-author of the 1988 Generalised Black-Oil paper (SPE-18315), the 1989 capillary-flash note, and the 1992 Søreide-Whitson brine EOS in <em>Fluid Phase Equilibria</em>. By 1992 at Norsk Hydro.</div>
+</div><div class="collab-card">
+<div class="collab-name">Kjell Christoffersen</div>
+<div class="collab-period">1989–1994 (NTH)</div>
+<div class="collab-role">Curtis's PhD student. The Ruska PVT cell constant-volume-diffusion experiments at Ekofisk for nitrogen EOR, and the 1994 SPE-26673 capillary-pressure paper. The experiments that motivated Michelsen to write the collocation-based diffusion code in 1992.</div>
+</div><div class="collab-card">
+<div class="collab-name">Øivind Fevang</div>
+<div class="collab-period">1992–2003 (NTH/whitson)</div>
+<div class="collab-role">Curtis's NTH PhD student 1992–1995. The three-region gas-condensate well-deliverability model (SPE-30714, 1996) is the centrepiece of his dissertation and the practical industry standard for gas-condensate near-wellbore flow. The Fevang-Whitson partnership extended through the late 1990s.</div>
+</div><div class="collab-card">
+<div class="collab-name">Paul Belery</div>
+<div class="collab-period">1993–1994 (Petrofina/Total)</div>
+<div class="collab-role">Petrofina collaborator. Co-author of the 1994 SPE-28000 compositional-gradients paper that contains the famous Gibbs-Duhem shortcut paragraph from Curtis's 1992 Trondheim conversation with Michelsen.</div>
+</div><div class="collab-card">
+<div class="collab-name">Mohammad R. Riazi</div>
+<div class="collab-period">1993 (collaboration)</div>
+<div class="collab-role">Co-author of the 1980 Riazi-Daubert critical-property correlations that underpin Curtis's 1983 C7+ characterisation, and again co-author of the 1993 Riazi-Whitson IECR dense-fluid diffusion paper that became the default liquid-phase diffusion option in commercial simulators.</div>
+</div><div class="collab-card">
+<div class="collab-name">Lars Høier</div>
+<div class="collab-period">1995–2004 (NTH/NTNU)</div>
+<div class="collab-role">Curtis's PhD student. Compositional-grading series SPE-49269 (1998), SPE-63085 (2001), SPE-90379 (2004) extending the Whitson-Belery 1994 framework.</div>
+</div><div class="collab-card">
+<div class="collab-name">Michael R. Brule</div>
+<div class="collab-period">2000 (Monograph)</div>
+<div class="collab-role">Co-author of the 2000 SPE Monograph <em>Phase Behavior</em>, the magnum opus.</div>
+</div><div class="collab-card">
+<div class="collab-name">Kameshwar Singh</div>
+<div class="collab-period">2000–present (whitson)</div>
+<div class="collab-role">Long-running BOPVT collaborator. The Singh-Whitson modified-black-oil series SPE-63087 (2000), SPE-109596 (2007), SPE-117930 (2008), SPE-120743 (2009), and SPE-143612 (2011), then continuing through the 2017 SPE-185791 synthetic-gas-condensate paper into the 2025 ADIPEC pair SPE-225382 (BOPVT vs lab-PVT comparison, Singh-Whitson-Nielsen) and SPE-225405 (ADNOC tracer-based diagnostic tracking, Singh-Whitson). Twenty-five years of BOPVT work alongside Curtis.</div>
+</div><div class="collab-card">
+<div class="collab-name">Keith H. Coats</div>
+<div class="collab-period">2004–2009 (peer)</div>
+<div class="collab-role">Author of the SENSOR reservoir simulator and one of the most influential reservoir-simulation engineers of his generation. Co-authored the SPE-90390 conformance-as-dispersion paper with Curtis and Larry Thomas. A peer collaboration rather than supervisor-to-student.</div>
+</div><div class="collab-card">
+<div class="collab-name">Sayyed Ahmad Alavian</div>
+<div class="collab-period">2005–2014 (NTNU)</div>
+<div class="collab-role">Curtis's NTNU PhD student. CO2-EOR series IPTC-10641 (2005), SPE-125362 (2009), SPE-129666 (2010), SPE-170912 (2014). Numerical modelling of CO2 injection in fractured chalk reservoirs.</div>
+</div><div class="collab-card">
+<div class="collab-name">Sissel Ø. Martinsen</div>
+<div class="collab-period">2010–present (whitson)</div>
+<div class="collab-role">whitson AS senior engineer. Co-author of the 2010 SPE-135085 Pauto-Complex advanced-fluid-characterisation paper that established the PVT framework underpinning the later field-wide-EOS development. Continuing collaborator on the 2014 global-component-lumping paper (SPE-170912 Alavian-Whitson-Martinsen), the 2019 URTeC-551 field-wide EOS, the 2019 SPE-196056 LRS sampling paper, and the 2022 SPE-211391 compositional-uncertainty paper.</div>
+</div><div class="collab-card">
+<div class="collab-name">Mohammad Ghasemi</div>
+<div class="collab-period">2011–2021 (NTNU)</div>
+<div class="collab-role">NTNU postdoc and PhD. SAGD, chalk CO2 injection, heavy-oil PVT characterisation. Long-running collaborator through the 2010s.</div>
+</div><div class="collab-card">
+<div class="collab-name">Snjezana Sunjerga</div>
+<div class="collab-period">2012 (NTNU/whitson)</div>
+<div class="collab-role">Co-author of the 2012 SPE-155499 paper that defined the liquid-rich-shale PVT problem.</div>
+</div><div class="collab-card">
+<div class="collab-name">Fahd Alqahtani</div>
+<div class="collab-period">2018–2020 (NTNU)</div>
+<div class="collab-role">NTNU PhD candidate (King Saud University funding). Lead of the well-box fluid-heterogeneity series with Curtis: the 2018 URTeC-2882502 prospectus (Whitson-Alqahtani-Chuparova), the 2018 SPE-190797 molar-distributions-of-equilibrium-systems paper, and the 2020 numerical and field validation papers SPE-200014 and URTeC-2545 that established the <em>k</em><sub>max</sub>/<em>k</em><sub>min</sub> &lt; 10 threshold and the LRS history-match non-uniqueness theorem.</div>
+</div><div class="collab-card">
+<div class="collab-name">Mathias L. Carlsen</div>
+<div class="collab-period">2019–present (whitson)</div>
+<div class="collab-role">Senior whitson engineer. First-author of the 2019–2022 unconventional-PVT methodology sequence: URTeC-539 (HnP CVI-CVD framework, 2019), SPE-196056 (LRS fluid sampling, 2019), the 2020 surface-process triplet (IPTC-19596 compositional tracking, IPTC-19775 separator shrinkage, SPE-199982 CGR normalisation), URTeC-2869 (HnP Second Take, 2020), URTeC-2765 (BOPVT vs COMP, 2020), SPE-205884 (Numerical RTA, 2021), and the NRTA Part 1 / Part 2 fractional-RTA pair (URTeC-3718584 and SPE-210420, 2022). The architect of the modern whitson-AS unconventional toolkit on top of the Whitson-Sunjerga 2012 LRS framework.</div>
+</div><div class="collab-card">
+<div class="collab-name">Markus Hays Nielsen</div>
+<div class="collab-period">2019–present</div>
+<div class="collab-role">Curtis's son. Petroleum engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. The June 2020 last email from Michelsen, three months before his death, was about Markus's thesis. Whitson AS engineer specialising in PVT uncertainty and EOS development. First-author SPE-214437 (2023, Underground Hydrogen Storage with OMV E&amp;P and HOT Microfluidics), SPE-220699 (2024, compositional-uncertainty forward propagation with Ed Wanat of ExxonMobil), and SPE-225470 (2025, end-to-end fluid-model development); co-author SPE-217328 (2023) and SPE-225382 (2025). Listed on bylines as M.H. Nielsen. <!-- CURTIS REVIEW: confirm M.H. Nielsen on the SPE bylines resolves to Markus Hays Nielsen. --></div>
+</div><div class="collab-card">
+<div class="collab-name">Bilal Younus</div>
+<div class="collab-period">2019–present (whitson)</div>
+<div class="collab-role">whitson AS senior engineer. First-author of URTeC-551 (the Field-Wide EOS Development paper, 2019) that became the common-backbone EOS for the unconventional cluster, and SPE-211391 (the gamma-model GC-error taxonomy with the C<sub>x</sub> diagnostic plot, 2022). Co-author of SPE-217328 (separator-sample QC, 2023) and the broader 2022–2024 compositional-uncertainty triptych.</div>
+</div><div class="collab-card">
+<div class="collab-name">Ilina Yusra</div>
+<div class="collab-period">2019–present (whitson)</div>
+<div class="collab-role">whitson AS engineer. Co-author across the 2019–2022 unconventional cluster, including URTeC-539, SPE-196056, SPE-200396 (HnP/F2F mechanisms), URTeC-2765, URTeC-2869, and SPE-205884 (Numerical RTA). Long-standing collaborator on the liquid-rich-shale workflow papers.</div>
+</div><div class="collab-card">
+<div class="collab-name">Mohamad Majzoub Dahouk</div>
+<div class="collab-period">2020–present (whitson)</div>
+<div class="collab-role">whitson AS engineer. Co-author across the 2020–2022 unconventional cluster: the surface-process triplet (IPTC-19596, IPTC-19775, SPE-199982), the HnP Second Take, BOPVT-vs-COMP, the 2020 well-box heterogeneity field paper (URTeC-2545), and the 2021 Numerical RTA paper (SPE-205884). The connective engineering layer in much of the recent Whitson-AS published work.</div>
+</div><div class="collab-card">
+<div class="collab-name">Stian Mydland</div>
+<div class="collab-period">2020–present (whitson / NTNU)</div>
+<div class="collab-role">whitson AS engineer; NTNU PhD. Lead of the unconventional-EOR mechanisms work. First-author SPE-200396 (HnP vs F2F mechanisms with shattered-volume premise and T<sub>ex,MOD</sub> dual-porosity multiplier, 2020), URTeC-2765 (BOPVT vs compositional reservoir simulation of gas-based EOR, 2020), and URTeC-5016 (the Gas HnP PVT Experiment with E<sub>HnP</sub> KPI and mixing/vaporisation decomposition, 2021). Co-author across the broader 2020–2022 unconventional cluster.</div>
+</div></div>
+</div>
 </div><!-- end .container -->
-
 <!-- ===== FOOTER ===== -->
 <div class="page-footer">
-  <p style="font-size:0.85em; opacity:0.8;">For Curtis &mdash; whose work is the reason a lot of us got the answer right.</p>
+<p style="font-size:0.85em; opacity:0.8;">For Curtis — whose work is the reason a lot of us got the answer right.</p>
 </div>
-
 <script>
 // ===================================================================
 // PAPER DATA (loaded from paper_summaries/whitson_papers.jsonl)
@@ -571,7 +510,7 @@ const papers = [
   {"year": 2009, "title": "Modeling CO2 Injection in a Fractured Chalk Experiment", "authors": ["Sayyed Ahmad Alavian", "Curtis H. Whitson"], "journal": "SPE/EAGE Reservoir Characterization and Simulation Conference, Abu Dhabi", "paper_number": "SPE-125362", "citations": null, "phase": "phase3", "keywords": ["CO2 injection", "fractured chalk", "Karimaie experiment", "capillary threshold height", "viscous vs gravity drainage", "saturation-based RF", "separator temperature uncertainty"], "html_summary": "paper_summaries/2009_alavian_whitson_karimaie_co2_chalk.html"},
   {"year": 2010, "title": "Scale Dependence of Diffusion in Naturally Fractured Reservoirs for CO2 Injection", "authors": ["Sayyed Ahmad Alavian", "Curtis H. Whitson"], "journal": "SPE Improved Oil Recovery Symposium, Tulsa", "paper_number": "SPE-129666", "citations": null, "phase": "phase3", "keywords": ["CO2 injection", "fractured reservoir", "molecular diffusion", "scale dependence", "Haft Kel", "matrix block size", "fracture replenishment rate"], "html_summary": "paper_summaries/2010_alavian_whitson_diffusion_scale_dependence.html"},
   {"year": 2010, "title": "Multi-Field Asset Integrated Optimization Benchmark", "authors": ["Silvya Dewi Rahmawati", "Curtis H. Whitson", "Bjarne Foss", "Arif Kuntadi"], "journal": "SPE EUROPEC/EAGE Annual Conference, Barcelona", "paper_number": "SPE-130768", "citations": null, "phase": "phase3", "keywords": ["IAM", "multi-field benchmark", "WAG miscible", "gas cycling", "HYSYS surface facility", "HYSYS volume shift sign", "SPE-5 oil reservoir"], "html_summary": "paper_summaries/2010_rahmawati_whitson_foss_kuntadi_iopt_benchmark.html"},
-  {"year": 2010, "title": "Advanced Fluid Characterization of Pauto Complex, Colombia", "authors": ["Sissel O. Martinsen", "I. Castiblanco", "R. Osorio", "Curtis H. Whitson"], "journal": "SPE Annual Technical Conference and Exhibition, Florence", "paper_number": "SPE-135085", "citations": null, "phase": "phase3", "keywords": ["EOS tuning", "Pauto Colombia", "PVT QC workflow", "Hall-Yarborough Z check", "non-exponential C7-C12 multipliers", "Tc pivot-shift", "K-value consistency"], "html_summary": "paper_summaries/2010_martinsen_etal_pauto_eos.html"},
+  {"year": 2010, "title": "Advanced Fluid Characterization of Pauto Complex, Colombia", "authors": ["Sissel Ø. Martinsen", "I. Castiblanco", "R. Osorio", "Curtis H. Whitson"], "journal": "SPE Annual Technical Conference and Exhibition, Florence", "paper_number": "SPE-135085", "citations": null, "phase": "phase3", "keywords": ["EOS tuning", "Pauto Colombia", "PVT QC workflow", "Hall-Yarborough Z check", "non-exponential C7-C12 multipliers", "Tc pivot-shift", "K-value consistency"], "html_summary": "paper_summaries/2010_martinsen_etal_pauto_eos.html"},
   {"year": 2010, "title": "On the Loss of Injectant and Apparent Dispersivity in Push-Pull Tests Influenced by Natural Drift", "authors": ["Sverre Gullikstad Johnsen", "Curtis H. Whitson"], "journal": "Transport in Porous Media (Open Access)", "paper_number": "", "citations": null, "phase": "phase3", "keywords": ["push-pull echo test", "apparent dispersivity correlation", "critical time", "Monte-Carlo regression", "Muskat layer summation", "Pickens-Grisak"], "html_summary": "paper_summaries/2010_johnsen_whitson_push_pull_followup.html"},
   {"year": 2011, "title": "Reservoir Fluid Characterization and Application for Simulation Study (OMV Tunisia)", "authors": ["Kameshwar Singh", "K. Mantzatzis", "Curtis H. Whitson", "R. Benjemia"], "journal": "SPE EUROPEC/EAGE Annual Conference and Exhibition, Vienna", "paper_number": "SPE-143612", "citations": null, "phase": "phase4", "keywords": ["OBM decontamination", "MDT wireline sampling", "zone reconstruction", "mobility-weighted layer mixing", "LBC viscosity tuning", "Orrick-Erbar Zc anchor", "OMV Tunisia"], "html_summary": "paper_summaries/2011_singh_mantzatzis_whitson_benjemia_tunisia.html"},
   {"year": 2011, "title": "Backpressure Equation for Layered Gas Reservoirs", "authors": ["Aleksander Oma Juell", "Curtis H. Whitson"], "journal": "SPE Annual Technical Conference and Exhibition, Denver", "paper_number": "SPE-146066", "citations": null, "phase": "phase4", "keywords": ["backpressure equation", "layered gas reservoir", "Fetkovich form", "PI-weighted pressure", "no-crossflow", "Hugoton field Buf #3", "well-performance monitoring"], "html_summary": "paper_summaries/2011_juell_whitson_layered_backpressure.html"},
@@ -1018,6 +957,5 @@ document.addEventListener('DOMContentLoaded', function() {
   document.getElementById('paper-count-stat').textContent = papers.length;
 });
 </script>
-
 </body>
 </html>
