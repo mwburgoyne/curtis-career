@@ -1,0 +1,73 @@
+id: 1994_whitson_belery_compositional_grading
+title: Compositional Gradients in Petroleum Reservoirs
+page_title: Whitson & Belery (1994) - Compositional Gradients in Petroleum Reservoirs
+authors:
+- Curtis H. Whitson
+- Paul Belery
+authors_affiliation: null
+venue: University of Tulsa Centennial Petroleum Engineering Symposium, 29–31 August 1994
+paper_number: SPE-28000-MS
+doi: 10.2118/28000-MS
+funding: null
+citations: 96
+citations_source: OpenAlex
+tags:
+- Compositional Grading
+- Gibbs-Duhem
+- Gravity-Chemical Equilibrium
+- Thermal Diffusion
+- Michelsen
+- Phase 2
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Reservoirs deep enough or thick enough for gravity to matter show measurable compositional variation with depth. In the 1980s deepwater Brent, Statfjord, and Birba (Oman) developments forced operators to confront vertical composition gradients that made the "sharp gas-oil contact" interpretation fail: methane fraction declined smoothly with depth, C7+ rose, saturation pressure tracked reservoir pressure over hundreds of metres without a sharp dewpoint-to-bubblepoint transition. By 1994 the isothermal gravity/chemical equilibrium (GCE) idea had been around for over a century - Gibbs's original treatment of the column under gravity - but the practical algorithm to solve it for a multicomponent reservoir fluid using a cubic EOS was still being assembled.</p><p>The paper is the canonical Whitson-Belery output. Paul Belery was at Petrofina (now Total) working on Ekofisk-area compositional grading; Curtis brought the Michelsen-tradition computational thermodynamics, with help from a 1992 Michelsen visit to Trondheim that produced the key conceptual shortcut. Da Silva, also at Petrofina, contributed the thermal-diffusion extension carried over from his and Belery's 1990 Third Chalk Research Program.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Michelsen-adapted iterative GCE algorithm.</strong> Given reference composition <code>z<sup>o</sup></code>, reference pressure <code>p<sup>o</sup></code>, and reference depth <code>h<sup>o</sup></code>, the composition and pressure at any target depth <code>h</code> follow from the chemical-potential balance plus the unit-sum constraint:
+        <p><code>f<sub>i</sub>(h) = f<sub>i</sub>(p<sup>o</sup>, z<sup>o</sup>) exp[-M<sub>i</sub> g (h - h<sup>o</sup>)/(RT)]</code></p>
+        Newton iteration on pressure, GDEM-accelerated successive substitution on composition. The reference-fugacity calculation runs once; each new depth needs only the iterative loop. Convergence tolerances <code>|1 - ΣY<sub>i</sub>| &lt; 10<sup>-13</sup></code> and <code>[Σ ln(r<sub>i</sub>)/ln(Y<sub>i</sub>/z<sub>i</sub>)]<sup>2</sup> &lt; 10<sup>-8</sup></code>. Typically 3-10 outer iterations per depth.</li>
+    <li><strong>The Gibbs-Duhem shortcut paragraph.</strong> The paper contains the famous passage Curtis later traced back to a 1992 Michelsen visit to Trondheim: "Based on the Gibbs-Duhem equation, it is guaranteed that combining the condition of mechanical equilibrium with the condition of gravity/chemical equilibrium automatically satisfies the integral pressure-depth condition." Operationally this means the gradient solver can jump from the reference depth directly to the target depth without stepwise integration through the column - the pressure-depth integral is enforced thermodynamically rather than numerically. Curtis describes the moment in his 2024 Michelsen recollection: Michelsen's reply to the algorithm description was simply "ja", followed by the comment that "the summation to 1 constraint followed from the Gibbs-Duhem equation." Curtis kept asking what that meant until the result was clear enough to write down.</li>
+    <li><strong>Phase-stability check is mandatory after GCE convergence.</strong> The N+1 GCE equations can converge to a trivial single-phase solution on an unstable branch of the Gibbs free-energy surface. After each depth converges, run a Michelsen tangent-plane stability test on the converged <code>z(h)</code>, <code>p(h)</code> state. If unstable, restart the gradient calculation using the stability-test trial composition as the new initialisation. Most often the unstable solutions occur just below a saturated GOC, where the solver has tracked the continuous extension of the reference phase through the phase envelope.</li>
+    <li><strong>Interval-halving GOC search.</strong> When the reservoir column shows a continuous compositional gradient rather than a sharp interface, the gas-oil contact is defined as the depth where saturation-pressure type switches from dewpoint to bubblepoint. A 1.5 ln(H/δh) interval-halving search locates it: typically 13 GCE/saturation-pressure calculations for 0.1 m tolerance over a 500 m column. The algorithm is robust whether the GOC is saturated (pressure discontinuity in <code>p<sub>sat</sub></code>) or undersaturated (continuous transition through a critical mixture).</li>
+    <li><strong>Volume translation does NOT cancel in GCE fugacity.</strong> Peneloux volume translation modifies fugacity by <code>exp(c<sub>i</sub> p/RT)</code>. In flash, stability, and saturation-pressure calculations this factor cancels when taking <code>f<sub>i</sub><sup>L</sup>/f<sub>i</sub><sup>V</sup></code> ratios, so volume translation affects densities only. In GCE the fugacity is evaluated at two different pressures, <code>p<sup>o</sup></code> and <code>p(h)</code>, and the correction factors do not cancel. A GCE implementation that uses a volume-translated EOS but omits the Peneloux correction in the fugacity expression produces systematically biased gradients - several Sm3/Sm3 in GOR at depth. The note has saved many reservoir-engineering teams from puzzling-but-wrong gradient predictions.</li>
+    <li><strong>Thermal-diffusion treatment with the Belery-da Silva multicomponent extension.</strong> The Dougherty-Drickamer thermal-diffusion ratio is generalised to multicomponent systems by Belery and da Silva (1990). Negative <code>k<sub>T</sub></code> for light components - methane in particular - can reverse the gravity-driven methane gradient, leading to methane <em>increasing</em> with depth despite buoyancy. The paper documents the observed reversal in North Sea and Middle East fields and supplies the Rayleigh-Darcy convection check: when the thermal contribution exceeds about 5 per cent of the total GCE term, and the Rayleigh-Darcy number exceeds approximately 40, the one-dimensional GCE formulation breaks down and a multidimensional convective treatment is required.</li>
+    <li><strong>Four North Sea fluid examples.</strong> Black oil, slightly volatile oil, volatile oil, and near-critical oil. Saturation-pressure gradients by fluid type are given (0.025 to 1.0 bar/m), with the largest gradients near-critical and the smallest in black oils. EOS-characterisation guidance for gradient work is given: heavy-end pseudocomponents must be split finely enough to resolve the C7+ gradient, multi-sample EOS tuning must use samples from multiple depths simultaneously.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The Gibbs-Duhem paragraph and the Michelsen anecdote.</strong> The paragraph beginning "Based on the Gibbs-Duhem equation, it is guaranteed..." is the most-quoted single passage of any Whitson-co-authored paper. Curtis's 2024 Michelsen recollection records the conversation that produced it: during a Michelsen visit to Trondheim in 1992 Curtis described his isothermal GCE algorithm - Newton update on pressure, GDEM-accelerated successive substitution on composition, both subject to equilibrium constraints and mole-fraction summing to one. Michelsen's reply was simply "ja", followed by the comment that "the summation to 1 constraint followed from the Gibbs-Duhem equation." Curtis did not really know what that meant. He kept asking. When Curtis later asked Michelsen about non-isothermal gradients with non-zero <code>dT/dD</code>, Michelsen refused: "I don't work on that problem that is dependent on an arbitrary specification of the ideal gas enthalpy." Pedersen and Lindeloff in 2003 confirmed his caution - simulation results were highly sensitive to the assumed enthalpy. The Michelsen-Curtis exchange behind a single paragraph is one of the cleaner illustrations of how mathematical thermodynamics enters petroleum engineering.</p>
+    <p><strong>The operational compositional-gradient framework.</strong> SPE-28000 is the paper that operators reach for when a development team needs to predict GOR variation with depth before drilling appraisal wells, or when an existing field's PVT data set shows depth-dependent properties. The four-fluid examples cover the full saturation-pressure gradient range; the volume-translation caveat saves implementations from systematic bias; the GOC search is robust for ambiguous column types. The framework is unchanged in the 2000 SPE Monograph chapter 8 and in the Hoier-Whitson series (1998 SPE-49269, 2001 SPE-63085, 2004 SPE-90379).</p>
+    <p><strong>Thermal-diffusion realism.</strong> Curtis is characteristically cautious: the 1994 paper says the physics of thermal diffusion in multicomponent hydrocarbon systems is "not well understood" and that including it in gradient calculations can qualitatively change or even reverse the predicted gradient. Engineers should present both isothermal-only and thermal-diffusion cases as an uncertainty range rather than picking one as truth. The caveat is reaffirmed by Michelsen's refusal to formalise the non-isothermal problem and by Pedersen-Lindeloff's later sensitivity result. The careful framing has aged well.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Gibbs (1876, 1878) — the original equilibrium-under-gravity treatment in a column</li>
+    <li>Michelsen (1985), <em>Fluid Phase Equilibria</em> 23, 181-192 — the saturation-pressure algorithm the GCE iteration adapts</li>
+    <li>Michelsen (1982) tangent-plane stability test — mandatory check after GCE convergence</li>
+    <li>Belery &amp; da Silva (1990), Third Chalk Research Program — the multicomponent thermal-diffusion model used here</li>
+    <li>Dougherty &amp; Drickamer thermal-diffusion ratio — originally binary, extended by Belery-da Silva</li>
+    <li>Montel (1993) — Rayleigh-Darcy convection criterion</li>
+    <li>Whitson (1983) SPE-12233 C7+ characterisation — the EOS-fluid setup the gradient calculation runs against</li>
+    <li>Peneloux volume translation — subject to the no-cancellation caveat in fugacity at two pressures</li>
+    <li>Whitson, Anderson &amp; Søreide (1989) modified-β<sub>0</sub> — the multi-sample EOS-characterisation discipline the paper recommends for gradient work</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Whitson &amp; Brule (2000) SPE Monograph "Phase Behavior"</strong>, Chapter 8 — matured presentation of compositional gradients, drawing directly on SPE-28000</li>
+    <li><strong>Høier &amp; Whitson</strong> series — 1998 SPE-49269 (case studies), 2001 SPE-63085 (chemical and thermal gradients), 2004 SPE-90379 (multi-sample EOS characterisation for graded reservoirs with Cheng)</li>
+    <li>Compositional-gradient handling in commercial PVT packages (PVTsim, WinProp, PhaseOpt) and reservoir simulators (Eclipse compositional gradient initialisation)</li>
+    <li>Pedersen &amp; Lindeloff (2003) thermal-diffusion sensitivity work that confirmed Michelsen's reluctance</li>
+    <li>Multi-sample EOS-tuning discipline for graded reservoirs and reservoirs straddling fault blocks</li>
+    <li>Ekofisk and Eldfisk PVT-gradient studies (Belery via Petrofina/Total)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Paul Belery</strong> (Petrofina, now Total) — Ekofisk-area compositional-grading lead, brought the thermal-diffusion machinery developed with da Silva. <strong>Curtis Whitson</strong> — the GCE algorithm, the Michelsen connection, the EOS-characterisation guidance. The unattributed third author is <strong>Michael Michelsen</strong> (DTU): the Gibbs-Duhem shortcut at the heart of the paper came directly from a 1992 Trondheim conversation, and the saturation-pressure algorithm the GCE iteration adapts is Michelsen 1985.</p>

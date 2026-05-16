@@ -1,0 +1,61 @@
+id: 1979_whitson_permeability_distribution
+title: Notes on Permeability and Porosity Variation
+page_title: Whitson (1979) - Notes on Permeability and Porosity Variation
+authors:
+- Curtis H. Whitson
+authors_affiliation: sole author
+venue: Unpublished pedagogical note, University of Trondheim (NTH)
+paper_number: null
+doi: none (internal teaching document)
+funding: null
+citations: citation count not available (unpublished note)
+tags:
+- Heterogeneity
+- Dykstra-Parsons
+- Log-Normal
+- Layered Reservoirs
+- Teaching Note
+- Phase 1
+whitson_index: 0
+extra_meta:
+- label: Year
+  value_html: '1979'
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Curtis arrived in Trondheim in 1978 after finishing his BSc at Stanford under Marshall Standing. NTH had a petroleum engineering programme that needed teaching infrastructure, and Curtis spent the late 1970s and early 1980s building it. The 1979 <em>Reservoarteknikk 1, Laboratory Manual</em> and the 1980 <em>Reservoarteknikk II Lecture notes</em> belong to this period, as do shorter standalone notes on specific topics. The permeability-and-porosity-variation note is one of these: a tight, four-equation derivation of the Dykstra-Parsons variability coefficient with the practical computational tooling (the Abramowitz-Stegun inverse-normal-CDF approximation) needed to use it without tables or curve-fitting.</p><p>The audience is the NTH petroleum engineering student. The pedagogical pattern that recurs through Curtis's later work is already visible: name the distribution, give the closed-form computational shortcut, work an example by hand, point out the symmetry that halves the work.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Dykstra-Parsons V<sub>k</sub> from log-probability paper.</strong> Permeability heterogeneity is captured by <code>V<sub>k</sub> = (K<sub>m</sub> - K<sub>sd</sub>)/K<sub>m</sub></code>, where K<sub>m</sub> is the geometric-mean permeability at the 50% cumulative point and K<sub>sd</sub> is the permeability one standard deviation above the mean at the 84.1% point. Both values are read directly off log-probability paper. V<sub>k</sub> = 0 is a homogeneous reservoir; values approaching 1 are strongly heterogeneous. Typical oil-field values span 0.5 to 0.9.</li>
+    <li><strong>Closed-form inverse normal CDF.</strong> The Abramowitz-Stegun rational approximation (Eq. 26.2.23 of <em>Handbook of Mathematical Functions</em>) gives the standard normal deviate to within 4.5 × 10<sup>-4</sup> from a single formula with seven constants. Curtis tabulates the six coefficients (c<sub>0</sub> = 2.515517, c<sub>1</sub> = 0.802853, c<sub>2</sub> = 0.010328, d<sub>1</sub> = 1.432788, d<sub>2</sub> = 0.189269, d<sub>3</sub> = 0.001308) and shows the student how to call the approximation directly from a permeability sample.</li>
+    <li><strong>Symmetry trick to cover the full (0, 1) probability range.</strong> The rational approximation is only valid for p in (0, 0.5]. Curtis applies the normal-distribution symmetry about the mean: for x<sub>1</sub> &gt; x<sub>m</sub>, define δ<sub>1</sub> = x<sub>1</sub> - x<sub>m</sub>; the equidistant value on the opposite side is x<sub>1</sub>′ = 2x<sub>m</sub> - x<sub>1</sub>, and Q(x<sub>1</sub>′) = 1 - Q(x<sub>1</sub>). A numerical worked example follows: abstract rule, concrete number, check by hand.</li>
+    <li><strong>Log-normal K vs normal φ.</strong> The same mathematical framework applies to permeability and porosity, but with x = log K for permeability (geometric mean) and x = φ for porosity (arithmetic mean). The note emphasises plotting the data first as the diagnostic for whether log-normality holds. Carbonates with vuggy porosity, heavily cemented sands, and dual-porosity systems may deviate.</li>
+    <li><strong>Complementary-layer permeability shortcut.</strong> When 99 layers are ranked from highest to lowest permeability, the log-normal symmetry gives <code>log K<sub>100-i</sub> = -log K<sub>i</sub></code> under the normalisation K<sub>m</sub> = 1. Once K<sub>3</sub> has been computed at p = 0.03, K<sub>97</sub> follows without a separate evaluation. The shortcut halves the work and doubles as a diagnostic: if K<sub>i</sub> and K<sub>100-i</sub> do not reflect about K<sub>m</sub> = 1, the log-normal assumption is failing.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Teaching infrastructure.</strong> The note is one of the building blocks of the NTH petroleum engineering programme. It is not an SPE paper and never was. It is what a postgraduate teaching assistant writes when the available textbooks do not give the student a computable form of the standard heterogeneity measure. The pedagogical fingerprint is the same one that appears five years later in SPE-12233: find the coordinate system in which the data are linear, give the closed-form shortcut, work the example.</p>
+    <p><strong>Career-arc significance.</strong> This note dates from Curtis's first year at NTH. He is 23, finishing his year as a teaching assistant, with the lab manual on his desk and the first PVT consulting contracts (Sleipner, Reservoir Evaluation A-B) starting to come in. The C7+ work that becomes SPE-12233 in 1983 is still three years away. This note is the pedagogical baseline: how Curtis thought about teaching a closed-form result before the field-defining papers existed.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Dykstra &amp; Parsons (1950) - the original variability coefficient for layered reservoir prediction</li>
+    <li>Abramowitz &amp; Stegun (1964), <em>Handbook of Mathematical Functions</em>, Eq. 26.2.23 - the rational approximation for the inverse normal CDF</li>
+    <li>Law (1944), Archie (1950) - empirical observation that sedimentary permeability is log-normally distributed</li>
+    <li>NTH teaching tradition - the lab manual and lecture series Curtis was writing in parallel</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>NTH (later NTNU) petroleum engineering teaching infrastructure</li>
+    <li>The pedagogical pattern (closed-form shortcut plus worked example plus symmetry diagnostic) that recurs through the later PVT papers</li>
+    <li>Curtis's later layered-reservoir and compositional-grading work, where the same log-normal framing reappears</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Sole author.</strong> Internal NTH note. No formal collaborators. The atom extraction notes a 14n-7 footnote convention in the related EUR-183 paper of the following year, which the later SPE-12233 standardises on 14n-6.</p>

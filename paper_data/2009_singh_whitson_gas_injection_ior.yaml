@@ -1,0 +1,62 @@
+id: 2009_singh_whitson_gas_injection_ior
+title: Gas Injection IOR for Widely Varying Initial Compositions
+page_title: Singh & Whitson (2009) - Gas Injection IOR for Widely Varying Initial Compositions
+authors:
+- Kameshwar Singh
+- Curtis H. Whitson
+authors_affiliation: PERA / NTNU
+venue: SPE EUROPEC/EAGE Annual Conference and Exhibition, Amsterdam, 8-11 June 2009
+paper_number: SPE-120743
+doi: null
+funding: null
+citations: null
+tags:
+- Gas Injection
+- IOR S-Curve
+- Permeability Distribution
+- Near-Critical Best Case
+- Methane vs Lean Gas
+- Pressure Maintenance
+- Phase 3
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Full-pressure-maintenance lean-gas-injection companion to the 2005 JPSE Singh-Fevang-Whitson depletion-recovery paper. Same fluid suite: 22 components reduced to 6 pseudo-components by SRK pseudoisation, spanning initial solution GOR 22-25,000 standard m<sup>3</sup>/standard m<sup>3</sup> (Sm<sup>3</sup>/Sm<sup>3</sup>). Reservoir: dipping 99-layer 15×5×99 grid, Dykstra-Parsons coefficient 0.75, dip 3.8°, average permeability 232 md, 1.51 m layer thickness. Pressure maintained at 495 bar (above the minimum miscibility pressure (MMP) for all fluids except near-critical) via lean-gas injection (84.6 mol% C1N2, 9.65 CO2C2, 5.57 C3-6, 0.18 C7-9). Eclipse 300 compositional simulator; PhazeComp for MMP.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Gas-injection recovery is a monotonic S-curve under full pressure maintenance.</strong> Recovery rises slowly with initial GOR from 34% at GOR 22 Sm<sup>3</sup>/Sm<sup>3</sup> (low-GOR black oil) to 48% at GOR 300 Sm<sup>3</sup>/Sm<sup>3</sup> (volatile oil), then rises rapidly to a 75% plateau across the near-critical transition (GOR 500-1,000), continues at the plateau through rich-to-moderate gas condensates (GOR 1,000-6,000), and finally rises to 88% at GOR 25,000 (lean condensate approaching dry-gas recovery).</li>
+    <li><strong>Critical-region recovery flips from worst to best.</strong> The 2005 depletion paper had a 16% recovery minimum at the critical mixture (GOR ~700 Sm<sup>3</sup>/Sm<sup>3</sup>). Under full-pressure-maintenance gas injection, the same critical region becomes the 75% recovery plateau - a 60 percentage-point spread. Gas injection eliminates the depletion minimum and converts the critical/near-critical zone from the worst-performing depletion case to the best-performing injection case. Near-critical volatile oils are therefore the prime IOR candidates, even though they look "marginal" on conventional EOR screening charts.</li>
+    <li><strong>Permeability distribution has dramatically asymmetric impact on gas-injection recovery.</strong> With the same Dykstra-Parsons (0.75) and average permeability (232 md), the vertical arrangement matters. High-permeability-at-bottom gives 67% at GOR 625; high-permeability-at-top gives 52% - a 15-point loss from the same statistical heterogeneity. For low-GOR oils (22 Sm<sup>3</sup>/Sm<sup>3</sup>): 34% becomes 8%. Mechanism: high-k-at-bottom creates a gravity-stable displacement where injected gas rises into an expanding gas cap in the low-k top while the high-mobility bottom is the oil-sweep path. High-k-at-top inverts this: injected gas short-circuits the top, leaving oil in the bottom. Lean gas condensates above GOR 10,000 are insensitive to k-arrangement.</li>
+    <li><strong>Methane vs lean-gas trade-off crosses over near GOR 1,000 Sm<sup>3</sup>/Sm<sup>3</sup>.</strong> Oil systems below GOR 800: lean gas (with C3-6 intermediates) gives 2-4 points higher recovery than pure methane because intermediates participate in swelling and improve vaporisation. Gas systems above GOR 1,000: pure methane gives 2-6 points higher recovery than lean gas (up to 6 points for the leanest condensate) because methane has a larger chemical-potential gradient against retrograde condensate and is more effective at re-vaporising it. The intuition "richer gas is always better for EOR" is wrong for gas-cycling in lean condensates.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The two-curve teaching diagram.</strong> Pairing the 2005 JPSE depletion U-curve and this 2009 gas-injection S-curve on the same axes is one of Curtis's signature teaching frames. The 60-percentage-point spread in the critical region is the single largest IOR opportunity available from fluid composition alone, independent of rock properties.</p>
+    <p><strong>The permeability-arrangement diagnostic.</strong> Dykstra-Parsons by itself is a lumped measure of heterogeneity. This paper shows that the <em>arrangement</em> of the same heterogeneity can swing recovery by 15-30 points, particularly for oil-dominated fluids in dipping reservoirs.</p>
+    <p><strong>Methane-vs-lean-gas crossover.</strong> The injection-gas composition trade-off is fluid-type-specific. For near-critical or volatile-oil reservoirs, reprocessing to pure methane degrades recovery slightly. For lean gas condensates, cycling pure methane is preferable to cycling the lean-gas mixture.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Singh-Fevang-Whitson 2005 JPSE depletion-recovery paper (the U-curve counterpart)</li>
+    <li>Coats-Whitson-Thomas 2004 SPE-90390 - conformance / heterogeneity framework</li>
+    <li>Hoier-Cheng-Whitson 2004 SPE-90379 - undersaturated gas-oil miscibility</li>
+    <li>Whitson-Brule 2000 SPE Monograph</li>
+    <li>Zick condensing/vaporising mechanism for rich-gas injection</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator IOR screening for compositionally graded reservoirs spanning the critical mixture</li>
+    <li>Methane vs lean-gas-cycling design guidance for gas condensates</li>
+    <li>Permeability-arrangement screening as a first-order IOR variable</li>
+    <li>Whitson Academy course material on gas-injection IOR design across the fluid taxonomy</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Kameshwar Singh</strong> — PERA. Long-running BOPVT and gas-injection collaborator with Curtis since 2000.</p>

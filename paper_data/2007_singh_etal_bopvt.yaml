@@ -1,0 +1,80 @@
+id: 2007_singh_etal_bopvt
+title: Consistent Black-Oil PVT Table Modification
+page_title: Singh, Fevang & Whitson (2007) - Consistent Black-Oil PVT Table Modification
+authors:
+- Kameshwar Singh
+- Øivind Fevang
+- Curtis H. Whitson
+authors_affiliation: null
+venue: SPE Annual Technical Conference and Exhibition, Anaheim, California, 11–14 November 2007
+paper_number: SPE-109596
+doi: 10.2118/109596-MS
+funding: null
+citations: 6
+citations_source: OpenAlex
+tags:
+- Black-Oil PVT
+- Consistency Checks
+- K-Value Extrapolation
+- Convergence Pressure
+- PR79 + LBC Fill-In
+- Near-Critical
+- Phase 3
+whitson_index: 2
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Seven years after the SPE-63087 BO-vs-EOS selection guide, the Singh-Fevang-<mark>Whitson</mark> trio returned to a tighter problem: how to make a black-oil PVT table physically consistent throughout its input range and into the regions where the reservoir simulator extrapolates. By 2007 the BO framework was firmly in production simulation, but tables generated from different sources (different PVT packages, simulator-specific conversion utilities, direct EOS exports) routinely violated physical-consistency requirements. Symptoms included Newton-Raphson convergence failures near the critical point, simulator-specific results from the same input data, and unphysical excursions at the table boundaries. The 2000 workaround for near-critical convergence (delete 30-50 bar of data) had been pragmatic but unsatisfying.</p><p>SPE-109596 develops three linked methodological contributions, framed as a single workflow. First, a set of nine inequality checks that any BO table must satisfy. Second, a K-value-based extrapolation of solution GOR above the maximum input saturation pressure up to a user-selected convergence pressure. Third, a PR79 EOS plus Lohrenz-Bray-Clark fill-in of FVFs and viscosities that guarantees critical-point consistency by construction. The project was co-funded by ConocoPhillips, Ecopetrol, Norsk Agip, Norsk Hydro, and Statoil through PERA/NTNU. The example fluid is a near-critical North Sea oil A with saturation pressure 400 bara at 163 deg C.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>The nine-inequality PVT audit.</strong> A physically consistent BO table must satisfy three families of inequalities at every input pressure node.
+        <ul>
+    <li><strong>Basic (5 monotone-property checks):</strong> <code>ρ<sub>g</sub> &lt; ρ<sub>o</sub></code>, <code>R<sub>s</sub> &lt; 1/r<sub>s</sub></code>, <code>B<sub>o</sub> &lt; B<sub>gd</sub>/r<sub>s</sub></code>, <code>B<sub>gd</sub> &lt; B<sub>o</sub>/R<sub>s</sub></code>, <code>μ<sub>g</sub> &lt; μ<sub>o</sub></code>.</li>
+    <li><strong>Critical-point (5 equality checks at <code>p<sub>k</sub></code>):</strong> the same five collapse to equalities at the convergence pressure where gas and oil properties must coincide.</li>
+    <li><strong>Saturated-compressibility (2 derivative-inequality checks):</strong> computed <code>c<sub>o</sub></code> and <code>c<sub>g</sub></code> must stay positive, which puts joint constraints on the derivatives <code>dB<sub>o</sub>/dp</code>, <code>dR<sub>s</sub>/dp</code>, <code>dB<sub>gd</sub>/dp</code>, <code>dr<sub>s</sub>/dp</code>.</li>
+    </ul>
+        Every BO table generated automatically or converted between simulators should pass all nine before being used. Curtis's framing: failure in family 1 or 2 is a table-generation bug; failure in family 3 is most commonly an interpolation artefact remedied by adding saturated pressure points.</li>
+    <li><strong>Negative saturated compressibility is an interpolation artefact at input nodes, not a fluid property.</strong> Compressibility derivatives are well-defined only by the interpolation scheme between nodes; at each input pressure node the simulator switches interpolation segments and the computed <code>c<sub>o</sub></code> becomes discontinuous. For near-critical fluids the discontinuity can push <code>c<sub>o</sub></code> negative in a narrow window between adjacent nodes. The remedy is to insert more saturated pressure points (5-bar spacing) near the problem pressure. Fluid A example: original table had negative saturated <code>c<sub>o</sub></code> just below <code>p<sub>sat</sub></code>. Reservoir simulation failed convergence at 230 days when cell pressure reached 400 bar. Regenerating the table at 5-bar saturated-pressure intervals eliminated the negative <code>c<sub>o</sub></code> and produced a full 10-year run at 90 seconds CPU. Negative saturated gas compressibility is much rarer and was not encountered in any of the authors' test systems.</li>
+    <li><strong>Add data, do not delete.</strong> SPE-63087 (2000) recommended deleting 30-50 bar of near-critical data to fix simulator convergence. SPE-109596 (2007) supersedes that workaround. The 2007 method adds 5-bar-spaced data using a well-tuned EOS that produces physically consistent near-critical properties, preserving table validity everywhere. The 2000 workaround remains usable where no tuned EOS is available.</li>
+    <li><strong>Two-component K-value extrapolation to convergence pressure.</strong> A BO table defined only up to maximum saturation pressure <code>p<sub>s</sub></code> can be extrapolated consistently up to any higher pressure - including the critical convergence pressure <code>p<sub>k</sub></code> where gas and oil properties become identical - using a two-component (surface oil and surface gas) K-value formulation derived in Appendix A. The K-values are
+        <p><code>K<sub>o</sub> = (R<sub>s</sub> + C<sub>o</sub>) / (1/r<sub>s</sub> + C<sub>o</sub>)</code>,   <code>K<sub>g</sub> = (1/R<sub>s</sub>r<sub>s</sub>) (R<sub>s</sub> + C<sub>o</sub>) / (1/r<sub>s</sub> + C<sub>o</sub>)</code></p>
+        where <code>C<sub>o</sub> = ρ<sub>o</sub>RT<sub>sc</sub>/(M<sub>o</sub>p<sub>sc</sub>)</code> is the surface-oil-to-surface-gas molar conversion factor. At <code>p<sub>k</sub></code>, <code>K<sub>o</sub> = K<sub>g</sub> = 1</code>. Between <code>p<sub>s</sub></code> and <code>p<sub>k</sub></code>, K-values are assumed log-linear in log-pressure. Inverting recovers <code>R<sub>s</sub>(p)</code> and <code>r<sub>s</sub>(p)</code> analytically. Convergence pressure can be user-specified or computed via the Appendix B formula <code>R<sub>s,pk</sub> = -C<sub>o</sub> ln(K<sub>o,s</sub>) / ln(K<sub>g,s</sub>)</code>.</li>
+    <li><strong>DGOR alternative for problematic <code>p<sub>k</sub></code>.</strong> When the K-value method produces an objectionable kink at <code>p<sub>s</sub></code> (typically from an artificially high user-chosen <code>p<sub>k</sub></code>), the DGOR (derivative-of-GOR) extrapolation provides smoother slope transition. DGOR anchors the endpoint values but not the slopes. Both methods give the same <code>R<sub>s</sub></code> at <code>p<sub>k</sub></code>; intermediate shapes differ. K-value is the default; DGOR is the escape hatch when the simulator cannot absorb the K-value slope at <code>p<sub>s</sub></code>.</li>
+    <li><strong>PR79 EOS plus LBC fill-in with component-specific regression.</strong> Volumetric and transport properties are filled in using Peng-Robinson 1979 plus the Lohrenz-Bray-Clark viscosity correlation, treating the BO system as a two-component mixture (surface oil and surface gas). Six EOS regression parameters per fluid (<code>a<sub>σ</sub></code>, <code>b<sub>σ</sub></code>, <code>s<sub>σ</sub></code>, <code>a<sub>g</sub></code>, <code>b<sub>g</sub></code>, <code>s<sub>g</sub></code>) plus six LBC parameters (<code>ρ<sub>cσ</sub></code>, <code>ρ<sub>cg</sub></code>, <code>ξ<sub>Tσ</sub></code>, <code>ξ<sub>Tg</sub></code>, <code>μ<sup>0</sup><sub>σ</sub></code>, <code>μ<sup>0</sup><sub>g</sub></code>) - twelve total - are regressed to match input-table FVFs and viscosities. After regression, volume shifts <code>(sb)<sub>o</sub></code> and <code>(sb)<sub>g</sub></code> are recalculated at each input node to match input FVF exactly. Critical-point consistency is guaranteed by construction because both EOS and LBC are regressed at the component level; the gas and oil properties automatically converge to equality as <code>p → p<sub>k</sub></code>. Different simulator interpolation schemes are bypassed by pre-populating the BO table with dense PR79+LBC-generated data outside the simulator.</li>
+    <li><strong>Industrial-funded engineering deliverable.</strong> Co-funded by ConocoPhillips, Ecopetrol, Norsk Agip, Norsk Hydro, and Statoil. The paper reads as a procedural specification rather than an academic exploration. The combination of nine consistency checks, K-value extrapolation, and PR79+LBC fill-in is a workflow that a single engineer can run on any BO table before it is delivered to a reservoir simulator.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The principled successor to the 2000 workaround.</strong> The 2000 SPE-63087 near-critical-data deletion was pragmatic but sacrificed accuracy. The 2007 K-value extrapolation plus PR79+LBC fill-in preserves accuracy everywhere by leaning on a tuned EOS as the source of physically consistent near-critical data. Where a tuned EOS is available, the 2007 method is the recommended pattern.</p>
+    <p><strong>BO table workflow standard.</strong> The pattern - fit EOS plus LBC to BO table, generate dense table with physics-based interpolation outside the simulator, feed the dense table to the simulator - is built into the whitson PVT package and increasingly into other commercial tools. Eliminating simulator-internal fill-in removes a source of simulator-to-simulator variation from BO results.</p>
+    <p><strong>Singh as senior author.</strong> SPE-109596 is the second major Singh-<mark>Whitson</mark> paper after SPE-63087 (2000). Singh's role has progressed from co-author to first author. The 2008 SPE-117930 layered pseudopressure paper and the 2009 SPE-120743 work follow, with Singh continuing to lead the BOPVT thread.</p>
+    <p><strong>K-value extrapolation pattern.</strong> The two-component K-value framework derived in Appendix A is a clean re-use of the compositional K-value machinery (<mark>Whitson</mark>-Torp 1981 SPE-10067) applied to the BO surface-component system. The same convergence-pressure concept that anchors compositional K-value correlations anchors BO table extrapolation. The pattern carries through to subsequent BOPVT work and to the modern whitson BOPVT tooling.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li><strong>Fevang, Singh &amp; <mark>Whitson</mark> (2000) SPE-63087</strong> — the direct predecessor with the 30-50 bar near-critical data deletion workaround that this paper supersedes</li>
+    <li><strong><mark>Whitson</mark> &amp; Torp (1981) SPE-10067</strong> — generalised K-values with convergence pressure; the compositional K-value framework extended here to the two-component BO system</li>
+    <li>Peng-Robinson 1979 EOS — the cubic EOS employed for the fill-in</li>
+    <li>Peneloux volume shift — applied per component and central to matching input FVFs exactly after EOS regression</li>
+    <li>Lohrenz, Bray &amp; Clark (1964) — the viscosity correlation extended here with component-specific regression parameters</li>
+    <li>Matthews correlation (surface oil critical properties) and Standing correlation (surface gas critical properties) — starting values for the regression</li>
+    <li>Fevang &amp; <mark>Whitson</mark> (1996) SPE-30714 three-region gas-condensate framework — the deliverability context that consumes the BO tables produced by this method</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Singh &amp; <mark>Whitson</mark> (2008) SPE-117930</strong> — layered-reservoir verification of the gas-condensate pseudopressure method; uses the consistency framework and fill-in machinery established here</li>
+    <li><strong>Singh, Carlsen &amp; <mark>Whitson</mark> (2009) SPE-120743</strong> — further BO PVT and well-deliverability work</li>
+    <li>The whitson PVT package's BOPVT consistency-check and table-generation workflow</li>
+    <li>The pattern of fitting PR79 + LBC at the component level to provide physics-based interpolation outside the simulator</li>
+    <li>Industry workflows for delivering simulation-ready BO tables from compositional EOS models</li>
+    <li>The continuing Singh-<mark>Whitson</mark> BOPVT partnership through to SPE-225382 (2025) with Markus Hays Nielsen</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Kameshwar Singh</strong> — first author. The 2007 paper is Singh's first first-author BOPVT paper with Curtis. Long-time PERA/whitson colleague carrying the BO-PVT thread from 2000 through to the present-day SPE-225382 (2025) Singh-<mark>Whitson</mark>-Nielsen black-oil work.</p><p><strong>Øivind Fevang</strong> — the SPE-63087 (2000) collaboration extended; Fevang's three-region gas-condensate framework underlies the well-deliverability context that consumes these BO tables. The Singh-Fevang-<mark>Whitson</mark> trio combines BOPVT consistency (Singh), gas-condensate deliverability (Fevang), and the EOS-based fill-in (Curtis) in a single workflow.</p><p>The paper acknowledges co-funding from ConocoPhillips, Ecopetrol, Norsk Agip, Norsk Hydro, and Statoil, reflecting the consortium funding model PERA/NTNU operated through this period.</p>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Høier & Whitson (2001) - Compositional Grading: Theory and Practice</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Compositional Grading: Theory and Practice</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Lars Høier, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Dallas, 1–4 October 2000 (proceedings 2001)</p>
+  <p><strong>Paper number:</strong> SPE-63085</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/63085-MS">10.2118/63085-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 48</p>
+  <p><span class="tag">Compositional Grading</span> <span class="tag">Thermal Diffusion</span> <span class="tag">GOC Sensitivity</span> <span class="tag">Fluid Initialisation</span> <span class="tag">Cupiagua</span> <span class="tag">Smorbukk</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The 1994 <mark>Whitson</mark>-Belery paper SPE-28000 had given the petroleum industry a working calculation for isothermal gravity/chemical equilibrium and a Gibbs-Duhem-based justification for combining it with mechanical equilibrium. By the late 1990s several non-isothermal extensions had appeared in the open literature - Haase, Kempers, Belery-da Silva, Firoozabadi-Ghorayeb - and operators were applying them to reservoirs with significant geothermal gradients. The results disagreed with each other and sometimes disagreed with field data. SPE-63085 is the systematic comparison.</p><p>This is the theoretical companion to the 1998 SPE-49269 application paper. Høier and <mark>Whitson</mark> walk through the zero-mass-flux gradient theory, compare four thermal-diffusion models across four fluid systems (black oil, slightly volatile oil, volatile oil, near-critical oil), quantify the sensitivity of estimated oil-column thickness to dewpoint measurement error, recommend a dual-bound fluid-initialisation procedure for reservoir models, and present two field case histories (Cupiagua and Smorbukk) that bracket the practical extremes - one where the isothermal model overpredicts IOIP by a factor of three, one where it matches multi-sample data closely.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Thermal diffusion generally counteracts gravity.</strong> The zero-mass-flux gradient equation balances chemical, gravity, and thermal forces:
+    <p><code>∑<sub>k</sub> (∂μ<sub>i</sub>/∂x<sub>k</sub>) ∇x<sub>k</sub> = F<sub>Gi</sub> - F<sub>Ti</sub> ∇T/T</code></p>
+    Three published <code>F<sub>Ti</sub></code> models (Haase, Kempers, Belery-da Silva) and a fourth (Firoozabadi-Ghorayeb) are compared across four fluid systems. The "passive" thermal model (<code>F<sub>Ti</sub></code>=0 with <code>∇T</code> non-zero) gives results practically identical to isothermal. Haase, Kempers, and Firoozabadi-Ghorayeb all counteract gravity in both gas-like and oil-like systems. Belery-da Silva reduces gradients in gas systems, enhances gradients in oil systems far from critical, and counteracts gravity near critical conditions. For near-critical systems, Belery-da Silva must be reduced to 2-25% of predicted values to avoid mechanically unstable solutions. The practical takeaway: thermal diffusion makes things more mixed, not more segregated, so the isothermal model usually predicts the maximum gradient.</li>
+<li><strong>GOC location is extremely sensitive to reference-sample dewpoint.</strong> The approximate GOC depth from a saturation-pressure gradient calculation is
+    <p><code>h<sub>GOC</sub> = h<sup>0</sup> - (p<sub>s</sub><sup>0</sup> - p<sub>R</sub><sup>0</sup>) / (∇p<sub>s</sub> - ∇p<sub>R</sub>)</code></p>
+    The oil-column sensitivity to dewpoint uncertainty is
+    <p><code>δh<sub>oil</sub>/δp<sub>d</sub><sup>0</sup> = 1 / (∇p<sub>s</sub> - ∇p<sub>R</sub>)</code></p>
+    For a rich gas condensate (<code>∇p<sub>s</sub></code> approx 0.1 bar/m) the sensitivity is 15 m of oil column per bar of dewpoint uncertainty. For a lean gas condensate (<code>∇p<sub>s</sub></code> approx 0.05 bar/m) it is 50 m per bar. The recommendation is emphatic: every effort should be made to measure and model dewpoint pressure accurately when predicting a GOC from an upstructure gas sample.</li>
+<li><strong>Dual-bound fluid initialisation.</strong> For defining initial fluid distribution in a reservoir model, bracket the uncertainty with two cases. (1) Isothermal gradient prediction from the outermost in-situ-representative samples - generally the maximum gradient. (2) Constant composition equal to the outermost samples - the minimum gradient. Both behaviours have field case histories. Plot all PVT samples with error bars on a C7+-versus-depth or oil-in-place plot (<code>1/B<sub>o</sub></code> for oil zones, <code>r<sub>s</sub>/B<sub>gd</sub></code> for gas zones), run isothermal gradient from each in-situ-representative sample separately, identify which samples are in fluid communication, interpolate linearly between communicating samples, and extrapolate with the two bounding cases. Estimate compositional uncertainty from GOR variation, separator-condition variation, and <code>M<sub>7+</sub></code> versus <code>γ<sub>7+</sub></code> consistency. Non-isothermal models that predict gradients larger than isothermal (Belery-da Silva for near-critical) are not recommended for uncertainty definition.</li>
+<li><strong>Cupiagua field overprediction.</strong> The isothermal gradient calculation from a top-structure gas sample at 10750 ft subsea predicts a GOC at 11040 ft, implying 4000 ft of oil column. The actual Cupiagua field (Colombia) shows near-constant composition over 5000 ft of structural depth, with dewpoints of 5350 plus-minus 50 psia despite a 240-300 deg F temperature range, and reservoir density practically invariant at 28.5-30.5 lb/ft<sup>3</sup>. The isothermal gradient overpredicts IOIP by more than a factor of 3. Likely cause is convective mixing eliminating gravitational segregation. Smorbukk (Asgard) is the converse - one Well A DST1 sample, run through the isothermal gradient, matches the six-sample compositional gradient across multiple wells in a near-critical gas-condensate / volatile-oil system. The two fields bracket what theoretical gradient models can and cannot predict from limited sampling.</li>
+<li><strong>Management warning.</strong> Høier and <mark>Whitson</mark> close the field-cases section with a direct statement to operators. "Management must be warned, however, that only additional samples (delineation wells) can reduce the uncertainty in fluid definition. 'Putting oil in the ground' with a gradient model, based only on gas samples, is highly uncertain, and should be treated as such." The framing is unusual for a technical paper and reflects Curtis's career-long willingness to write directly to the decision audience.</li>
+<li><strong>Theory-and-practice positioning.</strong> The paper's structure (theory then field practice then case histories) makes it the canonical reference for engineers asked to defend a fluid-initialisation choice for a graded reservoir. The combination of thermal-diffusion uncertainty quantification, GOC sensitivity equations, the dual-bound recommendation, and the Cupiagua/Smorbukk pair gives a defensible methodology rather than a single answer.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The compositional-grading reference.</strong> Together with <mark>Whitson</mark>-Belery 1994 (SPE-28000) and the SPE-49269 1998 application paper, SPE-63085 forms the working trilogy of compositional-grading methodology. The 1994 paper supplied the algorithm; SPE-49269 supplied the MMP/MME application; SPE-63085 supplied the practitioner's manual. Industry studies of graded reservoirs cite the trilogy interchangeably.</p>
+<p><strong>Curtis's stance on data versus theory.</strong> The paper carries a direct line: "We doubt that most petroleum reservoirs satisfy the many conditions and fundamental assumptions associated with theoretical gradient models." Høier and <mark>Whitson</mark> favour measured data over theory - "a long-term stable producing GOR from an early production well may be more important than an expensive isokinetic PVT sample." The emphasis on judicious data use, with uncertainty quantified per data type, reflects Curtis's practical-engineering philosophy that runs through his entire career.</p>
+<p><strong>Methodological back-thread to Curtis's 1985 Eldfisk work.</strong> The 2001 paper presupposes an EOS tuned to multiple fluid samples spanning the compositional range of the structure. That methodological stance originates in Curtis's 1985 Eldfisk consulting study for Phillips, where he criticised the standard practice of tuning GTM to a single reference sample on two grounds - representativeness cannot be guaranteed, and GTM uses single-phase fugacities while VLE-tuning constrains only fugacity ratios. The 1985 prescription (simultaneous tuning to several samples, <code>K<sub>w</sub></code>-anchored MW correction, decoupled EOS-tuning and depth assignment) is the methodological foundation that the 2001 thermal-diffusion comparison sits on top of. The 2001 thermal-diffusion question is a second-order refinement on top of a first-order multi-sample EOS-tuning requirement.</p>
+<p><strong>Used in the Monograph.</strong> The 2000 SPE Phase Behavior Monograph (Chapter 4 on phase equilibria, Chapter 5 on graded reservoirs) draws on SPE-63085 directly. The Cupiagua and Smorbukk case-history material appears in the Monograph as the textbook treatment of compositional-grading uncertainty.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li><strong><mark>Whitson</mark> &amp; Belery (1994) SPE-28000</strong> — the isothermal gravity/chemical equilibrium algorithm and Gibbs-Duhem-based mechanical-equilibrium coupling; the 1992 conversation with Michelsen in Trondheim that justified the formulation</li>
+<li>Haase (1969) and Kempers (1989) — thermal-diffusion model formulations compared here</li>
+<li>Belery &amp; da Silva (1990) — the activation-energy-based thermal-diffusion model studied in detail</li>
+<li>Firoozabadi &amp; Ghorayeb (2000) — the contemporaneous thermal-diffusion model included in the comparison</li>
+<li><strong><mark>Whitson</mark>-Anderson-Søreide (1989)</strong> book chapter — the modified-<code>β<sub>0</sub></code> multi-sample EOS-tuning approach that this paper presupposes</li>
+<li>Curtis's 1985 Eldfisk consulting study for Phillips — the methodological antecedent on multi-sample EOS tuning for GTM</li>
+<li>Cupiagua (BP/Ecopetrol, Colombia) and Smorbukk (Statoil, Asgard, Norway) field PVT data sets</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong><mark>Whitson</mark> &amp; Brule (2000) SPE Monograph "Phase Behavior", Chapters 4 and 5</strong> — the textbook treatment of compositional-grading uncertainty draws directly from this paper</li>
+<li><strong>Cheng, Høier &amp; <mark>Whitson</mark> (2004) SPE-90379</strong> — the third paper in the Høier compositional-grading series</li>
+<li>Industry practice on dual-bound fluid initialisation for reservoir models in graded reservoirs</li>
+<li>The standing recommendation that thermal-diffusion model choice is a second-order question after multi-sample EOS tuning</li>
+<li>Sample-quality assessment workflows feeding compositional-grading studies in commercial PVT packages</li>
+<li>The Cupiagua and Smorbukk case histories that are cited in subsequent compositional-grading literature whenever a contrast between gradient and constant-composition behaviour is needed</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Lars Høier</strong> — NTNU PhD candidate. Second of three Phase 3 papers in his compositional-grading dissertation arc with Curtis (1998 SPE-49269 application, 2001 SPE-63085 theory and practice, 2004 SPE-90379 with Cheng). The 2001 paper is the matured version of the framework Høier had been working through since the mid-1990s. The Cupiagua and Smorbukk case-history work reflects Høier's field-data instincts as well as the theoretical comparisons.</p><p>The reference to Paul Belery (Petrofina, then Total) connects this paper to the 1994 <mark>Whitson</mark>-Belery compositional-grading paper SPE-28000, which itself emerged from Belery's work on Ekofisk with Curtis as a consulting collaborator. The Belery-da Silva thermal-diffusion model treated critically here is the same Belery's contemporary independent line of work.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

@@ -1,0 +1,66 @@
+id: 2022_younus_whitson_martinsen_compositional_uncertainties
+title: "Compositional Uncertainties in Laboratory PVT Data"
+page_title: "Younus, Whitson, Martinsen (2022) - Compositional Uncertainties in Lab PVT Data"
+authors:
+- Bilal Younus
+- Curtis H. Whitson
+- Snjólfur Örn Martinsen
+whitson_index: 1
+authors_affiliation: "Whitson AS / NTNU"
+venue: "ADIPEC, Abu Dhabi, UAE, 2022"
+paper_number: "SPE-211391-MS"
+doi: "10.2118/211391-MS"
+citations: 4
+citations_source: OpenAlex
+tags:
+- Lab PVT QC
+- GC Compositional Uncertainty
+- Baseline Shift
+- Internal Standard
+- Gamma-Model QC
+- C<sub>x</sub> Diagnostic Plot
+- Duvernay
+- Field-Wide EOS
+- Phase 4
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Methodology paper introducing a systematic, quantitative procedure to identify and correct individual-sample laboratory C<sub>7+</sub> compositional errors using an already-developed field-wide gamma distribution model. Where Younus et al. 2019 URTeC-551 covered the <em>development</em> of a field-wide gamma model, this 2022 ADIPEC paper addresses the <em>QC of new samples</em> against that model. Validated on 50+ public Duvernay-basin PVT samples spanning a decade across several PVT labs. The paper's own claim: "to our knowledge, this is the first attempt to identify and deal with composition errors with a systematic and comprehensive workflow."</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Four-source GC compositional-uncertainty taxonomy.</strong> (a) Baseline shift (BS) in gas chromatography; (b) internal standard (IS) error; (c) component molecular-weight error; (d) GOR-recombination error. Composite effect: &plusmn;0.2-2 mol% errors in methane and C<sub>7+</sub> per Mawlod et al. 2021. Formal error definitions: <code>E<sub>IS</sub> = A<sub>t</sub><sup>lab</sup> / A<sub>t</sub><sup>correct</sup> - 1</code>; <code>E<sub>BS</sub></code> as a sliding-baseline area offset; parameter <code>C<sub>x</sub></code> = the first SCN fraction where errors begin (typically beyond C<sub>15</sub>).</li>
+    <li><strong>Gamma-model GC QC workflow with C<sub>x</sub> diagnostic plot.</strong> Procedure using the field-wide gamma model (fixed <code>&alpha;</code>, <code>&eta;</code>, <code>M<sub>Li</sub></code>) with sample-specific <code>M<sub>7+</sub></code> and <code>C<sub>x+</sub></code> multiplier as two regression variables. Starts with <code>C<sub>x</sub> = C<sub>N+</sub></code>, classifies the sample as (i) no-error, (ii) IS-only (mismatch only in C<sub>N+</sub>), or (iii) BS-only-or-combined (mismatch for some <code>C<sub>x</sub> &lt; C<sub>N+</sub></code>). The C<sub>x</sub> diagnostic plot of C<sub>15-</sub> deviation plus total calculated mass vs trial <code>C<sub>x</sub></code> identifies the correct <code>C<sub>x</sub></code> as the heaviest SCN with minimum C<sub>15-</sub> deviation; the total-calculated-mass value at that <code>C<sub>x</sub></code> distinguishes BS-only (&asymp; 1) from combined IS+BS (&ne; 1).</li>
+    <li><strong>Post-QC sample-specific EOS-tuning variables V<sub>M7+</sub> and V<sub>N+</sub>.</strong> Two regression knobs introduced after the gamma-model QC. <code>V<sub>M7+</sub></code> on C<sub>7+</sub> average MW impacts the mass distribution of all C<sub>7+</sub> components; <code>V<sub>N+</sub></code> is a multiplier on the C<sub>N+</sub> amount (mass or mole). Typical <code>V<sub>M7+</sub></code> adjustment under 5% for good-quality samples; can be larger for flagged samples. Allows iterative EOS tuning where sample-specific uncertainties in C<sub>15-</sub> distribution and the C<sub>N+</sub> integration-to-infinity residual are absorbed by these two knobs rather than perturbing the field-wide gamma parameters.</li>
+    </ul>
+- heading: Significance and Contribution
+  box_style: influence
+  body_html: |-
+    <p><strong>Lab-QC at scale via the field-wide model.</strong> The 2019 URTeC-551 field-wide EOS gave operators a single basin-scale fluid model; this paper closes the loop by giving them a quantitative tool to QC each new sample's GC against that model. Outliers are classified into IS, BS, or combined errors with the C<sub>x</sub> diagnostic plot, and the two-knob EOS-tuning recipe absorbs residual sample-specific uncertainty without compromising the field-wide gamma framework.</p>
+    <p><strong>Named errors are addressable errors.</strong> Curtis's pattern across forty years: define the failure mode, name its parameters, give the diagnostic plot, then the recipe. Same approach as the 1983 SPE-12233 C<sub>7+</sub> characterisation, the 1996 Fevang-Whitson three-region GCB, and the 2000 monograph's PVT-data QC chapters. The four-source taxonomy makes lab-side error attribution tractable for operators who previously had no way to challenge a vendor's GC report.</p>
+    <p><strong>Duvernay validation across labs and across a decade.</strong> 50+ public samples, several PVT labs, ten-year span. That breadth of validation makes the workflow defensible across the unconventional fleet rather than being a one-basin trick.</p>
+- heading: Knowledge Built Upon
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Younus et al. 2019 URTeC-551 field-wide EOS development (the gamma model this paper QCs against)</li>
+    <li>Whitson 1983 SPE-12233 gamma-distribution C<sub>7+</sub> characterisation (the underlying distribution form)</li>
+    <li>Mawlod et al. 2021 (the &plusmn;0.2-2 mol% composite uncertainty quantification)</li>
+    <li>Whitson-Brule SPE Monograph 2000 PVT-data QC chapters</li>
+    <li>Standard flash-GC-recombination laboratory protocols</li>
+    </ul>
+- heading: What It Contributed To
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Nielsen-Wanat-Whitson 2024 SPE-220699 compositional-uncertainty forward propagation (the next step: propagate the QC'd uncertainty into phase-behaviour predictions)</li>
+    <li>Singh-Whitson-Nielsen 2025 SPE-225382 BOPVT vs lab-PVT comparison</li>
+    <li>Operator lab-PVT QC workflows in the Duvernay, Eagle Ford, Bakken, Permian basins</li>
+    <li>Whitson Academy course material on GC compositional uncertainty</li>
+    <li>The C<sub>x</sub> diagnostic plot as a standard reviewer tool</li>
+    </ul>
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Bilal Younus</strong> &mdash; Whitson AS senior engineer; first author. First-authored the 2019 URTeC-551 field-wide EOS paper this work depends on; co-author across the 2020-2025 unconventional-PVT cluster.</p>
+    <p><strong>Snj&oacute;lfur &Ouml;rn Martinsen</strong> &mdash; Whitson AS senior engineer; long-standing collaborator on PVT and EOS workflows since the 2010 Martinsen et al. SPE-135085 framework.</p>

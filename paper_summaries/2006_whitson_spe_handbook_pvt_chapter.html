@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson (2006) - PVT Treatment in Reservoir Simulation (SPE Petroleum Engineering Handbook)</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Pressure/Volume/Temperature (PVT) Treatment (SPE Petroleum Engineering Handbook, Section 17.7)</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> Lake, L. W. (ed.) and Holstein, E. D. (vol. ed.), <em>Petroleum Engineering Handbook</em>, Vol. V (Reservoir Engineering and Petrophysics), Chapter 17 ("Reservoir Simulation"), SPE, Richardson TX, 2006. ISBN 978-1-55563-108-6, pp. V-1449 to V-1457.</p>
+  
+  
+  
+  <p><strong>Format:</strong> 12-page Whitson-authored section within a multi-author chapter (Batycky, Thiele, Coats, Grindheim, Ponting, Killough, Settari, Thomas, Wallis, Watts, Whitson)</p>
+  
+  <p><strong>Citations:</strong> not catalogued individually</p>
+  <p><span class="tag">SPE Handbook</span> <span class="tag">Reservoir Simulation</span> <span class="tag">Phase Stability</span> <span class="tag">Density Errors</span> <span class="tag">Three-Phase Flip-Flop</span> <span class="tag">Handbook Chapter</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>A 12-page Whitson-authored section in the SPE flagship reference, sitting inside the Reservoir Simulation chapter that Holstein editorially shepherded for the handbook. The section covers phase-type determination, two-phase flash, density, component partitioning, viscosity, gas-oil interfacial tension, black-oil PVT models, equation-of-state models, three-phase PVT behaviour, surface phase behaviour, thermal-model PVT requirements, and fluid initialisation. Most material reviews the Whitson-Brule 2000 Monograph and the Fevang-Singh-Whitson 2000 SPE-63087 BO-vs-EOS guidelines. Three operational insights are unique to this chapter (not in the Monograph at full weight) and are captured below.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Phase-type determination tradeoff: Michelsen stability test (slow, reliable) vs saturation-pressure calculation (fast, may fail near-critical).</strong> Each grid cell decides at every timestep whether its overall composition is single-phase or two-phase. Two methods are available:
+    <ul>
+<li><strong>Michelsen stability test</strong> (Gibbs tangent-plane criterion) - slow because no good K-value initialisation is available (the test is precisely what determines whether to flash), but reliable near-critical.</li>
+<li><strong>Saturation-pressure calculation</strong> - fast because Wilson or previous-timestep K-values provide good initialisation; supplies a single-phase oil-vs-gas tag (which the stability test does not), but may fail to converge or return the trivial solution near-critical.</li>
+</ul>
+    Operational guidance: for near-critical compositionally grading reservoirs, the stability test's reliability outweighs its cost. For depletion-dominated oils, the saturation-pressure shortcut with fallback to stability is the common compromise. Either method that detects two phases produces excellent K-value starts for the subsequent Rachford-Rice flash. The diagnostic for a misbehaving compositional simulator: re-run problematic cells with stability-first and check whether timestep oscillations disappear.</li>
+<li><strong>Density errors in reservoir simulation amplify roughly 5x into gravity-segregation potential error.</strong> Gravity segregation is driven by <em>differences</em> of phase densities, not absolute densities. A +5% error in oil density (630 kg/m<sup>3</sup> instead of 600) combined with a -5% error in gas density (380 instead of 400) gives a gravity-segregation potential <code>Δρ<sub>go</sub> = 250</code> kg/m<sup>3</sup> instead of the correct 200 - a 25% error in the segregation driving force from ±5% phase-density errors. Relative-permeability error scales as <code>k<sub>r</sub> ∼ S<sup>n</sup></code> with Corey exponents 2 to 4, so a 5% density error becomes about 15% <code>k<sub>r</sub></code> error for <code>n = 3</code>. Black-oil-specific caveat: black-oil models compute reservoir densities from formation volume factors, solution ratios, and surface densities. Arbitrary or mis-reported surface densities produce subtly wrong reservoir densities that simulators rarely tabulate, so the user may never notice. Recommendation: a well-tuned EOS with Peneloux volume shifts matches reservoir and surface densities to within 1-2%, and black-oil inputs should be generated from that EOS rather than from industry-average surface defaults.</li>
+<li><strong>Three-phase L<sub>1</sub>-L<sub>2</sub>-V flip-flop in two-phase-only EOS simulators causes instability and wasted timesteps.</strong> A second liquid hydrocarbon phase (L<sub>2</sub>) can appear at low temperatures (less than about 140°F) in gas-injection processes using CO<sub>2</sub>- or NGL-enriched gas. When three phases physically exist but the simulator is restricted to two, the two-phase flash may converge to any of L<sub>1</sub>-V, L<sub>2</sub>-V, or L<sub>1</sub>-L<sub>2</sub> depending on K-value start, composition history, and tolerances. The simulator "flips" between solutions across timesteps. Symptoms: repeated timestep cuts, pressure oscillations, failed timesteps, physically implausible saturation paths concentrated near the injector. Remedies in two-phase-only simulators: detect the flip-flop algorithmically and freeze the cell at one solution; re-tune the EOS to discourage L<sub>2</sub> in the operating envelope (incorrect thermodynamics but stable numerics); accept the timestep-cut performance cost. Full remedy: use a three-phase-capable EOS compositional simulator. Curtis cautions against using low-temperature CO<sub>2</sub>-EOR projects as training examples for compositional-modelling novices.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The SPE-canonical PVT-in-simulation reference.</strong> The 2006 SPE Petroleum Engineering Handbook is the profession's standard library reference for petroleum-engineering practice. Curtis's section is the canonical statement on how PVT meets reservoir simulation, sitting inside the Holstein-edited simulation chapter co-authored with the field's leading simulator architects. The handbook's reach is much wider than the SPE journal community; the section travels into petroleum-engineering graduate programmes worldwide.</p>
+<p><strong>The density-error-amplifier warning.</strong> Reservoir engineers used to thinking in absolute densities can be surprised that small density errors translate into much larger segregation errors. The 5x amplification rule from this section becomes a standard pedagogical example.</p>
+<p><strong>The three-phase-flip-flop diagnostic.</strong> CO<sub>2</sub>-EOR project teams running compositional models that fail mysteriously on sensitivity cases with slightly different CO<sub>2</sub> composition or injection temperature now have the textbook explanation. The diagnostic chain (check the cell fluid for L<sub>1</sub>-L<sub>2</sub>-V at operating <code>(p, T, z)</code>; if the EOS flashes three phases, switch simulator or re-tune EOS) reduces what was a black-box failure into a checklist.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Brule 2000 SPE Monograph Volume 20 - the foundational PVT framework</li>
+<li>Fevang-Singh-Whitson 2000 SPE-63087 - BO-vs-compositional guidelines</li>
+<li>Michelsen 1982a,b stability test - the rigorous phase-detection algorithm</li>
+<li>Whitson-Michelsen 1989 negative flash - the convergence-pressure machinery underlying the saturation-pressure shortcut</li>
+<li>Peneloux, Rauzy &amp; Frèze 1982 volume translation</li>
+<li>Whitson 1992 HOT Forum tutorial - the four-tier hierarchy and pseudoisation workflow that the handbook section condenses</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The SPE Handbook itself - one of the most-distributed PVT-in-simulation references in the field</li>
+<li>Graduate petroleum-engineering simulation courses worldwide</li>
+<li>Operator simulation-protocol documents that cite the handbook section directly</li>
+<li>The 2009 SPE TWA "Pillars of Technology" piece - Curtis lists handbook authorship among the markers of the framework's maturity</li>
+<li>The CO<sub>2</sub>-EOR three-phase-capable simulator adoption argument that ran through industry through the 2010s</li>
+</ul>
+</div>
+
+
+<h2>Editorial Context</h2>
+
+<p>The full Chapter 17 author list (Batycky, Thiele, Coats, Grindheim, Ponting, Killough, Settari, Thomas, Wallis, Watts, Whitson) is the major-simulator-authors roster of the 2000s. Curtis is the PVT voice in a chapter otherwise written by simulator-engine architects. The structural relationship - PVT specialist providing the fluid-treatment section that the simulator-engine architects then consume - is the same one Curtis maintained with Coats through the 2004 SPE-90390 conformance-as-dispersion paper.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

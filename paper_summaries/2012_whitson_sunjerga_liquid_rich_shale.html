@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson & Sunjerga (2012) - PVT in Liquid-Rich Shale Reservoirs</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>PVT in Liquid-Rich Shale Reservoirs</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark>, Robert B. Sunjerga</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, San Antonio, Texas, 8–10 October 2012</p>
+  <p><strong>Paper number:</strong> SPE-155499-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/155499-MS">10.2118/155499-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 147</p>
+  <p><span class="landmark-inline">LANDMARK</span> <span class="tag">Liquid-Rich Shale</span> <span class="tag">Unconventional PVT</span> <span class="tag">Producing OGR</span> <span class="tag">Multi-Mixture CCE</span> <span class="tag">EOS</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+<div class="landmark">
+<p><strong>Why it matters:</strong> The paper that defined the liquid-rich shale (LRS) PVT problem. Eagle Ford, Bakken, Avalon, Vaca Muerta, Montney - by 2012 the industry was drilling at scale into ultra-tight rocks where the wellstream produced at surface bears almost no resemblance to the in-situ reservoir fluid. Curtis and Sunjerga set out the framework that has been the reference ever since: the dimensionless producing OGR <code>r<sub>pD</sub></code> as an oil-recovery efficiency, the multi-mixture CCE laboratory test that replaces CVD for LRS sampling, the black-oil-table extrapolation to the critical point for single-phase initialisation, the gridding requirements that kill most published LRS simulations, and the producing-OGR-versus-FBHP diagnostic for fluid-system classification. This paper marks the start of Curtis's Phase 4. Every subsequent unconventional PVT study traces back to it.</p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>By 2012, hydraulic-fractured horizontal wells in liquid-rich shales were the growth engine of the North American upstream business. The Eagle Ford alone was producing several hundred thousand barrels of oil and condensate per day from rock with matrix permeabilities of 10 to 1000 nanodarcy. Conventional reservoir engineering tools were failing in predictable ways: CVD experiments did not match the wellstream, recombined separator samples did not match the in-situ fluid, EOS models tuned to one well produced nonsense for the next, and reservoir simulators showed oscillating producing OGRs that engineers had been treating as signal.</p><p>Curtis was 56. He had run Whitson AS since 1988, had finished the SPE Monograph with Michael Brule in 2000, and had a decade of black-oil PVT, compositional grading, and CO2-EOR papers behind him. The Sunjerga collaboration is one of the first sustained applications of the whitson group's modelling stack to a problem the conventional PVT framework genuinely could not handle. The result is not a single elegant equation. It is an operating manual for LRS PVT, written for engineers who would still be running into these wells thirteen years later.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>The producing-OGR problem stated as a first principle.</strong> What the well produces at surface is not what is in the reservoir. Ultra-low permeabilities and the large drawdowns that come with them set up highly localised gas-to-oil mobility gradients near the fracture face. The result is a producing OGR (<code>r<sub>p</sub></code>) that is a factor of 2 to 50 below the in-situ OGR (<code>r<sub>i</sub></code>). Three wells with identical in-situ fluid (<code>r<sub>i</sub> = 350</code> STB/MMscf, <code>R<sub>i</sub> = 2857</code> scf/STB) and the same 10 MMscf/D gas rate produce 3500, 1000, and 200 STB/D of oil depending on whether the rock is conventional, LRS oil, or LRS gas. Revenue contrast at oil prices: $380,000, $130,000, $50,000 per day. The paper is unapologetic about the magnitude.</li>
+<li><strong>Dimensionless producing OGR <code>r<sub>pD</sub></code> as oil-recovery efficiency.</strong> Defined as <code>r<sub>pD</sub> = r<sub>p</sub>/r<sub>i</sub> = R<sub>i</sub>/R<sub>p</sub></code>. Conventional reservoirs have <code>r<sub>pD</sub> ≈ 1</code> during infinite-acting flow. LRS volatile oils run 0.05 to 0.5, lower-GOR undersaturated oils 0.5 to 0.9, and LRS gas condensates 0.01 to 0.1 regardless of richness. <code>r<sub>pD</sub></code> connects directly to recovery factor through <code>RF<sub>o</sub> = r<sub>pD</sub> × RF<sub>g</sub></code> for constant-OGR periods, which makes the metric usable for forecasting from the first month of production.</li>
+<li><strong>Solution-OGR ceiling for LRS gas-condensate wells.</strong> In any LRS gas-condensate reservoir (<code>S<sub>oi</sub> = 0</code>), no matter how rich the in-situ fluid, the well produces only the solution condensate carried by the flowing reservoir gas at bottomhole flowing pressure: <code>r<sub>p</sub> ≈ r<sub>s</sub>(p<sub>wf</sub>)</code>. Retrograde condensate forms in the matrix but cannot flow. Two wells with <code>r<sub>i</sub> = 155</code> and <code>r<sub>i</sub> = 50</code> STB/MMscf both produce about 3 STB/MMscf at <code>p<sub>wf</sub> = 1000</code> psia. The result is insensitive to richness, undersaturation, and the relative-permeability curves. It also points to an economic-optimal drawdown for LRS gas-condensate wells where the gas-price-versus-condensate-price differential changes the operating answer.</li>
+<li><strong>Multi-mixture CCE laboratory test.</strong> CVD is the wrong test for LRS because the gases it removes do not approximate producing wellstreams. The paper proposes four recombined mixtures spanning the historically observed separator OGR range (<code>r<sub>sp,min</sub> ≈ 30</code> to <code>r<sub>sp,max</sub> ≈ 350</code> sep-bbl/MMscf in the default case), each subjected to a standard CCE in a visual cell. Separator oil is charged once; separator gas is added in four increments. The result is a PVT dataset that covers the full range of flowing compositions from lean producing wellstream to candidate in-situ fluid. The procedure is cheap and the data anchors the EOS where the well actually operates.</li>
+<li><strong>EOS model from production-test data alone.</strong> Where conventional sampling cannot get an in-situ fluid, a reliable EOS model can be developed from minimum data: separator gas composition, producing OGR, stock-tank API gravity, and reservoir temperature. The wellstream <code>z<sub>wi</sub> = f<sub>gw</sub> y<sub>spi</sub> + (1 - f<sub>gw</sub>) x<sub>spi</sub></code> is solved together with the C7+ molecular weight using initial estimates from <code>f<sub>gw</sub> ≈ (1 + C<sub>og</sub> r<sub>p</sub>)<sup>-1</sup></code> and Cragoe (1929) for the oil molar mass. SRK with zero hydrocarbon BIPs is the recommended default; PR with slightly positive C1-C7+ BIPs is the alternative. BIPs are not adjusted without a measured saturation pressure.</li>
+<li><strong>Black-oil table extrapolation to the critical point.</strong> Saturated gas and oil black-oil PVT properties must be extrapolated to a maximum saturation pressure where gas and oil converge to critical (<code>R<sub>s</sub> = 1/r<sub>s</sub></code>, <code>B<sub>o</sub> = B<sub>gd</sub>/r<sub>s</sub></code>). Without the extrapolation, initial OGRs in the gap between <code>r<sub>s</sub>(p<sub>s</sub>(z<sub>BO</sub>))</code> and <code>1/R<sub>s</sub>(p<sub>s</sub>(z<sub>BO</sub>))</code> cannot be initialised single-phase, which is wrong for highly undersaturated fields like Eagle Ford. With it, <code>r<sub>i</sub></code> becomes a continuous history-matching variable.</li>
+<li><strong>Gridding requirements for LRS simulation.</strong> Across the matrix half-spacing between adjacent fracture planes (typically tens of feet in Eagle Ford and similar wells), the cells are laid out on a geometric (logarithmic) grid that compresses progressively toward the fracture face. Sub-divide that half-spacing into fewer than 31 such cells and the simulated producing OGR oscillates; 101 cells removes oscillations but yields OGRs about 10% high; roughly 1001 cells are needed for a converged solution. Cell sizes therefore span from sub-millimetre at the fracture face to feet-scale at the matrix outer boundary. The paper points out that most LRS simulation work in the literature is under-gridded. Fully implicit black-oil and compositional models produce very similar results once converged.</li>
+<li><strong>Producing-OGR-versus-FBHP diagnostic.</strong> For undersaturated reservoirs, plotting <code>r<sub>p</sub></code> against <code>p<sub>wf</sub></code> alongside the <code>r<sub>s</sub>(p)</code> curve classifies the well: if <code>r<sub>p</sub> ≈ r<sub>s</sub>(p<sub>wf</sub>)</code> the reservoir is gas-condensate, if <code>r<sub>p</sub> &gt; r<sub>s</sub>(p<sub>wf</sub>)</code> it is oil. Near-saturated systems remain ambiguous because they may already be a saturated two-phase initialisation.</li>
+<li><strong>Sampling strategy: early, low-drawdown, or not at all.</strong> Once a well has produced at large drawdown for days, the wellstream does not return to in-situ composition after rate reduction. After 335 days at 1 MMscf/D, dropping the rate moves <code>r<sub>pD</sub></code> from 0.025 to 0.03 over the following month. The recommendation is to sample early, ideally during cleanup after the fracture treatment, with minimal drawdown. When that is impossible, the fallback is advanced PVT modelling combined with single-well simulation, using <code>r<sub>i</sub></code> as the history-matching variable.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The reference paper for unconventional PVT.</strong> Every later study of liquid-rich shale phase behaviour - Eagle Ford, Bakken, Avalon, Montney, Vaca Muerta, Wolfcamp, Duvernay - draws on the SPE-155499 framework. The <code>r<sub>pD</sub></code> metric, the multi-mixture CCE, the BO-table extrapolation, and the producing-OGR diagnostic appear in operator workflows, in service-company laboratory procedures, and in the next decade of academic papers from Curtis's group and others.</p>
+<p><strong>The start of Phase 4.</strong> Curtis was 56 and had thirty years of conventional PVT behind him. The SPE-155499 framing - first-principles problem statement, dimensionless metric, laboratory procedure, EOS workflow, simulation gridding, sampling rule - is the template the whitson group repeats through the 2010s and into the 2020s. The 2023-2025 separator-sample series, the H2-UHS work, and the Volve E2E paper all carry the same operational rhythm.</p>
+<p><strong>Sunjerga.</strong> Robert Sunjerga was the simulation half of the collaboration. The matrix-half-spacing convergence study (roughly 1001 geometrically-graded cells needed across the fracture half-spacing for converged producing OGR) and the constant-OGR analytical result for 1D planar flow are the practical core of the paper. Most engineers who cite SPE-155499 today never run their simulations at that resolution - the more important contribution may have been calling attention to the question.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson &amp; Brule (2000) SPE Monograph — the C7+ characterisation, K-value framework, and SRK/PR EOS apparatus the paper carries forward</li>
+<li>Fevang &amp; Whitson (1996) SPE-30714 — the three-region gas-condensate flow model adapted to ultra-tight rock</li>
+<li>Whitson &amp; Torp (1981) SPE-10067 — the CVD evaluation framework against which CVD's inapplicability to LRS is argued</li>
+<li>Singh &amp; Whitson (2000, 2007, 2008) — the modified black-oil PVT machinery extended here with critical-point extrapolation</li>
+<li>Cragoe (1929) — the oil molecular-weight correlation used for the production-test EOS workflow</li>
+<li>Standard sampling and PVT-laboratory practice for conventional reservoirs, set up here as the framework that the LRS regime breaks</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Lei, Cheng &amp; Whitson (2014)</strong> — revenue-ratio metric as an alternative LRS performance indicator complementing <code>r<sub>pD</sub></code></li>
+<li><strong>Carlsen, Whitson and colleagues (2018–present)</strong> — the NRTA (numerical rate-transient analysis) series and the unconventional-PVT papers that extend the multi-mixture CCE workflow to specific basins</li>
+<li><strong>Mydland, Whitson and colleagues (2020–present)</strong> — UEOR (unconventional EOR) series, gas-injection scenarios in LRS wells</li>
+<li><strong>Alqahtani &amp; Whitson (2018–2020)</strong> — tight-unconventional fluid heterogeneity, NTNU PhD</li>
+<li><strong>Whitson, Younus &amp; Nielsen (2023) SPE-217328 and Nielsen, Wanat &amp; Whitson (2024) SPE-220699</strong> — separator-sample QC framework, building on the LRS sampling argument from this paper</li>
+<li>Operator PVT-laboratory protocols for unconventional wells in North America, Argentina, China, and Australia</li>
+<li>Whitson Academy courses on liquid-rich shale and unconventional PVT</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Robert B. Sunjerga</strong> — co-author. Simulation work, including the gridding-convergence study and the constant-OGR analytical solution for 1D planar flow.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

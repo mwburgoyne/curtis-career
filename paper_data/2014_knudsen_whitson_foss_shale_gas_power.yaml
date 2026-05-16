@@ -1,0 +1,70 @@
+id: 2014_knudsen_whitson_foss_shale_gas_power
+title: Shale-Gas Scheduling for Natural-Gas Supply in Electric Power Production
+page_title: Knudsen, Whitson & Foss (2014) - Shale-Gas Scheduling for Natural-Gas Supply in Electric Power Production
+authors:
+- Brage Rugstad Knudsen
+- Curtis H. Whitson
+- Bjarne Foss
+authors_affiliation: NTNU
+venue: Energy (Elsevier), Vol. 78, pp. 165-182, December 2014
+paper_number: null
+doi: 10.1016/j.energy.2014.09.092
+funding: null
+citations: null
+tags:
+- Shale Gas
+- Distributed Storage
+- Firm Contract
+- NGPP
+- Lagrangian Relaxation
+- MILP
+- Receding-Horizon MPC
+- Field-Scale Optimisation
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Second Knudsen-Whitson-Foss paper. Where the 2012 ADCHEM paper proposed mixed-integer-linear-program (MILP) scheduling of well shut-ins for an 8-well shale pad with Turner-rate liquid-loading constraints, this 2014 Energy journal paper substantially extends the framework along three dimensions. Economic-contractual: shale-gas reservoirs proposed as ad-hoc distributed underground gas storage for firm-contract supply to natural-gas power plants (NGPPs), bypassing the conventional Local Distribution Company (LDC) storage intermediary. Optimisation-scale: extends from 8-well pad to field-scale (105 wells, 400 MW NGPP) via Lagrangian-relaxation decomposition. Control-theoretic: wraps the MILP in receding-horizon economic model predictive control (MPC) with daily re-optimisation over a 4-week prediction horizon. Implemented in GAMS connected to MATLAB via GDX, CPLEX v12.3 MIP solver, Intel i7 quad-core laptop. Each Lagrangian-scheme receding-horizon iteration takes 15-25 CPU minutes - within the daily re-optimisation budget.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Shale-gas reservoirs as ad-hoc distributed gas storage.</strong> The conceptual contribution. For ultra-tight shale formations (matrix permeability below ~0.01 mD), simulations over a 10-year horizon show that shut-ins totalling 10-15% of operating time reduce cumulative recovery by less than 3% relative to continuous production - a property unique to ultra-tight rocks because the low-permeability matrix acts as a high-pressure-gradient source continually recharging the near-fracture region during shut-ins. This property is what enables the shale field to act as a storage facility. Conventional high-permeability gas wells would lose a proportional fraction of NPV to shut-ins; shale doesn't.</li>
+    <li><strong>Firm-contract value chain bypasses LDC storage markup.</strong> Conventional value chain: shale producer to LDC (via shipper plus pipeline company), LDC maintains separate underground storage (salt caverns, depleted reservoirs) to buffer seasonal demand, NGPPs buy from LDC on interruptible contracts. The proposed scheme replaces LDC storage with shale-reservoir storage and replaces interruptible NGPP contracts with firm contracts directly from the producer. Producer gains higher-margin firm-contract sales; NGPP gains fuel-supply reliability without paying LDC storage markup. Profit uplift for the 105-well/400 MW NGPP case study with 4-months-ahead NYMEX firm contract pricing: 12.2% over the continuous-production base case; 10.2% at 3 months, 5.9% at 2 months, 2.2% at 1 month. The further out the firm contract, the higher the premium to compensate for price risk.</li>
+    <li><strong>Lagrangian-relaxation decomposition with primal-recovery heuristic for field-scale tractability.</strong> The optimisation-method contribution. The full-field problem dualises the firm-supply linking constraint into J independent per-well MILPs plus a separable underproduction subproblem. Problem sizes scale from ~860 binaries / 5,409 constraints (10 wells / 43 MW Case 1) to ~9,030 binaries / 56,519 constraints (105 wells / 400 MW Case 3). The primal-recovery heuristic fixes 85-95% of binary variables based on the LP-projection of the Lagrangian solution (inspired by Fischetti-Glover-Lodi Feasibility Pump plus Berthold branch-and-bound improvement) - the remaining ~5-15% are solved by a small MILP that converges in seconds. Without decomposition, the field-scale MILP would be intractable.</li>
+    <li><strong>Receding-horizon economic MPC with spot-price discount factor ξ.</strong> The control-theoretic contribution. The MILP runs daily over a 4-week prediction horizon. Only the first day's schedule is implemented; the next day's re-optimisation starts from the updated reservoir state and updated 4-week price forecast. The novel spot-price discount factor <code>ξ</code> trades off trust in the known day-ahead price vs uncertainty in later-horizon prices, regularising the optimisation against over-reacting to far-horizon forecasts.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The intermittency-reliability connection.</strong> The paper positions shale-gas reservoirs as a renewable-energy reliability enabler. Wind and solar generation intermittency requires fast-dispatchable gas-fired backup; gas-fired backup requires reliable firm gas supply; firm supply conventionally requires LDC storage at high markup. The shale-reservoir-as-storage concept provides the reliability layer at lower cost. This framing - same physics, new economic context - has aged well as renewable penetration has grown.</p>
+    <p><strong>Decomposition makes shale-pad optimisation field-scale.</strong> Curtis's teaching pattern: when a centralised optimisation hits intractability at field scale, find the right decomposition. The firm-supply constraint is the natural coupling - dualising it gives per-well subproblems that are independently solvable and a single coupling multiplier that the master problem updates. The primal-recovery heuristic then turns the dual solution into a feasible primal in tractable time.</p>
+    <p><strong>The Whitson contribution is the physics anchor.</strong> The optimisation-theory contributions (Lagrangian relaxation, MPC, primal recovery) are Knudsen and Foss; the petroleum-engineering anchor is Curtis's:</p>
+    <blockquote>For ultra-tight shale formations, simulations over a 10-year horizon show that shut-ins totaling 10-15% of operating time reduce cumulative recovery by less than 3%.</blockquote>
+    <p>Without that anchor the optimisation would optimise a fiction. The same physics anchor sits underneath Whitson-Rahmawati-Juell 2012 SPE-153073 (cyclic shut-in control) and Knudsen-Foss-Whitson-Conn 2012 ADCHEM (Turner-rate scheduling).</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson-Rahmawati-Juell 2012 SPE-153073 - the cyclic-shut-in recovery-preservation result</li>
+    <li>Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 - the 8-well-pad MILP precursor</li>
+    <li>Turner et al. 1969 - liquid-loading critical-velocity correlation</li>
+    <li>Fischetti-Glover-Lodi - Feasibility Pump primal-recovery heuristic</li>
+    <li>Berthold - branch-and-bound improvement heuristics</li>
+    <li>Gunnerud-Foss 2010 - multi-well-pad decomposition for plant-level target tracking</li>
+    <li>CPLEX v12.3 MIP solver (IBM), GAMS + MATLAB via GDX</li>
+    <li>NYMEX Henry Hub spot and forward gas price data</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator shale-gas field-management workflows linking production scheduling with firm-contract sales</li>
+    <li>Knudsen's NTNU PhD thesis (defended after this paper)</li>
+    <li>Hoffmann-Astutik-Rasmussen-Whitson 2016 IAM optimisation - extends the MILP-with-optimality-guarantee pattern to continuous-decision heavy-oil diluent-rate-plus-choke allocation</li>
+    <li>The growing literature on gas-power coupled optimisation (gas-fired backup for renewable-heavy grids)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Brage Rugstad Knudsen</strong> — NTNU PhD student under Bjarne Foss; shale-gas optimisation. Two-paper sequence with Curtis: 2012 ADCHEM (8-well pad MILP with Turner-rate constraints) and this 2014 Energy paper (field-scale Lagrangian-relaxation extension).</p><p><strong>Bjarne Foss</strong> — NTNU Engineering Cybernetics. Optimisation expertise. Also Curtis's collaborator on the Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark and the Knudsen-Foss-Whitson-Conn 2012 ADCHEM paper.</p>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mydland, Yusra, Whitson, Dahouk, Carlsen (2020) - Gas EOR Processes in Tight Unconventionals</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Gas EOR Processes in Tight Unconventionals</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Stian Mydland, Ilina Yusra, <mark>Curtis H. Whitson</mark>, Mohamad Majzoub Dahouk, Mathias Lia Carlsen (NTNU / Whitson AS)</p>
+  <p><strong>Venue:</strong> SPE Improved Oil Recovery Conference, Tulsa, 2020</p>
+  <p><strong>Paper number:</strong> SPE-200396-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/200396-MS">10.2118/200396-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 4</p>
+  <p><span class="tag">HnP</span> <span class="tag">F2F</span> <span class="tag">Shattered Volume</span> <span class="tag">Molecular Diffusion</span> <span class="tag">FCM vs MCM</span> <span class="tag">Numerical Dispersion</span> <span class="tag">Dual Porosity</span> <span class="tag">T<sub>ex,MOD</sub></span> <span class="tag">Tight Unconventionals</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Methodology / mechanisms paper synthesising the two gas-based same-well cyclic EOR approaches relevant to tight unconventionals: the industry-active Huff-n-Puff (HnP) method (EOG Eagle Ford pilots reporting 30-70% EUR uplift) and the less-developed Fracture-to-Fracture (F2F) method (Zhu 2015, Fu 2019 modelling; no published field applications). Companion to Carlsen et al. 2019 URTeC-539 HnP compositional tracking; this paper focuses on the modelling side - how to simulate these processes correctly without being fooled by numerical dispersion.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>HnP vs F2F mechanism / target-volume dichotomy.</strong> HnP is a <em>mixing</em> process targeting the shattered volume (SV) adjacent to each hydraulic fracture; F2F is a <em>displacement</em> process targeting the entire inter-fracture matrix. First-contact miscibility (FCM) governs HnP mixing; multi-contact miscibility (MCM) governs F2F displacement via vaporising-gas drive, condensing drive, or combined condensing/vaporising per Zick 1986. Different target volumes, different recovery mechanisms, different completion strategies: HnP uses a standard MFHW with the same well for injection and production; F2F uses every-other-fracture alternation via downhole check valves.</li>
+<li><strong>MCM is irrelevant for HnP - the zero-net-recovery-of-miscible-displacement rule.</strong> A counter-intuitive consequence of the cyclic same-well architecture: any miscible front that develops during the huff cycle simply retracts like a piston during the puff cycle, yielding zero incremental recovery. HnP recovery comes strictly from physical mixing at the gas-oil interface; only the first-contact MMP matters. The corollary is that lab MMP screening for HnP targets should report MMP<sub>FC</sub>, not the multi-contact MMP that conventional miscible-flood screening uses.</li>
+<li><strong>Shattered volume plus small rubble plus molecular diffusion as the HnP physical premise.</strong> The SV adjacent to each hydraulic fracture, broken into small rubble pieces and acted on by molecular diffusion (the "stirring" mechanism), is what produces incremental HnP oil. Without SV or with coarse rubble and minimal diffusion, HnP yields negligible recovery. Geometry (cube vs matchstick vs slab) is second-order; minimum rubble dimension is first-order. The framing makes the SV / rubble assumption explicit so it can be tested rather than left as implicit modelling magic.</li>
+<li><strong>Pressure-dependent T<sub>ex,MOD</sub> multiplier for DPM-to-SPM tuning.</strong> Both coarse-gridded single-porosity models (SPM) and dual-porosity models (DPM) inflate HnP recovery via numerical-dispersion-driven artificial mixing. The methodological recommendation: tune a DPM against a rock-scale fine-grid SPM by applying a pressure-dependent multiplier <code>T<sub>ex,MOD</sub></code> on the matrix-fracture exchange transmissibility (Table 3 of the paper: 1.0 at 750 psia down to 5.08e-5 at 10000 psia). With the multiplier in place, the DPM reproduces the rock-scale SPM and becomes tractable at well and field scale without inheriting the SPM's numerical-dispersion HnP-recovery inflation.</li>
+<li><strong>F2F as the alternative UEOR with larger target but slower response.</strong> Cartesian gridding gives tighter control over numerical dispersion than HnP's spherical / radial geometry. F2F's miscible displacement recovers ~2/3 of the inter-fracture matrix (vs HnP's bounded-by-SV-fraction recovery). Ultimate recovery is higher than HnP but the response timescale is years rather than weeks-to-months for tight <code>k<sub>m</sub></code> = 0.01 μd matrix. HnP and F2F share surface facilities, so pilots can start with HnP and transition to F2F.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Two processes, one taxonomy.</strong> The HnP vs F2F dichotomy gives a clean conceptual map for two processes that the industry had been discussing without distinguishing rigorously. The mixing vs displacement contrast, the SV vs inter-fracture target-volume contrast, and the FCM vs MCM miscibility-type contrast together make the two processes comparable on the same footing.</p>
+<p><strong>The "MCM is irrelevant" rule as conceptual relief.</strong> The argument that the cyclic geometry erases any benefit from multi-contact miscibility for HnP is the kind of small theoretical observation with large practical consequence: operators can stop chasing MCM in HnP gas selection and concentrate on first-contact phase behaviour.</p>
+<p><strong>The numerical-dispersion warning with a concrete fix.</strong> Coarse-gridded HnP simulations produce artificially high incremental recovery because of numerical-dispersion-driven artificial mixing. The pressure-dependent <code>T<sub>ex,MOD</sub></code> multiplier is the engineering response: not "use a finer grid" (intractable) but "tune the DPM to the rock-scale SPM via this calibrated multiplier". Same Curtis pattern as the rest of the unconventional cluster: replace ad-hoc tuning with a calibrated workflow.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Carlsen et al. 2019 URTeC-539 HnP compositional tracking in Eagle Ford</li>
+<li>Zick 1986 condensing/vaporising drive mechanism (the MCM framework F2F inherits)</li>
+<li>Zhu 2015 and Fu 2019 F2F modelling studies</li>
+<li>Hoffman 2018 EOG Eagle Ford HnP pilot reports</li>
+<li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework</li>
+<li>Standard dual-porosity reservoir-simulation theory (Warren-Root 1963, Kazemi 1976)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Mydland-Carlsen-Whitson 2021 URTeC-5016 unconventional EOR (the follow-up)</li>
+<li>Carlsen-Whitson 2022 NRTA work with HnP-aware rate normalisation</li>
+<li>Operator HnP pilot design and screening in Eagle Ford / Bakken / Permian</li>
+<li>Whitson Academy course material on unconventional EOR mechanisms</li>
+<li>Industry vocabulary: "shattered volume", "Tex,MOD multiplier", "MCM-irrelevant-for-HnP rule"</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Stian Mydland</strong> — Whitson AS engineer; NTNU PhD. Lead author of the unconventional-EOR-mechanisms work and the Whitson-group HnP modelling cluster.</p><p><strong>Ilina Yusra</strong> — Whitson AS engineer; long-standing co-author on the LRS / unconventional cluster.</p><p><strong>Mohamad Majzoub Dahouk, Mathias Lia Carlsen</strong> — Whitson AS senior engineers; co-authors on the 2020 surface-process triplet and the broader unconventional-PVT toolkit.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

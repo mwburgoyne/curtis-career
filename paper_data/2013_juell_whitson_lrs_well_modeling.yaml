@@ -1,0 +1,72 @@
+id: 2013_juell_whitson_lrs_well_modeling
+title: Optimised Well Modelling of Liquid-Rich Shale Reservoirs
+page_title: Juell & Whitson (2013) - Optimised Well Modelling of Liquid-Rich Shale Reservoirs
+authors:
+- Aleksander Oma Juell
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: SPE Annual Technical Conference and Exhibition, New Orleans, 30 September - 2 October 2013
+paper_number: SPE-166380
+doi: null
+funding: null
+citations: null
+tags:
+- Liquid-Rich Shale
+- Half-Fracture Symmetry
+- Treatment Fluid
+- History Matching
+- Drawdown Optimisation
+- NPV Optimisation
+- Fracture Count
+- SENSOR
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>The fourth and final paper of Aleksander Juell's NTNU PhD with Curtis. Integrates single-well finite-difference (FD) modelling with economic optimisation for liquid-rich shale (LRS) wells. Applications cited for Eagle Ford, Bakken, Avalon, and Montney plays (no field data publishable). The paper threads six distinct methodological contributions through one workflow: half-fracture symmetry-element FD model with system-specific grid-refinement guidelines, explicit modelling of treatment-fluid injection and flowback, an operational recommendation to install bottomhole pressure gauges for the first 2-4 weeks of LRS production, identification of three key history-match parameters with productivity-term <code>x<sub>f</sub>√k</code> non-uniqueness, revenue-optimal drawdown control with a two-period strategy for highly-undersaturated gas-condensate (GC), and net-present-value (NPV) optimisation over fracture count plus horizontal length plus fracture half-length. Built on the SENSOR black-oil simulator (Coats Engineering) plus Pipe-It integration stack.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Half-fracture symmetry-element FD model with system-specific grid refinement.</strong> Only a half-fracture segment of the well is gridded (one fracture, one side of wellbore); rates scale up to full-well during post-processing. Compared with a fully-gridded full-well model, the half-fracture model's producing OGR matches within plotting scatter throughout an 18,000-day forecast. Geometric grid spacing along the wellbore <code>r<sub>i</sub> = r<sub>i-1</sub> (L<sub>h</sub>/(N<sub>f</sub> w<sub>f</sub>))<sup>1/N</sup></code>. Refinement guidelines tier by fluid system: oil LRS converges at 80 × 20 cells per half-fracture (1,600 total); near-saturated GC LRS tolerates much coarser grids because producing OGR is dominated by solution OGR at flowing bottomhole pressure (FBHP); highly undersaturated GC LRS (e.g., <code>p<sub>i</sub></code> = 7,000 psia, <code>p<sub>sat</sub></code> = 4,250 psia) requires 200 × 40 cells (8,000 total) because the steeper pressure gradient near fractures demands finer resolution. CPU speedup of roughly <code>2N<sub>f</sub></code> (~40x at 20 fractures).</li>
+    <li><strong>Treatment-fluid injection and flowback via stress-dependent transmissibility and water capillary pressure.</strong> Combines the Jurus-Whitson-Golan 2013 SPE-166439 stress-dependent permeability multiplier <code>k/k<sub>0</sub> = 10<sup>m(p-p<sub>i</sub>)</sup></code> with water capillary pressure curves <code>P<sub>cwo</sub> = b<sub>1</sub> + b<sub>2</sub>(1 - (S<sub>w</sub>-S<sub>wc</sub>)/(1-S<sub>wc</sub>))<sup>b<sub>3</sub></sup></code>. The stress multiplier admits the physical injection volume (~80,000 STB per fracture stage typical) within the treatment window. The capillary-pressure form retains treatment water in the matrix: without <code>P<sub>c</sub></code>, 80% of injected water flows back within a year; with <code>b<sub>3</sub></code> = 3, only ~40% does. An optional post-injection shut-in period drives water deeper into the matrix via capillary imbibition.</li>
+    <li><strong>Install bottomhole pressure gauges for the first 2-4 weeks of LRS production.</strong> During the early weeks of LRS production, multi-phase flow in the production string (treatment-fluid flowback plus hydrocarbons) causes pressure-drop uncertainty of up to 3,000 psi (~40%) across standard correlations (Fetkovich backpressure, Duns-Ros, Orkiszewski, Beggs-Brill, Hagedorn-Brown, Gray, Petroleum Experts) when water-gas ratio is non-zero. Once water cut drops, correlations converge to within ~10%. A $10-30k bottomhole memory gauge for the first 2-4 weeks is a high-ROI investment because FBHP is the single most important calibration input for an LRS FD model.</li>
+    <li><strong>Three key history-match parameters with productivity-term non-uniqueness.</strong> Matrix permeability k, fracture half-length <code>x<sub>f</sub></code>, and initial in-situ fluid composition (solution GOR or OGR) account for almost all long-term performance variability. The product <code>x<sub>f</sub>√k</code> is the well's effective productivity term, and over the long transient any model with a given productivity term has similar long-term performance - meaning <code>x<sub>f</sub></code> and k cannot be independently determined from rate data alone. The relative-permeability exponent for oil <code>n<sub>og</sub></code> is confounded with initial fluid composition in OGR fitting (Fig. 25). Resolve by establishing initial fluid composition from PVT sampling per Whitson-Sunjerga 2012 and reporting the economic-forecast sensitivity over the admissible <code>x<sub>f</sub></code>-k envelope.</li>
+    <li><strong>Optimal drawdown for highly-undersaturated GC: p<sub>wf</sub> ≈ p<sub>sat</sub> in period 1, then ramp down.</strong> The counter-intuitive finding. For highly-undersaturated gas-condensate LRS (e.g., <code>p<sub>i</sub></code> = 9,000 psia, <code>p<sub>sat</sub></code> = 4,250 psia), maximum-drawdown is the wrong policy. The revenue-vs-<code>p<sub>wf</sub></code> curve peaks at <code>p<sub>wf</sub> ≈ p<sub>sat</sub></code> because pulling below <code>p<sub>sat</sub></code> causes near-wellbore condensate blockage that permanently sacrifices mobility. Optimal two-period strategy: 100-170 days at <code>p<sub>wf</sub></code> = 4,250 psia, then gradual reduction to the operationally-minimum. Going too short on period 1 (e.g., 50 days) loses revenue from incomplete condensate-bank stabilisation; going too long wastes late revenue. Reverse-sequence strategies (low <code>p<sub>wf</sub></code> first, then high) permanently lose revenue - once the bank forms, reducing drawdown cannot recover lost mobility.</li>
+    <li><strong>NPV optimisation: ~45 fractures optimal for oil LRS, ~30 for GC LRS; fracture area dominates over distribution.</strong> Cost model <code>C<sub>w</sub> = a<sub>0</sub> + a<sub>1</sub> L<sub>h</sub> + a<sub>2</sub> N<sub>f</sub> (x<sub>f</sub>/x<sub>f0</sub>)<sup>a<sub>3</sub></sup></code> with <code>a<sub>0</sub></code> = $9 × 10<sup>5</sup> (vertical drilling), <code>a<sub>1</sub></code> = $350/ft horizontal, <code>a<sub>2</sub></code> = $2 × 10<sup>5</sup>/stage at reference <code>x<sub>f0</sub></code> = 150 ft, base-case total cost ~$7 × 10<sup>6</sup>. NPV discounted at 10%, oil $100/STB, gas $3/Mscf. Optimum <code>N<sub>f</sub></code>: ~45 for oil (NPV peak ~$1.2 × 10<sup>7</sup>), ~30 for GC (NPV peak ~$2.5 × 10<sup>6</sup>). Crucially: keeping total fracture area <code>N<sub>f</sub> × x<sub>f</sub></code> constant while varying <code>N<sub>f</sub></code> and <code>x<sub>f</sub></code> yields essentially flat NPV - the number of perforation clusters per stage is not significant for a given total area, decoupling "how much to frac" (economics) from "how to distribute" (completion engineering).</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Time-dependent control policy.</strong> The drawdown-optimum result inverts the conventional maximise-drawdown wisdom for highly-undersaturated GC. There is no single best <code>p<sub>wf</sub></code> - only a sequence of <code>p<sub>wf</sub></code> values that together maximise cumulative revenue. This is the time-dependent-control-policy extension of single-point optimisation, and it shows up because the near-wellbore condensate blockage is hysteretic: mobility lost to blockage never recovers.</p>
+    <p><strong>Honest non-uniqueness.</strong> Recognising structural non-uniqueness early saves the analyst from chasing a false optimum:</p>
+    <blockquote>The three most important history matching parameters are matrix permeability (k), fracture half-length (x<sub>f</sub>), and initial fluid in-place (solution OGR or composition). In reality the long transient production performance is controlled by the wells "productivity term" x<sub>f</sub>√k.</blockquote>
+    <p>Rather than over-fitting <code>x<sub>f</sub></code> vs k through implausible parameter combinations, accept the bundle and report the economic-forecast sensitivity. Make the uncertainty envelope visible.</p>
+    <p><strong>The fracture-area-dominance result.</strong> When an optimisation dimension turns out to be insensitive (fracture-area distribution along the wellbore), report that fact prominently. The value is in telling the completion engineer "pick the clusters-per-stage pragmatically, the economics don't care". Time saved on fake optimisation is value added.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson-Sunjerga 2012 SPE-155499 - the LRS PVT framework and early-low-drawdown sampling recommendation</li>
+    <li>Jurus-Whitson-Golan 2013 SPE-166439 - origin of the stress-dependent permeability multiplier</li>
+    <li>Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic shut-in control and the layered no-crossflow LRS framework</li>
+    <li>Juell-Whitson 2011 SPE-146066 layered backpressure equation</li>
+    <li>Juell-Whitson-Hoda 2009 SPE-121252 integrated-asset-management benchmark - the optimisation infrastructure</li>
+    <li>Whitson-Fevang 1997 pseudopressure framework for gas-condensate well performance</li>
+    <li>SENSOR (Coats Engineering 2013) black-oil simulator</li>
+    <li>Pipe-It / Streamz (Petrostreamz) orchestration for the calibration and optimisation loops</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator LRS field-development optimisation in Eagle Ford, Bakken, Avalon, and Montney</li>
+    <li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 numerical rate-transient analysis (NRTA) workflow - same simulation infrastructure, different inverse-problem structure</li>
+    <li>The Mydland-Whitson liquid-rich-shale series 2020-2021</li>
+    <li>Whitson Academy course material on LRS modelling and optimisation</li>
+    <li>Industry recognition contributing to Curtis's 2023 AIME Honorary Membership citation for "influential consulting services"</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Aleksander Oma Juell</strong> — NTNU PhD under Curtis. Four-paper sequence with Whitson: Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, Juell-Whitson 2011 SPE-146066 layered backpressure equation, Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control, and this 2013 paper integrating LRS modelling with economic optimisation - the culminating paper of his PhD.</p>

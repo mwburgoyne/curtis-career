@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlsen et al. (2019) - Fluid Sampling in Tight Unconventionals</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Fluid Sampling in Tight Unconventionals</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mathias Lia Carlsen, <mark>Curtis H. Whitson</mark>, Ali Alavian, Snjølfur Ørn Martinsen, Stian Mydland, Kameshwar Singh, Bilal Younus, Ilina Yusra (Whitson AS / NTNU)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Calgary, 30 September - 2 October 2019</p>
+  <p><strong>Paper number:</strong> SPE-196056</p>
+  
+  <p><strong>Funding:</strong> Innovation Norway technology-development funding</p>
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Fluid Sampling</span> <span class="tag">MFHW</span> <span class="tag">Liquid-Rich Shale</span> <span class="tag">In-Situ vs Reservoir Representative</span> <span class="tag">ECM1 / ECM2</span> <span class="tag">Equilibrium Contact Mixing</span> <span class="tag">Elevated Saturation Pressure</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>First-authored by Mathias Lia Carlsen, senior engineer at Whitson AS (the post-2017 rebranding of PERA's commercial arm with Curtis as founder and NTNU Professor Emeritus). Eight-author whitson AS / NTNU paper on the tight-unconventional sampling problem. Strong conceptual reframing and two updated Equilibrium Contact Mixing (ECM) procedures. The paper distils Whitson-group experience across hundreds of unconventional samples into a methodology and vocabulary that the rest of the industry can use. Builds directly on Whitson-Sunjerga 2012 SPE-155499 (the LRS PVT framework) and the Fevang-Whitson 1994 ECM procedure from gas-condensate sampling.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>In-situ representative vs reservoir representative sample classification.</strong> The headline conceptual reframing. Two-tier definition that resolves long-standing terminological confusion:
+    <ul>
+<li><em>In-situ representative</em>: represents a volume-weighted average of originally-produced hydrocarbons in place (OOIP / OGIP). The stricter criterion. Used for fluid initialisation (determining OOIP, OGIP, in-situ compositional gradients).</li>
+<li><em>Reservoir representative</em>: any non-contaminated sample produced from the reservoir. The weaker criterion - imposes only non-contamination and origination from the reservoir. Used for EOS-model development.</li>
+</ul>
+    Hierarchy: in-situ representative implies reservoir representative; the converse is not true.</li>
+<li><strong>EOS-development misconception correction.</strong> Explicit correction of the industry misconception that <em>only</em> in-situ-representative samples can be used for EOS modelling:
+    <blockquote>Every year, PVT data and fluid samples worth millions of dollars are discarded for fluid characterisation purposes because of this misconception.</blockquote>
+    Any uncontaminated sample - even a late-life sample under severe multiphase near-wellbore conditions - can and should be used for EOS development, because the EOS must describe <em>all</em> produced fluids throughout the production system. Discarding samples that are merely not in-situ-representative is unnecessarily conservative.</li>
+<li><strong>Four-fluid-type MFHW depletion signature with elevated-saturation-pressure phenomenon.</strong> Systematic catalogue of how producing wellstream properties (saturation pressure, saturation-pressure type, GOR, stock-tank API) evolve with time for black oil, volatile oil, near-critical volatile oil, and near-critical gas condensate systems under both initially-undersaturated and initially-saturated conditions. Two signature observations: (a) saturation-pressure <em>type</em> can flip from bubblepoint to dewpoint during depletion (common for volatile and near-critical fluids), and (b) elevated wellstream saturation pressures <em>exceeding</em> initial reservoir pressure appear in both undersaturated and saturated systems - explained as the same physics as swelling-test saturation-pressure trajectories. Both phenomena are counter-intuitive at first encounter but follow from standard EOS behaviour once the wellstream composition is correctly tracked.</li>
+<li><strong>ECM1 updated procedure for initially undersaturated LRS.</strong> Four-step workflow using the known initial solution GOR <code>R<sub>si</sub> = R<sub>p,i</sub></code> as the matching parameter. Updates Fevang-Whitson 1994 ECM for tight-unconventional conditions. Validated across four fluid systems via detailed compositional simulation: ECM1 reconstruction matches the original reservoir fluid within ±0.5% C7+ error vs ~5-15% error for simple separator recombination.</li>
+<li><strong>ECM2 updated procedure for initially saturated LRS (two variants).</strong> Uses initial reservoir pressure as the matching parameter. Extends Reffstrup-Olsen 1994 and Fevang-Whitson 1994 ECM to cover both cases where wellstream saturation pressure is higher or lower than initial reservoir pressure - the elevated-saturation-pressure case the four-fluid-type signature flagged. Same validation strategy as ECM1.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Vocabulary correction with direct economic impact.</strong> Curtis's teaching pattern in this paper: when industry practice is conservative for the wrong reason, the right response is to publish the distinction that explains why the conservatism is misplaced. The in-situ vs reservoir-representative split makes the rule operational - reservoir-representative samples for EOS work, in-situ-representative samples for initialisation - and unlocks millions of dollars of previously-discarded data for routine reuse.</p>
+<p><strong>The elevated-saturation-pressure phenomenon explained as standard swelling-test physics.</strong> Wellstream saturation pressures exceeding initial reservoir pressure look anomalous on first encounter and have been mis-flagged as sampling errors. The Carlsen et al. explanation - same physics as a swelling test - is the right kind of demystification: not a new mechanism, just careful application of standard EOS behaviour to a setting where wellstream composition shifts as depletion progresses.</p>
+<p><strong>ECM1 / ECM2 as drop-in replacements for separator recombination in LRS.</strong> The ±0.5% C7+ accuracy vs 5-15% for naive recombination is operationally large enough that operators using the updated procedures get materially better EOS models. The two-variant ECM2 design specifically handles the elevated-saturation-pressure cases that the four-fluid-type signature flagged, closing the loop between the diagnostic observation and the operational procedure.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework (the conceptual base)</li>
+<li>Fevang-Whitson 1994 ECM procedure for gas-condensate sampling (the precursor)</li>
+<li>Reffstrup-Olsen 1994 saturated-system sampling extension</li>
+<li>Whitson SPE Monograph 2000 fluid-sampling chapter</li>
+<li>Whitson-Coll-Dahouk-Juell 2016 SPE-180140 four-cycle decomposition (depletion-signature framework)</li>
+<li>Younus et al. 2019 URTeC-551 Field-wide EOS development (companion paper; the EOS framework these samples feed)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator LRS sampling and EOS-development workflows in Eagle Ford, Bakken, Permian, Montney</li>
+<li>Mydland-Whitson liquid-rich-shale series 2020-2021</li>
+<li>Carlsen et al. 2020-2022 numerical rate-transient analysis (NRTA) papers</li>
+<li>Singh-Whitson-Nielsen 2025 SPE-225382 BOPVT vs lab-PVT comparison (descends from the same sampling framework)</li>
+<li>Whitson Academy course material on LRS fluid sampling and EOS development</li>
+<li>Industry recognition contributing to Curtis's 2023 AIME Honorary Membership citation for "influential consulting services"</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; NTNU. First author and lead of the NRTA / LRS workflow series 2019-2022.</p><p><strong>Stian Mydland</strong> — Whitson AS engineer; NTNU PhD. Co-author on numerous Whitson-AS LRS papers.</p><p><strong>Bilal Younus</strong> — Whitson AS engineer. First-author of the companion URTeC-551 Field-wide EOS paper.</p><p><strong>Ali Alavian, Snjølfur Ørn Martinsen, Kameshwar Singh, Ilina Yusra</strong> — Whitson AS engineers; long-standing Whitson-group collaborators continuing into the post-2017 Whitson AS era.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

@@ -1,0 +1,72 @@
+id: 1992_whitson_hot_forum_pvt_tutorial
+title: Phase Behavior in Reservoir Simulation
+page_title: Whitson (1992) HOT Forum - Phase Behavior in Reservoir Simulation
+authors:
+- Curtis H. Whitson
+authors_affiliation: Norwegian Institute of Technology
+venue: Fourth International Forum on Reservoir Simulation, Salzburg, Austria, 31 August - 4 September 1992
+paper_number: null
+doi: null
+funding: null
+citations: null
+tags:
+- Reservoir Simulation
+- PVT Hierarchy
+- Black-Oil Validity
+- Pseudoisation
+- Volume Translation
+- Tutorial
+- Phase 2
+whitson_index: 0
+extra_meta:
+- label: Format
+  value_html: 56-page solo-authored tutorial
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>An invited tutorial at the Fourth International Forum on Reservoir Simulation in Salzburg, eight years before the 2000 SPE Phase Behavior Monograph. 56 pages, solo authored, comprehensive. Much of the content is later subsumed by the Monograph at higher technical weight, but the 1992 tutorial carries three pieces of explicit operational framing that the Monograph leaves more implicit. These are the four-tier PVT formulation hierarchy, the traditional-black-oil validity thresholds with a material-balance validation protocol, and the six-step stepwise regression pseudoisation workflow.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Four-tier PVT formulation hierarchy.</strong> Reservoir simulation PVT formulations form a cost-vs-fidelity stack:
+        <ol>
+    <li><strong>Traditional black-oil</strong> (1x base cost). Two pseudocomponents. Valid for low-volatility oils under depletion with no gas injection.</li>
+    <li><strong>Modified black-oil (MBO)</strong> (1-2x cost). Four PVT parameters <code>B<sub>o</sub>, R<sub>s</sub>, B<sub>gd</sub>, r<sub>s</sub></code>. Valid for volatile oils and gas condensates under depletion, and for vaporising gas injection through Cook et al. 1974 G<sub>i</sub> extension.</li>
+    <li><strong>K-value / convergence-pressure flash</strong> (2-5x cost). Tabulated <code>K<sub>i</sub>(p, T, p<sub>K</sub>)</code>. Valid when convergence pressure is approximately constant; unreliable for multicontact miscible processes.</li>
+    <li><strong>EOS-based compositional</strong> (10-100x cost). Full cubic EOS with stability and flash. The only tier adequate for near-critical, multicontact miscible, CO<sub>2</sub> injection, and complex gas-cycling processes.</li>
+    </ol>
+        Selection rule: start at the cheapest tier that fits the physics, confirm with a depletion material-balance comparison against the next tier, commit only if the comparison shows negligible difference.</li>
+    <li><strong>Traditional-black-oil validity thresholds with material-balance validation.</strong> Low-volatility oils adequately described by traditional black-oil typically satisfy <code>R<sub>s</sub> &lt; 750</code> scf/STB, <code>B<sub>o</sub> &lt; 1.4</code> bbl/STB, and stock-tank API <code>&lt; 30°</code>. These are screening rules of thumb; the definitive validity test is to run the same depletion material balance with traditional black-oil and with a compositional formulation, then compare the predicted trajectories of <code>p</code> and producing GOR versus <code>N<sub>p</sub></code>. If they diverge beyond the precision required by the decision, traditional black-oil is inadequate.</li>
+    <li><strong>Six-step stepwise regression pseudoisation workflow.</strong> The component-reduction procedure from a full 12-20 component EOS down to the 3-6 components that fully-implicit compositional simulators can carry. Steps: (1) build the full characterisation matching CCE/CVD/DLE/swelling; (2) simulate the relevant multicontact experiments with the full model; (3) treat the synthetic data as if it were measured; (4) apply Coats pseudoisation to preserve mixture EOS constants <code>A</code> and <code>B</code> at initial undersaturated conditions; (5) fine-tune by regression on a small parameter subset; (6) repeat for progressively fewer components. The conceptual move is "treat synthetic data as real" - reduce against the full model's behaviour, not the original lab data.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The pre-Monograph teaching artefact.</strong> The 1992 tutorial is the unified pedagogical document that the 2000 Monograph later expanded into book form. Many of Curtis's most-quoted analogies originate here, including the EOS-over-MBO preference quote:</p>
+    <blockquote>"Given the choice of explaining an EOS or a modified black-oil formulation to an engineer, I'd choose the EOS because it would be faster and more readily understood."</blockquote>
+    <p>and the "Sledge Hammer / Indy 500" characterisation of Coats-Smart five-parameter regression:</p>
+    <blockquote>"I tend to think of this method as the Sledge Hammer solution. You can take a Corvette, modify the engine ... change the tires ... put on headers ... and add a spoiler. With this hotrod you'll be fast enough to beat most of the kids dragging main street on Saturday night. Then again, you'd never consider entering such a car at the Indy 500."</blockquote>
+    <p>and the Peneloux volume-translation endorsement:</p>
+    <blockquote>"I've said many times that had the concept of volume translation been introduced shortly after Soave's modification of the Redlich-Kwong equation that the Peng-Robinson and many other cubic equations of state would never have appeared in the literature. Volume translation solves the only major deficiency of the RK EOS - poor liquid volumetric prediction."</blockquote>
+    <p><strong>Implementation-bug warning.</strong> Curtis flags a subtle bug hiding in many commercial simulators: most assume <code>γ<sub>oo</sub> = γ<sub>og</sub></code> and <code>γ<sub>gg</sub> = γ<sub>go</sub></code> in their MBO formulations, but this assumption fails for the volatile reservoir fluids that require MBO in the first place.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Coats &amp; Smart (1986) - five-parameter regression approach (the Sledge Hammer)</li>
+    <li>Coats (1985) - pseudoisation that preserves mixture EOS constants A and B</li>
+    <li>Peneloux, Rauzy &amp; Frèze (1982) - volume translation</li>
+    <li>Cook et al. (1974) - the G<sub>i</sub> extension for MBO with vaporising gas injection</li>
+    <li>Whitson (1983) SPE-12233 - C<sub>7+</sub> characterisation framework underpinning the EOS tier</li>
+    <li>Whitson-Anderson-Søreide (1989, 1990) - multi-sample consistency for the full-characterisation step</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Volume 20 - the entire structure of the 1992 tutorial reappears, expanded, as the Monograph's spine</li>
+    <li>Fevang, Singh &amp; Whitson (2000) SPE-63087 - the BO-vs-EOS guidelines for volatile-oil and gas-condensate simulator selection are the rigorous development of the four-tier hierarchy</li>
+    <li>Whitson AS commercial pseudoisation practice - the six-step regression workflow with synthetic multicontact data as the target</li>
+    <li>The next generation of teaching tutorials and Whitson Academy course content</li>
+    </ul>
+  box_style: connections

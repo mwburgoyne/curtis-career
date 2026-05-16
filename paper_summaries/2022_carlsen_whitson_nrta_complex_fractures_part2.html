@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlsen & Whitson (2022) - Numerical RTA Part 2 (Practical Usage)</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Numerical RTA Extended to Complex Fracture Systems: Part 2</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mathias Lia Carlsen, <mark>Curtis H. Whitson</mark> (Whitson AS)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Houston, October 2022</p>
+  <p><strong>Paper number:</strong> SPE-210420-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/210420-MS">10.2118/210420-MS</a></p>
+  <p><strong>Funding:</strong> Numerical RTA JIP, Innovation Norway, and Norwegian Research Council</p>
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="tag">Fractional RTA</span> <span class="tag">Acuña δ-Parameter</span> <span class="tag">Fracture Swarm</span> <span class="tag">Arps b ↔ δ Identity</span> <span class="tag">Distribution of Fragments</span> <span class="tag">Crow Well</span> <span class="tag">Transitional Flow</span> <span class="tag">NRTA Part 2</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Companion to URTeC-3718584 (Carlsen-Whitson 2022 Part 1, which outlines the underlying theory). This paper focuses on <em>practical usage</em> of fractional RTA theory applied to simulated and field data from the SPE data repository. Generalises the SPE-205884 numerical RTA workflow (with LFP' = LFP &times; &radic;&phi;, all-fluid Bti, three equivalence relationships) from the classical case (<code>&delta; = 0.5</code>, evenly-spaced fractures) to the fractional case (any <code>&delta;</code>, uneven spacing) using the Acu&ntilde;a 2016 / 2020 fractal-network framework. Funded by the Numerical RTA JIP plus Innovation Norway plus the Norwegian Research Council.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Acu&ntilde;a <code>&delta;</code>-parameter generalisation of <code>LFP'</code>.</strong> <code>LFP' = A k<sup>&delta;</sup> &phi;<sup>1-&delta;</sup> = 4 n<sub>f</sub> h x<sub>f</sub> k<sup>&delta;</sup> &phi;<sup>1-&delta;</sup></code>, with <code>&delta; &isin; [0, 0.5]</code> measuring fracture-spacing heterogeneity (0 = pure fracture swarm, 0.5 = evenly-spaced classical case). Extracted from data via a power-law fit <code>&Delta;p / q = m t<sup>1-&delta;</sup> + b</code> on the rate-normalised-pressure-vs-time log-log plot. Recovers the SPE-205884 classical workflow exactly at <code>&delta; = 0.5</code>.</li>
+<li><strong>Distribution-of-fragments reconstruction procedure.</strong> Closed-form equations convert (<code>&delta;</code>, <code>S<sub>min</sub></code>, <code>S<sub>max</sub></code>, m) into a fragment-size distribution {<code>S<sub>i</sub></code>, <code>n<sub>i</sub></code>} with ratio <code>R = exp(ln(S<sub>max</sub>/S<sub>min</sub>) / (m-1))</code>, fragment count <code>n<sub>i</sub> = n<sub>1</sub> (R<sup>(1-2&delta;)(i-1)</sup> - R<sup>(1-2&delta;)i</sup>)</code>, and <code>n<sub>1</sub></code> from mass balance on the total well length. Enables simulation of fracture-swarm networks via m independent symmetry-element models.</li>
+<li><strong>Arps <code>b</code>-parameter ↔ <code>&delta;</code>-parameter identity <code>b = 1 / (1 - &delta;)</code>.</strong> Derived by equating the Arps hyperbolic rate decline <code>q<sub>i</sub> (1 + b D<sub>i</sub> t)<sup>-1/b</sup></code> for large t to the fractional-RTA power-law <code>q = (&Delta;p / m) t<sup>-(1-&delta;)</sup></code> at constant BHP. Explains the Arps <code>b &isin; (1, 2)</code> routinely observed in unconventional wells after end-of-linear-flow (b=2 corresponds to <code>&delta; = 0.5</code>) as a transitional-flow fingerprint rather than a forecasting anomaly.</li>
+<li><strong>Classical-NRTA breakdown for transitional-flow wells.</strong> When <code>&delta; = 0.5</code> is assumed but the well exhibits transitional flow over the entire or extended observed history, classical NRTA under-estimates both <code>LFP</code> and OOIP. Worked example on the Crow well (SPE data repository, 220 days public production): classical NRTA resolves OOIP = 1000 MSTB; Thompson-Ruddick 2022 URTeC-3718045 multiphase flowing material balance independently resolves OOIP = 1800 MSTB; the inconsistency is reconciled by fractional RTA with <code>&delta; = 0.33</code>, yielding <code>LFP = 1.8 &times; 10<sup>6</sup> ft<sup>2</sup>&middot;md<sup>&delta;</sup></code> and OOIP = 1800 MSTB matching both methods.</li>
+</ul>
+<p>The paper also formalises a seven-regime classification of flow-regime combinations in tight unconventionals (purely IA, IA &rarr; Trans, IA &rarr; Trans &rarr; BD, IA &rarr; BD, purely Trans, Trans &rarr; BD, purely BD) as pedagogical summary, and Appendix A "Cheat Sheet for Engineers" consolidates 57 equations spanning DCA, Numerical RTA, Analytical RTA, producing GOR, water cut, Darcy, compressibility, superposition, material balance, diffusivity, and fractional RTA.</p>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Fractional RTA as the natural generalisation.</strong> Classical RTA assumes evenly-spaced fractures and ends-of-linear-flow that match <code>b = 2</code> in Arps. Real unconventional wells routinely show <code>b &isin; (1, 2)</code> for years after end-of-linear-flow, which classical RTA had treated as anomalous. The <code>b = 1 / (1 - &delta;)</code> identity reframes that anomaly as the signature of fracture-spacing heterogeneity, computable from a power-law fit, and integrable into the existing NRTA workflow without breaking it.</p>
+<p><strong>The Crow-well reconciliation is the load-bearing field example.</strong> Two independent methods (classical NRTA and Thompson-Ruddick multiphase FMB) disagree on OOIP by a factor of nearly two; fractional RTA finds the <code>&delta;</code> that makes both agree. That kind of three-method triangulation is exactly the validation that operators look for before adopting a new workflow at scale.</p>
+<p><strong>The seven-regime classification and the cheat-sheet appendix.</strong> Curtis's published work has rarely included a reference-tables appendix; the cheat sheet here is unusual and operationally useful, much like the 2000 monograph appendices that operators bookmark. It signals that this paper is meant as a reference, not just a results report.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 numerical RTA (the classical-<code>&delta;</code>=0.5 workflow this paper generalises)</li>
+<li>Bowie-Ewert 2020 URTeC-2967 original numerical RTA concept</li>
+<li>Acu&ntilde;a 2016 URTeC-2429710 and Acu&ntilde;a 2020 URTeC-2118 analytical fractal-network pressure / rate transient models and <code>&delta;</code>-parameter origin</li>
+<li>Carlsen-Whitson 2022 Part 1 URTeC-3718584 (the theory companion to this practical-usage paper)</li>
+<li>Thompson-Ruddick 2022 URTeC-3718045 multiphase flowing material balance (independent OOIP reference for the Crow-well field example)</li>
+<li>Arps 1945 hyperbolic decline-curve analysis (the <code>b</code>-parameter context)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator RTA practice in unconventional plays where fracture-spacing heterogeneity dominates the flow signature</li>
+<li>Whitson Academy course material on fractional RTA and the Arps-<code>&delta;</code> identity</li>
+<li>The cheat-sheet appendix as a reference for working engineers</li>
+<li>The Numerical RTA JIP body of work that this paper formally publishes</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Mathias Lia Carlsen</strong> &mdash; Whitson AS senior engineer; first author. Continued lead of the NRTA series from SPE-205884 (2021) through Parts 1 and 2 of the fractional-RTA extension in 2022.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

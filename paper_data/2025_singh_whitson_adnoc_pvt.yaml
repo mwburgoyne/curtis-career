@@ -1,0 +1,74 @@
+id: 2025_singh_whitson_adnoc_pvt
+title: Diagnostic Tracking of Produced Gas and Condensate for Gas-Oil Communicating Reservoirs
+page_title: Khan et al. (2025) - Diagnostic Tracking of Produced Gas and Condensate for Communicating Reservoirs
+authors:
+- K. A. Khan
+- M. Y. Alklih
+- R. Alwaeel
+- N. Aljneibi
+- M. M. Abdelrahman
+- A. Al Tenaiji (all ADNOC Onshore
+- Abu Dhabi); Kameshwar Singh
+- Curtis H. Whitson
+authors_affiliation: both Whitson AS, Trondheim
+venue: SPE Advances in Integrated Reservoir Modelling and Field Development Conference, Abu Dhabi UAE, 2-4 June 2025
+paper_number: SPE-225405-MS
+doi: null
+funding: null
+citations: New (2025)
+tags:
+- Communicating Reservoirs
+- Tracer Methodology
+- Compositional Tracking
+- ADNOC
+- Fault Juxtaposition
+- Phase 4
+whitson_index: 7
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Two carbonate reservoirs in Abu Dhabi share a fault juxtaposition at the crest. The deeper oil reservoir has been on production for thirty years under miscible HC-WAG (1:1 ratio, voidage replacement factor 1.2). The shallower gas-condensate reservoir has not been developed, but observer wells show progressive pressure depletion that can only be explained by communication. When pressure in the oil reservoir falls below pressure in the gas reservoir, fluid migrates downward across the fault. Quantifying that migration matters for reserves allocation, for co-development scheduling, and for validating the reservoir-communication assumption against observer-well data.</p><p>The ADNOC team partners with Whitson AS on a 58-million-cell full-field compositional model with a single 8-component EOS. The two methodological questions are how to attribute produced gas to its source reservoir (gas reservoir migration, oil-zone gas cap, oil-zone solution gas, HC injection breakthrough, CO<sub>2</sub> injection breakthrough) and how to quantify the cumulative mass that has migrated across the fault. Singh and Whitson are co-authors providing the tracer methodology; the ADNOC team owns the field-specific characterisation, the EOS tuning, and the operational interpretation.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Five-tracer decomposition for source provenance.</strong> Four methane tracers and one CO<sub>2</sub> tracer enumerate the five gas-provenance sources. T<sub>1W</sub> for C<sub>1</sub>-N<sub>2</sub> initially in the Gas Reservoir. T<sub>2W</sub> for C<sub>1</sub>-N<sub>2</sub> in the Oil Reservoir gas cap. T<sub>3W</sub> for C<sub>1</sub>-N<sub>2</sub> in the Oil Reservoir oil zone (solution gas below saturation). T<sub>4W</sub> for HC injection gas methane. T<sub>5W</sub> for CO<sub>2</sub> injection gas. Tracers initialised by enumeration in the grid (concentration 1 where the component originates, 0 elsewhere). The 8-component EOS drives phase behaviour and compositional flow; tracers passively follow the marked components without affecting the EOS calculation. Total produced C<sub>1</sub> at each well decomposes into the five source-specific contributions.</li>
+    <li><strong>Doubled-EOS validation technique.</strong> Construct a 16-component EOS where each original component is split into a Gas-Reservoir variant and an Oil-Reservoir variant with identical EOS parameters. Initialise grid cells with components only from their own region. Run the 16-component sector model and compare its C<sub>1</sub> production rates against the 8-component-plus-tracer-option result. If the two overlay, the tracer option is validated for that specific reservoir system. The doubled EOS is mathematically equivalent to the original (identical-parameter pairs sum correctly), so any difference between methods isolates the tracer implementation. Sector model (vs full field) keeps the validation cost tractable.</li>
+    <li><strong>Subset-tracer optimisation.</strong> When surface products are dominated by key components (methane and CO<sub>2</sub> for gas tracking, C<sub>7+</sub> for oil tracking), a smaller tracer subset suffices. One methane tracer per source plus one CO<sub>2</sub> tracer per source typically captures the gas-tracking signal without needing one tracer per component per source.</li>
+    <li><strong>Inter-region migration quantification by two methods.</strong> Method A reports inter-region dynamic flux directly from the simulator, converting compositional flux rates to surface gas and oil via a defined surface process. Method B computes remaining-in-place mass balance per region (original minus current surface volumes). For the Abu Dhabi case, Method A and Method B cumulative migration curves overlay closely from 1995 to 2025, validating the simpler flux-based approach for routine operational monitoring while keeping mass-balance for formal reserves reporting.</li>
+    <li><strong>Pre-2006 vs post-2006 trigger.</strong> Pre-2006 migration is negligible because the oil reservoir under Early Production Scheme and the gas reservoir are at near-equal pressures. From 2006 onward, full oil-reservoir development creates the pressure differential and migration begins. Cumulative migration grows monotonically through 2025 with accelerating recent trend. The gas reservoir effectively "produces" into the oil reservoir even without production wells of its own.</li>
+    <li><strong>STO provenance extension.</strong> The same workflow applies to tracking stock-tank-oil provenance in commingled wells. Use C<sub>7+</sub> tracers instead of methane tracers and interpret tracer-weighted C<sub>7+</sub> molar rates.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Operationalises compositional source-tracking at full-field scale.</strong> Wang et al. 2020 SPE-202747 established Full-Component Fluid Tracking as a methodology; this paper provides the specific five-tracer decomposition, the doubled-EOS validation technique, and the inter-region flux cross-check on a real 58-million-cell field model. Reserves allocation between juxtaposed reservoirs has traditionally relied on material-balance arguments on isolated wells, which cannot cleanly separate migration from injection breakthrough or reservoir mixing. The tracer methodology bypasses the allocation ambiguity.</p>
+    <p><strong>Curtis's role as method co-author with a major operator.</strong> The acknowledgement section thanks the "Whitson teams for their dedication and support." Singh and Whitson are the only non-ADNOC authors and provide the tracer methodology, the doubled-EOS validation, and the inter-region-flux cross-check. The paper sits in the same SPE conference and the same June 2025 publication batch as Singh-Whitson-Nielsen SPE-225382 and Nielsen-Younus SPE-225470, showing the Whitson AS team operating on multiple major operator engagements simultaneously while publishing the methodology publicly.</p>
+    <p><strong>Doubled-EOS validation is generalisable.</strong> The technique applies to any compositional simulation where source-provenance tracking via tracer option is in use. Build a 2N-component EOS with pairwise-identical parameters, initialise by region, compare against the N-component-plus-tracer result. The technique decouples physics correctness from implementation correctness and is the kind of consistency check that survives software-version changes, simulator switches, and methodology audits.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Chapter 7-8 — compositional simulation preferred over pseudo-PVT for gas injection (the recommendation that justifies the methodology)</li>
+    <li>Wang et al. (2020) SPE-202747 — Full-Component Fluid Tracking (FCFT) framework for tracer-based compositional allocation in Abu Dhabi onshore</li>
+    <li>Hamoodi et al. (2002) SPE-78363 — hydrocarbon liquid-phase definition with EOS components as tracers (prior work)</li>
+    <li>McGuire &amp; Moritz (1992) SPE-20759 — Prudhoe Bay miscible-injectant tracking (foundational miscible-gas EOR tracer work)</li>
+    <li>Alklih et al. (2021) SPE-208044 — the field-specific integrated subsurface study for these communicating reservoirs (prior context paper for this field)</li>
+    <li>Salahuddin et al. (2017) SPE-186078 — the strike-slip fault-system characterisation for the same field</li>
+    <li>Singh, Whitson &amp; Nielsen (2025) SPE-225382 — the PVT-groups BOPVT-consistency framework used for fluid-model validation in this field</li>
+    <li>Nielsen &amp; Younus (2025) SPE-225470 — the E2E fluid-model-development workflow used to build the 8-component EOS</li>
+    <li>Younus, Whitson &amp; Martinsen (2019) URTeC-551 — field-wide EOS architecture</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operational reserves-allocation methodology for communicating-reservoir systems in carbonate plays</li>
+    <li>The doubled-EOS validation technique as a general consistency check for tracer-based compositional simulation</li>
+    <li>Co-development scheduling tools for the specific Abu Dhabi field and analogous faulted/stratified systems (Ekofisk complex, Alaska North Slope, North Sea satellites)</li>
+    <li>Future Whitson Academy material on multi-reservoir compositional simulation</li>
+    <li>The standard demonstration of source-provenance decomposition with operator-grade dataset and methodology audit trail</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>K. A. Khan, M. Y. Alklih, R. Alwaeel, N. Aljneibi, M. M. Abdelrahman, A. Al Tenaiji</strong> — ADNOC Onshore, Abu Dhabi; the operator team responsible for the field characterisation, the EOS tuning, the simulation runs, and the operational interpretation. <strong>Kameshwar Singh</strong> — Whitson AS senior engineer; provided the tracer methodology and BOPVT-consistency framework. <strong>Curtis H. Whitson</strong> — method authority on the tracer workflow and the doubled-EOS validation; SPE Lucas Gold Medal (2011) and AIME Honorary Member (2023).</p>

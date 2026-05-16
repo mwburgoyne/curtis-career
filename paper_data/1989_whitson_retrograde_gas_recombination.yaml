@@ -1,0 +1,63 @@
+id: 1989_whitson_retrograde_gas_recombination
+title: Discussion of An Improved Method for the Determination of the Reservoir-Gas Specific Gravity for Retrograde Gases
+page_title: Whitson (1989) - Discussion of Retrograde-Gas Specific Gravity
+authors:
+- Curtis H. Whitson
+authors_affiliation: Norwegian Institute of Technology
+venue: <em>Journal of Petroleum Technology</em>, November 1989, p. 1216
+paper_number: SPE-20006
+doi: null
+funding: null
+citations: null
+tags:
+- Retrograde Gas
+- Recombination
+- Watson K
+- Wellstream Gravity
+- Simplification
+- Phase 2
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A one-page JPT Discussion attached to Gold, McCain, and Jennings (1989), which had introduced a multi-correlation, multi-nomograph workflow for computing reservoir-gas specific gravity in retrograde-gas reservoirs. The Gold et al. method required six inputs: primary-separator pressure and temperature, primary GOR and gas gravity, the secondary-separator GOR and gas gravity, the stock-tank GOR and gas gravity, the stock-tank oil gravity, and the stock-tank oil molecular weight. Most of those are not available in field operations.</p><p>Curtis pushes back. The Discussion piece is a Whitson set-piece: when programmable calculators exist, when only some of the data is reliably measurable in the field, and when one input (the primary-separator gas gravity) is the most directly measured but is missing from the proposed correlation as an independent parameter, the engineer is better served by a simpler workflow that uses only the data that the field actually has.</p>
+- heading: Key Contribution
+  body_html: |-
+    <ul>
+    <li><strong>Leshikar-style simplified retrograde-gas recombination using the Watson characterisation factor.</strong> A complete workflow that takes only the primary-separator conditions (<code>p<sub>s1</sub>, T<sub>s1</sub>, R<sub>1</sub>, γ<sub>1</sub></code>) plus the stock-tank oil gravity (<code>γ<sub>o</sub></code>):
+        <ol>
+    <li>Assume <code>K<sub>w</sub> ≈ 12</code> field-default (or calibrate via the 1980/1983 Watson-K field-constancy heuristic). Estimate the stock-tank oil molecular weight by inverting Curtis's 1983 Watson-K correlation:
+            <p><code>M<sub>o</sub> = 4.568 × 10<sup>-5</sup> K<sub>w</sub><sup>6.5885</sup> γ<sub>o</sub><sup>5.5721</sup></code></p>
+    </li>
+    <li>Solve Standing's bubblepoint correlation jointly with Katz's <code>γ<sub>ga</sub></code> correlation for the additional-gas GOR <code>R<sub>s1</sub> = R<sub>2</sub> + R<sub>3</sub></code>.</li>
+    <li>Compute the additional gas production <code>G<sub>pa</sub> = R<sub>s1</sub> γ<sub>ga</sub></code> directly, no nomograph required.</li>
+    <li>Finish with the standard recombination expression for <code>V<sub>eq</sub></code> and <code>γ<sub>w</sub></code> using the primary-separator data only.</li>
+    </ol>
+    </li>
+    <li><strong>The minimum-input principle.</strong> The Discussion's central point: in field practice an engineer rarely has measured M<sub>o</sub> from a stock-tank laboratory analysis, rarely has secondary-separator or stock-tank GOR breakdowns, and is therefore in no position to use Gold et al.'s full correlation. The Watson-K-based path uses only the data the engineer is genuinely confident about and trades a small absolute-accuracy degradation for a large drop in input-data requirements.</li>
+    <li><strong>The missed-parameter critique.</strong> Curtis notes that <code>γ<sub>1</sub></code> (primary-separator gas gravity) is not an independent parameter in the Gold et al. correlations, despite being one of the most directly measured quantities. The Gold et al. correlations are therefore less sensitive to the input the engineer is most confident about.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The pattern.</strong> "Given the data an engineer actually has, what is the simplest correct calculation?" The Discussion is a clean miniature of the disposition that runs through Curtis's whole bibliography. The 1980 Watson-K correlation, the 1982 Glasø-Whitson 0.15 heuristic, the 1983 SPE-12233 characterisation framework, and this 1989 Discussion are different scales of the same posture.</p>
+    <p><strong>Cited in the Monograph.</strong> The simplified workflow appears as standard practice in Whitson and Brule (2000) SPE Monograph Volume 20, Chapter 6 sampling and recombination. The Gold et al. full workflow remains the rigorous baseline; this Discussion is the reduced-input workflow that field engineers default to.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Leshikar (1961) - the recombination construction that bypasses the additional-gas decomposition</li>
+    <li>Standing (1977) - the bubblepoint correlation, inverted here for <code>R<sub>s1</sub></code></li>
+    <li>Katz <code>γ<sub>ga</sub></code> correlation - the average released-gas-gravity correlation</li>
+    <li>Whitson (1980, 1983) - the Watson-K characterisation-factor estimator that the workflow rests on</li>
+    <li>Gold, McCain &amp; Jennings (1989) - the paper being discussed</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Chapter 6 - the recombination workflow</li>
+    <li>Field-operations practice for retrograde-gas reservoir recombination where laboratory-measured M<sub>o</sub> and full additional-gas data are unavailable</li>
+    <li>Whitson AS commercial PVT-laboratory protocols on retrograde-gas wellstream gravity</li>
+    </ul>
+  box_style: connections

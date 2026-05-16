@@ -1,0 +1,62 @@
+id: 1987_chen_whitson_buckley_leverett
+title: |-
+  Further Discussion of Modification of Welge's Method of Shock Front Location in Buckley-Leverett Problem for Nonzero Initial Condition
+page_title: Chen & Whitson (1987) - Welge Discussion, Buckley-Leverett with Non-Uniform Initial Saturation
+authors:
+- Z. Chen (RIPED)
+- Curtis H. Whitson
+authors_affiliation: NTH
+venue: <em>SPE Reservoir Engineering</em>, May 1987, pp. 260-261
+paper_number: SPE-16458
+doi: null
+funding: null
+citations: null
+tags:
+- Buckley-Leverett
+- Welge Method
+- Fractional Flow
+- Shock Front
+- Method Unification
+- Phase 2
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A two-page Discussion note in SPE Reservoir Engineering. Mohsen had published a modified Welge method for Buckley-Leverett shock-front location under a non-uniform initial water saturation; El-Khatib had countered with what he believed was a different two-point tangent method; Mohsen had replied. Chen and Whitson step in to show that the two methods agree, but that each applies in a different time regime, and that the engineer needs both depending on where in the displacement history the well is.</p><p>Chen was at the Research Institute of Petroleum Exploration and Development (RIPED) in Beijing; the paper was prepared during a research collaboration period. Curtis's address is "Norwegian Institute of Technology" - just after his 1984 PhD defence and during the early phase of building Whitson Oil Inc. consulting work.</p>
+- heading: Key Contribution
+  body_html: |-
+    <ul>
+    <li><strong>Four-regime method-selection framework for the Buckley-Leverett shock front.</strong> For a non-uniform initial water saturation distribution <code>S<sub>wi</sub>(x)</code>:
+        <ol>
+    <li>For <code>t &lt; t<sub>min</sub></code>: a saturation discontinuity does not yet exist.</li>
+    <li>For <code>t<sub>min</sub> ≤ t &lt; t<sup>*</sup></code>: use the two-point tangent method (El-Khatib's construction), which Chen and Whitson show is identical to Mohsen's material-balance area-equating method. A tangent touches the <code>W/S</code> curve at two points <code>S<sub>wA</sub></code> and <code>S<sub>wB</sub></code>.</li>
+    <li>For <code>t ≥ t<sup>*</sup></code>: use Mohsen's modified Welge method - a line tangent to the <code>W/S</code> curve drawn from <code>[S<sub>w</sub><sup>*</sup>, W(S<sub>w</sub><sup>*</sup>)]</code> where <code>S<sub>w</sub><sup>*</sup></code> is the mobile saturation ahead of the front.</li>
+    <li>For <code>t ≫ t<sup>*</sup></code>: the original Welge method (tangent from <code>[S<sub>iw</sub>, 0]</code>) recovers; Mohsen's modified Welge collapses to it.</li>
+    </ol>
+    </li>
+    <li><strong>The unification.</strong> What looks in the literature like a disagreement between Mohsen and El-Khatib is shown to be two valid methods applied in different time regimes, with the two-point tangent method equivalent to the material-balance area-equating construction. Curtis's characteristic move: identify the apparent conflict as a special-case-vs-general-case distinction, settle the literature.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>A teaching note that resolves a methods dispute.</strong> The deeper point in the same spirit as Curtis's 1983 SPE-12518 unified IPR framework: when two methods in the literature look like they disagree, often each is correct in its own regime and the engineer's job is to pick the right one for the current state of the displacement. The Fig. D-3 saturation-distance profile diagram that the paper builds is a clear teaching artefact that traces directly to graduate Buckley-Leverett courses.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Welge (1952) - the original method for shock-front location in immiscible displacement</li>
+    <li>Pirson (1958) - the average-saturation construction</li>
+    <li>Mohsen (1985) - the modified Welge method for non-uniform initial saturation</li>
+    <li>El-Khatib (1986) - the alternative two-point tangent construction (here shown equivalent to material balance)</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Teaching graduate-level Buckley-Leverett courses with a clean regime-by-regime construction</li>
+    <li>The pattern of unifying competing literature methods that runs through Curtis's later pseudopressure-framework work (Fevang-Whitson 1996, Whitson-Brule Monograph)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Z. Chen</strong> — Research Institute of Petroleum Exploration and Development (RIPED), Beijing. The collaboration is one of Curtis's early Chinese-research-institute contacts; further Chen-Whitson work follows in the 1990s on related fractional-flow themes.</p>

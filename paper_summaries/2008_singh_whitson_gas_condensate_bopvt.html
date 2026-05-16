@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singh & Whitson (2008) - Gas Condensate Pseudopressure in Layered Reservoirs</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Gas Condensate Pseudopressure in Layered Reservoirs</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Kameshwar Singh, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> Abu Dhabi International Petroleum Exhibition and Conference, 3–6 November 2008</p>
+  <p><strong>Paper number:</strong> SPE-117930</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/117930-MS">10.2118/117930-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 5</p>
+  <p><span class="tag">Pseudopressure</span> <span class="tag">Layered Reservoirs</span> <span class="tag">Gas Condensate Deliverability</span> <span class="tag">Coarse Grid</span> <span class="tag">Capillary Number</span> <span class="tag">By-Connection</span> <span class="tag">Gas Cycling</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The Fevang-<mark>Whitson</mark> three-region gas-condensate pseudopressure method (SPE-30714, 1996; SPE-56476, 1999) had been the standard well-deliverability treatment for retrograde-gas wells for over a decade. Published verification covered single-layer radial models and single-layer Cartesian models. Operators applying the method in full-field studies with many numerical layers, strong permeability contrast, and capillary-number-dependent relative permeabilities had no published validation for the layered case. Barker's 2005 IPTC-10382 paper reported inconsistencies with the pseudopressure method that some interpreted as method-level failures. The community needed a settling paper.</p><p>Singh and <mark>Whitson</mark> provide it. They run the method through layered systems of increasing complexity using the commercial Eclipse 2007.2 EOS-based compositional simulator: a single-layer synthetic benchmark, a 16-layer Layered FW Model, the 10-layer Reservoir Beta, the 22-layer Reservoir Alpha (including a gas-injection case), and the 23-layer Reservoir Kappa with compositional grading from medium-rich to near-critical. Permeability spans 0.1 to 1000 md. Crossflow is tested both on and off, capillary-number modification of relative permeabilities is tested with and without non-Darcy flow. The paper positions itself as direct rebuttal to the Barker report - the failures are attributed to implementation issues in the simulator Barker used, not to method-level failures.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>First layered-reservoir verification of the Fevang-<mark>Whitson</mark> pseudopressure method.</strong> Single-layer permeability tested 0.1-15 md. Layered FW Model 16 layers 0.1-50 md. Beta 10 layers 0.1-90 md. Alpha 22 layers 0.1-1000 md. Kappa 23 layers 0.5-10 md with medium-rich-to-near-critical compositional grading. Across all of these, the coarse-grid model with pseudopressure reproduces the fine-grid radial benchmark.</li>
+<li><strong>Crossflow on or off does not matter.</strong> Non-communicating layer cases (explicit crossflow turned off) give coarse-grid pseudopressure results matching the fine-grid model within the same accuracy as communicating cases. The pseudopressure treatment is applied at the well-connection level and is insensitive to whether neighbouring layers exchange mass.</li>
+<li><strong>Capillary-number modification embedded via radial v(p).</strong> With <code>k<sub>rg</sub>(N<sub>c</sub>)</code> using the <mark>Whitson</mark>-Fevang miscibility-factor form and commercial-simulator defaults (<code>n</code>=0.65, <code>α<sub>c</sub><sup>0</sup></code>=10000), the capillary-number effect is included in the pseudopressure integral via the radial-flow <code>v(p)</code> embedding. Coarse-grid and fine-grid deliverability curves match essentially exactly.</li>
+<li><strong>Non-Darcy beta-flow handled.</strong> Adding non-Darcy treatment (Evans-Civan 1994 correlation, <code>β</code> = 6 × 10<sup>8</sup> to 7.5 × 10<sup>9</sup> m<sup>-1</sup>) alongside capillary-number modification gives fine-grid-versus-coarse-grid match within percent-level well-productivity differences.</li>
+<li><strong>Wide-range fluid composition per layer.</strong> Reservoir Kappa (23-layer compositional grading from medium-rich to near-critical, initial GOR around 1400 Sm<sup>3</sup>/Sm<sup>3</sup>) matches fine-grid behaviour in coarse-grid simulations with the pseudopressure option plus capillary-number effect. The method is robust across the compositional range.</li>
+<li><strong>Coarse-grid cell-size guidelines.</strong> The accuracy of coarse-grid pseudopressure depends on well-grid cell size. Quantitative guidelines from systematic sensitivity runs:
+    <ul>
+<li>Lean gas condensate: <code>Δx = Δy</code> around 50-100 m</li>
+<li>Rich gas condensate: <code>Δx = Δy</code> around 100-200 m</li>
+<li>At gas rates 2-3x baseline (1.5-3 × 10<sup>6</sup> Sm<sup>3</sup>/d), halve the cell size</li>
+<li>With capillary-number effect included, cell-size sensitivity relaxes by around 2x</li>
+</ul>
+    Lean condensates have sharper <code>λ<sub>t</sub>(p)</code> transitions at the dewpoint so the pseudopressure integral concentrates in a narrow window near the wellbore. Rich condensates spread the integral over a wider pressure window and tolerate larger cells. Reservoir Beta at 0.7-0.85 × 10<sup>6</sup> Sm<sup>3</sup>/d (5 md) was adequate at 180 m; at 1 × 10<sup>6</sup> Sm<sup>3</sup>/d the cell had to drop to 90 m. With capillary-number effect on, 180 m and 90 m results were nearly identical.</li>
+<li><strong>By-connection pseudopressure for gas cycling and selective breakthrough.</strong> When layer-dependent GORs vary significantly (greater than 20-30%, typically after injected-gas breakthrough in gas cycling) the pseudopressure treatment must be applied at the individual well-connection level, not at a lumped well level. A broken-through layer produces at near-injection-gas GOR with <code>r<sub>s</sub> → 0</code> and reduces to single-phase gas pseudopressure smoothly. A non-broken-through layer retains the full two-phase three-region treatment. A well-level lumped pseudopressure table cannot represent both regimes simultaneously because the CCE-on-produced-composition step uses the well-level mean composition which is neither one nor the other. Reservoir Alpha gas-injection case (22-layer sector, 1 producer + 4 corner injectors, 25% gas reinjection) verifies by-connection pseudopressure closely matching the fine-grid radial benchmark for both BHFP trajectory and gas plateau.</li>
+<li><strong>Simulator-selection criterion.</strong> Implementations of the pseudopressure method in reservoir simulators that do not support by-connection application cannot be used for gas-cycling evaluation. This is a specific simulator-selection criterion for unconventional or gas-cycling recovery projects.</li>
+<li><strong>Direct rebuttal of the Barker IPTC-10382 (2005) report.</strong> Barker reported pseudopressure-method failures. Singh and <mark>Whitson</mark> attribute these to simulator-specific implementation bugs rather than method-level limitations. The message: if your simulator reports pseudopressure does not work, the problem is in the simulator's implementation, not in the method.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Closing the loop on the Fevang-<mark>Whitson</mark> method.</strong> Early pseudopressure work (Fevang 1995 PhD, Fevang-<mark>Whitson</mark> 1996 SPE-30714) worked the single-layer radial problem. The 1997 IBC and 1999 SPE-56476 papers generalised to any fluid and any PVT framework. This 2008 paper settled the practical question of whether the method actually works in the full-field reservoirs that practising engineers need to simulate. The answer is yes across every variation tested: permeability spread four orders of magnitude, crossflow on or off, capillary-number modification, non-Darcy flow, compositional grading, and gas injection at the connection level.</p>
+<p><strong>Practical cell-size guidance.</strong> The quantitative cell-size guidelines (lean 50-100 m, rich 100-200 m, halve at high rate, relax with capillary-number effect) are the kind of operational output that turns a methodology into a workflow. Reservoir engineers running full-field gas-condensate studies now have a defensible cell-size choice rather than picking on intuition.</p>
+<p><strong>By-connection pseudopressure for gas cycling.</strong> The extension of the well-level treatment to a per-connection treatment is required for gas-cycling studies and is the natural reading of the original Fevang-<mark>Whitson</mark> framework. SPE-117930 is where it is first written down and verified. Subsequent gas-cycling work in the Khuff carbonates and elsewhere uses the by-connection pattern directly.</p>
+<p><strong>The Singh-<mark>Whitson</mark> partnership matures.</strong> SPE-117930 is the second consecutive year of major Singh-<mark>Whitson</mark> output (2007 SPE-109596 on BO PVT, 2008 SPE-117930 on layered pseudopressure). The Singh collaboration runs through to 2025. StatoilHydro support, Øivind Fevang and Bob Mott acknowledged for technical discussions, situate the work in the Norwegian operator-and-consultant ecosystem around NTNU and PERA.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li><strong>Fevang &amp; <mark>Whitson</mark> (1996) SPE-30714</strong> — the three-region gas-condensate well-deliverability framework that this paper verifies for layered systems</li>
+<li><strong><mark>Whitson</mark> &amp; Fevang (1997)</strong> — the miscibility-factor capillary-number modification of relative permeabilities</li>
+<li>Fevang-<mark>Whitson</mark> (1999) SPE-56476 — the generalised pseudopressure formulation for any PVT framework</li>
+<li>Fevang, Singh &amp; <mark>Whitson</mark> (2000) SPE-63087 — supplies the Fluid A fluid system used in the demonstration runs</li>
+<li>Singh, Fevang &amp; <mark>Whitson</mark> (2007) SPE-109596 — the BO consistency and fill-in framework</li>
+<li>Evans-Civan (1994) — non-Darcy <code>β</code>-flow correlation</li>
+<li>Barker (2005) IPTC-10382 — the reported pseudopressure-method failure that this paper addresses</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The default coarse-grid well treatment for gas-condensate simulation in commercial reservoir simulators (Eclipse, CMG GEM, SENSOR, tNavigator)</li>
+<li>Per-connection pseudopressure as a simulator-selection criterion for gas-cycling projects</li>
+<li>The cell-size guidelines used in full-field gas-condensate study design across the industry</li>
+<li>Khuff and other gas-cycling architectures with HKLH-zone pairing — by-connection pseudopressure is the well-side enabler</li>
+<li>The continuing Singh-<mark>Whitson</mark> partnership through SPE-120743 (2009) and SPE-225382 (2025)</li>
+<li>Capillary-number modification embedding patterns used in subsequent compositional reservoir simulation literature</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Kameshwar Singh</strong> — first author. The third major Singh-<mark>Whitson</mark> paper after SPE-63087 (2000) and SPE-109596 (2007). Singh is now the lead on the gas-condensate well-deliverability thread inside the broader BOPVT and reservoir-simulation work of the Whitson AS / NTNU / PERA ecosystem.</p><p>Acknowledgements credit StatoilHydro support, <strong>Øivind Fevang</strong> (the original three-region author) and Bob Mott for technical discussions. The paper reads as the third generation of pseudopressure work - Fevang's PhD established the framework, Fevang-Singh-<mark>Whitson</mark> SPE-63087 used it to test BO-vs-EOS, Singh-<mark>Whitson</mark> SPE-117930 verifies it for layered full-field application.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

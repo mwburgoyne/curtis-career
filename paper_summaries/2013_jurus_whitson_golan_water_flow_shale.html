@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jurus, Whitson & Golan (2013) - Modelling Water Flow in Hydraulically-Fractured Shale Wells</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Modelling Water Flow in Hydraulically-Fractured Shale Wells</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Walter J. Jurus, <mark>Curtis H. Whitson</mark>, Michael Golan (NTNU)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, New Orleans, 30 September - 2 October 2013</p>
+  <p><strong>Paper number:</strong> SPE-166439</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Hydraulic Fracturing</span> <span class="tag">Treatment Water</span> <span class="tag">Stress-Dependent Permeability</span> <span class="tag">Capillary Pressure</span> <span class="tag">Imbibition</span> <span class="tag">Shut-In Benefit</span> <span class="tag">Flowback</span> <span class="tag">Shale Gas</span> <span class="tag">SENSOR</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Walter Jurus's NTNU PhD under joint supervision by Curtis and Michael Golan. The paper is the origin of the stress-dependent permeability-enhancement-factor model cited by Juell-Whitson 2013 SPE-166380 for modelling treatment-fluid injection and flowback in liquid-rich shale wells. Using a conventional black-oil FD simulator (SENSOR, Coats Engineering 2013) with planar-fracture geometry, the paper shows how an ultra-tight rock (matrix permeability ~200 nd) can be modelled through hydraulic-fracture stimulation, post-fracturing shut-in, and flowback without explicit fracture-mechanics physics. The work provides five distinct contributions: a stress-dependent permeability multiplier with no hysteresis, an imbibition capillary-pressure parameterisation anchored on the Young-Laplace equation at nanometre pores, the finding that capillary forces (not relative permeability) dominate water retention, the operational benefit of post-fracturing shut-in via capillary-driven water redistribution, and a parameter-separation matrix that decouples water-recovery from gas-production sensitivities for history-matching.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Stress-dependent permeability multiplier admits physical injection volume in a black-oil simulator.</strong> Permeability-enhancement factor m sets <code>k/k<sub>0</sub> = 10<sup>m · p<sub>net</sub></sup></code> where <code>p<sub>net</sub> = p<sub>cell</sub> - p<sub>Ri</sub></code>. Active only above initial reservoir pressure (no hysteresis). Maximum <code>k/k<sub>0</sub></code> clamped at 10<sup>6</sup> to avoid numerical instabilities. Separate <code>m<sub>m</sub></code> for matrix and <code>m<sub>f</sub></code> for fracture cells (base: <code>m<sub>m</sub></code> = 1.1 × 10<sup>-3</sup> psi<sup>-1</sup>, <code>m<sub>f</sub></code> = 0.65 × 10<sup>-3</sup>). Calibrated by adjusting <code>m<sub>m</sub></code> until 4,000 STB/fracture injects within max BHP 8,000 psia over a 3-hour window. Physical interpretation: the multiplier compensates empirically for near-fracture microfracture propagation and dilation that the conventional simulator cannot model directly. The empirical proxy delivers the right macroscopic injection-rate / volume / BHP behaviour without simulating the geomechanics explicitly.</li>
+<li><strong>Four-parameter imbibition capillary-pressure shape with P<sub>c,max</sub> ~3,480 psia from Young-Laplace at nanometre pores.</strong> Drainage <code>P<sub>cgwD</sub> = a<sub>1</sub> + a<sub>2</sub>(1 - S<sub>wn</sub>)<sup>a<sub>3</sub></sup></code>; imbibition <code>P<sub>cgwI</sub> = b<sub>1</sub> + b<sub>2</sub>(1 - S<sub>wn</sub>)<sup>b<sub>3</sub></sup> - b<sub>4</sub> S<sub>wn</sub><sup>b<sub>5</sub></sup></code>. Four physical shape parameters: <code>P<sub>c,max</sub></code> at irreducible water saturation, cross-over saturation <code>S<sub>wx</sub></code>, slope <code>M<sub>x</sub></code> at cross-over, and <code>P<sub>c,min</sub></code> at critical gas saturation. <code>P<sub>c,max</sub></code> ~3,480 psia for shales follows from the Young-Laplace equation at pore radius 5 nm with gas-water interfacial tension 60 mN/m. The magnitude is comparable to reservoir pressure - meaning capillary forces are not a second-order correction in shale but a first-order driver of fluid distribution.</li>
+<li><strong>Capillary forces dominate fracturing-water retention; gas production unaffected by retention level.</strong> The central physics finding. For identical injection (4,000 STB/fracture) and identical well controls, cumulative water recovery over 10 years ranges from ~80% (no capillary pressure) to ~20% (strong <code>b<sub>3</sub></code> = 3 capillary curve) - a fourfold spread driven solely by curve shape:
+    <table style="margin-left:20px;border-collapse:collapse;">
+<tr><td><code>P<sub>c</sub></code> = 0</td><td>~80%</td></tr>
+<tr><td><code>b<sub>3</sub></code> = 20 (weak)</td><td>~58%</td></tr>
+<tr><td><code>b<sub>3</sub></code> = 10</td><td>~42%</td></tr>
+<tr><td><code>b<sub>3</sub></code> = 5 (base)</td><td>~28%</td></tr>
+<tr><td><code>b<sub>3</sub></code> = 3 (strong)</td><td>~20%</td></tr>
+</table>
+    Gas-production rates diverge during the first several weeks but converge after ~30 days; cumulative gas over 10 years is essentially identical across all cases. The retained water is parked deep in the matrix where it does not interfere with gas flowing through the fracture network. Shale gas reservoirs are effectively water-trapping - opposite to conventional gas reservoirs where near-wellbore water blocking is the concern.</li>
+<li><strong>Post-fracturing shut-in reduces water recovery and enhances initial gas rates via capillary imbibition.</strong> Extending the shut-in from 0 days (immediate flowback) to 90+ days drives water progressively deeper into the matrix. For the base case (<code>b<sub>3</sub></code> = 5): cumulative water recovery drops from ~28% (0-day shut-in) to ~5% (100+-day shut-in). Initial gas rate peak rises from ~10,000 Mscf/d (0-day) to ~90,000 Mscf/d (90-day) - approximately 9x peak uplift. Long-term cumulative gas over 10 years is essentially identical across shut-in durations. Without capillary pressure, shut-in has no effect on water recovery - confirming capillary imbibition is the active mechanism. Operationally, post-fracturing shut-in is a no-cost / low-cost technique to improve initial gas rates and reduce water-disposal costs; the trade-off is delayed revenue recognition.</li>
+<li><strong>Parameter-separation matrix for history-matching.</strong> Three sensitivities with distinct effects: water recovery responds strongly to <code>b<sub>3</sub></code>, less to <code>n<sub>w</sub></code>, weakly to <code>S<sub>wi</sub></code>; gas production responds strongly to <code>S<sub>wi</sub></code> (through initial gas-in-place), weakly to <code>b<sub>3</sub></code> and <code>n<sub>w</sub></code>; injectivity responds to the negative portion of the <code>P<sub>c</sub></code> curve. Dry shales (<code>S<sub>wi</sub> &lt; S<sub>wc</sub></code>) trap more water but have higher gas-in-place - over 2x cumulative gas at <code>S<sub>wi</sub></code> = 0 vs <code>S<sub>wi</sub></code> = <code>S<sub>wc</sub></code> = 0.2. Water relative permeability and capillary pressure partially cancel under combined variation (single-parameter sensitivities can mislead). The matrix lets history-matchers separate the parameters if the full data set (water cum, gas cum, injection BHP) is available.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Empirical proxies for unresolved physics.</strong> Curtis's teaching pattern: when the physical mechanism is too complex to model explicitly (stress-dependent fracture dilation, microfracture propagation, bedding-plane slip), find a minimum-parameter empirical compensation that yields the observable macroscopic behaviour:</p>
+<blockquote>The proposed model for stress dependent permeability changes does not describe real physics of these changes. However, it allows describing the overall effect of the permeability increase with a single parameter - Permeability Enhancement Factor (m<sub>m</sub>). With appropriate magnitude of this factor the real water injection rates and volumes during fracturing stimulation can be consistently honored in the reservoir simulator model.</blockquote>
+<p>Design empirical proxies for their macroscopic equivalence with the reference physics, not for their internal physical realism.</p>
+<p><strong>Decoupling what you measure from what you care about.</strong> A counter-intuitive teaching moment:</p>
+<blockquote>Capillary forces may have a major impact on the flowback of fracturing water [...] The amount of the retained water does not appear to have a significant impact on long-term gas production performance.</blockquote>
+<p>The well-engineered answer to "why is our flowback retention so high?" can be "it does not matter for gas". Don't spend money fixing things that don't affect the outcome that matters.</p>
+<p><strong>Operational levers from the right physics.</strong> The post-fracturing shut-in benefit is a time-based optimisation lever rather than an effort-based one. The operator buys near-fracture water clearance by waiting rather than by treatment. Recognising when time itself is the control handle is part of the engineering toolkit.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>SENSOR (Coats Engineering 2013) black-oil simulator with pressure-dependent transmissibility tables</li>
+<li>Young-Laplace equation - the physical anchor for <code>P<sub>c,max</sub></code> in nanometre-pore systems</li>
+<li>Brooks-Corey-type capillary-pressure forms (parameterised in the four-shape variant)</li>
+<li>King 2012 - operator observations of post-fracturing shut-in effects on water recovery</li>
+<li>Cipolla et al. 2009 - shale-gas desorption timescale (justifies neglecting desorption over the operational horizon)</li>
+<li>Whitson-Sunjerga 2012 SPE-155499 - the LRS modelling framework this paper extends to water dynamics</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Juell-Whitson 2013 SPE-166380 LRS well modelling (cites this paper as the origin of the stress-dependent permeability multiplier)</li>
+<li>Mydland-Whitson liquid-rich-shale series 2020-2021 - extending the treatment-fluid framework</li>
+<li>Operator shale-gas completion-design and flowback-management workflows</li>
+<li>Industry recognition of post-fracturing shut-in as an operational lever in Marcellus, Haynesville, and Barnett developments</li>
+<li>Whitson Academy course material on hydraulic fracturing physics and shale-water dynamics</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Walter J. Jurus</strong> — NTNU PhD under joint Whitson and Golan supervision. Shale-gas hydraulic fracturing and water-flow modelling.</p><p><strong>Michael Golan</strong> — NTNU professor of petroleum production and Curtis's long-standing collaborator. Co-author with Curtis on the <em>Well Performance</em> textbook (Golan-Whitson 1986, second edition 2003) and supervisor of multiple NTNU PhD students with Curtis. Production-engineering expertise complementary to Curtis's PVT focus.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

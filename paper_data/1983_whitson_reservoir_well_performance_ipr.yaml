@@ -1,0 +1,65 @@
+id: 1983_whitson_reservoir_well_performance_ipr
+title: Reservoir Well Performance and Predicting Deliverability
+page_title: Whitson (1983) SPE-12518 - Reservoir Well Performance and Predicting Deliverability
+authors:
+- Curtis H. Whitson
+authors_affiliation: Whitson Oil Co., Inc., Oklahoma City, OK
+venue: null
+paper_number: SPE-12518 (unsolicited SPE manuscript, 60 pages)
+doi: null
+funding: null
+citations: null
+tags:
+- IPR
+- Pseudopressure
+- Unified Gas-Oil Framework
+- Evinger-Muskat
+- Non-Darcy Flow
+- Vogel Critique
+- Phase 1
+whitson_index: 0
+extra_meta:
+- label: Year
+  value_html: '1983'
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>An unusual document. Sixty pages of comprehensive treatment, submitted as an unsolicited SPE manuscript, never presented at a conference, never formally published as a peer-reviewed paper, but the SPE number was assigned and the document circulates in the technical literature. The byline carries the Whitson Oil Co., Inc. footer, which is the earliest published trace of Curtis's consulting practice (predates the formal 1988 Whitson AS / PERA incorporation by five years). The 1984 SPE-11200 byline footnote "Now with Whitson Oil Inc." comes from the same period.</p><p>The paper unifies inflow performance analysis for gas and oil wells under a single mathematical framework. It reviews and integrates the Muskat, Vogel, Fetkovich, Evinger-Muskat, Richardson-Shaw, Standing, and Patton-Goland deliverability methods, then proposes a single rate-pressure equation that subsumes them all. Curtis is twenty-seven and writing what reads like an early-career thesis-companion treatise rather than a single-finding paper.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Unified rate-pressure framework for any single flowing phase.</strong> For pseudo-steady-state radial flow:
+        <p><code>q = C ∫<sub>p<sub>wf</sub></sub><sup>p<sub>R</sub></sup> F(p) dp</code></p>
+        where <code>q</code> is surface rate, <code>C</code> is a constant carrying rock properties, drainage geometry, and non-ideal flow corrections (partial penetration, skin), and <code>F(p)</code> is the phase-specific pressure function. For gas, <code>F(p) = 2p/(μ<sub>g</sub> Z)</code> (the Al-Hussainy-Ramey-Crawford pseudopressure) and <code>C</code> carries the standard radial-flow gas-rate constants. For oil, <code>F(p) = k<sub>ro</sub>/(μ<sub>o</sub> B<sub>o</sub>)</code> (Evinger-Muskat) and <code>C = 2πak h/(ln(r<sub>e</sub>/r<sub>w</sub>) - 3/4 + s)</code>. Gas and oil deliverability are now instances of the same equation with different pressure functions. The framework supports a single computational implementation and the use of dimensionless pseudopressure solutions across fluid types.</li>
+    <li><strong>Simplified Evinger-Muskat oil pseudopressure.</strong> The Evinger-Muskat method requires <code>k<sub>ro</sub></code> as a function of saturation, with the saturation profile itself determined by the pressure path. Whitson introduces a generalised relative-permeability relation that collapses the saturation-pressure coupling, so <code>k<sub>ro</sub></code> can be expressed directly as a function of pressure without an intermediate saturation calculation. The simplified Evinger-Muskat reproduces Vogel-like IPR curves under pseudo-steady-state conditions but also extends rigorously to transient analysis, where Vogel's empirical fit cannot. The move keeps the answer Vogel users are familiar with while giving it a foundation that handles cases Vogel was never tested against.</li>
+    <li><strong>High-velocity-flow screening criterion for oil wells.</strong> Citing Fetkovich's multirate oil-well data, Whitson argues that non-Darcy flow effects can dominate the oil-rate equation as much as the gas-rate equation, and rate-dependent skin <code>D q<sub>o</sub></code> applies to saturated and undersaturated oils, not just gas. The screening rule: do not apply Vogel or any Darcy-only IPR to oil wells without first demonstrating with multirate test data that high-velocity-flow effects are insignificant, or include a <code>D q<sub>o</sub></code> term in the skin factor. Absolute open flow potential is overestimated when HVF is neglected. The argument inverts the engineer-default of treating HVF as a gas-only concern.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The pedagogical move.</strong> Rather than teaching gas IPR and oil IPR as two separate topics with separate notation, the paper recasts them as one topic with two pressure functions. The unification pays off downstream when multiphase flow is introduced: the same integral simply takes a different F(p). Fevang and Whitson reach for exactly this template thirteen years later in SPE-30714 (1996), where the three-region gas-condensate near-well model is built as a piecewise pseudopressure with the multiphase region carrying the new F(p).</p>
+    <p><strong>The early Whitson Oil Inc. byline.</strong> The "Whitson Oil Co., Inc., Oklahoma City, OK" affiliation places Curtis as an Oklahoma-based consultant simultaneously with his Norway-based academic and research work. This is the earliest published trace of the consulting practice that later becomes PERA (1988) and Whitson AS.</p>
+    <p><strong>Why an unsolicited 60-page paper.</strong> The format reads as a teaching document or working monograph rather than a single-finding paper. Some of its content shows up reorganised in the 2000 SPE Phase Behavior Monograph and in the Golan-Whitson <em>Well Performance</em> textbook.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Al-Hussainy, Ramey &amp; Crawford (1966) - the gas pseudopressure construction</li>
+    <li>Evinger &amp; Muskat (1942) - the two-phase oil pseudopressure that Whitson is simplifying</li>
+    <li>Muskat &amp; Wyckoff (1937) - the radial steady-state framework</li>
+    <li>Vogel (1968) - the empirical IPR curve being reframed</li>
+    <li>Fetkovich (1973) - multirate oil-well dataset showing non-Darcy effects</li>
+    <li>Standing (1971) - the IPR formulation that Vogel built on</li>
+    <li>Patton &amp; Goland (1980) - alternative deliverability formulation reviewed in the paper</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Fevang &amp; Whitson (1996) SPE-30714 three-region gas-condensate model - the multiphase pseudopressure that becomes the gas-condensate industry standard uses the unified framework from this paper</li>
+    <li>Singh &amp; Whitson (2008) SPE-117930 layered-reservoir pseudopressure - same framework extended to layered systems</li>
+    <li>Golan &amp; Whitson <em>Well Performance</em> textbook - much of the content here is the long-form treatment of material that reaches the textbook in compressed form</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Volume 20, the deliverability chapter</li>
+    <li>Operator nodal-analysis workflows that need a single pseudopressure framework for mixed gas-oil portfolios</li>
+    </ul>
+  box_style: connections

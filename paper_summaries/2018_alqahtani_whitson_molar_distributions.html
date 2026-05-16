@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alqahtani & Whitson (2018) - Molar Distributions of Equilibrium Systems</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Molar Distributions of Equilibrium Systems</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Faisal M. Alqahtani (KSU / NTNU), <mark>Curtis H. Whitson</mark> (NTNU)</p>
+  <p><strong>Venue:</strong> SPE Europec featured at 80th EAGE Conference and Exhibition, Copenhagen, 11-14 June 2018</p>
+  <p><strong>Paper number:</strong> SPE-190797</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Gamma Distribution</span> <span class="tag">C7+ Characterisation</span> <span class="tag">Shape Invariance</span> <span class="tag">Equilibrium Phases</span> <span class="tag">Compositional Grading</span> <span class="tag">Hoffman-Crump-Hocott</span> <span class="tag">SRK EOS</span> <span class="tag">PhazeComp</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Alqahtani is a King Saud University PhD student on sabbatical at NTNU under Curtis's supervision. The paper reports a novel systematic observation: in most equilibrium systems of petroleum mixtures, the <em>molar distribution shape</em> of the heavier fractions (C7+) is very similar between the equilibrium phases. The gamma distribution shape parameter α is the quantitative similarity metric. The observation is verified across three classes of equilibrium condition: P-T phase envelope (saturation loci), two-phase flash within the envelope, and isothermal gravitational segregation (compositional gradient calculations). Single base example: the Hoffman-Crump-Hocott (1953) saturated gas-oil reservoir fluid system fit with a gamma distribution yielding M7+ = 201.3, η = 81.27, α = 1.933. SRK EOS with zero hydrocarbon BIPs and default PhazeComp Twu-correlated C7+ characterisation.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Gamma-shape invariance principle for equilibrium phases.</strong> The headline finding. In most equilibrium systems of conventional petroleum mixtures, the gamma shape <code>α</code> of equilibrium phases is approximately invariant and very close to the feed shape. Verified across three classes:
+    <ul>
+<li>P-T phase envelope across the reservoir T range (59-770 °F): incipient-gas <code>α<sub>g</sub></code> = 1.892-1.930 at bubblepoints; incipient-oil <code>α<sub>o</sub></code> = 1.939-2.031 at upper dewpoints across the retrograde portion (788-842 °F). Both close to feed <code>α</code> = 1.933.</li>
+<li>Two-phase flash at T = 212 °F across pressure: above ~500 psia both flash phases have shape within ±0.05 of feed; in the 1,000-3,100 psia range, within ±0.02.</li>
+<li>Isothermal gravitational segregation across 4,000-10,000 ft for a near-critical saturated gas-oil contact (GOC) with 400 psi undersaturation at reference depth: <code>α</code> varies from 1.907 (top gas) to 1.989 (bottom oil) against feed 1.933 - a quantitatively surprising finding for near-critical systems known to exhibit dramatic compositional variation.</li>
+</ul></li>
+<li><strong>Breakdown rule when K-values for light-heavy C7-C11 components exceed ~10.</strong> Invariance fails when K-values for one or more light-heavy fractions exceed ~10 (typically at high T and very low p conditions), because in this regime the abundant light-heavy C7+ fractions preferentially partition to the gas phase and distort the oil-phase distribution. Provides a quantitative guard rail for practitioners applying the invariance principle: if the operating conditions push K(C7-C11) above 10, the assumption breaks.</li>
+<li><strong>Near-critical saturated gradient worked example.</strong> The most stringent test of the invariance principle. Near-critical saturated GOC with 400 psi undersaturation at reference depth, spanning ~6 gas and oil zones over 4,000-10,000 ft. Despite dramatic spatial composition variation, <code>α</code> remains within ~5% of feed. The result is more striking than the static-flash and saturation-envelope results because near-critical systems are conventionally expected to exhibit large equilibrium-phase property contrasts.</li>
+<li><strong>Operational application: a single measured phase suffices to infer the C7+ shape of an unsampled equilibrium phase.</strong> The practical pay-off. For an un-sampled gas cap, a pipeline gas with unmeasurable C7+, or any equilibrium phase that resists direct measurement, the C7+ molar-distribution shape can be inferred from the adjacent (sampled) phase by holding <code>α</code> and <code>η</code> at the measured values and regressing only <code>M<sub>n+</sub></code>. The reservoir engineer recovers a full PVT description from one sample where two would otherwise be needed.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>An empirical principle that quietly changes practice.</strong> Curtis's teaching pattern: a systematic observation across many cases (here, three classes of equilibrium condition all showing the same near-invariance) can change daily PVT-engineering practice without any new mathematics. The invariance principle does not depend on any tuning or fitting - it is a property of the gamma family combined with conventional petroleum K-value behaviour. The K-value-above-10 breakdown rule is the right kind of guard rail: simple, operationally checkable, and physically grounded.</p>
+<p><strong>The right kind of validation set.</strong> Three equilibrium classes, six T-depth zones in the gradient case, and the Hoffman-Crump-Hocott 1953 reference fluid that has been the test bench for compositional reservoir engineering for 65 years. The choice of validation base is itself important - it links the result to the existing body of equilibrium-flash literature that practitioners know.</p>
+<p><strong>Recovering an unsampled phase.</strong> The practical application matters most in unconventional settings where in-situ representative sampling is hard and the produced phase is what the laboratory sees. If the C7+ shape transfers from measured to unmeasured phases, the EOS practitioner can build a defensible compositional description for the in-situ phase without having to argue for additional sampling that may not be operationally feasible.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson 1983 SPE-12233 gamma-distribution molar splitting (the framework being tested)</li>
+<li>Hoffman-Crump-Hocott 1953 saturated gas-oil reservoir fluid system (the reference base)</li>
+<li>SRK 1972 cubic equation of state</li>
+<li>Twu 1984 critical-property correlations for C7+ characterisation</li>
+<li>PhazeComp (Zick Technologies) EOS engine</li>
+<li>Schulte 1980 compositional grading framework (background for the gradient case)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Alqahtani-Chuparova 2018 URTeC-2882502 fluid-heterogeneity well-box paper (Alqahtani-Whitson collaboration continuity)</li>
+<li>Younus et al. 2019 URTeC-551 Field-wide EOS development (gamma-shape invariance underlies the common-α field-wide gamma model)</li>
+<li>Operator workflows for un-sampled gas-cap and pipeline-gas characterisation</li>
+<li>Subsequent NTNU and whitson research on compositional grading and equilibrium-phase characterisation</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Faisal M. Alqahtani</strong> — King Saud University PhD candidate on sabbatical at NTNU under Curtis. Co-author on this paper and on the 2018 URTeC-2882502 well-box-heterogeneity prospectus, both during the sabbatical year.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

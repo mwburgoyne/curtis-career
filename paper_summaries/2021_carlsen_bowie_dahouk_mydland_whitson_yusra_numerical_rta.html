@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlsen, Bowie, Dahouk, Mydland, Whitson, Yusra (2021) - Numerical RTA</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Numerical RTA in Tight Unconventionals</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mathias Lia Carlsen, B. Bowie, Mohamad Majzoub Dahouk, Stian Mydland, <mark>Curtis H. Whitson</mark>, Ilina Yusra (Whitson AS / Apache Corporation)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Dubai, 21-23 September 2021</p>
+  <p><strong>Paper number:</strong> SPE-205884-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/205884-MS">10.2118/205884-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 16</p>
+  <p><span class="tag">Numerical RTA</span> <span class="tag">LFP'</span> <span class="tag">B<sub>ti</sub></span> <span class="tag">Equivalence Relationships</span> <span class="tag">Finite-Conductivity Fracture</span> <span class="tag">Contacted Pore Volume</span> <span class="tag">Dedicated to Mike Fetkovich</span> <span class="tag">Tight Unconventionals</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Generalises the Bowie-Ewert 2020 URTeC-2967 numerically-assisted RTA workflow to (a) all fluid systems including gas condensates and two-phase saturated reservoirs, and (b) finite-conductivity fractures. Dedicated to Michael "Mike" Fetkovich, Curtis's long-standing material-balance-and-rate-transient interlocutor. Bowie carries over from the original Bowie-Ewert co-authorship at Apache; the Carlsen-Mydland-Dahouk-Whitson-Yusra core team is the same group that produced the 2020 surface-process triplet (IPTC-19596 / 19775 / SPE-199982), the HnP mechanisms / Second-Take pair (SPE-200396 / URTeC-2869), and the BOPVT-vs-COMP simulation paper (URTeC-2765).</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Modified Linear Flow Parameter <code>LFP'</code> = <code>LFP &times; &radic;&phi;</code> with B<sub>ti</sub> generalisation.</strong> The classic LFP = <code>4 n<sub>f</sub> x<sub>f</sub> h &radic;k</code> (Wattenbarger 1998 for tight gas) is extended in two directions to make it the central parameter for all-fluid-system numerical RTA: (1) include porosity so cross-well <code>&phi;</code> changes are handled consistently; (2) generalise to all fluid systems via a saturation-weighted total formation volume factor <code>B<sub>ti</sub> = (S<sub>oi</sub> + S<sub>gi</sub>) / (S<sub>oi</sub>/B<sub>oi</sub> + S<sub>gi</sub>/(B<sub>gdi</sub>/r<sub>si</sub>))</code>. For dry gas, OGIP replaces OOIP via <code>B<sub>ti</sub> &rarr; &infin;</code>.</li>
+<li><strong>Three fundamental <code>LFP'</code> / OOIP equivalence relationships.</strong> The theoretical backbone of NRTA: (1) same <code>LFP'</code> &rarr; same gas / oil / water surface rates during initial-acceleration linear flow regardless of OOIP; (2) same <code>LFP' / OOIP</code> ratio &rarr; same producing GOR and water cut at all times (IA and boundary-dominated), regardless of absolute LFP and OOIP values - well performance differs only by a constant multiplier; (3) same <code>LFP'</code> AND same OOIP &rarr; identical performance everywhere. Demonstrated with three-case worked examples.</li>
+<li><strong>Eight-step Numerical RTA workflow.</strong> Operational procedure: build a single-fracture symmetry-element "template model" with infinite OOIP; run with the actual well BHP profile <code>p<sub>wf</sub>(t)</code>; compute the daily ratio <code>r = q<sub>o,actual</sub> / q<sub>o,IA</sub></code> (or cumulative-ratio "cumulative <code>LFP'</code>" for noise reduction); multiply <code>r</code> by the template <code>LFP'</code> to get daily <code>LFP'(t)</code>; pick representative <code>LFP'</code> from the early-time flat region; generate type curves at multiple smaller OOIP values; pick the OOIP curve best matching production data; resolve <code>k</code> and <code>x<sub>f</sub></code> once L, n<sub>f</sub>, h, &phi; are assumed.</li>
+<li><strong>Finite-conductivity fracture <code>F<sub>cd</sub></code> consistency-conversion equation.</strong> When transitioning from the NRTA template model (single fracture, large permeability) to the history-matching realisation (multiple fractures, smaller permeability), <code>F<sub>cd</sub></code> must be recomputed via <code>F<sub>cd,2</sub> = F<sub>cd,1</sub> &times; (k<sub>1</sub> h<sub>1</sub> n<sub>f,1</sub>) / (k<sub>2</sub> h<sub>2</sub> n<sub>f,2</sub>) &times; (&beta;<sub>2</sub> / &beta;<sub>1</sub>)</code>. Worked example: <code>F<sub>cd,1</sub> = 8</code> in the template model converts to <code>F<sub>cd,2</sub> = 14</code> in the HM realisation.</li>
+<li><strong>Contacted pore volume <code>V<sub>p</sub></code> and gross rock volume <code>V<sub>R</sub></code> as completion-effectiveness metrics.</strong> OOIP alone is misleading for cross-well completion-effectiveness comparison across very different fluid initialisations (an <code>S<sub>wi</sub> = 100%</code> reservoir has OOIP = 0 regardless of completion quality). <code>V<sub>p</sub> = HCPV / (1 - S<sub>wi</sub>) = OOIP / (1 - S<sub>wi</sub>) &times; B<sub>ti</sub></code> and <code>V<sub>R</sub> = V<sub>p</sub> / &phi;</code> are fluid-independent metrics that can be regressed against completion design (proppant mass, fluid volume, cluster spacing) across a basin.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The NRTA workflow that the unconventional cluster had been building toward.</strong> The 2020 surface-process triplet gave the operator the right rates; the BOPVT-vs-COMP paper made the simulation tractable; the well-box heterogeneity series gave the right reservoir model. This paper assembles the parts into a single rate-transient analysis methodology that handles all fluid systems and finite-conductivity fractures simultaneously - a generalisation that classical RTA, designed for single-phase oil and infinite-conductivity fractures, could not deliver.</p>
+<p><strong>The three equivalence relationships are pedagogical gold.</strong> Same <code>LFP'</code> means same rate during linear flow; same ratio means same GOR/WC trajectories; same both means identical. The hierarchy lets students and engineers reason about RTA outputs without solving the underlying problem each time. The Whitson-Brule SPE Monograph 2000 pattern of "name the principle, give the working tool" recurs here.</p>
+<p><strong>The completion-effectiveness metric correction.</strong> Naming <code>V<sub>p</sub></code> and <code>V<sub>R</sub></code> as the right cross-well comparison axis - not OOIP - addresses a real industry confusion. Wells with high initial water saturation, gas-condensate wells, near-critical fluid wells all get pulled toward fair comparison when completion-team benchmarking uses contacted-pore-volume rather than initial-oil-in-place.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Bowie-Ewert 2020 URTeC-2967 numerically-assisted RTA (single-phase oil precursor)</li>
+<li>Wattenbarger 1998 linear flow parameter for tight gas</li>
+<li>Fetkovich 1980 decline-curve analysis (paper dedicated to Mike Fetkovich)</li>
+<li>Carlsen-Dahouk-Mydland-Whitson 2020 IPTC-19596 compositional tracking (the rate-data preparation upstream)</li>
+<li>Carlsen-Whitson 2020 IPTC-19775 separator oil shrinkage</li>
+<li>Carlsen-Dahouk-Hoffmann-Whitson 2020 SPE-199982 CGR normalisation</li>
+<li>Mydland-Whitson-Carlsen-Dahouk-Yusra 2020 URTeC-2765 BOPVT vs COMP (the simulator-fitness companion)</li>
+<li>Alqahtani-Khan-Chuparova-Whitson 2020 SPE-200014 single-symmetry-element justification</li>
+<li>Younus et al. 2019 URTeC-551 field-wide EOS</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Carlsen-Whitson 2022 NRTA papers SPE-210420 / URTeC-3718584 (the follow-ups in the NRTA series)</li>
+<li>Operator RTA practice in Eagle Ford / Bakken / Permian / Montney / Vaca Muerta (NRTA replacing classical single-phase RTA where fluid systems and fracture finite-conductivity make the assumptions break)</li>
+<li>Whitson Academy course material on NRTA</li>
+<li>Industry vocabulary: <code>LFP'</code>, <code>B<sub>ti</sub></code>, contacted pore volume, the three equivalence relationships</li>
+<li>Completion-effectiveness benchmarking via <code>V<sub>p</sub></code> / <code>V<sub>R</sub></code> across fluid types</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Mathias Lia Carlsen</strong> &mdash; Whitson AS senior engineer; first author. Lead of the 2020-2022 unconventional-PVT and NRTA cluster.</p>
+<p><strong>B. Bowie</strong> &mdash; Apache Corporation; co-author of the original Bowie-Ewert 2020 URTeC-2967 RTA paper that this work generalises. Operator-side engineering insight.</p>
+<p><strong>Stian Mydland, Mohamad Majzoub Dahouk, Ilina Yusra</strong> &mdash; Whitson AS engineers; the same core team as the rest of the 2020-2021 unconventional cluster.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

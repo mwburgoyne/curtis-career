@@ -1,0 +1,75 @@
+id: 1983_whitson_characterizing_c7plus
+title: Characterizing Hydrocarbon Plus Fractions
+page_title: Whitson (1983) - Characterizing Hydrocarbon Plus Fractions
+authors:
+- Curtis H. Whitson
+authors_affiliation: sole author
+venue: SPE Journal, August 1983, pp. 683–694
+paper_number: SPE-12233-PA
+doi: 10.2118/12233-PA
+funding: null
+citations: 446
+citations_source: OpenAlex
+tags:
+- C7+ Characterisation
+- Gamma Distribution
+- Gaussian Quadrature
+- Riazi-Daubert
+- Phase 1
+whitson_index: 0
+citations_note: the most cited paper of Whitson's career
+landmark_inline_text: FOUNDATION PAPER
+landmark: true
+landmark_html: |-
+  <p><strong>Why it matters:</strong> This paper set the industry standard for characterising the heavy end of reservoir fluids. Every modern compositional reservoir simulator, every commercial PVT package, and every EOS-tuning workflow in petroleum engineering uses some version of the Whitson C7+ method. The combination of a three-parameter gamma distribution for molar mass, Gauss-Laguerre quadrature for choosing pseudocomponents, and the Riazi-Daubert framework for critical properties has been the practical recipe for forty years. Roger Kornberg's 1974 nucleosome model is comparable in influence to molecular biology - this is the comparable foundational result for compositional reservoir engineering.</p>
+sections:
+- heading: Context
+  body_html: |-
+    <p>By the early 1980s, cubic equation-of-state models (Peng-Robinson 1976, SRK 1972) had become the standard tools for predicting reservoir-fluid phase behaviour. The problem was the heavy end. Real reservoir fluids contain thousands of compounds heavier than hexane, lumped into a single "C7+" fraction with only molecular weight and specific gravity typically measured. EOS predictions for volatile oils and gas condensates were brittle: every laboratory used its own grouping scheme, its own pseudocomponent count, its own way of assigning critical properties to the heavy ends. Results were not reproducible between labs or between studies.</p><p>Curtis was 27. He had finished his BSc at Stanford under Marshall Standing in 1978, moved to NTH in Trondheim, and was working on the PhD that he would defend a year later in 1984. The paper draws on his EUR-183 paper from 1980 and on Sigve Haaland's 1981 NTH MS thesis, which had experimentally tested the 1980 method on five North Sea stock-tank oils and motivated the wider α range that appears in this paper.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Gamma distribution for the C7+ molar mass.</strong> Curtis proposed the three-parameter gamma probability function (Pearson Type 3) to describe the molar distribution of C7+:
+        <p><code>p(M) = (M - η)<sup>α-1</sup> exp[-(M - η)/β] / [β<sup>α</sup> Γ(α)]</code></p>
+        where M is molecular weight, η is the minimum molecular weight in the C<sub>n+</sub> fraction (η = 14n - 6 for an n-carbon fraction, so η = 92 for C7+), α is the shape parameter controlling skewness, and β is the scale parameter. For α = 1 the distribution reduces to exponential; for α &gt; 1 it becomes left-skewed; as α tends to infinity it becomes a folded normal. The same paper provides a direct estimate of α from a partial extended analysis.</li>
+    <li><strong>Gauss-Laguerre quadrature for splitting.</strong> Rather than splitting C7+ into arbitrary equal-width carbon-number groups, Curtis applied Gauss-Laguerre quadrature to the gamma distribution to locate optimal pseudocomponent molecular weights and mole fractions. The quadrature points become molecular weights; the weights combined with the PDF become mole fractions. Three to five pseudocomponents are enough for accurate vapour-liquid equilibrium calculations, against ten or more with traditional SCN splitting. The method places pseudocomponents where they matter most for phase behaviour.</li>
+    <li><strong>Property correlations using Riazi-Daubert and Watson K<sub>w</sub>.</strong> Once pseudocomponent molecular weights and specific gravities are set, the Riazi-Daubert generalised correlation <code>θ = a T<sub>b</sub><sup>b</sup> γ<sup>c</sup></code> provides every critical property the EOS needs. Boiling points (not usually measured for heavy SCN groups) are estimated via the Watson characterisation factor K<sub>w</sub> = T<sub>b</sub><sup>1/3</sup>/γ held approximately constant across SCN groups.</li>
+    <li><strong>Refitted Riazi-Daubert constants for high boiling point.</strong> Above T<sub>b</sub> = 730 K (850°F) the original Riazi-Daubert constants for critical pressure lose accuracy. Curtis refitted using API Project 44 data: a = 2.4149 × 10<sup>14</sup>, b = -3.86618, c = 4.2448 for p<sub>c</sub> in psia. These refitted constants are the ones now used industry-wide for heavy ends.</li>
+    <li><strong>Sensitivity to measured C7+ molecular weight.</strong> The paper quantifies, using the Hoffman oil, the consequences of measurement error in M<sub>n+</sub>. Two values of α produce phase envelopes that differ by 70 K in critical temperature, but the bubble-point locus can still be matched by adjusting the methane BIP. The practical lesson is that critical-point predictions inherit all upstream measurement error, while saturation-pressure tuning is comparatively forgiving.</li>
+    <li><strong>The grouping argument.</strong> Curtis showed it is not the count of C7+ pseudocomponents that determines accuracy but which carbon numbers are grouped together. Sturge's rule with logarithmic molecular-weight boundaries gives much better phase-envelope reproduction than naive equal-step grouping.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The standard method.</strong> Forty years on, the Whitson C7+ characterisation is what every commercial reservoir simulator and PVT package implements by default. Engineers who have never read SPE-12233 use it every day without knowing. The gamma distribution, the Gauss-Laguerre splitting, the refitted Riazi-Daubert constants for high T<sub>b</sub> - all of it is built into Eclipse, CMG, SENSOR, MoReS, tNavigator, and every Python EOS library written since.</p>
+    <p><strong>Stanford to Trondheim, age 27.</strong> Curtis was a postgraduate when he wrote this. The paper draws on his EUR-183 (1980) precursor and on Sigve Haaland's 1981 NTH MS thesis, an example of the student-advisor feedback loop refining the published method. Haaland tested the 1980 approach on five North Sea oils, found that light oils routinely required α &lt; 1, and recommended widening the parameter range. Two years later, SPE-12233 carries the wider range and the matured framing of η as a mathematical constant rather than a physical property.</p>
+    <p><strong>Setting up everything after.</strong> The 1984 SPE-11200 paper extends the sensitivity analysis. SPE-12634 (also 1984) addresses critical-property estimation in more detail. The 1989 Whitson-Anderson-Søreide book chapter introduces the modified-β<sub>0</sub> approach for multi-sample consistency. The 2000 SPE Monograph chapter 5 is the matured version of the same framework. Almost every later Whitson paper depends on the C7+ method established here.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Riazi &amp; Daubert (1980), <em>Hydrocarbon Processing</em> — the θ = a T<sub>b</sub><sup>b</sup> γ<sup>c</sup> form for petroleum property correlations</li>
+    <li>Watson, Nelson &amp; Murphy (1935) — the K<sub>w</sub> characterisation factor for petroleum fractions</li>
+    <li>Whitson (1980), EUR-183 — the precursor paper with α range 1.0 to 2.0 and Sturge's rule regrouping</li>
+    <li>Haaland (1981), NTH MS thesis — experimental validation against five North Sea oils; motivated widening α to 0.5 to 3.0 and treating η as a regression variable</li>
+    <li>Katz &amp; Firoozabadi (1978) — generalised SCN properties C6 to C45 (Curtis refits the C23-C45 molecular weights using Riazi-Daubert rather than linear extrapolation)</li>
+    <li>Peng &amp; Robinson (1976) and Soave (1972) — the cubic EOS frameworks the characterisation feeds</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Whitson (1984) SPE-11200</strong> — extended sensitivity analysis of C7+ properties on EOS predictions</li>
+    <li><strong>Whitson (1984) SPE-12634</strong> — critical-property estimation refinement</li>
+    <li><strong>Whitson, Anderson &amp; Søreide (1989)</strong>, book chapter — the modified-β<sub>0</sub> approach for multi-sample fluid characterisation, used in compositional-gradient studies</li>
+    <li><strong>Whitson &amp; Brule (2000) SPE Monograph "Phase Behavior"</strong>, Chapter 5 — the matured presentation of C7+ characterisation that became the reference</li>
+    <li>Every commercial reservoir simulator and PVT package's default C7+ handling</li>
+    <li>The Pedersen-Christensen alternative (logarithmic distribution, Pedersen et al. 1984, 1989) is the α = 1 special case of Whitson's gamma; both approaches converge in practice when extended compositional analyses (C36+) are available</li>
+    <li>Multi-sample EOS characterisation for gas cap + oil column and compositional-gradient studies</li>
+    <li><strong>Younus et al. (2019) URTeC-551 Field-Wide EOS Model Development</strong> — uses the gamma-distribution-plus-field-wide-fluid concept as the common backbone for all wells in a basin, the load-bearing concept of the 2020s unconventional-PVT cluster</li>
+    <li><strong>Younus, Whitson &amp; Martinsen (2022) SPE-211391</strong> — the gamma-model GC compositional-uncertainty QC workflow with the C<sub>x</sub> diagnostic plot, applying the gamma distribution to laboratory-error attribution</li>
+    <li><strong>Singh-Whitson-Nielsen 2025 SPE-225382 + Nielsen-Younus 2025 SPE-225470</strong> — the modern Whitson-AS BOPVT and end-to-end fluid-model workflows continue to rest on the gamma-distribution C<sub>7+</sub> characterisation</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Sole author.</strong> Acknowledgements in the paper credit T.F. Anderson (Stanford) and Ingolf Søreide for discussions; the work draws on Haaland's 1981 NTH thesis (supervised by Glasø, advised by Whitson).</p>

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Martinsen, Castiblanco, Osorio & Whitson (2010) - Advanced Fluid Characterisation of Pauto Complex, Colombia</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Advanced Fluid Characterisation of Pauto Complex, Colombia</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Sissel Ø. Martinsen, I. Castiblanco, R. Osorio, <mark>Curtis H. Whitson</mark> (PERA, BP Exploration Colombia, ECOPETROL, NTNU)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Florence, 19-22 September 2010</p>
+  <p><strong>Paper number:</strong> SPE-135085</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">EOS Tuning</span> <span class="tag">Pauto Field</span> <span class="tag">Colombia</span> <span class="tag">PVT QC Workflow</span> <span class="tag">Non-Exponential C7+</span> <span class="tag">BIP Regression</span> <span class="tag">Multi-Lab Data</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Case-history EOS characterisation of the Pauto Field Complex in the Andean Foothills basin, Colombia: eight compartmentalised gas-condensate and volatile-oil reservoirs, gas-oil ratio 30-350 bbl/MMscf, depth 12,000-16,000 ft, initial gas in place over 1 trillion cubic feet. Operated by BP with ECOPETROL. A single 12-component Peng-Robinson 1979 EOS (EOS12-2008) is fit to 11 samples from 8 reservoirs including one multi-contact swelling (MCV) study and multi-laboratory PVT data with identifiably erroneous Z-factors and material balances. The EOS uses Søreide C<sub>7+</sub> characterisation, Jhaveri-Youngren volume translation, and Lohrenz-Bray-Clark viscosity with critical Z-factor tuning. Supersedes the earlier EOS12-2006 (depletion-only tuning) with vaporisation-tuned binary interaction parameters.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Systematic PVT-data QC workflow for EOS development.</strong> Before tuning the EOS, lab data pass three independent checks:
+    <ol>
+<li><strong>Z-factor consistency via Hall-Yarborough plus Wichert-Aziz.</strong> Compute Z from the measured equilibrium gas composition with Hall-Yarborough 1973 (matches Standing-Katz to 2-3%). Compare against lab-reported Z; mismatch above 5% at high pressure indicates lab error. Pauto finding: one of three laboratories reported Z-factors 5-10% high for samples 1, 2, 3, 6, 7, 8, 10 at pressures above 5,000 psia; these Z-factors were excluded from EOS regression. The other two labs matched within 3% and were retained.</li>
+<li><strong>Forward material balance.</strong> Start with known initial charge composition, track through each experimental stage, compare with measured compositions. Mismatch flags lab error.</li>
+<li><strong>Backward material balance.</strong> Start with final measured composition, work backwards via measured volumes to reconstruct the initial charge, compare with known charge. Pauto CVD sample 5 agreed to within 0.3 mol% across 11 components - a strong pass.</li>
+</ol>
+    Plus graphical cross-plots: liquid API vs C<sub>7+</sub> gravity, saturation pressure vs C<sub>7+</sub> mol fraction, saturated <code>B<sub>o</sub></code> vs solution GOR. A single "wrong" lab value can drive EOS regression in a non-physical direction; the QC workflow separates outlier detection from EOS tuning. In consulting practice, 10-30% of reported PVT data typically should be excluded from the tuning set.</li>
+<li><strong>Non-exponential C7-C12 multiplier extension of the gamma C7+ characterisation.</strong> Pauto fluids exhibit non-exponential behaviour in the C<sub>7</sub>-C<sub>12</sub> single-carbon-number distribution that a pure gamma distribution cannot reproduce. Rather than increase the gamma shape parameter <code>α</code> (which compromises the heavy-tail fit), apply composition-specific multipliers <code>m<sub>i</sub></code> for C<sub>7</sub>-C<sub>12</sub>: <code>x<sub>i</sub> = m<sub>i</sub> · x<sub>i</sub><sup>exp</sup></code>. Pauto multipliers (common to all 11 samples across 8 compartments): C<sub>7</sub> = 0.70, C<sub>8</sub> = 1.29, C<sub>9</sub> = 1.13, C<sub>11</sub> = 0.74, C<sub>12</sub> = 0.71. The non-exponential pattern is a compositional fingerprint of source rock plus migration history, stable across compartments sharing a source. Captures the C<sub>7</sub>-C<sub>12</sub> behaviour with fixed multipliers; keeps the gamma exponential tail for C<sub>13+</sub> where it works well.</li>
+<li><strong>Pivot-shift critical-temperature regression formula preserves K-value monotonicity.</strong> <code>T<sub>c,i</sub><sup>tuned</sup> = f<sub>Tc</sub>(T<sub>c,i</sub><sup>initial</sup> - 950°R) + 950°R</code> with <code>f<sub>Tc</sub></code> as a single dimensionless regression variable applied to all C<sub>7+</sub> pseudo-components. The 950°R pivot is approximately the average critical temperature of a typical C<sub>7+</sub> characterisation. Direct scaling <code>T<sub>c</sub><sup>tuned</sup> = f · T<sub>c</sub><sup>initial</sup></code> distorts the critical-temperature spread unevenly across light and heavy fractions, breaking K-value monotonicity. The pivot-shift form preserves it.</li>
+<li><strong>K-value consistency check after extensive BIP regression.</strong> Extensive BIP regression (separate BIPs for many pseudo-component pairs) can produce non-monotonic BIPs with opposite signs between contiguous bands. EOS12-2008 has BIP(C<sub>1</sub>, C<sub>5-6</sub>) = +0.068 and BIP(C<sub>1</sub>, C<sub>7-10</sub>) = -0.179. Generally a warning sign of non-physical EOS behaviour. Mandatory check after extensive BIP regression: compute K-values over the relevant pressure range and verify (a) K<sub>i</sub> monotonically decreases with molecular weight at fixed pressure, and (b) K<sub>i</sub>(p) curves do not cross. For EOS12-2008, the K-values pass both consistency checks despite the non-monotonic BIPs. Non-monotonic BIPs are therefore admissible if the K-value check passes.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The QC-before-regression discipline.</strong> The standard practice in the 1990s and 2000s was to accept lab-reported PVT data as ground truth and tune the EOS to match. This paper argues that 10-30% of reported PVT data should typically be excluded - and gives a workflow to identify which 10-30%. The Hall-Yarborough cross-check, forward and backward material balance, and graphical cross-plots are now standard pre-regression steps at Whitson AS and the operators that follow the framework.</p>
+<p><strong>The non-exponential-multiplier trick.</strong> Real reservoir C<sub>7+</sub> distributions are not exact gamma. The multiplier approach handles the systematic non-exponential fingerprint (same across all samples in the reservoir complex) with fixed multipliers, while the gamma still governs C<sub>13+</sub> where it works well. The 2024 Nielsen-Wanat-Whitson SPE-220699 paper picks up the same theme with the "adjust gamma lower MW" technique for legacy truncated samples.</p>
+<p><strong>The K-value-check guardrail.</strong> Curtis's framing: BIP-tuning-outcome QC trumps BIP-tuning-input constraints. Allow the regression broad freedom on BIPs, then check the outcome against thermodynamic requirements. The K-value consistency check is the right guardrail.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson 1983 SPE-12233 - gamma C<sub>7+</sub> characterisation framework</li>
+<li>Søreide and Twu critical-property correlations</li>
+<li>Hall-Yarborough 1973 Z-factor correlation</li>
+<li>Wichert-Aziz 1971 sour-gas pseudo-critical correction</li>
+<li>Jhaveri-Youngren volume translation</li>
+<li>Lohrenz-Bray-Clark viscosity</li>
+<li>Whitson-Brule 2000 SPE Monograph framework</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Whitson AS field-wide EOS development practice through the 2010s and 2020s</li>
+<li>Younus-Whitson 2019 URTeC-551 field-wide EOS workflow</li>
+<li>Younus-Whitson-Martinsen 2022 SPE-211391 GC quality-control framework (the 2010 QC workflow extended with the gamma-model formalism)</li>
+<li>Nielsen-Wanat-Whitson 2024 SPE-220699 forward compositional uncertainty propagation</li>
+<li>Operator EOS-tuning practice at BP Exploration Colombia, ECOPETROL, and partners on the Pauto Complex</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Sissel Ø. Martinsen</strong> — PERA / Whitson AS. Long-time Whitson colleague; field-wide EOS model development practice.</p><p><strong>I. Castiblanco and R. Osorio</strong> — BP Exploration Colombia / ECOPETROL operator side.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

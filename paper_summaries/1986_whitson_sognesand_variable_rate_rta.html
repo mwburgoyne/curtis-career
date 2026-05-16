@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson & Sognesand (1986) - Variable-Rate Well Tests via van Everdingen-Meyer</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Application of the van Everdingen-Meyer Method for Analyzing Variable-Rate Well Tests</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark>, Sigmund Sognesand (NTH)</p>
+  <p><strong>Venue:</strong> 61st SPE Annual Technical Conference and Exhibition, New Orleans, 5-8 October 1986</p>
+  <p><strong>Paper number:</strong> SPE 15482</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/15482-MS">10.2118/15482-MS</a></p>
+  
+  
+  <p><strong>Citations:</strong> citation count not available (OpenAlex has no record for this SPE paper)</p>
+  <p><span class="tag">Well Testing</span> <span class="tag">Rate Transient Analysis</span> <span class="tag">Superposition</span> <span class="tag">Vertical Fracture</span> <span class="tag">Non-Darcy Skin</span> <span class="tag">Phase 2</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>By the mid-1980s, well testing in low-permeability or stimulated wells was being done with shortcut superposition methods - Odeh-Jones, Ridley, Fetkovich-Vienot - all of which assume the log approximation of the dimensionless pressure p<sub>D</sub>(t) is valid for the whole test. For high-permeability radial wells with mild damage that assumption holds. For tight gas, hydraulically fractured, or otherwise stimulated wells the early-time response is dominated by fracture or transitional flow where the log form fails. Engineers were getting permeability and skin values that could not reproduce their own buildup data under rigorous superposition.</p><p>Curtis was thirty, two years past his PhD, building NTH's reservoir-engineering teaching programme and consulting for the Norwegian operators. Sigmund Sognesand was an NTH collaborator. This is a sideways step from the PVT work and one of the few well-testing papers in Curtis's bibliography.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Use the right p<sub>D</sub>, not the log approximation.</strong> For low-k or stimulated wells the rigorous superposition equation, written for a gas well with pseudopressure: <code>m[p<sub>w</sub>(t<sub>n</sub>)] + F q<sub>g</sub><sup>2</sup> = m(p<sub>i</sub>) - (T / 0.703 k h) ∑<sub>j</sub> Δq<sub>g,j</sub> p<sub>D</sub>(Δt<sub>D,j</sub>)</code>. The p<sub>D</sub> here is the full dimensionless pressure solution for the actual well geometry - uniform-flux fracture, infinite-conductivity fracture, finite-conductivity fracture, or radial with skin - not the late-time log approximation.</li>
+<li><strong>Trial-and-error on t<sub>Dc</sub>.</strong> Plot [m(p<sub>w</sub>) + F q<sub>g</sub><sup>2</sup>] against the superposition time variable ∑<sub>j</sub> Δq<sub>j</sub> p<sub>D</sub>(Δt<sub>D,j</sub>) on cartesian paper. Adjust the dimensionless time constant t<sub>Dc</sub> until all data points (drawdown <em>and</em> buildup, the same line) collapse onto a single straight line. Slope gives permeability; intercept gives initial pressure; t<sub>Dc</sub> gives apparent wellbore radius and steady-state skin. For a vertical fracture, x<sub>f</sub> = 2 r<sub>wa</sub> (uniform flux) or 2.718 r<sub>wa</sub> (infinite conductivity).</li>
+<li><strong>Decomposing total skin into mechanical and non-Darcy parts.</strong> A single buildup on a high-rate gas well gives only the apparent total skin s' = s + Dq<sub>g</sub>. The paper's Irene example shows how multirate superposition decomposes s' = +9.6 into s = +3.5 (steady-state) and D = 1.15 × 10<sup>-6</sup> (scf/D)<sup>-1</sup>, recovering the simulator's input values of s = +3.8 and D ≈ 7.5 × 10<sup>-7</sup>. The procedure: trial values of mechanical skin, back-calculate r<sub>wa</sub> and t<sub>Dc</sub>, compute D from the residual, plot, pick the trial that minimises average deviation.</li>
+<li><strong>Rigorous superposition as final-check on Horner and type-curve analyses.</strong> The Hinz No. 1 example: Horner gave k = 0.236 md and s = -4.31. Uniform-flux type curve gave k = 0.482 md and s = -3.63. Rigorous superposition settled on k = 0.238 md, x<sub>f</sub> = 49.9 ft, s = -4.03 - confirming Horner's permeability and the implied initial pressure (1845 psia), correcting the fracture half-length, and reconciling drawdown with buildup.</li>
+<li><strong>Use the graph, not regression.</strong> Curtis insists on graphical adjustment of t<sub>Dc</sub> over automated regression. Regression averages across regions where the chosen p<sub>D</sub> model is valid and regions where it is not (e.g., boundary-dominated data in an infinite-acting model), masking the misfit. The eye catches the curvature immediately. The graph is the diagnostic.</li>
+<li><strong>Include all rate changes.</strong> The superposition sum must include every rate change before and during the pressure measurement, even periods with no pressure recorded. Omitting them corrupts the sum and breaks the linearity check.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The pattern: rigorous beats shortcut.</strong> The pedagogical move is the same one Curtis applies to IPR equations, EOS regression, and gas-condensate well performance: when two simplified methods disagree, the tiebreaker is the rigorous calculation, not a third simplified method. The Hinz example is the demonstration. Three conventional analyses gave k values from 0.120 to 0.482 md and x<sub>f</sub> from 33.6 to 108 ft. Only rigorous superposition narrowed the range.</p>
+<p><strong>The skin-decomposition argument.</strong> A high apparent skin in a high-rate gas well is most often non-Darcy, not mechanical. The operational consequence matters: you do not acidise a well whose 9.6 apparent skin decomposes as 3.5 plus non-Darcy. You check the frac design or the tubing. The multirate-superposition workflow is what gives engineers the two diagnostic numbers.</p>
+<p><strong>A rare side-step from PVT.</strong> Most of Curtis's bibliography is phase behaviour and reservoir-fluid characterisation. SPE-15482 shows the same disciplined pattern applied to a well-testing problem. The cross-domain consistency is part of what makes the broader Whitson body of work coherent.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>van Everdingen &amp; Meyer (1971) - the original variable-rate superposition framework</li>
+<li>Odeh &amp; Jones (1965), Ridley (1965), Fetkovich &amp; Vienot - the log-approximation superposition methods this paper argues against using indiscriminately</li>
+<li>Gringarten, Ramey &amp; Raghavan (1974) - dimensionless pressure solutions for uniform-flux and infinite-conductivity vertical fractures</li>
+<li>Cinco-Ley &amp; Samaniego (1981) - finite-conductivity fracture p<sub>D</sub> solutions</li>
+<li>Forchheimer (1901), Wattenbarger &amp; Ramey (1968) - rate-dependent skin and non-Darcy flow framework</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The disciplined-superposition approach Curtis applies in later rate-transient-analysis work, including the Fevang-Whitson 1996 three-region gas-condensate flow framework (SPE-30714)</li>
+<li>The methodology was applied at NTH on Norwegian operator wells through the late 1980s and early 1990s</li>
+<li>The skin-decomposition workflow informs later whitson NRTA software used in the liquid-rich-shale era and the Carlsen-Whitson NRTA series from 2019 onwards</li>
+<li>The "graph is the diagnostic" pedagogy is consistent with the broader Whitson teaching method in TPG4150 (Reservoir Recovery Techniques) at NTNU</li>
+</ul>
+</div>
+
+
+<h2>Key References</h2>
+
+<p><strong>Sigmund Sognesand</strong> was an NTH collaborator on the gas-well analysis side. The paper draws on the rigorous-superposition machinery van Everdingen and Meyer published in 1971, extended to handle drawdown plus buildup data in a single linear fit and to decompose total skin into mechanical and non-Darcy components.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnsen & Whitson (2010) - On the Loss of Injectant and Apparent Dispersivity in Push-Pull Tests</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>On the Loss of Injectant and Apparent Dispersivity in Single-Well Push-Pull Tests Influenced by Natural Drift</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Sverre Gullikstad Johnsen, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> <em>Transport in Porous Media</em> (2010), Open Access</p>
+  
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s11242-010-9632-6">10.1007/s11242-010-9632-6</a></p>
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Push-Pull Test</span> <span class="tag">Apparent Dispersivity</span> <span class="tag">Critical Time</span> <span class="tag">Monte-Carlo Correlation</span> <span class="tag">Pickens-Grisak</span> <span class="tag">Closed-Form Prediction</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>A short follow-up to Johnsen-Whitson 2008 TIPM that derives three new analytical results from the 2008 streamline model: a closed-form expression for the critical injection-phase duration beyond which injectant is lost to natural drift, a Monte-Carlo regression yielding a log-log linear correlation for single-layer best-fit Peclet number (and hence apparent dispersivity) as a function of the test-design ratios, and a layer-by-layer Muskat 1949 summation that predicts the Pickens-Grisak SW1/SW2 stratified-aquifer production profiles from the single-layer correlation. The paper closes the 2008 framework by replacing its full streamline integration with a closed-form correlation accurate to within ±30% in the Peclet number - which translates into a much smaller uncertainty in field-data-matching as the Pickens-Grisak prediction shows. Sverre Johnsen's NTNU PhD work with Curtis as co-supervisor.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Closed-form critical injection-phase duration <code>T<sub>c</sub></code>.</strong> The time at which the first injectant particle crosses the production-phase stagnation point (located at <code>(x, y) = (-Q<sub>p</sub>/U<sub>u</sub>, 0)</code> in the drift-aligned frame) and becomes unrecoverable:
+    <p><code>T<sub>c</sub> = -[Q<sub>p</sub> + U<sub>u</sub> r<sub>w</sub> - Q<sub>i</sub> ln|(U<sub>u</sub> r<sub>w</sub> + Q<sub>i</sub>) / (Q<sub>i</sub> - Q<sub>p</sub>)|] / U<sub>u</sub><sup>2</sup></code></p>
+    with <code>Q<sub>i</sub></code> the areal injection rate (volumetric divided by height), <code>Q<sub>p</sub></code> the areal production rate, <code>U<sub>u</sub></code> the drift velocity, and <code>r<sub>w</sub></code> the well radius. If injection duration <code>T<sub>i</sub> &gt; T<sub>c</sub></code>, some injectant is lost and the effluent profile develops pronounced tailing as <code>T<sub>i</sub> → T<sub>c</sub></code>. For a stratified reservoir, <code>T<sub>c</sub></code> varies layer by layer, so conservative production in some strata can coexist with injectant loss in others. <code>T<sub>c</sub></code> closes the previously-implicit recoverability assumption of the 2008 model and gives a pre-test design check.</li>
+<li><strong>Single-layer apparent-dispersivity correlation from Monte-Carlo regression.</strong> Running the 2008 streamline model for 1,000 stream-lines on each of 1,000 independently-sampled parameter sets (<code>Q<sub>i</sub>, Q<sub>p</sub>, U<sub>u</sub></code> log-uniform around the Pickens-Grisak SW1 values; <code>T<sub>i</sub></code> log-uniform in <code>[0.01 T<sub>c</sub>, T<sub>c</sub>]</code>), fitting the 1-D Aronofsky-Heller convection-dispersion solution to each simulated profile gives Peclet numbers that collapse onto a single log-log line:
+    <p><code>N<sub>Pe</sub> ≈ 7.5 (T<sub>i</sub>/T<sub>c</sub>)<sup>-1</sup> (Q<sub>i</sub>/Q<sub>p</sub>)<sup>0.6</sup></code></p>
+    Converting via <code>α<sub>a</sub> = L/N<sub>Pe</sub></code> with average travel length <code>L = 2(√(2 Q<sub>i</sub> T<sub>i</sub> + r<sub>w</sub><sup>2</sup>) - r<sub>w</sub>)</code> gives the single-layer apparent dispersivity due to natural drift alone:
+    <p><code>α<sub>a</sub> ≈ 0.13 L (T<sub>i</sub>/T<sub>c</sub>) (Q<sub>i</sub>/Q<sub>p</sub>)<sup>-0.6</sup></code></p>
+    Plots linearly versus travel length on a log-log scale, reproducing the empirical compilations of Arya 1988 and Mahadevan 2002 <em>without invoking any physical dispersion</em>. The ±30% uncertainty on the prefactor reflects irreducible scatter across the parameter space and is shown to be insignificant for predicting the Pickens-Grisak effluent profiles.</li>
+<li><strong>Stratified push-pull production-profile prediction via Muskat 1949 weighting.</strong> For a stratified reservoir with no cross-flow, overall producing concentration is the permeability-thickness-weighted Muskat combination of single-layer profiles:
+    <p><code>C = ∑<sub>j</sub>(C<sub>j</sub> b<sub>j</sub> k<sub>j</sub>) / (b k<sub>A</sub>)</code></p>
+    where <code>b<sub>j</sub>, k<sub>j</sub></code> are layer thickness and permeability and <code>k<sub>A</sub></code> is arithmetic-average permeability. Workflow: compute <code>T<sub>c,j</sub></code> per layer from the closed-form expression; compute <code>N<sub>Pe,j</sub></code> from the correlation; compute single-layer profiles from Aronofsky-Heller; combine via Muskat. Applied to Pickens-Grisak SW1 and SW2: predicted profiles match field data across the full <code>V<sub>prod</sub>/V<sub>inj</sub></code> range with ±30% bracket curves within field-data scatter. Uses only test parameters, layer conductivities, and drift velocity - no fitting.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The 2008 framework operationalised.</strong> The 2008 Johnsen-Whitson paper had argued that macro-scale apparent dispersivities in single-well push-pull tests are a conformance fingerprint of drift plus stratification, not a scale-dependent rock property - but the demonstration required running the full streamline model. The 2010 follow-up replaces the streamline integration with a closed-form correlation (Eq. 3) plus the Muskat summation (Eq. 5), giving practitioners a routine tool to interrogate any echo-test apparent dispersivity. Plug in known test parameters and layer properties; compare the predicted central profile to the field data; any residual is a principled upper bound on physical dispersion and un-modelled conformance mechanisms.</p>
+<p><strong>The drift-budget tool.</strong> The single-layer correlation gives a first-cut estimate of how much of a reported field-scale apparent dispersivity is plausibly drift-induced, using only test design parameters and site drift velocity. Deviations above the correlation are candidates for additional conformance mechanisms (stratification, partial-completion effects) rather than physical mixing.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Johnsen-Whitson 2008 TIPM 77, 399-415 - the streamline model being correlated</li>
+<li>Aronofsky-Heller 1957 - the 1-D convection-dispersion solution</li>
+<li>Muskat 1949 - the permeability-thickness layer weighting</li>
+<li>Pickens-Grisak 1981 - the canonical aquifer push-pull dataset</li>
+<li>Coats-Whitson-Thomas 2004 SPE-90390 - the apparent-vs-physical dispersivity argument extended to single-well geometry</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Routine practitioner-level tracer-test interpretation in stratified aquifers and reservoirs</li>
+<li>Reservoir-engineering simulation-input recommendations: use the physical dispersivity reference (~0.01 ft) rather than apparent fitted values</li>
+<li>Single-well chemical tracer test analysis for residual-oil-saturation determination</li>
+<li>CO<sub>2</sub>-storage tracer-test interpretation in stratified geological storage formations</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Sverre Gullikstad Johnsen</strong> — NTNU PhD (2007), co-supervised by Curtis. Two TIPM papers on push-pull tracer test analysis (2008, 2010). Subsequent career at SINTEF on computational fluid dynamics and porous-media flow.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

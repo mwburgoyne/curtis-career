@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlsen & Whitson (2020) - Quantifying Separator Oil Shrinkage</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Quantifying Separator Oil Shrinkage</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mathias Lia Carlsen, <mark>Curtis H. Whitson</mark> (Whitson AS)</p>
+  <p><strong>Venue:</strong> International Petroleum Technology Conference, Dhahran, 13-15 January 2020</p>
+  <p><strong>Paper number:</strong> IPTC-19775-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2523/IPTC-19775-MS">10.2523/IPTC-19775-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="tag">Shrinkage Factor</span> <span class="tag">Flash Factor</span> <span class="tag">Separator Oil</span> <span class="tag">Surface Process</span> <span class="tag">Stock-Tank Conversion</span> <span class="tag">Field-Wide EOS</span> <span class="tag">Standing Bubblepoint</span> <span class="tag">Katz γ<sub>g+</sub></span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Companion to Carlsen-Dahouk-Mydland-Whitson 2020 IPTC-19596 (the compositional-tracking paper). Where IPTC-19596 predicts the daily wellstream composition, this one handles the volumetric step that follows: how to convert metered separator-oil rates into stock-tank-oil rates correctly. The problem is operationally first-order in tight unconventionals because rates are measured at separator conditions (not stock-tank) and gathering systems are commingled, so single-constant-shrinkage-factor practice systematically biases allocation, royalty, DCA, and forecasting outputs.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Shrinkage factor and flash factor as a paired volumetric framework.</strong> <code>SF = STO / sep-oil = 1 / B<sub>o,sep</sub></code> in the range &lt; 0.65 (near-critical / gas condensate) to 0.99 (black oil); <code>FF = liberated gas / STO = R<sub>s</sub></code> of the separator oil in the range 5 scf/STB (black oil) to 1000+ scf/STB (near-critical / condensate). Exact total-GOR decomposition:
+    <blockquote>R<sub>p</sub> = R<sub>p,sep</sub>/SF + FF</blockquote>
+    First term accounts for separator-stage gas, second term for additional liberated gas during separator-to-stock-tank flash. The second term is routinely dropped in practice, making reported producing GOR too low by 5-1000 scf/STB depending on fluid type.</li>
+<li><strong>Constant-SF practice is wrong for the leaner end of the fluid spectrum.</strong> Compositional simulation of four fluid types under constant surface process shows STO-rate error from applying a single SF: &lt; 2% for black oils, ~5% for volatile oils, ~10-15% for gas condensates, up to ~20% for near-critical volatile oils. Five operational red flags trigger material SF variation: <code>R<sub>si</sub></code> &gt; 1500 scf/STB; rapid FBHP decline with frequent shut-ins; large separator-condition swings; low separator temperature or high separator pressure; gas-EOR or HnP operations. The constant-SF assumption is not a defensible approximation for wells meeting any of these criteria.</li>
+<li><strong>Three-step field-wide EOS workflow for daily SF/FF.</strong> Step 1: develop a field-wide EOS tuned to (at minimum) separator-oil shrinkage data using reservoir-representative samples. Step 2: predict daily wellstream composition <code>z<sub>i</sub></code> via one of the Methods 1/2/3 from IPTC-19596. Step 3: run the daily wellstream through the day-specific surface process (<code>p<sub>sep</sub>(day)</code>, <code>T<sub>sep</sub>(day)</code>, stage count) using the field-wide EOS; SF and FF emerge from the multi-stage flash directly. Each step removes one of the three error sources baked into constant-SF practice (fluid heterogeneity, composition variability, surface-process variability). Field example with ~1250 days of operation produces smoothly varying daily SF in 0.55-0.85 and FF in 300-1000 scf/STB.</li>
+<li><strong>No-EOS correlation fallback via Standing bubblepoint plus Katz γ<sub>g+</sub>.</strong> The physical observation that the bubblepoint pressure of separator oil at separator temperature equals the separator pressure (<code>p<sub>b</sub>(T = T<sub>sep</sub>) = p<sub>sep</sub></code>) lets the Standing bubblepoint correlation be rearranged to solve for FF given only <code>γ<sub>API</sub></code>, <code>T<sub>sep</sub></code>, <code>p<sub>sep</sub></code>. Closed-form solution after eliminating <code>γ<sub>g+</sub></code> via the Katz 1942 correlation. Four equations, three measured inputs, spreadsheet-implementable. Default coefficients work field-agnostic; coefficients can be tuned to specific separator-shrinkage data. Caveat: daily-API surrogacy via the <code>R<sub>p</sub>-γ<sub>API</sub></code> curve technique from IPTC-19596 is needed to avoid recreating the constant-SF problem in correlation form when API itself drifts.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>From volumetric bookkeeping to operational discipline.</strong> The SF / FF pair is standard PVT vocabulary, but the paper's contribution is in tying time-varying SF / FF rigorously to wellstream-composition tracking. Constant-SF practice is now flagged as a fluid-type-specific failure mode with a quantified error budget. The five-criterion operational checklist is unusually prescriptive for a Curtis paper: a numbered screening list for when "good enough" is not actually good enough.</p>
+<p><strong>The two-tier accuracy hierarchy.</strong> Operators with field-wide EOS infrastructure and SCADA data run the three-step daily workflow; operators without can drop to the four-equation Standing-Katz correlation route with three inputs. The closed-form FF expression after eliminating gas gravity is the kind of pragmatic shortcut Curtis has been adding to the literature since the 1979 NTH teaching notes. Same pattern, four decades later: closed-form first, full-EOS calculation second, both tied to the same physics.</p>
+<p><strong>Allocation and royalty implications.</strong> The economic argument is plain: oil is worth more than gas, so a 20% STO-rate bias from constant-SF practice on a near-critical well lands directly in the operator's revenue line. The paper does not push this point hard but the field example in Fig 10 is enough to make the case quantitatively.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Hoda-Whitson 2013 SPE-164334 (shrinkage-factor definition origin)</li>
+<li>Carlsen-Dahouk-Mydland-Whitson 2020 IPTC-19596 compositional tracking (the daily wellstream-composition engine)</li>
+<li>Younus et al. 2019 URTeC-551 Field-wide EOS development (the Step-1 EOS backbone)</li>
+<li>Martinsen et al. 2010 SPE-135085 PVT framework</li>
+<li>Standing 1947 bubblepoint and bubblepoint-FVF correlations (the no-EOS fallback)</li>
+<li>Katz 1942 graphical γ<sub>g+</sub> correlation (the gas-gravity surrogate)</li>
+<li>Whitson-Brule SPE Monograph 2000 (the Bo-Rs heuristic extended here from reservoir to surface train)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Carlsen-Dahouk-Hoffman-Whitson 2020 SPE-199982 CGR normalisation (the sibling unconventional-PVT paper)</li>
+<li>Carlsen-Whitson 2022 NRTA papers (rate-transient analysis with rigorous surface-train handling)</li>
+<li>Field-wide allocation, royalty, and reserves workflows for unconventional operators</li>
+<li>Whitson Academy course material on separator handling and surface-train accuracy</li>
+<li>Operator daily-SCADA SF/FF calculation routines</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; first author. The 2020 IPTC pair (this paper plus IPTC-19596) are his methodology-consolidation contribution to the Whitson-group unconventional-PVT toolkit.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

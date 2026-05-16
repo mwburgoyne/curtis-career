@@ -1,0 +1,65 @@
+id: 2011_ghasemi_whitson_sagd_proxy
+title: Modeling SAGD with a Black-Oil Proxy
+page_title: Ghasemi & Whitson (2011) - Modeling SAGD with a Black-Oil Proxy
+authors:
+- Mohsen Ghasemi
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: SPE Annual Technical Conference and Exhibition, Denver, 30 October - 2 November 2011
+paper_number: SPE-147072
+doi: null
+funding: VISTA / Statoil ASA
+citations: null
+tags:
+- SAGD
+- Steam-Assisted Gravity Drainage
+- Black-Oil Proxy
+- Heavy Oil
+- Thermal EOR
+- Pseudo-Viscosity
+- Steam Shrinkage Factor
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Mohsen Ghasemi's PhD research at NTNU with Curtis supervision, funded by VISTA / Statoil ASA. The paper describes a novel methodology for modelling steam-assisted gravity drainage (SAGD) heavy-oil processes using an <em>isothermal</em> black-oil reservoir simulator (SENSOR by Coats Engineering) as a proxy for a full-physics thermal simulator (STARS by CMG). The core insight is that in SAGD the actual physics - steam heating reducing oil viscosity in the "edge oil-flow zone" at the steam chamber boundary - can be emulated in an isothermal black-oil (BO) model by using the solution gas-oil ratio <code>R<sub>s</sub></code> as an equivalent temperature variable. The proxy runs 8-12x faster than the thermal simulator, enabling hundreds-of-runs SAGD optimisation workflows (injector/producer placement, pattern spacing, injection rate, steam-chamber temperature) that thermal simulation cannot afford. This is the first of several Ghasemi-Whitson papers extending the proxy framework.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Black-oil proxy for SAGD: solution gas-oil ratio as equivalent temperature variable.</strong> The mapping: <code>R<sub>s</sub> = 0</code> corresponds to cold initial oil at reservoir temperature <code>T<sub>R</sub></code>; <code>R<sub>s</sub><sup>*</sup> = 1</code> scf/STB corresponds to fully-heated oil at steam-chamber temperature <code>T<sup>*</sup></code> (arbitrary convention, any value works). Gas component in the proxy = steam at <code>T<sup>*</sup></code>. Dead-oil properties = cold heavy oil. The narrow "edge oil-flow zone" at the steam-chamber boundary appears in the proxy as a narrow band where <code>R<sub>s</sub></code> varies from 0 to <code>R<sub>s</sub><sup>*</sup></code>. Inter-well-region (IWR) initialisation replaces pre-heating: the region between injector and producer is initialised at <code>R<sub>s</sub> = R<sub>s</sub><sup>*</sup></code> (fully-heated viscosity) instead of simulating the three-month well-circulation pre-heating period that BO simulators cannot do.</li>
+    <li><strong>Pseudo-oil-viscosity equation with single fit parameter <em>n</em>.</strong> <code>ln(μ<sub>o</sub>/μ<sub>oi</sub>) = A (p<sub>b</sub><sup>-n</sup> - p<sub>bi</sub><sup>-n</sup>)</code> where <code>A = ln(μ<sub>o</sub><sup>*</sup>/μ<sub>oi</sub>) / (p<sub>R</sub><sup>-n</sup> - p<sub>bi</sub><sup>-n</sup>)</code>. The single fit parameter <code>n</code> controls the shape of the <code>μ<sub>o</sub>(R<sub>s</sub>)</code> curve. Crucially: Eq. 2 does NOT describe physical viscosity-vs-pressure dependence; it is a deliberately empirical surrogate whose purpose is to make the proxy match the edge-oil-flow-zone mobility distribution of the thermal model. Do not use it to correlate measured viscosity data against pressure.</li>
+    <li><strong>Steam shrinkage factor (SSF) ~0.7 for steam-condensation accounting.</strong> About 30% of injected steam condenses to liquid water inside the reservoir, primarily within the edge oil-flow zone. An isothermal BO simulator cannot model gas-to-liquid phase change. The workaround: scale the BO-proxy gas injection rate by SSF = (injected - condensed) / injected. The time-varying SSF(t) shows an initial dip from ~1 at startup down to ~0.5 at 100 days, then recovers to ~0.7 at steady state. Constant SSF = 0.7 is adequate for the studied heavy-oil reservoir - cumulative oil curves under SSF(t) vs constant SSF = 0.7 are identical within plotting scatter. Highly heterogeneous reservoirs may need SSF re-calibration.</li>
+    <li><strong>Portability of optimal <em>n</em> across injection rate, well geometry, heterogeneity, and 2D vs 3D.</strong> The key practical result. Calibrated <code>n ≈ 1.8</code> against one base thermal-model case (homogeneous, no heat loss); same <code>n</code> works at 40, 60, and 80 bbl/D injection rate; same <code>n</code> works at 13, 16, 20, 23 ft injector-producer vertical offset; same <code>n</code> works across three Tachet 2009 geological heterogeneity slices spanning 0-10,000 md permeability; same <code>n</code> works in 2D and 3D. <code>n</code> depends on end-point viscosity (1.8 at 4 cp to 2.6 at 12 cp) and heat-loss treatment (1.5 with heat loss to overburden vs 1.8 without). Without this portability the proxy would need per-case re-calibration and offer no speedup; with it, one thermal-model run is enough to calibrate the entire SAGD optimisation campaign.</li>
+    <li><strong>Validation against STARS thermal simulator.</strong> 2D homogeneous: cumulative oil, oil rate, injector bottomhole pressure, average reservoir pressure all match within plotting scatter. Oil mobility snapshots at 500 and 2,000 days show semi-quantitatively identical spatial distributions. 2D heterogeneous (three Tachet 2009 slices): match preserved for first and middle slices; last slice (very low vertical permeability) shows ~20% cumulative-oil deviation due to thermal conduction that the convective proxy cannot emulate. 3D homogeneous and two 3D heterogeneous cases all match. CPU speedup 8x without heat loss (87 vs 670 s); 12x with heat loss (91 vs 1,089 s).</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Repurposing a simulator for a process it wasn't designed for.</strong> Curtis's teaching pattern: when a physical process is dominated by a single scalar control variable (here local temperature), and an alternative simulator has a scalar variable with similar qualitative behaviour (here <code>R<sub>s</sub></code>), one can sometimes map the two and get useful emulation at dramatically lower cost. The trick is to check which physics transfers (convective heat transport maps well to gas-oil convective transport in BO; thermal conduction does not).</p>
+    <p><strong>The optimisation campaign as use case.</strong> 8-12x speedup is the difference between "we can run one thermal simulation per design" and "we can run 800-run optimisation campaigns over injection rate, well placement, and pattern spacing." The portability of <code>n</code> across the full design space is what unlocks the workflow.</p>
+    <p><strong>The Ghasemi-Whitson SAGD series.</strong> This is the first paper of a multi-year sequence that extends the proxy to solvent-added SAGD (SA-SAGD), to other thermal processes, and to integrated-asset-management workflows. Subsequent papers (Ghasemi-Whitson 2013, 2014, 2015, 2016, 2017, Ghasemi-Whitson SPEREE 2018) all build on the 2011 framework.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Modified black-oil (MBO) framework (Cook et al. 1974, Whitson-da Silva-Søreide 1988 SPE-18315, Whitson-Brule 2000 SPE Monograph Chapter 7)</li>
+    <li>STARS thermal simulator (CMG) - the reference high-fidelity tool</li>
+    <li>SENSOR BO simulator (Coats Engineering) - the proxy implementation</li>
+    <li>Tachet 2009 - the geological heterogeneity model</li>
+    <li>Pipe-It / Streamz (Petrostreamz) orchestration for the calibration loop</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>The full Ghasemi-Whitson SAGD series (2011, 2013, 2014, 2015, 2016, 2017, 2018) extending the proxy to solvent-added SAGD and other thermal processes</li>
+    <li>Operator SAGD design optimisation campaigns for Athabasca / Cold Lake / McMurray bitumen settings</li>
+    <li>Ghasemi-Whitson 2014 IPTC-18033 thermal-solvent SAGD with HYSYS surface coupling - the IAM extension</li>
+    <li>Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 shale-gas proxy work (same single-case high-fidelity calibration plus many-case proxy sweep pattern applied to a different physical process)</li>
+    <li>The 2009 SPE TWA "Pillars of Technology" framing of SAGD proxy as a Whitson signature contribution</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018.</p>

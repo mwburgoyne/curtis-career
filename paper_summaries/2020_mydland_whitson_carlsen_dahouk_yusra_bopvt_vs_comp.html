@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mydland, Whitson, Carlsen, Dahouk, Yusra (2020) - BOPVT vs COMP Gas-EOR Simulation</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Black-Oil and Compositional Reservoir Simulation of Gas-Based EOR in Tight Unconventionals</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Stian Mydland, <mark>Curtis H. Whitson</mark>, Mathias Lia Carlsen, Mohamad Majzoub Dahouk, Ilina Yusra (NTNU / Whitson AS)</p>
+  <p><strong>Venue:</strong> Unconventional Resources Technology Conference, Austin, 20-22 July 2020</p>
+  <p><strong>Paper number:</strong> URTeC-2765</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.15530/urtec-2020-2765">10.15530/urtec-2020-2765</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 7</p>
+  <p><span class="tag">BOPVT vs COMP</span> <span class="tag">HnP Simulation</span> <span class="tag">F2F Simulation</span> <span class="tag">Static r<sub>s</sub>(p) Failure</span> <span class="tag">Upper BOPVT Table</span> <span class="tag">Incremental Swelling</span> <span class="tag">Eagle Ford</span> <span class="tag">CVI/CVD Multi-Table</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Fluid-model-comparison companion to the same-team SPE-200396 mechanism paper. Where SPE-200396 establishes <em>what</em> HnP and F2F are, this paper quantifies <em>whether the standard black-oil PVT (BOPVT) reservoir-simulation fluid model is fit for purpose</em> against the compositional (COMP) reference. All simulations on a planar-fracture symmetry-element model in Sensor (Coats Engineering) using a tuned 11-pseudo-component PR EOS for the field-wide Eagle Ford fluid suite (black oil, volatile oil, near-critical oil, near-critical gas condensate, gas condensate) and four injection gases (C<sub>2</sub>-enriched, lean-processed, separator, IG composition). PhazeComp (Zick) drives all PVT calculations. Five reservoir fluids crossed with multiple injection gases and multiple cases (single-cell DP HnP, well-scale HnP, two-layer HnP, two-phase-saturated HnP, F2F) map where BOPVT works and where it fails.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>BOPVT systematically overpredicts HnP recovery via static <code>r<sub>s</sub>(p)</code>.</strong> The single BOPVT table assumes <code>1/r<sub>s</sub>(p)</code> is invariant throughout the HnP process; the COMP reference shows <code>r<sub>s</sub></code> exhibits severe hysteresis with each injection cycle as the matrix oil becomes heavier and harder to vaporise. Diagnostics: saturation-pressure decoupling (BOPVT <code>p<sub>s</sub></code> collapses to ~1500 psia by cycle 5 while COMP <code>p<sub>s</sub></code> climbs to 9930 psia); and the <code>&eta;(t<sub>ep</sub>)</code> cycle-efficiency table (BOPVT stays at 0.55+ while COMP drops to under 0.01). Overprediction can reach 10-20 percentage points of OOIP after several cycles.</li>
+<li><strong>Two-part BOPVT table generation with incremental-swelling upper extension.</strong> Standard CCE-on-initial-fluid generates the <em>lower</em> BOPVT table for <code>p &le; p<sub>si</sub></code>, leaving a missing GOR range from ~500 scf/STB to ~36,350 scf/STB that gas-injection cells routinely traverse and that triggers simulator instability. The paper closes the gap with an <em>upper</em> table built via incremental swelling of the initial-fluid equilibrium liquid with the injection gas to a critical mixture (<code>K<sub>i</sub> = 1</code>), running a CCE at each swell increment between maximum pressure and the cell's saturation pressure. Of three tested extension methods (single-stage swell, incremental swell, convergence-pressure negative-flash), incremental swell is selected for stability and smooth GOR / R<sub>s</sub> / 1/r<sub>s</sub> transitions.</li>
+<li><strong>F2F operational design rule <code>p<sub>wf</sub> &lt; MMP<sub>MC</sub> &lt; p<sub>fr</sub> &lt; p<sub>twf</sub></code>.</strong> F2F succeeds only if the frontal pressure <code>p<sub>fr</sub></code> stays above <code>MMP<sub>MC</sub></code> for a robust majority of the production period. Recipe: hold injection-fracture BHP at the <code>MMP<sub>MC</sub></code>-derived minimum (4500 psia in the worked example) during production and fix the production-period duration for all subsequent cycles equal to that of the first cycle. Three contributing factors maintain miscibility: (1) the displacement front stays close to the injection fracture so <code>p<sub>fr</sub> &asymp; p<sub>inj-fr</sub></code>; (2) miscibility is a dimmer not a switch (near-miscible <code>p<sub>fr</sub></code> is still highly efficient); (3) constant-duration production schedules cause the minimum injection-fracture pressure to increase with cycle, adding pressure to the front.</li>
+<li><strong>F2F BOPVT validity by fluid type.</strong> For black-oil / volatile-oil / near-critical-oil with <code>R<sub>s</sub> &lt; 2000</code> scf/STB, BOPVT and COMP agree well on F2F oil recovery: most of the pressure drop occurs in the oil phase ahead of the front and the mixing zone stays narrow, so the static <code>1/r<sub>s</sub>(p)</code> approximation is locally valid. For near-critical gas condensate and gas condensate, the cyclic pressure swing causes <code>p<sub>fr</sub></code> to oscillate around <code>MMP<sub>MC</sub></code> and gas can cyclically move ahead of the front and disperse the miscible bank. Recovery degenerates to vaporisation-driven (which BOPVT cannot capture) plus partially-miscible Buckley-Leverett. NCGC breakthrough occurs much later in BOPVT than COMP; GC F2F is essentially vaporisation-only and BOPVT fails entirely.</li>
+<li><strong>Recurrently-changing BOPVT tables via CVI/CVD as 34-36x faster COMP alternative.</strong> The static-<code>r<sub>s</sub>(p)</code> failure can be patched by recurrently changing the BOPVT table - one table per HnP cycle - using Sensor's PVT-region update capability. Cycle-end matrix compositions can be obtained either from a one-off COMP simulation or, more cheaply, from the Carlsen-Whitson-Dahouk 2019 CVI/CVD experiment on a tuned EOS. Runtime on the VO single-layer HnP case: BOPVT single-table 10.6 min, BOPVT CVI/CVD multi-table 10.6 min, BOPVT COMP-z<sub>i</sub> multi-table 11.2 min, COMP 382.1 min - 34-36x speedup with substantially improved accuracy over single-table BOPVT, useful when many runs are needed in a short time (e.g. history matching).</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The BOPVT-vs-COMP question, settled by fluid type and process.</strong> The 2020 unconventional-EOR cluster needed an answer to a question every operator runs into: can we keep using black-oil tables for HnP and F2F, or do we have to switch to compositional? This paper says: BOPVT systematically overpredicts HnP across all fluid types (use COMP or the CVI/CVD multi-table patch); BOPVT works for F2F on low-to-medium-GOR oils but fails for gas-condensate systems where miscibility is fragile.</p>
+<p><strong>The upper-extension BOPVT table.</strong> The simulator-instability problem when gas-injection cells traverse the missing GOR range above <code>p<sub>si</sub></code> is a well-known practical headache. The incremental-swelling extension named in this paper is a concrete recipe that avoids the instability and preserves smooth lookups. The choice between three extension methods - and the argument for incremental-swelling - is the kind of engineering judgement that makes the paper operationally usable.</p>
+<p><strong>The 34-36x COMP-speedup patch.</strong> The CVI/CVD-driven recurrently-changing BOPVT tables sit at the right place on the cost / accuracy curve for history-matching workflows where many runs are needed. The matrix-composition source matters less than that <em>some</em> reasonable composition is fed in per cycle. The patch makes HnP simulation tractable for ensemble forecasting.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Mydland-Yusra-Whitson-Dahouk-Carlsen 2020 SPE-200396 (HnP vs F2F mechanisms - the conceptual base)</li>
+<li>Carlsen-Whitson-Dahouk 2019 URTeC-539 CVI/CVD experiment (the cycle-end matrix-composition engine)</li>
+<li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework</li>
+<li>Whitson-Brule SPE Monograph 2000 BOPVT and CCE chapters</li>
+<li>Coats Engineering Sensor simulator (the planar-fracture symmetry-element platform)</li>
+<li>PhazeComp (Aaron Zick) for the underlying PVT calculations</li>
+<li>Younus et al. 2019 URTeC-551 field-wide EOS (the EOS11 Eagle Ford EOS)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Mydland-Carlsen-Whitson 2021 URTeC-5016 unconventional EOR (the follow-up)</li>
+<li>Operator HnP / F2F design and simulation workflows in Eagle Ford / Bakken / Permian</li>
+<li>Whitson Academy course material on BOPVT vs COMP modelling decisions</li>
+<li>Recurrently-changing BOPVT-table patch as a practical history-matching shortcut for HnP studies</li>
+<li>The "incremental-swelling upper extension" recipe for gas-injection BOPVT tables in commercial PVT packages</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Stian Mydland</strong> &mdash; Whitson AS engineer / NTNU PhD; first author. Lead of the 2020-2021 unconventional-EOR cluster.</p>
+<p><strong>Mathias Lia Carlsen, Mohamad Majzoub Dahouk, Ilina Yusra</strong> &mdash; Whitson AS engineers; the same core team that produced the 2020 surface-process triplet and the HnP mechanisms paper.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hoda & Whitson (2013) - Well Test Rate Conversion to Compositional Wellstream</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Well Test Rate Conversion to Compositional Wellstream</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mohammad Faizul Hoda, <mark>Curtis H. Whitson</mark> (Petrostreamz / NTNU)</p>
+  <p><strong>Venue:</strong> SPE Middle East Oil and Gas Show and Exhibition, Manama, Bahrain, 10-13 March 2013</p>
+  <p><strong>Paper number:</strong> SPE-164334</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Well-Test Rate Conversion</span> <span class="tag">Compositional Wellstream</span> <span class="tag">Seed-Feed</span> <span class="tag">EOS Flash</span> <span class="tag">Non-Regression</span> <span class="tag">Pipe-It / Streamz</span> <span class="tag">OGR Lookup</span> <span class="tag">Shrinkage Factor QC</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The canonical Whitson-group statement on the well-test rate-to-composition conversion problem. While the Kuntadi-Whitson-Hoda 2012 SPE-159400 paper handles the simulator-output side of stream conversion (BOz and z2z delumping), this paper handles the production-measurement side: converting measured well-test separator gas and oil volumetric rates into a molar compositional wellstream rate at each time step, using an EOS flash of a coarse "seed-feed" wellstream composition at the measured separator pressure and temperature. The method has been used at Petrostreamz since 2001 and underpins the Pipe-It / Streamz IAM workflow. Seven worked examples span synthetic and field cases including gas condensate below and above dewpoint, near-critical multi-zone wells, drill-stem tests (DSTs), a synthetic North Sea field where constant-shrinkage-factor reporting introduces up to 50% oil-rate error, 2500-point online-meter automation over a month, and 100-well multi-field asset allocation.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Non-regression rate-to-composition conversion via single EOS flash of seed-feed at measured separator conditions.</strong> The core equation is exact and non-iterative:
+    <p style="margin-left:20px;"><code>n<sub>i</sub> = x<sub>i</sub> (q<sub>om</sub>/v<sub>o</sub>) + y<sub>i</sub> (q<sub>gm</sub>/v<sub>g</sub>)</code></p>
+    where <code>x<sub>i</sub></code>, <code>y<sub>i</sub></code> are the seed-feed equilibrium oil and gas compositions from an EOS flash at the measured (p, T), and <code>v<sub>o</sub></code>, <code>v<sub>g</sub></code> are the seed-feed EOS-computed separator oil and gas molar volumes. The measured volumetric rates scale the seed-feed separator molar flows; the EOS flash recovers the per-component wellstream molar rates. By construction, the EOS flash of the recovered wellstream at (p, T) reproduces the measured GOR exactly - no iteration required. PhazeComp's regression approach and Pipe-It / Streamz's direct Eq. 1 give visually identical converted compositions across 15 components but Pipe-It / Streamz runs hundreds-of-thousands of conversions per minute, enabling online-meter automation.</li>
+<li><strong>Seed-feed weak-dependency principle and OGR-based lookup tables.</strong> The method is robust to seed-feed choice because equilibrium K-values <code>K<sub>i</sub> = y<sub>i</sub>/x<sub>i</sub></code> are weak functions of overall composition at fixed (p, T). Any reasonable seed-feed estimate - previous-test wellstream, initial reservoir composition, generic field-average composition - gives essentially the same converted wellstream. Where compositional reservoir simulation is available, the Hoda-Whitson workflow builds a per-well lookup table of wellstream composition vs producing OGR (oil-gas ratio). Only ~5 piecewise-linear nodes per component are needed because wellstream composition varies nearly linearly with OGR over a wide range. The paper explicitly recommends OGR over GOR because wellstream composition is non-linear in GOR but nearly linear in OGR (Fig. 20).</li>
+<li><strong>Constant shrinkage factor causes up to 50% oil-rate error; QC against EOS-computed shrinkage.</strong> The reported shrinkage factor SF (ratio of stock-tank oil volume to separator oil volume, typical range 0.99 to less than 0.75) can be compared against EOS-computed shrinkage at the same (p, T). Deviations indicate wrong reported SF (often a constant used when it should vary), wrong separator conditions, or wrong reported composition. Example 5 (synthetic North Sea) shows that using a constant SF when separator temperature varies causes up to 50% oil-rate error - eliminated by converting to molar wellstream and re-processing through the actual facility.</li>
+<li><strong>Drift-correction for separator-temperature-confounded GOR trends.</strong> Example 1 demonstrates a reservoir whose reported GOR <em>increases</em> during a well test simply because test-separator temperature drifts upward (shifting more heavy components from oil into gas). Converting the varying-condition rates to a common reference separator via the Eq. 1 framework reveals that the true wellstream GOR is actually <em>decreasing</em>. Without this correction, a continuously-increasing reported GOR would be misdiagnosed as dewpoint breach or fluid-behaviour change - a costly wrong call.</li>
+<li><strong>Application portfolio: field-wide allocation, multi-field assets, automated online-meter processing.</strong> Example 6: 2500 data points over a month with 15-minute sampling, all converted on the fly to compositional wellstream rates. Example 7: ~100 wells across multiple fields with field-specific EOS models and per-field OGR lookup tables. The framework allocates back to contributing wells by component and by product (sales gas, NGL, stock-tank oil, CO<sub>2</sub>, water). Stream re-processing through a more-efficient reference process can demonstrate &gt;5% oil gain vs the test-separator process - direct economic justification for facility upgrades.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Don't iterate what you've already measured.</strong> The paper's most pedagogically-important correction is to a widespread practitioner habit: iterating recombination ratios to match measured GOR.</p>
+<blockquote>Eq 1 holds exactly. There is no iteration involved.</blockquote>
+<p>For laboratory-sample recombination, iteration to match physical separator output is correct. For measured-rate recombination, the separator-GOR ratio is already measured and only the wellstream needs to be back-constructed. Iteration is pointless.</p>
+<p><strong>The right knob, the right metrology.</strong> The paper is explicit about which inputs really matter (separator p, T recorded simultaneously with rates) and which do not (exact seed-feed composition). For a practitioner this is operationally important - focus the metrology effort on the sensitive inputs, not the insensitive ones. The OGR-vs-GOR recommendation is similarly load-bearing: choose the right independent variable for interpolation, and a 5-node table replaces a 500-point compositional simulator output with negligible loss of fidelity.</p>
+<p><strong>Generalisation to any surface process.</strong> The same Eq. 1 applies when the gas-product and oil-product compositions <code>y<sub>i</sub></code>, <code>x<sub>i</sub></code> come from any arbitrary surface process - multi-stage separation, CO<sub>2</sub> extraction, NGL plant, Hysys process simulator. The molar fractions are pseudo-K-values (not equilibrium K-values), reflecting that the gas and oil products of a multi-stage process are not in mutual equilibrium.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Standard wellstream-composition-from-recombined-samples method (Whitson SPE Monograph 2000, Chapter 6)</li>
+<li>Wilson K-value equation - the original weak-composition-dependency principle</li>
+<li>Suryanto-Ekstrand-Whitson-Uleberg-Hoda 2003 BOz split-factor matrix (simulator-output-side counterpart)</li>
+<li>Multistage separator test design (standard PVT laboratory practice)</li>
+<li>PhazeComp (Zick Technologies) - the regression-based reference implementation used for cross-validation</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Pipe-It / Streamz online-meter and well-test allocation modules (Petrostreamz / whitson)</li>
+<li>Operator multi-field asset-allocation workflows in North Sea and Middle East developments</li>
+<li>Kuntadi-Whitson-Hoda 2012 SPE-159400 dynamic delumping (the simulator-output-side complement)</li>
+<li>Khan et al. 2025 multi-source tracer-option workflow - this paper's measurement-side inference complemented by simulation-side attribution</li>
+<li>Whitson Academy course material on production allocation and rate-to-composition workflows</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Mohammad Faizul (Faiz) Hoda</strong> — Petrostreamz / whitson, then NTNU. Originator of the 2002 BOz delumping method. Software architect for the Pipe-It / Streamz IAM stack. Co-author with Curtis on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, Kuntadi-Whitson-Hoda 2012 SPE-159400 dynamic delumping, and this paper. Three-paper sequence completing the simulator-side and measurement-side stream-conversion stack.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

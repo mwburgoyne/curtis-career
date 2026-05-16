@@ -1,0 +1,82 @@
+id: 1989_whitson_michelsen_negative_flash
+title: The Negative Flash
+page_title: Whitson & Michelsen (1989) - The Negative Flash
+authors:
+- Curtis H. Whitson (NTH)
+- Michael L. Michelsen
+authors_affiliation: DTU
+venue: <em>Fluid Phase Equilibria</em>, 53, 51-71 (1989)
+paper_number: null
+doi: 10.1016/0378-3812(89)80072-X
+funding: null
+citations: 267
+citations_source: OpenAlex
+tags:
+- Negative Flash
+- Convergence Pressure
+- Gibbs Energy
+- Saddle Point
+- Successive Substitution
+- Phase 2
+whitson_index: 0
+citations_note: ; one of the most cited computational-thermodynamics papers in petroleum engineering
+landmark_inline_text: LANDMARK PAPER
+landmark: true
+landmark_html: |-
+  <p><strong>Why it matters:</strong> The negative flash is the foundational computational result that lets two-phase EOS flash calculations return a meaningful answer even when the mixture is single-phase. The K values keep iterating, the Rachford-Rice equation is solved with β allowed below zero or above one, and the result tells the caller exactly which side of the phase envelope the mixture sits on and how far. It is the reason isenthalpic flash works near phase boundaries, the reason minimum-miscibility-pressure calculations converge, the reason compositional reservoir simulators can mark a grid cell as "single-phase oil" or "single-phase gas" without an expensive stability test, and the reason composition-dependent K-value tables can be built continuously across the phase envelope. Every commercial flash routine written since 1989 - in Eclipse, CMG, SENSOR, MoReS, tNavigator, Multiflash, REFPROP, the whitson code, and every Python EOS library - implements some version of it.</p>
+sections:
+- heading: Context
+  body_html: |-
+    <p>In 1989 the standard two-phase flash returned a non-trivial solution only for mixtures that were actually two-phase. For single-phase mixtures it either returned the trivial solution (x = y = z, K = 1) or failed to converge. The result was that any algorithm that nested a flash inside an outer loop - isenthalpic flash, MMP calculation, compositional simulation across phase boundaries - hit a discontinuity at the phase envelope. Engineers worked around it with stability tests, which added cost, or by branching on the phase state, which broke smoothness.</p><p>Aaron Zick at Arco had been running flashes through the discontinuity by allowing the Rachford-Rice root to fall outside [0, 1]. Curtis met Zick in November 1985 when Zick visited NTH:</p><blockquote>"Most of the time I listened to his explanations of how and what he had been doing in building EOS software at Arco. He told me about the approach he'd implemented to solve the two-phase flash calculation using the so-called Rachford-Rice phase-split method, effectively solving for a vapor or liquid phase fraction (beta_V or beta_L), even if it yielded a negative phase amount where one phase fraction was less than zero and the other phase fraction was greater than one, satisfying the constraint that the two phase fractions must sum to one."</blockquote><p>That dinner at an Italian pizzeria in Trondheim was the seed. Curtis named the construction the <em>negative flash</em>. What it needed was a rigorous thermodynamic foundation - proof that the iteration converged, that the answer was meaningful, that the algorithm was safe to embed in production code.</p>
+- heading: The 1988 DTU meeting
+  body_html: |-
+    <p>In 1988 Curtis was at DTU in Lyngby on a collaboration with Prof Jan Reffstrup. He asked Jan to introduce him to Michael Michelsen, whose 1982 stability-test paper was already the standard. Their first meeting was over an afternoon. Curtis asked whether Michelsen had ever done thermodynamic flash calculations in the single-phase p-T space:</p><blockquote>"His response was 'no'. He continued with 'I fail to see the interest or use of such calculations'."</blockquote><p>They moved on to other topics. A DTU student stuck her head into Michelsen's office asking for help with FORTRAN code. He fixed it in five minutes without breaking conversation. Beethoven poster on the wall. Curtis left at the end of the afternoon thinking the negative flash conversation was over.</p>
+- heading: The next morning - green ink on beige paper
+  body_html: |-
+    <p>Michelsen rang Curtis at Jan Reffstrup's office. Could Curtis drop by. When Curtis arrived, Michelsen had 5-6 pages of notes <em>"written in green ink on beige paper."</em> He had worked the problem overnight. The notes contained the saddle-point interpretation of the negative flash on the Gibbs energy surface, the proof that successive substitution would converge, and the suggestion that they write a paper together with Michelsen as second author:</p><blockquote>"I was taken aback by the moment, not least Michael's ability to quickly change his opinion from 'not interested' to 'interested'; the few hours it took him to develop the entire theory and mathematics of the 'negative flash'; his insistence on being 2nd author, and that he looked forward to working together to complete the paper. I said 'yes', but contingent on Aaron Zick being asked first whether writing this paper was OK, and that Zick should be first author if he chose to join in the writing of the paper. Michael agreed to the conditions."</blockquote><p>Zick chose not to be part of the paper. The 1989 Whitson-Michelsen paper in <em>Fluid Phase Equilibria</em> 53, 51-71 was the result.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>The saddle-point proof.</strong> The change in Gibbs energy from forming β moles of vapour (composition y) and (1-β) moles of liquid (composition x) from one mole of feed (composition z) is <code>Δg = β g<sub>y</sub> + (1-β) g<sub>x</sub> - g<sub>z</sub></code>. The Hessian of Δg/RT factors into an ideal part <code>E<sub>ij</sub> = (z<sub>i</sub>/x<sub>i</sub>y<sub>i</sub>) δ<sub>ij</sub> - 1</code> and a non-ideal part <code>U = β Ψ<sub>x</sub> + (1-β) Ψ<sub>y</sub></code>. For an ideal mixture with β outside [0,1], E has exactly one positive eigenvalue and N-1 negative eigenvalues. The negative-flash solution is therefore a saddle point of the Gibbs surface, not a minimum. Two consequences: Gibbs-minimisation methods (e.g. Trangenstein 1985) must be used carefully, and the Gibbs-energy safeguard that protects the conventional flash from the trivial solution cannot be relied on for the negative flash.</li>
+    <li><strong>The convergence pressure envelope.</strong> The boundary in (p, T) space where the negative flash ceases to yield a non-trivial solution. At the boundary β tends to ±∞ and the K values approach unity. Near the critical point, in Michelsen's 1984 parameterisation (b, c, d, d*), the ordering is: spinodal at b=0; phase boundary at b = (8/32) c<sup>2</sup>/d*; stability-test limit at b = (9/32) c<sup>2</sup>/d*; negative-flash limit at b = (12/32) c<sup>2</sup>/d*. The negative-flash region is at least four times wider than the stability-test region near the critical point. For gas-like systems (T &gt; T<sub>c</sub>) the separation is large, especially in the presence of low-solubility components like nitrogen. The convergence-pressure envelope encloses the phase envelope.</li>
+    <li><strong>Successive substitution convergence.</strong> The convergence rate of SSI for the negative flash is governed by the eigenvalues of <code>M = -E<sup>-1</sup> U</code> at the solution. Near the phase boundary, convergence resembles the conventional flash. As (p, T) moves deeper into the single-phase region towards the convergence-pressure envelope, the dominant eigenvalue approaches unity and convergence slows, mirroring the critical-point slowdown. Wilson K values are adequate for most conditions; converged K values from a nearby flash are the best initialisation. GDEM acceleration is risky for the negative flash because the Gibbs-energy safeguard fails. If β leaves [0,1] and stays out for several iterations, the calculation can be stopped with a "very likely single phase" verdict.</li>
+    <li><strong>Continuous-derivative nested flash algorithms.</strong> Because negative-flash mixture properties have continuous derivatives across the phase boundary, the construction enables: (i) isenthalpic (P-H) flash with a secant temperature loop; (ii) three-phase hydrocarbon dewpoint with an aqueous phase (allow the HC-liquid fraction to be negative); (iii) minimum-miscibility-pressure calculation via Jensen-Michelsen 1987 (a sequence of negative flashes at increasing pressure approaches a critical tie-line extension); (iv) phase-type indicator in compositional reservoir simulation (β ≤ 0 means oil, β ≥ 1 means gas, with smooth transitions); (v) cheaper than a stability test in single-phase grid cells adjacent to two-phase cells, because neighbouring K values give excellent initialisation.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The Banff trip that followed.</strong> In 1989 Curtis and Michelsen travelled together to PPEPPD in Banff to present the paper. They stopped at Larry C Young's home in Calgary for dinner. Curtis raised composition-dependent BIPs. Michelsen did not say much. The next morning at breakfast he had the answer: <em>"Curtis, the mixing rule has a fundamental problem. If you have some 'red' methane molecules and some 'black' methane molecules, the calculations won't give you the same result as if all methane molecules have the same color."</em> The red-black-methane argument became the consistency test that effectively ended linear composition-dependent BIPs in cubic EOS work. Michelsen-Kistenmacher 1990 followed shortly. The negative flash and the red-black argument together set the rigour standard for EOS work for the next thirty years.</p>
+    <p><strong>The thirty-year collaboration.</strong> The Whitson-Michelsen partnership ran from this 1989 paper through to Michelsen's death on 26 August 2020. It includes the 1992 Gibbs-Duhem grading shortcut in Whitson-Belery 1994 (SPE-28000), the constant-volume diffusion code Michelsen wrote in 1992 for Christoffersen's experiments, and the 1992 transient-well-performance solution Michelsen sent Curtis after dinner on the couch. The 2024 Curtis tribute in <em>Fluid Phase Equilibria</em> documents the whole arc.</p>
+    <p><strong>The self-description.</strong> The negative flash paper is the moment Curtis describes elsewhere as the start of his <em>"fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics."</em> Michelsen's contribution made the framework rigorous. Curtis's contribution was the engineering judgement about where it would matter and the willingness to defer first authorship to the visiting collaborator. The combination is what set the standard.</p>
+    <p><strong>Building the negative-flash hierarchy.</strong> The 2000 Whitson-Brule monograph, Chapter 4 Section 4.3.2, is the matured presentation. Almost every later Whitson EOS paper - phase-type assignment in compositional grading, near-well behaviour of gas condensates, BOPVT generation, MMP calculation for CO<sub>2</sub> EOR, liquid-rich-shale phase behaviour - depends on the negative flash being available as a building block.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Zick (1985, private communication at NTH) - the original construction: solve Rachford-Rice with β allowed outside [0,1]</li>
+    <li>Michelsen (1982a,b) - the stability-test framework that the negative flash partially replaces</li>
+    <li>Michelsen (1984) - the near-critical parameterisation (b, c, d, d*) used to derive the convergence-pressure-envelope ordering</li>
+    <li>Trangenstein (1985) - the Gibbs-minimisation flash that the negative-flash saddle-point argument addresses</li>
+    <li>Jensen &amp; Michelsen (1987) - the MMP procedure the negative flash enables to converge</li>
+    <li>Peng &amp; Robinson (1976), Soave (1972) - the cubic EOS frameworks the proofs assume</li>
+    <li>Whitson (1983) SPE-12233 - the C7+ characterisation feeding the EOS the negative flash is solved against</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Every commercial flash routine since 1989 - Eclipse, CMG, SENSOR, MoReS, tNavigator, Multiflash, REFPROP, whitson's own code, every Python EOS library</li>
+    <li>Composition-dependent K-value tables (continuous across the phase envelope)</li>
+    <li>Compositional reservoir simulation phase-state assignment without an explicit stability test in every single-phase grid cell</li>
+    <li>Minimum-miscibility-pressure calculation via the Jensen-Michelsen sequence</li>
+    <li>Isenthalpic (P-H) flash and reservoir simulators that handle near-phase-boundary conditions smoothly</li>
+    <li>The three-phase hydrocarbon dewpoint with aqueous phase, used in gas-condensate water-content work</li>
+    <li>Whitson-Brule (2000) Phase Behavior monograph, Chapter 4 Section 4.3.2 - the matured pedagogical presentation</li>
+    <li>The Whitson-Michelsen thirty-year collaboration: the Banff red-black-methane BIP test (Michelsen-Kistenmacher 1990), the Gibbs-Duhem grading shortcut (Whitson-Belery 1994), the constant-volume-diffusion code (1992), the transient-well-performance solution (1992)</li>
+    <li>Curtis's 2024 <em>FPE</em> Michelsen recollection ("Nothing Arbitrary"), which documents the green-ink-on-beige-paper origin in Curtis's own words</li>
+    <li><strong>Whitson, Younus &amp; Nielsen (2023) SPE-217328 — Separator Sample Analysis</strong> — adapts the Fevang-Whitson 1994 ECM framework (itself a negative-flash descendant) to single-sample QC, recovering corrected wellstream compositions within 0.2 mol% of exact even under heavy synthetic laboratory errors</li>
+    <li><strong>Nielsen, Wanat &amp; Whitson (2024) SPE-220699</strong> — forward-propagates compositional uncertainty through phase-behaviour calculations, with the negative-flash phase-state assignment as the underlying machinery</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Michael L. Michelsen</strong> (1942-2020) was Professor at the Department of Chemical Engineering, DTU. Author of the 1982 stability-test papers, the 1984 near-critical parameterisation, and the standard Michelsen-Mollerup textbook on computational thermodynamics. He had been one of the two external committee members for Curtis's 1984 NTH PhD defence (the other was Khalid Aziz). Notably, Michelsen never received a PhD himself - he was made professor without one, on the strength of his publications. Curtis only found this out years later in a jewellery store in Trondheim, picking up his own doctor's ring, when Michelsen quipped, <em>"do you have a doctor's degree."</em></p><p><strong>Aaron A. Zick</strong> introduced Curtis to the negative-flash construction at the November 1985 dinner in Trondheim. He chose not to be a co-author when offered the opportunity. He went on to do influential miscibility and EOR-software work at Arco and later BP.</p>

@@ -1,0 +1,38 @@
+# Internal working documents (not for public)
+CLAUDE.md
+RESUME.md
+SESSION_STATUS.md
+career_arc_notes.md
+
+# Sensitive correspondence (private; off-limits per project rules)
+correspondence/
+
+# Source PDFs (likely copyrighted)
+source_papers/
+
+# Backups
+paper_summaries.bak/
+
+# Working screenshots
+Screenshot*.png
+Screenshot*.PNG
+Screenshot*.jpg
+*.tmp
+
+# Orphan paper that is intentionally not part of the public corpus
+paper_summaries/2025_burgoyne_nielsen_stanko_gas_pvt.html
+paper_data/2025_burgoyne_nielsen_stanko_gas_pvt.yaml
+
+# Python build artefacts
+__pycache__/
+*.pyc
+*.pyo
+.venv/
+venv/
+
+# Editor cruft
+.DS_Store
+*.swp
+*~
+.idea/
+.vscode/

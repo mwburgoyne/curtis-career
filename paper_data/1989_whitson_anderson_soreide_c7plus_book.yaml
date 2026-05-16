@@ -1,0 +1,63 @@
+id: 1989_whitson_anderson_soreide_c7plus_book
+title: C7+ Fraction Characterisation (Book Chapter and CEC Paper)
+page_title: Whitson, Anderson & Søreide (1989-1990) - C7+ Characterisation Series
+authors:
+- Curtis H. Whitson
+- T. F. Anderson
+- Ingolf Søreide
+authors_affiliation: null
+venue: |-
+  (1989) <em>Advances in Thermodynamics</em>, Vol. 1, Taylor & Francis, pp. 35-56; and (1990) <em>Chemical Engineering Communications</em>, Vol. 96, pp. 259-278
+paper_number: null
+doi: null
+funding: null
+citations: not catalogued individually
+tags:
+- C7+ Characterisation
+- Gamma Distribution
+- Multi-Sample Consistency
+- Alpha-Eta Correlations
+- TBP Distillation
+- Phase 2
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A paired body of work, with the same three authors, building on Curtis's 1983 SPE-12233 framework. The Taylor &amp; Francis book chapter (1989) is the longer-form exposition of the C<sub>7+</sub> characterisation framework with extensions for multi-sample consistency. The Chemical Engineering Communications paper (1990) is the more technical follow-up with the empirical alpha-eta correlations and the TBP-stability analysis. Together they cover three pieces of methodology that the 1983 SPE Journal paper did not fully address: how to characterise compositionally-related samples with shared C<sub>7+</sub> properties, how to fit the gamma distribution stably when distillation data is thin, and what the minimum data requirement is.</p><p>T. F. Anderson was at the University of Illinois, Urbana-Champaign; Ingolf Søreide was Curtis's NTH colleague (later co-author of the 1992 brine-EOS paper). The Birba field (Oman) and East Painter field (Wyoming) provide the validation case studies.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Modified <code>β<sub>0</sub></code> method for multi-sample C<sub>7+</sub> consistency.</strong> When characterising compositionally-related samples (gas cap plus oil column, compositional grading profile, multi-well field development), all samples must share identical pseudocomponent properties <code>M<sub>i</sub>, T<sub>c,i</sub>, p<sub>c,i</sub>, ω<sub>i</sub></code> but carry different mole fractions. Standard Gaussian quadrature breaks this because the scale parameter <code>β</code> varies with <code>M<sub>7+</sub></code>. The fix is to fix <code>β<sub>0</sub> = (M<sub>N</sub> - η) / x<sub>0,N</sub></code> and absorb the per-sample variation in <code>M<sub>7+</sub></code> via a <code>δ</code> parameter that modifies the gamma PDF. Validated on Birba (oil plus gas condensate, GOR 1500 to 6200 scf/STB, simultaneous saturation-pressure match) and East Painter (8 samples, GOR 2500 to 10000 scf/STB, all saturation pressures matched within 4%).</li>
+    <li><strong>Alpha-eta empirical correlations: gamma fit from three to two parameters.</strong> Fitting the three-parameter gamma distribution to TBP distillation data is unstable when distillation cuts are few. The 44-sample regression establishes that <code>α</code> and <code>η</code> are tightly correlated. For boiling point: <code>η<sub>T</sub> = 658 [1 - 1/(1 + 27.467/α<sub>T</sub><sup>1.659</sup>)]</code>; for molecular weight: <code>η<sub>M</sub> = 110 [1 - 1/(1 + 4.043/α<sub>M</sub><sup>0.723</sup>)]</code>. The limits as <code>α → ∞</code> are <code>η<sub>T</sub> → 658°R</code> (close to n-heptane normal boiling point) and <code>η<sub>M</sub> → 110</code> (close to toluene MW). The reduction to two parameters costs typically less than 3 AAR units across the 44 samples.</li>
+    <li><strong>Minimum distillation cuts heuristic.</strong> Gamma-fit parameters are stable when <code>N ≥ 6</code> distillation cuts. Below that, the three-parameter fit becomes unstable. The two-parameter alpha-eta-correlation fit is the preferred fallback for thin TBP data (<code>N &lt; 6</code>). This sets a practical data-quality threshold for laboratory characterisation: a C<sub>7</sub>-C<sub>12+</sub> analysis (6 SCN cuts) is the minimum for reliable framework input.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The multi-sample anchor.</strong> The modified <code>β<sub>0</sub></code> method becomes the standard for any field-wide EOS development. Without it, gas-cap and oil-column compositions are characterised with different pseudocomponent properties, and the equilibrium phase prediction at the gas-oil contact is thermodynamically inconsistent. With it, all samples in a compositional grading study can share one EOS characterisation and the contacts can be predicted from the framework. The Høier-Whitson compositional grading series (1998-2004) and the Younus field-wide EOS work (2019 onwards) all depend on this multi-sample anchor.</p>
+    <p><strong>Pedagogical companions to SPE-12233.</strong> The 1989 book chapter and 1990 CEC paper are the more accessible second-tier sources that working PVT engineers reach for after reading SPE-12233. The two-parameter alpha-eta fit is the practical workhorse when distillation data is incomplete, which is the default condition in field operations.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson (1983) SPE-12233 - the foundational C<sub>7+</sub> characterisation framework, here being extended to multi-sample consistency</li>
+    <li>Riazi &amp; Daubert (1980) - property correlations for plus fractions</li>
+    <li>Peng &amp; Robinson (1976) - the cubic EOS being characterised</li>
+    <li>Chueh &amp; Prausnitz - the BIP correlation used in the framework</li>
+    <li>ASTM D2892 / D5236 - the TBP distillation protocol presumed by the data analysis</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Høier &amp; Whitson (1998, 2001, 2004) compositional grading series - the multi-sample anchor is the prerequisite</li>
+    <li>Whitson-Belery (1994) SPE-28000 compositional gradients - same multi-sample requirement</li>
+    <li>Younus &amp; Whitson (2019) URTeC-551 field-wide EOS model development - the parent-child architecture rests on identical pseudocomponent properties across samples</li>
+    <li>Whitson-Brule (2000) SPE Monograph Chapter 5 - the modified <code>β<sub>0</sub></code> framework appears as the canonical multi-sample procedure</li>
+    <li>Singh, Whitson &amp; Mantzatzis (2011) SPE-143612 - iterative gamma-model OBM decontamination uses the alpha-eta correlations as inner-loop constraints</li>
+    <li>Markus Hays Nielsen's NTNU master's thesis on BIPs (~2020), which builds on the same gamma framework</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>T. F. Anderson</strong> — University of Illinois, Urbana-Champaign. Co-author of the Birba and East Painter case-study work.</p><p><strong>Ingolf Søreide</strong> — NTH colleague; later co-author of the 1992 Peng-Robinson brine EOS paper (FPE) and the 1988 SPE-18315 modified-black-oil paper with Curtis and Eldhose da Silva.</p>

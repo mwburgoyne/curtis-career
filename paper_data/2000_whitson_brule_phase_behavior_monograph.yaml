@@ -1,0 +1,139 @@
+id: 2000_whitson_brule_phase_behavior_monograph
+title: Phase Behavior — SPE Monograph Volume 20
+page_title: Whitson and Brule (2000) - Phase Behavior, SPE Monograph Vol. 20
+authors:
+- Curtis H. Whitson
+- Michael R. Brule
+authors_affiliation: null
+venue: Society of Petroleum Engineers, Richardson, Texas. SPE Monograph Series Volume 20 (Henry L. Doherty Series), 2000
+paper_number: null
+doi: null
+funding: null
+citations: |-
+  Thousands (Google Scholar). The most cited textbook in compositional reservoir engineering. 115 knowledge atoms extracted in CurtisClaw (ATM-0007 through ATM-0115 plus appendix atoms)
+tags:
+- PVT
+- EOS
+- C7+ Characterisation
+- Black-Oil PVT
+- Gas Injection
+- Phase 3
+whitson_index: 0
+extra_meta:
+- label: ISBN
+  value_html: 978-1-55563-087-4. ~240 pages, 9 chapters, 4 appendices
+landmark_inline_text: MAGNUM OPUS
+landmark: true
+landmark_html: |-
+  <p><strong>Why it matters:</strong> This is the textbook. Every NTNU petroleum-engineering MSc opens it. Every Whitson Academy course traces back to it. Every commercial PVT package developer (CMG WinProp, Schlumberger PVTi, Calsep PVTsim, KAPPA Emeraude, whitson<sup>+</sup>) implements its workflows. Every EOS-tuning engineer who has not read it directly has read someone who read it. The monograph consolidates twenty years of Whitson's published work, integrates Michelsen's computational thermodynamics, Riazi-Daubert and Twu characterisation, Lohrenz-Bray-Clark viscosity, Coats-Smart regression, Soreide-Whitson brine EOS, and Fevang-Whitson near-well gas-condensate flow into one coherent reference, with notation, recommended procedures, and example problems. Twenty-five years later it remains the standard.</p>
+sections:
+- heading: Context
+  body_html: |-
+    <p>By the late 1990s the cubic-EOS framework had matured enough that practitioners needed one authoritative reference rather than a scattering of SPE papers, textbook chapters, and software manuals. Curtis was forty-four, professor at NTNU, had founded Whitson AS a decade earlier, and had accumulated a personal corpus of about a hundred papers on fluid characterisation, EOS development, phase-equilibrium algorithms, gas-condensate flow, and black-oil PVT. Michael Brule, then at Mobil, brought industrial-laboratory perspective on PVT measurement and the surface-process side of black-oil tables.</p><p>The SPE Henry L. Doherty Monograph Series invited a successor to John Lohrenz's 1962 <em>Phase Behavior</em> Monograph 1 and to Don Katz's <em>Handbook of Natural Gas Engineering</em>. The brief was synthesis. The result is a 240-page reference where every method named in the text is an industry method, every recommendation has a worked example, and every chapter ends with a procedure that can be followed step-by-step.</p>
+- heading: Chapter 2 — Volumetric and Phase Behaviour of Oil and Gas Systems
+  body_html: |-
+    <p>The thermodynamic foundation. Gibbs phase rule applied to reservoir fluids, multicomponent phase envelopes, cricondentherm and cricondenbar, retrograde condensation, and the five-category fluid classification (dry gas, wet gas, gas condensate, volatile oil, black oil) anchored on T<sub>res</sub> against T<sub>c</sub> and T<sub>cdt</sub> with C7+ and GOR ranges. Closes with the saturated-reservoir sampling caution that every PVT engineer needs the first time they see an initial-pressure-equals-saturation-pressure result.</p><ul>
+    <li>Five-category fluid classification with C7+ and GOR ranges (Cronquist 1973 extended)</li>
+    <li>Retrograde condensation requirements and the phase-envelope shift during gas-condensate depletion</li>
+    <li>Volatile vs black oil practical distinction via material-balance comparison, with the 100% to 50% shrinkage example</li>
+    </ul>
+- heading: Chapter 3 — Gas and Oil Properties and Correlations
+  body_html: |-
+    <p>The longest chapter. Twenty-three atoms cover gas pseudocriticals (Sutton, Wichert-Aziz), Z-factor (Hall-Yarborough, Dranchuk-Abou-Kassem), gas viscosity (Lucas, Lee-Gonzalez-Eakin), oil bubblepoint (Standing, Lasater), oil density (Standing-Katz), oil viscosity (Chew-Connally, Lohrenz-Bray-Clark), surface tension (Weinaug-Katz), and K-values (Wilson, Whitson-Torp, Standing). The chapter is the reference book that engineers reach for when matching black-oil correlations against measured data; it is also the standard for the warnings (dead-oil viscosity extreme paraffinicity sensitivity, oil compressibility validity range, when LBC fails).</p><ul>
+    <li>Sutton hydrocarbon-gas pseudocritical correlations and Wichert-Aziz non-HC correction</li>
+    <li>Lucas gas viscosity (recommended general use); Lee-Gonzalez-Eakin for sweet natural gas</li>
+    <li>Whitson-Torp generalised K-values with convergence pressure; Standing low-pressure K-values for separator calculations</li>
+    <li>Dead-oil viscosity sensitivity to paraffinicity (the warning that prevents bad EOS tunes)</li>
+    </ul>
+- heading: Chapter 4 — Equation-of-State Calculations
+  body_html: |-
+    <p>The computational heart of the book. Fifteen atoms cover Peng-Robinson and SRK with Peneloux volume translation, Rachford-Rice with bounded solution, the negative flash from Whitson-Michelsen 1989, Michelsen phase stability testing, Z-factor root selection by normalised Gibbs energy, isothermal compositional grading with Gibbs-Duhem consistency, Coats-Smart five-parameter regression, and Michelsen's saturation-pressure algorithm. This chapter is the working reference for anyone writing or maintaining an EOS code.</p><ul>
+    <li>PR and SRK equivalent for VLE with volume translation - the practical decision rule</li>
+    <li>Negative flash for continuity across phase boundaries (Whitson-Michelsen 1989)</li>
+    <li>Michelsen tangent-plane stability test and saturation-pressure algorithm</li>
+    <li>Coats-Smart five-parameter regression with 5 to 10% modification typical</li>
+    </ul>
+- heading: Chapter 5 — Heptanes-Plus Characterisation
+  body_html: |-
+    <p>The matured presentation of the 1983 SPE-12233 framework. TBP distillation as gold standard, Watson K as QC tool, Soreide and Twu correlations for critical properties, Lee-Kesler and Kesler-Lee acentric factor, the Pedersen SRK alternative procedure, the recommended PR EOS C7+ procedure step-by-step, Coats pseudoisation, Chueh-Prausnitz BIPs for C1-C7+ pairs, expected accuracy of an untuned EOS, and the Whitson guideline on pseudocomponent count. Thirteen atoms.</p><ul>
+    <li>Recommended PR EOS C7+ characterisation procedure (the procedure)</li>
+    <li>Twu perturbation-expansion correlations preferred over Riazi-Daubert above T<sub>b</sub> = 730 K</li>
+    <li>Coats pseudoisation preserves mixture EOS constants (a and b) on grouping</li>
+    </ul>
+- heading: Chapter 6 — Conventional PVT Measurements
+  body_html: |-
+    <p>What the lab actually does and how to read its report. Wellstream composition from bottomhole and recombined samples, multistage separator test as the basis for DLE conversion, CCE on oils and gas condensates including supersaturation in volatile oils, the Y function for smoothing sub-bubblepoint data, DLE procedure and the residual-oil-to-stock-tank-oil conversion (the most critical step), CVD procedure with liquid-dropout tail issues, the Cho et al. maximum-dropout correlation, the Whitson-Torp CVD material-balance consistency check, and how to correct CVD recoveries when initial pressure is above the dewpoint. Twelve atoms.</p><ul>
+    <li>The DLE-to-stock-tank conversion is the most critical step (where most lab-report misreadings happen)</li>
+    <li>Whitson-Torp CVD material-balance consistency check - if the numbers don't close, the lab data are suspect</li>
+    <li>Match cumulative condensate recovery, not the liquid-dropout tail</li>
+    </ul>
+- heading: Chapter 7 — Black-Oil PVT Formulations
+  body_html: |-
+    <p>How to compress an EOS into a simulator-ready PVT table. Traditional formulation with R<sub>s</sub> and B<sub>o</sub>, validity limits, the oil-shrinkage plot for volatility evaluation, the modified black-oil formulation with r<sub>s</sub> and B<sub>gd</sub> for volatile oils and gas condensates, dry-gas FVF correction, MBO surface-gravity mixing, solution oil/gas ratio derivation, reservoir-phase compositions and K-values from MBO properties, MBO inflow performance, Borthne MBO material balance, Drohm-Goldthorpe corrected MBO partial-density formulation, and the explicit statement that compositional simulation is preferred over pseudo-PVT for gas injection. Eleven atoms.</p><ul>
+    <li>Modified black-oil formulation for volatile oils and gas condensates - r<sub>s</sub> and B<sub>gd</sub> introduced</li>
+    <li>Compositional simulation preferred over pseudo-PVT for gas injection (the recommendation that ends the argument)</li>
+    </ul>
+- heading: Chapter 8 — Gas-Injection Processes
+  body_html: |-
+    <p>Miscibility and gas EOR. MMP definition for binary and multicomponent systems, critical tie-line criterion for developed multicontact miscibility, why pseudoternary diagrams cannot uniquely represent multicomponent miscibility, slim-tube as the standard MMP determination, vaporising-gas mechanism, the Zick condensing-vaporising mechanism that replaced traditional enriched-gas drive interpretation, multicell vaporisation model for calculating developed miscibility, swelling test as the primary multicontact PVT experiment, why Benham et al. charts overestimate methane dilution, gas cycling and N<sub>2</sub> revaporisation of retrograde condensate, CO<sub>2</sub> physical properties, Simon-Graue and Holm-Josendal CO<sub>2</sub> MMP correlations, CO<sub>2</sub> VLLE behaviour, and CO<sub>2</sub> solubility in water and brine. Fifteen atoms.</p><ul>
+    <li>Zick combined condensing/vaporising mechanism (Aaron Zick's 1986 paper given its proper place)</li>
+    <li>Critical tie-line criterion for developed multicontact miscibility</li>
+    <li>Holm-Josendal CO<sub>2</sub> MMP via CO<sub>2</sub> density</li>
+    </ul>
+- heading: Chapter 9 — Water/Hydrocarbon Systems
+  body_html: |-
+    <p>The water chapter Curtis added because no other textbook had it consolidated. Methane solubility in pure water (Culberson-McKetta polynomial), Setchenow salting-out for brines, Rowe-Chou brine PVT, dissolved-gas corrections for water FVF and compressibility, Kestin water/brine viscosity, McKetta-Wehe water content in natural gas, Ramey IFT, the Soreide-Whitson PR EOS modification for water/hydrocarbon systems (Soreide-Whitson 1992 FPE built in), oil/gas/water equilibrium with R<sub>sw</sub> depletion behaviour, hydrate crystal structures I and II, Katz K-value method for hydrate prediction, and Hammerschmidt and Nielsen-Bucklin hydrate inhibition equations. Twelve atoms.</p><ul>
+    <li>Soreide-Whitson PR EOS modification for water/hydrocarbon systems - the standard brine EOS</li>
+    <li>Katz K-value method for hydrate prediction</li>
+    <li>Hammerschmidt and Nielsen-Bucklin hydrate inhibition equations</li>
+    </ul>
+- heading: Appendices A — D
+  body_html: |-
+    <p><strong>Appendix A</strong> gives property tables (SCN, pure component, non-HC BIPs) and units. The non-HC BIP recommendations for PR and SRK (CO<sub>2</sub>, N<sub>2</sub>, H<sub>2</sub>S with hydrocarbons) become the default in every commercial PVT package. <strong>Appendix B</strong> walks through full oil characterisation from C7+ data through the separator flash. <strong>Appendix C</strong> gives a step-by-step PR EOS flash including Michelsen stability test, gas-condensate EOS regression strategies, and how to evaluate multiple EOS characterisations in reservoir simulation. <strong>Appendix D</strong> covers laboratory PVT report interpretation, including undersaturated compressibility from log-log B<sub>od</sub> plots, Standing's DLE-to-flash conversion, the residual vs stock-tank oil distinction, and the MBO property non-monotonicity that gas condensates with dropout tails exhibit. Nine atoms across the appendices.</p>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The standard reference.</strong> The most cited textbook in compositional reservoir engineering. Used in every NTNU petroleum-engineering MSc cohort since 2000. Required reading in equivalent programmes at Stanford, Texas A&amp;M, Imperial College, Heriot-Watt, U Texas Austin, U Tulsa, Colorado School of Mines. The anchor of every Whitson Academy course. The reference manual on every consulting engineer's desk.</p>
+    <p><strong>Implemented in every commercial PVT package.</strong> The Recommended PR EOS C7+ Characterisation Procedure (Section 5.5) is what CMG WinProp, Schlumberger PVTi, Calsep PVTsim, and KAPPA Emeraude all default to, often by direct page reference. The Soreide-Whitson brine EOS (Chapter 9) is the brine module in every reservoir simulator that handles compositional water. The Whitson-Torp CVD consistency check (Chapter 6) is the lab-data QC every PVT engineer runs before accepting a report. The Recommended Non-HC BIPs (Appendix A) populate the BIP matrix every time anyone opens a new EOS file.</p>
+    <p><strong>Consolidated twenty years of Whitson's own work plus Michelsen and the broader community.</strong> The negative flash (Whitson-Michelsen 1989, Chapter 4), the C7+ characterisation (Whitson 1983, Chapter 5), the CVD evaluation (Whitson-Torp 1981, Chapter 6), the brine EOS (Soreide-Whitson 1992, Chapter 9), the three-region gas-condensate flow framework (Fevang-Whitson 1996, referenced in Chapter 7), the compositional grading work (Whitson-Belery 1994, Chapter 4) - all consolidated, with notation aligned, procedures unified, and examples worked. Beyond Whitson's own papers the monograph integrates Michelsen's stability and saturation-pressure algorithms, Coats-Smart regression, Lohrenz-Bray-Clark viscosity, Pedersen's SRK characterisation as an alternative procedure, Twu and Riazi-Daubert critical properties, Zick's miscibility mechanism, and the full body of conventional PVT and gas-injection practice.</p>
+    <p><strong>The 2025 papers still cite Chapter 7.</strong> The Singh-Whitson-Nielsen BOPVT-comparison framework (SPE-225382), the Nielsen-Younus E2E fluid model development (SPE-225470), and the Khan et al. communicating-reservoirs paper (SPE-225405) all reference the monograph as foundational. Twenty-five years later it remains the citation that PVT papers anchor on.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Lohrenz, Clark &amp; Francis (1964), <em>JPT</em> — Lohrenz-Bray-Clark viscosity for compositional simulation (Chapter 3)</li>
+    <li>Peng &amp; Robinson (1976, 1978) and Soave (1972) — the cubic EOS frameworks (Chapter 4)</li>
+    <li>Michelsen (1982a, 1982b) <em>FPE</em> — phase stability and saturation-pressure algorithms (Chapter 4)</li>
+    <li>Peneloux, Rauzy &amp; Freze (1982) — volume translation preserving VLE (Chapter 4)</li>
+    <li>Whitson (1983) SPE-12233 — gamma C7+ characterisation, Gauss-Laguerre quadrature, Riazi-Daubert refit (Chapter 5)</li>
+    <li>Twu (1984) — perturbation-expansion correlations for heavy-end critical properties (Chapter 5)</li>
+    <li>Coats &amp; Smart (1986) SPERE — regression-based EOS PVT (Chapter 4)</li>
+    <li>Whitson &amp; Torp (1981) SPE-10067 — CVD evaluation and material-balance consistency (Chapter 6)</li>
+    <li>Whitson &amp; Michelsen (1989) FPE 53, 51 — the negative flash (Chapter 4)</li>
+    <li>Soreide &amp; Whitson (1992) FPE — PR EOS modification for water/hydrocarbon/CO<sub>2</sub>/N<sub>2</sub>/H<sub>2</sub>S/brine (Chapter 9)</li>
+    <li>Fevang &amp; Whitson (1996) SPE-30714 — three-region gas-condensate near-well flow (Chapter 7)</li>
+    <li>Pedersen, Fredenslund &amp; Thomassen (1989) — SRK C7+ characterisation alternative (Chapter 5)</li>
+    <li>Zick (1986) SPE-15493 — combined condensing/vaporising miscibility mechanism (Chapter 8)</li>
+    <li>Standing &amp; Katz, Sutton, Wichert-Aziz, Hall-Yarborough, Dranchuk-Abou-Kassem, Lucas, Chew-Connally, Standing, Lasater, Wilson, Watson-Nelson-Murphy, Riazi-Daubert, Cragoe, Kestin, Ramey, McKetta-Wehe, Hammerschmidt, Nielsen-Bucklin, Katz hydrate K-values - the body of correlations Curtis stood on</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Every NTNU petroleum-engineering MSc cohort 2000-present</li>
+    <li>Every Whitson Academy course (~100 courses on the YouTube channel since 2012)</li>
+    <li>The C7+ characterisation defaults in every commercial PVT package</li>
+    <li>The Soreide-Whitson brine module in every compositional reservoir simulator</li>
+    <li>The Whitson-Torp CVD consistency check used as PVT-report QC industry-wide</li>
+    <li>Recommended Non-HC BIPs (Appendix A) as default BIP values in PR/SRK implementations everywhere</li>
+    <li>Singh-Fevang-Whitson (2007) SPE-109596 BOPVT consistency — built directly on the Chapter 7 framework</li>
+    <li>Younus-Whitson 2019 URTeC-551 field-wide EOS — the parent-child architecture that extends the Chapter 5 procedure to multi-sample fields</li>
+    <li>2025 Singh-Whitson-Nielsen SPE-225382 BOPVT-to-lab comparison — reverse-direction companion to Chapter 7</li>
+    <li>2025 Nielsen-Younus SPE-225470 E2E fluid model development — the canonical Whitson AS workflow built around the monograph's procedures</li>
+    <li>2025 Khan et al. SPE-225405 ADNOC communicating reservoirs — compositional-simulation tracer methodology applying Chapters 7-8 recommendations</li>
+    <li>Mark Burgoyne's <em>bopvt-lookup</em> open-source library — built equation-by-equation from Chapters 6 and 7 (and where Curtis pointed Mark to the monograph errata in February 2019)</li>
+    <li>The 2006 SPE Handbook chapter on compositional simulation — Whitson, Coats, Thomas, Pope - which inherits the monograph's chapter structure</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Curtis H. Whitson</strong> (NTNU, Whitson AS) and <strong>Michael R. Brule</strong> (Mobil at the time of writing). The monograph credits a long acknowledgements list including Michael Michelsen (DTU), Aaron Zick, Ingolf Soreide, Oivind Fevang, Larry Coats, Keith Coats, Don Katz, Marshall Standing, and many SPE reviewers. The atoms tag "Curtis Whitson" attribution where the prose carries his characteristic voice (the volatile vs black oil distinction, the saturated-reservoir sampling caution, the phase-envelope-shift-during-depletion explanation, the "most critical step" warning on DLE-to-stock-tank conversion).</p>

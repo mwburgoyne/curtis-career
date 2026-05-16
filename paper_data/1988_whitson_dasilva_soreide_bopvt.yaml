@@ -1,0 +1,76 @@
+id: 1988_whitson_dasilva_soreide_bopvt
+title: Simplified Compositional Formulation for Modified Black-Oil Simulators
+page_title: Whitson, da Silva & Søreide (1988) - Generalised Black-Oil Formulation
+authors:
+- Curtis H. Whitson (NTH)
+- Eldhose (Flavio) da Silva (Petrofina S.A.)
+- Ingolf Søreide
+authors_affiliation: NTH
+venue: 63rd SPE Annual Technical Conference and Exhibition, Houston, 2-5 October 1988
+paper_number: SPE 18315
+doi: 10.2118/18315-MS
+funding: null
+citations: 12
+citations_source: OpenAlex
+tags:
+- Generalised Black-Oil
+- Modified Black-Oil
+- Compositional Variation
+- Non-Equilibrium Injection
+- SIMBEST
+- Phase 2
+whitson_index: 0
+citations_note: ; influence runs through SIMBEST II and the wider modified-black-oil practice
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>By the late 1980s the Norwegian operators were facing two simulation problems that fell between the standard tools. North Sea volatile-oil reservoirs - especially the near-critical fields - showed strong areal and depth-varying surface-oil composition. Traditional black-oil could not represent that. The other problem was nitrogen injection (and other non-equilibrium gas injection) for pressure maintenance and EOR. Fully compositional EOS simulation was the right answer in principle but the run times were prohibitive for full-field studies.</p><p>Curtis was thirty-two and had founded Whitson AS earlier in 1988. Eldhose (Flavio) da Silva was at Petrofina (later Total) and was driving the Ekofisk nitrogen-injection analysis. Ingolf Søreide was Curtis's NTH PhD student finishing the brine-EOS work that would land in <em>Fluid Phase Equilibria</em> in 1992.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>The GBO four-component formulation.</strong> Extend the two-component modified black-oil (MBO) model to four surface components:
+        <ol>
+    <li>Non-volatile surface oil (in reservoir liquid only)</li>
+    <li>Volatile surface oil (partitions between liquid and vapour, the MBO surface oil)</li>
+    <li>Hydrocarbon surface gas (partitions between phases, the MBO surface gas)</li>
+    <li>Injection gas (non-equilibrium: N<sub>2</sub>, CO<sub>2</sub>, or a rich HC injection gas)</li>
+    </ol>
+        GBO reduces to traditional BO when only components 1 and 3 are present, and to MBO when 2 and 3 are present without 1.</li>
+    <li><strong>The state variable r for compositional variation.</strong> A single scalar <code>r = (γ<sub>oL</sub> - γ<sub>2</sub>) / (γ<sub>1</sub> - γ<sub>2</sub>)</code> measures the relative fraction of non-volatile to volatile surface oil in each grid cell's reservoir liquid. PVT properties are blended from two pre-computed binary tables: <code>R<sub>s</sub> = r R<sub>s1</sub> + (1-r) R<sub>s2</sub></code>, and analogously for B<sub>L</sub>, μ<sub>L</sub>, and r<sub>s</sub>. Compositional variation becomes a one-dimensional problem the simulator indexes by r.</li>
+    <li><strong>Tau and sigma for injection-gas partitioning.</strong> With component 4 present, two more scalars track injection gas: <code>σ = y<sub>4</sub>/(y<sub>3</sub>+y<sub>4</sub>)</code> in the reservoir vapour and <code>τ = x<sub>4</sub>/(x<sub>3</sub>+x<sub>4</sub>)</code> in the liquid. A two-parameter relation <code>τ = b σ<sup>n</sup> + (1-b) σ<sup>m</sup></code> closes the system. For Ekofisk nitrogen injection b, n, m are around 1.5, 1.1, 1.0.</li>
+    <li><strong>Material-balance procedure for the binary properties (Appendix B).</strong> Binary 1-3 properties follow from standard Lasater-Glaso-Beggs-Robinson correlations (non-volatile oil, well-behaved). Binary 2-3 properties are extracted from one DLE experiment by subtraction: <code>R<sub>s2</sub> = (R<sub>s</sub> - r R<sub>s1</sub>) / (1-r)</code>, and so on. Material balance on moles n<sub>1</sub>, n<sub>2</sub>, n<sub>3</sub> through the depletion stages tracks the correct r(p). A practical aside: back-calculation of μ<sub>L2</sub> from blending can give negative values, so use a correlation in γ<sub>2</sub>, R<sub>s2</sub>, T even though it is algebraically inconsistent.</li>
+    <li><strong>Regression on binary 1-4 / 2-4 properties (Appendix C).</strong> With injection gas, the blending involves four binaries. Binary 1-4 and 2-4 properties are not available from correlations because they involve injection gas. They are obtained by matching one or more multi-contact injection experiments (or EOS-generated equivalent data) via non-linear regression on the binary properties and the τ(σ) parameters b, n, m.</li>
+    <li><strong>The honest limitations.</strong> Two cases GBO as published cannot handle. Gas-condensate compositional variation: component 1 is non-volatile by definition, so it cannot dissolve in the initial reservoir gas, and the surface-oil composition is implicitly uniform. Cycling below the dewpoint: the GBO default predicts optimistic revaporisation of condensed liquid; setting r<sub>s24</sub> = 0 suppresses it but overcorrects when injection gas contains meaningful component 3. Curtis flags both as future-work targets in conclusion 4.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Filling the gap between MBO and EOS simulation.</strong> Through the late 1980s and 1990s GBO occupied the practical middle ground between the cheap-but-inadequate MBO and the rigorous-but-expensive EOS. The Ekofisk nitrogen-injection studies and similar Norwegian operator work in the period used GBO as the production tool. The formulation is deployed in SIMBEST II.</p>
+    <p><strong>The structural insight.</strong> Separating compositional variation (r) from injection-gas partitioning (τ, σ) is what makes GBO tractable. Without it, the same problem requires a full compositional simulator. Three scalars carry most of the relevant physics; the rest of the computational cost is shifted to one-time PVT-table generation.</p>
+    <p><strong>The honesty about limits.</strong> Conclusion 4 of the paper explicitly lists what GBO cannot do. This is the same disciplined framing that runs through Curtis's work: a method is sold for the cases where it works, and the cases where it fails are documented up-front rather than discovered by users.</p>
+    <p><strong>Bridge to the Singh-Whitson BOPVT series.</strong> The black-oil-PVT generation framework matured into the Singh-Whitson series from 2000 onwards (SPE-63087, SPE-109596, SPE-117930), which formalises black-oil-property generation from a tuned EOS. GBO is the conceptual precursor that demonstrated the modified-black-oil framework could carry serious compositional physics.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Kniazeff &amp; Naville (1965) - the original volatile-oil formulation that motivates the MBO and GBO extensions</li>
+    <li>Spivak &amp; Dixon (1974) - the modified-black-oil formulation that GBO generalises</li>
+    <li>Whitson (1983) SPE-12233 and (1984) SPE-12634 - the C7+ and EOS-tuning machinery feeding GBO's binary-property generation</li>
+    <li>Coats (1980) - compositional reservoir simulation that GBO offers a cheaper approximation to</li>
+    <li>Lasater (1958), Glasø (1980), Beggs &amp; Robinson (1975), Standing (1947) - the empirical PVT correlations supplying binary 1-3 properties for non-volatile oil + HC gas</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>SIMBEST II's modified-black-oil capability for North Sea volatile-oil fields</li>
+    <li>Ekofisk nitrogen-injection studies through the 1990s and beyond</li>
+    <li>The Singh-Whitson BOPVT series (2000-2010) - SPE-63087, SPE-109596, SPE-117930 - which formalises black-oil-property generation from a tuned EOS</li>
+    <li>Whitson-Brule (2000) SPE Phase Behavior monograph, Chapter 7, on modified-black-oil PVT</li>
+    <li>The bopvt-lookup work and later whitson black-oil-property tools used in 2020s field studies</li>
+    <li>Demonstrated to the simulator vendors that intermediate fluid models had a place in production workflows</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Eldhose "Flavio" da Silva</strong> at Petrofina (now Total) was driving the Ekofisk nitrogen-injection application and continued collaborating with Curtis through 1993. <strong>Ingolf Søreide</strong> was Curtis's NTH PhD student finishing the brine-EOS work that becomes the 1992 Søreide-Whitson FPE paper. The GBO formulation is the second of three Whitson-Søreide collaborations in this period along with the 1989 capillary-flash note.</p>

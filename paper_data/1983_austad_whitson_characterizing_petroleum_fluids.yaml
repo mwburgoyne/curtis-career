@@ -1,0 +1,65 @@
+id: 1983_austad_whitson_characterizing_petroleum_fluids
+title: Practical Aspects of Characterizing Petroleum Fluids
+page_title: Austad, Hvidsten, Norvik & Whitson (1983) - Practical Aspects of Characterizing Petroleum Fluids
+authors:
+- T. Austad
+- J. Hvidsten
+- H. Norvik
+- Curtis H. Whitson
+authors_affiliation: null
+venue: Conference on North Sea Condensate Reservoirs and Their Development, London, 24-25 May 1983
+paper_number: null
+doi: null
+funding: null
+citations: null
+tags:
+- C7+ Characterisation
+- Watson K Factor
+- Field-Constancy QC
+- North Sea
+- Tutorial
+- Phase 1
+whitson_index: 3
+extra_meta:
+- label: Institution
+  value_html: Rogaland Regional College / Rogaland Research Institute (now IRIS, then NORCE)
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Curtis is twenty-seven and working at Rogaland Regional College in Stavanger. The 1983 IBC conference on North Sea Condensate Reservoirs is the first venue where he presents the C7+ characterisation framework as a tutorial rather than as a research result. The 42-page paper covers chemical analysis of gas condensates, C<sub>7+</sub> characterisation methods, PVT laboratory experiments, and Peng-Robinson EOS modelling. Most of the material is review-level, written for industry engineers who need a practical entry point. What sits inside the tutorial and matters for the historical record are two original quality-control heuristics built on North Sea operating data.</p><p>The other three authors are colleagues at the Rogaland Research Institute, the applied research arm of the regional college that later evolved into IRIS and then merged into NORCE. The byline shows how the Norwegian operator-and-research ecosystem around Stavanger contributed to Curtis's early work.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Explicit Watson K estimator from MW and specific gravity.</strong> An algebraic correlation that estimates the Watson characterisation factor <code>K<sub>w</sub></code> of a heptanes-plus or higher carbon-number-plus fraction directly from measured molecular weight <code>M</code> and specific gravity <code>γ</code>, without requiring normal boiling point data:
+      <p><code>K<sub>w</sub> = 4.5579 · M<sup>0.15178</sup> · γ<sup>-0.84573</sup></code></p>
+      Derived by combining the Watson definition <code>K = T<sub>b</sub><sup>1/3</sup>/γ</code> with a Riazi-Daubert-style property correlation for molecular weight under the assumption of a constant K across single-carbon-number groups. Originally appearing in Whitson EUR-183 (1980); here it is restated as Eq 1 of the IBC paper with worked North Sea examples. Valid for MW from 72 to 243 and specific gravity 0.636 to 0.936.</li>
+    <li><strong>Watson-K field-constancy as a molecular-weight QC heuristic.</strong> Within a single petroleum field (or within a single well), the Watson K of the C<sub>7+</sub> fraction varies only slightly, typically ±0.02 on a field-average value (for example 12.00 ± 0.02). Any new sample whose back-calculated K deviates more than ±0.01 to ±0.02 from the established field average should trigger a re-measurement of M, which is harder to get right than γ. A ±0.02 range in K corresponds to roughly 2-3% error in M, usually less than 1.5%. The heuristic turns the Watson K from a curiosity into a real data-validation tool. Illustrated in the paper's Table 4 with North Sea gas-condensate and black-oil data.</li>
+    <li><strong>The pedagogical framing.</strong> Whitson's argument is that <code>M</code> is harder to measure accurately than <code>γ</code> (freezing-point depression is temperamental), so use the easier-measured <code>γ</code> plus the field-established K to bound the M. If the measured M does not fit, re-measure rather than trust the number. This is the same engineering disposition that runs through Curtis's 1981 SPE-10067 (Whitson-Torp CVD) and the 1983 SPE-12233 papers: lean on what is measured reliably, validate with internal consistency, flag what looks off.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>From correlation to QC tool.</strong> The Watson K had been a fluid-classification quantity for decades. Austad-Whitson-1983 turn it into an operational QC test, computable from any new sample once a field baseline has been established from three or more prior samples. The trigger thresholds (±0.01 to ±0.02 deviation) are concrete enough to be coded into a laboratory workflow.</p>
+    <p><strong>Norwegian-research-institute fingerprints.</strong> The four-author byline places this paper at Rogaland Research Institute (IRIS / NORCE precursor). Curtis's institutional address on the 1984 SPE-11200 paper is the same: "Rogaland Regional College" with the footnote "Now with Whitson Oil Inc." The IBC 1983 paper documents what Curtis was teaching as the in-house standard at Rogaland in the year before his PhD defence at NTH.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson EUR-183 (1980) - the original Watson K estimator, here being re-presented and operationalised</li>
+    <li>Watson, Nelson &amp; Murphy (1935) - the Watson characterisation factor as fluid-classification quantity</li>
+    <li>Riazi &amp; Daubert (1980) - the property-correlation framework for plus fractions that the K estimator combines with the Watson definition</li>
+    <li>Søreide's specific-gravity correlations for C<sub>7+</sub> (alternative to the constant-K assumption)</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson (1983) SPE-12233 - the formal research presentation of the C<sub>7+</sub> framework, building on this tutorial</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Chapter 5 on C<sub>7+</sub> characterisation, where the Watson-K QC heuristic returns as standard practice</li>
+    <li>Laboratory QC workflows at Whitson AS and partner operators - the field-constancy test is now a built-in step in field-wide EOS development</li>
+    <li>Nielsen, Wanat &amp; Whitson (2024) SPE-220699 - the formal forward-propagation study lists Watson K errors among the C<sub>7+</sub> uncertainty sources whose downstream impact this paper had identified four decades earlier</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>T. Austad, J. Hvidsten, H. Norvik</strong> — Rogaland Research Institute colleagues. The Rogaland (now IRIS / NORCE) ecosystem in Stavanger was the applied-research base from which Curtis worked through the early 1980s, in parallel with his NTH PhD work in Trondheim.</p>

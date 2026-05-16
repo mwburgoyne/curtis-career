@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson, Younus & Nielsen (2023) - Separator Sample Analysis and Wellstream Composition</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Separator Sample Analysis and Calculating Wellstream Composition</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark>, Bilal Younus, Markus Hays Nielsen</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, San Antonio, Texas, 16–18 October 2023</p>
+  <p><strong>Paper number:</strong> SPE-217328-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/217328-MS">10.2118/217328-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="tag">Separator Sampling</span> <span class="tag">ECM Correction</span> <span class="tag">Hoffman Plot</span> <span class="tag">K-Value QC</span> <span class="tag">Material Balance</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The Hoffman-Crump-Hocott K-value plot has been the industry's separator-sample quality-control tool since 1953. It flags compositional inconsistency between separator gas and separator oil but does not correct it. For seventy years, when a Hoffman plot showed scatter, the engineer either accepted the sample, requested a re-sample, or made an unspecified judgement call. The Whitson AS team (Curtis, Bilal Younus, and Markus Hays Nielsen - listed on the byline as M.H. Nielsen) closed that loop. SPE-217328 introduces the first quantitative method for correcting laboratory-reported separator compositions when the lab-reported numbers fail thermodynamic consistency at the separator conditions.</p><p>The paper sits inside a three-paper Whitson AS series on compositional uncertainty: SPE-211391 (Younus-Whitson-Martinsen 2022, backward QC to identify lab errors via the gamma model), this paper (backward correction), and SPE-220699 (Nielsen-Wanat-Whitson 2024, forward propagation of compositional errors through phase-behaviour calculations). The series is a sustained operational programme on the question every PVT engineer faces and most pretend they have already solved.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>ECM-flash separator-sample correction method.</strong> The Fevang-Whitson 1994 equilibrium-contact-mixing framework was built to reconstruct in-situ reservoir fluid from non-equilibrium downhole samples drawn from different reservoir locations. This paper adapts the same machinery to the single-sample QC problem. The workflow:
+    <ol>
+<li>Compute the lab-reported wellstream <code>z<sub>wL,i</sub> = β<sub>w</sub> y<sub>spL,i</sub> + (1 - β<sub>w</sub>) x<sub>spL,i</sub></code> using the lab-derived recombination ratio <code>β<sub>w</sub></code> from the measured separator GOR and oil properties.</li>
+<li>Flash <code>z<sub>wL</sub></code> at separator conditions <code>(T<sub>sp</sub>, p<sub>sp</sub>)</code> using K-values from a tuned EOS, a default EOS, the Standing 1979 correlation (for <code>p<sub>sp</sub> &lt; 1000</code> psia), or the Whitson-Torp modified Wilson equation. The Rachford-Rice phase split returns corrected separator gas, corrected separator oil, and flash gas-phase mole fraction <code>β<sub>F</sub></code>.</li>
+<li>Recombine the corrected compositions with the lab-derived <code>β<sub>w</sub></code> to get the corrected wellstream <code>z<sub>wC</sub></code>.</li>
+</ol>
+    The component-wise correction (Eq 5):
+    <p><code>x<sub>spC,i</sub> = x<sub>spL,i</sub> · [β<sub>w</sub>(K<sub>spL,i</sub> - 1) + 1] / [β<sub>F</sub>(K<sub>spC,i</sub> - 1) + 1]</code></p>
+    with <code>y<sub>spC,i</sub> = x<sub>spC,i</sub> K<sub>spC,i</sub></code>. The method does not require the underlying laboratory error to be identified or even known. The ECM flash automatically redistributes mass to satisfy thermodynamic equilibrium at the separator conditions.</li>
+<li><strong>Validation on synthetic-error injection.</strong> Volatile oil (<code>R<sub>p</sub> ≈ 2000</code> scf/STB, <code>T<sub>sp</sub> = 100</code> °F, <code>p<sub>sp</sub> = 250</code> psia) and gas condensate (<code>R<sub>p</sub> ≈ 30,000</code> scf/STB, <code>T<sub>sp</sub> = 150</code> °F, <code>p<sub>sp</sub> = 1500</code> psia) examples. Injected errors: 50% leakage of both sample bottles at 80°F, 75% <code>C<sub>6+</sub></code> loss in the separator gas GC, 25% <code>C<sub>2-</sub></code> loss in the separator oil GC. The corrected wellstream comes back to within 0.2 mol% of the exact composition across all components. Corrected separator oil to within 0.5 mol%, corrected separator gas to within 0.3 mol%.</li>
+<li><strong>Log-log K-value cross-plot as companion diagnostic.</strong> Plot <code>K<sub>spL,i</sub></code> against <code>K<sub>spC,i</sub></code> on log-log axes, both at the same separator conditions. Points on the 45-degree line are samples in equilibrium. Points consistently above indicate excess <code>y<sub>spL</sub></code> or low <code>x<sub>spL</sub></code> (carryover or C7+ loss). The advantage over the Hoffman plot is that both axes share the same conditions, so per-component K-value deviations show up at the right magnitude. The Hoffman plot mixes <code>p<sub>sp</sub></code> and <code>p<sub>sc</sub></code> on its two axes and obscures the size of the discrepancy.</li>
+<li><strong>Component material-balance plot.</strong> From <code>z<sub>i</sub> = β y<sub>i</sub> + (1 - β) x<sub>i</sub></code>, rearranging gives <code>y<sub>i</sub>/z<sub>i</sub> = m (x<sub>i</sub>/z<sub>i</sub>) + B</code> with <code>m = -(1 - β)/β</code> and <code>B = 1/β</code>, constrained to <code>m + B = 1</code>. The deviation between the lab-fit slope and the <code>β<sub>w</sub></code>-expected slope is a direct measure of the recombination-ratio error - useful for flagging field-metering or oil-property bias that the Hoffman plot cannot see.</li>
+<li><strong>Welltest-data nearest-sample workflow.</strong> Three operational scenarios for converting metered welltest GOR into a molar wellstream composition. Scenario 1 (only <code>R<sub>sp</sub></code> measured, no samples) and Scenario 2 (gas sample plus <code>R<sub>sp</sub></code>, no oil sample) draw the missing composition from a basin-wide lookup table of recent separator samples, keyed by producing GOR and constrained by an API-gravity match against the field measurement. ECM correction is applied to the synthesised pair. Scenario 3 is the standard two-sample baseline. The paper recommends operators maintain the lookup table with annual refresh and explicit matching rules for production zone, GOR range, and well proximity.</li>
+<li><strong>Four-source error taxonomy at the separator-sampling level.</strong> Leakage (bottles lose pressure in transit), carryover (oil droplets in the gas stream, gas bubbles in the oil stream), non-equilibrium sampling (separator gas and oil at different <code>T</code>/<code>p</code>), and chromatography errors. The non-equilibrium category includes the gas-bottle-heating-above-<code>T<sub>sp</sub></code> fallacy: some labs heat the gas bottle to revaporise condensed liquid, but constant-volume heating does not lift pressure proportionally and the bottle ends at saturated-gas conditions at higher T and lower p than intended. The ECM correction is agnostic to which of the four sources caused the inconsistency.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>From flag-only to correction.</strong> The Hoffman plot has been a diagnostic for seventy years. SPE-217328 is the first method that turns the diagnostic into a quantitative fix. The cost is a single flash calculation per sample, the precondition is a K-value source at separator conditions, and the result returns the wellstream composition to within 0.2 mol% under heavy synthetic errors.</p>
+<p><strong>Middle paper in the QC triptych.</strong> Younus-Whitson-Martinsen 2022 (SPE-211391) identifies and classifies GC-instrumentation errors via the gamma model. This paper corrects them. Nielsen-Wanat-Whitson 2024 (SPE-220699) propagates them forward through phase-behaviour calculations and demonstrates that recombination-GOR error dominates over all other compositional-uncertainty sources. The three together give the industry an end-to-end framework for separator-sample QC that did not exist before 2022.</p>
+<p><strong>Markus Hays Nielsen.</strong> Curtis's son. Petroleum engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. Whitson AS engineer specialising in PVT-uncertainty and EOS-development methodology. Listed on the byline as M.H. Nielsen. The father-son co-authorship runs through the 2023-2025 series and into the four-generation lineage with Burgoyne in 2025.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Hoffmann, Crump &amp; Hocott (1953) — the Hoffman K-value plot, the seventy-year-old diagnostic this paper extends</li>
+<li>Fevang &amp; Whitson (1994) SPE-28829 — ECM framework for cross-sample reconstruction, now adapted to single-sample QC</li>
+<li>Standing (1979) — the low-pressure K-value correlation used for <code>p<sub>sp</sub> &lt; 1000</code> psia</li>
+<li>Whitson &amp; Torp (1981) SPE-10067 with Whitson &amp; Brule (2000) Monograph — modified Wilson equation with convergence pressure for higher-pressure K-value estimation</li>
+<li>Younus, Whitson &amp; Martinsen (2022) SPE-211391 — backward gamma-model QC of GC errors, the upstream paper in the QC triptych</li>
+<li>Whitson, Martinsen &amp; Younus (2022) Elsevier Chapter 2 — separator-gas sampling protocols and the four-step lab bottle-handling procedure</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Nielsen, Wanat &amp; Whitson (2024) SPE-220699</strong> — forward propagation of compositional errors, the closing paper in the QC triptych</li>
+<li><strong>Hoda &amp; Whitson (2013) SPE-164334</strong> — EOS-flash rate-to-wellstream conversion now gets a QC-aware front end from the nearest-sample workflow</li>
+<li>Whitson AS commercial PVT-laboratory workflows; the ECM correction is now a standard part of the firm's separator-sample QC</li>
+<li>Operator separator-sample QC policy; basin-wide nearest-sample lookup tables for tight unconventional welltesting</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Bilal Younus</strong> — Whitson AS. Field-wide EOS model development; first-author of SPE-211391 (2022).</p><p><strong>Markus Hays Nielsen</strong> — Whitson AS. Curtis's son. Petroleum engineer specialising in PVT uncertainty and EOS development. First-authors SPE-220699 (2024) and SPE-225470 (2025); co-authors SPE-225382 (2025).</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

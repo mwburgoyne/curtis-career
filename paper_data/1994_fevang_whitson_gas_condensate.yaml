@@ -1,0 +1,68 @@
+id: 1994_fevang_whitson_gas_condensate
+title: Accurate Insitu Compositions in Petroleum Reservoirs
+page_title: Fevang & Whitson (1994) - Accurate Insitu Compositions in Petroleum Reservoirs
+authors:
+- Øivind Fevang
+- Curtis H. Whitson
+authors_affiliation: null
+venue: EUROPEC Petroleum Conference, London, 25–27 October 1994
+paper_number: SPE-28829-MS
+doi: 10.2118/28829-MS
+funding: null
+citations: 25
+citations_source: OpenAlex
+tags:
+- ECM
+- Sampling
+- Recombination
+- Gas Coning
+- Isokinetic
+- Phase 3
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Through the 1980s and early 1990s the practical sampling problem for gas-condensate reservoirs was unsolved. Saturated reservoirs with retrograde behaviour are extremely difficult to sample insitu-representatively: any drawdown at the wellbore drops the local pressure below the dewpoint, condensate forms, the produced wellstream is leaner than the original reservoir gas, and the heavy components that determine downstream economics stay trapped in the reservoir. The standard remedies - low-rate sampling, dewpoint-adjusted recombination, bubblepoint-adjusted recombination - all suffered from being attempts to recover the impossible. The samples that operators had were almost always not insitu-representative, and most laboratory protocols treated this as a defect to be hidden rather than a property to be worked with.</p><p>This 1994 EUROPEC paper is the first Fevang-Whitson collaboration. Øivind Fevang was Curtis's NTH PhD student. The paper sets up the conceptual frame - reservoir-representative vs insitu-representative samples - that the more famous 1996 SPE-30714 builds on for well deliverability. Together the 1994 and 1996 Fevang-Whitson papers anchor the gas-condensate work that defines Phase 3 of Curtis's career.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Reservoir-representative vs insitu-representative sample definitions.</strong> The paper formalises a two-level hierarchy of sample quality. A <em>reservoir-representative</em> sample is any sample produced from the reservoir with good composition and PVT measurement quality. An <em>insitu-representative</em> sample is the stricter case that also matches the original composition at a specific depth. The reframe matters because many reservoirs (saturated, gas-condensate, low-permeability, depleted) cannot yield insitu-representative samples at all. Reservoir-representative samples are almost always obtainable. The new claim is that reservoir-representative samples plus an equilibrium operation can <em>create</em> near-exact insitu compositions.</li>
+    <li><strong>Equilibrium Contact Mixing Method 1 (ECM1) for saturated reservoirs.</strong> Bring single-phase reservoir-gas and reservoir-oil samples to equilibrium at the original GOC pressure and temperature in a PVT cell, at a volume ratio <code>V<sub>o</sub>/V<sub>t</sub> ≥ 0.5</code>. The equilibrium phases that emerge are near-exact estimates of the original insitu gas and oil at the GOC. The two starting samples can themselves be deeply non-insitu-representative; the equilibrium operation at GOC conditions recovers the saturated pair that originally existed at the contact. The procedure works because the flash at GOC conditions is a thermodynamic operation, not an interpolation of the starting samples.</li>
+    <li><strong>ECM2 for depleted solution-gas-drive oil reservoirs.</strong> When the produced GOR exceeds the original solution GOR, the wellstream carries excess liberated gas. ECM2 recombines separator samples on the <em>test</em> GOR, brings the wellstream to equilibrium at current reservoir pressure, removes all the equilibrium gas, then re-injects gas incrementally until the bubblepoint of the mixture reaches the <em>original</em> reservoir bubblepoint. That mixture is the original insitu oil. ECM2 chains with ECM1 for depleted-but-still-saturated gas-condensate reservoirs to recover both original gas and original oil.</li>
+    <li><strong>Counterintuitive: gas coning during an oil test is the preferred sampling design.</strong> Decades of practice had treated coning as evidence of unrepresentative samples to be avoided. Fevang and Whitson invert the recommendation: deliberately design the oil test with gas coning. Reservoir gas flows through the oil zone on its way to the wellbore, through pores that already have high oil saturation. Any liquid that condenses from the reservoir gas as it depressurises is immediately and completely mobilised by the connate oil, so the produced wellstream captures essentially all the heavy components originally present in the reservoir gas. In a pure gas test, by contrast, reservoir gas drops below its dewpoint near the wellbore, condenses retrograde liquid, and loses heavy components that remain trapped. Drawdown can be as large as needed to induce coning - ECM1 accuracy is insensitive to drawdown.</li>
+    <li><strong>Volume-ratio criterion and maximum-sampling-GOR.</strong> For ECM1 to deliver accurate compositions, the equilibrium oil volume ratio at GOC conditions must satisfy <code>V<sub>o</sub>/V<sub>t</sub> ≥ 0.5</code>. For coning-test sampling the producing GOR at sampling time automatically sets the cell volume ratio. The paper supplies a closed-form maximum-GOR criterion using <code>B<sub>ob</sub></code>, <code>B<sub>tb</sub></code>, <code>R<sub>sb</sub></code>, and the Glaso 1980 / McCain 1991 correlations, giving the field engineer a quantitative stop-rule: continue sampling while current producing GOR is below <code>GOR<sub>max</sub></code>; discontinue after that threshold.</li>
+    <li><strong>Isokinetic separator-gas sample heating does not revaporise liquid carryover.</strong> The standard laboratory practice of heating closed sample containers to 100°C before GC transfer fails to revaporise condensate - pressures above 2000 psia would be needed at 212°F. The SAD-minimisation back-out method is ill-posed when revaporisation is incomplete (40 per cent actual carryover minimises SAD at 33 per cent). The paper recommends measuring physical liquid carryover volume <em>at separator conditions</em> using an onsite volume-measuring container, then correcting the test GOR directly via the explicit <code>β</code> and <code>R<sub>sp</sub></code> equations. The lab-heating-and-SAD workflow is not a substitute.</li>
+    <li><strong>Validation by radial 1D/2D compositional simulation.</strong> Five fluid types (black oil, slightly volatile oil, medium gas condensate, volatile oil, near-critical oil) under low- and high-rate gas tests, high-drawdown oil tests, and oil tests with gas coning. ECM1 consistently outperforms dewpoint-adjusted recombination and bubblepoint-adjusted recombination. ECM2 outperforms the recombination-to-original-bubblepoint shortcut, particularly for more volatile systems.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The conceptual pivot of modern gas-condensate sampling.</strong> Once the sampling problem is reframed as "obtain reservoir-representative samples, then create insitu compositions thermodynamically", the laboratory is free to be creative about how original compositions are recovered. The Fevang-Whitson sample-quality hierarchy is now standard terminology in operator sampling specifications. The ECM family is used routinely on operator PVT studies; ECM1 with a gas-coning oil-test design is the textbook recommendation for new saturated gas-condensate developments.</p>
+    <p><strong>The start of the Fevang-Whitson partnership.</strong> Øivind Fevang's PhD work at NTH ran from 1992 to 1995 under Curtis's supervision. SPE-28829 is the 1994 EUROPEC milestone; SPE-30714 in 1995-1996 is the well-deliverability paper that became the industry standard for gas-condensate inflow performance. Fevang stayed in the Whitson AS orbit for nearly a decade as a long-running collaborator and ran the gas-condensate-bound water work with Sævareid through 1999-2003.</p>
+    <p><strong>Phase-transition paper.</strong> This is one of the bridging papers between Phase 2 (the PVT framework decade, 1983-1995) and Phase 3 (Gas Condensate, BO PVT, EOR, and the Monograph). The 1994 paper sets up the conceptual machinery; the 1996 paper applies it operationally to well deliverability; the 2000 Monograph carries both into the textbook.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Standing-Katz tradition of separator recombination — the basic wellstream-from-separator workflow ECM1 extends</li>
+    <li>Saturated-reservoir equilibrium-second-phase principle from the 1980s PVT literature</li>
+    <li>Glasø (1980) and McCain (1991) PVT correlations — supply <code>B<sub>ob</sub></code>, <code>R<sub>sb</sub></code>, <code>B<sub>tb</sub></code> for the maximum-GOR field rule</li>
+    <li>Leshikar-style retrograde-gas recombination via Watson <code>K</code> (SPE-20006) — an earlier shortcut the paper improves on</li>
+    <li>Isokinetic separator-sampling protocols — the workflow being critiqued and replaced by physical carryover measurement</li>
+    <li>Whitson (1983) C7+ characterisation and the post-1983 EOS framework — the EOS-tuning context the recovered insitu compositions feed into</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Fevang &amp; Whitson (1996) SPE-30714</strong> — the three-region gas-condensate well-deliverability paper that defined the practical industry standard</li>
+    <li><strong>Whitson &amp; Brule (2000) SPE Monograph "Phase Behavior"</strong>, sampling chapter — ECM treatment carried into the textbook</li>
+    <li>Operator sampling specifications for new gas-condensate developments worldwide (sample-quality hierarchy and gas-coning oil-test recommendation)</li>
+    <li>Whitson-Martinsen-Younus 2022 Elsevier Chapter 2 — updated separator-sampling protocol critique extending the carryover diagnosis</li>
+    <li>Whitson-Younus-Nielsen 2023 — computational correction bypassing the failed lab revaporisation; the carryover problem still alive in modern workflows</li>
+    <li>Liquid-rich-shale sampling-QC practice (Whitson-Sunjerga 2012 SPE-155499 and subsequent LRS work)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Øivind Fevang</strong> — Curtis's NTH PhD student 1992-1995. First-author on SPE-28829 (1994 sampling), co-author on SPE-30714 (1996 deliverability), and long-running Whitson AS collaborator. Stayed engaged on gas-condensate-bound water research with Sævareid through 1999-2003. The Fevang-Whitson papers are jointly the most-cited Whitson outputs after the 1983 C7+ paper.</p>

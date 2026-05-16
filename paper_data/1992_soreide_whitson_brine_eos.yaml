@@ -1,0 +1,88 @@
+id: 1992_soreide_whitson_brine_eos
+title: |-
+  Peng-Robinson Predictions for Hydrocarbons, CO<sub>2</sub>, N<sub>2</sub>, and H<sub>2</sub>S with Pure Water and NaCl Brine
+page_title: Søreide & Whitson (1992) - Peng-Robinson Predictions for Hydrocarbons-CO2-N2-H2S with Water and NaCl Brine
+authors:
+- Ingolf Søreide (Norsk Hydro)
+- Curtis H. Whitson
+authors_affiliation: NTH / PERA
+venue: <em>Fluid Phase Equilibria</em>, 77, 217-240 (1992)
+paper_number: null
+doi: 10.1016/0378-3812(92)85105-H
+funding: null
+citations: 335
+citations_source: OpenAlex
+tags:
+- EOS for Brine
+- Peng-Robinson
+- Salting-Out
+- Asymmetric BIPs
+- CO2 in Water
+- Phase 2
+whitson_index: 1
+citations_note: ; one of the most cited EOS-brine frameworks in petroleum engineering
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Most petroleum-engineering EOS work through the 1980s ignored water explicitly. The hydrocarbon-water phase boundary was treated as a separate problem and handled with empirical correlations (Dodson-Standing for water content, Katz et al. for gas solubility in brine). The available rigorous EOS treatments - notably Peng-Robinson 1980 - covered pure water but did not handle salinity, and used a single set of binary interaction parameters that could not simultaneously reproduce gas solubility in the aqueous phase and water content in the gas phase.</p><p>Ingolf Søreide had finished his NTH PhD with Curtis a few years earlier, contributed to the 1988 GBO paper, and had moved to Norsk Hydro. The 1992 FPE paper is the published version of the brine-PR-EOS work he and Curtis built up between 1989 and 1992. By 1992 Curtis had also moved his consultancy under the name PERA. The paper appeared in <em>Fluid Phase Equilibria</em> alongside the negative-flash paper and the wider Whitson-Michelsen DTU collaboration.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Modified alpha function for water and brine.</strong> Peng and Robinson (1980) had proposed a water-specific alpha function valid for T<sub>r</sub> &lt; 0.72: <code>α<sup>1/2</sup> = 1.008568 + 0.8215(1 - T<sub>r</sub><sup>1/2</sup>)</code>. Søreide and Whitson extended it to brine and the full subcritical range by including NaCl molality c<sub>sw</sub> and a high-temperature correction term: <code>α<sup>1/2</sup> = 1 + 0.4530[1 - T<sub>r</sub>(1 - 0.0103 c<sub>sw</sub><sup>1.1</sup>) + 0.0034(T<sub>r</sub><sup>-3</sup> - 1)]</code>. The brine form reproduces pure-water and NaCl-brine vapour pressures within 0.2% from 15 to 325 °C and 0 to 5.0 M NaCl. The brine form supersedes the pure-water form for all implementations.</li>
+    <li><strong>Generalised salting-out coefficient from boiling point.</strong> Pawlikowski-Prausnitz (1983) showed the Setchenow coefficient is linear in the gas's Lennard-Jones energy: <code>k<sub>s</sub> = A<sub>s</sub> + B<sub>s</sub>(ε<sub>i</sub>/k)</code>. Søreide and Whitson assumed the temperature dependence for all hydrocarbons parallels methane's, used <code>ε<sub>i</sub>/k = 1.25 T<sub>bi</sub></code>, and combined with the Cramer (1984) methane k<sub>s</sub> polynomial to give a general correlation: <code>k<sub>si</sub> = 0.13163 + 4.45×10<sup>-4</sup> T<sub>bi</sub> - 7.692×10<sup>-4</sup> T + 2.6614×10<sup>-6</sup> T<sup>2</sup> - 2.612×10<sup>-9</sup> T<sup>3</sup></code>, with T in °F, T<sub>bi</sub> in K, k<sub>s</sub> in M<sup>-1</sup>. For methane (T<sub>bi</sub> = 111.6 K) the formula recovers Cramer's polynomial exactly. Validated against C1-nC4 data from Cramer, Morrison, Long-Chierici and Standing.</li>
+    <li><strong>Asymmetric BIPs - one set for each phase.</strong> Two different binary interaction parameters for every gas/water binary: <code>k<sub>ij</sub><sup>NA</sup></code> for the non-aqueous phases and <code>k<sub>ij</sub><sup>AQ</sup></code> for the aqueous phase. The EOS constant <em>a</em> is computed differently depending on the phase being evaluated. Peng and Robinson (1980) had used the same trick. The thermodynamic inconsistency is acknowledged honestly - in principle the two phases should use the same mixture <em>a</em> - but Søreide and Whitson argue it does not matter away from critical conditions, and the alternative (one set of BIPs trying to fit both gas solubility in water and water content in gas) cannot work in practice.</li>
+    <li><strong>Specific aqueous-phase BIP correlations for the non-hydrocarbons.</strong>
+    <ul>
+    <li><strong>N<sub>2</sub>/NaCl brine</strong> (corrected from the original publication):<br/>
+    <code>k<sub>ij</sub><sup>AQ</sup> = -1.70235(1 + 0.025587 c<sub>sw</sub><sup>0.75</sup>) + 0.44338(1 + 0.08126 c<sub>sw</sub><sup>0.75</sup>) T<sub>ri</sub></code><br/>
+            Linear in temperature for all salinities. Validated 25-125 °C, 14-1035 bar, 0-4 M.</li>
+    <li><strong>CO<sub>2</sub>/NaCl brine:</strong><br/>
+    <code>k<sub>ij</sub><sup>AQ</sup> = -0.31092(1 + 0.15587 c<sub>sw</sub><sup>0.7505</sup>) + 0.23580(1 + 0.17837 c<sub>sw</sub><sup>0.979</sup>) T<sub>ri</sub> - 21.2566 exp(-6.7222 T<sub>ri</sub> - c<sub>sw</sub>)</code><br/>
+            Linear above 150 °C, non-linear below. Validated 12-350 °C, 1-970 bar, 0-5 M.</li>
+    <li><strong>H<sub>2</sub>S/water</strong> (no salinity term, data unavailable):<br/>
+    <code>k<sub>ij</sub><sup>AQ</sup> = -0.20441 + 0.23426 T<sub>ri</sub></code><br/>
+            Validated 38-171 °C, 10-345 bar; accuracy degrades above 100 bar.</li>
+    </ul>
+    </li>
+    <li><strong>Salinity correction for gas-phase water content.</strong> The ratio of water content in the gas in equilibrium with brine versus pure water is approximately pressure-and-temperature independent: <code>y<sub>w</sub>(brine) / y<sub>w</sub><sup>o</sup>(water) ≈ 1 - 0.02865 c<sub>sw</sub><sup>1.44</sup></code>. Consistent with Katz et al. (1959) up to about 3 M. The Dodson-Standing (1944) linear correction overpredicts and is not recommended.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The default brine-EOS framework.</strong> Søreide-Whitson is the framework most petroleum engineers reach for when they need to add water to a Peng-Robinson EOS. It is implemented as a built-in option in Multiflash, the whitson code, several reservoir simulators, and most academic EOS Python libraries. The asymmetric-BIP trick is not pretty thermodynamically but it works, and the paper says so up-front.</p>
+    <p><strong>The CO<sub>2</sub>-storage relevance.</strong> The CO<sub>2</sub>/brine BIP correlation has been picked up well outside petroleum engineering - in CCS reservoir modelling, in geothermal reinjection, in saline-aquifer storage assessments. The non-linear low-temperature term and the linear high-temperature behaviour both hold up against the more recent Spycher-Pruess and Duan-Sun comparisons.</p>
+    <p><strong>The honest framing.</strong> The paper acknowledges its own limitations: H<sub>2</sub>S has no salinity term because data was not available; the asymmetric-BIP approach is thermodynamically inconsistent; the salting-out generalisation to C2/C3/nC4 at high temperatures is less certain. This honest framing is part of what makes the framework durable - users know exactly where it works and where it does not.</p>
+    <p><strong>The Søreide-Whitson partnership.</strong> Ingolf Søreide's NTH PhD with Curtis through the late 1980s produced three published collaborations: the 1988 GBO paper, the 1989 capillary-flash note, and this 1992 FPE paper. By 1992 Søreide was at Norsk Hydro and Curtis had founded PERA. The methodology continued to spread through Norsk Hydro and Statoil applications through the 1990s.</p>
+    <p><strong>The 2000 monograph and beyond.</strong> Whitson-Brule (2000) Chapter 9 is the matured presentation, with the corrected N<sub>2</sub> BIP equation and the full BIP table (Table 9.3). The framework continues to appear in current Whitson-team papers on gas-condensate water-of-condensation, CCS-related compositional simulation, and downhole water-content prediction.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Peng &amp; Robinson (1980) - pure-water alpha function and the original asymmetric-BIP demonstration</li>
+    <li>Pawlikowski &amp; Prausnitz (1983) - the Setchenow-Lennard-Jones linear relation for salting-out coefficients</li>
+    <li>Cramer (1984) - the methane salting-out polynomial in temperature</li>
+    <li>Setchenow (1889) - the original salting-out empirical framework</li>
+    <li>Robinson et al. (1985) - noted the thermodynamic inconsistency of asymmetric BIPs</li>
+    <li>Katz et al. (1959) - the empirical water-content-in-brine correlation the salinity-correction matches</li>
+    <li>Standing (1974), Long &amp; Chierici (1961), Morrison (1952), Morrison &amp; Billett (1952) - the experimental salting-out data the generalised k<sub>s</sub> was validated against</li>
+    <li>Whitson (1983) SPE-12233 - the C7+ framework feeding the hydrocarbon side of the brine-EOS</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson-Brule (2000) SPE Monograph Phase Behavior, Chapter 9 - the matured pedagogical presentation including the corrected N<sub>2</sub> BIP equation</li>
+    <li>Built-in option in Multiflash, REFPROP, the whitson code, and most academic EOS Python libraries</li>
+    <li>CCS reservoir modelling and geothermal CO<sub>2</sub>-reinjection studies</li>
+    <li>Sour-gas reinjection and Sleipner-style acid-gas-with-water modelling</li>
+    <li>Gas-condensate water-of-condensation calculations including water dropout in the wellbore</li>
+    <li>Hydrate formation and inhibition prediction in subsea and downhole environments</li>
+    <li>Liquid-rich-shale phase-behaviour modelling where formation water cannot be ignored</li>
+    <li>Singh-Whitson BOPVT series (2000-2010) - the water side of black-oil-property generation from a tuned EOS</li>
+    <li>The Whitson-Mark Burgoyne correspondence from 2019 onwards drew on this framework for downhole water-content work feeding into the bopvt-lookup project</li>
+    <li><strong>Nielsen-Arekhov-Whitson et al. (2023) SPE-214437</strong> — the same Peng-Robinson-plus-Pen&eacute;loux discipline applied to underground hydrogen storage (UHS) in depleted natural gas fields; the brine framework's pattern of asymmetric BIPs and phase-specific alpha-functions recurs in the H<sub>2</sub>-hydrocarbon parameter set</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Ingolf Søreide</strong> finished his NTH PhD under Curtis in the late 1980s and was at Norsk Hydro by the time the paper appeared. He co-authored the 1988 GBO paper and the 1989 capillary-flash note as well as this 1992 FPE paper. Curtis is listed in the 1992 paper with the PERA affiliation - PERA was Curtis's consultancy under which Whitson AS work was being run at the time. The paper includes corrected constants for Eq. 13 (the N<sub>2</sub> BIP) and Table 2 that were published as a separate errata sheet by the authors after the original publication.</p>

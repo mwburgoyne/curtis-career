@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nielsen, Wanat & Whitson (2024) - Effects of Compositional Uncertainties on Phase Behaviour</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>The Effects of Compositional Uncertainties on Phase Behavior Calculations</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Markus Hays Nielsen, Edward C. Wanat, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, New Orleans, Louisiana, 23–25 September 2024</p>
+  <p><strong>Paper number:</strong> SPE-220699-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/220699-MS">10.2118/220699-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="tag">Compositional Uncertainty</span> <span class="tag">Forward Propagation</span> <span class="tag">Sample Classification</span> <span class="tag">GOR Sensitivity</span> <span class="tag">Phase Envelope</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Third paper in the Whitson AS compositional-uncertainty series. SPE-211391 (Younus-Whitson-Martinsen 2022) identifies and classifies GC-instrumentation errors using the gamma model. SPE-217328 (Whitson-Younus-Nielsen 2023) corrects those errors via an ECM flash at separator conditions. SPE-220699 (this paper) closes the loop by propagating synthetic compositional errors forward through phase-behaviour calculations across five representative fluids - lean gas condensate, rich gas condensate, near-critical fluid, volatile oil, and moderate oil - and ranking the error sources by their actual impact on saturation pressure, liquid dropout, and the rest of the predictions the engineer cares about.</p><p>Markus Hays Nielsen is first author (listed on the byline as M.H. Nielsen). Edward Wanat (ExxonMobil) joins as second author. Curtis is last author from Whitson AS and ExxonMobil. The paper is the operational closure of a three-year research programme on what compositional uncertainty actually does to the numbers downstream.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Type 1, Type 2, Type 3 sample classification.</strong> A three-class taxonomy of laboratory samples keyed to the number of flash stages between sampling and compositional analysis. Type 1 samples are measured directly: flashed oil, stock-tank oil, dry gas, separator gas, oil-based-mud filtrate. Type 2 samples pass through one flash in the lab: open-hole formation tester (OFT), wireline formation tester (MDT), bottomhole samples, surface recombined samples. Composition is back-calculated from <code>z<sub>i</sub> = y<sub>i</sub> F<sub>v</sub> + x<sub>i</sub> (1 - F<sub>v</sub>)</code> with the mass-basis split factor <code>F<sub>v</sub> = [1 + R<sub>s</sub><sup>-1</sup> (ρ<sub>o</sub>/M<sub>o</sub>)(RT<sub>sc</sub>/p<sub>sc</sub>)]<sup>-1</sup></code>. Type 3 samples pass through two flashes: separator-recombined samples, where the separator oil is itself flashed in the lab. Each type carries a different cumulative-uncertainty exposure - zero, one, and two recombination-ratio uncertainties respectively, with one, two, and three chromatographed streams.</li>
+<li><strong>Error-propagation path graph (Fig 5).</strong> A novel schematic that traces measurement errors from the TCD and FID detectors through component-MW conversion, recombination-ratio scaling, and final reporting as a recombined composition. Commercial PVT reports present the recombined composition early, as a standalone table, but it is <em>not</em> measured. It is back-calculated and inherits every error in the chain. The paper insists on this distinction against an industry habit of treating recombined compositions as primary data.</li>
+<li><strong>Recombination-ratio (GOR) error dominates across all fluid types.</strong> The headline result of the study. Across all five fluids (CL-61711 lean GC through CL-70073 moderate oil), the recombination-GOR error produces the largest phase-behaviour deviation. For the lean gas condensate, a ±10% recombination-GOR shift moves the maximum CCE liquid dropout by 2-3 percentage points absolute. Across all five fluids, a 1 mol% change in <code>C<sub>1</sub></code> driven by recombination error maps to up to ±6% saturation-pressure deviation. The reason is mechanical: <code>β<sub>w</sub></code> multiplies both gas-side and oil-side compositional vectors in the recombination, so a GOR error perturbs the entire <code>z<sub>i</sub></code> vector in a correlated way, while other error sources perturb only the heavy-end sub-vector.</li>
+<li><strong>Fluid-type-specific secondary-source ranking.</strong> Once recombination GOR is removed, the next most damaging source depends on fluid type:
+    <ul>
+<li>Gas condensates - most sensitive to <code>C<sub>N+</sub></code> residual-fraction amount. Leaner condensates more sensitive than richer (a given absolute <code>C<sub>N+</sub></code> perturbation is a larger relative fraction of a small <code>C<sub>7+</sub></code> pool).</li>
+<li>Oil samples - most sensitive to FID <code>C<sub>7+</sub></code> response-area errors (internal standard, baseline shift). Oils have 10-18 mol% <code>C<sub>7+</sub></code> against 4-10% for gas condensates, so the normalisation constraint propagates FID errors to the light-component composition more strongly.</li>
+<li>Near-critical fluids - both matter with similar weight. Recombination-GOR dominance is most pronounced here because small compositional changes near the critical locus produce large phase-behaviour shifts.</li>
+</ul>
+</li>
+<li><strong>Phase-envelope-slope transition (Fig C5).</strong> Plotting saturation-pressure deviation against <code>C<sub>1</sub></code> mole-amount change across the five fluids shows the slope sign flipping through the critical locus. Lean gas condensate (CL-61711): negative slope - more <code>C<sub>1</sub></code> means lower dewpoint. Near-critical (CL-58647): near-zero slope. Moderate oil (CL-70073): positive slope - more <code>C<sub>1</sub></code> means higher bubblepoint. The transition is the standard binary-system critical-locus topology, here documented for multicomponent mixtures under realistic compositional-uncertainty perturbation. The figure is a one-glance summary of why fluid type matters.</li>
+<li><strong>QC-prioritisation matrix.</strong> The operational deliverable. For every fluid type, the universal first priority is recombination GOR. Second and third priorities differ:
+    <ul>
+<li>Lean and rich GC: <code>C<sub>N+</sub></code> molecular weight, then FID <code>C<sub>7+</sub></code> scatter.</li>
+<li>Near-critical: <code>C<sub>N+</sub></code> amount and MW together, then FID <code>C<sub>7+</sub></code>.</li>
+<li>Volatile and moderate oil: FID <code>C<sub>7+</sub></code> IS and BS errors, then <code>C<sub>N+</sub></code> MW.</li>
+</ul>
+    The implication for laboratory practice and for operator QC budgets is direct - separator metering accuracy buys more phase-behaviour reliability than refining the GC protocols.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Closing the QC loop.</strong> The Whitson AS three-paper programme (SPE-211391 + SPE-217328 + SPE-220699) now gives the industry a complete pipeline: identify compositional errors, correct them, and rank them by downstream impact. Prior work on compositional uncertainty (Jacoby-Koeller-Berry 1959, Austad-Hvidsten-Norvik-Whitson 1983) treated the problem case-by-case. This paper makes it systematic.</p>
+<p><strong>The unmeasured number.</strong> The reminder that the recombined composition is back-calculated, not measured, is the most operationally important framing in the paper. Engineers will continue to treat it as primary data, but the paper now provides the citation that says they should not.</p>
+<p><strong>Markus Nielsen as senior collaborator.</strong> The paper is Curtis's son's first-author Whitson AS publication at full technical weight, with Ed Wanat from ExxonMobil and Curtis closing the author list. The succession to the next-generation Whitson AS author group is visible.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Younus, Whitson &amp; Martinsen (2022) SPE-211391 — the gamma-model GC-error taxonomy, upstream paper in the series</li>
+<li>Whitson, Younus &amp; Nielsen (2023) SPE-217328 — the ECM-flash separator-sample correction method, middle paper in the series</li>
+<li>Whitson, Martinsen &amp; Younus (2022) Elsevier Chapter 2 — sampling-type pedagogical review extended here with the formal Type 1/2/3 taxonomy</li>
+<li>Whitson (1983) SPE-12233 — the C7+ characterisation framework, the sensitivity to <code>M<sub>7+</sub></code> revisited here per fluid type</li>
+<li>Whitson &amp; Brule (2000) SPE Monograph — the five-category reservoir fluid classification used as the study's axis</li>
+<li>Jacoby, Koeller &amp; Berry (1959) and Austad, Hvidsten, Norvik &amp; Whitson (1983) — earlier composition-effect-on-phase-behaviour studies</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Operational QC budgets at Whitson AS and partner operators</strong> — recombination GOR as universal first priority is now a working principle</li>
+<li><strong>Whitson AS field-wide EOS-model development</strong> — the GOR-as-correlated-perturbation insight informs how single-well EOS tunes are merged across a field</li>
+<li><strong>Nielsen et al (2025) SPE-225382 and SPE-225470</strong> — downstream Whitson AS papers using the QC framework set up here</li>
+<li>Tuning-variable choice for EOS regression (the <code>V<sub>M7+</sub></code> versus <code>V<sub>N+</sub></code> question from Younus-Whitson-Martinsen 2022) now has a fluid-type-specific answer</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Markus Hays Nielsen</strong> — first author. Whitson AS and NTNU. Curtis's son. Petroleum engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. Specialises in PVT uncertainty and EOS-development methodology.</p><p><strong>Edward C. Wanat</strong> — second author. ExxonMobil.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

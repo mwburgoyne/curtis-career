@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Suryanto et al. (2003) - Stream Management at South Natuna Sea Block B</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Implementation of Stream Management at South Natuna Sea Block B, Indonesia</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> H. Suryanto, <mark>J. D. Ekstrand (ConocoPhillips Indonesia); Curtis H. Whitson</mark>, K. Uleberg, F. Hoda (PERA a/s)</p>
+  <p><strong>Venue:</strong> 29th Indonesian Petroleum Association Annual Convention, October 2003</p>
+  <p><strong>Paper number:</strong> IPA03-E068</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Stream Management</span> <span class="tag">Belanak</span> <span class="tag">BOz Conversion</span> <span class="tag">z-to-z Conversion</span> <span class="tag">Integrated Asset Modelling</span> <span class="tag">Petrostreamz</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>A case study from ConocoPhillips' South Natuna Sea Block B / Belanak FPSO development. The asset comprises 19 reservoir models, 4 EOS models, 12 PVT regions, and two Gas Sales Agreements to fulfil. The PVT challenge: aggregate streams from a heterogeneous portfolio of black-oil and compositional reservoir simulators and present them to downstream process simulators and crude-assay calculations as one consistent compositional flow. PERA's PSM (Petrostreamz Management) software was the deployment vehicle. Curtis is listed as PERA author; the paper documents two operational extensions of Curtis's earlier monograph-era frameworks that are not in the Monograph itself. (Note: Petrostreamz, founded by Curtis in 2006 for the Pipe-It workflow product, evolves from the PSM software described here. PERA is the original 1988 consulting firm later renamed Whitson AS.)</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>BOz conversion: Split Factor Matrix for grid-level black-oil to compositional stream transfer.</strong> The problem is converting black-oil stream rates (<code>q<sub>o</sub>, q<sub>g</sub></code>) back to compositional molar rates for process simulation or asset aggregation. The solution is a Split Factor Matrix <code>S</code> generated at each pressure node of the BO-PVT table such that the molar rate of component <em>i</em> is <code>m<sub>i</sub> = q<sub>o</sub> · S<sub>oi</sub> + q<sub>g</sub> · S<sub>gi</sub></code>. The factors come from the saturated-phase compositions and molar volumes at the local pressure: <code>S<sub>oi</sub> = x<sub>i</sub> / v<sub>o</sub><sup>molar</sup></code>, <code>S<sub>gi</sub> = y<sub>i</sub> / v<sub>g</sub><sup>molar</sup></code>. The conversion uses the Whitson-Brule F<sub>g</sub> (or <code>β</code>) recombination physics that was baked into the BO tables; no new thermodynamic calculation is needed. Validated on a North Belut 5-layer, 5-fluid synthetic depletion case showing excellent agreement between direct Eclipse 300 compositional simulation and Eclipse 100 BO simulation followed by BOz conversion across C<sub>1</sub>, C<sub>2</sub>, C<sub>3</sub>C<sub>4</sub>, and C<sub>5+</sub> molar rate trajectories over 20 years.</li>
+<li><strong>z-to-z conversion: gamma-distribution rediscretisation for cross-simulator stream transfer.</strong> When a stream passes from a reservoir simulator with 5-8 components to a process simulator with 15-18 components (or between any two simulators with different characterisations), the C<sub>7+</sub> portion is converted in two steps. Step 1: fit a continuous gamma distribution <code>(α, η, M<sub>7+</sub>)</code> to the incoming C<sub>7+</sub>. Step 2: rediscretise to the output characterisation's MW bins by integrating the gamma PDF between bin boundaries. The total C<sub>7+</sub> amount is preserved; the distribution shape is preserved as described by <code>(α, η, M<sub>7+</sub>)</code>. The conversion uses the Whitson-Brule pseudoisation framing directly: any C<sub>7+</sub> characterisation is a discretisation of a common continuous distribution, and conversion between characterisations is fit-then-rediscretise. No EOS flash is required.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Operationalising the Monograph framework.</strong> The Whitson-Brule 2000 Monograph treats the F<sub>g</sub> recombination and the gamma-distribution C<sub>7+</sub> framework at the theoretical level. This paper turns them into per-pressure-node Split Factor Matrices and a fit/rediscretise procedure that runs at every timestep at every well-grid connection in a multi-field asset model. The bridge from theory to commercial-software implementation is the value-add.</p>
+<p><strong>The integrated-asset story.</strong> Without BOz, BO streams can only be aggregated as surface oil and surface gas volumes - not as component molar rates - which breaks downstream process simulation and crude-assay prediction. The Belanak asset (4 EOS models, 12 PVT regions, gas-injection scenarios) is the kind of complexity that motivates the framework. Curtis's interest in integrated-asset modelling, which becomes Petrostreamz / Pipe-It (founded 2006, later sold to Tieto in 2018), traces back to this Belanak deployment and parallel work.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Brule 2000 Monograph - F<sub>g</sub> recombination and modified-black-oil framework</li>
+<li>Whitson 1983 SPE-12233 - gamma distribution for C<sub>7+</sub></li>
+<li>Hoda (2001) extended BO-PVT file format carrying saturated compositions and molar densities at each pressure</li>
+<li>Fevang-Singh-Whitson 2000 SPE-63087 - BO-vs-EOS guidelines validating where BOz is safe</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The PSM / Streamz / Pipe-It software lineage at PERA / Whitson AS, which became Petrostreamz in 2006</li>
+<li>Kuntadi-Whitson-Hoda 2012 SPE-159400 dynamic z2z delumping with EOS-derived phase-specific split factors</li>
+<li>Hoda-Whitson 2013 SPE-164334 well-test rate-to-wellstream conversion - the measurement-side analogue of the simulator-output-side BOz</li>
+<li>Operator integrated-asset workflows for multi-field developments with mixed BO and compositional reservoir simulators</li>
+<li>Crude-assay forecasting that requires component-level consistency across reservoirs, surface facilities, and pipeline distribution</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>H. Suryanto and J. D. Ekstrand</strong> — ConocoPhillips Indonesia. Operator-side engineering on the Belanak development.</p><p><strong>K. Uleberg and F. Hoda</strong> — PERA a/s colleagues. Hoda would continue working with Curtis through the 2009-2013 NTNU PhD programme on integrated asset modelling and would co-author Hoda-Whitson 2013 SPE-164334.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

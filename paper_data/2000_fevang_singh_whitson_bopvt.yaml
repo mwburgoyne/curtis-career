@@ -1,0 +1,73 @@
+id: 2000_fevang_singh_whitson_bopvt
+title: Guidelines for Choosing Compositional and Black-Oil Models for Volatile Oil and Gas-Condensate Reservoirs
+page_title: Fevang, Singh & Whitson (2000) - Guidelines for Choosing Compositional and Black-Oil Models
+authors:
+- Øivind Fevang
+- Kameshwar Singh
+- Curtis H. Whitson
+authors_affiliation: null
+venue: SPE Annual Technical Conference and Exhibition, Dallas, 1–4 October 2000
+paper_number: SPE-63087
+doi: 10.2118/63087-MS
+funding: null
+citations: 73
+citations_source: OpenAlex
+tags:
+- BO vs EOS
+- Pseudoisation
+- Modified Black-Oil
+- Gas Injection
+- Compositional Grading
+- Simulator Selection
+- Phase 3
+whitson_index: 2
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>By 2000 the modified-black-oil framework had been in production simulation for two decades. The question every reservoir-engineering team lead faced was when to use it. EOS-based compositional simulation cost 5-10x more CPU per timestep and required PVT modelling expertise that not every operator had. Black-oil was cheap and standard, but its applicability scope was a folk-knowledge mix of partly-justified rules of thumb. There was no benchmark study covering compositionally graded near-critical fluids across depletion and gas injection, with both BO and EOS run side by side on the same fluid system.</p><p>SPE-63087 supplied that benchmark. Curtis, with Øivind Fevang (now in his post-PhD whitson role) and Kameshwar Singh, built a generic North Sea reservoir spanning medium-rich gas condensate at the top through an undersaturated critical mixture at the GOC to volatile oil below. They ran the 22-component full EOS, a stepwise-pseudoised 6-component EOS, and a black-oil model through depletion and three different gas-injection scenarios, and wrote down what worked and what did not.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Stepwise pseudoisation from 22 to 6 components.</strong> Reducing a full EOS to a simulator-ready 6-component model should be done in small steps with automated regression at each step, against full-EOS-generated data from CCE, CVD, DLE, separator, and multicontact-swelling experiments on 8 feed compositions spanning the compositional gradient. Group in stages (22 -&gt; 19 -&gt; 12 -&gt; 10 -&gt; 9 -&gt; 7 -&gt; 6) rather than one shot. Regression parameters at each step are the EOS constants <code>Ω<sub>a</sub></code>, <code>Ω<sub>b</sub></code> of the newly formed pseudo-components plus BIPs between C1 and the C7+ pseudo-fractions. Critical volumes <code>V<sub>c</sub></code> of the new pseudos are regressed separately against DLE and MCV viscosity data for the LBC fit. Models from 19 down to 6 components match the 22-component EOS almost exactly; only 4 and 3 components degrade accuracy materially.</li>
+    <li><strong>Method C for graded-reservoir initialisation.</strong> When the simulator uses a pseudoised EOS in a reservoir with compositional grading, compute the gradient with the full 22-component EOS and pseudoise it after the gradient is solved. Do not run the reduced EOS through the gradient calculation directly. The benchmark gives IOIP errors of -0.94% (Method A, reduced-EOS gradient), -1.98% (Method B, adjusted reference pressure), -0.88% (Method C, full-EOS gradient then pseudoised). Method C also gets the GOC depth and the reservoir pressure at reference depth correct. The principle: compute the hard problem once with full resolution, use the answer in the cheap simulator.</li>
+    <li><strong>Black-oil initialisation by <code>R<sub>s</sub></code> and <code>r<sub>s</sub></code> versus depth.</strong> For a BO model of a graded reservoir, initialise with solution GOR and solution OGR profiles versus depth rather than saturation pressure versus depth. IOIP and IGIP errors stay within 1% of the full-EOS answer. Field-level cumulative oil deviates by less than 1 recovery-% over 10 years and typically less than 0.25%. Structurally-high wells start to show producing-GOR deviation after 5 years, up to 5-10% too low by year 10 - the mechanism is saturation-pressure mismatch at the top of the structure, where the BO tables evaluated at the wrong local <code>p<sub>b</sub></code> under-predict liberation. Downdip wells show no material deviation.</li>
+    <li><strong>Three methods for extending BO PVT tables across gas-injection pressure range.</strong> Gas injection drives effective saturation pressure well above the original <code>p<sub>b</sub></code>. Method A keeps the original-oil BO table to <code>p<sub>b</sub></code> and appends incremental swollen-oil properties - introduces a splice discontinuity. Method B uses the depletion of the fully-swollen oil from its swollen saturation pressure down to the original <code>p<sub>b</sub></code> - this is consistently best in the benchmark. Method C is a single swollen-saturation data point with linear interpolation - simplest but least accurate. Method B keeps the BO saturation-pressure path physically consistent with what happens in the reservoir when injected gas contacts original oil. Method C fails in 5-10% of cases.</li>
+    <li><strong>Single-point swelling-test splicing procedure.</strong> Single-step swelling in the swelling direction (add injection gas in steps until <code>p<sub>sw</sub></code> exceeds maximum anticipated injection pressure by 20-50 bar). Multi-step depletion of the fully-swollen oil from <code>p<sub>sw</sub></code> back through <code>p<sub>max,inj</sub></code> down to <code>p<sub>b</sub></code>, recording <code>B<sub>o</sub></code>, <code>R<sub>s</sub></code>, <code>ρ<sub>o</sub></code>, <code>μ<sub>o</sub></code>, <code>B<sub>gd</sub></code>, <code>r<sub>s</sub></code> at each step. Splice with the original-oil depletion data below <code>p<sub>b</sub></code>. Curtis's pedagogical line: "the oil doesn't know what polynomial you chose; it knows what gas contacted it, so do the swelling test."</li>
+    <li><strong>Applicability scope as two conclusions.</strong> Conclusion 1: black-oil is always adequate for depletion if <code>R<sub>s</sub></code> and <code>r<sub>s</sub></code> are initialised properly and the PVT data come from the right experiments on the right fluid. Conclusion 2: compositional is generally recommended for gas-injection studies. BO can only be used for oil reservoirs with minimal vaporisation, or medium-to-rich gas condensate cycling above the dewpoint. Outside these regimes BO systematically over-predicts oil recovery. The decision turns on the recovery mechanism the reservoir will experience, not on simulator preference.</li>
+    <li><strong>The <code>r<sub>s</sub></code>=0 P10 fallacy.</strong> Setting solution oil-gas ratio to zero as a "conservative" sensitivity is wrong when gravity segregation is strong. Suppressing vaporisation changes the gas density. The density contrast between reservoir oil and simulated gas is larger in the <code>r<sub>s</sub></code>=0 case than in the correct-vaporisation case, which drives stronger gas-oil gravity separation and more oil displacement downdip. The recovery loss from no vaporisation is more than offset by the displacement gain from exaggerated gravity stability. The paper's Fig. 37 demonstrates oil rate up to 50% higher in the <code>r<sub>s</sub></code>=0 case at 3-5 years - exactly the opposite of the intended P10. Either run compositional or treat <code>r<sub>s</sub></code>=0 and full-vaporisation cases as an envelope, not a bound.</li>
+    <li><strong>Near-critical BO data can be deleted to fix simulator convergence.</strong> BO PVT tables for fluids within 30-50 bar of the critical point exhibit highly non-linear behaviour and routinely cause Newton-Raphson convergence failures. The 2000 remedy: delete the near-critical 30-50 bar of data and let the simulator interpolate linearly. The reservoir traverses that pressure window quickly and production performance is unaffected. (Curtis returned to this with a more principled fix in 2007 SPE-109596 - add data rather than delete - once a tuned EOS could supply physically consistent near-critical points.)</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The selection guide.</strong> Twenty-five years on, SPE-63087 is still the cited reference when a reservoir-engineering team has to justify "use BO" or "use compositional" in a study scope. The two conclusions, the recovery-mechanism test, and the rs=0 fallacy are folk knowledge in the industry because of this paper. Most large operators carry an internal procedure that traces back to its Tables 8 and 9 benchmark numbers.</p>
+    <p><strong>The Singh BOPVT partnership begins.</strong> SPE-63087 is the first joint paper of Curtis and Kameshwar Singh, who would carry the BOPVT thread through SPE-109596 (2007) on consistent table modification, SPE-117930 (2008) on layered pseudopressure, SPE-120743 (2009), and as recently as SPE-225382 (2025). The 25-year Singh-Whitson partnership starts here. Øivind Fevang's role as first author reflects his lead on the three-region gas-condensate pseudopressure work that supplied much of the well-deliverability physics underpinning the paper's conclusions.</p>
+    <p><strong>Pseudoisation as workflow, not lumping.</strong> The stepwise regression-at-each-step procedure shifted industry practice away from one-shot grouping. Curtis's standing line - "pseudoisation is an extension of regression, not a replacement for it" - is from this paper's teaching framing. Every modern commercial PVT package's pseudoisation workflow follows the stepwise pattern, with the data set explicitly built from the compositions the reservoir will see during recovery.</p>
+    <p><strong>Set the stage for the 2000 Monograph.</strong> Published one year before the SPE Monograph appeared, SPE-63087 is the empirical backbone of the Monograph's Chapter 7 simulator-selection material. The benchmark numbers in the paper feed the textbook recommendations.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Coats (1985) — black-oil vs compositional gas-condensate cycling work; the practical baseline for medium-rich condensate cycling above the dewpoint</li>
+    <li><strong><mark>Whitson</mark>-Torp (1981, 1983)</strong> — the consistent-lumping grouping philosophy that the stepwise regression procedure formalises</li>
+    <li>Coats &amp; Smart (1986) — the 5-parameter regression framework embedded in each pseudoisation step</li>
+    <li><strong><mark>Whitson</mark> (1983) SPE-12233 C7+ characterisation</strong> — the heavy-end framework underpinning the 22-component starting EOS</li>
+    <li><strong>Fevang &amp; <mark>Whitson</mark> (1996) SPE-30714</strong> — the three-region gas-condensate well-deliverability framework that supplies the BO-vs-EOS deliverability comparison</li>
+    <li><strong><mark>Whitson</mark> &amp; Belery (1994) SPE-28000</strong> — the isothermal compositional-grading calculation feeding the 8-feed pseudoisation data set</li>
+    <li>Modified-black-oil framework (multiple Coats, Spivak, McCain antecedents) — the PVT framework that the gas-injection table-extension methods extend</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong><mark>Whitson</mark> &amp; Brule (2000) SPE Monograph "Phase Behavior", Chapter 7</strong> — the simulator-selection material that consolidates SPE-63087's conclusions into textbook form</li>
+    <li><strong>Singh, Fevang &amp; <mark>Whitson</mark> (2007) SPE-109596 "Consistent Black-Oil PVT Table Modification"</strong> — supersedes the 2000 near-critical-data deletion workaround with K-value extrapolation and EOS-based fill-in</li>
+    <li><strong>Singh &amp; <mark>Whitson</mark> (2008) SPE-117930</strong> — layered-reservoir verification of the gas-condensate pseudopressure method, with reservoir Fluid A from SPE-63087 as a test case</li>
+    <li>Industry standard procedures for reservoir-simulator selection in volatile-oil and gas-condensate field studies</li>
+    <li>The Singh-Whitson BOPVT collaboration line through to SPE-120743 (2009) and SPE-225382 (2025)</li>
+    <li>The pseudoisation workflow built into commercial PVT packages (PVTsim, Eclipse PVTi, CMG WinProp, whitson PVT)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Øivind Fevang</strong> — first author. Curtis's NTH PhD graduate (1995) who carried the gas-condensate deliverability framework from his thesis (SPE-30714) into the BO-vs-EOS benchmark work and the gas-condensate-bound water analysis with Sævareid through 2003. Long collaborator of the Whitson AS / NTNU thread.</p><p><strong>Kameshwar Singh</strong> — second author and the start of a 25-year partnership with Curtis on black-oil PVT tooling. Singh would lead the 2007 SPE-109596 consistent-table-modification paper, the 2008 SPE-117930 layered pseudopressure verification, SPE-120743 (2009), and the 2025 SPE-225382 work with Markus Hays Nielsen. The BOPVT thread runs through Singh from this paper forward.</p>

@@ -1,0 +1,69 @@
+id: 1989_boe_skjaeveland_whitson_two_phase_pressure_test
+title: Two-Phase Pressure Test Analysis
+page_title: Bøe, Skjæveland & Whitson (1989) - Two-Phase Pressure Test Analysis
+authors:
+- A. Bøe (Rogaland Research)
+- S. M. Skjæveland (Rogaland University)
+- Curtis H. Whitson
+authors_affiliation: Norwegian Institute of Technology
+venue: <em>SPE Formation Evaluation</em>, December 1989, pp. 604-610
+paper_number: SPE-10224 (original manuscript Nov 1982; first presented 1981 SPE ATCE, San Antonio)
+doi: null
+funding: null
+citations: null
+tags:
+- Two-Phase Pseudopressure
+- Well Testing
+- Boltzmann Transform
+- Solution-Gas Drive
+- Gas Condensate
+- dS/dp
+- Phase 2
+whitson_index: 2
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A theoretical paper with a long gestation. The manuscript was first presented at the 1981 SPE ATCE in San Antonio, formally submitted November 1982, and published in SPE Formation Evaluation in December 1989. Curtis is a co-author across his Rogaland-Research and NTH affiliations during the years he was building Whitson Oil Inc. on the side. The paper provides what most two-phase well-test methods of the time were missing: a closed-form relation between oil saturation and pressure along the radial profile during the infinite-acting period, so that the pseudopressure integration is no longer history-dependent.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>A unique dS/dp relation for two-phase radial flow in the infinite-acting period.</strong> Combining the oil and gas diffusivity equations in Boltzmann coordinates yields:
+        <p><code>dS/dp = [(αα' - ȧα)(N/y) + (αb' - aβ')] / [(ȧα - α̇a)(N/y) + (aβ' - αḃ)]</code></p>
+        where <code>a, α, b, β</code> are constructed from the standard FVF, viscosity, and relative-permeability functions, primes denote saturation derivatives, dots denote pressure derivatives, and <code>N/y</code> at the wellbore eliminates the absolute permeability so that pseudopressure can be computed from surface-rate data alone. The equation reduces to known limits at short times (y → ∞) and long times (y → 0).</li>
+    <li><strong>Producing GOR stabilises at a constant during infinite-acting drawdown.</strong> A direct consequence of the long-time limit. The producing GOR <code>R = a/α</code> reaches a fixed value within a few minutes of constant-rate drawdown start, then stays constant throughout the infinite-acting period. The stabilised level depends on rate and on the initial reservoir GOR. The result becomes an operational diagnostic for whether a drawdown test is actually in the infinite-acting regime - if the GOR is drifting, the test is either still in early transient or boundaries are being felt.</li>
+    <li><strong>The validity-regime honesty.</strong> The paper explicitly catalogues three regimes:
+        <ul>
+    <li>Infinite-acting drawdown: liquid analogy works; a semilog plot of the wellbore pseudopressure gives the correct permeability.</li>
+    <li>Infinite-acting buildup from a drawdown: the wellbore S-p relation is still correct but the Horner plot does not yield the right slope. Reason: pseudopressure should integrate along the radial profile, but wellbore data alone cannot reconstruct the in-place S(r) profile.</li>
+    <li>Pseudosteady-state (PSS): Boltzmann transform fails; the dS/dp relation is invalid; conventional semilog interpretation cannot be applied. Raghavan's 1976 GOR-based method or Agarwal pseudotime is needed instead.</li>
+    </ul>
+    </li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The two-phase-pseudopressure closure.</strong> Without a closed-form S(p) relation, the multiphase pseudopressure integral is history-dependent and cannot be evaluated from wellbore pressure data alone. The Bøe-Skjæveland-Whitson Eq. 17 supplies the closure under one assumption (Boltzmann transform validity). This is the theoretical bedrock that lets two-phase well-test interpretation use the same semilog machinery that engineers had been using for single-phase liquid tests since the 1950s.</p>
+    <p><strong>The producing-GOR-as-diagnostic insight.</strong> The constant-GOR result during infinite-acting flow becomes the foundation of the Fevang-Whitson 1996 three-region gas-condensate model. In that later paper the Region 1 framework relies on <em>knowing</em> the producing GOR from surface measurement; Bøe-Skjæveland-Whitson 1989 is the theoretical justification for why this quantity is well-defined and stable.</p>
+    <p><strong>The honest-limits move.</strong> The paper is unusual in carefully cataloguing what its own machinery cannot do. Two of the three regimes (buildup and PSS) are where it fails, with a clear explanation and pointers to alternative methods. The discipline of bounding one's own framework is a Whitson signature.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Raghavan (1976) - earlier two-phase well-test framework using producing GOR</li>
+    <li>Fetkovich (1973) - single-phase pseudopressure framework being extended to two-phase</li>
+    <li>Martin (1959) - early treatment of pseudopressure in two-phase flow</li>
+    <li>Whitson &amp; Torp (1981) SPE-10067 - CVD evaluation supplying the FVFs needed in the dS/dp coefficients for gas-condensate fluids</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Fevang &amp; Whitson (1996) SPE-30714 - the three-region gas-condensate well-deliverability model relies on the constant-producing-GOR result during near-well flow</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Chapter 9 well testing - the two-phase pseudopressure machinery here becomes the standard pedagogical treatment</li>
+    <li>Whitson-Sognesand (1986) SPE-15482 rigorous-superposition variable-rate analysis - alternative formulation that does not require the dS/dp closure</li>
+    <li>The pattern of explicit validity-regime cataloguing that runs through Curtis's later pseudopressure work</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>A. Bøe</strong> — Rogaland Research Institute, Stavanger.</p><p><strong>Svein M. Skjæveland</strong> — Rogaland University Centre (now University of Stavanger). Long-time petroleum engineer and capillary-pressure researcher; was Curtis's colleague during the Rogaland years.</p>

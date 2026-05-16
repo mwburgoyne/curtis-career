@@ -1,0 +1,74 @@
+id: 2018_ghasemi_etal_speree_co2_chalk
+title: Laboratory Tests and Modelling of CO2 Injection in Chalk With Fracture/Matrix-Transport Mechanisms
+page_title: |-
+  Ghasemi, Astutik, Alavian, Whitson, Sigalas, Olsen & Suicmez (2018 SPEREE) - CO2 Injection in Chalk with Fracture/Matrix-Transport Mechanisms
+authors:
+- Mohsen Ghasemi
+- Wahyu Astutik (Petrostreamz)
+- Seyyed Ali Alavian (PERA)
+- Curtis H. Whitson (PERA / NTNU)
+- L. Sigalas
+- D. Olsen (GEUS)
+- V. S. Suicmez
+authors_affiliation: Maersk Oil and Gas
+venue: SPE Reservoir Evaluation and Engineering, Vol. 21 No. 1, pp. 122-136, February 2018
+paper_number: SPE-180102-PA
+doi: 10.2118/180102-PA
+funding: JCR7 Joint Chalk Research Consortium
+citations: null
+tags:
+- CO2 Injection
+- Fracture/Matrix Cell
+- Density-Matched n-C10
+- Time-Varying Diffusion
+- Peclet Number
+- Viscous-Gravity Ratio
+- Capillary Pressure
+- SPEREE Journal
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Distinct study from the 2016 SPE-179550 paper. Where the 2016 paper used a static constant-volume diffusion cell with pressure-decline monitoring, this 2018 SPEREE study uses a <em>flow</em> cell with top injection and bottom production. PVT characterisation and EOS model are imported from the 2016 work; new contributions are the apparatus, the paired-experiment design, the time-varying diffusion-coefficient history-match workflow, and the Peclet-number plus viscous-gravity-ratio diagnostic framework. Sigerslev outcrop chalk (Maastrichtian, Tor Formation), 7.37 cm long by 3.76 cm diameter with a 0.6 cm centralised axial hole serving as the "fracture" (matrix porosity 47%, permeability 2.5 md; matrix/fracture pore-volume ratio ~18:1). North Sea reservoir conditions: 258.5 bara / 110 °C for STO experiment, 335.9 bara / 100 °C for n-C10.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Paired STO + n-C10 experimental design isolates the diffusion mechanism via density matching.</strong> The novel design choice. The STO experiment runs at 258.5 bara / 110 °C with STO density 0.834 g/cm<sup>3</sup> and gas density 0.562 g/cm<sup>3</sup> - a 49% density contrast that drives gravity-convection alongside diffusion. The n-C10 experiment runs at 335.9 bara / 100 °C deliberately chosen so n-C10 (0.698 g/cm<sup>3</sup>) and CO<sub>2</sub> (0.699 g/cm<sup>3</sup>) are density-matched within 0.15% - suppressing gravity-driven convection and forcing the oil-recovery mechanism to be diffusion-dominated. The pair separates the two transport mechanisms that the STO experiment alone could not resolve.</li>
+    <li><strong>Time-varying diffusion coefficient via three sequential models as workaround for the constant-D simulator limitation.</strong> The STO experiment runs 24.4 pore volumes over 440 hours, during which the average composition in the chalk evolves from 0% CO<sub>2</sub> to 85-90%. Diffusion coefficients are strongly compositional-dependent (per Ghasemi 2016) but ECLIPSE 300 uses a single constant D per component pair, so no single-D simulation matches the full experiment. Workaround: run three sequential models stitched together in Pipe-It - Model 1 for 0-80 hours using D from a 25% CO<sub>2</sub> mixture, Model 2 for 80-200 hours using D from 60%, Model 3 for 200-440 hours using D from 90%. The average composition sets the D value used for each interval. Engineers' compromise that gets the right answer despite the simulator limitation.</li>
+    <li><strong>Peclet number plus viscous-gravity ratio diagnostic framework.</strong> <code>N<sub>Pe</sub> = uL/K<sub>l</sub></code> with <code>K<sub>l</sub> = D + αu</code> per Perkins-Johnston 1963, evaluated per grid cell post-simulation, gives matrix <code>N<sub>Pe</sub> ≈ 0.001</code> (STO) and 0.002 (n-C10); fracture <code>N<sub>Pe</sub></code> = 0.08-1. <code>K<sub>l</sub>/D ≈ 1.005</code> for the matrix confirms diffusion dominates over physical dispersion. Viscous-gravity ratio <code>R<sub>v/g</sub> = uμ<sub>o</sub>/(kgΔρ) = 0.21</code> per Wylie-Mohanty 1999 shows gravity is 5x stronger than viscous force, explaining the 15% oil recovery observed in a control no-diffusion case (pure gravity drainage of fracture oil). The vertical-permeability sensitivity (<code>k<sub>v</sub></code> = 0 vs 2.6 md) gives near-identical recovery curves, confirming negligible vertical convection. The combined diagnostic distinguishes diffusion-dominated from gravity-dominated and convection-dominated mechanisms.</li>
+    <li><strong>Capillary pressure dominance differentiates STO (20% recovery swing) from n-C10 (negligible effect).</strong> In the STO experiment, capillary pressure controls a clean front-displacement pattern: CO<sub>2</sub> cannot enter the top of the matrix because <code>P<sub>cgo</sub></code> (Christoffersen 1992 data scaled to IFT 1.5 mN/m) exceeds the overburden head. Instead CO<sub>2</sub> enters from below via capillary suction, displacing oil from the top down. The <code>P<sub>c</sub></code> = 0 control case gives 82% oil recovery after 200 hours, 20 percentage points higher than the base case (62%), because CO<sub>2</sub> can then enter the top of the matrix immediately and vaporise light-to-medium components efficiently. In the n-C10 experiment, CO<sub>2</sub> and n-C10 are first-contact miscible at experimental conditions, so capillary forces have no effect (no distinct phases to separate) and <code>P<sub>c</sub></code> sensitivity is negligible.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The density-matched n-C10 trick.</strong> Curtis's teaching pattern: when a laboratory experiment confounds three mechanisms (diffusion, gravity-convection, capillary), engineer a complementary experiment where two of them are guaranteed inactive. The density-matched n-C10 pair gives diffusion alone, which back-solves the diffusion coefficient cleanly. The STO companion gives the full mechanism cocktail, whose recovery curves can then be decomposed using the back-solved D. The paired design is more informative than two independent experiments.</p>
+    <p><strong>Honest compromise on simulator limitations.</strong> ECLIPSE 300's constant-D limitation is not solved in this paper - it is worked around with three-model stitching. The authors are explicit about the limitation and explicit about the workaround. This is the right professional discipline: don't tune around the problem and hide it; report the workaround as the workaround and flag the underlying limitation for next-generation simulator development.</p>
+    <p><strong>The diagnostic framework travels.</strong> Peclet number plus viscous-gravity ratio plus capillary-pressure sensitivity together classify the dominant transport mechanism. This three-number framework is portable to other fractured-reservoir recovery analyses including waterflood, gas injection, and underground hydrogen storage. The methodology Whitson's group developed for chalk CO<sub>2</sub>-EOR ends up shaping later workflows in different fluid contexts.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Ghasemi et al. 2016 SPE-179550 CVD apparatus (the PVT and EOS-characterisation precursor)</li>
+    <li>Ghasemi et al. 2017 JPSE composite-core extension (the immediate methodological precursor)</li>
+    <li>Alavian-Whitson 2005, 2009, 2010 CO<sub>2</sub>-fractured-chalk series</li>
+    <li>Perkins-Johnston 1963 longitudinal dispersion (the <code>K<sub>l</sub> = D + αu</code> form)</li>
+    <li>Wylie-Mohanty 1999 viscous-gravity ratio diagnostic</li>
+    <li>Christoffersen-Whitson 1992 chalk capillary pressure</li>
+    <li>Ghasemi-Whitson 2013 SPE-165416 EOS characterisation</li>
+    <li>Alavian-Whitson-Martinsen 2014 SPE-170912 global EOS lumping</li>
+    <li>ECLIPSE 300 + Pipe-It history matching</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Ekofisk and Tor field CO<sub>2</sub>-EOR design workflows</li>
+    <li>Methodology adopted by carbon-capture-and-storage modelling for CO<sub>2</sub> storage in chalk and tight carbonates</li>
+    <li>The three-number diagnostic framework reused in subsequent fractured-reservoir transport studies</li>
+    <li>Whitson Academy course material on fractured-chalk CO<sub>2</sub>-EOR and laboratory experimental design</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p>Same multi-organisation team as the 2016 and 2017 papers: Mohsen Ghasemi and Wahyu Astutik (Petrostreamz), Seyyed Ali Alavian (PERA), L. Sigalas and D. Olsen (GEUS chalk-core specialists), and V. S. Suicmez (Maersk Oil and Gas). The three-paper sequence (2016, 2017, 2018) covers static-CVD apparatus, composite-core extension, and the fracture/matrix flow cell with density-matched n-C10.</p>

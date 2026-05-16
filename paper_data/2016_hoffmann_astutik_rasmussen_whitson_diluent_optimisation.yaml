@@ -1,0 +1,73 @@
+id: 2016_hoffmann_astutik_rasmussen_whitson_diluent_optimisation
+title: Diluent Injection Optimisation for a Heavy Oil Field
+page_title: Hoffmann, Astutik, Rasmussen & Whitson (2016) - Diluent Injection Optimisation for a Heavy Oil Field
+authors:
+- A. Hoffmann
+- Wahyu Astutik (Petrostreamz)
+- F. Rasmussen (Statoil)
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: SPE Heavy Oil Conference and Exhibition, Kuwait City, 6-8 December 2016
+paper_number: SPE-184119
+doi: null
+funding: null
+citations: null
+tags:
+- Heavy Oil
+- Diluent Injection
+- ESP
+- MILP
+- SOS2 Piecewise-Linear
+- Brinkman Emulsion
+- Inversion Point
+- RTPO
+- Pipe-It
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Hoffmann's NTNU MSc thesis (2014, "Application of Piecewise Linear Models to Short-Term Oil Production Optimization") under Curtis's supervision is the theoretical basis. The paper presents an integrated modelling solution for an offshore heavy-oil field with two reservoirs (L: 14 °API, 70 cp; H: 12 °API, 500 cp), 60 electric-submersible-pump (ESP) lifted wells, and diluent injection at either each well's ESP intake or surface pre-second-stage separator. Objective: maximise cumulative reservoir oil production while minimising diluent consumption and honouring field, process, and well constraints. The contribution extends the Whitson Pipe-It integrated-asset-management (IAM) heritage from processes with binary or discrete decision variables to problems dominated by <em>continuous</em> non-linearities. First Whitson MILP-optimisation paper to apply Special-Ordered-Set-of-type-2 (SOS2) piecewise linearisation rather than binary shut-in scheduling. Also doubles as a Real-Time Production Optimisation (RTPO) tool with use cases for new test data, compressor or pump failure, facility down, workover, and new-well startup.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>MILP formulation with SOS2 piecewise-linear relaxation of two coupled non-linearities.</strong> The two non-linearities: per-well performance curves <code>q<sub>o</sub><sup>res</sup> = f(DC, p<sub>wh</sub>)</code> where DC = diluent cut, and the ASTM D7152-11 volumetric viscosity mixing rule for the two crude-quality specifications (technical viscosity less than 10 cp at 105 °C; market viscosity less than 400 cSt at 40 °C). SOS2 relaxation: <code>ƒ˜(x) = ∑ λ<sub>i</sub> · f(x<sub>i</sub>)</code>, <code>x = ∑ λ<sub>i</sub> x<sub>i</sub></code>, <code>∑ λ<sub>i</sub> = 1</code>, with binary variables enforcing the adjacency-of-non-zeros condition. The resulting MILP is solvable by simplex + branch-and-bound in 0.1-5 seconds per time step with global-optimum guarantee. Table regeneration (PROSPER + Pipe-It rebuild of the 60-well performance tables) is the CPU bottleneck at 1-3 minutes per regeneration.</li>
+    <li><strong>Two-PVT-per-well model with DC-dependent upper leg.</strong> Classical inflow-performance-relation / vertical-lift-performance (IPR / VLP) <code>q<sub>o</sub><sup>res</sup> = f(p<sub>R</sub>, p<sub>wh</sub>, WC, GOR, PI)</code> extended to <code>q<sub>o</sub><sup>res</sup> = f(DC, p<sub>wh</sub>)</code> via Brinkman 1952 emulsion viscosity in oil-continuous flow and an experimentally-measured DC-shift of the emulsion inversion point. Commercial well-performance simulators do not accept multiple fluid models per well, so the wellbore is split at the ESP intake into a lower leg using reservoir-oil PVT and an upper leg using diluted-oil PVT. The pressure-drop calculation iterates between the two legs in Pipe-It using Brent 1970 root-finding to match the intake pressure.</li>
+    <li><strong>Optimal-allocation case-study finding: 9x less diluent for 1.6 points more recovery uplift.</strong> Optimal DC allocation across 60 wells produces 50.8 MMsm<sup>3</sup> cumulative reservoir oil (+6.3% vs base case) with only 0.53 MMsm<sup>3</sup> diluent demand, versus 50.0 MMsm<sup>3</sup> (+4.6%) and 4.57 MMsm<sup>3</sup> diluent for naive constant allocation (5% DC for wells in reservoir L, 10% DC for reservoir H). The optimiser concentrates injection 2054-2060 when platform liquid and oil-handling capacity is the dominant constraint, and stops injecting after 2060 because field water cut has moved past all wells' emulsion-inversion points (above which more diluent actually increases mixture viscosity). Naive constant allocation does the opposite - injects when not needed and underinvests when it matters.</li>
+    <li><strong>Diluent-type sensitivity decoupled from market price.</strong> Three diluent API grades (45, 49, 51 °API) give identical cumulative reservoir-oil recovery (50.80 / 50.84 / 50.80 MMsm<sup>3</sup>) but substantially different diluent demand (0.59 / 0.53 / 0.40 MMsm<sup>3</sup>) and flash loss (4-9 vol% burned as fuel gas, higher for lighter diluent). The recovery insensitivity to grade is a useful negative result: diluent selection must co-optimise market price, flash loss, and viscosity efficacy rather than minimising demand alone.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The right convexification for continuous-decision IAM.</strong> Curtis's teaching pattern: when a non-linear optimisation problem resists global solution, find the relaxation that makes it tractable. SOS2 piecewise linearisation converts a multi-well multi-period non-linear allocation problem (normally requiring heuristic methods with no optimality guarantee) to an MILP for which simplex plus branch-and-bound converge to the global optimum. Runtime 0.1-5 seconds per time step is RTPO-compatible. The previous Whitson IAM benchmarks (Juell-Whitson-Hoda 2009 gas cycling, Rahmawati-Whitson-Foss-Kuntadi 2010 multi-field) used Nelder-Mead-class heuristic optimisers because the decision variables were continuous; SOS2 is the upgrade that brings optimality guarantees.</p>
+    <p><strong>Inversion-point physics turns out to be load-bearing.</strong> The water-cut and DC dependence of the emulsion inversion point is the operational subtlety that the optimiser exploits. Naive intuition says "more diluent → lower viscosity → more oil". The truth is non-monotonic: above the inversion point, more diluent flips the emulsion phase and increases viscosity. The optimiser knows this; constant-allocation policies do not. The 9x diluent saving comes from respecting the inversion-point physics.</p>
+    <p><strong>RTPO as natural by-product.</strong> Because the MILP solves in seconds, the same model serves as a real-time decision-support tool. Well-test measurements update well-performance tables via Hoda-Whitson 2013 SPE-164334 well-test rate-to-compositional-wellstream conversion, enabling compositional-basis reservoir-oil / diluent blending in Pipe-It. Kuntadi-Whitson-Hoda 2012 SPE-159400 black-oil delumping supplies reservoir-oil composition from the black-oil reservoir simulator. The whole Pipe-It / Streamz stack assembles into a real-time optimisation system.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Hoffmann 2014 NTNU MSc thesis on piecewise-linear short-term production optimisation (the theoretical basis)</li>
+    <li>Juell-Whitson-Hoda 2009 SPE-121252 IAM gas-cycling benchmark</li>
+    <li>Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark</li>
+    <li>Ghasemi-Whitson 2014 IPTC-18033 thermal solvent-SAGD IAM</li>
+    <li>Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 (MILP precursor)</li>
+    <li>Knudsen-Whitson-Foss 2014 Energy (field-scale MILP precursor)</li>
+    <li>Brinkman 1952 emulsion viscosity for oil-continuous flow</li>
+    <li>ASTM D7152-11 volumetric viscosity mixing rule</li>
+    <li>Hoda-Whitson 2013 SPE-164334 well-test rate-to-compositional-wellstream conversion</li>
+    <li>Kuntadi-Whitson-Hoda 2012 SPE-159400 dynamic delumping</li>
+    <li>Pipe-It / Streamz (Petrostreamz) orchestration; PROSPER (Petroleum Experts) for well-performance tables</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator real-time production optimisation systems for heavy-oil fields with ESP lift and diluent injection</li>
+    <li>Subsequent Pipe-It / Streamz commercial deployments at multiple operators</li>
+    <li>The whitson Pipe-It IAM product line</li>
+    <li>Whitson Academy course material on heavy-oil production optimisation and real-time decision support</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>A. Hoffmann</strong> — Petrostreamz; NTNU MSc thesis under Curtis was the theoretical basis. First-author lead on the MILP formulation.</p><p><strong>Wahyu Astutik</strong> — Petrostreamz. Also co-author on Ghasemi-Astutik-Alavian-Whitson 2016 SPE-179550 CO<sub>2</sub>-diffusion-in-Ekofisk-chalk.</p><p><strong>F. Rasmussen</strong> — Statoil; operator perspective and field-data validation.</p>

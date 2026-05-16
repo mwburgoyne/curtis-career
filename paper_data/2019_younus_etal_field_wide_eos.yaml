@@ -1,0 +1,81 @@
+id: 2019_younus_etal_field_wide_eos
+title: Field-Wide Equation of State Model Development
+page_title: Younus, Whitson, Alavian, Carlsen, Martinsen & Singh (2019) - Field-Wide Equation of State Model Development
+authors:
+- Bilal Younus
+- Curtis H. Whitson
+- Ali Alavian
+- Mathias Lia Carlsen
+- Snjølfur Ørn Martinsen
+- Kameshwar Singh
+authors_affiliation: Whitson AS / NTNU
+venue: Unconventional Resources Technology Conference, Denver, 22-24 July 2019
+paper_number: URTeC-551
+doi: 10.15530/urtec-2019-1234
+funding: null
+citations: null
+tags:
+- Field-Wide EOS
+- Common EOS
+- Multi-Sample Tuning
+- Basin-Wide
+- Parent-Child EOS
+- Ramping Method
+- Gamma Field-Wide Model
+- Volume-Shift Update
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Whitson AS methodology paper distilling 35 years of field-wide and basin-wide EOS-tuning experience. Table 1 of the paper lists 85+ fields across 6 continents - Norway North Sea, Middle East giants, Australia, SE Asia, and unconventional basins (Montney, Eagle Ford, Bakken, Permian, SCOOP-STACK) - tuned to a single common EOS each. Explicitly cited by the companion Carlsen et al. 2019 SPE-196056 fluid-sampling paper as the field-wide EOS reference underpinning the reservoir-representative sample classification. The paper makes commercial Whitson-group methodology publicly available, with ten distinct atom-level contributions beyond what is in the SPE Monograph 2000 or earlier Whitson papers.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Field-wide (common) EOS concept and motivation.</strong> One EOS tuned simultaneously to 10s-100s of PVT samples with thousands of data points, providing consistent PVT across all in-situ and produced mixtures throughout the production system from discovery to abandonment. Scope: all in-situ reservoir fluids with spatial variation, changing reservoir and produced compositions during depletion and gas injection, and fluid mixing throughout the production system. Needed because (a) fluids vary spatially and temporally; (b) basin-wide coverage requires bridging from ~50-100 PVT reports to thousands of wells; (c) GOR ranges of 300-300,000 scf/STB (Eagle Ford, Montney) span dry gas to black oil with no simple PVT correlation applicable; (d) downstream consistency across reservoir simulation, flow assurance, surface processing, and BOPVT tables.</li>
+    <li><strong>Field-wide gamma model with common α, η, <code>M<sub>Li</sub></code> but sample-specific <code>M<sub>n+</sub></code>.</strong> The structural form that makes a multi-sample gamma fit both parsimonious and able to track real compositional variation. All samples share the same gamma shape <code>α</code>, the same lower bound <code>η</code>, and the same per-SCN lower-bound molecular weights <code>M<sub>Li</sub></code>; only <code>M<sub>n+</sub></code> varies per sample. The shared parameters lock in inter-sample consistency; the variable <code>M<sub>n+</sub></code> captures the legitimate sample-to-sample heaviness variation. Companion to the Alqahtani-Whitson 2018 shape-invariance principle.</li>
+    <li><strong>α greater than 5 gamma shape as biodegradation or OBM-contamination diagnostic.</strong> Operational heuristic for outlier identification. When fitting a sample's gamma distribution yields <code>α</code> above 5, the sample is likely biodegraded (heavy ends preferentially preserved) or contaminated with oil-based mud (synthetic heavy ends added). Flag for separate handling rather than including in the common fit.</li>
+    <li><strong>Back-calculation of <code>M<sub>7+</sub></code> and <code>γ<sub>7+</sub></code> from measured flashed-oil <code>M<sub>ō</sub></code> and <code>γ<sub>ō</sub></code>.</strong> Explicit procedure for recovering C7+ average properties from lab-reported stabilised-oil measurements rather than relying on lab-calculated values from assumed SCN properties. Eliminates a hidden assumption-dependency in lab-reported PVT values.</li>
+    <li><strong>Composition variables as primary EOS tuning levers.</strong> Recombination GOR (±5%), gamma <code>M<sub>n+</sub></code> (±5-10%), and C<sub>N+</sub> amount (±25%) treated as regression variables alongside EOS component properties. Novel practice - the SPE Monograph 2000 Chapter 4 regression workflow uses component-property variables only. Including composition uncertainties as regression variables captures the real measurement uncertainty in laboratory recombination and stabilisation rather than forcing all error into EOS parameters.</li>
+    <li><strong>Ramping method for monotonic C7+ EOS parameter modification.</strong> A single slope variable changes <code>T<sub>c</sub></code>, <code>p<sub>c</sub></code>, and ω progressively from C7 (smallest change) to <code>C<sub>N-1</sub></code> (largest change), keeping C7+ property modifications physically consistent. Prevents the unphysical "step jumps" that arbitrary per-SCN tuning can introduce.</li>
+    <li><strong>K-value monotonicity vs EOS-calculated normal-boiling-point as consistency validation.</strong> Any EOS that produces K-value crossings in the 1 atm to saturation-pressure range indicates inconsistent BIP modifications between neighbouring components. Simple diagnostic that catches a common tuning error.</li>
+    <li><strong>Field-specific lower-bound <code>T<sub>b,Li</sub>(M<sub>Li</sub>)</code> correlation.</strong> A novel field-wide normal-boiling-point construction that correlates gamma-model lower-bound SCN molecular weights against the n-paraffin normal boiling point of the (i-1) alkane. Justified because SCN fraction <code>C<sub>i</sub></code> contains compounds that boil in the range <code>T<sub>b</sub>(n-C<sub>i-1</sub>) &lt; T<sub>b,i</sub> ≤ T<sub>b</sub>(n-C<sub>i</sub>)</code>.</li>
+    <li><strong>Dynamic volume-shift update during C7+ property regression.</strong> When <code>T<sub>c</sub></code>, <code>p<sub>c</sub></code>, and ω of C7+ fractions are modified, the volume shift <code>s<sub>i</sub></code> must be updated simultaneously to preserve <code>γ<sub>i</sub>(M<sub>i</sub>)</code> because constant <code>s<sub>i</sub></code> allows unphysical C7+ density drift. A subtle but load-bearing internal-consistency rule.</li>
+    <li><strong>Parent-child EOS workflow.</strong> The tuned detailed field-wide EOS is the parent; application-specific lumped EOS or BOPVT tables are derived children that inherit the parent's consistency. This architecture prevents the "divergent local fits" problem where each application area builds its own EOS and the results stop being mutually consistent.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Thirty-five years of practice into open methodology.</strong> Curtis's teaching pattern: when commercial methodology is mature and broadly applicable, publishing it benefits the field more than retaining it as a competitive moat. The 85+ fields tuned over 35 years is the empirical anchor; the ten methodology contributions are the transferable knowledge. The paper is the post-2017 Whitson AS team's statement of EOS-tuning practice to the industry.</p>
+    <p><strong>The parent-child architecture matters most.</strong> Once a basin or field has a parent EOS, every downstream application (reservoir simulation, BOPVT tables, flow assurance, surface processing, allocation) inherits the parent's consistency. This eliminates the cross-discipline mismatch problem that operators routinely encounter when separate teams build separate EOSs for separate applications. The architecture itself is the contribution.</p>
+    <p><strong>Composition as a tuning variable corrects an SPE Monograph blind spot.</strong> The Monograph's regression framework treats composition as measurement input and tunes EOS component properties to match it. In practice, recombination GOR has 5% uncertainty, gamma <code>M<sub>n+</sub></code> has 5-10% uncertainty, and C<sub>N+</sub> amount has 25% uncertainty. Forcing all of that into EOS-parameter regression distorts the EOS. Including composition uncertainties as regression variables is the right correction - the EOS finds the best fit consistent with the actual data uncertainty, not with the falsely-precise input.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson 1983 SPE-12233 gamma-distribution C7+ characterisation</li>
+    <li>Whitson SPE Monograph 2000 EOS-tuning chapters</li>
+    <li>Alqahtani-Whitson 2018 SPE-190797 gamma-shape invariance principle</li>
+    <li>Schulte 1980 compositional grading (fallback rationale for multi-EOS / paraffinic-aromatic split)</li>
+    <li>Alavian-Whitson-Martinsen 2014 SPE-170912 global EOS lumping (child-EOS generation)</li>
+    <li>Twu 1984 critical-property correlations</li>
+    <li>Peneloux 1982 volume shift</li>
+    <li>Peng-Robinson 1979 and SRK 1972 cubic EOS</li>
+    <li>35 years of Whitson-group field/basin EOS-tuning practice across 85+ fields</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson AS commercial EOS-development service across unconventional and conventional basins</li>
+    <li>Carlsen et al. 2019 SPE-196056 fluid-sampling paper (cites this paper as the field-wide EOS underpinning)</li>
+    <li>Singh-Whitson-Nielsen 2025 SPE-225382 BOPVT vs lab-PVT comparison (child-EOS / BOPVT-table consistency)</li>
+    <li>Nielsen-Younus 2025 SPE-225470 Volve field end-to-end fluid model (parent-child workflow continuity)</li>
+    <li>Operator EOS-development workflows for Permian, Eagle Ford, Bakken, Montney, and Middle East gas-condensate fields</li>
+    <li>Whitson Academy course material on EOS development and basin-wide PVT</li>
+    <li>Industry recognition contributing to Curtis's 2023 AIME Honorary Membership for "foremost technical achievement in petroleum fluid characterisation"</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p>Whitson AS senior-engineer team: Bilal Younus (first author), Ali Alavian, Mathias Lia Carlsen, Snjølfur Ørn Martinsen, Kameshwar Singh. All long-standing Whitson-group collaborators continuing the post-2017 Whitson AS commercial methodology into the open literature.</p>

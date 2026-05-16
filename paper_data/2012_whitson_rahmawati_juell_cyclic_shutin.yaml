@@ -1,0 +1,68 @@
+id: 2012_whitson_rahmawati_juell_cyclic_shutin
+title: Cyclic Shut-In Eliminates Liquid-Loading in Gas Wells
+page_title: Whitson, Rahmawati & Juell (2012) - Cyclic Shut-In Eliminates Liquid-Loading in Gas Wells
+authors:
+- Curtis H. Whitson
+- Silvya Dewi Rahmawati
+- Aleksander Oma Juell
+authors_affiliation: NTNU
+venue: SPE/EAGE European Unconventional Resources Conference, Vienna, 20-22 March 2012
+paper_number: SPE-153073
+doi: null
+funding: null
+citations: null
+tags:
+- Cyclic Shut-In Control
+- Liquid Loading
+- Shale Gas
+- Multi-Fractured Horizontal
+- Turner Rate
+- Recovery Efficiency
+- No Downhole Equipment
+- Phase 4
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>The seminal Whitson-first-author paper on cyclic shut-in control (CSC) as a production strategy for low-permeability stimulated gas wells. The proposal is radical in its simplicity: whenever a well's rate falls to the Turner-like liquid-loading rate, a rate-controlled wellhead device automatically shuts the well in for a short period (~1 hour), then re-opens it. The cycle continues indefinitely until economic-rate cutoff. No downhole equipment, no artificial lift, no chemicals. Curtis's framing of the result emphasises its counter-intuitive nature: many shut-in periods would seem, intuitively, to represent "lost production", but the simulation demonstrates that short cyclic shut-ins preserve essentially the full ultimate recovery of a hypothetical continuously-unloaded ideal well. The paper is the conceptual foundation underneath the Knudsen-Foss-Whitson-Conn 2012 mixed-integer-linear-program (MILP) scheduling formulation and the Rahmawati-Whitson-Foss 2009 single-well constant-shut-in precursor.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Cyclic shut-in control (CSC) as a liquid-loading-eliminating production strategy.</strong> The rule is binary: as soon as a well's surface rate falls to the liquid-loading rate <code>q<sub>LL</sub></code> (per Turner et al. 1969, Coleman et al. 1991, Nosseir et al. 2000, Guo et al. 2006), a rate-controlled wellhead device shuts the well in for ~1 hour. During the shut-in, gas continues to flow into the wellbore and near-well region with some pressure buildup. When the well is re-opened, an enhanced transient gas rate follows, and the subsequent production period (during which rate is above <code>q<sub>LL</sub></code>) is shorter than the previous period. The cycle repeats until economic-rate cutoff. Hardware requirement: only a rate-controlled wellhead shut-in device.</li>
+    <li><strong>Short cyclic shut-ins (~1 hr) preserve approximately 100% of the recovery of the continuously-unloaded ideal.</strong> Recovery efficiency <code>E<sub>RF</sub> = (RF - RF<sub>LL</sub>) / (RF<sub>CU</sub> - RF<sub>LL</sub>)</code> is the fraction of the gap between the loaded-no-intervention baseline and the continuously-unloaded ideal that the strategy recovers. Vertical stimulated well: 1-hr shut-ins give <code>E<sub>RF</sub> ≈ 100%</code>; 1-day shut-ins give ~95%; 10-day shut-ins give ~85%. Horizontal multi-fractured (HMF) well (~10<sup>-5</sup> to 10<sup>-3</sup> millidarcy matrix permeability, 10 fractures, 1,524 m lateral): 1-hr and 1-day shut-ins give ~100%; even 30-day shut-ins remain above 95%. Physical mechanism: the wells are still producing while shut-in at the surface - gas continues to flow into the near-well region and charge the wellbore. When re-opened, the stored near-well gas is produced at an accelerated instantaneous rate. Most of the reservoir doesn't recognise the surface shut-in.</li>
+    <li><strong>Permeability-bounded window where CSC recovery uplift is material.</strong> Vertical stimulated well: material uplift in <code>k = 0.01</code> to <code>1</code> millidarcy. Below ~0.004 millidarcy, almost no gas is recoverable in 50 years even by the ideal case (CSC cannot help what the economic horizon won't reach). Above 1 millidarcy, the well depletes rapidly to ~90%+ before <code>q<sub>LL</sub></code> is reached (mitigation unnecessary). HMF well: material uplift in <code>k = 5 × 10<sup>-5</sup></code> to <code>5 × 10<sup>-3</sup></code> millidarcy with the same below-and-above mechanism. Peak uplift near <code>k ≈ 0.03</code> millidarcy (vertical) and <code>k ≈ 3 × 10<sup>-4</sup></code> millidarcy (HMF). The permeability window serves as an operator-level screening criterion for whether to deploy the wellhead CSC device.</li>
+    <li><strong>CSC works in layered no-crossflow systems with significant differential depletion.</strong> A two-layer demonstration (<code>k<sub>1</sub> = 0.785</code> millidarcy / <code>h<sub>1</sub> = 2</code> ft; <code>k<sub>2</sub> = 0.0523</code> millidarcy / <code>h<sub>2</sub> = 13</code> ft) shows that liquid loading onsets at 424 days with layer pressures 1,783 vs 2,216 psia (433 psia differential). Under CSC the two-layer cumulative-oil curve matches the continuously-unloaded ideal and does not degrade to the loaded baseline. Layer-specific pressures remain distinct - CSC preserves natural differential depletion rather than artificially homogenising it. Why: during the 1-hr surface shut-in, crossflow between layers through the wellbore is limited because the shut-in timescale is short and each layer's near-well region continues to charge independently from its own reservoir volume.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The counter-intuitive teaching frame.</strong> Curtis presents the result explicitly as counter to engineering instinct, then demonstrates via simulation that the instinct is wrong. The paper's most-quoted passage:</p>
+    <blockquote>The fact that cyclic shut-in control of a low-permeability stimulated well does not lose recovery or even delay the rate of recovery is a very important - albeit non-intuitive - observation. It suggests that such wells can be shut-in for a variety of reasons without any "downside".</blockquote>
+    <p>And the framing of CSC as a necessary replacement, not an incremental improvement:</p>
+    <blockquote>We believe that cyclic shut-in control will become an industry standard practice for shale gas wells, and should lead to a significant ultimate increase in worldwide gas reserves.</blockquote>
+    <p><strong>The basis for downstream optimisation.</strong> The Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 paper takes the CSC concept and extends it to multi-well pad scheduling with target-rate tracking via MILP. Without the recovery-efficiency result in this paper, the MILP optimisation would be just another lost-production strategy. The 2012 SPE-153073 paper is the physics demonstration; the ADCHEM12 paper is the operational scheduling overlay.</p>
+    <p><strong>The plunger-lift connection.</strong> The paper notes that plunger-lift is already a form of cyclic shut-in, but operators typically trigger it on buildup pressure or elapsed time rather than on liquid-loading rate. Switching the trigger to <code>q<sub>LL</sub></code> aligns plunger-lift installations with the CSC framework - making plunger-lift-installed wells effectively run CSC. For wells with free-liquid accumulation, the Turner-like rate underestimates loading; redefine <code>q<sub>LL</sub></code> via Gray-correlation pressure-drop excess over single-phase gas.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Turner et al. 1969, Coleman et al. 1991, Nosseir et al. 2000, Guo et al. 2006 - Turner-like minimum-rate-to-lift correlations</li>
+    <li>van Gool-Currie 2007 - meta-stable liquid-loaded rate concept</li>
+    <li>Rahmawati-Whitson-Foss 2009 - constant cyclic-shut-in precursor</li>
+    <li>Whitson-Sunjerga 2012 SPE-155499 - the LRS PVT framework on which the HMF-well example rests</li>
+    <li>Gray correlation - multiphase tubing pressure drop for the free-liquid redefinition of <code>q<sub>LL</sub></code></li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 MILP scheduling formulation (the operational extension)</li>
+    <li>Operator-side wellhead CSC device deployment in Marcellus, Haynesville, Eagle Ford, and other low-permeability shale-gas plays</li>
+    <li>Plunger-lift trigger-redesign recommendations</li>
+    <li>The Carlsen-Whitson numerical rate-transient analysis (NRTA) series, which uses cyclic shut-ins as part of the diagnostic framework</li>
+    <li>Whitson Academy course material on shale-gas operations</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Silvya Dewi Rahmawati</strong> — NTNU PhD student under Curtis and Bjarne Foss. Co-author on the 2009 constant-shut-in precursor and the 2010 SPE-130768 multi-field IAM benchmark.</p><p><strong>Aleksander Oma Juell</strong> — NTNU PhD student under Curtis. Co-author on the 2009 SPE-121252 IAM benchmark and the 2011 SPE-146066 layered backpressure equation. Three-paper sequence with Curtis on layered and cyclic-shut-in gas-well operations.</p>

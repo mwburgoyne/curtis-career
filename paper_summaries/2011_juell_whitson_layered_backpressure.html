@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juell & Whitson (2011) - Backpressure Equation for Layered Gas Reservoirs</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Backpressure Equation for Layered Gas Reservoirs</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Aleksander Oma Juell, <mark>Curtis H. Whitson</mark> (NTNU)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Denver, 30 October - 2 November 2011</p>
+  <p><strong>Paper number:</strong> SPE-146066</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Backpressure Equation</span> <span class="tag">Layered Gas Reservoir</span> <span class="tag">Fetkovich Form</span> <span class="tag">PI-Weighted Pressure</span> <span class="tag">No-Crossflow</span> <span class="tag">Hugoton Field</span> <span class="tag">Well-Performance Monitoring</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Aleksander Juell's NTNU M.Sc. thesis work with Curtis supervision. The paper derives a multi-layer backpressure equation (BPE) for wells producing from layered gas reservoirs with or without inter-layer communication. The deliverability problem in layered systems had typically been treated as requiring transient-superposition or convolution-integral machinery. Juell and Whitson show that the steady-state deliverability problem reduces exactly to the single-layer Fetkovich (1975) form, provided the layer constants and shut-in pressures are averaged correctly. Validated against numerical simulation and against 1967-2009 annual shut-in pressure and production data from the publicly-available Buf #3 well (API #3513900778) in the Oklahoma Guymon-Hugoton field - a three-layer no-crossflow system (Herrington, Krider, Winfield reservoirs from Fetkovich-Ebbs-Voelker 1994).</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Layered gas-reservoir BPE preserves the single-layer Fetkovich form with productivity-index-weighted pressure average.</strong> For <em>N</em> no-crossflow layers each obeying the Fetkovich single-layer BPE <code>q<sub>gl</sub> = C<sub>Rl</sub>(p<sub>cl</sub><sup>2</sup> - p<sub>w</sub><sup>2</sup>)</code>:
+    <p>Total productivity index: <code>C<sub>R</sub> = ∑<sub>l</sub> C<sub>Rl</sub></code></p>
+<p>PI-weighted average shut-in pressure squared: <code>p̅<sub>c</sub><sup>2</sup> = ∑<sub>l</sub> (C<sub>Rl</sub> p<sub>cl</sub><sup>2</sup>) / C<sub>R</sub></code></p>
+<p>Total rate: <code>q<sub>g</sub> = C<sub>R</sub> (p̅<sub>c</sub><sup>2</sup> - p<sub>w</sub><sup>2</sup>)</code></p>
+    The same form as the single-layer BPE. The PI-weighted average is the pressure recorded at the wellhead during shut-in because the layered total is zero at <code>p<sub>w</sub> = p̅<sub>c</sub></code>. Backflow through the wellbore during shut-in between layers at different pressures is embedded in the derivation. Coupled with per-layer material balance, the framework also forecasts depletion. Validated against numerical simulation (matches within plotting symbol thickness across 20 years with multiple shut-in cycles) and against the Buf #3 field case (reproduces 1967-2009 annual tubinghead shut-in pressures; reproduces an independent 1989 layer-pressure test without refitting; fitted drainage radii 832/1119/1041 m for the three Hugoton layers).</li>
+<li><strong>Long-term BPE monitoring with consistent shut-in durations detects tubing and reservoir performance deterioration.</strong> A log-log plot of <code>(p̅<sub>c</sub><sup>2</sup> - p<sub>t</sub><sup>2</sup>)</code> vs <code>q<sub>g</sub></code> at the wellhead establishes a well-specific deliverability curve. Each annual test that falls below the line indicates performance deterioration (tubing plugging, near-well skin increase, water coning); points above the line indicate improvement. A +20 skin insult introduced in a numerical model after 10 years produces a clear shift below the established backpressure line. Operational requirements: consistent shut-in durations across tests (mixing durations creates spurious scatter); post-shut-in flow period of equal duration as the shut-in; record <code>p̅<sub>c</sub></code> at the end of the shut-in; record <code>q<sub>g</sub></code> and <code>p<sub>t</sub></code> after the shut-in. The method is robust to partial or full layer communication (transmissibility 0 to 1 all on the same line) and to test-condition departures from normal operation - features the monitoring relies on because layer communication is rarely known a priori.</li>
+<li><strong>Validity scope: permeability above ~0.01 millidarcy, pressure-squared regime, no significant rate-dependent skin.</strong> Four explicit limits identified by sensitivity studies. Below ~0.01 millidarcy, transient effects dominate the deliverability response on annual-test timescales and the pseudo-steady-state assumption breaks. At high reservoir pressure (above ~300 bara dry gas) the pressure-squared form fails and pseudopressure must replace it. Wells with significant non-Darcy flow need a layered Forchheimer treatment that the authors could not successfully derive (acknowledged as an open problem). The pseudo-steady-state-on-shut-in-timescale assumption typically holds for <code>k &gt; 0.01</code> mD with 640-acre spacing.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The multi-layer problem collapses to the single-layer form.</strong> Curtis's teaching pattern: the layered-well problem is often taught as requiring new machinery (transient superposition, convolution integrals); the Juell-Whitson result is that the steady-state deliverability problem reduces exactly to the single-layer form you already know, provided you compute the PI-weighted pressure as the "well-felt" shut-in pressure (not an arithmetic or pore-volume-weighted average). The familiar Fetkovich log-log plot remains the right tool, nothing lost.</p>
+<p><strong>The honest-limits move.</strong> The paper is unusual in explicitly cataloguing where its machinery fails: permeability floor, pressure-squared breakdown, non-Darcy open problem, pseudo-steady-state assumption. Many deliverability papers cheer-lead their methodology without quantifying failure modes. This pattern of explicit validity-regime cataloguing runs through Curtis's bibliography from Bøe-Skjæveland-Whitson 1989 onwards.</p>
+<p><strong>The Hugoton field validation.</strong> A 63-year (1946-2009) production record reproduced with three layer permeabilities and three drainage radii fitted to annual shut-in pressure history. The 1989 independent layer-pressure test is matched without refitting - the strongest test of the framework's predictive ability.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Fetkovich 1975 - the single-layer backpressure equation</li>
+<li>Fetkovich-Ebbs-Voelker 1994 - the Buf #3 Guymon-Hugoton field dataset</li>
+<li>Muskat 1949 - permeability-thickness layer weighting</li>
+<li>Bøe-Skjæveland-Whitson 1989 SPE-10224 two-phase pressure test analysis (the explicit-validity-regime pattern)</li>
+<li>Singh-Whitson 2008 SPE-117930 - layered pseudopressure for gas condensate (the two-phase counterpart)</li>
+<li>Golan-Whitson 2003 <em>Well Performance</em> textbook (cited as the layered-system reference once the paper appeared)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator routine annual deliverability-test monitoring protocols for layered Hugoton/Permian-type gas wells</li>
+<li>Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control - same layered no-crossflow regime, complementary monitoring</li>
+<li>Knudsen-Foss-Whitson-Conn 2012 ADCHEM12 mixed-integer-linear-program (MILP) scheduled shut-ins - same layered framework with binary-decision optimisation overlay</li>
+<li>Golan-Whitson <em>Well Performance</em> second edition (and later teaching material) - the canonical layered-system backpressure reference</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Aleksander Oma Juell</strong> — NTNU M.Sc. then PhD under Curtis. Co-author with Whitson on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, this paper, and Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control. Three-paper sequence on layered-gas-well monitoring and optimisation.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

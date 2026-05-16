@@ -1,0 +1,70 @@
+id: 1998_hoier_whitson_compositional_pvt
+title: Miscibility Variation in Compositionally Grading Reservoirs
+page_title: Høier & Whitson (1998) - Miscibility Variation in Compositionally Grading Reservoirs
+authors:
+- Lars Høier
+- Curtis H. Whitson
+authors_affiliation: null
+venue: SPE Annual Technical Conference and Exhibition, New Orleans, 27–30 September 1998
+paper_number: SPE-49269
+doi: 10.2118/49269-MS
+funding: null
+citations: 28
+citations_source: OpenAlex
+tags:
+- MMP-Depth
+- Compositional Grading
+- Zick Multicell
+- C/V Mechanism
+- Gas Cycling
+- Slug Injection
+- Phase 3
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>By the late 1990s the compositional-grading framework (Whitson-Belery 1994 SPE-28000) and the Zick 1986 condensing/vaporising miscibility mechanism were both well established, but no one had joined them. Operators planning gas-injection projects on near-critical reservoirs faced two open questions. First, how does minimum miscibility pressure vary with depth when the in-situ composition is itself depth-dependent. Second, can gas cycling below the dewpoint in a depleted gas condensate ever be miscible. Industry convention said no - cycling below the dewpoint had to be immiscible because the vaporising drive needs reservoir pressure at or above the dewpoint.</p><p>Lars Høier was Curtis's NTNU PhD candidate working through the compositional-grading consequences across fluid zones. The 1998 paper is the first systematic walk-through of MMP-versus-depth for the three canonical structural archetypes (saturated slightly volatile oil, near-critical oil grading into very rich gas condensate, undersaturated volatile oil grading into rich gas condensate) and the first practical demonstration that enriched-gas slug injection can develop C/V miscibility far below the dewpoint of a depleted gas condensate.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>MMP-depth archetypes.</strong> For an oil zone, MMP always increases monotonically with depth (C7+ content rises downward). Vaporising-gas-drive MMP is always at or above the bubblepoint; condensing/vaporising MMP can be either side of <code>p<sub>b</sub></code> depending on injection-gas enrichment. For a gas condensate zone, lean-gas VGD MMP exactly tracks the dewpoint gradient, but enriched-gas C/V MMP can drop significantly below the dewpoint. At a gas-oil contact with a saturated transition, MMP is discontinuous; at a near-critical transition MMP traverses the GOC smoothly. The classification reduces what looked like case-by-case intuition to a small set of archetypes.</li>
+    <li><strong>Zick multicell algorithm with miscibility-distance criterion.</strong> Høier and <mark>Whitson</mark> validate Aaron Zick's multicell algorithm (1993 personal communication) for developed-miscibility MMP calculation. The algorithm tracks a physical distance-to-criticality parameter (e.g. oil-gas density difference) through a flash-cell sequence mimicking slimtube exchange, takes the historical minimum of that parameter, and extrapolates to infinite grid to give a dispersion-free MMP. Agreement with slimtube simulation is plus-minus 5-15 bar across 14 systems at 20-100x the speed. The historical-minimum treatment is essential because developed miscibility lives at an intermediate cell, not at the front and not at the inlet.</li>
+    <li><strong>Critical enrichment <code>E*</code> and miscibility depth <code>D*</code>.</strong> For enriched-gas injection into a grading oil zone at fixed operating pressure, the minimum miscibility enrichment versus depth decomposes into two depth-independent quantities. <code>E*</code> is the enrichment level required to initiate the C/V mechanism (largely independent of depth in the oil zone, an observation first made by Zick). <code>D*</code> is the depth at which enrichment first becomes required to maintain miscibility at the fixed pressure. Above <code>D*</code> any injection gas works; at <code>D*</code> the required enrichment jumps from zero to <code>E*</code>; below <code>D*</code> MME increases monotonically with depth. The two-knob design (enrichment, pressure) reduces to a clean <code>D*</code>-<code>E*</code> decomposition.</li>
+    <li><strong>Below-dewpoint miscible cycling.</strong> Høier and <mark>Whitson</mark> overturn the industry assumption that gas cycling below the dewpoint cannot be miscible. With injection-gas enrichment beyond <code>E*</code> and the right retrograde-condensate / injection-gas pair, the C/V MMP in the gas-condensate zone drops significantly below the dewpoint and can approach the bubblepoint of the retrograde condensate. Many gas condensate reservoirs previously dismissed as non-candidates for miscible cycling become viable. Cycling can be scheduled for operational flexibility (summer-only when LNG demand dips) rather than locked to full-pressure maintenance, and the pressure floor for miscibility drops, reducing compressor duty.</li>
+    <li><strong>Enriched-gas slug as small as 0.10 PV.</strong> Continuous enriched-gas injection requires prohibitive NGL inventory. The paper shows a finite slug (around 0.10 PV) of enriched gas followed by a lean chase gas produces developed C/V miscibility practically identical to continuous injection, provided the slug exceeds the slug-chase dispersion size. If the chase breaks through and contacts the reservoir directly, miscibility is lost. The slug design converts cost-prohibitive cycling into an economically defensible scheme tied to seasonal NGL supply.</li>
+    <li><strong>C/V MMP set by the retrograde condensate alone.</strong> For 1D slimtube displacement below the dewpoint, the C/V MMP of the gas-plus-retrograde-condensate system equals the C/V MMP of the retrograde condensate alone with the same injection gas. The reservoir gas phase has negligible effect on developed miscibility - only the condensate composition matters. The near-critical front locates at the liquid side of the phase envelope, so liquid composition dominates. Depletion history below the dewpoint matters indirectly by setting the retrograde-condensate composition at the start of injection.</li>
+    <li><strong>Slimtube grid extrapolation fails for gas-condensate C/V.</strong> The standard <code>RF<sub>1.2</sub></code> versus <code>N<sup>-1/2</sup></code> linear extrapolation used for oil-system slimtubes does not work for gas-condensate C/V. Even at 3000 cells the front-scale dispersion is around 0.1 PV - comparable to the intrinsic C/V band width. Using 100-500 cells can produce an MMP estimate considerably higher than the true MMP. Multicell algorithms take over from slimtube simulation for gas-condensate C/V; slimtube is retained for validation only.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Reopened a class of depleted gas condensate assets.</strong> The below-dewpoint C/V cycling result is the paper's most cited practical contribution. Before 1998, an operator looking at a depleted retrograde gas condensate had no miscible-recovery option in the standard playbook. After Høier-Whitson, the question became which retrograde condensate + injection-gas pairs develop the C/V mechanism, and at what enrichment level. The 0.10-PV slug design made the economics tractable. Subsequent enhanced-recovery work on depleted condensates (the Alavian-Whitson CO2 series IPTC-10641, SPE-125362, SPE-129666) builds on the Høier-Whitson framing of the gas-zone problem.</p>
+    <p><strong>Joined two frameworks.</strong> Compositional grading (Whitson-Belery 1994) and developed miscibility (Zick 1986) had been separate threads. Høier-Whitson 1998 is the first paper to treat MMP as a depth-varying quantity in a graded reservoir, with the depth-dependence following systematically from fluid-zone and developed-miscibility-mechanism. The classification into archetypes is what made the framework usable in practice.</p>
+    <p><strong>Set up the 2001 Theory and Practice paper.</strong> Høier's continuing PhD work produced the 2001 SPE-63085 compositional-grading paper as the matured theoretical companion to this 1998 application paper. The pair (1998 application, 2001 theory) plus the 2004 SPE-90379 Cheng-Høier-<mark>Whitson</mark> paper define the compositional-grading deliverable of Curtis's Phase 3 productivity peak.</p>
+    <p><strong>Multicell over slimtube.</strong> The validation of the Zick multicell algorithm against slimtube as the reference method for developed-miscibility MMP is the practical lasting contribution. Slimtube simulation remains in use for ranking studies, but every modern commercial MMP package (PVTsim, Eclipse PVTi, CMG WinProp, whitson PVT) implements a multicell algorithm in the Zick style as the primary MMP calculator.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Zick (1986) SPE-15493 — the condensing/vaporising mechanism that revolutionised miscible-gas EOR</li>
+    <li>Zick (1993 personal communication to <mark>Whitson</mark>) — the multicell algorithm with distance-to-criticality criterion</li>
+    <li><strong><mark>Whitson</mark> &amp; Belery (1994) SPE-28000</strong> — isothermal gravity/chemical equilibrium framework for compositional grading; the depth-dependent input to MMP calculation</li>
+    <li>Hearn &amp; <mark>Whitson</mark> (1995) SPE-29115 — demonstrated that VGD fails in saturated two-phase systems; this paper shows enriched-gas C/V succeeds in that regime</li>
+    <li><mark>Whitson</mark> (1983) SPE-12233 C7+ characterisation — the heavy-end framework feeding the EOS predictions across the depth interval</li>
+    <li>Metcalfe-type multicell vaporisation models — the methodological antecedent the Zick algorithm replaces for C/V systems</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Høier &amp; <mark>Whitson</mark> (2001) SPE-63085 "Compositional Grading - Theory and Practice"</strong> — the matured theoretical companion paper covering thermal-diffusion uncertainty, GOC sensitivity, and field case histories</li>
+    <li><strong>Cheng, Høier &amp; <mark>Whitson</mark> (2004) SPE-90379</strong> — the third paper in the Høier compositional-grading series</li>
+    <li><mark>Whitson</mark> &amp; Brule (2000) SPE Monograph "Phase Behavior", Chapter 8 — the gas-injection and miscibility chapter that consolidates the MMP-depth framework</li>
+    <li><strong>Alavian-<mark>Whitson</mark> CO2-EOR series (IPTC-10641, SPE-125362, SPE-129666)</strong> — CO2 miscibility in depleted reservoirs follows the gas-zone branch of the MMP-depth framework</li>
+    <li>Multicell MMP algorithms as the default in commercial PVT packages, with slimtube relegated to validation</li>
+    <li>The enriched-gas slug-injection design pattern for depleted gas-condensate cycling projects</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Lars Høier</strong> — NTNU PhD candidate working under Curtis through the 1990s. The 1998-2001-2004 compositional-grading series is his dissertation arc, with this 1998 paper as the application-first entry. The slug-injection result is one of the paper's standout practical contributions and reflects Høier's reservoir-engineering instinct as much as the theoretical framework.</p><p><strong>Aaron A. Zick</strong> — the multicell algorithm cited as a 1993 personal communication is the same Aaron Zick who introduced Curtis to the negative-flash construction over an Italian pizzeria dinner in Trondheim in November 1985. The 1985 dinner seeded what became the 1989 <mark>Whitson</mark>-Michelsen negative-flash paper; the 1993 communication seeded the multicell MMP algorithm validated here. Two foundational pieces of compositional reservoir engineering trace back to Curtis's collaboration with Zick.</p>

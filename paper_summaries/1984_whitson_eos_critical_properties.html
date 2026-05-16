@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson (1984) - Critical Properties Estimation From an Equation of State</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Critical Properties Estimation From an Equation of State</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark> (sole author)</p>
+  <p><strong>Venue:</strong> SPE/DOE Fourth Symposium on Enhanced Oil Recovery, Tulsa OK, 15-18 April 1984</p>
+  <p><strong>Paper number:</strong> SPE/DOE 12634</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/12634-MS">10.2118/12634-MS</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 15, ; influence runs through downstream EOS-tuning practice rather than direct citation</p>
+  <p><span class="tag">EOS Tuning</span> <span class="tag">Critical Properties</span> <span class="tag">C7+</span> <span class="tag">Peng-Robinson</span> <span class="tag">Phase 2</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>SPE-12233 (1983) established the gamma-distribution C7+ method. The natural next question was how to assign critical temperature and pressure to each pseudocomponent. By 1984 the field had a half-dozen empirical correlations (Cavett, Kesler-Lee, Edmister, Riazi-Daubert) and no agreement on which to use. Each correlation was fit against a different data set, each had its own valid range, and engineers picked whichever one gave them the saturation pressure they wanted. The EOS itself was implicated in the disagreement: critical properties fit by an external correlation rarely reproduced the measured boiling point and density of the same fraction when fed back into Peng-Robinson or SRK.</p><p>Curtis was a few months from his PhD defence at NTH. SPE-12634 was presented at the same April 1984 SPE/DOE EOR symposium where his characterisation work was getting wider exposure outside Trondheim.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>The EOS-as-arbiter idea.</strong> Rather than picking the "best" external correlation for T<sub>c</sub> and p<sub>c</sub>, use the EOS itself to back-calculate them. Force the EOS to match the measured normal boiling point T<sub>b</sub> and the molar volume M/γ at standard conditions for each petroleum fraction. The critical properties that come out are, by construction, internally consistent with the EOS that will use them downstream.</li>
+<li><strong>The double trial-and-error procedure.</strong> Estimate ω from a correlation in T<sub>b</sub> and K<sub>w</sub>. Initialise T<sub>c</sub> and p<sub>c</sub> from Riazi-Daubert. Hold p<sub>c</sub> fixed and vary T<sub>c</sub> until the EOS predicts vapour-liquid equilibrium at T<sub>b</sub> and atmospheric pressure (the definition of normal boiling). Hold the new T<sub>c</sub> and vary p<sub>c</sub> until the EOS predicts the correct molar volume at standard conditions. Iterate. Converges reliably for fractions up to ~C20 where T<sub>b</sub> and density are well-measured.</li>
+<li><strong>Tune T<sub>b</sub> of the heaviest fraction, not the methane BIPs.</strong> The paper's other major recommendation. When EOS-predicted saturation pressure disagrees with measurement, the conventional fix was to adjust the C1-C7+ binary interaction coefficient. Curtis argued for adjusting the boiling point of the heaviest pseudocomponent instead. The physical argument: T<sub>b</sub> of the heaviest fraction is genuinely uncertain (laboratories rarely measure it for SCN groups above C20). BIPs have no physical meaning and tuning them masks errors in critical properties. The relationship between heavy-fraction T<sub>b</sub> and p<sub>sat</sub> is near-linear, so the adjustment is numerically well-behaved.</li>
+<li><strong>The disciplined-regression philosophy.</strong> The combination is a tuning workflow: get critical properties internally consistent with the EOS by matching T<sub>b</sub> and density; then if p<sub>sat</sub> is still off, adjust the input property most likely to be wrong (heavy-fraction T<sub>b</sub>) before reaching for the BIPs. BIP adjustment becomes a last resort, not a first.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Setting the tuning hierarchy.</strong> Forty years on, the order Curtis recommended for EOS regression - properties first, BIPs last - is the disciplined practice every PVT package teaches. The fix-T<sub>b</sub>-before-BIPs argument shows up in the 2000 Whitson-Brule monograph and in every later EOS-tuning chapter. The underlying point that BIPs "have a tendency to overcompensate for bad input properties" became conventional wisdom only after Michelsen's 1990 red-black-methane argument (told to Curtis at Banff in 1989) gave it a rigorous foundation.</p>
+<p><strong>The EOS-as-arbiter move.</strong> Using the EOS itself to define the properties it will use is the same pedagogical pattern Curtis applies elsewhere: when two methods disagree, the one that gets applied downstream is the authority. The framing has aged well. Internally consistent property sets are the default in commercial PVT packages today.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson (1983) SPE-12233 - the C7+ characterisation framework this paper supplies critical properties for</li>
+<li>Riazi &amp; Daubert (1980) - generalised property correlation used as the initial guess</li>
+<li>Cavett (1962), Kesler-Lee (1976), Edmister (1958) - the empirical T<sub>c</sub>/p<sub>c</sub> correlations that the EOS-based method is meant to replace</li>
+<li>Peng &amp; Robinson (1976), Soave (1972) - the cubic EOS frameworks the method is internally consistent with</li>
+<li>Coats &amp; Smart (1986, in preparation at this time) - the regression-tuning literature this paper proposes a more disciplined alternative to</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The Whitson-Michelsen 1989 negative-flash work indirectly: tighter internally-consistent EOS critical properties reduce the chance of flash failure</li>
+<li>The Whitson-Brule (2000) SPE Monograph chapter on EOS regression - the matured tuning hierarchy with property tuning before BIP tuning is documented here</li>
+<li>Every commercial PVT package's "regression" workflow - the property-first ordering is the default</li>
+<li>The disciplined-tuning argument is referenced in Coats-Smart 1986 and in much of the later regression literature</li>
+</ul>
+</div>
+
+
+<h2>Key References</h2>
+
+<p><strong>Sole author.</strong> Written during the closing months before Curtis's June 1984 PhD defence at NTH. The paper builds directly on SPE-12233 and feeds the EOS-tuning practice that runs through the rest of his career.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

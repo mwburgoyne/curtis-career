@@ -1,0 +1,80 @@
+id: 2025_nielsen_younus_e2e_fluid_model
+title: End-to-End Fluid Model Development for the Volve Field
+page_title: Nielsen and Younus (2025) - End-to-End Fluid Model Development for the Volve Field
+authors:
+- Markus Hays Nielsen (Whitson AS
+- NTNU)
+- Bilal Younus (Whitson AS). Curtis acknowledged as Whitson AS senior author
+- method authority
+authors_affiliation: null
+venue: 2025 SPE Europe Energy Conference and Exhibition
+paper_number: SPE-225470-MS
+doi: null
+funding: null
+citations: New (2025)
+tags:
+- E2E Workflow
+- Volve Field
+- Field-Wide EOS
+- Child Models
+- Lumping
+- BOPVT
+- Phase 4
+whitson_index: null
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Twenty-five years after the SPE Monograph, the Whitson AS workflow for fluid-model development has matured into a pipeline that runs from raw laboratory data (flashed-oil GC, distillation, recombination, OBM-contaminated samples) through a detailed parent EOS and ends with fit-for-purpose child models for reservoir simulation and surface-process design. Every step has been published in pieces - Younus 2019 URTeC-551 (field-wide EOS), Younus-Whitson-Martinsen 2022 SPE-211391 (GC quality control), Alavian-Whitson-Martinsen 2014 SPE-170912 (component lumping), Singh-Fevang-Whitson 2007 SPE-109596 (BOPVT consistency), Singh-Whitson-Nielsen 2025 SPE-225382 (BOPVT-to-lab comparison) - but no single publication has demonstrated the complete end-to-end pipeline on a public dataset.</p><p>Nielsen and Younus close that gap. Equinor's 2018 Volve open-source release (wells 15/9-19A, 15/9-19SR, 15/9-F-4, PVT reports from 1993, 1998, 2008) gives them a public laboratory dataset with compositional analyses, TBP distillation, CCE, DLE, multistage separator, viscosity, CO<sub>2</sub> and HC-gas swell tests, and slim-tube experiments. They build a 72-component detailed parent PR EOS, derive two child lumped EOSs (one reservoir-minimised, one surface-process with C<sub>6</sub> and lighter kept separate), generate per-sample BOPVT tables, and validate the whole pipeline against the dataset. The paper is explicitly intended as a reproducible benchmark.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Complete E2E pipeline as one operational recipe.</strong> Raw characterisation data (flashed-oil GC, distillation, recombination, OBM) feed C<sub>7+</sub> characterisation (gamma model + Twu critical properties + Chueh-Prausnitz BIPs + Peneloux volume shifts), then EOS tuning by RMS regression with parameter ramping from C<sub>7</sub> outward, then LBC viscosity tuning with Orrick-Erbar-anchored Z<sub>c,vis</sub>, then two lumped EOS child models plus per-sample extended BOPVT tables. Every prior Whitson AS publication addressed one stage; this paper presents them all as one pipeline.</li>
+    <li><strong>Detailed parent model built around a 72-component slate.</strong> 42 reservoir components from C<sub>1</sub> through C<sub>36+</sub>, 29 OBM components (C<sub>7M</sub> through C<sub>36M</sub> with separate EOS properties from reservoir components), and 1 residue component. OBM decontamination via a subtraction method with F<sub>mud</sub> regressed to minimise RMS against the gamma-model-predicted clean composition.</li>
+    <li><strong>Compositional adjustments as part of EOS tuning.</strong> Two small physical adjustments needed for the Volve data: less than 1% C<sub>1</sub> adjustment per Nielsen-Wanat-Whitson 2024 recombination-GOR-dominance finding, and a small regression in flashed-oil average molecular weight V<sub>M7+</sub> per Younus-Whitson-Martinsen 2022 GC-QC framework. For older samples with truncated C<sub>7+</sub> or C<sub>10+</sub> reporting, a gamma-model lower-molecular-weight adjustment is introduced.</li>
+    <li><strong>Two-child-model architecture.</strong> Reservoir-lumped child minimises component count only. Surface-process-lumped child minimises component count and keeps C<sub>6</sub> and lighter as separate components (essential for separator K-value accuracy). Both children derived from the same detailed parent via Hoffmann 2019 genetic-algorithm plus tabu search with Coats-Smart 1986 parameter averaging. The parent-child architecture guarantees cross-model consistency.</li>
+    <li><strong>Quantitative minimum-component-count tiers.</strong> Six components minimum for engineering-estimate phase behaviour at reservoir temperature. Eight components minimum recommended for full P-T phase-envelope description in reservoir simulation. Sixteen components recommended for surface-process simulation with C<sub>6</sub> and lighter kept separate. The 16-component surface-process recommendation is distinct from common industry practice (often 8-10 components re-used from the reservoir model), and the K-value error at separators in under-lumped surface models can produce 5-20% liquid-rate errors.</li>
+    <li><strong>Per-sample BOPVT extension to the critical point.</strong> BOPVT tables generated via simulated CCE from the detailed EOS per Fevang-Singh-Whitson 2000 Method B, extended beyond initial saturation pressure by injecting incipient gas phase until the critical point is reached. BOPVT-groups analysis per Singh-Whitson-Nielsen 2025 identifies two distinct PVT regions in the Volve field.</li>
+    <li><strong>Public reproducible benchmark.</strong> Equinor's Volve dataset is public; the paper's methodology is documented end-to-end. Any alternative fluid-model-development methodology can now be quantitatively compared against this benchmark on the same data.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The first complete public demonstration of the Whitson AS pipeline.</strong> The pipeline was previously assembled from a dozen separate papers, training course modules, and software documentation. This paper packages it as one operational recipe with a public validation dataset. Practitioners can follow it end-to-end. Competitors can benchmark against it. Students can reproduce it.</p>
+    <p><strong>Fills the quantitative gap on lumping component counts.</strong> Alavian-Whitson-Martinsen 2014 gave the search method (global component lumping with MMP-aware filter), but industry practice on minimum component counts has varied widely (4-20 components typical, depending on engineer-of-record preference). The 6/8/16 tier recommendation anchors the conversation. The 16-component surface-process recommendation in particular addresses a common failure mode where reservoir-lumped EOS models are re-used for separator simulation and produce systematic liquid-rate errors.</p>
+    <p><strong>Generational continuity.</strong> Markus Hays Nielsen is Curtis's son and a Whitson AS engineer working on EOS development and PVT-uncertainty methodology. Bilal Younus is the senior engineer behind the field-wide EOS framework. Curtis is acknowledged as method authority. The paper is the natural sequel to the 2000 Monograph and to Younus 2019 URTeC-551, written by the next generation of the lineage with Curtis as the third author by intellectual contribution if not by byline.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson (1983) SPE-12233 — gamma molar distribution as the C<sub>7+</sub> characterisation backbone (the paper's "adjusting gamma model lower molecular weights" technique extends the 1983 framework to legacy truncated samples)</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph — Chapter 5 C<sub>7+</sub> procedure, Chapter 7 BOPVT formulations</li>
+    <li>Younus, Whitson &amp; Martinsen (2019) URTeC-551 — field-wide EOS model development, parent-child architecture, RMS objective function</li>
+    <li>Younus, Whitson &amp; Martinsen (2022) SPE-211391 — compositional uncertainties, V<sub>M7+</sub> and V<sub>N+</sub> tuning variables</li>
+    <li>Nielsen, Wanat &amp; Whitson (2024) SPE-220699 — recombination-GOR as the dominant compositional uncertainty source</li>
+    <li>Alavian, Whitson &amp; Martinsen (2014) SPE-170912 — global component lumping with MMP-aware filter (the alternative lumping search method)</li>
+    <li>Fevang, Singh &amp; Whitson (2000) SPE-63087 — BO-vs-EOS guidelines, Method B BOPVT generation with incipient-gas extension</li>
+    <li>Singh, Fevang &amp; Whitson (2007) SPE-109596 — consistent BOPVT table modification, nine-inequality consistency framework</li>
+    <li>Singh, Whitson &amp; Nielsen (2025) SPE-225382 — BOPVT-to-lab comparison and PVT-groups workflow (sister paper at the same conference, used in the Volve analysis)</li>
+    <li>Singh, Whitson &amp; Mantzatzis (2011) SPE-143612 — iterative gamma-OBM decontamination (the alternative to this paper's subtraction approach)</li>
+    <li>Twu (1984) — perturbation-expansion critical-property correlations</li>
+    <li>Hoffmann (2019) JPSE — genetic-algorithm plus tabu-search EOS lumping optimisation</li>
+    <li>Coats &amp; Smart (1986) SPERE — regression-based EOS PVT program with parameter averaging</li>
+    <li>Peng &amp; Robinson (1976, 1978) — the cubic EOS</li>
+    <li>Peneloux et al. (1982) — volume translation</li>
+    <li>Equinor ASA (2018) — Volve open-source dataset release</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>The first public reproducible benchmark for fluid-model-development methodology</li>
+    <li>Operational defaults for lumping component count in commercial PVT software</li>
+    <li>The Whitson AS commercial workflow on every active consulting engagement</li>
+    <li>Future Whitson Academy course modules built directly on this end-to-end recipe</li>
+    <li>Khan et al. (2025) SPE-225405 — the ADNOC paper uses the E2E workflow to produce its 8-component EOS</li>
+    <li>The standard reference for any group attempting to develop or benchmark alternative fluid-model-development pipelines</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Markus Hays Nielsen</strong> — Curtis's son, Whitson AS and NTNU. Petroleum engineer; M.Sc. (NTNU, ~2020) on BIPs and phase behaviour. Specialises in PVT uncertainty and EOS-development methodology. First author on this paper as well as on SPE-220699 (forward compositional uncertainty); co-author on SPE-217328 (separator-sample QC) and on the 2023 SPE-214437 underground-hydrogen-storage paper. <strong>Bilal Younus</strong> — Whitson AS senior engineer, first author of URTeC-551 (field-wide EOS) and SPE-211391 (GC QC); the field-wide-EOS framework is his work. <strong>Curtis H. Whitson</strong> — method authority and acknowledged contributor.</p>

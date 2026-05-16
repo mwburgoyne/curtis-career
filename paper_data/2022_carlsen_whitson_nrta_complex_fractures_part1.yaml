@@ -1,0 +1,63 @@
+id: 2022_carlsen_whitson_nrta_complex_fractures_part1
+title: "Numerical RTA Extended to Complex Fracture Systems: Part 1"
+page_title: "Carlsen & Whitson (2022) - Numerical RTA Part 1 (Theory)"
+authors:
+- Mathias Lia Carlsen
+- Curtis H. Whitson
+whitson_index: 1
+authors_affiliation: Whitson AS
+venue: "Unconventional Resources Technology Conference, Houston, June 2022"
+paper_number: "URTeC-3718584"
+doi: "10.15530/urtec-2022-3718584"
+citations: 8
+citations_source: OpenAlex
+funding: "Numerical RTA JIP, Innovation Norway, and Norwegian Research Council"
+tags:
+- Fractional RTA
+- Acuña δ-Parameter
+- LFP' Generalisation
+- Distribution of Fragments
+- NRTA Part 1
+- Theory and Procedure
+- Phase 4
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Theoretical / procedural companion to SPE-210420-MS (Carlsen-Whitson 2022 Part 2, the practical-usage and field-application paper). Part 1 introduces fractional RTA theory and the modified 13-step Numerical RTA workflow for uneven-fracture-spacing fracture-swarm geometries; Part 2 carries the theory through to simulated and SPE-data-repository field examples including the Crow well. Both papers come out of the Whitson AS Numerical RTA JIP and were presented at separate conferences (URTeC June 2022, SPE ATCE October 2022) within a year of SPE-205884's launch of the all-fluid NRTA workflow.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Fractional-RTA fundamentals.</strong> The rate-normalised-pressure power-law signature <code>&Delta;p / q = m t<sup>1-&delta;</sup> + b</code> on a log-log plot, with <code>&delta; &isin; [0, 0.5]</code> the Acu&ntilde;a fracture-spacing-heterogeneity parameter. Classical RTA is the <code>&delta; = 0.5</code> evenly-spaced-fracture special case; <code>&delta; = 0</code> is the pure fracture-swarm limit. The framework is the natural generalisation of Wattenbarger-style linear flow.</li>
+    <li><strong>Generalised <code>LFP'</code> geometric form.</strong> <code>LFP' = A k<sup>&delta;</sup> &phi;<sup>1-&delta;</sup> = 4 n<sub>f</sub> h x<sub>f</sub> k<sup>&delta;</sup> &phi;<sup>1-&delta;</sup></code>, paired with the saturation-weighted total formation volume factor <code>B<sub>ti</sub></code> introduced in SPE-205884 for all-fluid handling. Recovers the SPE-205884 classical workflow exactly at <code>&delta; = 0.5</code>.</li>
+    <li><strong>Distribution-of-fragments reconstruction procedure (Eqs 5-9, Table 1).</strong> Closed-form recipe to convert (<code>&delta;</code>, <code>S<sub>min</sub></code>, <code>S<sub>max</sub></code>, m) into a fragment-size distribution {<code>S<sub>i</sub></code>, <code>n<sub>i</sub></code>} with ratio <code>R = exp(ln(S<sub>max</sub>/S<sub>min</sub>) / (m-1))</code> and mass-balanced fragment counts. Enables simulation of fracture-swarm networks via m independent symmetry-element models rather than a single template fracture.</li>
+    <li><strong>Modified 13-step NRTA workflow for uneven fracture spacing.</strong> Extends the SPE-205884 eight-step workflow to handle the fractional-<code>&delta;</code> case: extract <code>&delta;</code> from the power-law fit; construct the fragment distribution; run m symmetry-element template models; combine into the well-scale type curves; pick representative <code>LFP'</code> and OOIP. The procedure cleanly decomposes geometry assumptions from PVT / saturation / relperm inputs so the same machinery serves classical and fractional cases.</li>
+    <li><strong>Appendix A "Cheat Sheet for Engineers".</strong> Fifty-three equations spanning DCA, classical and fractional RTA, producing GOR, water cut, Darcy, compressibility, superposition, material balance, and diffusivity. Same reference-table appendix as Part 2; appears in both papers as the consolidated engineer-facing tool.</li>
+    </ul>
+- heading: Significance and Contribution
+  box_style: influence
+  body_html: |-
+    <p><strong>Theory first, application second.</strong> The Whitson-group pattern of pairing a theory paper with a practical-usage paper recurs here. Part 1 lays out the fundamentals and the procedure; Part 2 carries it through to the Crow-well reconciliation and the seven-regime flow classification. Operators wanting the recipe read Part 1; operators wanting the example read Part 2.</p>
+    <p><strong>The <code>&delta;</code> parameter as bridge between Acu&ntilde;a fractal-network theory and operator RTA practice.</strong> Acu&ntilde;a's fractal-network framework had been in the literature since 2016 but had not made the jump into routine rate-transient analysis. Embedding <code>&delta;</code> in the existing LFP'-based NRTA workflow brings it into operational reach.</p>
+    <p><strong>The construction procedure makes fracture-swarm simulation tractable.</strong> Without the closed-form fragment-distribution recipe, simulating an uneven-fracture-spacing well would require many ad-hoc symmetry-element configurations. Equations 5-9 fix that with one consistent construction tied to the measured <code>&delta;</code>.</p>
+- heading: Knowledge Built Upon
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 numerical RTA (the classical-<code>&delta;</code> workflow this paper generalises)</li>
+    <li>Bowie-Ewert 2020 URTeC-2967 original numerical RTA</li>
+    <li>Acu&ntilde;a 2016 URTeC-2429710 and Acu&ntilde;a 2020 URTeC-2118 fractal-network theory</li>
+    <li>Wattenbarger 1998 linear flow parameter</li>
+    </ul>
+- heading: What It Contributed To
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Carlsen-Whitson 2022 Part 2 SPE-210420 (the field-application companion that uses this theory on the Crow well)</li>
+    <li>Operator RTA practice in unconventional plays with fracture-swarm geometries</li>
+    <li>Whitson Academy course material on fractional RTA fundamentals</li>
+    <li>The Numerical RTA JIP body of work that this paper formally publishes</li>
+    </ul>
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Mathias Lia Carlsen</strong> &mdash; Whitson AS senior engineer; first author. Continued lead of the NRTA series; this Part 1 / Part 2 pair completes the fractional-RTA generalisation begun with SPE-205884.</p>

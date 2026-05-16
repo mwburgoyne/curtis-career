@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alqahtani, Dahouk, Whitson, Chuparova (2020) - Fluid Heterogeneity on Tight Unconventional Well GOR Performance</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Impact of Fluid Heterogeneity on Tight Unconventional Well GOR Performance</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Faisal M. Alqahtani, Mohamad Majzoub Dahouk, <mark>Curtis H. Whitson</mark>, Elena Chuparova (NTNU / Whitson AS)</p>
+  <p><strong>Venue:</strong> Unconventional Resources Technology Conference, Austin, 20-22 July 2020</p>
+  <p><strong>Paper number:</strong> URTeC-2545</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.15530/urtec-2020-2545">10.15530/urtec-2020-2545</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="tag">Well-Box Heterogeneity</span> <span class="tag">Field History Match</span> <span class="tag">Non-Uniqueness</span> <span class="tag">Ensemble Forecasting</span> <span class="tag">Eagle Ford</span> <span class="tag">EUR Spread</span> <span class="tag">Daily vs Monthly Data</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Field-application capstone of the Alqahtani-Whitson-Chuparova well-box heterogeneity series. The 2018 URTeC-2882502 paper laid out the parasequence framework; the 2020 SPE-200014 paper established the <code>k<sub>max</sub>/k<sub>min</sub> &lt; 10</code> intra-layer threshold and proved the fundamental history-match non-uniqueness theorem on synthetic data; this paper takes real Eagle Ford production data from one well, systematically generates non-unique two-layer heterogeneous history matches, quantifies the resulting EUR forecast spread, and delivers the ensemble-forecasting recommendation as the operational response.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Four-step systematic method to generate two-layer heterogeneous history matches.</strong> Step 1: assign <code>φ<sub>1</sub></code>, compute <code>φ<sub>2</sub></code> from the arithmetic-average constraint. Step 2: estimate layer permeabilities from the Cantisano 2013 <code>k</code>-<code>φ</code><sup>3</sup> correlation. Step 3: estimate layer initial solution GORs to match the initial well producing GOR. Step 4: apply near-unity permeability scaling factors to reproduce single-layer <code>k<sub>avg</sub></code> and <code>p<sub>wf</sub>(t)</code>. Constrains the two-layer search space to cases that always match early-time producing GOR while preserving the reference single-layer HM quality.</li>
+<li><strong>Field-validated non-uniqueness.</strong> Eight two-layer heterogeneous models on a real Eagle Ford well all match observed oil rate, gas rate, OGR, and BHP. Cases 1 and 2 have <em>identical</em> petrophysical heterogeneity (<code>k</code>, <code>φ</code>) for both layers but radically different layer initial solution GORs (3000 / 5400 vs 8000 / 4500 scf/STB) - concrete field realisation of the non-uniqueness theorem proved synthetically in SPE-200014.</li>
+<li><strong>10-year EUR forecast divergence despite equivalent history match.</strong> Good HM cases forecast ~85,000 STB 10-year EUR (similar to single-layer reference); over-predicting cases forecast 5-25k STB more (10-30% spread). FBHP endpoint choice (1325 vs 500 psia) has surprisingly small effect on 10-year oil EUR. The non-uniqueness manifests directly as EUR uncertainty even with a good HM fit - the fitting metric does not capture the forecast spread.</li>
+<li><strong>Monthly-public-data vs daily-metered-data GOR ratio 0.6-1.5 across 30 Eagle Ford wells.</strong> Public monthly production data requires a multiplication factor as extreme as 0.6-1.5 (varying per-well and with time) to match the daily-metered individual-well GOR. Industry-standard public-data history-matching workflows that take monthly GOR at face value inherit a 30-50% systematic bias before any modelling decision is made. Operational caveat with broad scope.</li>
+<li><strong>Ensemble-forecasting recommendation.</strong> The operational answer to the non-uniqueness theorem: history-match with a range of plausible GOR fluid initialisations constrained by early-time GOR performance, from uniform to layer-wise variation. The different history-matched models produce a distribution of oil and gas rate forecasts that quantitatively captures in-situ fluid-distribution uncertainty. Replaces "pick the best HM and forecast" with "carry the ensemble and report the spread".</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>From theorem to practice.</strong> The non-uniqueness result was established synthetically in SPE-200014; this paper carries it through to a real well, a real ensemble of equally-good history matches, and a quantified EUR-spread number. The synthetic-to-field demonstration closes the loop and lets operators internalise the result with their own data.</p>
+<p><strong>The public-monthly-data caveat is independently load-bearing.</strong> The 0.6-1.5 monthly-vs-daily GOR ratio across 30 wells means that public-data benchmarking studies are inheriting a multiplicative bias before any modelling step. Operators with daily-metered data should use it; benchmarking studies based on public-monthly data should report the uncertainty floor that the ratio implies.</p>
+<p><strong>Ensemble forecasting as the practical response.</strong> The recommendation does not ask operators to solve the non-uniqueness inverse problem - it asks them to embrace it. Carry an ensemble of plausible fluid initialisations, report the forecast distribution, treat the spread as part of the answer rather than as a defect of the workflow. The framing aligns with the field-wide EOS philosophy (Younus 2019): commit rigour to the parts of the workflow that are constrainable, and report uncertainty for the parts that are not.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Alqahtani-Chuparova 2018 URTeC-2882502 well-box prospectus</li>
+<li>Alqahtani-Khan-Chuparova-Whitson 2020 SPE-200014 (the synthetic non-uniqueness theorem this paper validates on a real well)</li>
+<li>Cantisano 2013 cubic <code>k</code>-<code>φ</code><sup>3</sup> Eagle Ford correlation</li>
+<li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework</li>
+<li>Younus et al. 2019 URTeC-551 field-wide EOS (the EOS framework these history-match ensembles use)</li>
+<li>Carlsen-Dahouk-Mydland-Whitson 2020 IPTC-19596 compositional tracking (data preparation upstream of the HM)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator history-matching practice: ensemble forecasting as alternative to single-best-fit</li>
+<li>Public-monthly-data benchmarking caveats in unconventional reservoir studies</li>
+<li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 NRTA (the ensemble approach scaled to the rate-transient framework)</li>
+<li>Whitson Academy course material on LRS history matching and EUR uncertainty</li>
+<li>The Whitson-group default that "good HM" is necessary but not sufficient for "good forecast"</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Faisal M. Alqahtani</strong> — NTNU PhD candidate; King Saud University funding. Lead of the well-box heterogeneity series 2018-2020 with Curtis.</p><p><strong>Elena Chuparova</strong> — NTNU researcher; subsurface and petrophysical expertise.</p><p><strong>Mohamad Majzoub Dahouk</strong> — Whitson AS engineer; long-standing co-author on the unconventional-PVT cluster.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Johnsen & Whitson (2008) - Analytical Treatment of a Push-Pull Echo Test</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Analytical Treatment of a Push-Pull "Echo" Test</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Sverre Gullikstad Johnsen, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> <em>Transport in Porous Media</em>, Vol. 77, pp. 399-415 (2008)</p>
+  
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.1007/s11242-008-9266-0">10.1007/s11242-008-9266-0</a></p>
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Push-Pull Test</span> <span class="tag">Tracer Test</span> <span class="tag">Streamline Model</span> <span class="tag">Apparent Dispersivity</span> <span class="tag">Conformance Artefact</span> <span class="tag">Pickens-Grisak</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Sverre Gullikstad Johnsen's NTNU PhD work with Curtis as co-supervisor. The paper extends the Coats-Whitson-Thomas 2004 SPE-90390 argument - that apparent dispersivity in reservoir simulation is a conformance-fitting artefact, not a physical rock property - from multi-well pattern flood geometry to single-well push-pull (injection-then-withdrawal, "echo") tracer tests. The validation case is the Pickens-Grisak 1981 aquifer field data, which had been the canonical reference for "scale-dependent dispersivity" in groundwater hydrology for two decades. Johnsen and Whitson reproduce the Pickens-Grisak SW1 and SW2 effluent profiles without parameter fitting, using only the reported layer conductivities and the regional groundwater drift.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Semi-analytical streamline model for single-well push-pull echo tests combining uniform drift and layered source/sink.</strong> The total velocity field for layer <em>j</em> superimposes a radial source/sink (injection / production at the well) on a uniform natural-drift velocity. The corresponding stream function defines injection-phase streamlines and connects them to production-phase streamlines through a closed-form relation. For each injection streamline the algorithm integrates forward to the switch-over time to find the maximum radial advancement, then back to the well to find the streamline-specific breakthrough time. The producing tracer concentration is the ratio of streamlines still producing injectant to all producing streamlines. The model is fully analytical (no numerical dispersion), assumes zero physical dispersivity, miscible incompressible ideal tracer, no cross-flow between layers, and steady-state radial injection / production with instantaneous switch-over.</li>
+<li><strong>Natural drift alone produces linear scale-dependency of apparent dispersivity in single-well push-pull tests.</strong> Drift distorts the injected fluid's covered area from a circle into a downstream-skewed shape. Upstream injectant has both a shorter travel distance and a higher production-phase velocity (breaks through earlier); downstream injectant travels farther and returns more slowly. This geometric asymmetry produces a smeared production profile <em>even though no fluid actually mixes anywhere in the aquifer</em>. Fitting the 1-D Aronofsky-Heller convection-dispersion solution to the drift-only profile gives apparent dispersivities that grow with travel length on a log-log plot with slope ~1 - the same empirical linear scale-dependency reported by Arya et al. 1988 and Mahadevan et al. 2002 from literature echo-test compilations. The widely-observed scale-dependent dispersivity is a conformance artefact driven by drift, not a scale-dependent rock property. Physical dispersivity remains about 0.001 ft for unconsolidated sandpacks (Perkins-Johnston 1963), orders of magnitude below the apparent values at field scale.</li>
+<li><strong>Stratification plus drift reproduces Pickens-Grisak SW1 and SW2 field data without parameter fitting.</strong> The Pickens-Grisak 1981 push-pull tests in a stratified Canadian sand aquifer (b = 8.2 m, φ = 0.38, mean hydraulic conductivity about 14.8 darcy, hydraulic head gradient 0.052 kPa/m, drift velocity 0.17 m/day) are reproduced by the streamline model using only the reported layer conductivities and head gradient as inputs. The SW1 effluent profile (76.55 m<sup>3</sup>/day for 1.25 days injection then 2 days production) matches within measurement scatter. The harder SW2 case (62.12 m<sup>3</sup>/day for 3.93 days, 52.36 m<sup>3</sup>/day for 16.9 days) shows oscillatory "shoulder" features in the field data that the multi-layer model reproduces deterministically - upstream high-permeability layers break through early and contribute different layer-mobility-ratio weightings than downstream low-permeability layers. The single-layer model produces a smooth profile; the field data shows kinks; the multi-layer model reproduces the kinks without tuning. Agreement with commercial streamline (3DSL) and finite-difference (SENSOR) simulators run with identical inputs is exact, except near breakthrough where the commercial codes' numerical dispersion smears the analytical solution.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Extending the conformance argument to single-well tests.</strong> The Coats-Whitson-Thomas 2004 SPE-90390 paper had argued that apparent dispersivity in multi-well miscible floods was a conformance-fitting artefact rather than a rock property. The 2008 Johnsen-Whitson paper extends the argument to single-well push-pull geometry and identifies natural groundwater drift as the previously-overlooked conformance mechanism. Together the two papers cover the two principal geometries where the apparent-dispersivity-as-scale-dependent-rock-property fallacy had been entrenched.</p>
+<p><strong>The SW2 shoulder reproduction is the teaching money-shot.</strong> Field practitioners typically attribute the SW2 oscillatory features to "heterogeneity" in a vague qualitative sense. Johnsen-Whitson 2008 shows the exact mechanism - upstream high-<code>k</code> breakthrough plus downstream drift-carried arrivals - reproduced deterministically from known inputs. The teaching pattern: when a field push-pull profile shows unexpected sharp curvature changes, the first question is "which layers and which drift direction", not "what dispersion model fits".</p>
+<p><strong>Numerical-dispersion-free benchmark.</strong> The semi-analytical solution runs in a fraction of the time of commercial simulators and carries no numerical dispersion. It becomes the reference against which commercial tracer-test interpretation can be calibrated.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Coats, Whitson &amp; Thomas (2004) SPE-90390 - the apparent-vs-physical dispersivity distinction for multi-well floods</li>
+<li>Bear (1988a) - analytical injection-phase solution for radial source/sink (extended here to the production phase)</li>
+<li>Aronofsky &amp; Heller (1957) - the 1-D convection-dispersion solution against which apparent dispersivity is fit</li>
+<li>Pickens &amp; Grisak (1981) - the canonical aquifer push-pull dataset</li>
+<li>Arya et al. (1988), Mahadevan et al. (2002) - literature compilations of apparent dispersivity vs travel length</li>
+<li>Perkins &amp; Johnston (1963) - reference physical dispersivity for unconsolidated sandpacks</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Groundwater-hydrology and CO<sub>2</sub>-storage tracer-test interpretation - direct deterministic alternative to fitted dispersion models</li>
+<li>Reservoir-engineering simulation-input recommendations: use physical dispersivity (~0.01 ft) rather than apparent fitted values as simulator input</li>
+<li>Single-well chemical tracer test analysis for residual-oil-saturation determination in IOR projects</li>
+<li>2010 follow-up paper Johnsen-Whitson TIPM second push-pull paper (extends the framework)</li>
+<li>Operator tracer-test interpretation workflows in stratified reservoirs</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Sverre Gullikstad Johnsen</strong> — NTNU PhD graduate (2007) with Curtis as co-supervisor. Two TIPM papers with Curtis on push-pull tracer test analysis. Subsequent career in computational fluid dynamics and porous-media flow at SINTEF.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

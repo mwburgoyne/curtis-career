@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mydland, Carlsen, Whitson (2021) - The Gas HnP PVT Experiment</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>The Gas Huff-n-Puff PVT Experiment</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Stian Mydland, Mathias Lia Carlsen, <mark>Curtis H. Whitson</mark> (Whitson AS / NTNU)</p>
+  <p><strong>Venue:</strong> Unconventional Resources Technology Conference, Houston, 26-28 July 2021</p>
+  <p><strong>Paper number:</strong> URTeC-5016</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.15530/urtec-2021-5016">10.15530/urtec-2021-5016</a></p>
+  <p><strong>Funding:</strong> Innovation Norway and Norwegian Research Council; acknowledges Keong Aik Lau (Stratum Reservoir) for discussions</p>
+  
+  <p><strong>Citations (OpenAlex):</strong> 0</p>
+  <p><span class="tag">HnP PVT Experiment</span> <span class="tag">CVI/CVD Hybrid</span> <span class="tag">E<sub>HnP</sub> KPI</span> <span class="tag">Mixing vs Vaporisation</span> <span class="tag">2-Stage CVD Puff</span> <span class="tag">Three-Regime Scaling</span> <span class="tag">Material-Balance QC</span> <span class="tag">Tight Unconventionals</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Focused formalisation paper extending the HnP PVT experiment proposed in Carlsen et al. 2019 URTeC-539. Where URTeC-539 introduced the hybrid CVI-CVD concept as one of seven contributions, URTeC-5016 dedicates eighteen pages to the experiment alone, adding the operational protocol, the EOR-efficiency KPI, and the mixing-vs-vaporisation decomposition needed for lab-to-field translation. Mydland-first-authored Whitson AS work; funded by Innovation Norway and the Norwegian Research Council; acknowledges Keong Aik Lau at Stratum Reservoir for discussions.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Gas HnP EOR-efficiency KPI <code>E<sub>HnP</sub></code> in STB/MMscf.</strong> Lab-measurable performance indicator defined via a simplified surface process (C<sub>6+</sub> components &rarr; STO, lighter &rarr; surface gas) with closed-form equations. The inverse <code>1 / E<sub>HnP</sub></code> in Mscf/STB is the "gas EOR utilisation factor" communicating incremental gas cost per incremental barrel for operator economics. Three-regime quantitative scaling for a Permian-representative oil with a 65% C<sub>1</sub> / 20% C<sub>2</sub> / 15% C<sub>3</sub> rich injection gas at 200 &deg;F: ~26 STB/MMscf pure-vaporisation; 60-120 STB/MMscf mixed-mechanism; 350-330 STB/MMscf pure-mixing. Gas condensate yields ~55% less than oil under pure-mixing conditions due to ~58% less C<sub>6+</sub> target per unit pore volume from higher FVF. Cross-fluid-type comparison requires a total-FVF <code>B<sub>t</sub></code> saturation-weighted harmonic average.</li>
+<li><strong>Two-stage CVD puff protocol with formal pressure-stepping rules and MB QC framework.</strong> Formalises the CVI-CVD hybrid for lab implementation. <em>Initialisation</em>: CVD from <code>p<sub>Ri</sub></code> down to <code>p<sub>min</sub></code> (sets the cycle-1 starting state). <em>Huff</em>: CVI to <code>p<sub>max</sub></code>. <em>Puff</em>: two-stage CVD back to <code>p<sub>min</sub></code> - stage 1 at <code>p<sub>sat</sub>*</code> (if <code>p<sub>max</sub> &gt; p<sub>sat</sub>*</code>) or at <code>(p<sub>max</sub> + p<sub>min</sub>) / 2</code> (if <code>p<sub>max</sub> &le; p<sub>sat</sub>*</code>), stage 2 at <code>p<sub>min</sub></code>. Recommend 3-6 lab cycles with EOS extrapolation for further cycles. Forward (Whitson-Torp 1983) and backward (Whitson-Brule 2000) material-balance QC adapted to HnP, with K-value non-crossing consistency check.</li>
+<li><strong>Relative-uplift-from-mixing <code>R<sub>mix,l</sub></code> cycle-by-cycle decomposition.</strong> Splits per-cycle surface-oil production into the single-phase-mixing component (CVD stages where <code>p<sub>cell,i</sub> &ge; p<sub>sat</sub>*</code>) and the vaporisation component (stages where <code>p<sub>cell,i</sub> &lt; p<sub>sat</sub>*</code>). <code>R<sub>mix,l</sub></code> is 100% if all stages are above <code>p<sub>sat</sub>*</code>, 0% if all below; it decreases from near-100% at cycle 1 toward 0% as the fluid dilutes and <code>p<sub>sat</sub>*</code> tracks upward into the cycling interval. Quantitatively grounds the three-scenario classification from Carlsen-Whitson 2019.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>From "this should work" to "here is the protocol".</strong> The 2019 URTeC-539 paper proposed the hybrid CVI-CVD experiment; this paper turns the proposal into a step-by-step lab procedure with pressure-stepping rules, surface-process definition, KPI calculation, and material-balance QC. The eighteen pages of pressure-stepping detail and MB QC are what lets a PVT lab actually run the experiment without re-deriving everything.</p>
+<p><strong>The three-regime scaling number is operationally load-bearing.</strong> Operators screening HnP gas selection now have a defensible scaling for the maximum achievable <code>E<sub>HnP</sub></code> at each fluid type and pressure regime. The 26 / 60-120 / 350-330 STB/MMscf ladder lets economic models bracket the upside before the pilot is even funded.</p>
+<p><strong>The mixing-vs-vaporisation decomposition makes the diagnostic operational.</strong> Carlsen-2020-URTeC-2869 showed the wellstream-C<sub>7+</sub> signature distinguishes mixing-driven from displacement-driven HnP in the field; this paper provides the lab-side companion that quantifies the mixing fraction cycle by cycle, closing the lab-to-field interpretation loop.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Carlsen et al. 2019 URTeC-539 (the CVI-CVD hybrid proposal this paper formalises)</li>
+<li>Mydland-Yusra-Whitson-Dahouk-Carlsen 2020 SPE-200396 (HnP vs F2F mechanisms)</li>
+<li>Carlsen et al. 2020 URTeC-2869 (the field-side wellstream-C<sub>7+</sub> diagnostic this paper complements)</li>
+<li>Mydland-Whitson-Carlsen-Dahouk-Yusra 2020 URTeC-2765 BOPVT-vs-COMP simulation</li>
+<li>Whitson-Torp 1983 SPE-10067 forward CVD material balance</li>
+<li>Whitson-Brule SPE Monograph 2000 backward MB QC</li>
+<li>Standard CCE / CVI / CVD lab protocols extended for HnP</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Stratum Reservoir and other PVT-lab HnP service offerings</li>
+<li>Operator HnP screening using <code>E<sub>HnP</sub></code> as the design KPI</li>
+<li>Whitson Academy course material on HnP PVT-experiment design</li>
+<li>The HnP material-balance QC framework as published lab standard</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Stian Mydland</strong> &mdash; Whitson AS engineer / NTNU PhD; first author. Continued lead of the unconventional-EOR cluster from the 2020 SPE-200396 mechanisms paper through the 2020 URTeC-2765 simulation paper and into this 2021 lab-protocol formalisation.</p>
+<p><strong>Mathias Lia Carlsen</strong> &mdash; Whitson AS senior engineer; co-author of the URTeC-539 original HnP-PVT proposal that this paper formalises.</p>
+<p><strong>Keong Aik Lau</strong> &mdash; Stratum Reservoir; acknowledged for lab-side discussions during the protocol design.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

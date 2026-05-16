@@ -1,0 +1,71 @@
+id: 1980_whitson_c7plus_eur183
+title: Characterizing Hydrocarbon Plus Fractions (EUR-183)
+page_title: Whitson (1980) EUR-183 - Characterizing Hydrocarbon Plus Fractions
+authors:
+- Curtis H. Whitson
+authors_affiliation: 'sole author, University of Trondheim; footnote: now at Rogaland District College'
+venue: European Offshore Petroleum Conference and Exhibition, London, 21-24 October 1980, pp. 369-380
+paper_number: EUR-183
+doi: none indexed
+funding: null
+citations: citation count not available in OpenAlex (1980 EUR conference paper, pre-DOI era)
+tags:
+- C7+ Characterisation
+- Gamma Distribution
+- Sturge's Rule
+- MCN Regrouping
+- Riazi-Daubert
+- Phase 1
+whitson_index: 0
+landmark_inline_text: PRECURSOR PAPER
+landmark: true
+landmark_html: |-
+  <p><strong>Why it matters:</strong> EUR-183 is the origin of the Whitson C7+ characterisation. The three-parameter gamma distribution for molar mass, the Riazi-Daubert critical-property framework, and the regrouping argument all appear here for the first time. SPE-12233 in 1983 is the matured published version that takes this paper, widens the α range using Haaland's 1981 NTH MS thesis results, and switches the regrouping method from Sturge's rule to Gauss-Laguerre quadrature. To read EUR-183 is to see the C7+ framework before any of the polishing.</p>
+sections:
+- heading: Context
+  body_html: |-
+    <p>Curtis is 24 when EUR-183 is presented in London. He has been at NTH for two years and is starting to move into the consulting work for Norwegian operators (Sleipner, the Reservoir Evaluation A-B studies for Statoil) that fills the early 1980s. The cubic equation of state (Peng-Robinson 1976, SRK 1972) has become the standard predictive tool for reservoir-fluid phase behaviour, but the heavy end remains the weak link. Real reservoir fluids contain thousands of compounds heavier than hexane, lumped into a C7+ fraction with only molecular weight and specific gravity measured. Every laboratory chooses its own SCN splitting, its own pseudocomponent count, its own way of assigning critical properties.</p><p>EUR-183 sets out to address the problem in a single coherent framework. Part I gives the molar distribution. Part II gives the SCN property correlations. Part III gives the regrouping. The paper is written in the voice of a 24-year-old who has done a rigorous literature search and found that "most authors expressed similar frustration in trying to solve the problem" and decided to analyse the available molar-distribution data himself.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Three-parameter gamma distribution for C7+ molar mass.</strong> The Pearson Type 3 (gamma) probability density
+        <p><code>p(M) = (M - η)<sup>α-1</sup> exp[-(M - η)/β] / [β<sup>α</sup> Γ(α)]</code></p>
+        is proposed as a flexible form covering both exponential C7+ distributions (typical of condensates, α = 1) and left-skewed distributions (typical of heavier oils, α &gt; 1). The cumulative distribution is given in closed form as an infinite series. η is treated as the minimum molecular weight in the C<sub>n+</sub> fraction (η = 14n - 7 in EUR-183; SPE-12233 later standardises this to 14n - 6). α is the shape parameter and β is the scale parameter, with the constraint αβ = M<sub>n+</sub> - η.</li>
+    <li><strong>α as a regression variable when extended analysis is partial.</strong> When a partial extended C7+ analysis is available (chromatography gives SCN groups up to say C<sub>10+</sub>), α can be estimated from the partial data and used to complete the splitting. EUR-183 gives the Whitson 1979 estimator (Eq. 10a, coefficients 0.5000876, 0.1648852, 0.0544174) for this purpose. The same estimator appears in SPE-12233 three years later.</li>
+    <li><strong>Riazi-Daubert critical-property correlations.</strong> Once SCN molecular weights and gravities are set, the Riazi-Daubert form <code>θ = a T<sub>b</sub><sup>b</sup> γ<sup>c</sup></code> gives critical pressure, critical temperature, and acentric factor. Boiling points are estimated from the Watson characterisation factor K<sub>w</sub> = T<sub>b</sub><sup>1/3</sup>/γ held approximately constant across SCN groups. Watson K is also used as a QC test on the consistency of the input molecular weight and specific gravity.</li>
+    <li><strong>Sturge's rule for MCN group count.</strong> The number of multi-carbon-number pseudocomponents to use is
+        <p><code>NG = INT[1 + 3.3 log<sub>10</sub>(N - n)]</code></p>
+        where N is the heaviest SCN group and n is the lightest. The boundaries are placed at log-spaced molecular-weight cuts: <code>M<sub>I</sub>′ = M<sub>n</sub> [exp((1/NG) ln(M<sub>N</sub>/M<sub>n</sub>))]<sup>I</sup></code>. Log-spacing is justified by the observation that gamma and folded-log-normal distributions are similar in log-M space for a wide range of α. For lighter fluids with z<sub>7+</sub> &lt; 12%, NG can be reduced by 1.</li>
+    <li><strong>Watson K estimator for unknown specific gravity.</strong> EUR-183 Eq. 19 gives <code>K-hat<sub>n+</sub> = 4.5579 M<sub>n+</sub><sup>0.15178</sup> γ<sub>n+</sub><sup>-0.84573</sup></code>. Combined with the constant-K assumption across SCN groups, this lets the engineer back out SCN specific gravities from a single measured M<sub>n+</sub> and γ<sub>n+</sub>.</li>
+    <li><strong>Worked example on Hoffman's gas condensate.</strong> Tables 1-3 of EUR-183 take the Hoffman lean gas condensate, split it into SCN groups using the gamma distribution, assign critical properties via Riazi-Daubert with constant K<sub>w</sub>, and regroup into MCN groups using Sturge's rule. Phase envelopes are reproduced. The same fluid reappears in SPE-12233's sensitivity studies in 1983.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The origin paper.</strong> Every element of the C7+ method that SPE-12233 codifies in 1983 (gamma distribution, Riazi-Daubert correlations, constant Watson K across SCN groups, MCN regrouping) appears here in 1980. The 1983 paper widens the α range (from 1.0 to 2.0 in EUR-183 to 0.5 to 3.0 in SPE-12233) using Haaland's 1981 NTH MS thesis results, switches the regrouping method to Gauss-Laguerre quadrature, refits the Riazi-Daubert constants for high boiling point, and reframes η as a regression variable rather than 14n - 7. The conceptual scaffolding is set in 1980.</p>
+    <p><strong>Trondheim at 24.</strong> The author byline reads "Curtis H. Whitson, University of Trondheim" with the footnote that he is now at Rogaland District College. EUR-183 is the bridge between the apprentice years at NTH and the consulting decade that begins at Rogaland. Curtis was already three years out of Stanford, building the NTH lab manuals, and producing what would become the most-cited paper of his career in its first published form.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Pearson (1934), <em>Tables of the Incomplete Gamma Function</em> - the Type 3 gamma distribution</li>
+    <li>Riazi &amp; Daubert (1980), <em>Hydrocarbon Processing</em> - the θ = a T<sub>b</sub><sup>b</sup> γ<sup>c</sup> form for petroleum property correlations</li>
+    <li>Watson, Nelson &amp; Murphy (1935) - the K<sub>w</sub> characterisation factor for petroleum fractions</li>
+    <li>Katz &amp; Firoozabadi (1978) - generalised SCN properties tabulated to C45</li>
+    <li>Hoffman, Crump &amp; Hocott (1953) - the lean gas condensate that appears as the worked example</li>
+    <li>Peng &amp; Robinson (1976) and Soave (1972) - the cubic EOS frameworks the characterisation feeds</li>
+    <li>Whitson 1979 (NTH internal note) - the α estimator from partial extended analyses</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Haaland (1981) NTH MS thesis</strong> - experimental validation against five North Sea oils; motivated the wider α range and the reframing of η in the 1983 paper</li>
+    <li><strong>Whitson (1983) SPE-12233</strong> - the matured published version, with Gauss-Laguerre quadrature replacing Sturge's rule and the α range widened to 0.5-3.0</li>
+    <li><strong>Whitson (1984) SPE-11200</strong> - sensitivity analysis of C7+ critical-property correlations on EOS predictions</li>
+    <li>The default C7+ handling implemented in every commercial reservoir simulator and PVT package since the mid-1980s</li>
+    <li>Pedersen &amp; Christensen (1984, 1989) - the logarithmic-distribution alternative, which is the α = 1 special case of the EUR-183 gamma</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Sole author.</strong> The acknowledgements credit colleagues at NTH and the European Offshore Petroleum Conference reviewers. The paper draws on the Whitson 1979 NTH note for the α estimator and on the Riazi-Daubert 1980 correlations published the same year.</p>

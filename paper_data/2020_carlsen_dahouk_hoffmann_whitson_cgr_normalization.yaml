@@ -1,0 +1,70 @@
+id: 2020_carlsen_dahouk_hoffmann_whitson_cgr_normalization
+title: CGR Normalization - Convert Rates to a Common Surface Process
+page_title: Carlsen, Dahouk, Hoffmann, Whitson (2020) - CGR Normalization
+authors:
+- Mathias Lia Carlsen
+- Mohamad Majzoub Dahouk
+- A. Hoffmann
+- Curtis H. Whitson
+authors_affiliation: Whitson AS
+venue: SPE Canada Unconventional Resources Conference (virtual), 2020
+paper_number: SPE-199982-MS
+doi: 10.2118/199982-MS
+funding: null
+citations: 1
+citations_source: OpenAlex
+tags:
+- CGR Normalization
+- Common Surface Process
+- Gas Condensate Diagnostic Plot
+- Fluid-Type Sensitivity
+- Field-Wide EOS
+- Exotic-Physics Test
+- Tight Unconventionals
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Third paper in the 2020 Whitson AS surface-process triplet (with IPTC-19596 compositional tracking and IPTC-19775 separator-oil shrinkage). Where the earlier two handle wellstream-composition prediction and stock-tank volumetric conversion at a <em>given</em> separator condition, this paper addresses the next layer: when separator pressure and temperature themselves drift over time, the resulting total CGR is still inconsistent with the fixed-surface-process assumption baked into black-oil tables used in reservoir simulation, RTA, PTA, and nodal analysis. The paper's claimed novelty is "a simple solution to a widely known, but under-addressed and overlooked problem, not earlier presented in the open literature."</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>CGR normalization concept and 2-step procedure.</strong> Step 1: estimate the flowing wellstream composition using whichever of the four tiered methods the day's data supports (Hoda-Whitson 2013; Hoda-Hoffmann-Kuntadi 2017 two-ratio; Whitson-Sunjerga 2012; Carlsen et al. 2020 IPTC-19596 Method 3). Step 2: re-process the estimated wellstream through a single fixed common surface process (multi-stage flash, K-value process, or full process simulation in HYSYS / UNISIM). The output is a normalised CGR consistent across time and across wells. Four data requirements: tuned EOS, measured CGR, measured separator conditions, wellstream estimate. CGR normalisation runs <em>after</em> the SF/FF stock-tank conversion of IPTC-19775; it handles the residual error from drifting <code>p<sub>sep</sub></code> and <code>T<sub>sep</sub></code> that SF/FF alone cannot.</li>
+    <li><strong>Fluid-type sensitivity framework.</strong> Sensitivity ratio <code>δ = CGR<sub>max</sub> / CGR<sub>min</sub></code> across typical separator range (<code>p<sub>sep</sub></code> 50-1000 psia, <code>T<sub>sep</sub></code> 50-150 °F) decreases monotonically from ~10 for very lean gas condensates (solution CGR <code>r<sub>s</sub></code> ~1 STB/MMscf) through ~2-4 for richer condensates, ~1.1 for volatile oils, ~1.0 for black oils. Practical rule: CGR normalisation matters for near-critical fluids and gas condensates, not for black oils or volatile oils. A field with swinging separator conditions and a lean gas-condensate well can report CGRs differing by up to a factor of ten with constant wellstream composition - an operationally large bias.</li>
+    <li><strong>Gas Condensate Diagnostic Plot with CVD reference.</strong> Producing CGR plotted against flowing bottom-hole pressure (unconventional) or average reservoir pressure (conventional), overlaid against the CVD-released-gas CGR of the initial in-situ fluid. Without CGR normalisation, late-time forecasting errors reach up to 50% and the plot can show false indications of mobile condensate. With normalisation, the diagnostic separates real reservoir physics from operational surface-process noise.</li>
+    <li><strong>CGR normalization as the mandatory first-step diagnostic before exotic physics.</strong> Operators proposing fluid heterogeneity, gas adsorption, or pore confinement to explain decreasing CGRs above saturation pressure in Eagle Ford or Duvernay shale wells must apply CGR normalisation first. Operational separator-condition swings can produce the same signature; ruling them out is the prerequisite for invoking nano-scale or compositional-grading explanations.</li>
+    <li><strong>Field-wide / basin-wide common surface process recommendation.</strong> Companion to the field-wide EOS principle: a single common surface process should be defined for all wells in a field or basin and used for all reported surface rates (well tests, PVT, simulation) so that well-to-well and time-to-time comparisons are consistent. Pairs with the field-wide EOS to make the whole rate-reporting system self-consistent.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Naming the surface-process inconsistency.</strong> Operators have lived with the surface-process drift problem for decades, usually compensating with hand-tuned constants. The paper names the inconsistency, frames it as a two-step rate correction, and ties it explicitly to the existing black-oil-table infrastructure rather than asking operators to throw away their tools. The operational hook is the four-tier wellstream-estimation table that meets each operator at whatever data density they actually have.</p>
+    <p><strong>The "rule out the boring explanation first" instruction.</strong> Curtis's framing in the exotic-physics caveat is characteristic: before reaching for nano-confinement or selective gas adsorption, run the CGR-normalisation correction and see whether the anomaly disappears. The instruction is a Curtis hallmark - same pattern as the 2000 monograph PVT-data QC chapters: the first response to a surprising observation is a careful look at how the measurement was made.</p>
+    <p><strong>Common surface process as basin-scale infrastructure.</strong> The field-wide-EOS recommendation from Younus 2019 and the common-surface-process recommendation in this paper together make the basin's rate-reporting system internally consistent. Same EOS, same surface process, same shrinkage / flash factor handling - everyone's well numbers comparable.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Carlsen-Dahouk-Mydland-Whitson 2020 IPTC-19596 compositional tracking (Step-1 wellstream-estimation engine)</li>
+    <li>Carlsen-Whitson 2020 IPTC-19775 separator-oil shrinkage (the immediate predecessor correction)</li>
+    <li>Hoda-Whitson 2013 SPE-164334 (CGR-only wellstream estimation)</li>
+    <li>Hoda-Hoffmann-Kuntadi 2017 two-ratio method (intermediate tier in the wellstream-estimation table)</li>
+    <li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework</li>
+    <li>Younus et al. 2019 URTeC-551 Field-wide EOS (the common backbone)</li>
+    <li>Whitson-Brule SPE Monograph 2000 (CVD experiment and gas-condensate-deliverability framework)</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Carlsen-Whitson 2022 NRTA papers SPE-210420 / URTeC-3718584 (rate-transient analysis with rigorous rate normalisation)</li>
+    <li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 NRTA infrastructure paper</li>
+    <li>Operator unconventional-PVT QC workflows in Eagle Ford, Duvernay, Montney, Vaca Muerta</li>
+    <li>Whitson Academy course material on rate normalisation and the Gas Condensate Diagnostic Plot</li>
+    <li>The "rule out CGR-normalisation artefacts first" discipline in industry interpretation of declining-CGR shale-well behaviour</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; first author of the 2020 surface-process triplet.</p><p><strong>Mohamad Majzoub Dahouk</strong> — Whitson AS engineer; long-standing co-author on the unconventional-PVT cluster.</p><p><strong>A. Hoffmann</strong> — Whitson AS engineer; co-author on the Hoda-Hoffmann-Kuntadi 2017 two-ratio method that contributes the intermediate tier of the wellstream-estimation table.</p>

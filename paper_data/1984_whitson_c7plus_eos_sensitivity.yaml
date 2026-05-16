@@ -1,0 +1,68 @@
+id: 1984_whitson_c7plus_eos_sensitivity
+title: Effect of C7+ Properties on Equation-of-State Predictions
+page_title: Whitson (1984) SPE-11200 - Effect of C7+ Properties on EOS Predictions
+authors:
+- Curtis H. Whitson
+authors_affiliation: 'sole author, Rogaland Regional College; footnote: now with Whitson Oil Inc.'
+venue: <em>SPE Journal</em>, December 1984, pp. 685-696
+paper_number: SPE-11200-PA
+doi: 10.2118/11200-PA
+funding: null
+citations: 80
+citations_source: OpenAlex
+tags:
+- C7+ Sensitivity
+- EOS Tuning
+- Peng-Robinson
+- ZJRK
+- Omega_a Omega_b
+- Phase 1
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>SPE-12233 (published the year before) had established a method for characterising the C7+ fraction. SPE-11200 closes the loop: how much does the characterisation choice actually matter for EOS predictions, and what are the disciplined ways to adjust EOS parameters during regression. The paper studies six reservoir fluids spanning lean gas to black oil, reviews about twelve property correlations (Roess, Edmister, Lydersen, Nokay, Cavett, Hariu-Sage, Bergman, Kesler-Lee, Riazi-Daubert and others), and provides a regression framework in which adjustments to the EOS constants Ω<sub>a</sub> and Ω<sub>b</sub> map cleanly back to adjustments of T<sub>c</sub>, p<sub>c</sub>, and ω.</p><p>Curtis is 28. The byline reads Rogaland Regional College with a footnote that he is now with Whitson Oil Inc. The paper is a direct extension of SPE-12233 and was originally presented at the SPE Annual Fall Technical Conference in October 1982 in New Orleans. Two cubic EOS forms are used: PREOS (Peng-Robinson 1976) and ZJRK (Yarborough's version of the modified Zudkevich-Joffe-Redlich-Kwong, in the Redlich-Kwong family). PREOS yields better liquid-density estimates than SRK; ZJRK enters the comparison because its acentric-factor correction structures the temperature dependence differently.</p>
+- heading: Key Findings
+  body_html: |-
+    <ul>
+    <li><strong>Small differences in C7+ critical properties produce large differences in EOS predictions.</strong> A few percent in T<sub>c</sub> or p<sub>c</sub>, or 0.05 to 0.10 in ω, translates into qualitatively different saturation pressures, different dew-point loci, and different liquid-dropout profiles. The Eilerts OO-L-544 gas condensate run through six different critical-property correlations (Eilerts, Robinson-Peng PNA, Cavett, Kesler-Lee, Riazi-Daubert, experimental) yields six different EOS phase diagrams from the same composition. Getting the composition right is necessary but not sufficient; the characterisation choice is an independent source of model uncertainty comparable in magnitude to compositional uncertainty.</li>
+    <li><strong>Different characterisation schemes can change a fluid from "gas condensate" to "volatile oil."</strong> Without any change in measured composition, swapping the C7+ correlation can move the predicted critical point across the reservoir temperature. This is the practical case for reporting the characterisation scheme alongside any EOS prediction, and for never comparing EOS studies that use different characterisation schemes as if the predictions were directly meaningful.</li>
+    <li><strong>Ω<sub>a</sub>, Ω<sub>b</sub> regression is algebraically equivalent to T<sub>c</sub>, p<sub>c</sub>, ω adjustment.</strong> For PR/SRK/ZJRK, <code>a = μ Ω<sub>a</sub> R<sup>2</sup> T<sub>c</sub><sup>2</sup>/p<sub>c</sub></code> and <code>b = Ω<sub>b</sub> R T<sub>c</sub>/p<sub>c</sub></code>. Adjusting Ω<sub>a</sub> by α and Ω<sub>b</sub> by β is identical to setting <code>T-tilde<sub>c</sub> = (α/β) T<sub>c</sub></code> and <code>p-tilde<sub>c</sub> = (α/β<sup>2</sup>) p<sub>c</sub></code>, with the acentric factor following from the quadratic in m. Special cases: α = β adjusts only p<sub>c</sub>; α/β = 1 with αβ ≠ 1 adjusts T<sub>c</sub> and ω jointly. This algebraic view turns regression from a free fitting exercise into a constrained optimisation on property space.</li>
+    <li><strong>Critical-property correlations have differing applicability ranges.</strong> Roess (1936) is unreliable above C20. The Hariu-Sage molecular-weight-from-K<sub>w</sub> correlation is a Winn-nomograph surface fit that holds to about T<sub>b</sub> = 1090 K. Kesler-Lee (1976) goes to about 920 K and Curtis extrapolates further by forcing p<sub>c</sub> toward p<sub>a</sub> as T<sub>b</sub> approaches T<sub>c</sub>. Riazi-Daubert (1980) is the framework adopted, with the refitted constants for high T<sub>b</sub> that appear in SPE-12233. The Robinson-Peng PNA approach (Bergman 1976 paraffin-naphthene-aromatic split) is reviewed but not adopted: assigning identical boiling points to all three pseudocomponents loses validity for fractions heavier than C15.</li>
+    <li><strong>Acentric-factor matters more in ZJRK than PR.</strong> ZJRK uses ω to correct both Ω<sub>a</sub> and Ω<sub>b</sub>. Edmister acentric factors tend to lie below Kesler-Lee values for fractions heavier than C20, and that gap matters differently in the two EOS families. The paper gives practical guidance on which acentric-factor correlation pairs with which EOS for which fluid type.</li>
+    <li><strong>The 5-10% modification guideline.</strong> Practical EOS regression should not push Ω<sub>a</sub> and Ω<sub>b</sub> beyond what corresponds to a physically meaningful 5-10% adjustment in critical properties. "Constants a and b should not be adjusted more than will result in altered critical properties which are physically meaningful." The closing warning of the paper.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The disciplined-regression paper.</strong> SPE-11200 is the paper that says: tune the EOS, but tune it in the coordinate system where your knobs have physical meaning. The Ω<sub>a</sub>-Ω<sub>b</sub> algebra makes explicit what experienced engineers had been doing intuitively: each knob is a critical-property adjustment in disguise. The 5-10% rule of thumb still appears in every modern EOS-tuning workflow.</p>
+    <p><strong>The companion to SPE-12233.</strong> Where SPE-12233 sets up the C7+ characterisation framework, SPE-11200 quantifies how much the choice within that framework matters. Together the two papers are the foundation of practical EOS modelling for reservoir fluids. The 2000 SPE Monograph Chapter 5 (characterisation) and Chapter 4 (EOS modelling) are the matured presentations of both threads.</p>
+    <p><strong>Whitson Oil Inc.</strong> The footnote on the byline (now with Whitson Oil Inc.) is the first published trace of Curtis's consulting practice that becomes Whitson AS in 1988. The paper was presented in October 1982 and published in December 1984; in the interval Curtis defended his PhD at NTH (1984, external committee Michelsen and Aziz) and began the transition from full-time academic to academic-plus-consultant.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li><strong>Whitson (1983) SPE-12233</strong> - the C7+ gamma-distribution framework that this paper analyses for sensitivity</li>
+    <li><strong>Whitson (1980) EUR-183</strong> - the precursor C7+ method with Riazi-Daubert correlations</li>
+    <li>Peng &amp; Robinson (1976) - the PREOS used for one half of the comparison</li>
+    <li>Yarborough's modified Zudkevich-Joffe-Redlich-Kwong (1979) - the ZJRK form used for the other half</li>
+    <li>Coats &amp; Smart (1982 prior art) - five-parameter EOS regression with Ω<sub>a</sub>, Ω<sub>b</sub> as knobs</li>
+    <li>Katz &amp; Firoozabadi (1978) - prior art on EOS BIP regression</li>
+    <li>Roess (1936), Edmister (1948), Lydersen (1955), Nokay (1959), Cavett (1962), Hariu-Sage (1969), Bergman (1976), Kesler-Lee (1976), Riazi-Daubert (1980) - the twelve property correlations reviewed</li>
+    <li>Eilerts OO-L-544 gas condensate and five other reservoir fluids spanning lean gas to black oil</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Whitson (1984) SPE-12634</strong> - the critical-property refinement paper for petroleum fractions</li>
+    <li><strong>Whitson-Brule (2000) SPE Monograph "Phase Behavior", Chapter 4</strong> - EOS modelling, including the Ω<sub>a</sub>-Ω<sub>b</sub> regression framework matured from this paper</li>
+    <li>The 5-10% adjustment rule of thumb in every commercial EOS-tuning workflow</li>
+    <li>Coats-Smart-style five-parameter regression as the standard EOS-tuning approach</li>
+    <li>Modern PVT-tuning software (Eclipse PVTi, CMG WinProp, tNavigator PVTtool, PVTpro) - the regression parametrisation traces back to this paper</li>
+    <li>The discipline of reporting the C7+ characterisation alongside any EOS prediction</li>
+    </ul>
+  box_style: connections
+- heading: Key References
+  body_html: |-
+    <p><strong>Sole author.</strong> The paper was originally presented at the SPE Annual Fall Technical Conference in New Orleans, 26-29 September 1982, and published in <em>SPEJ</em> in December 1984. The author affiliation on the printed paper is Rogaland Regional College with the footnote "Now with Whitson Oil Inc." Curtis defended his PhD at NTH in the interval between presentation and publication. The work draws on the C7+ framework set up in SPE-12233 (1983) and EUR-183 (1980).</p>

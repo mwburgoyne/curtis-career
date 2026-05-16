@@ -1,0 +1,71 @@
+id: 2000_smith_etal_orocual_complex_column
+title: Equation of State of a Complex Fluid Column and Prediction of Contacts in the Orocual Field, Venezuela
+page_title: Smith et al. (2000) - EOS of a Complex Fluid Column, Orocual Field
+authors:
+- R. W. Smith
+- W. A. Bard (IRMI); C. Lugo
+- I. Yemez
+- A. Guerini (PDVSA); Curtis H. Whitson
+- Øivind Fevang
+authors_affiliation: NTNU / PERA
+venue: SPE Annual Technical Conference and Exhibition, Dallas, 1-4 October 2000
+paper_number: SPE-63088
+doi: null
+funding: null
+citations: null
+tags:
+- Complex Column
+- Orocual
+- Triple-Plot QC
+- Single EOS
+- Thermal Stabilisation
+- GOC Prediction
+- Phase 3
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Orocual is a compartmentalised reservoir in Monagas State, Venezuela, with a 3000+ ft hydrocarbon column ranging from light gas condensate at the top through near-critical transition fluid to volatile oil and undersaturated black oil at the bottom. Smith and Bard (Integrated Reservoir Management, Inc.) led the engineering workflow with Lugo / Yemez / Guerini from PDVSA. Curtis and Fevang from NTNU/PERA provided PVT-characterisation methodology. The paper is a Curtis-flavoured field demonstration that one EOS can describe an extreme compositional gradient across multiple non-communicating fault compartments, with the workflow extracted as three transferable Curtis frameworks.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Triple-plot C<sub>7+</sub> quality-control framework for pre-regression sample vetting.</strong> Before regressing an EOS against a multi-sample PVT dataset, screen each sample on three plots sharing a common axis:
+        <ol>
+    <li><strong>Watson <code>K<sub>w</sub></code> vs C<sub>7+</sub> MW and SG</strong> using <code>K<sub>w</sub> = 4.5579 M<sup>0.15178</sup> γ<sup>-0.84573</sup></code>. Samples should cluster within ±5% of a common <code>K<sub>w</sub></code> (Orocual: 11.62 ± 0.05-0.1).</li>
+    <li><strong>C<sub>7+</sub> molar mass vs <code>p<sub>s</sub></code>.</strong> In a graded reservoir, C<sub>7+</sub> MW changes monotonically with depth and <code>p<sub>s</sub></code> varies monotonically. Off-trend samples flag.</li>
+    <li><strong>C<sub>1</sub> mol% (or C<sub>7+</sub> mol%) vs <code>p<sub>s</sub></code>.</strong> Lightest- or heaviest-end behaviour test.</li>
+    </ol>
+        The decision rule is principled: samples off-trend in multiple plots get removed; samples off-trend in one plot only get re-analysed or flagged as possibly-separate fluid systems. Orocual outcome: 18 initial samples, 8 selected after the triple-plot screen, 7 retained after first regression. Final 7-sample EOS matched CCE / CVD / DLE / SEP across all kept samples within 1-2%.</li>
+    <li><strong>1-D compositional-stability pre-simulation with thermal gradient before loading into the full-field model.</strong> A subtle simulator-initialisation problem: composition-vs-depth tables computed from isothermal EOS gradient calculation are mathematically inconsistent with the thermal gradient the full-field simulator applies at runtime. The mismatch can cause silent compositional drift in the first few timesteps, changing the effective initial fluids-in-place. The Orocual remedy: run a 1-D pre-simulation of 200 layers (each 25 ft thick) at artificial porosity = 1 and permeability = 1000 md with the thermal gradient applied (<code>T = 0.013125 · TVDSS + 100</code> for Orocual). 50-75 simulated years (2-3 CPU minutes) gives a stabilised composition-vs-depth table ready for the full-field model. The stabilised table sums to molar fraction 1.0 at every depth and does not drift further when the full-field simulator starts.</li>
+    <li><strong>Single EOS can describe a complex hydrocarbon column across multiple fault compartments.</strong> Orocual has four major fault compartments (San Juan 3, 6, 7, 9). The paper demonstrates that a single 7-pseudocomponent EOS, developed from samples across all four compartments, reproduces the full column. The compartmental difference is depth alignment, not fluid system. Each compartment hosts a different position of the same continuous composition-vs-depth relationship; structural separation by faulting offsets the column vertically, so the same fluid type sits at different TVDSS in different compartments. The validation: GOC of the untested San Juan 7 compartment was predicted at 16,025 ft SS from the EOS gradient before drilling. ORC-030W was drilled in April 2000 and confirmed the GOC at 16,040 ft SS - a 15-ft match.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The triple-plot QC framework operationalises Watson-K consistency.</strong> The 1983 Austad-Whitson IBC paper introduced Watson-K field-constancy as a QC tool. By Orocual 2000, the practice has matured into a three-axis screen with explicit decision rules. The downstream Whitson AS field-wide EOS workflow (Younus 2019 URTeC-551 onwards) and the 2023-2024 Nielsen sampling-uncertainty programme all rest on the same screening discipline.</p>
+    <p><strong>The single-EOS-across-compartments claim is genuinely contrarian.</strong> The natural reflex in operator-team practice is to assign one EOS per compartment. Curtis's argument is that this multiplies engineering effort and produces incoherent reserve estimates at compartment boundaries. The Orocual GOC prediction is the existence proof, but the argument is general: start with a single-EOS hypothesis and test it via the triple-plot QC; only develop separate EOS models if systematic off-trend behaviour persists between compartments.</p>
+    <p><strong>The 15-foot GOC prediction is the case study that became the teaching anecdote.</strong> Predicting a previously-untested GOC depth to 15 ft of accuracy from samples in neighbouring compartments is the kind of result that justifies the upfront discipline of cross-compartment consistency checks. It reappears in the 2000 Monograph and in Whitson Academy course material on compositional grading.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson (1980/1983) Watson-K estimator from MW and SG</li>
+    <li>Austad-Hvidsten-Norvik-Whitson 1983 IBC - Watson K field-constancy as QC tool</li>
+    <li>Whitson-Anderson-Søreide (1989/1990) multi-sample C<sub>7+</sub> with shared pseudocomponents</li>
+    <li>Whitson-Belery 1994 SPE-28000 compositional grading</li>
+    <li>Høier-Whitson 1998 SPE-49269 compositional-grading framework</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson-Brule 2000 SPE Monograph (published the same year; the framework reappears as canonical practice)</li>
+    <li>Takahashi-Fevang-Whitson 2002 SPE-78483 - multi-sample single-EOS with the Gaussian-quadrature multi-sample framework now standard</li>
+    <li>Younus 2019 URTeC-551 field-wide EOS workflow - parent-child architecture is the next-generation operationalisation</li>
+    <li>Nielsen-Wanat-Whitson 2024 SPE-220699 - the triple-plot logic extends into the compositional-uncertainty propagation work</li>
+    <li>Operator-side workflows for compartmentalised assets that previously required separate EOS models</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>R. W. Smith and W. A. Bard</strong> — Integrated Reservoir Management, Inc. (IRMI). Operator-engineering side of the Orocual workflow.</p><p><strong>C. Lugo, I. Yemez, A. Guerini</strong> — PDVSA team.</p><p><strong>Øivind Fevang</strong> — co-author with Curtis on the PVT methodology, three years after the 1997 Fergusson-Medal Fevang-Whitson SPE-30714.</p>

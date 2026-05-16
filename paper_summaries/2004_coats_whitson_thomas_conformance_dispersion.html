@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coats, Whitson & Thomas (2004) - Modeling Conformance as Dispersion</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Modeling Conformance as Dispersion</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Keith H. Coats, <mark>Curtis H. Whitson</mark>, Larry K. Thomas</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Houston, 26–29 September 2004, 23 pp.</p>
+  <p><strong>Paper number:</strong> SPE-90390-MS</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/90390-MS">10.2118/90390-MS</a></p>
+  
+  <p><strong>Affiliations:</strong> Coats Engineering (lead), NTNU & PERA, ConocoPhillips</p>
+  
+  <p><strong>Citations (OpenAlex):</strong> 8</p>
+  <p><span class="tag">Physical vs Apparent Dispersivity</span> <span class="tag">Conformance</span> <span class="tag">Streamline Simulation</span> <span class="tag">Miscible Flood</span> <span class="tag">Bank Breakdown</span> <span class="tag">Coats-Whitson</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Keith H. Coats wrote SENSOR. He had been one of the most influential reservoir-simulation engineers of his generation, with a track record running from the 1960s Mobil thermal-simulator work, through the early commercial compositional simulators of the 1980s, to Coats Engineering's SENSOR in the 1990s. <mark>Whitson</mark> had been using SENSOR for compositional work for years and knew Coats's contributions at depth. The 2004 SPE-90390 paper is the only Coats-<mark>Whitson</mark> first-author collaboration in either of their corpora. Larry K. Thomas of ConocoPhillips is the third author. The seniority pairing matters: this is two of the field's most senior reservoir-simulation engineers, of comparable standing, writing together. <mark>Whitson</mark> is 48; Coats is in his late sixties.</p><p>The technical target is a long-standing literature confusion. Field tracer tests routinely yield apparent dispersivities of 100 to 1000+ feet by 1-D convection-dispersion fits, while lab corefloods give 0.01 ft. Many authors had concluded dispersivity is scale-dependent, with a physical mechanism that scales up with travel distance. Coats-<mark>Whitson</mark>-Thomas argue this is a mistake. The large apparent dispersivities reflect <em>conformance</em> (heterogeneity + well pattern + completion + drift), not physical dispersion. Physical dispersivity is a rock property near 0.01 ft, independent of scale. The two should not be conflated in simulator inputs.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Physical vs apparent dispersivity - definitions that differ by 3-5 orders of magnitude.</strong> Physical dispersivity α is a microstructural rock property measured by lab corefloods; for consolidated rocks α ≈ 0.01 ft, for unconsolidated sandpacks an order of magnitude smaller. Scale-invariant and time-invariant. Apparent dispersivity α<sub>a</sub> is the best-fit value of the 1-D convection-dispersion equation matched to effluent profiles from field tracer tests or numerical simulations. Field-scale α<sub>a</sub> is typically 100 to &gt;1000 ft, i.e. 10<sup>4</sup> to 10<sup>5</sup> times the physical value. Decomposition: <code>α<sub>a</sub> ≈ α + α<sub>ac</sub></code> where α<sub>ac</sub> is the conformance contribution, and <code>α<sub>ac</sub> ≫ α</code> in nearly all field cases, so <code>α<sub>a</sub> ≈ α<sub>ac</sub></code> is a working approximation.</li>
+<li><strong>Heterogeneity alone causes no in-situ mixing.</strong> For the transport equation with longitudinal dispersivity α = 0, transverse α<sub>t</sub> = 0, and molecular diffusion D<sub>0</sub> = 0, the equation reduces to a first-order hyperbolic form with no second-order diffusive terms. No mixing occurs anywhere in the reservoir, however complex the velocity field. Heterogeneity affects the velocity field and the front shape, but cannot introduce mixing without a diffusive second derivative. A 2-D heterogeneous five-spot simulated with 3DSL streamline code (567×567 grid, 3688 streamlines, Q<sub>D</sub> = 0.3366 PV) shows concentrations of exactly 0 or 1 everywhere - no intermediate values. The effluent profile is smeared (apparent Peclet number 2.7, apparent dispersivity 7 times the homogeneous baseline) but the smearing is in the production weighting of streamlines, not in the reservoir.</li>
+<li><strong>Additive dispersivity decomposition - α<sub>a</sub> ≈ α + α<sub>ap</sub> + α<sub>as</sub>.</strong> Apparent dispersivity decomposes approximately additively into physical dispersion, areal (pattern) conformance, and stratification (vertical) conformance. The Peclet-inverse form <code>1/N<sub>Pea</sub> ≈ 1/N<sub>Pe</sub> + 1/N<sub>Peap</sub> + 1/N<sub>Peas</sub></code> is exact for zero stratification (V = 0) and accurate within a few percent for V up to 0.4. A worked verification: stratified five-spot with Dykstra-Parsons V = 0.13 and α = 0.01 ft gives direct-fit <code>1/N<sub>Pea</sub> = 0.01977</code> vs the decomposition prediction 0.01974 - agreement within 1%.</li>
+<li><strong>Scale dependence of α<sub>a</sub> is an algebraic artefact, not a physical mechanism.</strong> The widely-reported slope-of-unity behaviour on log-log plots of α<sub>a</sub> vs travel distance L is a necessary consequence of fitting the single-parameter 1-D CD equation (parameter Peclet number L/α) to profiles reflecting conformance. Similar systems (same heterogeneity, same well pattern) have identical <code>C(Q<sub>D</sub>)</code> profiles by construction. The 1-D CD fit gives the same N<sub>Pea</sub>, which by <code>α<sub>a</sub> = L/N<sub>Pea</sub></code> forces <code>α<sub>a</sub> ∝ L</code>. Slope unity is algebraically forced, not evidence of a physical mechanism. Under drift in single-well echo tests the slope can take any value from -∞ to +∞ depending on the specific combination of injection rate and time used to vary L.</li>
+<li><strong>Use physical dispersivity, not apparent, as simulator input.</strong> The practical recommendation. Reservoir-process simulations - miscible solvent floods, enriched-gas drives above MME, tracer tests, bank breakdown, in-situ scale precipitation, chemical reaction - should use α ≈ 0.01 ft as the CD transport coefficient. Transverse <code>α<sub>t</sub> ≈ α/10</code> to <code>α/30</code> per Perkins-Johnston (1963) for sandstones. Conformance should be modelled explicitly via fine-scale permeability distribution, well placement, and drift boundary conditions. Apparent-dispersivity values are appropriate <em>only</em> as correction terms in coarse-grid or reduced-dimension history-matching models; never use the history-matched value (≫ 0.01 ft) in the physical CD flow terms describing miscibility, scale, or reaction. Using 100-1000 ft input dispersivities (as in Solano et al. 2001 and Stalkup 1998 studies of enriched-gas drives) forces in-situ mixing that does not physically occur, breaks miscibility banks artificially, and overstates the pessimistic effects of dispersion on recovery.</li>
+<li><strong>Numerical demonstration across simulator codes.</strong> The paper exercises Sensor (Coats Engineering), 3DSL (Streamline), and UTCHEM finite-difference codes against analytical Muskat 1949 stratification solutions and Pickens-Grisak 1981 field echo tests. The streamline code provides the visual proof of the no-mixing result. Sensor and UTCHEM with α = 0 reproduce the analytical stratification profiles within numerical-dispersion accuracy. The cross-simulator agreement is the structural argument that the result is physics, not implementation.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The Coats-<mark>Whitson</mark> collaboration.</strong> SPE-90390 is the only first-author Coats-<mark>Whitson</mark> paper in either corpus. Keith Coats was the founder of Coats Engineering and the author of SENSOR, the compositional reservoir simulator that runs alongside Eclipse and CMG in commercial use. He was one of the most influential reservoir-simulation engineers of his generation, with a publication record running from the 1960s Mobil thermal work through the early commercial compositional simulators of the 1980s. The 2004 paper is the seniority pairing - two senior figures of comparable standing, writing about a result they both believed was being misused industry-wide. The collaboration continued through the 2006 SPE Handbook compositional-simulation chapter (Coats, Thomas, Pierson - with <mark>Whitson</mark> credited).</p>
+<p><strong>Literature correction.</strong> Decades of papers had presented <code>α<sub>a</sub> vs L</code> log-log plots as evidence for scale-dependent <em>physical</em> dispersion. Coats-<mark>Whitson</mark>-Thomas re-interpret the same plots as evidence for scale-dependent conformance combined with scale-invariant physical dispersion. The two are routinely conflated. The 2004 paper is the clearest published statement of the distinction and the recommended remediation in simulator input choice. The argument is strongly worded: Conclusion 4 calls the observed scale dependence of apparent dispersivity "empty of meaning" when used as evidence of physical mechanism.</p>
+<p><strong>Impact on miscible-flood economics.</strong> Studies that used 100-1000 ft input dispersivities to predict MME-enrichment trade-offs (Solano-Johns-Lake 2001), bank breakdown (Stalkup 1998), and enriched-gas-drive recovery (Johns et al. 2000) systematically overstated the pessimistic effects of dispersion. The 2004 paper argues these studies should be re-run with α = 0.01 ft and explicit conformance modelling. The trade-offs shift in favour of more miscible recovery when the input is physical rather than apparent. Quantifying the shift is left as further work, but the methodological correction is what the paper insists on.</p>
+<p><strong>Phase 3 maturity.</strong> SPE-90390 belongs to the productivity peak of <mark>Whitson</mark>'s career. The 2000 Phase Behavior monograph is recent; the Fevang-<mark>Whitson</mark>-Sævareid TIPM consolidation came out in 2003; the Singh-<mark>Whitson</mark> BO PVT papers are running; the Alavian-<mark>Whitson</mark> CO2 EOR series is starting in 2005 with IPTC-10641. The Coats collaboration is the methodological side-project that says: the framework of physical vs apparent dispersivity has to be straight before any of the rest of the compositional-simulation edifice can be relied on.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Muskat (1949) <em>Physical Principles of Oil Production</em> — the analytical stratification solutions used as the verification baseline</li>
+<li>Pickens &amp; Grisak (1981) — the canonical field echo tests with apparent dispersivities orders of magnitude above lab values</li>
+<li>Perkins &amp; Johnston (1963) — the longitudinal-to-transverse dispersivity ratio for sandstones (10-30)</li>
+<li>Coats's own decades of reservoir-simulation work including the 1980 saturation-based IFT-threshold k<sub>r</sub> model and the SENSOR simulator</li>
+<li>3DSL streamline simulator (Streamline Inc.) and UTCHEM finite-difference code — the cross-validation tools</li>
+<li>Solano-Johns-Lake (2001), Stalkup (1998), Johns et al. (2000) — the miscible-flood studies whose input-dispersivity choices the paper critiques</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Coats, Thomas &amp; Pierson (2006) SPE Handbook</strong>, compositional-simulation chapter — carries the physical-vs-apparent dispersivity guidance into the textbook reference</li>
+<li>Subsequent miscible-flood and tracer-test simulation studies that use α ≈ 0.01 ft as the physical input and resolve conformance via fine-grid permeability fields</li>
+<li>Coarse-grid history-matching workflows that treat apparent dispersivity as a correction term confined to the reduced model, not exported into physical flow terms</li>
+<li>Streamline-based reservoir engineering practice that uses 3DSL-style codes to diagnose conformance contributions to effluent profiles separately from physical mixing</li>
+<li>Re-evaluation of enriched-gas-drive recovery predictions that had used apparent-dispersivity inputs</li>
+<li>The 2009 SPE TWA "Pillars of Technology" piece by <mark>Whitson</mark> revisits the dispersion-vs-conformance lesson among the broader reservoir-engineering pillars</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Keith H. Coats</strong> — Coats Engineering; author of SENSOR; one of the most influential reservoir-simulation engineers of his generation. First author on SPE-90390 and lead intellectual contributor on the additive-decomposition theorem and the analytical Muskat verification. The Coats-<mark>Whitson</mark> peer-level collaboration is the structural feature of this paper.</p><p><strong>Larry K. Thomas</strong> — ConocoPhillips reservoir engineering; co-author on subsequent Coats-Thomas SPE Handbook chapters. Provides the operator-side validation and the connection to ConocoPhillips field data.</p><p><strong>Curtis H. <mark>Whitson</mark></strong> — NTNU &amp; PERA. Co-investigator on the streamline analysis, the cross-simulator validation, and the framing of the literature correction.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

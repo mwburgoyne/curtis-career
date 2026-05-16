@@ -1,0 +1,59 @@
+id: 1993_whitson_aapg_reservoir_fluids
+title: Petroleum Reservoir Fluid Properties (AAPG Development Geology Reference Manual)
+page_title: Whitson (1993) AAPG - Petroleum Reservoir Fluid Properties
+authors:
+- Curtis H. Whitson
+authors_affiliation: null
+venue: |-
+  Morton-Thompson & Woods (eds.), <em>Development Geology Reference Manual</em>, AAPG Methods in Exploration Series No. 10, pp. 504-507. American Association of Petroleum Geologists, Tulsa OK, 1993. ISBN 0-89181-660-7.
+paper_number: null
+doi: null
+funding: null
+citations: not catalogued individually
+tags:
+- PVT Tutorial
+- Fluid Classification
+- Gas Cycling
+- Operational Heuristic
+- Geologist Audience
+- Phase 2
+whitson_index: 0
+extra_meta:
+- label: Format
+  value_html: 4-page pedagogical chapter for a geologist audience
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A four-page entry in the AAPG Development Geology Reference Manual, written for a geologist audience rather than a reservoir-engineer audience. Most of the content (fluid-property definitions, the five-category reservoir-fluid classification, the PVT experiment overview, basic correlations for FVF and Z-factor, reservoir-water properties) is later subsumed by the 2000 Whitson-Brule Monograph and is already documented elsewhere in the corpus.</p><p>What is unique to this chapter is one Whitson operational heuristic that the Monograph treats more implicitly: the rule of thumb for when gas cycling becomes economically justified by initial liquid content.</p>
+- heading: Key Contribution
+  body_html: |-
+    <ul>
+    <li><strong>Gas cycling economic-justification thresholds by liquid content.</strong> Cycling produced gas (after condensate stripping) back into a gas-condensate reservoir is economically justified when the initial solution oil-gas ratio is high enough that revaporisation of retrograde condensate offsets the cycling capex and opex. Whitson's screening thresholds:
+        <ul>
+    <li><strong>Onshore: OGR &gt; ~50-100 STB/MMSCF</strong> at initial reservoir conditions (roughly 3-6 mol% C<sub>5+</sub>)</li>
+    <li><strong>Offshore: OGR &gt; ~100 STB/MMSCF</strong> (the higher floor reflects offshore facility capex and gas-handling infrastructure cost)</li>
+    </ul>
+        Below these thresholds, pressure depletion with dry-gas sales and acceptance of retrograde condensate loss is typically the better economic outcome. Below the threshold, alternatives include nitrogen injection (cheaper than lean-gas cycling when N<sub>2</sub> is locally available), blowdown after partial cycling, or simple depletion.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>A screening rule that travels.</strong> The onshore-vs-offshore gap is a practical Whitson framing: offshore facility costs roughly double the cycling break-even OGR, which is why many offshore gas-condensate fields are produced by depletion even when onshore analogues of similar richness are cycled. The numbers are 1993-vintage and are often quoted from this AAPG chapter; engineers update them to local cost bases.</p>
+    <p><strong>Writing for geologists.</strong> The chapter is also a Curtis signature - the willingness to write a pedagogical entry for an adjacent discipline. The 2000 Monograph covers gas cycling at full technical weight; the AAPG chapter is the version a development geologist actually reads when sizing a cycling project's surface envelope.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>1990s North Sea and US Gulf Coast operating-cost economics</li>
+    <li>The five-category reservoir-fluid classification (Curtis's standard framework, here being communicated to geologists)</li>
+    <li>Standard gas-cycling project-economics analysis from the late 1980s and early 1990s</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator screening of gas-condensate fields for cycle-vs-deplete decisions through the 1990s and 2000s</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph treatment of gas-cycling economics</li>
+    <li>Teaching content for development-geology and petroleum-engineering students on the link between fluid richness and surface-facility scale</li>
+    </ul>
+  box_style: connections

@@ -1,0 +1,66 @@
+id: 2002_takahashi_fevang_whitson_ecm_gas_injection
+title: Fluid Characterisation for Gas Injection Study using Equilibrium Contact Mixing
+page_title: Takahashi, Fevang & Whitson (2002) - ECM Fluid Characterisation for Gas Injection
+authors:
+- K. Takahashi (BUNDUQ Co. Ltd.)
+- Øivind Fevang (PERA)
+- Curtis H. Whitson
+authors_affiliation: NTNU / PERA
+venue: 10th Abu Dhabi International Petroleum Exhibition and Conference, 13-16 October 2002
+paper_number: SPE-78483
+doi: null
+funding: null
+citations: null
+tags:
+- ECM
+- Gas Injection
+- Compositional Gradient
+- Multi-Sample EOS
+- Near-Critical
+- Abu Dhabi
+- MCV Tuning
+- Phase 3
+whitson_index: 2
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>A compositionally graded near-critical oil reservoir in Abu Dhabi where no representative gas-cap sample was available. Twenty fluid samples from 13 wells; 36 CCE, 18 DLE, 60 SEP, 4 multi-contact swelling (MCV), 3 slimtube tests. The PVT challenge: tune one EOS for the entire column from oil-zone samples alone, then predict the gas cap. The paper extends the Fevang-Whitson 1994 SPE-28829 ECM construction from cross-sample reconstruction to a missing-gas-cap synthesis problem, and quantifies how much the missing-sample correction matters.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>ECM test as workaround for missing gas-cap sample.</strong> Procedure: (1) collect separator samples from an oil well producing with gas coning; (2) recombine separator liquid and vapour roughly 50/50 by volume to produce a recombined fluid representing the GOC-region mixture; (3) perform a full-volume PVT equilibration (24 hours agitation plus settle) to produce equilibrium gas-phase and equilibrium oil-phase samples; (4) measure composition and PVT of both equilibrium phases separately; (5) use the ECM equilibrium data as "representative" GOC data for EOS regression. The EOS is then tuned so that an isothermal compositional-gradient calculation from an oil-zone sample reproduces the ECM equilibrium phases at the GOC depth, tying the EOS to the near-critical transition behaviour without an actual gas-cap sample.</li>
+    <li><strong>Multi-sample single-EOS Gaussian-quadrature framework.</strong> Extension of the 1989 Whitson-Anderson-Søreide approach. For sample <em>j</em> the pseudo-fraction <em>i</em> mole fraction is <code>z<sub>i</sub><sup>(j)</sup> = z<sub>C7+</sub><sup>(j)</sup> · W<sub>i</sub> · f(X<sub>i</sub><sup>(j)</sup>)</code>. Fixed across samples: the 5-node Gaussian quadrature abscissae and weights, shape parameter <code>α</code>, node count. Variable per sample: <code>η<sup>(j)</sup>, M<sub>N</sub><sup>(j)</sup></code>, and the measured C<sub>7+</sub> composition. All samples share the same physical pseudocomponent set with different proportions. Abu Dhabi parameters: <code>α = 1.7</code>, <code>η = 90</code>, <code>M<sub>N</sub> = 500</code>; final 16-component EOS matched 20 samples within 0.5% of measured saturation pressures.</li>
+    <li><strong>Representative-sample selection via trend-match against observed depth distributions.</strong> After tuning the multi-sample EOS, compute a compositional-gradient prediction from each sample's composition as anchor at its sampling depth. The sample whose prediction best reproduces the observed depth cloud of <code>p<sub>s</sub></code>, GOR, C<sub>1</sub>, C<sub>7+</sub>, M<sub>C7+</sub>, and H<sub>2</sub>S becomes the "most representative" sample for GOC prediction. The empirical-representativeness reframe: a sample earns the label by winning the trend-match, not by being intrinsically more reliable. Decision rule for ties: weight <code>p<sub>s</sub></code>-vs-depth most heavily.</li>
+    <li><strong>Multi-contact swelling tests with multiple injection gases are essential for near-critical tuning.</strong> CCE, CVD, DLE probe single-composition behaviour at different pressures. They do not probe the composition-varying path the reservoir traverses during gas injection. For near-critical fluids the EOS regressed against depletion data alone misses the critical transition. The Abu Dhabi practice used 4 MCV tests from different wells with different injection gases; the initial depletion-only EOS under-predicted MCV saturation pressures by 8-15% at moderate injection-gas ratios. The final EOS regressed against depletion plus MCV matches all 4 MCV experiments within ±3%. Multiple injection gases (not just one) are needed because each gas probes a different direction of the near-critical composition-pressure surface.</li>
+    <li><strong>ECM data materially enriches predicted gas-cap C<sub>7+</sub> composition.</strong> The quantification for Abu Dhabi: without ECM, the EOS predicts gas-cap C<sub>7+</sub> at 4.54 mol% and C<sub>1</sub> at 62.04%. With ECM, the same column gives C<sub>7+</sub> at 8.60% and C<sub>1</sub> at 56.02%. The gas-cap classification shifts from lean to medium-rich. The bias direction is systematic - depletion-only EOS tuning under-predicts gas-cap C<sub>7+</sub> richness. Downstream economic consequence: an under-rich gas-cap assumption over-predicts oil vaporisation, over-states miscibility, and understates remaining oil-in-place. For near-critical compositionally-graded reservoirs without a gas-cap sample, ECM is not an academic exercise; it materially changes the engineering conclusion.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>ECM lives.</strong> The 1994 Fevang-Whitson SPE-28829 paper introduced the Equilibrium Contact Mixing framework for sample reconstruction in saturated reservoirs. This 2002 paper extends the framework to a different problem (synthesise missing gas-cap data) and demonstrates that the framework is robust enough to support an operator-scale gas-injection study where direct sampling was infeasible.</p>
+    <p><strong>The multi-sample single-EOS principle becomes the field-wide-EOS-development standard.</strong> Combined with the Orocual 2000 SPE-63088 work, this 2002 paper anchors the position that one EOS describes one continuous fluid system, regardless of compositional gradients, near-critical transitions, or compartmental complications. The principle is now the spine of the Whitson AS workflow.</p>
+    <p><strong>The MCV recommendation is operationally consequential.</strong> Curtis's framing: CCE tells you what happens at constant composition; MCV tells you what happens when the composition changes. Near the critical point, the composition-change physics dominates, and EOS tuning without MCV data systematically misses by 10% or more on saturation pressures along the gas-injection path. This finding still drives Whitson AS recommendations for gas-injection PVT programmes.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Fevang-Whitson 1994 SPE-28829 - the ECM framework</li>
+    <li>Whitson-Anderson-Søreide 1989/1990 - multi-sample shared-pseudocomponent C<sub>7+</sub> Gaussian quadrature</li>
+    <li>Smith et al. 2000 SPE-63088 - triple-plot QC and single-EOS-across-compartments</li>
+    <li>Zick 1986 condensing/vaporising miscibility mechanism (the near-critical transition this paper tunes against)</li>
+    <li>Hearn-Whitson 1995 SPE-29115 - density-distance diagnostic and CV-mechanism EOS tuning</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Whitson-Brule 2000 SPE Monograph - the ECM framework appears in the sampling chapter as canonical practice</li>
+    <li>Høier-Cheng-Whitson 2004 SPE-90379 undersaturated gas-oil miscibility framework - the multi-sample EOS is the prerequisite</li>
+    <li>Younus 2019 URTeC-551 field-wide EOS workflow</li>
+    <li>Operator gas-injection PVT programmes - MCV is now standard for near-critical fluids</li>
+    <li>The 2023-2025 Whitson AS sampling-uncertainty series - same multi-sample framework with formalised error budgets</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>K. Takahashi</strong> — BUNDUQ Co. Ltd. (Abu Dhabi National Oil Company / Qatar Petroleum joint operator).</p><p><strong>Øivind Fevang</strong> — PERA. The Fevang-Whitson partnership through gas-condensate, ECM, and now multi-sample EOS work.</p>

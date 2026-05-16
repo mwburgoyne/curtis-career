@@ -1,0 +1,73 @@
+id: 2017_ghasemi_etal_tertiary_co2_chalk
+title: Tertiary-CO2 Flooding in a Composite Fractured-Chalk Reservoir
+page_title: |-
+  Ghasemi, Astutik, Alavian, Whitson, Sigalas, Olsen & Suicmez (2017 JPSE) - Tertiary-CO2 Flooding in Composite Fractured Chalk
+authors:
+- Mohsen Ghasemi
+- Wahyu Astutik (Petrostreamz)
+- Seyyed Ali Alavian
+- Curtis H. Whitson (PERA / NTNU)
+- L. Sigalas
+- D. Olsen (GEUS)
+- V. S. Suicmez
+authors_affiliation: Maersk Oil and Gas
+venue: Journal of Petroleum Science and Engineering, Vol. 160, pp. 327-340 (received 2017, published 2018)
+paper_number: null
+doi: 10.1016/j.petrol.2017.10.044
+funding: Joint Chalk Research Consortium (JCR7)
+citations: null
+tags:
+- Tertiary CO2 Injection
+- Composite Chalk Core
+- Water Blockage
+- Capillary Continuity
+- Sulfate Wettability
+- Diffusion-Dominated
+- Peclet Number
+- JCR
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Third paper in the Ghasemi-Whitson-Alavian-Petrostreamz-Maersk North Sea chalk CO<sub>2</sub>-EOR series. Where the 2016 SPE-179550 CVD apparatus used a single whole-core for secondary-CO<sub>2</sub> measurement, this 2017 JPSE paper extends to a <em>composite</em> geometry built from 6 Sigerslev outcrop chalk plugs stacked vertically with a centralised axial "fracture", run as a <em>tertiary</em>-CO<sub>2</sub> experiment after waterflood. The composite geometry enables three new study dimensions impossible with a whole-core: capillary continuity between plugs (via removable filter paper / horizontal fractures), L/D scale effect, and inter-plug heterogeneity. EOS model is the pseudoised 10-component EOS10 from Ghasemi 2016; compositional simulation uses ECLIPSE 300 + Pipe-It automated history matching.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Composite fractured-chalk core apparatus.</strong> Six Sigerslev outcrop chalk plugs (45 cm total length, 3.74 cm diameter) stacked vertically with a 0.6 cm centralised axial hole through all plugs representing the fracture. Qualitative filter paper between adjacent plugs preserves capillary continuity at reservoir conditions (258 bara, 110 °C). X-ray CT scanning selects homogeneous plugs and verifies axial-hole continuity. Hydrostatic core holder compresses the assembly axially for capillary contact between plug end-surfaces. Protocol extends the 2016 CVD: waterflood from the bottom of the fracture at 2 cm<sup>3</sup>/h until no further oil produced, shut-in 197 hours, then CO<sub>2</sub> inject from the top of the fracture at 2 cm<sup>3</sup>/h.</li>
+    <li><strong>Water blockage reduces tertiary-CO<sub>2</sub> diffusion linearly with post-waterflood water saturation.</strong> Best-match diffusion coefficients for tertiary-CO<sub>2</sub> after waterflood are 3.4-6x smaller than for secondary-CO<sub>2</sub> from the 2016 STO experiment, due to high water saturation blocking direct CO<sub>2</sub>-oil contact in the matrix. Linear trend D/D<sup>0</sup> vs <code>S<sub>w,WF</sub></code> provides a screening estimate for water-blockage effect. Two-stage D-switching is required for accurate history match across the full experiment time-line, paralleling the time-varying-D workaround used in the 2018 SPEREE follow-up.</li>
+    <li><strong>Capillary continuity insignificant for tertiary-CO<sub>2</sub> flooding when diffusion dominates.</strong> The methodological surprise. Adding 0.1 cm horizontal fractures between the 6 plugs (per Saidi 1987) to eliminate capillary continuity gives <em>nearly identical</em> waterflood and CO<sub>2</sub>-flood recovery curves as the capillary-continuous case. This contrasts with Saidi 1987, Horie 1990, and Ringen 2005 gas-oil drainage findings (where capillary continuity matters strongly) and aligns with Verlaan-Boerrigter 2006 and Suicmez 2011 miscible-condition findings (where it does not). Explained via Peclet number <code>N<sub>Pe</sub> = uL/D ≈ 0.01</code> in the matrix, confirming a diffusion-dominated regime where capillary forces are subordinate to molecular transport.</li>
+    <li><strong>Sulfate-driven wettability alteration distinguishes seawater from sulfate-free formation water.</strong> Experiment-1C with seawater (initial 2,780 wt-ppm sulfate, injection 5,560 wt-ppm) gives ~70% waterflood oil recovery on North Sea Chalk Field (NSCF) composite chalk. Experiment-2C with sulfate-free synthetic formation water gives only 46-60% waterflood recovery. The difference is attributed to sulfate acting as wettability-alteration catalyst at reservoir conditions (110 °C) activating chalk anhydrite dissolution per Austad et al. 2015. Best-match Corey exponents and the imbibition switch saturation <code>S<sub>wt</sub></code> differ significantly between experiments (<code>n<sub>l</sub></code> = -4.7 / -30, <code>S<sub>wt</sub></code> = 0.75 / 0.6). Operational implication for chalk CO<sub>2</sub>-EOR: higher waterflood recovery means higher post-waterflood water saturation, more water blockage, less tertiary-CO<sub>2</sub> uplift.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Composite geometry separates physics from artefacts.</strong> Curtis's teaching pattern in this paper: when an experimental result might be artefact of single-core geometry (capillary-continuity assumed because the rock is unbroken), build the apparatus that lets you remove that assumption and see whether the result survives. The composite-core finding that capillary continuity is insignificant for tertiary-CO<sub>2</sub> in diffusion-dominated chalk is exactly the kind of result that single-whole-core experiments cannot test.</p>
+    <p><strong>Two-mechanism diagnostic via Peclet number.</strong> The matrix Peclet <code>N<sub>Pe</sub> ≈ 0.01</code> certifies diffusion-dominated transport, which is why capillary continuity does not matter. The same diagnostic carried forward into the 2018 SPEREE follow-up, where it distinguishes diffusion from gravity-drainage and convection. This is the right way to anchor a counter-intuitive experimental result - cite the dimensionless number that explains it.</p>
+    <p><strong>Sulfate as the load-bearing variable in chalk waterflood.</strong> The 70% vs 46-60% recovery swing across sulfate-bearing vs sulfate-free water is operationally important for North Sea chalk field developments where waterflood water quality is a design choice. Whitson's contribution to a multi-author paper like this is the EOS / simulation framework that lets the team quantify the downstream tertiary-CO<sub>2</sub> consequences of upstream waterflood-water-quality decisions.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Ghasemi et al. 2016 SPE-179550 CVD apparatus on single whole-core (the precursor)</li>
+    <li>Ghasemi et al. 2017 SPE-185017 EAGE whole-core tertiary-CO<sub>2</sub> (the immediate precursor; not separately atomised)</li>
+    <li>Alavian-Whitson 2005, 2009, 2010 CO<sub>2</sub>-fractured-chalk + diffusion series</li>
+    <li>Saidi 1987, Horie 1990, Ringen 2005 gas-oil drainage capillary-continuity studies</li>
+    <li>Verlaan-Boerrigter 2006 and Suicmez 2011 miscible-condition capillary-continuity findings</li>
+    <li>Christoffersen-Whitson 1992 chalk capillary pressure</li>
+    <li>Austad et al. 2015 sulfate-driven wettability alteration in chalk</li>
+    <li>ECLIPSE 300 + Pipe-It automated history matching</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Ghasemi et al. 2018 SPEREE SPE-180102-PA follow-up (the fracture/matrix flow-cell with paired STO + n-C10 experiments)</li>
+    <li>Ekofisk and Tor field CO<sub>2</sub>-EOR design workflows</li>
+    <li>JCR consortium chalk-EOR methodology adopted by partner operators</li>
+    <li>Whitson Academy course material on fractured-chalk EOR</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p>Authors continue from the 2016 SPE-179550 paper: Mohsen Ghasemi and Wahyu Astutik (Petrostreamz), Seyyed Ali Alavian (PERA, Curtis's long-standing CO<sub>2</sub>-EOR co-author), L. Sigalas and D. Olsen (GEUS, chalk-core specialists), and V. S. Suicmez (Maersk Oil and Gas, operator perspective and JCR coordination).</p>

@@ -1,0 +1,68 @@
+id: 1993_riazi_whitson_dense_fluid_diffusion
+title: Estimating Diffusion Coefficients of Dense Fluids
+page_title: Riazi & Whitson (1993) - Estimating Diffusion Coefficients of Dense Fluids
+authors:
+- Mohammad R. Riazi
+- Curtis H. Whitson
+authors_affiliation: null
+venue: <em>Industrial &amp; Engineering Chemistry Research</em>, 1993, vol. 32, pp. 3081–3088
+paper_number: null
+doi: 10.1021/ie00024a018
+funding: null
+citations: 161
+citations_source: OpenAlex
+tags:
+- Diffusion Coefficients
+- Dense Fluids
+- Stokes-Einstein
+- Chapman-Enskog
+- Transport Properties
+- Phase 2
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Compositional reservoir simulation of miscible-gas EOR and gas-condensate recycling needs diffusion coefficients in dense hydrocarbon fluids. The 1976 Sigmund correlation, written for the same purpose, used a reduced-density polynomial that gave acceptable gas-phase accuracy (about 10 per cent) but mispredicted liquid diffusivities by 80 to 100 per cent. Worse, the polynomial extrapolated to zero diffusivity at <code>ρ<sub>r</sub> ≈ 3.5</code>, while reservoir oils with the recommended Prausnitz-Chueh mixing rule routinely exceeded <code>ρ<sub>r</sub> = 4</code>. The correlation was simultaneously the industry default and visibly broken for the liquid phase.</p><p>Curtis was working with NTH PhD student Kjell Christoffersen on the nitrogen-EOR Ekofisk constant-volume diffusion (CVD) experiments. Almost 50 diffusion tests through 1990-1991 had to be interpreted, and the Sigmund correlation was giving compositional simulators diffusivities so wrong that the experimental fit was failing for the wrong reason. Curtis also turned to Michelsen, who in 1992 wrote a collocation-based moving-boundary CVD interpretation code (the unpublished "fun problem" solution that lives in the source-code archive Curtis shares on request). The 1993 IECR paper with Riazi is the published correlation that displaced Sigmund.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Viscosity-based correlation for binary dense-fluid diffusion.</strong> The Riazi-Whitson correlation expresses the reduced density-diffusivity product against the viscosity ratio:
+        <p><code>ρD<sub>AB</sub>/(ρD<sub>AB</sub>)<sup>0</sup> = a (μ/μ<sup>0</sup>)<sup>b + c P<sub>r</sub></sup></code></p>
+        with <code>a = 1.07</code>, <code>b = -0.27 - 0.38ω</code>, <code>c = -0.05 + 0.1ω</code>, and <code>P<sub>r</sub> = P/P<sub>c</sub></code>. The functional form is rooted in the Stokes-Einstein relation between diffusivity and viscosity, made acentric-factor-dependent so the same expression handles polar and heavy components. The low-pressure reference <code>(ρD<sub>AB</sub>)<sup>0</sup></code> is the Chapman-Enskog dilute-gas value with Stiel-Thodos molecular parameters.</li>
+    <li><strong>Accuracy across 283 data points covering 2 to 416 bar, MW 16 to 340.</strong> Gas diffusivities to 8 per cent AAD; liquid diffusivities to 15 per cent AAD. The same expression covers both phases without a piecewise switch, which the Sigmund polynomial could not do.</li>
+    <li><strong>Demolition of the Sigmund correlation for liquids.</strong> The paper re-fits Sigmund's reduced-density polynomial to the same 283-point bank and shows that even with re-fitted coefficients the form produces 48.9 per cent AAD for liquid diffusivities, against 15.4 per cent for the viscosity-based form. The three structural problems are flagged: drastic sensitivity to small density errors as <code>ρ<sub>r</sub></code> approaches 3, an unphysical zero-diffusivity asymptote at <code>ρ<sub>r</sub> ≈ 3.5</code>, and a valid range that does not reach reservoir-oil densities. The reduced-density approach is retained as adequate for dense gases only.</li>
+    <li><strong>Pseudo-binary method for multicomponent mixtures.</strong> Component <code>A</code> diffusing in a mixture of <code>N</code> components is treated as a binary <code>A</code>-<code>B</code>, with all other components lumped into a single pseudocomponent <code>B</code> via Kay's mixing rule on the remaining mole fractions. Comparison against Wilke's formula (ideal-gas limit) gives 3.2 per cent overall difference at 14 bar; ternary liquid systems to 1-300 bar give 14.3 per cent AAD. The method extends Wilke's formula into the high-pressure regime where the ideal-gas assumption fails - the regime that matters for reservoir engineering.</li>
+    <li><strong>Input parameters that are already available.</strong> Molecular weight, critical properties, acentric factor, mixture molar density, low-pressure gas viscosity, and actual viscosity. Every quantity is something a PVT package computes anyway from the EOS fit. No new measurements are needed to apply the correlation.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Replaced the standard.</strong> Where Sigmund 1976 had been the default reservoir-simulator diffusion coefficient routine for 17 years, the Riazi-Whitson viscosity-based form supplanted it for liquid-phase work through the 1990s and 2000s. Commercial compositional simulators (Eclipse compositional, CMG GEM, SENSOR, MoReS) now offer Riazi-Whitson alongside or in place of Sigmund. Three of the early CO2-EOR and miscible-flood simulation studies (including the Curtis-Alavian series in the 2000s) use this correlation directly.</p>
+    <p><strong>The Michelsen diffusion thread.</strong> Curtis describes the parallel Michelsen CVD interpretation code in his 2024 recollection: Michelsen wrote two versions, the second adding composition-dependence of diffusion coefficients, and never published. The 1993 IECR paper is the engineering-correlation side of the same problem - Riazi-Whitson at the property-prediction layer, Michelsen's collocation code at the experiment-inversion layer. Curtis has shared Michelsen's code with several research groups over 25 years.</p>
+    <p><strong>The Riazi connection.</strong> Mohammad Riazi was already known for the Riazi-Daubert 1980 critical-property correlations that underpin Curtis's 1983 C7+ characterisation. The 1993 paper is the second Riazi-Whitson collaboration: same generalised-correlation style, same hydrocarbon-property-prediction tradition, applied to transport properties instead of equilibrium thermodynamics.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Sigmund (1976) — the reduced-density polynomial correlation the paper replaces for liquids</li>
+    <li>Stiel &amp; Thodos (1962) — molecular parameters <code>σ</code> and <code>ε</code> from critical properties; used in the Chapman-Enskog reference</li>
+    <li>Chapman-Enskog dilute-gas theory — supplies <code>(ρD<sub>AB</sub>)<sup>0</sup></code></li>
+    <li>Stokes-Einstein relation — the conceptual basis for relating diffusivity to viscosity in dense fluids</li>
+    <li>Wilke (1950) — the multicomponent diffusion formula that the pseudo-binary method extends beyond the ideal-gas limit</li>
+    <li>Lohrenz-Bray-Clark viscosity model — the standard EOS-coupled viscosity correlation supplying <code>μ</code> as input</li>
+    <li>Riazi &amp; Daubert (1980) critical-property correlations — the basis for the property estimates that feed into the diffusion calculation</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Default liquid-phase diffusion option in commercial compositional reservoir simulators (Eclipse compositional, CMG GEM, SENSOR, MoReS, tNavigator)</li>
+    <li>Christoffersen-Whitson CVD interpretation work and the 1994 capillary-pressure paper SPE-26673</li>
+    <li>CO2-EOR diffusion modelling: Alavian-Whitson 2005 IPTC-10641, 2009 SPE-125362, 2010 SPE-129666</li>
+    <li>Liquid-rich shale diffusion modelling where matrix-fracture mass transfer is the rate-limiting step (Whitson-Sunjerga 2012 onwards)</li>
+    <li>Underground gas storage and aquifer-gas interaction modelling, where the dissolution of hydrocarbon gas into formation brine depends on liquid-phase diffusivity</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Mohammad R. Riazi</strong> — petroleum-property correlation expert, co-author of the foundational Riazi-Daubert 1980 critical-property paper that Curtis used in his 1983 C7+ work. The 1993 IECR paper is the second time the two collaborated on a generalised hydrocarbon-property correlation. A later Riazi-Whitson JPSE paper (1994) extended the diffusion treatment to reservoir-fluid applications.</p><p>The motivating experimental work was carried out by NTH PhD candidate <strong>Kjell Christoffersen</strong> on the Ruska CVD apparatus, with parallel theoretical work by <strong>Michael Michelsen</strong> (DTU), whose collocation-based moving-boundary diffusion code is referenced but not co-authored.</p>

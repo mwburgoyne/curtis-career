@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Glasø & Whitson (1982) - Computer Flash Separation Accuracy</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>The Accuracy of PVT Parameters Calculated From Computer Flash Separation at Pressures Less Than 1,000 psia</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Øystein S. Glasø, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> <em>Journal of Petroleum Technology</em>, JPT Forum, August 1982, pp. 1811-1813</p>
+  
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Low-Pressure Flash</span> <span class="tag">K-Value Heuristic</span> <span class="tag">Katz-Hachmuth</span> <span class="tag">Standing 1979</span> <span class="tag">Heptanes-Plus</span> <span class="tag">Phase 1</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>By 1982 Curtis is twenty-six, finishing his PhD at NTH, already publishing in JPT. The collaboration with Øystein Glasø (the same Glasø whose 1980 oil-property correlation is in every PVT software package) is one of his first North-Sea-flavoured publications. The paper is a three-page JPT Forum piece, but the practical conclusion is one of the heuristics that PVT engineers still rely on when they need a quick separator-flash answer without setting up a full EOS.</p><p>The question is narrow. When a black-oil sample is flashed through a low-pressure separator using Katz-Hachmuth K-values fit by Standing's 1979 equations, what should be assumed for the heptanes-plus K-value? Standing's framework gives K-values for individual single-carbon-number components up to C<sub>6</sub>, but a tail K-value for the lumped C<sub>7+</sub> pseudocomponent has to be supplied separately. Glasø and Whitson check what happens if you just use a simple rule of thumb.</p>
+
+
+<h2>Key Contribution</h2>
+
+<ul>
+<li><strong>The 0.15 heuristic.</strong> <code>K<sub>C7+</sub> = 0.15 · K<sub>C7</sub></code>. A practical rule, not a derived correlation. Valid when separator pressure is below 1,000 psia, temperature below 250°F, and the oil contains a substantial heptanes-plus fraction (mole fraction above 0.70) so that minor errors in <code>K<sub>C7+</sub></code> do not propagate to the overall flash result.</li>
+<li><strong>Validation across 15 crude oils.</strong> Middle East, North Sea, California, Michigan, Mississippi, plus the FA-1, GL-1, GL-2 reference fluids. Paraffinicity spans <code>F<sub>p</sub> = 11.38</code> to <code>12.40</code>. Nonhydrocarbon content reaches 57% CO<sub>2</sub>, 24% N<sub>2</sub>, 7% H<sub>2</sub>S. The flash predictions agree with measured separator products to:
+    <ul>
+<li>GOR within 2.18% on average (standard deviation 4.16%)</li>
+<li>Gas gravity to -0.35% (SD 5.37%)</li>
+<li>Stock-tank API gravity to -2.49% (SD 3.50%)</li>
+</ul>
+</li>
+<li><strong>The honest caveat.</strong> Whitson notes in the paper that a proper calculation of <code>K<sub>C7+</sub></code> <em>"was not available to the authors at the time this study was conducted"</em> and that Standing's 1979 reference contained the method to do it rigorously. The 0.15 rule is the pragmatic engineering choice when the C<sub>7+</sub> fraction dominates the mass balance. For lean gases or condensates where C<sub>7+</sub> contributes a smaller share, a better-characterised <code>K<sub>C7+</sub></code> is needed.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Characteristic Whitson move.</strong> State the simplification openly, quantify when it is safe, document the more rigorous alternative. This pattern, three years before SPE-12233, is already mature: pragmatic engineering with honest validity envelopes rather than universal claims.</p>
+<p><strong>Practical legacy.</strong> The 0.15 multiplier shows up in field-engineering quick-look calculations, in graduate teaching examples, and in default separator-flash modules of older PVT packages. Engineers who have never read the paper still apply the rule because it works inside its stated envelope.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Katz &amp; Hachmuth (1937) - the foundational low-pressure K-value correlation set</li>
+<li>Standing (1979) - the equation-fit form of the Katz-Hachmuth K-values that Whitson is using as the flash engine</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Quick-look engineering separator-flash calculations across the next four decades</li>
+<li>Teaching examples in PVT courses that pair the simple K-value approach with the rigorous EOS calculation, showing where each is appropriate</li>
+<li>The 1983 SPE-12233 heptanes-plus characterisation work, where the same author voice ("state when the simple thing is enough") returns at full technical weight</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Øystein S. Glasø</strong> — the author of the Glasø 1980 oil-property correlations (bubblepoint, FVF, viscosity) that remain in every modern PVT software package. At the time of this paper Glasø was at Continental Shelf Institute (IKU) in Trondheim. The Glasø-Whitson 1982 paper is one of the early Norwegian-author collaborations in Curtis's bibliography.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

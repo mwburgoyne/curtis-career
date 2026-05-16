@@ -1,0 +1,75 @@
+id: 2023_nielsen_arekhov_whitson_clemens_zhainakov_wegner_uhs
+title: "Fluid Modeling of Underground Hydrogen Storage in a Depleted Natural Gas Field"
+page_title: "Nielsen, Arekhov, Whitson, Clemens, Zhainakov, Wegner (2023) - UHS Fluid Modelling"
+authors:
+- Markus H. Nielsen
+- V. Arekhov
+- Curtis H. Whitson
+- T. Clemens
+- T. Zhainakov
+- J. Wegner
+whitson_index: 2
+authors_affiliation: "Whitson AS / OMV E&P / HOT Microfluidics"
+venue: "EUROPEC 2023, Vienna, June 2023"
+paper_number: "SPE-214437-MS"
+doi: "10.2118/214437-MS"
+citations: 8
+citations_source: OpenAlex
+tags:
+- Underground Hydrogen Storage
+- UHS
+- H<sub>2</sub>-Hydrocarbon Mixtures
+- PR EOS + Peneloux
+- Jaubert BIPs
+- LBC Viscosity
+- Anomalous H<sub>2</sub> Viscosity
+- Three-Channel GC
+- Phase 4
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Whitson AS / OMV E&amp;P / HOT Microfluidics collaboration on a novel domain for the Whitson-group toolkit: underground hydrogen storage (UHS) in a depleted Austrian natural gas field. First-authored by Markus Hays Nielsen (Whitson AS), with Curtis third-listed; co-authors at OMV E&amp;P (operator) and HOT Microfluidics (microfluidic PVT lab). Experimental and modelling campaign for hydrogen-hydrocarbon mixtures at UHS-relevant pressures (less than 200 bara) and temperatures (15-55 &deg;C). The paper takes the same fluid-modelling discipline that Whitson AS applied to unconventional oil and gas through the 2010s and 2020s and brings it to bear on the energy-transition problem of storing hydrogen in depleted reservoirs.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>PR EOS + Peneloux volume-shift + Jaubert-group-contribution-BIP fluid model for H<sub>2</sub>-hydrocarbon mixtures.</strong> First complete engineering fluid model for H<sub>2</sub>-hydrocarbon UHS mixtures, parameterised to be usable directly in commercial reservoir / processing / transportation simulators. Complete parameter set (Tables A1, A2): temperature-independent volume shifts <code>s<sub>H<sub>2</sub></sub> = -0.324</code> and <code>s<sub>C<sub>1</sub></sub> = -0.107</code>; BIPs H<sub>2</sub>-C<sub>1</sub> = 0.362, H<sub>2</sub>-N<sub>2</sub> = 0.263, H<sub>2</sub>-CO<sub>2</sub> = 0.177, H<sub>2</sub>-n-C<sub>10</sub> = 0.305. Achieves 0.19-0.54% RMS density match across four H<sub>2</sub>-enriched storage-gas mixtures (UGS-2 plus Mixtures B, C, D).</li>
+    <li><strong>LBC viscosity tuning via H<sub>2</sub> critical-temperature reduction.</strong> Adjusting <code>T<sub>c,H<sub>2</sub></sub></code> from -240.170 &deg;C to -246.8 &deg;C (a 7 &deg;C decrease) in the LBC dilute-gas viscosity term improves pure-hydrogen dilute-gas viscosity prediction by 10-15% without measurable impact on volumetric predictions or hydrocarbon-mixture viscosity. UHS operating conditions are far from the H<sub>2</sub> critical point so the adjusted <code>T<sub>c,H<sub>2</sub></sub></code> does not distort EOS Z-factor computation.</li>
+    <li><strong>Anomalous near-constant gas viscosity in H<sub>2</sub>-hydrocarbon mixtures at high H<sub>2</sub> content.</strong> Confirms via UGS-2 plus Mixtures B and C lab data (plus Kobayashi 2007 and Fokin 2011 literature) the empirical observation that gas viscosity at constant (<code>p</code>, <code>T</code>) does <em>not</em> decrease monotonically with increasing H<sub>2</sub> mole fraction; instead it is approximately flat from 0% H<sub>2</sub> up to a critical H<sub>2</sub> content above 50 mol% (Fig D1a). Pragmatic implication: LBC predicts a monotonic trend (correct limit but wrong mid-range shape); default Pedersen is non-monotonic but wrong sign, overshooting in the opposite direction. Neither industry-default viscosity model is reliable mid-range; engineering judgement and per-project tuning are still required.</li>
+    <li><strong>Three-channel-GC normalisation protocol for H<sub>2</sub>-hydrocarbon composition measurement.</strong> The three-detector GC (TCD1 calibrated for H<sub>2</sub> only, TCD2 for other permanents N<sub>2</sub> / CO<sub>2</sub> / H<sub>2</sub>S, FID for hydrocarbons) requires FID-only normalisation (Normalisation 2) rather than global normalisation (Normalisation 1). TCD1 provides only H<sub>2</sub> <em>ratios</em>, not absolute mass fractions, so normalising TCD values together with FID values propagates TCD calibration errors into reported FID amounts - up to 5 mass% error in H<sub>2</sub> content from the wrong choice. An EOS-density-based QC loop (measure density, predict via PR EOS, iterate on H<sub>2</sub> composition to match, compare against lab re-examination) confirms and corrects initial GC misassignments. Worked Mixture-A example: 19.82 mol% &rarr; 16.02 mol% H<sub>2</sub> after the iterative QC correction.</li>
+    </ul>
+- heading: Significance and Contribution
+  box_style: influence
+  body_html: |-
+    <p><strong>The Whitson toolkit applied to a new domain.</strong> UHS is one of the most-discussed energy-transition technologies and one of the worst-served by routine fluid modelling. Whitson-group publishes the first complete PR EOS + Peneloux + Jaubert-BIP parameter set with quantified density-match accuracy across four storage-gas mixtures. Operators planning UHS pilots now have a defensible engineering model rather than a literature-scattered patchwork.</p>
+    <p><strong>Naming the anomalous mid-range H<sub>2</sub> viscosity gap.</strong> Documenting that neither LBC (monotonic, wrong shape) nor Pedersen (non-monotonic, wrong sign) reproduces the mid-range viscosity behaviour is the kind of negative result that prevents downstream simulation errors. Operators using either model uncritically would build wrong well-deliverability tables.</p>
+    <p><strong>The GC normalisation protocol as load-bearing lab-protocol contribution.</strong> Up to 5 mass% error in H<sub>2</sub> content from a normalisation choice that GC technicians make routinely. The EOS-density QC loop is the kind of cross-validation that finds these errors before they propagate into simulator inputs. Mixture-A's 19.82 &rarr; 16.02 mol% correction is the worked example that justifies the protocol.</p>
+    <p><strong>Curtis's late-career range.</strong> The paper extends the Whitson-group corpus from oil and natural gas into hydrogen storage. Same EOS framework, same lab-PVT QC discipline, same engineering-practice register, applied to a new energy-transition problem. The methodology built up across forty years carries over directly.</p>
+- heading: Knowledge Built Upon
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Peng-Robinson 1976 EOS (the underlying framework)</li>
+    <li>P&eacute;neloux et al. 1982 volume-shift correction</li>
+    <li>Jaubert group-contribution BIP method</li>
+    <li>Lohrenz-Bray-Clark 1964 viscosity correlation</li>
+    <li>Pedersen viscosity model</li>
+    <li>Kobayashi 2007 and Fokin 2011 H<sub>2</sub>-hydrocarbon literature</li>
+    <li>Whitson-Brule SPE Monograph 2000 EOS-tuning and viscosity chapters</li>
+    <li>Younus-Whitson-Martinsen 2022 SPE-211391 lab-PVT QC methodology (the parallel discipline this paper applies to UHS)</li>
+    </ul>
+- heading: What It Contributed To
+  box_style: connections
+  body_html: |-
+    <ul>
+    <li>Operator UHS pilot design and reservoir modelling in Austria and elsewhere</li>
+    <li>Whitson Academy course material on energy-transition fluid modelling</li>
+    <li>The first complete published PR-EOS-plus-BIP parameter set for H<sub>2</sub>-hydrocarbon UHS mixtures</li>
+    <li>The three-channel-GC normalisation protocol as published lab practice</li>
+    <li>The Whitson AS energy-transition portfolio that complements the unconventional-oil-and-gas core business</li>
+    </ul>
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Markus Hays Nielsen</strong> &mdash; Curtis's son; Whitson AS engineer; first author. The 2023 SPE-214437 and SPE-217328 papers plus the 2024 SPE-220699 and 2025 SPE-225470 papers establish him as the lead of the post-2022 Whitson AS PVT-uncertainty and energy-transition cluster.</p>
+    <p><strong>V. Arekhov, T. Clemens</strong> &mdash; OMV E&amp;P; operator partners on the Austrian UHS pilot.</p>
+    <p><strong>T. Zhainakov, J. Wegner</strong> &mdash; HOT Microfluidics GmbH; microfluidic-PVT lab supplying the experimental hydrogen-hydrocarbon density and viscosity data.</p>

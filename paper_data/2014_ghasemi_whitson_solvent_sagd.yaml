@@ -1,0 +1,68 @@
+id: 2014_ghasemi_whitson_solvent_sagd
+title: Numerical Investigation and Integrated Optimisation of Solvent-SAGD
+page_title: Ghasemi & Whitson (2014) - Numerical Investigation and Integrated Optimisation of Solvent-SAGD
+authors:
+- Mohsen Ghasemi
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: International Petroleum Technology Conference, Kuala Lumpur, 10-12 December 2014
+paper_number: IPTC-18033
+doi: null
+funding: null
+citations: null
+tags:
+- Solvent-SAGD
+- SA-SAGD
+- Hybrid Steam
+- Athabasca Bitumen
+- K-Value Classification
+- CMG STARS
+- Integrated Asset Management
+- HYSYS Pipeline
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Third paper of the Ghasemi-Whitson SAGD series. The 2011 SPE-147072 paper delivered the isothermal black-oil-proxy framework for pure steam; the 2013 SPE-165416 paper delivered the EOSSCN / EOS5 / EOS6 / LBC fluid model for bitumen with light or synthetic-combustion-gas (SCG) solvents; this 2014 paper combines the two into a full compositional-thermal study of hybrid solvent-augmented SAGD (SA-SAGD) via CMG STARS. The work spans single-well mechanism classification through to full integrated-asset-management (IAM) optimisation including a 100-km pipeline modelled in Hysys. Base case: 2D x-z half-symmetric Athabasca model, 30 m pay by 100 m inter-well spacing, <code>k<sub>h</sub></code> = 2,000 md, <code>k<sub>v</sub></code> = 1,000 md, <code>φ</code> = 0.33, <code>p<sub>i</sub></code> = 2,200 kPa, <code>T<sub>i</sub></code> = 10 °C, cold-oil viscosity 1.33 × 10<sup>6</sup> cp, 18-component PR EOS with 5 pseudo-bitumen fractions.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Dual-mechanism solvent classification by K-value at steam conditions.</strong> The central diagnostic. K-value at SAGD steam saturation (2,300 kPa, 219 °C) determines <em>where</em> the solvent condenses, which sets the recovery mechanism. <strong>Medium solvents</strong> (C5-C8) have K-values near unity - they condense at the steam-oil interface (edge oil-flow zone), dissolve into bitumen, and reduce viscosity from ~8 cp (pure SAGD) to ~0.89 cp (C7-SAGD) at the chamber edge. <strong>Heavy solvents</strong> (C12, C15) have K-values ~0.02 - they condense inside the steam chamber, remain in residual oil, and develop in-chamber micro-mobility of ~0.6 md/cp that lets otherwise-immobile oil sweep into the edge zone. Mechanism distinguishable from oil-density profiles: C7-SAGD shows sharp density drop at the chamber edge (interface dilution); C15-SAGD shows the standard SAGD density profile at the edge with composition effects concentrated inside the chamber.</li>
+    <li><strong>Optimum solvent molecular weight 100-120 (between C7 and C8).</strong> The two solvent mechanisms degrade in opposite directions with molecular weight - medium-solvent edge dilution loses effectiveness as M increases above ~120 (the solvent condenses too far inside the chamber); heavy-solvent in-chamber micro-mobility loses effectiveness as M drops below ~100 (the solvent condenses too far at the edge). The intersection of the two trends gives the optimum at M = 100-120. Ultimate recovery: 88.5% for C15, 84.6% for C7, ~73% for SAGD base case.</li>
+    <li><strong>Non-monotonic heavy-solvent concentration response.</strong> Increasing C15 injection concentration improves recovery up to ~20 vol% then plateaus - excess condenses near the wellbore and is back-produced rather than sweeping the chamber. Medium C6 recovery improves monotonically up to 40 vol% because edge-zone dilution scales with available solvent. Different solvent classes need different injection-concentration design rules.</li>
+    <li><strong>Strong relative-permeability dependence; gas-phase endpoint matters only for heavy solvents.</strong> Straight-line oil-gas relperm (n = 1, approaching miscible behaviour) lifts ultimate C8-SAGD recovery to ~100%. The gas-phase endpoint <code>k<sub>rg</sub>(S<sub>wc</sub>)</code> affects heavy-solvent recovery inside the chamber (because gas mobility limits the chamber-internal sweep that heavy solvents rely on) but not medium-solvent recovery at the edge (because the edge mechanism operates in the oil phase).</li>
+    <li><strong>Full IAM optimisation: STARS reservoir + separator + steam generator + 100 km HYSYS pipeline.</strong> The optimisation extends the Pipe-It / Streamz IAM benchmark stack from Juell-Whitson-Hoda 2009 and Rahmawati-Whitson-Foss-Kuntadi 2010 to a thermal process chain. Optimum C6 volume fraction = 0.15 at injection pressure 2,300 kPa, shifting to 0.20 at 4,000 kPa. Optimum pipeline mixture viscosity 150 cp at bitumen/solvent flow 7,300 / 2,163 m<sup>3</sup>/d. The reservoir, surface processing, and pipeline jointly determine the economic optimum; single-element optimisation systematically underdelivers.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Phase-behaviour classification beats trial-and-error.</strong> Curtis's teaching pattern: rather than ranking solvents by molecular weight or vapour pressure as common practice, classify them by their K-value at the process conditions. The K-value determines where in the depletion pattern the solvent does its work, which sets the mechanism, which sets the optimum design. The diagnostic is portable - it applies to other solvent-augmented thermal processes (SA-VAPEX, hybrid steam-foam) provided the K-values are evaluated at the right thermodynamic state.</p>
+    <p><strong>The density-profile fingerprint.</strong> The diagnostic that distinguishes the two mechanisms - sharp edge-zone density drop vs internally-shifted chamber composition - parallels the density-inversion diagnostic Alavian-Whitson used in 2005 to classify CO<sub>2</sub> recovery mechanisms in fractured reservoirs. Same family of insights: a single density-profile snapshot encodes the underlying recovery physics, no laboratory experiment needed beyond the simulation.</p>
+    <p><strong>Coupled reservoir-process-pipeline optimisation.</strong> The 100-km HYSYS pipeline coupling matters because heavy-bitumen pipeline viscosity is the binding constraint on injection-design economics. Optimising the reservoir in isolation gives a different answer than optimising the system; the IAM framework lets the operator pick the right answer.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Ghasemi-Whitson 2011 SPE-147072 BO-proxy-for-SAGD framework</li>
+    <li>Ghasemi-Whitson 2013 SPE-165416 EOSSCN / EOS5 / EOS6 / LBC fluid model for bitumen with solvents</li>
+    <li>CMG STARS compositional-thermal simulator (the reference high-fidelity tool)</li>
+    <li>Juell-Whitson-Hoda 2009 SPE-121252 integrated-asset-management benchmark - the optimisation framework</li>
+    <li>Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark</li>
+    <li>Alavian-Whitson 2005 - the density-profile-as-mechanism-fingerprint pattern</li>
+    <li>Hysys process simulator (Aspentech) for the pipeline-flow coupling</li>
+    <li>Pipe-It / Streamz (Petrostreamz) IAM orchestration</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Ghasemi-Whitson 2015, 2016, 2017, 2018 SAGD series - extending the framework to additional solvents and to CO<sub>2</sub>-EOR analogues</li>
+    <li>Operator SA-SAGD design optimisation for Athabasca, Cold Lake, Peace River, and Orinoco heavy-oil settings</li>
+    <li>Whitson Academy course material on solvent-augmented thermal processes</li>
+    <li>The thermal-IAM-optimisation pattern reused in subsequent Hoffmann-Astutik-Rasmussen-Whitson 2016 IAM work</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the third paper, integrating the BO-proxy framework with the EOS fluid model into a coupled-system optimisation.</p>

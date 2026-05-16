@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson (2023) - Nothing Arbitrary, A Recollection of Michael L. Michelsen</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Nothing Arbitrary — A Recollection of Michael L. Michelsen</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis Hays Whitson</mark> (sole author)</p>
+  <p><strong>Venue:</strong> Fluid Phase Equilibria, volume 577, article 113907 (2024). Received 18 April 2023, revised 4 July 2023, accepted 20 July 2023, available online 17 August 2023</p>
+  
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.1016/j.fluid.2023.113907">10.1016/j.fluid.2023.113907</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 1</p>
+  <p><span class="landmark-inline">PERSONAL LANDMARK</span> <span class="tag">Michelsen</span> <span class="tag">Negative Flash</span> <span class="tag">Compositional Grading</span> <span class="tag">BIPs</span> <span class="tag">Collocation</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+<div class="landmark">
+<p><strong>Why it matters:</strong> Curtis's own account of his thirty-five-year relationship with Michael L. Michelsen, the Danish computational thermodynamicist who shaped much of the mathematics Curtis built his career on. Michelsen died 26 August 2020. Curtis wrote this paper across 2023 as a tribute. It is the only place in the literature where the personal context behind the negative flash (1989), the red-and-black-methane BIP consistency test (1989-1990), the Gibbs-Duhem shortcut for compositional grading (1992), and Michelsen's never-completed PhD are recorded by someone who was in the room. The paper is also a self-portrait. Curtis describes his own work as driven by what he calls his <em>"fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics."</em> The title - <em>Nothing Arbitrary</em> - is his summary of what made Michelsen's work different.</p>
+</div>
+
+
+<h2>The frame</h2>
+
+<p>Curtis opens with a self-description that has since become the one line everyone quotes from this paper:</p><blockquote>"I was fortunate to be one of thousands who read and used the many papers on computational thermodynamics penned by Michael Locht Michelsen, starting in the late 1970s and up to his passing Aug. 26, 2020. I had the great fortune to know Michael personally during a long and haphazard relationship that started in the late 1980s ... Ours was an unusual relationship in terms of technical understanding and interests. His deep mathematical understanding, and my lack thereof; my fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics, and his fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics."</blockquote><p>The phrase <em>"Nothing Arbitrary"</em> is Curtis's gloss on Michelsen's papers: <em>"terse, concise, complete, and accurate. They address the problem at hand, and little else. Little-to-no speculation, only calculations that illustrate his mathematical treatment of a complex problem."</em> The article that follows is, by Curtis's own framing, a chronological catalogue of the moments where Michelsen's mathematics walked into Curtis's engineering and changed what was possible.</p>
+
+
+<h2>November 1985 - the Italian pizzeria</h2>
+
+<p>Curtis was around thirty. Aaron Zick visited NTH in Trondheim to present his work on the condensing-vaporising miscibility mechanism that had reshaped miscible gas EOR. After the lecture, they went to dinner at an Italian pizzeria. Most of the conversation was Zick describing the EOS software he had built at Arco for the Prudhoe Bay gas-injection project. He explained the approach he had implemented for the two-phase flash:</p><blockquote>"... effectively solving for a vapor or liquid phase fraction (β<sub>V</sub> or β<sub>L</sub>), even if it yielded a negative phase amount where one phase fraction was &lt;0 and the other phase fraction was &gt;1, satisfying the constraint that the two phase fractions must sum to 1 ..."</blockquote><p>This was the seed of what Curtis later named the negative flash. Over the next two years Curtis explored the p-T space where these calculations produced negative phase fractions and noticed that the bounding envelope where K-values approached one had every characteristic of the classical <em>apparent convergence pressure</em> that the industry had been correlating for decades from physical two-phase measurements. Zick's flash had reproduced, from a rigorous EOS calculation, what had previously been an empirical extrapolation.</p>
+
+
+<h2>1988 - Jan Reffstrup, the open door, and the Beethoven poster</h2>
+
+<p>In 1988 Curtis was visiting Jan Reffstrup at DTU in Lyngby. He asked Jan to call Michelsen to arrange an introduction. After lunch Jan dropped Curtis at <em>"the Michelsen's office"</em>. Curtis asked whether Michelsen had ever done thermodynamic flash calculations in the single-phase p-T space. The reply:</p><blockquote>"No. I fail to see the interest or use of such calculations."</blockquote><p>Michelsen politely turned off the subject. They moved on. He showed Curtis his 1978 collocation book with Villadsen and offered him the last printed copy he had in his office closet. Midway through the chat, a student stuck her head through the door - apparently always kept open - and asked for help with FORTRAN code. Michelsen walked to her computer, opened the file, suggested fixes, recompiled, and sent her back on track in five to ten minutes. Curtis records: <em>"polite with the student, in the middle of our chat, and without breaking stride in what we'd been talking about (classical music, as he had a large poster of Beethoven on his wall, my father's favorite composer)."</em></p>
+
+
+<h2>9 am next morning - green ink on beige paper</h2>
+
+<p>Curtis was back at Jan's office in another DTU building when the phone rang at nine the next morning. It was Michelsen. Could Curtis drop by later that day. When he arrived, Michelsen had five or six pages of notes ready:</p><blockquote>"... written in green ink on beige paper."</blockquote><p>The notes were the entire mathematical theory of the negative flash. Michelsen had identified that the calculations Curtis had described would solve a local saddle point on the Gibbs energy surface. He had shown that successive substitution would converge. He thought there were potential practical applications. He proposed they write a paper together. He insisted on being second author. He proposed the title - <em>The Negative Flash</em>.</p><blockquote>"I was taken aback by the moment, not least Michael's ability to quickly change his opinion from 'not interested' to 'interested'; the few hours it took him to develop the entire theory and mathematics of the 'negative flash'; his insistence on being 2nd author, and that he looked forward to working together to complete the paper."</blockquote><p>Curtis said yes, but contingent on Aaron Zick being asked first whether the paper could be written and whether he wanted first authorship. Zick chose not to be part of the paper. Whitson and Michelsen 1989, <em>Fluid Phase Equilibria</em> 53, 51-71, followed.</p>
+
+
+<h2>1989 - Banff, red and black methane</h2>
+
+<p>Curtis and Michelsen travelled to Banff to present the negative-flash paper at the 1989 PPEPPD conference. They stopped at Larry C. Young's home (Young's EOS-based compositional reservoir simulator was at the time roughly an order of magnitude faster than any commercial alternative). After dinner Curtis raised composition-dependent BIPs, an active research area where several groups were experimenting with making the <em>a</em> mixing constant a linear function of mole fraction. Michelsen <em>"did not say much, just that he would have to think about it."</em> The next morning at breakfast:</p><blockquote>"Curtis, the mixing rule has a fundamental problem. If you have some 'red' methane molecules and some 'black' methane molecules, the calculations won't give you the same result as if all methane molecules have the same color. I wouldn't recommend using this method. I would recommend that you consider using a Huron-Vidal mixing rule for such systems."</blockquote><p>The red-and-black-methane argument became the consistency test that effectively ended the use of linear composition-dependent BIPs in cubic EOS work. The Michelsen-Kistenmacher 1990 FPE paper followed shortly.</p>
+
+
+<h2>1990 Trondheim - the doctor's ring</h2>
+
+<p>Michelsen visited Trondheim around 1990. He gave a 45-minute auditorium lecture in his heavy Danish accent, walking <em>"continuously, left to right, right to left, talking clearly in English. He would stop occasionally, look up towards us, perhaps waiting for a question or comment. The 45 min passed quickly, and it was clear that his command of the topic was substantial and required no written notes. The few equations made on the chalk board came effortlessly."</em></p><p>After the lecture they drove downtown running errands. Curtis went into a jewellery store to collect his doctor's ring - the ring you receive in Norway after defending a PhD. Curtis had defended at NTH in 1984. Michelsen had been one of the two external committee members (the other was Khalid Aziz from Stanford). Coming out of the store, Curtis mentioned the ring. Michelsen quipped:</p><blockquote>"Do you have a doctor's degree."</blockquote><p>Curtis mentioned his 1984 defence. Michelsen replied, <em>"oh, that's nice."</em> Curtis followed:</p><blockquote>"... 'when did you receive your doctor's degree Michael', to which he said 'never'. That was a shock!"</blockquote><p>Michelsen, who had written some of the most important publications on computational thermodynamics in the previous decade and co-authored the standard book on collocation methods, did not have a PhD. He had been promoted straight to professor at DTU. Curtis's life-long friend Jørgen Mollerup later confirmed both he and Michelsen had taken near-identical paths at DTU from first day of university to professor, both without PhDs. Curtis closes the section with a list - van der Waals, Einstein, Nikola Tesla - all of whom had to work outside the formal PhD system. <em>"Food for thought?"</em></p>
+
+
+<h2>Mole numbers, not mole fractions</h2>
+
+<p>A short anecdote that captures Michelsen's mathematical aesthetic. A professor from a renowned university had asked Michelsen to review the detailed derivations in the appendix of a PhD student's thesis. The student had used mole fractions throughout. Curtis asked whether the professor was a nice person. The reply:</p><blockquote>"Well it seemed like torture that the student had made every derivation 5-10 times longer and more painful using mole fractions instead of mole numbers. I just wondered why the professor didn't guide him to use mole numbers, or that maybe the professor wanted the student to suffer?!"</blockquote><p>Curtis frames it as <em>"a dry sense of humor, or a serious scientific commentary?"</em> Probably both.</p>
+
+
+<h2>1992 - the Gibbs-Duhem moment</h2>
+
+<p>During a Michelsen visit to Trondheim in 1992, Curtis described his approach to the isothermal chemical-gravity equilibrium problem - Newton update for pressure, GDEM-accelerated successive substitution for compositions, with the mole-fraction-sum-to-one constraint. Michelsen's reply was simply <em>"ja"</em>, followed by the comment that the summation constraint followed from the Gibbs-Duhem equation. Curtis did not really know what that meant. He kept asking. The result is the well-known paragraph in Whitson and Belery 1994 (SPE-28000) showing that combining mechanical equilibrium with gravity-chemical equilibrium automatically satisfies the integrated density-depth relation, even when a saturated gas-oil contact lies between the reference and target depths. The isothermal gradient calculation then jumps directly from any reference depth to any other depth without stepwise integration.</p><p>When Curtis later asked Michelsen about extending the method to non-isothermal gradients with <code>dT/dD ≠ 0</code>, Michelsen refused:</p><blockquote>"I don't work on that problem that is dependent on an arbitrary specification of the ideal gas enthalpy."</blockquote><p>Pedersen and Lindeloff (2003) later confirmed Michelsen's instinct: simulation results for non-isothermal gradients were highly sensitive to the assumed ideal-gas enthalpy at the reference temperature.</p>
+
+
+<h2>1989-1992 - constant volume diffusion, the "fun" problem</h2>
+
+<p>Curtis was working on nitrogen EOR for Ekofisk. PhD candidate Kjell Christoffersen built a Ruska PVT cell and ran nearly fifty constant-volume diffusion tests through 1990-1991. By early 1992 Curtis was struggling to interpret them. He reached out to Michelsen.</p><blockquote>"He accommodated willingly to what he described as a 'fun' problem. It also allowed him to use collocation methods again, this time coupled with a thermodynamic moving boundary condition at the gas-oil interface. In a few weeks Michael sent me version 1 of his solution, and a few weeks later the second and final code was received, including composition dependence of diffusion coefficients."</blockquote><p>Michelsen's solution was never published. Curtis later asked about sharing the code. The reply:</p><blockquote>"You are welcome to use the code in whatever way you like. I think it was a nice, challenging, and interesting piece of work, which actually had more connections with work I did back in the 70's than later."</blockquote><p>Over the next 25 years Curtis shared the code and Michelsen's April-1992 documentation with several research groups - Francois Montel, Abbas Firoozabadi, Kjetil Haugen, Tom Andersen, Mohammad Riazi, Birol Dindoruk, George Hirasaki, Kristian Jessen, Wei Yan, Luis Ayala, Hossein Hoteit. Appendix A of the recollection paper is verbatim from Michelsen's April-1992 technical note.</p>
+
+
+<h2>September 1992 - the transient well-performance solution</h2>
+
+<p>During another Trondheim visit, after dinner sitting on the couch, Curtis described his work on flow in layered no-crossflow systems. He did not ask Michelsen to solve it. Michelsen asked him to write the problem specification down. Curtis records his quiet doubt:</p><blockquote>"I do not think Michael had ever solved flow problems with Darcy's law relating volumetric rate to radial pressure gradient."</blockquote><p>A week after the visit Michelsen had packed up and mailed Curtis his orthogonal-collocation solution in a compact Fortran program. <em>"His solution was orders of magnitude faster than mine, yielding the same result."</em> The technical note arrived in September 1992. Appendix B of the recollection paper is verbatim from Michelsen's September-1992 notes.</p>
+
+
+<h2>June 2020 - the last email</h2>
+
+<p>Curtis was corresponding with Michelsen in early March 2020 about a possible visit to Denmark in June, organised around a planned conference on thermodynamics in Copenhagen. Curtis's son Markus was finishing his master's thesis at NTNU on the effect of binary interaction parameters on phase behaviour and wanted to talk to Michelsen about his findings. Then COVID-19 closed borders. The Copenhagen trip was cancelled. Michelsen replied on 3 June, just under three months before his death on 26 August 2020. He addressed BIPs briefly:</p><blockquote>"As far as the influence of the bips, what I know is that positive bips increase the volatility, and negative bips do the opposite. Positive bips decrease the attraction between the components and hence decrease their ability to stay in the same liquid. Actually, if you make a binary mixture of 2 components with identical pure component properties, e.g. hexane, it takes a bip of around 0.17 to make a 50/50 mixture demix. Conversely, large negative bips can also have some funny effects, such as making successive substitution unstable, with oscillatory divergence."</blockquote><blockquote>"Hope that helps, Michael"</blockquote><p>That was the last correspondence. Curtis: <em>"We never met to discuss this issue further. And neither did my son, Markus, have the honor of meeting Michael to discuss his work."</em> The June 2020 email is reproduced in full in the paper, including the demixing observation that opens what Curtis calls a fundamental question he never had the chance to ask Michelsen: should non-zero BIPs be rejected when they can produce non-physical behaviour, or accepted pragmatically for the improved VLE modelling they provide inside the physical composition range?</p>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>A self-portrait through someone else.</strong> The recollection is also Curtis explaining himself. The phrase <em>"fanatical interest in providing accurate, rigorous, computationally efficient solutions to problems in applied thermodynamics"</em> applies to Michelsen and to Curtis equally - he uses the same words for both. The paper is a mirror, written in the first person about a colleague but unmistakably about Curtis's own intellectual identity.</p>
+<p><strong>A record that exists nowhere else.</strong> The negative flash, the red-and-black-methane consistency test, the Gibbs-Duhem grading shortcut, Michelsen's CVD code, Michelsen's transient-well solution - all are known to the field through their consequences. The personal context, the dinners and the hand-written notes and the open office door at DTU, is recorded here for the first and only time. Without this paper, the Beethoven poster and the green ink would not exist in the literature.</p>
+<p><strong>The acknowledgement of not knowing.</strong> Curtis writes that he <em>"did not really know what that meant"</em> when Michelsen first mentioned Gibbs-Duhem. He writes that he <em>"had no idea"</em> how to solve the simplified flash at his own 1984 defence. He writes openly about his <em>"lack of"</em> deep mathematical understanding. This is an unusual register for a senior figure in any technical field. It is also one of the reasons this paper carries the weight it does.</p>
+</div>
+
+
+<h2>The technical atoms embedded in the recollection</h2>
+
+<p>The CurtisClaw atom extraction picks out six pieces of technical content the paper formalises or restates:</p><div class="connections">
+<ul>
+<li><strong>The red-and-black-methane consistency test</strong> for BIP mixing rules (Michelsen-Kistenmacher 1990, set up here in narrative form)</li>
+<li><strong>Positive BIPs increase volatility, negative BIPs can cause demixing</strong> - from Michelsen's June 2020 email, with the <code>k<sub>ij</sub> ≈ 0.17</code> threshold for artefactual LLE between identical components</li>
+<li><strong>Negative-flash saddle-point interpretation</strong> - the Gibbs-energy-surface mathematical content of the 1988 green-ink notes</li>
+<li><strong>Gibbs-Duhem shortcut for compositional grading</strong> - the 1992 result that landed in SPE-28000 Whitson-Belery</li>
+<li><strong>Capillary pressure has negligible effect on VLE even in microporous chalk</strong> - from Whitson-Søreide 1989, referenced here in the BIP and EOS-application discussion</li>
+<li><strong>Saturation-pressure gradient magnitudes by fluid type</strong> - the heuristic ranges from black oil (0.025-0.03 bar/m) to near-critical (0.5-1.0 bar/m) carried forward from Whitson-Belery 1994</li>
+</ul>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Zick (1986) — the condensing-vaporising miscibility mechanism and the Arco EOS-software flash that seeded the negative-flash work</li>
+<li>Whitson &amp; Michelsen (1989) <em>Fluid Phase Equilibria</em> 53, 51-71 — the negative-flash paper</li>
+<li>Michelsen &amp; Kistenmacher (1990) — the red-and-black-methane consistency test in published form</li>
+<li>Whitson &amp; Belery (1994) SPE-28000 — the Gibbs-Duhem grading result</li>
+<li>Villadsen &amp; Michelsen (1978) — the collocation book Michelsen offered Curtis from his office closet at the first 1988 meeting</li>
+<li>Pedersen &amp; Lindeloff (2003) — confirmation that non-isothermal grading is sensitive to the ideal-gas-enthalpy reference, vindicating Michelsen's refusal to work on the problem</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The historical record of computational-thermodynamics development in the 1980s and 1990s</li>
+<li>Curtis's own self-description for the AIME Honorary Membership citation (2023) and for the way his colleagues now describe his work</li>
+<li>The framing of the BIP demixing question, which remains a live issue in EOS practice</li>
+<li>Markus Whitson's master's thesis on BIPs, by way of the June 2020 email content</li>
+<li>The wider tribute and memorial literature for Michelsen - this paper is the most personal account from a long-time collaborator</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Sole author.</strong> The paper credits Jørgen Mollerup for confirming the no-PhD detail about Michelsen, and the recipients of the Michelsen CVD code (Francois Montel, Abbas Firoozabadi, Kjetil Haugen, Tom Andersen, Mohammad Riazi, Birol Dindoruk, George Hirasaki, Kristian Jessen, Wei Yan, Luis Ayala, Hossein Hoteit) for keeping the unpublished work in circulation. Aaron Zick is named as the originator of the negative-flash construction over dinner in 1985.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

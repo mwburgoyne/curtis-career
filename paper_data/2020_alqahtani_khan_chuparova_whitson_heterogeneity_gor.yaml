@@ -1,0 +1,70 @@
+id: 2020_alqahtani_khan_chuparova_whitson_heterogeneity_gor
+title: Impact of Heterogeneity on Producing GOR for Tight Unconventional Wells
+page_title: Alqahtani, Khan, Chuparova, Whitson (2020) - Impact of Heterogeneity on Producing GOR
+authors:
+- Faisal M. Alqahtani
+- A. S. Khan
+- Elena Chuparova
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: SPE Canada Unconventional Resources Conference (virtual), 2020
+paper_number: SPE-200014-MS
+doi: 10.2118/200014-MS
+funding: King Saud University acknowledged
+citations: 3
+citations_source: OpenAlex
+tags:
+- Well-Box Heterogeneity
+- Producing GOR
+- Differential Depletion
+- Parasequence
+- Eagle Ford
+- MFHW
+- Fluid Heterogeneity
+- Single-Symmetry-Element
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Numerical-simulation follow-up to Whitson-Alqahtani-Chuparova 2018 URTeC-2882502, which laid out the well-box fluid-heterogeneity framework as a prospectus. The 2018 paper hypothesised parasequence-scale fluid and petrophysical heterogeneity; this 2020 paper tests the hypothesis with a two-layer non-communicating MFHW Eagle Ford simulation model and delivers quantitative thresholds and signatures. The same Alqahtani-Chuparova-Whitson team plus Khan adding simulation expertise.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong><code>k<sub>max</sub>/k<sub>min</sub> &lt; 10</code> intra-layer threshold for ignoring lateral petrophysical heterogeneity.</strong> When the maximum-to-minimum permeability ratio within each mapped parasequence is less than ~10, the layer can be modelled with arithmetic-average <code>φ</code> and <code>k</code> and yield <code>R<sub>p</sub>(t)</code> behaviour essentially identical to a model honouring the full mapped heterogeneity. Consequence: an entire MFHW can be modelled with a single hydraulic-fracture symmetry element rather than a full-well-box heterogeneous map, giving "nearly three orders of magnitude" CPU reduction (30-60 minutes → seconds). Tested across <code>k<sub>max</sub>/k<sub>min</sub></code> 1.4-45 using Aguilera 2013 linear and Cantisano 2013 cubic <code>k</code>-<code>φ</code> correlations; deviation from arithmetic-average becomes appreciable only at <code>k<sub>max</sub>/k<sub>min</sub> &gt; 10</code> for the cubic correlation. Caveat: threshold applies to intra-layer heterogeneity, not inter-layer.</li>
+    <li><strong>Fluid-heterogeneity-only differential depletion as a distinct mechanism.</strong> Classical differential depletion (Fetkovich 1990, Thrasher 1995, McCoy 2000) arises from petrophysical contrast between layers. The novel observation here: equal-petrophysics layers with different solution GORs produce significant differential depletion purely from contrast in fluid viscosity and compressibility. Same petrophysics, different fluids, different drainage rate per layer.</li>
+    <li><strong>Single-phase and two-phase GOR(t) signatures.</strong> Above saturation pressure (single-phase): monotonic decline from the mobility-weighted average of the two layers' initial solution GORs toward the lower-<code>R<sub>si</sub></code> layer. Below saturation pressure (two-phase): complex non-monotonic behaviour including transient maxima and late-time GOR decreases as the higher-GOR layer stops contributing. The two signatures are diagnostic - well-level <code>R<sub>p</sub>(t)</code> shape distinguishes the flow regime.</li>
+    <li><strong>Individual-fracture <code>R<sub>p</sub>(t)</code> variance vs commingled-well averaging.</strong> Individual hydraulic fractures in a heterogeneous well box produce widely varying <code>R<sub>p</sub>(t)</code> curves (e.g. 3500-8000 scf/STB initial spread); the commingled well-header signal reproduces the arithmetic-average-well behaviour via statistical averaging that <em>masks</em> parasequence heterogeneity. The well header is not informative about per-fracture variability.</li>
+    <li><strong>Fundamental non-uniqueness of LRS well <code>R<sub>p</sub>(t)</code> history matching.</strong> Multiple combinations of petrophysical and fluid heterogeneity produce similar aggregated <code>R<sub>p</sub>(t)</code>. Well-level production data alone cannot constrain the subsurface layered architecture; vertical fluid sampling through multiple parasequences is the only direct constraint, but is impractical with current sampling technology and budgets. The non-uniqueness is the operational reason single-fluid-type EOS development with field-wide tuning (Younus 2019 URTeC-551) is the right framing rather than per-well per-layer EOS work.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Quantifying when heterogeneity matters.</strong> The 2018 prospectus warned that LRS reservoirs were fluid-heterogeneous on parasequence scale; the 2020 paper says exactly when that heterogeneity does and does not show up in production data. The <code>k<sub>max</sub>/k<sub>min</sub> &lt; 10</code> threshold makes the single-symmetry-element model defensible for most Eagle Ford / Bakken layers, which directly enables the field-wide-EOS workflow at scale.</p>
+    <p><strong>The arithmetic-average-well as the appropriate model resolution.</strong> The commingled-well <code>R<sub>p</sub>(t)</code> being arithmetic-average is a useful negative result: do not waste effort trying to extract per-fracture or per-parasequence information from the well-header signal because the averaging has already destroyed it. Spend the modelling effort on the right layer of detail.</p>
+    <p><strong>Non-uniqueness as engineering reality.</strong> Naming the inverse problem as fundamentally underdetermined - rather than just hard - is itself a contribution. The implication is that operators should not chase exact subsurface heterogeneity reconstruction from production-only data; they should use vertical fluid sampling (where economically justifiable) and treat the field-wide EOS as the load-bearing inference target. Pairs with the Carlsen 2020 surface-process triplet: the right place to spend rigour is the rate-data and EOS framework, not the per-fracture model resolution.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson-Alqahtani-Chuparova 2018 URTeC-2882502 (the well-box prospectus this paper tests)</li>
+    <li>Fetkovich 1990, Thrasher 1995, McCoy 2000 (classical petrophysical differential depletion)</li>
+    <li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework</li>
+    <li>Aguilera 2013 and Cantisano 2013 porosity-permeability correlations</li>
+    <li>Shepard 1968 inverse-distance interpolation</li>
+    <li>Younus et al. 2019 URTeC-551 field-wide EOS (the field-scale modelling target this work supports)</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Mydland-Whitson-Carlsen unconventional-EOR cluster 2020-2021</li>
+    <li>Carlsen-Bowie-Dahouk-Mydland-Whitson-Yusra 2021 SPE-205884 NRTA (the simulation infrastructure that consumes the single-symmetry-element justification)</li>
+    <li>Operator MFHW history-matching workflows in Eagle Ford and analogous plays</li>
+    <li>Whitson Academy course material on MFHW heterogeneity and the well-box concept</li>
+    <li>The "single-symmetry-element is good enough" default for production-history matching in modern LRS workflows</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Faisal M. Alqahtani</strong> — NTNU PhD candidate. Lead of the well-box heterogeneity series with Curtis 2018-2020. King Saud University funding.</p><p><strong>Elena Chuparova</strong> — NTNU researcher; multi-disciplinary collaborator on the well-box framework with subsurface and petrophysical expertise.</p><p><strong>A. S. Khan</strong> — NTNU. Numerical-simulation expertise added to the well-box team for this paper.</p>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kuntadi, Whitson & Hoda (2012) - Dynamic Delumping of Reservoir Simulation</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Dynamic Delumping of Reservoir Simulation</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Arif Kuntadi, <mark>Curtis H. Whitson</mark>, Mohammad Faizul Hoda (NTNU / PERA / Petrostreamz)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, San Antonio, 8-10 October 2012</p>
+  <p><strong>Paper number:</strong> SPE-159400</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Dynamic Delumping</span> <span class="tag">BOz</span> <span class="tag">z2z</span> <span class="tag">Lumped-EOS</span> <span class="tag">Integrated Asset Management</span> <span class="tag">Split Factors</span> <span class="tag">Injection-Gas Tracking</span> <span class="tag">Stream Conversion</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The core material of Arif Kuntadi's NTNU PhD thesis ("Stream Conversion Technology and Gas Condensate Field Development", 2012) under Curtis's supervision, with Faiz Hoda (Petrostreamz) providing software-architecture continuity from his 2002 BOz precursor. The paper presents two complementary dynamic-delumping methods that post-process reservoir-simulator output, converting well-connection streams from a coarser fluid description (black-oil or lumped equation-of-state, EOS) back to a fine-grained detailed-EOS compositional description, phase-by-phase and per time step. BOz delumping extends Hoda 2002 by handling gas-injection scenarios correctly via an α injection-gas volumetric-fraction parameter estimated from tracer tracking; z2z delumping extends compositional-to-compositional delumping through phase-specific pressure-dependent split factors derived from a single constant-composition expansion (CCE) on the detailed-EOS model. The work converts the static Suryanto-Ekstrand-Whitson-Uleberg-Hoda 2003 split-factor matrix into a dynamic per-time-step well-connection-level conversion with full gas-injection support, completing the integrated-asset-management (IAM) stream-conversion stack used in Pipe-It / Streamz.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>BOz delumping with α-parameter tracer-tracked injection-gas handling.</strong> Hoda 2002 originated, Kuntadi-Whitson-Hoda 2012 extended. Converts black-oil simulator output into a detailed-EOS compositional stream at the well-connection level, per time step, via three phase-specific split factors <code>S<sub>j,o</sub>(p)</code> for reservoir oil, <code>S<sub>j,g</sub>(p)</code> for reservoir gas, and a constant <code>S<sub>j,ig</sub></code> for injection gas. The Kuntadi-Whitson-Hoda fix handles the previously-ambiguous GOR range <code>R<sub>s</sub> ≤ R<sub>p</sub> ≤ 1/r<sub>s</sub></code> where Hoda 2002 assumed pure reservoir-oil + reservoir-gas mixture but injection gas can in fact be present. The α parameter <code>α = V<sub>&amp;gibar,ig</sub> / V<sub>&amp;gibar</sub></code> quantifies the injection-gas volumetric fraction of total surface gas, identified by tracer-tracking the injection gas in the reservoir simulator. Result: BO simulation + BOz delumping runs 20-80x faster than detailed-EOS compositional simulation. Validation: Case 3 (partial-pressure-maintenance rich-gas injection) is the case where Hoda 2002 BOz fails after injection-gas breakthrough but Kuntadi-Whitson-Hoda BOz matches detailed-EOS for all components.</li>
+<li><strong>z2z compositional delumping via lumped-to-detailed split factors.</strong> New method. Converts lumped-EOS reservoir-simulator output into detailed-EOS composition at the well-connection level per time step via <code>q<sub>d</sub> = ∑<sub>l</sub> S<sub>ld</sub>(p) q<sub>l</sub></code>. Phase-specific lumped-to-detailed split factors <code>S<sub>ld,o</sub>(p)</code> and <code>S<sub>ld,g</sub>(p)</code> are tabulated from a single CCE depletion experiment on the detailed-EOS reservoir fluid; <code>S<sub>ld,ig</sub></code> is constant for injection gas. The C7+ mole fraction serves as the control variable to distinguish liquid vs vapour phase in the CCE. Result: lumped-EOS + z2z delumping runs ~3x faster than detailed-EOS simulation. Injection-gas-splitting dominates 60-70% of z2z runtime. Validated on five cases including a compositionally-graded reservoir with 30 numerical layers, GOR 244-1515 Sm<sup>3</sup>/Sm<sup>3</sup>, C7+ 6.9-22 mol% - a single split-factor table generated from the critical-fluid reference reproduces compositions across the full fluid range from medium-rich gas-condensate to highly-volatile oil.</li>
+<li><strong>Injection-gas stream splitting: key-component β vs tracer tracking - equivalent accuracy.</strong> Both BOz and z2z need a way to quantify the injection-gas component of the produced stream so that it can be separated from the reservoir-fluid streams. Two operationally-equivalent approaches: (1) key-component β estimation using a chemically-distinct lumped component (typically C3-C5, or pure CO<sub>2</sub>/N<sub>2</sub> for pure-component injection) where <code>β ≈ (y<sub>l*</sub> - y<sub>Dl*</sub>) / (y<sub>ig,l*</sub> - y<sub>Dl*</sub>)</code>; (2) tracer tracking of the injection gas in the simulator. Both yield statistically equivalent delumping accuracy. The choice between them is an operational-convenience decision rather than a technical-merit one. Tracer adds ~28% to lumped-EOS runtime but reduces injection-gas-splitting runtime by a comparable amount; total cost similar.</li>
+<li><strong>Whitson 1983 gamma fallback for C7+ when lumped-detailed consistency is broken.</strong> When the lumped EOS does not have strict C7+ consistency with its detailed parent (e.g., from different pseudoization schemes), the gamma-distribution delumping of Whitson 1983 SPE-12233 is substituted for the <code>S<sub>ld</sub></code> table on C7+ fractions. The two methods can be combined: gamma for C7+, split factors for light and intermediate components.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The IAM stream-conversion stack.</strong> Together with Hoda-Whitson 2013 SPE-164334 (production-measurement-side rate conversion) the Kuntadi-Whitson-Hoda 2012 paper completes the dynamic-delumping stack underpinning Pipe-It / Streamz: from black-oil or lumped-EOS reservoir simulation through to detailed-EOS compositional streams at the well-connection, then onward through any surface-process model. The stack lets operators run cheap upstream simulations on the fast description while preserving compositional fidelity downstream for sales-gas, NGL, and CO<sub>2</sub>-extraction reconciliation.</p>
+<p><strong>The careful-incremental-extension teaching pattern.</strong> Curtis's pedagogical preference: identify a specific edge case (gas injection without <code>R<sub>p</sub> &gt; 1/r<sub>s</sub></code>) in a pre-existing method (Hoda 2002), design a minimal additional piece of machinery (α parameter via tracer tracking) to fix it, and frame the contribution as a refinement rather than a replacement. The paper is explicit about what Hoda 2002 got right vs wrong. This is the right way to advance a methodology: narrow scope, clear diagnosis, minimal intervention.</p>
+<p><strong>Isolating method error from PVT-consistency error.</strong> z2z's "ideal" baseline (lumped EOS flashed as if it were the detailed EOS) is compared against practical z2z so that the reader can tell the difference between "method is wrong" and "lumped EOS differs from detailed EOS". This is sound engineering practice for any multi-step procedure - isolate each error source so improvements can be directed at the right step.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Hoda 2002 - original BOz delumping (single-phase reservoir-oil + reservoir-gas case)</li>
+<li>Suryanto-Ekstrand-Whitson-Uleberg-Hoda 2003 - BOz Split Factor Matrix (static grid-level transfer)</li>
+<li>Whitson 1983 SPE-12233 - gamma-distribution C7+ characterisation (the fallback when lumped-detailed C7+ consistency is broken)</li>
+<li>Fevang-Singh-Whitson 2000 stepwise pseudoization (the lumped-EOS generation method assumed by z2z)</li>
+<li>Nichita-Leibovici 2006 lumping scheme (used in one validation case)</li>
+<li>ECL100 / ECL300 reservoir simulators (Schlumberger) as the testbed</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>The Pipe-It / Streamz integrated-asset-management workflow (Petrostreamz / whitson)</li>
+<li>Hoda-Whitson 2013 SPE-164334 well-test rate-to-composition conversion (the measurement-side complement)</li>
+<li>Operator IAM workflows for gas-injection scenarios in multi-reservoir gas-condensate developments</li>
+<li>Khan et al. 2025 multi-source tracer-option workflow with doubled-EOS validation (extends the marked-component-tracking idea to inline source-tracking via simulator-native tracers)</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Arif Kuntadi</strong> — NTNU PhD under Curtis. Thesis: Stream Conversion Technology and Gas Condensate Field Development (2012). Subsequent co-author on Kuntadi-Whitson-Hoda 2012 SPE-159400 (this paper) and Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark.</p><p><strong>Mohammad Faizul (Faiz) Hoda</strong> — Petrostreamz / whitson. Software architect for Pipe-It / Streamz; originator of the 2002 BOz delumping method. Co-author with Curtis on Juell-Whitson-Hoda 2009 SPE-121252 IAM benchmark, this paper, and Hoda-Whitson 2013 SPE-164334.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

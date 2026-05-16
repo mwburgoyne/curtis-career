@@ -1,0 +1,63 @@
+id: 2009_alavian_whitson_karimaie_co2_chalk
+title: Modeling CO2 Injection in a Fractured Chalk Experiment
+page_title: Alavian & Whitson (2009) - Modeling CO2 Injection in a Fractured Chalk Experiment
+authors:
+- Sayyed Ahmad Alavian
+- Curtis H. Whitson
+authors_affiliation: NTNU / PERA
+venue: 2009 SPE/EAGE Reservoir Characterization and Simulation Conference, Abu Dhabi, 19-21 October 2009
+paper_number: SPE-125362
+doi: null
+funding: null
+citations: null
+tags:
+- CO2 Injection
+- Fractured Chalk
+- Karimaie Experiment
+- Capillary Threshold
+- Viscous vs Gravity
+- Saturation-Based RF
+- Diffusion Negligible
+- Phase 3
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Model-based reinterpretation of the Karimaie (2007 PhD dissertation) and Karimaie-Torsæter (2008 SPE-113601) fractured-chalk gas-injection laboratory experiment. The experiment was designed as a low-interfacial-tension (IFT) gravity-drainage study on Faxe outcrop chalk (5 md matrix, 47% porosity, 19.6 cm core) but used Wood's-metal fracture-sealing technique to create the surrounding fracture annulus. Alavian and Whitson re-run the simulation in a 2-D r-z fine-grid Sensor compositional model with a 3-component C1-nC7-CO2 SRK EOS (parachor-tuned to 0.15 mN/m at 220 bar) and automated regression against measured cumulative oil production. The headline finding overturns the experimentalists' regime classification.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Capillary-threshold-height diagnostic distinguishes gravity-drainage from viscous regimes.</strong> In a fractured-core gas-injection experiment, the displacement front position at late time is the diagnostic. If gravity drainage dominates, the front approaches but does not cross below the capillary threshold height <code>h<sub>c</sub> = P<sub>c,e</sub> / (Δρ g)</code> (for Faxe chalk at 1.5 mN/m IFT, <code>h<sub>c</sub> ≈ 2.7</code> cm). If viscous displacement dominates, the front sweeps below <code>h<sub>c</sub></code>. The Karimaie experimental front propagates well below 2.7 cm throughout the equilibrium-gas injection - so gravity drainage is NOT the dominant mechanism. The Wood's-metal-filled fracture retained residual sealant after re-opening, giving fracture porosity ~93% (not 100%) and reduced fracture permeability (~26 md, regressed) - the experiment is viscous-dominated, not gravity-drainage-dominated as the experimentalists claimed.</li>
+    <li><strong>Saturation-based recovery factor when matrix-fracture partition is uncertain.</strong> When cumulative oil produced includes an unknown contribution from fracture-oil displacement, the standard produced-oil RF is ambiguous. Alternative: <code>RF = 1 - S̅<sub>o</sub> / S<sub>o,ini</sub></code> from simulation, where <code>S̅<sub>o</sub></code> is the volume-averaged matrix oil saturation. For Karimaie at end of CO2 injection, saturation-based RF is ~100% in the matrix while produced-oil RF is lower - the difference is oil that has left the matrix but not yet been accumulated as produced oil. Report both metrics alongside the model match.</li>
+    <li><strong>Separator temperature is a first-order uncertainty source.</strong> Surface-volume measurement of produced oil is sensitive to separator stream temperature. CO<sub>2</sub> has lower thermal conductivity than the equilibrium C1-nC7 gas, so the gas stream cools less efficiently through the ice-water bath condenser. The Karimaie experiment was matched only by regressing separator temperature in addition to fracture permeability: equilibrium-gas period at 5.8°C, CO<sub>2</sub> period at 26.7-30°C - a 24°C step-change in separator T at the CO<sub>2</sub>-start transition explains the observed step-change in oil production. Surface-process uncertainty can masquerade as reservoir-process behaviour in history matching.</li>
+    <li><strong>Molecular diffusion is negligible in viscous-dominated fractured-core CO2 experiments.</strong> Simulation runs with and without diffusion produce essentially identical core-average oil saturation profiles. Mechanism: advective flux through the matrix (from the fracture pressure gradient) sweeps compositional gradients before diffusion can act. Confirms Hoteit-Firoozabadi 2006 in a different geometry: diffusion matters in <em>gravity-drainage-dominated</em> systems, not in <em>viscous-dominated</em> ones. (Companion paper SPE-129666 by Alavian-Whitson 2010 covers the gravity-drainage-dominated case where diffusion is decisive.)</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The verify-the-regime-before-claiming-the-result discipline.</strong> Before claiming a gravity-drainage result, back-calculate the threshold height and check that the simulated and measured fronts stopped above it. The lesson generalises: in any experiment whose interpretation rests on being in a specific flow regime, build an independent regime-diagnostic check into the analysis. In this case the Wood's-metal initialisation procedure left sealant residue that the authors could not visually verify; only the threshold-height test exposed the regime failure.</p>
+    <p><strong>Reported recovery factors are interpretation choices.</strong> In any experiment with fracture-matrix coupling or significant vaporisation, spell out which RF you are reporting and why. The practice of reporting both produced-oil RF and saturation-based RF alongside a simulation match is a disciplined form of error analysis.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Karimaie 2007 PhD dissertation and Karimaie-Torsæter 2008 SPE-113601 (the laboratory experiment being reinterpreted)</li>
+    <li>Christoffersen-Whitson 1994 SPE-26673 gas-oil capillary pressure in chalk</li>
+    <li>Alavian-Whitson 2005 IPTC-10641 Haft Kel field-scale CO<sub>2</sub> framework</li>
+    <li>Hoteit-Firoozabadi 2006 SPE-103292 - diffusion-vs-viscous regime classification</li>
+    <li>Weinaug-Katz parachor IFT correlation</li>
+    <li>Da Silva-Belery 1989 extended Sigmund diffusion correlation</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Alavian-Whitson 2010 SPE-129666 scale-dependence-of-diffusion paper (the gravity-drainage-dominated companion)</li>
+    <li>Alavian-Whitson 2010 SPE-129666 laboratory-experiment-design protocol for fractured-reservoir CO<sub>2</sub> studies</li>
+    <li>Operator CO<sub>2</sub>-EOR programmes in fractured chalk requiring accurate regime classification</li>
+    <li>Statoil and partner research-institute laboratory-design practice through the 2010s</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Sayyed Ahmad Alavian</strong> — NTNU PhD student under Curtis. Three-paper CO<sub>2</sub>-EOR series with Curtis (2005 IPTC-10641 Haft Kel field-scale, 2009 SPE-125362 lab reinterpretation, 2010 SPE-129666 scale-dependence) plus the 2014 SPE-170912 component-lumping paper with Whitson and Martinsen.</p>

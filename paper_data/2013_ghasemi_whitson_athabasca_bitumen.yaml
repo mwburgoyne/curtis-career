@@ -1,0 +1,73 @@
+id: 2013_ghasemi_whitson_athabasca_bitumen
+title: Phase Behaviour and Viscosity Modelling of Athabasca Bitumen and Light Solvent Mixtures
+page_title: Ghasemi & Whitson (2013) - Phase Behaviour and Viscosity Modelling of Athabasca Bitumen and Light Solvent Mixtures
+authors:
+- Mohsen Ghasemi
+- Curtis H. Whitson
+authors_affiliation: NTNU
+venue: SPE Heavy Oil Conference Canada, Calgary, 11-13 June 2013
+paper_number: SPE-165416
+doi: null
+funding: VISTA / Statoil ASA and PERA
+citations: null
+tags:
+- Athabasca Bitumen
+- PR79 EOS
+- LBC Viscosity
+- SA-SAGD
+- Solvent Co-Injection
+- L&H Splitting
+- Modified Jacoby
+- Modified Twu
+- 89-Component EOS
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Second in the Ghasemi-Whitson SAGD series. Whereas SPE-147072 (2011) delivered the black-oil-proxy-for-SAGD framework assuming steam only, this paper delivers the upstream <em>fluid model</em> needed when the SAGD process includes light-solvent co-injection (solvent-added SAGD, SA-SAGD), synthetic combustion gas (SCG: N<sub>2</sub>/CO<sub>2</sub>/CO/C1/C2), or any pure-solvent or multi-solvent augmentation. The contribution is a systematic Peng-Robinson 1979 (PR79) equation-of-state plus Lohrenz-Bray-Clark (LBC) viscosity characterisation of Athabasca bitumen built from publicly-available crude-assay data (Alberta Department of Energy 1996), validated against Svrcek-Mehrotra 1982 and Mehrotra-Svrcek 1985 bitumen-with-pure-solvent PVT data plus Svrcek-Mehrotra 1982 SCG-bitumen data. Five distinct methodological innovations span the chain from crude-assay-fit gamma distribution through single-carbon-number (SCN) characterisation to dead-oil viscosity tuning.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>89-component EOSSCN characterisation extending to C90+.</strong> Whitson 1983 gamma molar distribution (α = 2.05, η = 98, average M = 557, RMS 1.6% against the Athabasca crude assay) drives an SCN chain out to C90+. Each SCN fraction gets specific gravity from a modified Jacoby correlation, boiling point from Soreide 1989, then critical properties from Twu 1984 with <code>f<sub>Twu</sub> = 1</code> (less paraffinic, more naphthenic and aromatic - matching Athabasca's character). The 89-component model is called EOSSCN; after stepwise pseudoization to 5 pseudo-components (C7-C20, C21-C31, C32-C55, C56-C89, C90+) the model is called EOS5. Extending to C90+ is unusual for PVT characterisation but necessary because ~54 wt% of Athabasca mass distils above 524 °C and the simulator must have fractions heavier than would ever vaporise at thermal-process temperatures up to 350 °C.</li>
+    <li><strong>Modified Jacoby gamma-M correlation outperforms Soreide for bitumen.</strong> Jacoby (1952) re-cast in Soreide (1989) functional form <code>γ<sub>i</sub> = A + B (M<sub>i</sub> - C)<sup>D</sup></code>. Modified Jacoby parameters: A = 1.0715, B = -15.8, C = 0, D = -1, with A and B as regression variables. On Athabasca crude: modified Jacoby gives RMS 0.574% vs Soreide 1.393%. Soreide over-predicts <code>γ</code> at high M where the function has to flatten to match the heavy-end specific gravity.</li>
+    <li><strong>Fixed BIPs plus ±10% solvent-amount adjustment as the regression strategy.</strong> One binary-interaction-parameter (BIP) value between each light solvent (CO, CO<sub>2</sub>, N<sub>2</sub>, C1, C2) and all C7+ SCN fractions, applied uniformly without temperature dependence. The regression variable is ±10% adjustment of the reported solvent amount rather than temperature-varying or component-varying BIPs. The procedure reproduces bubblepoint pressure, saturated density, and solubility to within 10% for solvent-saturated bitumen over 20-118 °C - while keeping the EOS tuning simple and physically defensible.</li>
+    <li><strong>Modified Twu viscosity correlation plus linear Z<sub>c</sub>(T<sub>b</sub>) modification brings dead-bitumen viscosity from 10<sup>8</sup> cp to measured 24,471 cp.</strong> Unmodified EOSSCN/LBC gives 1.15 × 10<sup>8</sup> cp at 100 °F - five orders of magnitude too high. The fix uses multipliers <code>m<sub>1</sub></code>, <code>m<sub>2</sub></code> on SCN fractions with <code>T<sub>b</sub> &gt; 1400 °R</code> combined with a linear <code>Z<sub>c</sub>(T<sub>b</sub>)</code> modification (Eq. 21 of the paper). The tuning brings dead-bitumen viscosity to measured 24,471 cp at 100 °F and matches the temperature dependence of measured bitumen viscosity over 20-200 °C.</li>
+    <li><strong>L&amp;H splitting of C90+ into lower-viscous and higher-viscous fractions for solvent-saturated bitumen viscosity.</strong> The novel contribution. EOS5 fails on solvent-saturated bitumen viscosity - LBC cannot capture the disproportionate reduction in viscosity per unit dissolved solvent. The L&amp;H scheme splits C90+ into C90+L (lower-viscous) and C90+H (higher-viscous) with identical EOS properties (M, T<sub>c</sub>, p<sub>c</sub>, ω, s, BIPs) but distinct critical Z-factors <code>Z<sub>c,C90+L</sub></code> and <code>Z<sub>c,C90+H</sub></code>. A solvent-solubility-and-temperature-correlated fraction <code>f<sub>L</sub></code> sets the proportion of C90+L. The resulting six-component EOS6/LBC model predicts measured solvent-saturated bitumen viscosity across N<sub>2</sub>/CO/CO<sub>2</sub>/C1/C2 and 20-118 °C, then extrapolates to thermal-process temperatures up to 350 °C via <code>f<sub>L</sub></code>-extrapolation combined with logarithmic mixing (Eq. 28).</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Completing the PVT stack underneath the SAGD proxy.</strong> Together with Ghasemi-Whitson 2011 SPE-147072 the present paper completes the PVT-and-simulation chain that makes SA-SAGD and SCG-SAGD field-scale optimisation tractable on conventional black-oil or compositional simulators. The 2011 paper showed that <code>R<sub>s</sub></code> can stand in for temperature in a black-oil proxy; this 2013 paper provides the fluid model that translates between the proxy's surrogate temperature and the real PVT of bitumen-with-solvent at thermal-process conditions.</p>
+    <p><strong>The fluid-model-as-coverage-envelope discipline.</strong> Curtis's teaching pattern: when the downstream simulation depends critically on fluid-property accuracy (as thermal processes depend on oil viscosity), the upstream fluid-characterisation effort must cover the full range of conditions to which the simulator will push the fluid. That is why bitumen characterisation goes all the way to C90+ and validates up to 118 °C experimentally with extrapolation to 350 °C. Not because the cold-state fluid requires it - because the thermal-process operating conditions do. Systematic characterisation, not ad-hoc tuning.</p>
+    <p><strong>Physically-defensible regression strategy.</strong> Many ultra-heavy-oil EOS papers tune temperature-dependent BIPs or component-specific volume shifts to match experimental data. The Ghasemi-Whitson approach is to hold BIPs fixed, hold C7+ volume shifts at default values, and let the reported ±10% solvent amount absorb laboratory measurement error. The result is a model that extrapolates to new solvents and new temperatures with the same internal structure.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson 1983 SPE-12233 gamma-distribution molar splitting</li>
+    <li>Jacoby 1952 - the original gamma-M correlation</li>
+    <li>Soreide 1989 PhD - boiling-point correlation and the functional form Modified Jacoby adopts</li>
+    <li>Twu 1984 - critical-property correlations for petroleum fractions</li>
+    <li>Peneloux 1982 - volume shift for cubic EOS</li>
+    <li>Peng-Robinson 1979 - the cubic EOS</li>
+    <li>Lohrenz-Bray-Clark 1964 - the viscosity correlation tuned via critical Z-factor</li>
+    <li>Mehrotra-Svrcek 1982 and 1985 - bitumen-with-solvent PVT measurements (validation)</li>
+    <li>Svrcek-Mehrotra 1982 - SCG-bitumen PVT measurements (validation)</li>
+    <li>Alberta Department of Energy 1996 - the publicly-available Athabasca crude assay</li>
+    <li>Ghasemi-Whitson 2011 SPE-147072 - the BO-proxy-for-SAGD framework this paper feeds</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Ghasemi-Whitson SAGD series 2014, 2015, 2016, 2017 - extending the proxy and fluid model to SA-SAGD, SCG-SAGD, and other thermal-with-solvent processes</li>
+    <li>Ghasemi-Whitson 2014 IPTC-18033 thermal-solvent SAGD with HYSYS surface coupling</li>
+    <li>Ghasemi-Whitson 2016 and 2017 CO<sub>2</sub>-EOR chalk papers - the C7+ characterisation methodology adapted for North Sea light oil</li>
+    <li>Operator SA-SAGD design optimisation for Athabasca, Cold Lake, and Peace River bitumen settings</li>
+    <li>Whitson Academy course material on ultra-heavy-oil PVT and SAGD economics</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborator
+  body_html: |-
+    <p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis spanning 2011-2018. This is the second paper of the series and the fluid-model anchor underneath all subsequent solvent-augmented thermal work.</p>

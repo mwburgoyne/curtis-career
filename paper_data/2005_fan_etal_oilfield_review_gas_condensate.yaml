@@ -1,0 +1,66 @@
+id: 2005_fan_etal_oilfield_review_gas_condensate
+title: Understanding Gas-Condensate Reservoirs (Oilfield Review)
+page_title: Fan et al. (2005) - Understanding Gas-Condensate Reservoirs (Oilfield Review)
+authors:
+- L. Fan
+- B. W. Harris
+- A. Jamaluddin
+- J. Kamath
+- R. Mott
+- G. A. Pope
+- A. Shandrygin
+- Curtis H. Whitson
+authors_affiliation: null
+venue: <em>Oilfield Review</em> (Schlumberger), Winter 2005/2006, pp. 14-27
+paper_number: null
+doi: null
+funding: null
+citations: null
+tags:
+- Gas Condensate
+- Condensate Blockage
+- Review
+- Capillary Number
+- Forchheimer
+- Lean Condensate Caveat
+- Phase 3
+whitson_index: 7
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>An eight-author review in Schlumberger's <em>Oilfield Review</em>, written for a broader operator-engineer audience than the SPE journals. Curtis is one of eight co-authors alongside Bill Harris, Pope, Mott, Jamaluddin, Kamath, Shandrygin, and Fan. The article synthesises the gas-condensate field-development state of the art circa 2005: phase behaviour, sampling, condensate blockage, well-deliverability prediction, and laboratory practice. Three Curtis-anchored claims emerge through the review even though it is collectively authored.</p>
+- heading: Key Contributions Curtis Anchors
+  body_html: |-
+    <ul>
+    <li><strong>Condensate blockage approximately doubles the near-well reservoir pressure drop.</strong> Once bottomhole flowing pressure drops below dewpoint and the near-well condensate saturation exceeds critical, the additional pressure drop from blockage is comparable to the original Darcy pressure drop. Whether the doubling matters at the well level depends on the ratio of reservoir pressure loss to total pressure loss between reservoir and surface control point. Low-<code>kh</code> formations have most of the system pressure drop in the reservoir, so the doubling severely impacts deliverability. High-<code>kh</code> formations have most of the pressure drop in the tubing, so the doubling barely matters at well-system level. Field examples: greater than 50% productivity loss at Arun (lean-to-moderate), 67% in Oman, complete well death in two Exxon cases.</li>
+    <li><strong>Positive coupling (capillary-number effect) and Forchheimer inertial effects compete near gas-condensate wellbores.</strong> Both are high-velocity phenomena affecting near-well gas relative permeability, and they act in opposite directions. Positive coupling (capillary number <code>N<sub>vc</sub></code> increases when viscous forces dominate) raises <code>k<sub>rg</sub></code> above the low-rate value, most strongly when gas-oil interfacial tension is low. Forchheimer drag at the highest velocities reduces apparent permeability below the Darcy value. The net is usually positive, reducing the deliverability impact of blockage compared to lab-rate predictions. Laboratory coreflood measurements at both low (1-10 cc/min) and high (50-200 cc/min) rates are needed to bracket the two effects for a given reservoir.</li>
+    <li><strong>Lean gas condensates suffer comparable normalised productivity loss to rich ones - a common field-development misconception.</strong> The steady-state near-well Region 1 saturation is controlled by <code>k<sub>rg</sub>/k<sub>ro</sub></code> and the flowing condensate-gas ratio, not by total liquid dropout volume. Lean condensates have a smaller Region 1 (tens of feet) compared to rich condensates (hundreds of feet), but within that region the condensate saturation is high enough to cause substantial reduction in gas relative permeability. The normalised productivity index <code>J/J<sub>0</sub></code> can decline severely for both lean and rich condensates as <code>p<sub>avg</sub>/p<sub>dew</sub></code> drops. Field consequence: development teams that screen lean reservoirs as "not susceptible to blockage" can be badly wrong; the steady-state physics is the same.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>The review that synthesised a decade of Curtis-led work for a broader audience.</strong> <em>Oilfield Review</em> reaches operator development teams that may not subscribe to SPE journals. The 2005 issue is the Schlumberger-canonical statement of gas-condensate engineering circa 2005, drawing heavily on Fevang-Whitson 1996, Whitson-Fevang-Yang 1999, and the subsequent decade of work. The eight-author byline gives the article institutional weight across the major service-company and operator communities.</p>
+    <p><strong>The lean-condensate caveat in writing.</strong> Curtis's argument that lean condensates suffer comparable normalised productivity loss to rich ones had been in the SPE-30714 1996 paper and the 1999 IBC tutorial; this 2005 review put it in the most widely-read venue available. The misconception it corrects (lean condensates are safe from blockage) was costing operators real money when wells were completed without adequate blockage assessment.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Fevang-Whitson 1996 SPE-30714 three-region near-well flow framework</li>
+    <li>Whitson-Fevang-Yang 1999 IBC gas-condensate PVT tutorial</li>
+    <li>Henderson et al. 2000 - laboratory coupling and Forchheimer measurements</li>
+    <li>Whitson-Fevang-Saevareid 2003 TIPM steady-state <code>k<sub>r</sub></code> framework</li>
+    <li>Field datasets: Arun (Indonesia), Oman fields (Shell/PDO), Exxon cases</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Operator gas-condensate development screening and blockage-assessment workflows through the late 2000s and 2010s</li>
+    <li>Whitson-Kuntadi 2005 IPTC-10692 Khuff paper - the <code>kh</code>-ratio framework appears as the "HKLH" physics</li>
+    <li>Singh-Whitson 2008 SPE-117930 layered pseudopressure paper</li>
+    <li>Whitson Academy course material on gas-condensate well deliverability</li>
+    </ul>
+  box_style: connections
+- heading: Note on Authorship
+  body_html: |-
+    <p>This is one of the few entries on this page where Curtis is one of several co-authors of a collectively-written review. The three contributions above are Whitson-anchored arguments that travel from his SPE corpus into the Schlumberger review; the eight-author byline reflects the consensus framing rather than disputing credit. The remaining sections of the review (sampling protocols, sour-gas considerations, EOR options) draw on the other co-authors' expertise.</p>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson & Torp (1983) SPE-10067 - Evaluating Constant Volume Depletion Data</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Evaluating Constant Volume Depletion Data</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis Hays Whitson (Rogaland District College)</mark>, Stein Børre Torp (Norwegian Institute of Technology)</p>
+  <p><strong>Venue:</strong> <em>Journal of Petroleum Technology</em>, March 1983, pp. 610-620 (originally presented 56th Annual Fall Technical Conference, San Antonio, 5-7 October 1981)</p>
+  <p><strong>Paper number:</strong> SPE-10067-PA</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.2118/10067-PA">10.2118/10067-PA</a></p>
+  
+  
+  <p><strong>Citations (OpenAlex):</strong> 177</p>
+  <p><span class="landmark-inline">LANDMARK PAPER</span> <span class="tag">CVD</span> <span class="tag">Material Balance</span> <span class="tag">K-Values</span> <span class="tag">Black-Oil PVT</span> <span class="tag">Gas Condensate</span> <span class="tag">Hoffman Plot</span> <span class="tag">Phase 1</span> </p>
+</div>
+
+<div class="landmark">
+<p><strong>Why it matters:</strong> SPE-10067 is the first SPE paper most reservoir engineers associate with Curtis. It turns the constant-volume-depletion experiment from a set of measured numbers into a working laboratory: liquid compositions, K-values, densities, molecular masses, and black-oil PVT properties can all be derived from the measured vapour compositions and liquid saturations using nothing but material balance. The Hoffman log Kp vs F plot becomes a CVD data-quality test. The framework for converting CVD data into black-oil PVT tables that the 2025 Singh-Whitson-Nielsen BOPVT workflow inverts is established here.</p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Constant volume depletion is the standard laboratory experiment for gas condensates and volatile oils. Vapour is withdrawn at constant cell volume, the produced gas is analysed, the retrograde liquid saturation is measured. The data sit there. Few engineers extract from CVD reports the quantities that matter most for reservoir simulation: liquid compositions, equilibrium K-values, the heptanes-plus molecular mass of each phase, and the black-oil PVT properties needed for volatile-oil simulators.</p><p>Reudelhuber and Hinds had outlined the material balance in 1957 but the equation form was hard to follow and not widely used. Dodson, Goodwill and Mayer had a 1953 method for black-oil PVT but it required expensive liquid sample removals and experimental flash separations at each depletion stage. Curtis (now at Rogaland District College in Stavanger) and Stein Børre Torp (NTH) set out to do the job in current SPE nomenclature and to push it through to working CVD studies on North Sea fluids.</p><p>Of more than 30 CVD studies they assembled, only three (the NS-1 rich gas condensate, the NS-2 lean gas condensate, and the NS-3 volatile oil) had the internal consistency and the extended C7+ analysis required for detailed EOS analysis. NS-3 was operating near its critical point, the Peng-Robinson EOS did not converge for it, and the paper says so plainly.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Material balance for liquid composition.</strong> On a basis of one mole initial fluid, total moles at stage k are <code>n<sub>tk</sub> = 1 - Σ Δn<sub>pi</sub></code>. The component balance gives <code>n<sub>tk</sub> z<sub>jk</sub> = z<sub>j1</sub> - Σ Δn<sub>pi</sub> y<sub>ji</sub></code>. Vapour moles at stage k follow from the real gas law: <code>n<sub>vk</sub> = p<sub>k</sub> V<sub>vk</sub> / (Z<sub>k</sub> R T)</code> with V<sub>vk</sub> = (1 - S<sub>Lk</sub>) V<sub>cell</sub>. Liquid composition is <code>x<sub>jk</sub> = (n<sub>tk</sub> z<sub>jk</sub> - n<sub>vk</sub> y<sub>jk</sub>) / (n<sub>tk</sub> - n<sub>vk</sub>)</code> and K-values are simply y<sub>jk</sub>/x<sub>jk</sub>. The only directly measured quantities entering the calculation are vapour compositions, liquid saturations, vapour Z-factors, and cumulative moles produced. No empirical correlations, no EOS.</li>
+<li><strong>Physical properties from a mass balance.</strong> Liquid and vapour densities, molecular masses, and the heptanes-plus molecular mass at each stage follow from an analogous mass balance. The heptanes-plus mass of the liquid is back-calculated from Kay's mixing rule applied to the measured liquid composition. The vapour density has two independent estimates (one from mass divided by volume, one from Z-factor and molecular mass) and the agreement between them is itself a data-quality test.</li>
+<li><strong>Black-oil PVT properties from CVD plus a separator flash.</strong> R<sub>so</sub>, R<sub>sg</sub>, B<sub>o</sub>, and B<sub>g</sub> follow from flashing the CVD-derived phase compositions through a multi-stage separator simulator. R<sub>sg</sub> (the solution oil in the vapour) is non-zero for gas condensates and volatile oils, recovering the traditional black-oil formulation as R<sub>sg</sub> tends to infinity for medium-volatility crudes. The method extends Dodson et al. (1953) without the costly liquid sample removals and experimental flashes. The key assumption (phase compositions depend only on pressure, not on the flow process) is later checked by EOS simulation.</li>
+<li><strong>Hoffman log Kp vs F plot as CVD data-quality test.</strong> The Hoffman-Crump-Hocott characterisation factor F<sub>j</sub>(T) is a function of the boiling point, critical temperature, and critical pressure of component j. At each depletion pressure, log K<sub>j</sub>p versus F<sub>j</sub> should be approximately linear for ethane through hexane and converge toward a common point at the apparent convergence pressure. Linear trends with convergence indicate good vapour data. Nitrogen and C7+ fractions may deviate and are excluded from the regression. The slope A(p) decreases with pressure and extrapolates to zero at p<sub>K</sub>.</li>
+<li><strong>Convergence-pressure estimator from C7+ molecular mass.</strong> <code>p<sub>K</sub> (psia) ≈ 60 M<sub>C7+</sub> - 4200</code> from analysis of many condensate and volatile-oil systems. For the NS-1 rich gas condensate (M<sub>C7+</sub> = 184) this gives p<sub>K</sub> ≈ 6840 psia against the material-balance-extrapolated value of about 8000 psia. The pressure-dependent slope A(p) follows <code>A = 1 - ((p - p<sub>a</sub>) / (p<sub>K</sub> - p<sub>a</sub>))<sup>n</sup></code> with n ≈ 0.6 for all systems tested.</li>
+<li><strong>K-values are independent of the depletion process.</strong> Peng-Robinson simulations of CVD and constant composition expansion for both NS-1 and NS-2 give essentially identical K-values at the same pressure and temperature. The composition-pressure relation for equilibrium phases is unique and not altered by the depletion path. This justifies using CVD-derived K-values in reservoir simulation regardless of the field depletion mechanism.</li>
+<li><strong>Caution: liquid-volume errors amplify into densities and B<sub>o</sub>.</strong> Liquid density is m<sub>L</sub>/V<sub>L</sub> with V<sub>L</sub> = S<sub>L</sub> V<sub>cell</sub>. A small error in S<sub>L</sub> produces a proportional error in ρ<sub>L</sub>, which propagates into B<sub>o</sub>. The same error does not significantly affect the calculated liquid composition. Curtis recommends using a compositional density correlation (Alani-Kennedy) over material-balance densities for B<sub>o</sub> calculations.</li>
+<li><strong>Caution on smoothed laboratory data.</strong> The paper warns in italic type: "Some major laboratories smooth and 'adjust' measured vapor compositions until the material balance checks. This procedure is discouraged in general. It is good practice to inquire whether a laboratory reports measured or 'smoothed' data." Forcing material balance to close removes the independent check that the methodology depends on.</li>
+<li><strong>Reducing K<sub>uop</sub> of the heaviest C7+ to fix liquid-dropout overprediction.</strong> The Peng-Robinson EOS overestimates retrograde liquid dropout for NS-1 (predicted 32%, measured 22%). Reducing the Watson characterisation factor of the C<sub>25+</sub> fraction from 12.42 to 11.80 brings the prediction to 26%, with little effect on vapour compositions, molecular masses, or Z-factors. More than twenty other adjustments were tried (extending the split to C<sub>40+</sub>, using nine MCN groups, TBP-measured K<sub>uop</sub>, Lee-Kesler correlations) without comparable success.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The CVD workhorse paper.</strong> For forty years SPE-10067 has been the first paper engineers reach for when a CVD report lands on the desk. The material-balance liquid compositions, the Hoffman plot quality test, the convergence-pressure estimator from M<sub>C7+</sub>, and the K<sub>uop</sub> adjustment for liquid-dropout matching are still in routine use. The 2000 SPE Monograph Chapter 6 is the matured version of the same framework.</p>
+<p><strong>The bridge to BOPVT.</strong> The 1981 Dodson-style separator-flash method for converting CVD phase compositions into B<sub>o</sub>, R<sub>so</sub>, B<sub>g</sub>, and R<sub>sg</sub> is the foundation of every later modified-black-oil workflow. The 2000-2008 Singh-Whitson BOPVT series and the 2025 Singh-Whitson-Nielsen BOPVT-to-CVD reverse direction (SPE-225382) build on the two-pseudo-component material balance set up here.</p>
+<p><strong>Curtis at 25, with Torp.</strong> The byline reads "Rogaland District College" for Curtis (Stavanger) and "Norwegian Institute of Technology" for Stein Børre Torp. Curtis had moved to Rogaland by the time the paper was presented in San Antonio in October 1981. Torp was at NTH and the experimental work used the NTH laboratory infrastructure that Curtis had helped build between 1978 and 1981. The paper is the first major Norwegian-North Sea reservoir-fluid paper by the next generation after Marshall Standing.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Reudelhuber &amp; Hinds (1957) - the original material-balance idea for CVD, presented in pre-SPE-nomenclature form</li>
+<li>Dodson, Goodwill &amp; Mayer (1953) - the experimental flash-separator approach to black-oil PVT that this paper replaces with a material-balance procedure</li>
+<li>Hoffman, Crump &amp; Hocott (1953) - the log Kp vs F plot, used here as a data-quality test</li>
+<li>Peng &amp; Robinson (1976) - the EOS framework used to validate the K-values-are-path-independent claim</li>
+<li>Katz &amp; Firoozabadi (1978) - the C1-C<sub>n</sub> BIP data curve-fit here as <code>δ = 0.14 γ<sub>n</sub> - 0.0668</code></li>
+<li>Standing low-pressure K-value correlations - used for separator flash calculations</li>
+<li>Alani-Kennedy liquid density correlation - recommended over material-balance densities for B<sub>o</sub></li>
+<li>Whitson EUR-183 (1980) - the C7+ characterisation used in the EOS modelling of NS-1, NS-2, and NS-3</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Whitson-Brule (2000) SPE Monograph "Phase Behavior", Chapter 6</strong> - the matured presentation of CVD evaluation that became the reference</li>
+<li><strong>Whitson-Torp generalised K-values with convergence pressure</strong> - Appendix A is the origin of the Whitson-Torp K-value correlation framework</li>
+<li><strong>Whitson-da Silva-Søreide (1988) generalised black-oil PVT</strong> - GBO binary-property generation extends the CVD-separator-flash idea to DLE data</li>
+<li><strong>Singh-Whitson BOPVT series (2000-2008)</strong> - the modified-black-oil framework built on the two-pseudo-component CVD foundation</li>
+<li><strong>Singh-Whitson-Nielsen (2025) SPE-225382</strong> - the BOPVT-to-CVD reverse direction; uses the same two-pseudo-component material balance, just running backwards</li>
+<li>Every commercial PVT package's CVD data-validation workflow (Hoffman plot, material-balance liquid compositions)</li>
+<li>The K<sub>uop</sub>-adjustment heuristic for fixing PR EOS liquid-dropout overprediction in gas condensates</li>
+</ul>
+</div>
+
+
+<h2>Key References</h2>
+
+<p><strong>Co-author Stein Børre Torp</strong> (NTH) handled the laboratory side and the data assembly for the three North Sea fluids. Curtis (Rogaland District College, Ullandhaug, Stavanger by the time of presentation) led the methodology and the EOS analysis. The paper was presented at the SPE 56th Annual Fall Technical Conference in San Antonio in October 1981 and published in <em>JPT</em> in March 1983.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

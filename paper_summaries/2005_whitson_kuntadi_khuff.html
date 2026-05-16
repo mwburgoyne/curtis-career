@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson & Kuntadi (2005) - Khuff Gas Condensate Development</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Khuff Gas Condensate Development</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark>, A. Kuntadi (NTNU / PERA)</p>
+  <p><strong>Venue:</strong> International Petroleum Technology Conference, Doha, 21-23 November 2005</p>
+  <p><strong>Paper number:</strong> IPTC-10692</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Khuff</span> <span class="tag">Gas Condensate</span> <span class="tag">HKLH Layering</span> <span class="tag">North Field</span> <span class="tag">South Pars</span> <span class="tag">Ghawar</span> <span class="tag">Gas Cycling</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The Khuff carbonate formation hosts the Middle East gas-condensate giants: North Field (Qatar), South Pars (Iran), and parts of Ghawar (Saudi Arabia). Combined initial gas in place is on the order of 1,000-2,000 trillion cubic feet plus 30-70 billion barrels of condensate. The paper is a development-strategy assessment using 20-well coarse-grid Cartesian models plus single-well radial fine-grid models with an 11-component SRK EOS. The technical contributions concentrate on the Khuff-specific reservoir geometry and on the simulation conventions needed to handle it.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>HKLH (high-permeability, low-thickness) zones dominate Khuff well deliverability despite small hydrocarbon-pore-volume fraction.</strong> Each major non-communicating Khuff geological unit (K1, K2, K3, K4) contains at least one HKLH layer (typically about 10 ft thick) that carries 50-90% of the total flow capacity (<code>kh</code>) into the well, embedded in thick low-permeability matrix (less than 1 millidarcy) that holds more than 98% of the hydrocarbon pore volume (HCPV). The flow-vs-storage mismatch is the Khuff signature: rate is set by the HKLH <code>kh</code>; reserves are set by the low-<code>k</code> HCPV. Khuff wells produce 75 MMscf/D plateau rates for 25 years against individual-well initial gas in place around 1.88 trillion cubic feet because the HKLH gives nature's in-situ stimulation. Sensitivities: full vertical communication to the HKLH is required (a sealing barrier costs 3-4 years of plateau per isolated HKLH layer); vertical-to-horizontal permeability ratio <code>k<sub>v</sub>/k<sub>h</sub></code> is unimportant above ~0.1; aquifer size does not hurt unless vertical barriers exist.</li>
+<li><strong>Constant steady-state blockage skin (about 13-14) as a coarse-grid surrogate for full pseudopressure well treatment.</strong> When a full-field 20-well coarse-grid Cartesian model cannot afford the grid refinement needed to resolve near-well Region 1 condensate blockage (minimum is 9x9 single-well effective gridding, roughly 489-815 ft cells around each well for Khuff), a constant skin of about 13-14 in the well productivity-index calculation reproduces the radial fine-grid plateau period of 11 years. Without it the coarse grid over-predicts plateau by 6-9 years. The constant-skin trick is a calibrated surrogate, not a substitute - the value depends on grid resolution and must be re-derived for any new configuration. The preferred remedy is true pseudopressure well treatment, where commercial-simulator implementations support it correctly. The Khuff base case used the constant-skin shortcut because Eclipse 300 / GPP had a bug in its current pseudopressure implementation at the time of the study.</li>
+<li><strong>Khuff relative-permeability measurement specifications: wide <code>k<sub>rg</sub>/k<sub>ro</sub></code> range, dual low-high velocity coverage.</strong> Standard special core analysis (SCAL) on whole-core-average plugs mis-calibrates Khuff Region 1 flow because the flow occurs in HKLH zones, not in the bulk matrix. The recommended programme: high-<code>k</code> core material from HKLH rock; <code>k<sub>rg</sub>/k<sub>ro</sub></code> from 1 to 50, most importantly 3 to 30; low-velocity measurements at 1-10 cc/min (immiscible baseline) and high-velocity measurements at 50-200 cc/min (capillary-number improvement and high-velocity-flow inertial reduction, which partially cancel); synthetic or reservoir gas-condensate fluid matched to PVT and with measured (not predicted) IFT below 0.1 mN/m. The plateau-period uncertainty without relevant high-velocity measurements is order-of-magnitude: 7-year plateau for capillary-number exponent <code>n<sub>c</sub> = 1</code>, 11 years for <code>n<sub>c</sub> = 5</code>, 16 years for <code>n<sub>c</sub> = 3</code> in the base case. The single largest plateau-prediction uncertainty in Khuff development.</li>
+<li><strong>Gas cycling requires unitisation and multi-HKLH-zone injector/producer pairing.</strong> Cycling potential is significant (60% ultimate gas recovery, 40% ultimate condensate recovery at 2,000 psia abandonment for the base case), but the HKLH layering causes severe short-circuiting if injection and production both occur in the same HKLH zone. The only architecture with acceptable sweep is two or more areally-continuous HKLH zones per geological unit, with injection in one and production from the other. Geological prerequisite must be proven early in field development. For North Field plus South Pars, the cross-border unitisation requirement (Qatar plus Iran) is a first-order political impediment to cycling regardless of geology. Ghawar Khuff has the single-operator advantage (Saudi Aramco) but competing domestic gas-demand pressure.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The two-timescale view.</strong> Curtis's pedagogical framing: HKLH zones deliver rate on the fast timescale; the low-<code>k</code> matrix delivers reserves on the slow timescale. Reservoir engineers used to thinking of <code>kh</code> as one-dimensional reservoir capacity have to re-think Khuff as a parallel-circuit problem where the two arms of the circuit carry different physical quantities.</p>
+<p><strong>The reframe of SCAL priorities.</strong> "The single largest uncertainty in Khuff plateau-period prediction is which relative-permeability model you use." That sentence moves SCAL from a back-office task to a first-order development-design lever. The 9-year plateau-range across physically plausible <code>n<sub>c</sub></code> values dwarfs most other development uncertainties combined.</p>
+<p><strong>The cycling-feasibility three-test.</strong> Geology (multi-HKLH?), politics (unitised?), economics (gas availability?). Failing any one disqualifies cycling. The clearest articulation of why cycling has not happened at scale in the Middle East despite the technical opportunity.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Fevang-Whitson 1996 SPE-30714 three-region near-well flow framework (the basis for the constant-skin calibration)</li>
+<li>Whitson-Brule 2000 SPE Monograph</li>
+<li>Whitson-Fevang-Yang 1999 IBC tutorial on gas-condensate PVT priorities</li>
+<li>Whitson-Fevang-Saevareid 2003 TIPM relative-permeability framework</li>
+<li>Standing 1975 / Chierici 1984 Corey-family <code>k<sub>r</sub></code> correlations</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator development plans for North Field, South Pars, Ghawar Khuff through the 2010s</li>
+<li>Whitson AS commercial Khuff PVT and reservoir-simulation engagements</li>
+<li>The SCAL specification standard for high-velocity gas-condensate measurements</li>
+<li>Singh-Whitson 2008 SPE-117930 layered-reservoir pseudopressure - extends the Khuff layered-flow concept to other geological settings</li>
+<li>Whitson Academy course material on gas-condensate well deliverability in layered carbonates</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>A. Kuntadi</strong> — NTNU PhD student; co-author on the 2012 SPE-159400 delumping paper with Whitson and Hoda.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

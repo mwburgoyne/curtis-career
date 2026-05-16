@@ -1,0 +1,67 @@
+id: 1991_fetkovich_reese_whitson_general_material_balance
+title: Application of a General Material Balance for High-Pressure Gas Reservoirs
+page_title: Fetkovich, Reese & Whitson (1991) - General Material Balance for High-Pressure Gas Reservoirs
+authors:
+- Michael J. Fetkovich
+- D.E. Reese
+- Curtis H. Whitson
+authors_affiliation: null
+venue: 66th SPE Annual Technical Conference and Exhibition, Dallas, 6–9 October 1991
+paper_number: SPE-22921-MS
+doi: 10.2118/22921-MS
+funding: null
+citations: citation count not available on OpenAlex (conference manuscript predates DOI registration)
+tags:
+- Material Balance
+- Overpressured Gas
+- Pore Compressibility
+- p/z Diagnostic
+- Phase 2
+whitson_index: 2
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>By the late 1980s the classical <code>p/z</code> vs <code>G<sub>p</sub></code> straight-line plot had served the gas industry well for low-pressure reservoirs but failed in a characteristic way for high-pressure and overpressured systems: the plot curved concave-downward, and a linear extrapolation through early data overstated original gas in place by tens of per cent. The misdiagnosis cost the industry real reserves bookings. The 1969 Harville-Hawkins paper and the 1971 Hammerlindl paper had attributed the curvature to pore collapse, and that explanation had dominated reservoir-engineering practice for two decades.</p><p>Mike Fetkovich had derived the general material balance form in 1969 for a Texas Gulf Coast overpressured reservoir where linear extrapolation had overstated <code>G</code> by about 200 Bscf, roughly 33 per cent. The derivation sat in internal Phillips Petroleum files for 22 years. The 1991 SPE-22921 paper is the formal publication, with Reese and Curtis as co-authors. Curtis was 35, six years out of his NTH PhD, three years into Whitson AS, and the only author not at Phillips Petroleum. His contribution shows in the water-phase compressibility treatment: the <code>c̄<sub>tw</sub></code> term that rolls connate-water expansion and solution-gas evolution together draws on Curtis's parallel work with Søreide on the EOS treatment of brine.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Generalised material-balance equation with cumulative effective compressibility.</strong> The classical <code>p/z</code> vs <code>G<sub>p</sub></code> line is generalised by adding a single pressure-dependent term <code>c̄<sub>e</sub>(p)</code> that rolls up four pressure-support mechanisms relative to net-pay hydrocarbon pore volume:
+        <p><code>(p/z)[1 - c̄<sub>e</sub>(p)(p<sub>i</sub> - p)] = (p/z)<sub>i</sub>(1 - G<sub>p</sub>/G)</code></p>
+        with <code>c̄<sub>e</sub>(p) = [S<sub>wi</sub> c̄<sub>tw</sub> + c̄<sub>f</sub> + M(c̄<sub>tw</sub> + c̄<sub>f</sub>)]/(1 - S<sub>wi</sub>)</code>. Plotting <code>(p/z)[1 - c̄<sub>e</sub>(p<sub>i</sub> - p)]</code> against <code>G<sub>p</sub></code> linearises the response and lets <code>G</code> be read directly from the x-axis intercept.</li>
+    <li><strong>Cumulative vs instantaneous compressibility - the rule the literature had muddled for 20 years.</strong> The paper draws the distinction sharply: cumulative compressibility <code>c̄<sub>f</sub>(p) = (V<sub>pi</sub> - V<sub>p</sub>)/[V<sub>pi</sub>(p<sub>i</sub> - p)]</code> is a chord slope from initial; instantaneous <code>c<sub>f</sub>(p)</code> is the local slope. They agree only at <code>p<sub>i</sub></code>. Material-balance plots that use cumulative pressure drop must use cumulative compressibility. Bass 1972 and Poston-Chen 1987 had used instantaneous forms and recovered artificially high <code>c<sub>w</sub></code> values (above 30 x 10<sup>-6</sup> psi<sup>-1</sup>) to fit the data, which then had to be explained away as anomalous. Use cumulative variables and the anomalies vanish.</li>
+    <li><strong>Pore collapse is not the cause of <code>p/z</code> curvature - water is.</strong> Pore collapse, when it occurs, shows up in instantaneous <code>c<sub>f</sub></code> but is washed out of the cumulative <code>c̄<sub>f</sub></code> by the integral averaging. In the North Sea chalk example (p<sub>i</sub> = 7000 psia, collapse at 6000 psia), <code>c̄<sub>f</sub></code> rises only modestly while water-phase <code>c̄<sub>tw</sub></code> dominates throughout depletion. The diagnostic flips: downward curvature in <code>p/z</code> evidences water-phase support (connate, interbedded shale, limited aquifer through the <code>M</code> ratio), not rock failure. This directly contradicted the dominant 1970s-80s explanation.</li>
+    <li><strong>Associated-water volume ratio <code>M = M<sub>NNP</sub> + M<sub>AQ</sub></code>.</strong> The single parameter <code>M</code> rolls up all water-saturated volumes external to net-pay in pressure communication with the gas: non-net pay (interbedded shales, dirty sands) via <code>M<sub>NNP</sub> = (φ<sub>NNP</sub>/φ<sub>R</sub>)(1 - NGR)/NGR</code>, and limited aquifer via <code>M<sub>AQ</sub> = (φ<sub>AQ</sub>/φ<sub>R</sub>)[(r<sub>AQ</sub>/r<sub>R</sub>)<sup>2</sup> - 1]</code>. Values up to <code>M<sub>AQ</sub> = 25</code> (r<sub>AQ</sub>/r<sub>R</sub> = 5) fit the cumulative-compressibility framework; larger aquifers need transient superposition.</li>
+    <li><strong>Closed-form quick-look for linear-extrapolation overestimate.</strong> <code>G/G<sub>x</sub> ≈ 1/[1 + (2 x 10<sup>-4</sup>)p<sub>i</sub><sup>2</sup> c̄<sub>e</sub>]</code>. At p<sub>i</sub> = 10000 psia and c̄<sub>e</sub> = 100 x 10<sup>-6</sup> psi<sup>-1</sup>, linear extrapolation triples the apparent gas volume. The error grows quadratically with initial pressure, which is why classical <code>p/z</code> works at shallow reservoirs and fails badly in geopressured systems. Engineers can run the calculation in 30 seconds on a wellhead pressure survey and a rough water-plus-pore <code>c̄<sub>e</sub></code> estimate.</li>
+    <li><strong>Backcalculation workflow for joint estimation of <code>G</code> and <code>c̄<sub>e</sub>(p)</code>.</strong> Given a pressure-production history, bracket <code>G</code>, backcalculate <code>c̄<sub>e</sub></code> at each production point, and cross-check the implied <code>M</code> against geological and log estimates of non-net-pay and aquifer volumes. Field applications on the Anderson "L", Ellenburger, Cajun, and a Gulf Coast overpressured sandstone bracket <code>G</code> within roughly 5 per cent despite each having a clearly curved <code>p/z</code> history. The downward curvature becomes <em>information</em>, not noise.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Fixing a 20-year diagnostic error.</strong> The paper replaces the pore-collapse-as-curvature explanation with the water-support explanation. The diagnostic flip - <em>do not extrapolate through the curve, believe it</em> - reframed how the industry interpreted overpressured gas reservoirs. Reserves bookings that had relied on linear <code>p/z</code> extrapolation were systematically too high; the cumulative-compressibility correction was sometimes painful.</p>
+    <p><strong>The water-EOS connection.</strong> The <code>c̄<sub>tw</sub></code> term integrates connate-water expansion with solution-gas evolution from initial to current pressure. Curtis's parallel work with Søreide (1992 FPE, "Peng-Robinson predictions for hydrocarbons-CO2-N2-H2S with pure water and NaCl brine") supplied the EOS-consistent water-property correlations behind <code>B<sub>w</sub></code>, <code>R<sub>sw</sub></code>, and <code>B<sub>tw</sub></code>. The 1991 paper and the 1992 Søreide-Whitson paper sit together: cumulative gas material balance and the EOS that makes the cumulative water-compressibility integral honest.</p>
+    <p><strong>Curtis among industry heavyweights.</strong> Mike Fetkovich was one of the dominant figures in 20th-century well-test analysis and reservoir engineering. His name on the Inflow Performance Relationship (1973) and on the Decline Curve Analysis paper (1980) is permanent. Curtis at 35, six years into Whitson AS, sharing authorship on the Fetkovich derivation he had been carrying in internal files since 1969, is one of the markers that he had moved from a postgraduate authority on PVT into the operator-trusted technical bench of the early 1990s. The paper is one of the rare Whitson outputs where he is not the principal author and not on PVT - it is gas-reservoir material balance, his Stanford-Standing inheritance applied to a problem Fetkovich framed.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Fetkovich (1969), Phillips internal note — the original derivation for the Gulf Coast overpressured reservoir, unpublished for 22 years</li>
+    <li>Harville &amp; Hawkins (1969) and Hammerlindl (1971) — the pore-collapse-as-curvature interpretation the paper refutes</li>
+    <li>Hall (1953), Van Gonten &amp; Choudhary (1969) — rock-compressibility correlations used in cumulative form</li>
+    <li>Bass (1972), Poston &amp; Chen (1987) — prior attempts at the same problem that conflated instantaneous and cumulative compressibility</li>
+    <li>Schilthuis (1936), van Everdingen &amp; Hurst (1949) — transient-aquifer formulations the limited-aquifer treatment simplifies for moderate <code>r<sub>AQ</sub>/r<sub>R</sub></code></li>
+    <li>Søreide-Whitson 1992 FPE precursor — the EOS-consistent water-property framework supplying <code>B<sub>w</sub></code>, <code>R<sub>sw</sub></code>, and <code>B<sub>tw</sub></code> for <code>c̄<sub>tw</sub>(p)</code></li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Industry-standard high-pressure gas material-balance workflow for the next three decades, embedded in commercial reservoir-engineering packages</li>
+    <li>Reserves reassessment for overpressured Gulf Coast and North Sea chalk reservoirs - the corrected estimates were sometimes substantially below the pre-1991 booked numbers</li>
+    <li>The diagnostic shift away from pore-collapse-as-curvature in textbook treatments (Dake 1994 onwards, Ahmed)</li>
+    <li>Coupling to the 1992 Søreide-Whitson brine-EOS framework as the standard <code>c̄<sub>tw</sub>(p)</code> source for cumulative-water-compressibility calculations</li>
+    <li>Conceptual template for the 2000 SPE Monograph treatment of gas material balance under Curtis &amp; Brule</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Michael J. Fetkovich</strong> (Phillips Petroleum, lead author) — the IPR and decline-curve figure of post-war reservoir engineering. The 1969 derivation was his. <strong>D.E. Reese</strong> (Phillips Petroleum) — co-author on the field-applications side. <strong>Curtis Whitson</strong> (Whitson AS / NTH, third author) — brought the water-phase compressibility integration via the parallel Søreide-Whitson EOS-for-brine work. The Phillips connection appears repeatedly through Curtis's career: Phillips operated Ekofisk and many of the North Sea fields where Curtis was running PVT studies through the 1980s and early 1990s.</p>

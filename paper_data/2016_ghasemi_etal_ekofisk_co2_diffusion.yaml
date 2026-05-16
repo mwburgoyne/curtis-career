@@ -1,0 +1,77 @@
+id: 2016_ghasemi_etal_ekofisk_co2_diffusion
+title: |-
+  Determining Diffusion Coefficients for CO2 Injection in Ekofisk-Oil Saturated Chalk Using a Constant Volume Diffusion Method
+page_title: |-
+  Ghasemi, Astutik, Alavian, Whitson, Siagalas, Olsen & Suicmez (2016) - Diffusion Coefficients for CO2 Injection in Ekofisk-Oil Saturated Chalk
+authors:
+- Mohsen Ghasemi
+- Wahyu Astutik (Petrostreamz)
+- Seyyed Ali Alavian (PERA)
+- Curtis H. Whitson (PERA / NTNU)
+- L. Siagalas
+- D. Olsen (Geological Survey of Denmark/Greenland
+- GEUS)
+- V. S. Suicmez
+authors_affiliation: Maersk Oil and Gas
+venue: SPE Improved Oil Recovery Conference, Tulsa, 11-13 April 2016
+paper_number: SPE-179550
+doi: null
+funding: |-
+  JCR7 joint-industry project (Norwegian Petroleum Directorate, Maersk, Statoil, ConocoPhillips, DONG, ENI, Hess, Shell, Total, BP, Danish Energy Agency, Danish North Sea Fund)
+citations: null
+tags:
+- CO2 Injection
+- Diffusion
+- Constant-Volume Diffusion
+- Ekofisk Chalk
+- Multi-Component Diffusion
+- Density-Driven Convection
+- Capillary Pressure
+- JCR7
+- Phase 4
+whitson_index: 3
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>Seven-author multi-organisation paper extending the Alavian-Whitson 2005 / 2009 / 2010 CO<sub>2</sub>-fractured-reservoir + diffusion workstream from synthetic binary C1-nC5 laboratory experiments to multi-component reservoir-condition CO<sub>2</sub> injection into real Ekofisk oil saturated chalk at 110 °C and 257 bara. Funded by the JCR7 joint-industry project. The Constant-Volume Diffusion (CVD) apparatus is novel: a vertically-oriented stainless-steel core holder with an upper CO<sub>2</sub> chamber over an oil-saturated chalk sample, with pressure decline over 750-800 hours interpreted via compositional simulation (ECLIPSE 300 plus Pipe-It automated history matching) to back out multi-component diffusion coefficients. Two experiments: CVD-STO (stock-tank oil saturated, outcrop chalk, k = 2.3 md) and CVD-live-oil (tight North Sea reservoir chalk, k = 0.2-0.36 md). EOS characterisation: PR-EOS with 40 components reduced to 10 pseudo-components via the Alavian-Whitson-Martinsen 2014 lumping methodology.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>CVD apparatus for multi-component diffusion at reservoir conditions.</strong> Vertical 92 mm by 37.6 mm core holder with upper CO<sub>2</sub> chamber (~26.5 ml void) overlying an oil-saturated chalk sample (~26-34 ml pore volume). Protocol: assemble, pressurise to 257 bara at 110 °C, 10-day shut-off leak test, flush live-oil through core where required (~3.9 pore volumes), inject CO<sub>2</sub> in 40 minutes, isolate for 750-800 hours, record pressure decline. The chalk's low permeability (0.2-2.3 md) ensures viscous Darcy flow is negligible, so pressure decline is dominated by diffusion (CVD-STO) or diffusion plus density-driven convection (CVD-live-oil). Contrasts with high-permeability PVT cells where convection dominates and diffusion is hard to isolate. The 2D radial modelling interpretation is justified by the observation that transport is primarily vertical (longitudinal along core axis) with maximum horizontal CO<sub>2</sub> composition gradient ~3% vs ~30% vertical at 40 hours.</li>
+    <li><strong>Pseudo-reduced molar density as compositional driver of diffusion coefficients.</strong> Oil-phase diffusion coefficients <em>decrease</em> as CO<sub>2</sub> content increases in the mixture because molar density rises (0.004 to 0.010 gmol/cm<sup>3</sup> for 0% to 78% CO<sub>2</sub>), consistent with Stokes-Einstein-like scaling. Gas-phase diffusion coefficients <em>increase</em> with CO<sub>2</sub> until a tipping point, then decrease when a two-phase region develops. Standard thermal simulators (ECLIPSE 300) assume constant diffusion coefficients - a modelling limitation the authors flag explicitly. The pseudo-reduced molar density framework gives a defensible interpolation between measured composition endpoints.</li>
+    <li><strong>Three-mechanism coupling in CVD-live-oil vs pure-diffusion CVD-STO.</strong> The CVD-STO liquid density stays constant at ~0.835 g/cm<sup>3</sup> across 0-78% CO<sub>2</sub> - no convection driving force develops; pressure decline is pure molecular diffusion. The CVD-live-oil liquid density increases <em>non-monotonically</em> as CO<sub>2</sub> dissolves, creating density-driven convection that accelerates pressure decline 10x beyond diffusion alone. Simultaneously, a two-phase region develops at 10% CO<sub>2</sub> in live-oil where capillary pressure dampens the convection transfer rate. The chalk permeability must be tight enough (k = 0.2 md) to minimise convection while allowing CO<sub>2</sub> transport - k = 5 md shows significantly faster pressure decline because convection dominates.</li>
+    <li><strong>Operational caveats for CVD history-matching.</strong> Three flagged points: (a) reservoir simulators do not model compositional dependency of diffusion coefficients, forcing constant values that represent average conditions; (b) CO<sub>2</sub> chamber permeability must be set high (1,000 md) but causes numerical convergence issues; (c) modelling the 40-minute CO<sub>2</sub> loading period distorts the simulation substantially via non-uniform initial gas-oil interface - the authors recommend skipping loading and initialising with uniform region 1 (CO<sub>2</sub>) plus region 2 (oil) at the start of the CVD run.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Real-rock, real-fluid, real-conditions diffusion data.</strong> Curtis's teaching pattern: when laboratory data extrapolations fail in the field, the right response is usually not to refine the extrapolation - it is to do the laboratory experiment at field conditions. The CVD apparatus brings CO<sub>2</sub> diffusion measurement to reservoir pressure and temperature with real reservoir fluids and real reservoir-permeability cores. The result is data that can be used directly in compositional simulators without correction factors that hide their own assumptions.</p>
+    <p><strong>Separating the three transport mechanisms.</strong> The CVD-STO vs CVD-live-oil comparison is the methodological payoff. STO gives diffusion alone (no density change, no two-phase region); live-oil at the same conditions gives diffusion plus density-driven convection plus capillary damping. Comparing the two pressure-decline histories isolates each mechanism's contribution. This separation is what lets the authors quantify the diffusion coefficient in the presence of convection rather than reporting a lumped effective transport coefficient.</p>
+    <p><strong>Honest about simulator limitations.</strong> The explicit flag that ECLIPSE 300 cannot model compositional dependency of diffusion coefficients is the right professional discipline. Rather than tuning around the limitation and reporting an apparently-fitted result, the authors say: this is what we did, this is what we couldn't do, here is what the next-generation simulator should address.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Alavian-Whitson 2005, 2009 SPE-125362, 2010 SPE-129637 CO<sub>2</sub>-fractured-chalk and diffusion series</li>
+    <li>Riazi 1996 single-component CVCT (constant-volume-constant-temperature) precursor</li>
+    <li>Sigmund 1976 diffusion correlation with da Silva-Belery 1989 extension</li>
+    <li>Wilke 1950 formula for effective multi-component diffusion</li>
+    <li>Christoffersen-Whitson 1992 chalk capillary pressure</li>
+    <li>Ghasemi-Whitson 2013 SPE-165416 EOS characterisation methodology</li>
+    <li>Alavian-Whitson-Martinsen 2014 SPE-170912 global EOS lumping</li>
+    <li>ECLIPSE 300 (Schlumberger) compositional simulator</li>
+    <li>Pipe-It (Petrostreamz) automated history matching</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li>Ghasemi et al. 2018 SPEREE CO<sub>2</sub>-EOR follow-up paper</li>
+    <li>Ekofisk and other North Sea chalk CO<sub>2</sub>-EOR design workflows</li>
+    <li>Methodology adopted by carbon-capture-and-storage modelling for CO<sub>2</sub> storage in chalk and tight carbonates</li>
+    <li>Whitson Academy course material on diffusion in fractured reservoirs and chalk</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Mohsen Ghasemi</strong> — NTNU PhD / postdoc with Curtis, then Petrostreamz. Lead author.</p><p><strong>Wahyu Astutik</strong> — Petrostreamz; chalk-CO<sub>2</sub> modelling. Also co-author on Hoffmann-Astutik-Rasmussen-Whitson 2016 SPE-184119 diluent-injection optimisation.</p><p><strong>Seyyed Ali Alavian</strong> — PERA / whitson. Long-standing collaborator on CO<sub>2</sub> recovery and diffusion in chalk.</p><p><strong>L. Siagalas, D. Olsen</strong> — Geological Survey of Denmark / Greenland (GEUS). Chalk core characterisation and experimental apparatus.</p><p><strong>V. S. Suicmez</strong> — Maersk Oil and Gas; operator perspective and JCR7 industry coordination.</p>

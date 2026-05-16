@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sævareid, Whitson & Fevang (1999) - Measuring & Modelling Gas-Condensate Relative Permeabilities</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>An Engineering Approach to Measuring and Modelling Gas Condensate Relative Permeabilities</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Arne Sævareid, <mark>Curtis H. Whitson</mark>, Øivind Fevang</p>
+  <p><strong>Venue:</strong> Society of Core Analysts International Symposium, paper SCA-9930, 1999, 13 pp.</p>
+  <p><strong>Paper number:</strong> SCA-40899 (project filename)</p>
+  
+  
+  
+  <p><strong>Citations:</strong> Not indexed in OpenAlex; cited through the 2003 TIPM consolidation (29 OpenAlex)</p>
+  <p><span class="tag">Steady-State k<sub>r</sub></span> <span class="tag">Closed-Loop Apparatus</span> <span class="tag">k<sub>rg</sub>/k<sub>ro</sub></span> <span class="tag">Hysteresis</span> <span class="tag">Capillary Number</span> <span class="tag">ResLab</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>The 1996 Fevang-Whitson three-region model and the 1997 IBC generalisation rest on one experimental claim: that <code>k<sub>rg</sub> = f(k<sub>rg</sub>/k<sub>ro</sub>)</code> is the fundamental relationship for Region 1 deliverability, and that it can be measured directly without resolving in-situ saturation. The 1999 SCA paper is the laboratory programme that delivers on the claim. Arne Sævareid built the ResLab closed-loop apparatus at NTH; <mark>Whitson</mark> and Fevang supplied the theoretical framework that lets the apparatus skip saturation measurement entirely. The paper reports steady-state measurements on Berea and North Sea sandstone, tests three categories of hysteresis under realistic flow cycling, and proposes a rock-property-scaled calibration for the capillary-number transition function.</p><p>The paper is part of the Gas Condensate Well Performance project (sponsors BP, Chevron, INA, Mobil, Norsk Hydro, NFR, NPD, Occidental, Saga) that ran 1996-1999 and produced the 1996 SPE-30714 three-region paper, the 1997 IBC generalisation, this 1999 measurement paper, and the 2003 TIPM consolidation.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Closed-loop apparatus for long-duration steady-state measurement.</strong> A closed-loop circuit recycles produced condensate gas through a high-pressure booster pump and a re-equilibration cylinder back to the injection side, rather than consuming fresh synthetic gas-condensate fluid for every pore volume. Specifications: 700 bar / 180°C maximum; composite cores up to 50 cm length, 1.5 inch diameter; independent axial and radial confining load up to 1000 bar. The design lets lean-condensate measurements run for hundreds of pore volumes (which they need to, at <code>k<sub>rg</sub>/k<sub>ro</sub> &gt; 50</code>) without depleting expensive synthetic fluid.</li>
+<li><strong>Measurement programme bypasses saturation.</strong> For each target <code>k<sub>rg</sub>/k<sub>ro</sub></code> value, select a two-phase mixture whose CCE oil-relative-volume V<sub>ro</sub> at core-face pressure gives the desired ratio via the Evinger-Muskat relation <code>k<sub>rg</sub>/k<sub>ro</sub> = (1/V<sub>ro</sub> - 1)(μ<sub>g</sub>/μ<sub>o</sub>)</code>. Flow at steady state. Record <code>Δp</code>, q<sub>g</sub>, q<sub>o</sub>, viscosities. Compute k<sub>rg</sub> and k<sub>ro</sub> from Darcy's law. The k<sub>rg</sub>/k<sub>ro</sub> range encountered over a real well's life is about one order of magnitude (rich: 1 to 10; lean: 1 to 50). The k<sub>rg</sub> range is 0.05 to 0.3 for most systems. Five well-chosen mixtures span the relevant range.</li>
+<li><strong>No significant hysteresis under realistic flow cycling.</strong> Three hysteresis categories tested:
+    <ul>
+<li><em>Velocity hysteresis.</em> Varying the flowing gas rate (9 to 59 ml/min, three times base) at fixed pressure and fixed <code>k<sub>rg</sub>/k<sub>ro</sub></code> changes k<sub>rg</sub> by at most 5-10% (rich) or 5-20% (lean, low-perm). No systematic trend with rate.</li>
+<li><em>Shut-in / drawdown hysteresis.</em> A 10-12 hour shut-in at 375 bar (returning the core to single-phase hydrocarbon), then reopening at 100 bar flowing pressure, recovers the base k<sub>rg</sub> within 2-3 pore volumes. Final steady-state <code>k<sub>rg</sub> = f(k<sub>rg</sub>/k<sub>ro</sub>)</code> is independent of the core's initial saturation state.</li>
+<li><em>Variable-pressure (multirate well test) hysteresis.</em> Ramping core pressure from 100 bar up to 275 bar then back at constant 30 ml/min recovers the base k<sub>rg</sub> within ten pore volumes.</li>
+</ul>
+    The implication for simulation: a single <code>k<sub>rg</sub> = f(k<sub>rg</sub>/k<sub>ro</sub>)</code> relation can be used for reservoir simulation without a hysteresis model. Decades of shut-ins, rate changes, and pressure cycles do not substantively degrade the k<sub>r</sub> response in sandstone reservoirs. This is an operationally valuable negative result.</li>
+<li><strong>The α-parameter scales with rock as α = 10<sup>4</sup>/√(kφ).</strong> The Whitson-Fevang capillary-number transition function <code>f = 1 - [(α N<sub>c</sub>)<sup>n</sup> + 1]<sup>-1</sup></code> has a rock-dependent scaling parameter that correlates with permeability (md) and porosity (fraction) by Leverett-J-function reasoning. Berea fit (Fig. 7 of source): <code>α = 2000</code> consistent with <code>k ≈ 135 md, φ ≈ 0.19</code>, exponent <code>n ≈ -0.64</code>, immiscible end-point <code>k<sub>rgI</sub> = 0.085</code>, miscible end-point <code>k<sub>rgM</sub> = 0.353</code>. The fit collapses two fluids (synthetic at <code>k<sub>rg</sub>/k<sub>ro</sub> = 1.6</code>, reservoir at <code>k<sub>rg</sub>/k<sub>ro</sub> = 2.8</code>) with very different IFTs (0.8-1.6 vs 6.3 mN/m) onto a single curve. Rock heterogeneity enters through kφ, not through a free-fit α.</li>
+<li><strong>Saturation measurement is optional, not central.</strong> If conversion back to a conventional <code>k<sub>r</sub>(S)</code> format is wanted (for legacy reservoir simulators that lack the Whitson-Fevang procedure), the closed-loop apparatus can measure saturation after the flow test by displacing the produced condensate, re-equilibrating with reservoir gas at core conditions, and measuring the liquid volume. Fitting an immiscible Corey or Chierici correlation against the measured k<sub>rg</sub>(<code>k<sub>rg</sub>/k<sub>ro</sub></code>) data gives the saturation form. The point: saturation is an output, not a controlled variable.</li>
+<li><strong>Range targeting is the methodological lever.</strong> Conventional SCAL practice runs full <code>k<sub>r</sub>(S)</code> envelopes from connate water to residual oil. The Whitson-Fevang programme runs five points across the <code>k<sub>rg</sub>/k<sub>ro</sub></code> range expected during the well's economic life. This saves weeks of laboratory time for the engineering outcome that actually matters, which is Region 1 deliverability.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The experimental backbone of the Fevang-Whitson framework.</strong> SPE-30714 (1996) proposed the three-region model; the 1997 IBC paper generalised it; SCA-40899 measured the relationships the framework relies on. The closed-loop apparatus is the platform for every subsequent gas-condensate <code>k<sub>r</sub></code> measurement that targets <code>k<sub>rg</sub> = f(k<sub>rg</sub>/k<sub>ro</sub>)</code> directly. The no-hysteresis finding for sandstone reservoirs is the licence that lets simulation teams skip the hysteresis modelling layer with confidence.</p>
+<p><strong>The α = 10<sup>4</sup>/√(kφ) scaling.</strong> Capillary-number dependence of gas-condensate k<sub>r</sub> is a rock property (via α) and a fluid property (via σ inside N<sub>c</sub>). The Leverett-J-style scaling separates the two so that one calibration measurement on a representative rock predicts the response across a heterogeneous reservoir. The 2003 TIPM paper updates this to <code>α = 2×10<sup>4</sup>/√(kφ)</code> with the combined Heriot-Watt + Delft data, but the structural insight (α scales with 1/√(kφ)) is from this paper.</p>
+<p><strong>Sævareid's role.</strong> Arne Sævareid built the apparatus and ran the measurement campaign. <mark>Whitson</mark> and Fevang's contribution is the theoretical framework that turns the apparatus into a Region 1 deliverability lab. The collaboration is the experimentalist-theorist pairing that runs through the GCB project: ResLab supplies the data, the NTH/Whitson AS group supplies the framework.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li><strong>Fevang &amp; Whitson (1996) SPE-30714</strong> — the three-region model and the <code>k<sub>rg</sub> = f(k<sub>rg</sub>/k<sub>ro</sub>)</code> framework</li>
+<li><strong>Whitson &amp; Fevang (1997) IBC</strong> — the generalised pseudopressure with the original Whitson-Fevang capillary-number form (α free, n ≈ -0.75)</li>
+<li>Evinger &amp; Muskat (1942), Muskat (1949) — the steady-state two-phase identity <code>k<sub>rg</sub>/k<sub>ro</sub> = (1/V<sub>ro</sub> - 1)(μ<sub>g</sub>/μ<sub>o</sub>)</code> that makes saturation-free measurement possible</li>
+<li>Henderson et al. (1995, 1996, 1998) Heriot-Watt steady-state gas-condensate k<sub>r</sub> measurements — complementary dataset</li>
+<li>Ham &amp; Eilerts (1967) — the early high-pressure gas-condensate k<sub>r</sub> work the closed-loop apparatus revisits with modern instrumentation</li>
+<li>Leverett J-function (1941) — the √(k/φ) scaling of capillary forces</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li><strong>Whitson, Fevang &amp; Sævareid (2003)</strong> TIPM — the consolidated journal treatment with updated <code>α = 2×10<sup>4</sup>/√(kφ)</code> and n = 0.7 fit to combined Heriot-Watt + Delft data, and the monovariance proof attributed to Panfilov</li>
+<li><strong>Whitson &amp; Brule (2000) SPE Monograph "Phase Behavior"</strong>, Chapter 7 — the textbook presentation of the gas-condensate <code>k<sub>r</sub></code> laboratory programme</li>
+<li>The ResLab closed-loop apparatus design is the reference platform for subsequent industry gas-condensate <code>k<sub>r</sub></code> measurement</li>
+<li>The no-significant-hysteresis finding shaped commercial simulator decisions to forgo hysteresis branches for gas-condensate <code>k<sub>r</sub></code> in sandstone reservoirs</li>
+<li>The α(kφ) Leverett scaling underpins the 2003 TIPM endpoint-scaling procedure for heterogeneous strata</li>
+<li>Whitson AS field studies on Sleipner, Eldfisk, and other North Sea gas-condensate fields used the saturation-free measurement programme to size and design lab campaigns</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Arne Sævareid</strong> — ResLab experimentalist who built and ran the closed-loop apparatus. The 1999 SCA paper is his contribution to the GCB project, leading into the 2003 TIPM consolidation where his name appears as second author after <mark>Whitson</mark> and Fevang.</p><p><strong>Øivind Fevang</strong> — NTH PhD (1995) and long-running gas-condensate collaborator; the theoretical framework (Region 1 saturation-free k<sub>r</sub>, capillary-number scaling) is from the 1996 and 1997 Fevang-Whitson papers.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

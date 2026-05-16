@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Whitson (1979) - Fitting Relative Permeability Ratio Data</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>An Equation for Fitting and Correlating Experimental Relative Permeability Ratio Data</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> <mark>Curtis H. Whitson</mark> (sole author)</p>
+  <p><strong>Venue:</strong> Unpublished note, University of Trondheim (NTH)</p>
+  
+  <p><strong>DOI:</strong> <a href="https://doi.org/none">none</a></p>
+  
+  <p><strong>Year:</strong> 1979</p>
+  
+  <p><strong>Citations:</strong> citation count not available (unpublished note)</p>
+  <p><span class="tag">Relative Permeability</span> <span class="tag">Knopp Extension</span> <span class="tag">Gas-Oil Ratio</span> <span class="tag">Curve Fitting</span> <span class="tag">Three-Region Model</span> <span class="tag">Phase 1</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Knopp (1965) had given a graphical construction for fitting water-oil relative permeability ratio data. The mid-range was log-linear in saturation; the tails were handled by reading deviation charts. For gas-oil systems no equivalent published construction existed, and the Corey/Johnson approach required residual saturations that the laboratory could not reliably measure. Trial-and-error fits to Johnson's charts produced "large deviations from chart values at low gas saturations" for Knopp's own data.</p><p>Curtis is 23, in his first year of teaching at NTH after Stanford, and writing a six-page note that does three things: turn Knopp's graphical construction into a computable equation, extend it from water-oil to gas-oil and gas-water, and give it a quantitative goodness-of-fit metric that lives in the same log-space as the correlation itself.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Three-region equation for log K<sub>g</sub>/K<sub>o</sub>.</strong>
+<p><code>log<sub>10</sub>(K<sub>g</sub>/K<sub>o</sub>) = A(S<sub>g</sub>) + δ<sub>1</sub>(S<sub>g</sub>) + δ<sub>2</sub>(S<sub>g</sub>)</code></p>
+    with the mid-range <code>A(S<sub>g</sub>) = a S<sub>g</sub> + b</code>, the low-saturation tail <code>δ<sub>1</sub>(S<sub>g</sub>) = -10<sup>(c S<sub>g</sub> + d)</sup></code>, and the high-saturation tail <code>δ<sub>2</sub>(S<sub>g</sub>) = 10<sup>(e S<sub>g</sub> + f)</sup></code>. Six coefficients, each fit by least-squares linear regression in the coordinate system that makes the relevant piece linear. The same functional form covers K<sub>g</sub>/K<sub>o</sub>, K<sub>w</sub>/K<sub>o</sub>, and K<sub>g</sub>/K<sub>w</sub>.</li>
+<li><strong>Delta-function procedure for the tails.</strong> Define <code>δ(S<sub>g</sub>) = |log<sub>10</sub>(K<sub>g</sub>/K<sub>o</sub>)<sub>curve</sub> - log<sub>10</sub>(K<sub>g</sub>/K<sub>o</sub>)<sub>linear</sub>|</code> as the absolute logarithmic deviation between the experimental curve and the mid-range linear extrapolation. A plot of log<sub>10</sub>δ vs S<sub>g</sub> is a straight line in each tail region; least-squares regression on this plot gives the tail coefficients (c, d) and (e, f) directly. The construction replaces Knopp's Figs. 3C-3E with a computable equation.</li>
+<li><strong>Absolute conformance factor V<sup>±1</sup>.</strong>
+<p><code>V<sup>±1</sup> = antilog<sub>10</sub>[(1/n) Σ |log<sub>10</sub> CR<sub>i</sub>|]</code></p>
+    where CR<sub>i</sub> is the ratio of correlation to curve at saturation point i. A reported value of 1.0295 means the correlation is 2.95% above or 2.91% below the smoothed curve on average. The metric is dimensionless and scale-free, which matches the quantity it scores: K<sub>g</sub>/K<sub>o</sub> ratios span several orders of magnitude. Fit in log-K space, score in log-K space.</li>
+<li><strong>No residual saturations as inputs.</strong> The equation deliberately omits S<sub>Lr</sub> and Corey's S<sub>m</sub>. Curtis argues residual saturations "are often difficult if not impossible to measure in the laboratory," so the correlation fits where the data exist and back-estimates residuals from the fitted equation if a downstream calculation requires them. The methodological move (fit what you can measure, back out what you cannot) recurs through Curtis's later PVT work, especially in CVD evaluation.</li>
+<li><strong>Averaged tail coefficients across S<sub>wi</sub>.</strong> Knopp had argued that c and d should vary with interstitial water saturation. Curtis found "a continuous and definable function could not be found" and uses averaged values (<span style="white-space: nowrap;">c-bar = -15.63</span>, <span style="white-space: nowrap;">d-bar = 0.4133</span>) with little loss of accuracy. A practical call: if the S<sub>wi</sub> dependence of the tail coefficients is below the noise floor of the underlying data, chasing it adds complexity without predictive value.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Methodological signature.</strong> The 1979 relperm-ratio note shows the Whitson pattern at age 23, three years before SPE-12233. Take a piecewise problem, find the coordinate system in which each piece is linear, let regression do the work in each region, score the fit in the same space the fit lives in. The same move turns up in the C7+ characterisation (Riazi-Daubert in T<sub>b</sub>-γ log-space), in the Hoffman log Kp vs F plot used in Whitson-Torp 1981, and in every later EOS-tuning workflow.</p>
+<p><strong>Pragmatic critique of Corey.</strong> Curtis is not saying Corey is wrong. He is saying Corey demands inputs (S<sub>Lr</sub>, S<sub>m</sub>) the laboratory cannot supply reliably. The rhetorical move (fit what is measurable, back-estimate the rest) is a recurring feature of the Whitson voice. It survives into the 1983 C7+ paper, the 1981 CVD evaluation, and the 2000 monograph.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Knopp (1965), <em>SPE Journal</em> - water-oil relative permeability ratio with log-linear mid-range plus deviation charts</li>
+<li>Corey (1954) - the S<sub>Lr</sub>, S<sub>m</sub>-based correlation Curtis critiques</li>
+<li>Johnson (1968) charts - Corey-style trial-and-error fitting that Curtis found inaccurate at low S<sub>g</sub></li>
+<li>Standard least-squares linear regression in log-K space</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Curtis's later "fit in the space the curve is linear" pedagogical pattern, which appears in SPE-12233 (1983), SPE-10067 (1981) Hoffman plot, and the 2000 monograph relative-permeability chapter</li>
+<li>NTH petroleum engineering teaching infrastructure of the late 1970s</li>
+<li>The dimensionless log-space conformance metric V<sup>±1</sup>, which fits any quantity that spans several orders of magnitude (typical of K-ratios, BIPs, and many EOS-derived properties)</li>
+</ul>
+</div>
+
+
+<h2>Key References</h2>
+
+<p><strong>Sole author.</strong> Unpublished NTH note. No formal collaborators. The work extends Knopp (1965) from water-oil to gas-oil and gas-water systems and replaces Knopp's chart-based deviation tables with a computable form.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

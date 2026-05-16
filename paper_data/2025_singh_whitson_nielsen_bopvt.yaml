@@ -1,0 +1,66 @@
+id: 2025_singh_whitson_nielsen_bopvt
+title: Comparing Black-Oil PVT Tables with Laboratory PVT Data
+page_title: Singh, Whitson and Nielsen (2025) - Comparing Black-Oil PVT Tables with Laboratory PVT Data
+authors:
+- Kameshwar Singh
+- Curtis H. Whitson
+- Markus Hays Nielsen
+authors_affiliation: all Whitson AS
+venue: SPE Advances in Integrated Reservoir Modelling and Field Development Conference, Abu Dhabi UAE, 2-4 June 2025
+paper_number: SPE-225382-MS
+doi: null
+funding: null
+citations: New (2025)
+tags:
+- BOPVT
+- CCE
+- CVD
+- DLE
+- PVT Groups
+- Outlier Detection
+- Phase 4
+whitson_index: 1
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>The Whitson-Torp 1981 framework (SPE-10067) and Monograph Chapter 7 go forward: lab CVD or DLE data plus an EOS produce a black-oil PVT table for the reservoir simulator. The reverse direction has been awkward for forty years. A practitioner with a BOPVT table and a stack of laboratory PVT reports has needed to re-derive the material balance for each comparison plot. Lab data come on different reference volumes (CCE uses saturation-pressure volume, CVD uses initial-cell volume, DLE uses residual-oil volume), and the BOPVT table uses stock-tank-oil reference. A direct B<sub>od</sub>-vs-B<sub>o</sub> plot from raw lab numbers shows a constant offset that has nothing to do with EOS-model error, and practitioners have been re-tuning EOS models against that artefact for years.</p><p>Singh, Whitson, and Nielsen close the loop. The paper gives the closed-form material-balance equations that convert any BOPVT table into CCE-equivalent, CVD-equivalent, or DLE-equivalent quantities so that lab data and BOPVT predictions sit on one plot. It also formalises the Whitson AS "PVT groups" workflow that uses BOPVT consistency across samples to identify reservoir compartments and outlier samples. Kameshwar Singh has been Curtis's BOPVT collaborator since 2000 (SPE-63087, SPE-109596, SPE-117930, SPE-120743). Markus Hays Nielsen is Curtis's son and a Whitson AS engineer working on EOS development and PVT-uncertainty methodology (his M.Sc. at NTNU was on the effect of binary interaction parameters on phase behaviour).</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>BOPVT-to-CCE conversion (Eqs 1-12).</strong> Two branches - oil sample below the bubblepoint with R<sub>s,ref</sub> specified, gas sample below the dewpoint with r<sub>s,ref</sub> specified. From a BOPVT table (R<sub>s</sub>, r<sub>s</sub>, B<sub>o</sub>, B<sub>gd</sub>) the equations give relative oil volume V<sub>ro</sub>, total relative volume V<sub>rt</sub>, normalised oil saturation V<sub>ro</sub>* = S<sub>o</sub>, phase densities, gas Z-factor, and wet-gas FVF B<sub>g</sub>. Surface densities can be adjusted (not the EOS) to match measured-phase densities without regenerating the BOPVT table.</li>
+    <li><strong>BOPVT-to-CVD stage-by-stage tracking (Eqs 13-28).</strong> Unit-reference material balance tracking surface oil N and surface gas G remaining in the PVT cell after gas removal at each depletion stage. Distinct initial conditions for gas condensate (V<sub>ro</sub> = 0 at the dewpoint, N<sub>0</sub> = r<sub>s,0</sub>/B<sub>gd,0</sub>) and volatile oil (V<sub>ro</sub> = 1 at the bubblepoint, N<sub>0</sub> = 1/B<sub>o,0</sub>). Stage-k recursion gives the produced volumes per stage, the cumulative produced surface oil and gas, the recovery factors, and the cumulative produced moles for molar-balance cross-check.</li>
+    <li><strong>BOPVT-to-DLE reference-volume reconciliation (Eqs 29-30).</strong> DLE lab reports use V<sub>oer</sub> residual-oil reference while BOPVT uses V<sub>oe</sub> stock-tank reference; B<sub>od,b</sub> &gt; B<sub>ob</sub> and R<sub>sd,b</sub> &gt; R<sub>sb</sub> by construction. Two equivalent reconciliation methods. First, oil-FVF rescale B<sub>o</sub> = B<sub>od</sub>(B<sub>ob</sub>/B<sub>od,b</sub>) compares the shrinkage factor SF<sub>DLE</sub> = B<sub>od</sub>/B<sub>od,b</sub> against SF<sub>BOPVT</sub> = B<sub>o</sub>/B<sub>ob</sub> as dimensionless quantities that cancel the reference-volume difference. Second, a dimensionless solution-GOR plot (R<sub>sb</sub> - R<sub>s</sub>)/B<sub>ob</sub> from the BOPVT table against (R<sub>sd,b</sub> - R<sub>sd</sub>)/B<sub>od,b</sub> from the lab DLE eliminates the reference dependence entirely.</li>
+    <li><strong>PVT-groups workflow and outlier detection.</strong> The standard Whitson AS practice for single-EOS field-wide models: generate a BOPVT table for every sample in the EOS development set, plot all samples' BOPVT-derived quantities together with their lab data, and identify samples whose BOPVT traces overlay on a common trend as one PVT group. Samples that deviate are outliers, with potential causes ranging from physical (different compartment, different fluid system) to measurement (low-quality lab PVT data) to sampling (contamination). The paper's field example identifies an outlier traced to a sample taken from a different reservoir, illustrating that the workflow catches sample-provenance errors that would have confused field-wide EOS development if blindly included.</li>
+    <li><strong>Oil-viscosity depletion-type caveat.</strong> Oil viscosity from the BOPVT table is taken directly from the table at each pressure but implicitly embeds the depletion process used to generate the table (CCE vs CVD vs DLE). Lab-vs-BOPVT viscosity comparisons require matching the BOPVT depletion type to the lab experiment, otherwise the comparison shows artificial offsets that engineers may mistake for EOS-tuning error.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Closes the BOPVT-to-lab loop.</strong> The Whitson-Torp 1981 forward direction (CVD lab data + EOS to BOPVT table) has been the standard for forty years. This paper provides the reverse direction (BOPVT table to lab-equivalent quantities) that lets engineers validate a BOPVT table against any of the three depletion experiments on one plot. The reference-volume reconciliation in particular ends the common practice of re-tuning EOS models against constant offsets that are pure reference-volume artefacts.</p>
+    <p><strong>Operationalises field-wide PVT grouping.</strong> Younus-Whitson 2019 URTeC-551 established the single-EOS field-wide model architecture. This paper extends it from the EOS level to the BOPVT-table level: which samples in a field can share one BOPVT table, which require separate tables, which are outliers. The workflow is mechanical and reproducible.</p>
+    <p><strong>The pedagogical use is immediate.</strong> Mark Burgoyne's <em>bopvt-lookup</em> library implements Eqs 1-30 directly; the Singh-Whitson-Nielsen equations are the natural follow-up exercises to the Chapter 7 BOPVT formulation in any teaching context. The paper format (closed-form equations with worked oil-sample and gas-sample figures) gives instructors a complete classroom unit.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li>Whitson &amp; Torp (1981) SPE-10067 — CVD evaluation and the two-pseudo-component material balance (the framework this paper inverts)</li>
+    <li>Whitson &amp; Brule (2000) SPE Monograph Chapter 7 — black-oil and modified black-oil PVT formulations (R<sub>s</sub>, r<sub>s</sub>, B<sub>o</sub>, B<sub>gd</sub>)</li>
+    <li>Singh, Fevang &amp; Whitson (2007) SPE-109596 — consistent BOPVT table modification, nine-inequality framework for internal consistency</li>
+    <li>Fevang &amp; Whitson (1996) SPE-30714 — gas-condensate near-well flow framework that validates the CVD-based BOPVT stage equations</li>
+    <li>Coats (1985) JPT — gas-condensate reservoir simulation with modified black-oil PVT</li>
+    <li>Cragoe (1929) — the M<sub>oe</sub> approx 6084/(gamma<sub>API</sub> - 5.9) estimator used as default</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Nielsen &amp; Younus (2025) SPE-225470</strong> — the E2E fluid model development paper that uses the PVT-groups workflow on Volve to identify two distinct PVT regions</li>
+    <li><strong>Khan et al. (2025) SPE-225405</strong> — the ADNOC communicating-reservoirs paper that applies the BOPVT-consistency framework alongside the tracer methodology</li>
+    <li>The Whitson AS field-wide EOS workflow used in commercial consulting since 2019, now closed-loop end-to-end</li>
+    <li>Mark Burgoyne's <em>bopvt-lookup</em> open-source library — Eqs 1-30 implemented directly with worked examples</li>
+    <li>Future BOPVT QC modules in commercial PVT software (Whitson<sup>+</sup>, planned)</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Kameshwar Singh</strong> — Whitson AS senior engineer, Curtis's long-running BOPVT collaborator since 2000 across SPE-63087, SPE-109596, SPE-117930, SPE-120743, SPE-143612, and SPE-166380. <strong>Markus Hays Nielsen</strong> — Curtis's son. Whitson AS engineer; M.Sc. (NTNU, ~2020) on the effect of binary interaction parameters on phase behaviour. Co-author SPE-217328 / SPE-220699 / SPE-225470. <strong>Curtis H. Whitson</strong> — method-design and editorial role.</p>

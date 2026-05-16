@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ghasemi & Whitson (2015) - Compositional Variation in SAGD</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Compositional Variation in SAGD</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mohsen Ghasemi (Petrostreamz), <mark>Curtis H. Whitson</mark> (NTNU / PERA)</p>
+  <p><strong>Venue:</strong> SPE Annual Technical Conference and Exhibition, Houston, 28-30 September 2015</p>
+  <p><strong>Paper number:</strong> SPE-175022</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">SAGD</span> <span class="tag">Compositional Variation</span> <span class="tag">Vaporising-Condensing Mechanism</span> <span class="tag">Steam-Base K-Values</span> <span class="tag">Søreide-Whitson</span> <span class="tag">Viscosity Gradient</span> <span class="tag">Athabasca Bitumen</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Fourth and final paper of the Ghasemi-Whitson SAGD series: 2011 SPE-147072 (black-oil-proxy framework), 2013 SPE-165416 (EOSSCN / EOS5 / EOS6 / LBC bitumen-with-solvent PVT), 2014 IPTC-18033 (solvent-SAGD numerical and IAM optimisation), and this 2015 paper consolidating compositional effects in <em>pure</em> SAGD without solvent co-injection. The work returns to the steam-only SAGD problem to ask a question deferred in the 2011 paper: does compositional variation matter for SAGD, and if so, when. Four contributions span steam-base K-value methodology, a novel second-order recovery mechanism, a vertical viscosity-gradient correlation for biodegraded bitumen, and a pseudo-fraction count sensitivity study. Same reservoir base case as IPTC-18033: 2D x-z half-symmetric Athabasca model, <code>k<sub>h</sub></code> = 2,000 md, <code>k<sub>v</sub></code> = 1,000 md, <code>φ</code> = 0.33, <code>p<sub>i</sub></code> = 2,200 kPa, <code>T<sub>i</sub></code> = 10 °C, cold-oil viscosity 1.33 × 10<sup>6</sup> cp.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Steam-base K-values via Søreide-Whitson 1992 α<sub>H2O</sub> correction with iterative ω-update.</strong> A workflow to predict K-values of bitumen fractions in a steam atmosphere (water as the vapour phase) at SAGD operating conditions, rather than the traditional CO<sub>2</sub>-base K-values commonly used in thermal simulators. The Søreide-Whitson 1992 <code>α<sub>H2O</sub><sup>0.5</sup> = 1 + 0.453(1 - T<sub>r,H2O</sub> + 0.0034(T<sub>r,H2O</sub><sup>-3</sup>-1))</code> replaces the default Peng-Robinson α for water, giving accurate water vapour-pressure predictions across 0-350 °C. Since most PR-EOS simulators accept α only through the acentric factor ω, the workflow iterates ω for water at each temperature until the PR-EOS-computed α matches the Søreide-Whitson value. Resulting steam-base K-values show sharp drops at the steam saturation temperature <code>T<sub>s</sub></code> = 219 °C at injection pressure 2,300 kPa. Operationally important finding: SAGD simulation using steam-base K-values produces oil-rate and recovery curves that match the traditional CO<sub>2</sub>-base K-value simulation, because thermal simulators operate the steam chamber at saturation where the two approaches converge.</li>
+<li><strong>Vaporising-Condensing Mechanism (VCM) as a novel second-order SAGD recovery mechanism.</strong> Light bitumen fractions (C7C20) vaporise at the steam-oil interface (high temperature) and condense at the edge oil-flow zone (lower temperature), enriching the interface with light fractions, reducing local oil viscosity, and lifting ultimate oil recovery. Magnitude scales strongly with heavy-oil API: ~1% recovery gain for base-case 8 °API bitumen, ~10% for 14 °API upgraded bitumen, ~12% for 18 °API. VCM is negligible for pure Athabasca but material for lighter heavy oils, and explains why field-observed SAGD performance sometimes exceeds the BO-proxy prediction for non-Athabasca settings.</li>
+<li><strong>Vertical viscosity-gradient correlation for biodegraded bitumen.</strong> A simple power-law form <code>ln(μ<sub>o</sub>/μ<sub>o,top</sub>) = a · D<sup>m</sup></code> with D = dimensionless depth and m = 0.772 base case (representing biodegradation severity, calibrated against measured Athabasca gradients). The gradient yields ~1% faster chamber growth and amplifies VCM effect by ~3.5% (gradient vs homogeneous) because lighter fractions concentrate at the top of the formation and reach critical viscosity earlier. Biodegradation produces these gradients in many real Athabasca settings; modelling them matters when forecast accuracy is the goal.</li>
+<li><strong>Bitumen pseudo-fraction count N = 1 / 2 / 5 sensitivity.</strong> Reducing bitumen to a single pseudo-component (N = 1) has negligible impact on pure-SAGD oil recovery (~72% at 6,000 days for all three) but does NOT capture VCM. Multi-fraction characterisation is required when VCM is material - lighter heavy oils, higher injection pressures, biodegraded reservoirs. The result gives the engineer a clear rule: skip multi-fraction characterisation for pure Athabasca SAGD if a fast forecast is needed; invest in 5+ fractions when VCM matters.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The same physics, viewed correctly.</strong> Curtis's teaching pattern: K-values in a steam-driven process should be evaluated with the right vapour-phase composition. The Søreide-Whitson <code>α<sub>H2O</sub></code> correction makes the EOS internally consistent for thermal applications. The operational finding that steam-base and CO<sub>2</sub>-base K-values produce the same SAGD answer is reassuring - thermal simulators can keep using CO<sub>2</sub>-base K-values without loss of fidelity, provided they remain at steam saturation.</p>
+<p><strong>When a mechanism is material vs negligible.</strong> The VCM result is calibrated by API gravity. For pure 8 °API Athabasca, VCM contributes ~1% and a single-pseudo-component model suffices. For 14-18 °API upgraded or naturally-lighter heavy oils, VCM contributes 10-12% and multi-fraction characterisation is essential. This kind of regime-by-regime guidance (rather than "always use 5 fractions") is the right way to set practitioner expectations.</p>
+<p><strong>Closing the Ghasemi-Whitson SAGD series.</strong> Four papers over five years built up the BO-proxy framework, the bitumen-with-solvent EOS, the solvent-SAGD coupled-system optimisation, and now the pure-SAGD compositional analysis. Subsequent Ghasemi-Whitson work pivots to CO<sub>2</sub>-EOR in Ekofisk-style chalk - the same EOS / IAM / Pipe-It methodology applied to a different recovery process.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Ghasemi-Whitson 2011 SPE-147072 BO-proxy-for-SAGD framework</li>
+<li>Ghasemi-Whitson 2013 SPE-165416 EOSSCN / EOS6 / LBC bitumen-with-solvent PVT</li>
+<li>Ghasemi-Whitson 2014 IPTC-18033 solvent-SAGD numerical and IAM</li>
+<li>Søreide-Whitson 1992 brine-EOS α<sub>H2O</sub> correction</li>
+<li>CMG STARS compositional-thermal simulator</li>
+<li>PhazeComp (Zick Technologies) for the K-value workflow validation</li>
+<li>Multiflash (Infochem) - cross-validation simulator</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Ghasemi-Whitson 2016 SPE-179550 and 2018 SPEREE Ekofisk CO<sub>2</sub> diffusion-in-chalk papers</li>
+<li>Operator SAGD design for upgraded or naturally-lighter heavy oils where VCM matters</li>
+<li>Whitson Academy course material on compositional effects in thermal recovery</li>
+<li>The use of Søreide-Whitson α<sub>H2O</sub> correction in subsequent thermal-EOS work</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Mohsen Ghasemi</strong> — NTNU PhD then postdoc with Curtis (~2011-2021). Lead author on the seven-paper SAGD / heavy-oil / chalk-CO<sub>2</sub> series with Curtis. This is the fourth paper of the series and closes out the pure-SAGD branch before the team pivots to CO<sub>2</sub>-EOR in chalk.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

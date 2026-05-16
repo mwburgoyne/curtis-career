@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singh, Mantzatzis, Whitson & Benjemia (2011) - Reservoir Fluid Characterization and Simulation Application</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Reservoir Fluid Characterization and Application for Simulation Study (OMV Tunisia)</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Kameshwar Singh, K. Mantzatzis, <mark>Curtis H. Whitson</mark>, R. Benjemia (PERA / OMV)</p>
+  <p><strong>Venue:</strong> SPE EUROPEC/EAGE Annual Conference and Exhibition, Vienna, 23-26 May 2011</p>
+  <p><strong>Paper number:</strong> SPE-143612</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">OBM Decontamination</span> <span class="tag">MDT Sampling</span> <span class="tag">Zone Reconstruction</span> <span class="tag">LBC Viscosity Tuning</span> <span class="tag">Multi-Zone Multi-Fluid</span> <span class="tag">OMV Tunisia</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>A field-application paper for an OMV Tunisia well that complicates almost every standard PVT-laboratory assumption: one well, four zones spanning near-critical oil through rich gas condensate to lean gas condensate to volatile oil; nine non-communicating layers; six wireline formation tester (MDT) samples contaminated with oil-based mud (OBM) at 16-78 wt% stock-tank-oil (STO). The paper assembles three transferable Curtis workflows that solve missing or compromised laboratory data without abandoning the single-EOS philosophy.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>MDT OBM-contamination cleanup via iterative mud subtraction with gamma-exponential fit.</strong> Inputs: contaminated MDT composition, measured mud-filtrate composition from a separate gas chromatograph (GC) run on the base oil, estimated contamination level <code>w<sub>c</sub></code> as an initial guess. Procedure: (1) assume contamination fraction <code>w<sub>c</sub></code>, (2) subtract mud contribution <code>z<sup>clean</sup> = (z<sup>MDT</sup> - w<sub>c</sub> z<sup>mud</sup>)/(1 - w<sub>c</sub>)</code> and renormalise, (3) fit the cleaned <code>z<sup>clean</sup></code> C<sub>7+</sub> distribution to an exponential gamma (shape factor <code>α = 1</code>) - the characteristic form of clean reservoir-fluid C<sub>7+</sub>, (4) regress on <code>w<sub>c</sub></code> until a good exponential fit is obtained. The converged <code>w<sub>c</sub></code> is the inferred contamination; the converged composition is the decontaminated sample. Tunisia: six samples decontaminated from 16-78 wt% STO contamination. Why this works: a clean single-phase reservoir fluid has near-exponential C<sub>7+</sub> shape with <code>α ≈ 1</code>. OBM base oil has a narrow C<sub>9</sub>-C<sub>22</sub> hump (peak at C<sub>13</sub>-C<sub>14</sub>). Finding the <code>w<sub>c</sub></code> that restores exponentiality is a single-degree-of-freedom regression on a visually obvious shape criterion.</li>
+<li><strong>Zone and missing-layer fluid-composition reconstruction from clean-up-test oil-gas ratio (OGR) with mobility-weighted layer mixing.</strong> Step 1 - zone recombination: for a zone with at least one decontaminated MDT, flash to surface STO and stock-tank gas (STG), then regress the STO/STG recombination ratio to reproduce the measured clean-up-test OGR for the zone. Step 2 - missing-layer composition: combine the available-layer composition with a trial missing-layer composition, weighted by relative mobilities <code>k<sub>j</sub> h<sub>j</sub> / μ<sub>j</sub></code> (Muskat 1949), and regress the STO/STG ratio until the mobility-weighted zone composition matches the reconstructed zone composition. Tunisia: nine layers across four zones; six MDTs decontaminated; A2c and A5-1 reconstructed by mobility-weighted mixing. C<sub>7+</sub> mole fractions range 0.9% to 16.2% across the nine layers, spanning near-critical oil to lean gas condensate, all represented by the single tuned 34-component EOS pseudoised to 15 components.</li>
+<li><strong>Lohrenz-Bray-Clark (LBC) oil-viscosity tuning via individual critical-Z-factor modification per single-carbon-number plus single common multiplier.</strong> LBC is extremely sensitive to <code>Z<sub>c</sub></code> of the C<sub>7+</sub> components for which no direct measurements exist. The recipe: (1) for each C<sub>7</sub>-C<sub>30+</sub> single-carbon-number (SCN) fraction estimate liquid viscosity from the Orrick-Erbar correlation at reservoir temperature and 1 atm using MW and specific gravity; (2) individually adjust each SCN's <code>Z<sub>c</sub></code> so that LBC applied to the pure component reproduces the Orrick-Erbar viscosity; (3) apply a single common multiplier to all C<sub>7+</sub> <code>Z<sub>c</sub></code> values and regress against measured reservoir-fluid oil viscosity. Gas viscosity is essentially unaffected; oil viscosity is substantially improved. The separation of "shape" fit (component-wise <code>Z<sub>c</sub></code> via Orrick-Erbar) from "level" fit (common multiplier against reservoir-fluid data) avoids the over-parameterised fit that occurs when per-SCN <code>Z<sub>c</sub></code> is tuned directly against mixture viscosity.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Shape-driven sample QC.</strong> The OBM decontamination workflow is the first published gamma-distribution-anchored cleanup procedure. Before this paper, lab-bench guesses of contamination level were made from gas-oil ratio or refractive index without compositional anchoring. The paper turns it into a single-degree-of-freedom regression on a visually obvious shape criterion - shape diagnostic done from GC output alone, no separator or PVT cell needed.</p>
+<p><strong>OGR-anchored zone reconstruction.</strong> Clean-up-test OGR is typically measured with high confidence in modern field tests and is a strong constraint on the recombined-fluid composition. Use it. The mobility-weighting extends the regression to unfilled layers - replacing guesswork ("assume zone X has the composition of layer Y") with a measurement-anchored procedure.</p>
+<p><strong>LBC tuning recipe that travels.</strong> The shape-vs-level decomposition (Orrick-Erbar anchors per-SCN <code>Z<sub>c</sub></code>; common multiplier sets mixture level) becomes the Whitson AS standard for LBC viscosity tuning across the 2010s.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson 1983 SPE-12233 - the gamma-distribution C<sub>7+</sub> framework that anchors the cleanup workflow</li>
+<li>Fevang-Whitson 1996 SPE-30714 three-region flow framework for the simulation component</li>
+<li>Singh-Whitson 2008 SPE-117930 layered pseudopressure paper (extended here to compartmentalised multi-zone multi-fluid)</li>
+<li>Singh-Fevang-Whitson 2007 SPE-109596 consistent-BOPVT tables and LBC component-specific tuning philosophy</li>
+<li>Orrick-Erbar liquid-viscosity correlation</li>
+<li>Muskat 1949 permeability-thickness layer weighting</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Whitson AS commercial OBM-decontamination practice through the 2010s</li>
+<li>Operator MDT sampling and EOS-tuning workflows where MDT contamination is the norm rather than the exception</li>
+<li>Nielsen-Younus 2025 SPE-225470 end-to-end fluid-model-development workflow (which extends the OBM-decontamination concept with explicit RMS-minimisation against gamma-model target)</li>
+<li>Younus-Whitson-Martinsen 2022 SPE-211391 - gamma-model GC-error taxonomy with the same shape-driven QC philosophy</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Kameshwar Singh</strong> — PERA. Long-running collaborator on BOPVT and now multi-zone EOS workflows.</p><p><strong>K. Mantzatzis</strong> — PERA. Co-author on the iterative cleanup methodology.</p><p><strong>R. Benjemia</strong> — OMV Tunisia operator side.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

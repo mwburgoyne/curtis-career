@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ page_title }}</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>{{ title | safe }}</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> {{ authors_html }}{% if authors_affiliation %} ({{ authors_affiliation }}){% endif %}</p>
+  {% if venue %}<p><strong>Venue:</strong> {{ venue | safe }}</p>{% endif %}
+  {% if paper_number %}<p><strong>Paper number:</strong> {{ paper_number }}</p>{% endif %}
+  {% if doi %}<p><strong>DOI:</strong> <a href="https://doi.org/{{ doi }}">{{ doi }}</a></p>{% endif %}
+  {% if funding %}<p><strong>Funding:</strong> {{ funding }}</p>{% endif %}
+  {% for m in extra_meta or [] %}<p><strong>{{ m.label }}:</strong> {{ m.value_html | safe }}</p>
+  {% endfor %}
+  <p><strong>Citations{% if citations_source %} ({{ citations_source }}){% endif %}:</strong> {{ citations if citations is not none else 'not catalogued' }}{% if citations_note %}, {{ citations_note }}{% endif %}</p>
+  <p>{% if landmark_inline_text %}<span class="landmark-inline">{{ landmark_inline_text | safe }}</span> {% endif %}{% for tag in tags %}<span class="tag">{{ tag | safe }}</span> {% endfor %}</p>
+</div>
+{% if landmark %}
+<div class="landmark">
+{{ landmark_html | safe }}
+</div>
+{% endif %}
+{% for section in sections %}
+<h2>{{ section.heading }}</h2>
+{% if section.box_style %}<div class="{{ section.box_style }}">
+{{ section.body_html | safe }}
+</div>
+{% else %}
+{{ section.body_html | safe }}
+{% endif %}
+{% endfor %}
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

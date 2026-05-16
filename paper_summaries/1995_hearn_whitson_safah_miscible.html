@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Hearn & Whitson (1995) - Miscible and Immiscible Gas Injection in the Safah Field, Oman</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Evaluating Miscible and Immiscible Gas Injection in the Safah Field, Oman</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> C. L. Hearn, <mark>Curtis H. Whitson</mark></p>
+  <p><strong>Venue:</strong> 13th SPE Symposium on Reservoir Simulation, San Antonio, TX, 12-15 February 1995</p>
+  <p><strong>Paper number:</strong> SPE-29115</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Gas Injection</span> <span class="tag">Miscibility</span> <span class="tag">Condensing-Vaporising</span> <span class="tag">MMP</span> <span class="tag">Density-Distance Diagnostic</span> <span class="tag">Zick Mechanism</span> <span class="tag">Phase 2</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Safah is a low-permeability (5 md), 42° API, low-GOR (540 scf/STB) undersaturated oil reservoir in northwest Oman. The paper is primarily a reservoir-simulation case study supporting a gas-injection evaluation, but it contributes three methodological insights that are not in the Monograph. All three concern the condensing/vaporising (CV) miscibility mechanism named by Aaron Zick - the same Aaron Zick who introduced Curtis to the negative flash in the November 1985 Trondheim pizzeria dinner. By 1995 Zick had named the CV mechanism in his 1993 paper and shared an unpublished multicell multicontact algorithm with Curtis. This 1995 paper operationalises the CV mechanism for an actual operator-scale field evaluation.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Density-distance hour-glass signature distinguishes CV from vaporising-only mechanism.</strong> An EOS-characterised slim-tube simulation outputs oil-phase density, gas-phase density, and oil saturation along the slim-tube length at a given pore volume injected. The shape of that profile is a diagnostic:
+    <ul>
+<li><strong>Condensing/vaporising (CV) at true MMP:</strong> oil and gas density curves converge to a minimum at the miscible front, with two phases on both sides of the front. The shape is an "hour-glass" with the near-critical mixture at the waist.</li>
+<li><strong>Vaporising-only (VM) at vaporising MMP:</strong> only the left side of the hour-glass appears. Oil density rises sharply at the front; no free gas exists ahead of the front; two phases live only in the front region.</li>
+</ul>
+    Both mechanisms can give greater than 95% recovery at their respective MMPs, so recovery-versus-pressure cannot tell them apart. The density-distance plot is the single graphical test that resolves the mechanism from one simulation. Curtis's framing:</li>
+</ul><blockquote>"An 'hour-glass' shape on the density-distance plot indicates a mixed condensing/vaporizing mechanism, with the miscible front being located at the minimum in density difference. Furthermore, two phases are found on both sides of the front. ... A vaporizing-dominated process shows only the left side of the hour glass in the density-distance plot."</blockquote><ul>
+<li><strong>Vaporising-only miscibility cannot develop in initially-saturated reservoirs.</strong> The vaporising-gas miscible mechanism requires a single-phase oil region ahead of the front; the injected gas progressively enriches by extracting intermediate components from that single-phase oil until miscibility is achieved. In any reservoir that contains free gas ahead of the front (gas cap, solution-gas-drive depletion below bubblepoint, two-phase column), the progressive-enrichment step cannot occur. The CV mechanism is robust to this; it does not require a single-phase region. Practical consequence: to enable vaporising-gas miscible displacement in a previously-depleted saturated reservoir, the reservoir pressure must first be raised above the original bubblepoint to redissolve all free gas. That repressurisation is a significant capex commitment and shifts project economics.</li>
+<li><strong>Static single-cell multicontact MMP algorithms systematically overpredict MMP when the CV mechanism operates.</strong> Published MMP algorithms (Luks et al. 1987, Jensen-Michelsen 1987) treat the displacement as a static single-cell process - inject, flash, remove gas, repeat - and always return the vaporising-only MMP. For rich-gas injection where the CV mechanism develops, the algorithms overpredict the true MMP. The Safah quantification:
+    <ul>
+<li><code>MMP<sub>VM</sub> = 4525</code> psig (static single-cell algorithm)</li>
+<li><code>MMP<sub>CV</sub> = 3310</code> psig (slim-tube simulation with CV mechanism)</li>
+<li>Experimental slim-tube MMP <code>= 3300 ± 100</code> psig</li>
+</ul>
+    Overprediction is 1215 psi or 37% of the true MMP. Setting operating pressure at the static-algorithm MMP rather than the CV MMP collapses the economic case for rich-gas miscible injection. The remedy is Zick's unpublished multicell multicontact algorithm (1993, personal communication to Whitson), which allows simultaneous condensation and vaporisation in successive cells. For lean-gas displacements where only the vaporising mechanism is physically possible, the static algorithms remain correct.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>MMP is not a fluid property.</strong> The paper's operational reframe. MMP depends on the active displacement mechanism, which depends on composition and pressure. The standard MMP tables in commercial software give one number; the engineer's job is to first determine which mechanism is going to develop and then pick the corresponding MMP. The density-distance diagnostic is the graphical answer for that first question.</p>
+<p><strong>The Cedric K. Fergusson Medal year.</strong> The 1995 SPE-29115 paper sits in the same era as Curtis's first Cedric K. Fergusson Medal (1997, jointly with Øivind Fevang for SPE-30714 three-region gas-condensate). It is part of the productivity cluster between the 1989 negative-flash paper and the 2000 SPE Monograph that established Curtis as the modern PVT framework's lead author.</p>
+<p><strong>The Zick connection.</strong> The 1995 SPE-29115 references Zick's 1993 unpublished multicell algorithm by way of personal communication. Curtis's continuing reliance on Zick's work through the early 1990s is visible in this paper, as it is in the 1989 negative-flash paper's pizzeria-origin acknowledgement.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Zick (1993, personal communication) - the unpublished multicell multicontact algorithm that produces the correct CV-mechanism MMP</li>
+<li>Luks et al. (1987) and Jensen &amp; Michelsen (1987) - the static single-cell multicontact MMP algorithms being critiqued</li>
+<li>Whitson-Anderson-Søreide (1989-1990) C<sub>7+</sub> framework - the basis for the 15-component Safah EOS characterisation</li>
+<li>Whitson (1992) HOT Forum pseudoisation - the 15 → 8 component reduction for the Safah simulator</li>
+<li>Whitson-Michelsen (1989) negative flash - the underlying flash machinery</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Brule (2000) SPE Monograph Chapter 8 - the CV-mechanism diagnostic and the algorithm-overprediction warning become canonical</li>
+<li>Alavian-Whitson CO<sub>2</sub>-EOR series (2005-2010) - the mechanism-identification practice from this paper carries forward</li>
+<li>Operator MMP-design protocols in rich-gas miscible projects where the CV mechanism is in play</li>
+<li>Commercial MMP software products that subsequently incorporated multicell multicontact methods after Zick's algorithm became more widely available</li>
+<li>Pillars of Technology (SPE TWA 2009) - Curtis lists CV-mechanism MMP among the "corrections that became standard" once Zick made them computable</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>C. L. Hearn</strong> — co-author. Operator-side gas-injection engineering on the Safah evaluation.</p><p><strong>Aaron A. Zick</strong> — acknowledged for the 1993 unpublished multicell multicontact algorithm. The same Aaron Zick of the November 1985 Trondheim pizzeria dinner that introduced Curtis to the negative-flash construction.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

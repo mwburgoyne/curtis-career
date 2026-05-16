@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Knudsen, Foss, Whitson & Conn (2012) - Target-Rate Tracking for Shale-Gas Multi-Well Pads by Scheduled Shut-Ins</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Target-Rate Tracking for Shale-Gas Multi-Well Pads by Scheduled Shut-Ins</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Brage Rugstad Knudsen, Bjarne Foss, <mark>Curtis H. Whitson</mark>, A. R. Conn (NTNU / IBM T. J. Watson)</p>
+  <p><strong>Venue:</strong> 8th IFAC Symposium on Advanced Control of Chemical Processes (ADCHEM), Singapore, 10-13 July 2012, pp. 107-113</p>
+  
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Shale Gas</span> <span class="tag">Multi-Well Pad</span> <span class="tag">MILP Scheduling</span> <span class="tag">Scheduled Shut-Ins</span> <span class="tag">Liquid Loading</span> <span class="tag">Turner Rate</span> <span class="tag">Radial Composite Proxy</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Brage Knudsen's PhD work at NTNU under Bjarne Foss (Engineering Cybernetics); Curtis provided the petroleum-engineering domain foundation, and A. R. Conn (IBM T. J. Watson Research) provided optimisation-theory input. The paper proposes a scheduling scheme for shale-gas multi-well pads that performs two jobs simultaneously: avoid liquid loading via Turner-rate monitoring, and track a midstream-operator target rate by strategically shutting in individual wells. The scheduling problem is cast as a mixed-integer linear program (MILP) with binary choke-opening variables, using an exact linear reformulation of a nonlinear min-operator well model. The reservoir side is a radial composite proxy model with three concentric regions (high-permeability fracture, intermediate transition, low-permeability matrix) tuned against a high-fidelity SENSOR multi-fracture simulation. The work extends Rahmawati-Whitson-Foss 2009 (single-well constant cyclic shut-ins) and Whitson-Rahmawati-Juell 2012 SPE-153073 (cyclic shut-in control) into a multi-well variable-duration scheme embedded in a plantwide-control framework.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Three-region radial composite proxy for a multi-fractured horizontal shale-gas well.</strong> Concentric regions: inner high-permeability fractured volume (example fracture permeability 100 mD), intermediate transition region with averaged properties, outer low-permeability shale matrix (example matrix permeability 3.5 × 10<sup>-4</sup> mD). The intermediate transition regularises the ~10<sup>6</sup> permeability contrast that would otherwise cause numerical problems in pure dual-permeability models, while also representing the physical reality that the fracture-matrix transition is unlikely to be as abrupt as the dual-permeability idealisation. Gas flow described by the radial pseudopressure PDE with implicit backward-Euler time-stepping over a logarithmic-radial grid of 12 blocks. Tuned against a SENSOR multi-fracture reference (10 perpendicular hydraulic fractures, ~2,500 cells) over a 70-day horizon (days 295-365 after startup) with two predefined shut-ins (7-day and 10-day). Weighted sum-of-squares objective with heavy weights on the post-shut-in rate-decline regions because the proxy is destined for shut-in scheduling.</li>
+<li><strong>Mixed-integer-linear-program scheduling of well shut-ins for joint liquid-loading avoidance and target-rate tracking.</strong> Control variables are binary choke openings <code>α<sub>k</sub> ∈ {0, 1}</code> for each well at each time step. Objective: maximise discounted gas revenue minus surplus and shortfall penalties relative to the midstream target rate. Constraints: each well operates above the Turner liquid-loading rate when producing (disjunctive constraint <code>q<sub>gc</sub>(p<sub>w</sub>) α<sub>k</sub> ≤ q<sub>k</sub></code>), minimum shut-in duration <code>τ ≥ 5</code> days (Floudas 1995 switching-count auxiliary variables), an exact linear reformulation of the well-model min-operator and the bilinear <code>α<sub>k</sub> · m<sub>1,k</sub></code> product via big-M technique, and the reservoir radial composite proxy embedded as explicit constraints. Eight-well 28-day numerical example: 4,234 continuous variables + 456 binary variables + 5,701 constraints. The optimised shut-in schedule gives 4.1% higher cumulative gas than a naive heuristic of constant one-week shut-ins, with a much less erratic pad-total rate.</li>
+<li><strong>Turner-rate disjunctive constraint without water saturation in the reservoir model.</strong> The Turner 1969 critical-gas-velocity rate <code>q<sub>gc</sub>(p<sub>w</sub>)</code> for liquid lift is evaluated at wellhead conditions, so the reservoir-side proxy can remain single-phase dry gas without carrying explicit water saturation state. The disjunctive constraint <code>q<sub>gc</sub>(p<sub>w</sub>) α<sub>k</sub> ≤ q<sub>k</sub></code> collapses trivially when the well is shut in (<code>α<sub>k</sub> = 0</code>, so <code>0 ≤ q<sub>k</sub> = 0</code>) and enforces Turner's lower bound when the well is producing (<code>q<sub>gc</sub>(p<sub>w</sub>) ≤ q<sub>k</sub></code>). The Floudas 1995 technique embeds the disjunctive boundary-condition control law directly in the MILP without adding binary variables. The reservoir model can be single-phase dry gas - the liquid-loading physics is captured as a wellhead boundary condition.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>Shut-ins as a primary control handle.</strong> Outside drilling new wells, the few available production handles on a shale-gas pad are the production choke and well shut-ins. Shut-ins are already needed for routine maintenance, liquid-loaded-well cleanup, and during nearby-well fracturing jobs. The insight is that shut-ins can be <em>scheduled</em>, not just reactive, so that the same control handle simultaneously avoids liquid loading and tracks the target rate.</p>
+<p><strong>The plantwide-control framing.</strong> The MILP framework anchors shale-gas production optimisation in standard chemical-process plantwide-control language (Floudas-1995-style disjunctive reformulation, big-M, switching-count variables). The Whitson contribution is the petroleum-engineering side - the radial composite proxy, the Turner-rate trigger formulation, the connection to the Whitson-Rahmawati-Juell 2012 cyclic-shut-in-control concept. The combination opens shale-gas operations to optimisation-theory tools developed in chemical engineering.</p>
+<p><strong>The proxy-for-high-fidelity pattern.</strong> Same pattern as the Ghasemi-Whitson 2011 SAGD black-oil proxy: single-case high-fidelity calibration (here SENSOR multi-fracture; there STARS thermal), then many-case proxy sweep (here MILP scheduling; there SAGD design optimisation). The compactness and linearity-in-pseudopressure of this proxy is what makes full-space MILP scheduling tractable; the portability of the SAGD <code>n</code> is what makes that proxy optimisation-ready. Different problems, same proxy-design principle.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Rahmawati-Juell 2012 SPE-153073 cyclic-shut-in control (the cyclic-shut-in concept being scheduled and multi-well-extended)</li>
+<li>Rahmawati-Whitson-Foss 2009 - single-well constant cyclic-shut-in precursor</li>
+<li>Turner et al. 1969 - the critical-velocity liquid-loading correlation</li>
+<li>Al-Hussainy-Ramey-Crawford 1966 - gas pseudopressure</li>
+<li>Floudas 1995 - disjunctive-constraint linear reformulation technique</li>
+<li>Gunnerud-Foss 2010 - multi-well-pad decomposition for plant-level target tracking</li>
+<li>Cipolla et al. 2009 - shale-gas desorption timescale (justifies neglecting desorption over the operational horizon)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator shale-gas pad-management workflows for plant-level production scheduling</li>
+<li>Hoffmann-Astutik-Rasmussen-Whitson 2016 IAM optimisation - extends the MILP-with-optimality-guarantee pattern from binary-decision shale-gas shut-ins to continuous-decision heavy-oil diluent-rate-plus-choke allocation</li>
+<li>Knudsen-Whitson-Foss 2014 follow-up on shale-gas-power-production scheduling</li>
+<li>Carlsen NRTA series - the radial composite proxy concept reappears (with different physics) in fracture-stimulated-region modelling</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Brage Rugstad Knudsen</strong> — NTNU PhD student under Bjarne Foss; shale-gas optimisation. Later co-author on Knudsen-Whitson-Foss 2014.</p><p><strong>Bjarne Foss</strong> — NTNU Engineering Cybernetics Department. Optimisation expertise. Also Curtis's collaborator on the Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 multi-field IAM benchmark.</p><p><strong>A. R. Conn</strong> — IBM T. J. Watson Research Center. Optimisation-theory input.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

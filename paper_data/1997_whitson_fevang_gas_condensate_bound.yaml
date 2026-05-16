@@ -1,0 +1,69 @@
+id: 1997_whitson_fevang_gas_condensate_bound
+title: Generalised Pseudopressure Well Treatment in Reservoir Simulation
+page_title: Whitson & Fevang (1997) - Generalised Pseudopressure Well Treatment
+authors:
+- Curtis H. Whitson
+- Øivind Fevang
+authors_affiliation: null
+venue: IBC Technical Services Conference, 1997, 12 pp.
+paper_number: 1997 IBC Whitson-Fevang (no DOI - conference paper)
+doi: null
+funding: null
+citations: |-
+  Cited internally through the 2003 TIPM paper (29 OpenAlex) and the 2000 SPE Monograph; the IBC paper itself is not indexed
+tags:
+- Generalised Pseudopressure
+- Total-Mobility
+- Capillary Number
+- Coarse-Grid Well Treatment
+- Black-Oil & EOS
+- Phase 3
+whitson_index: 0
+landmark: false
+sections:
+- heading: Context
+  body_html: |-
+    <p>By 1996 the Fevang-Whitson three-region gas-condensate pseudopressure method (SPE-30714) was the practical standard for coarse-grid well treatment of retrograde-gas wells. The 1997 IBC paper takes the next step. It generalises the pseudopressure formulation to <em>any</em> reservoir fluid system (single-phase gas, saturated and undersaturated gas condensate, single-phase oil, saturated volatile oil, dead oil) and to <em>both</em> black-oil and compositional equation-of-state formulations. It also handles injection wells, not just producers. And it proposes a capillary-number extension that embeds velocity and gas-oil IFT dependence directly inside the pseudopressure function, so coarse-grid simulations recover the near-wellbore N<sub>c</sub> physics that fine-grid models otherwise need.</p><p>The paper is the methodological bridge between the gas-condensate-specific 1996 work and the 2003 <em>Transport in Porous Media</em> consolidation (Whitson, Fevang &amp; Sævareid). The unifying observation is that the PVT calculation inside the pseudopressure integral is <em>exactly</em> a constant-composition expansion of the produced or injected composition. Once you see that, the same procedure works for every fluid type and every well direction.</p>
+- heading: Key Contributions
+  body_html: |-
+    <ul>
+    <li><strong>Total-mobility pseudopressure for any fluid system.</strong> Define <code>m<sub>t</sub>(p) = ∫<sub>p<sub>min</sub></sub><sup>p</sup> λ<sub>t</sub>(p) dp</code> with <code>λ<sub>t</sub> = λ<sub>g</sub> + λ<sub>o</sub></code>. Surface gas and oil rates from a well grid-cell are then <code>q<sub>g</sub> = β<sub>s</sub> C [m<sub>t</sub>(p<sub>G</sub>) - m<sub>t</sub>(p<sub>wf</sub>)]</code> and <code>q<sub>o</sub> = (1 - β<sub>s</sub>) C [m<sub>t</sub>(p<sub>G</sub>) - m<sub>t</sub>(p<sub>wf</sub>)]</code> where <code>β<sub>s</sub> = 1/(1 + R<sub>p</sub>)</code> in BO form or the mole fraction of separator gas in EOS form. The same equations apply from single-phase dry gas to saturated volatile oil and recover the Fevang-Whitson three-region integrand when only gas flows at the surface.</li>
+    <li><strong>Black-oil and EOS unification through molar mobilities.</strong> The phase mobilities in BO form use <code>k<sub>r</sub>/(μ B)</code>; the EOS form uses <code>k<sub>r</sub> ρ/(μ M)</code> giving molar mobilities. Both reduce to the same physical quantity at the surface separator, so the rate equation is fluid-formulation-agnostic. This is what lets a commercial simulator implement one pseudopressure routine that serves both PVT philosophies.</li>
+    <li><strong>The PVT calculation is a CCE on the produced composition.</strong> The flowing composition in Region 1 equals the produced wellstream (or the injected wellstream in injection cases). Computing the pseudopressure table reduces to a constant-composition expansion at a handful of pressures from p<sub>G</sub> down to p<sub>min</sub>. This is the unifying observation. One subroutine, one composition, one CCE per well cell per timestep.</li>
+    <li><strong>Single-phase vs two-phase grid-cell branching.</strong> The pseudopressure table is built differently depending on whether the grid-cell is currently single-phase (Region 3-type, p<sub>G</sub> &gt; upper saturation pressure) or two-phase (Region 1-type, p<sub>G</sub> = upper saturation pressure). The saturation-pressure discontinuity in <code>λ<sub>t</sub></code> is handled by linear extrapolation of two interior Region 1 values rather than evaluation at the bound. At the upper bound of a two-phase cell, the procedure deliberately does not use the cell-average <code>λ<sub>t</sub></code> known to the simulator for grid-to-grid flow - it extrapolates from the interior.</li>
+    <li><strong>Injection-well treatment with previous-timestep composition.</strong> Injection follows the same procedure with bounds flipped (lower bound p<sub>G</sub>, upper bound up to the injection BHFP). The flowing composition input is the <em>previous-timestep</em> composition, not the nominally specified injection composition. This handles wellbore backflow between commingled grid-cells where the injected composition can range from dead oil to dry gas. An implicit composition would be more accurate but is computationally prohibitive in full-field simulation.</li>
+    <li><strong>Capillary number from a radial-flow v(p) approximation.</strong> Velocity and gas-oil IFT effects on near-wellbore k<sub>r</sub> are embedded directly in m(p) via the steady-state Darcy radial-flow relation inverted to give r(p) and hence v(p). With v(p) known, <code>N<sub>c</sub>(p) = v(p) μ<sub>g</sub>/σ</code> follows, and N<sub>c</sub>-dependent relative permeabilities are evaluated at each interior Region 1 pressure when the <code>λ<sub>t</sub></code> table is built. The radial-flow derivation is heuristic but conservative: linear-flow gradients are smaller, so radial gives a minimum N<sub>c</sub> effect for the same rate.</li>
+    <li><strong>The Whitson-Fevang miscibility factor applied at fixed k<sub>rg</sub>/k<sub>ro</sub>.</strong> A capillary-number transition function <code>f = 1 - [(α N<sub>c</sub>)<sup>n</sup> + 1]<sup>-1</sup></code> blends the immiscible rock curve with the straight-line miscible end-points: <code>k<sub>rg</sub> = f k<sub>rgI</sub> + (1-f) k<sub>rgM</sub></code>. The defining feature is that the blend is evaluated at a fixed <code>k<sub>rg</sub>/k<sub>ro</sub></code> value, not at a fixed saturation. This preserves the Evinger-Muskat Region 1 framework where both k<sub>rg</sub> and k<sub>ro</sub> are functions of the ratio. Fitting collapses from four parameter sets (Coats-style) to two: <code>α</code> and the exponent <code>n ≈ -0.75</code>.</li>
+    <li><strong>Why coarse-grid simulators silently ignore N<sub>c</sub> effects.</strong> The footnote pitfall: implementing N<sub>c</sub>-dependent k<sub>r</sub> at the finite-difference level in a coarse-grid simulator gives identical results to running with the feature switched off. The cell-average velocity is far below the Region 1 near-wellbore velocity, so the simulator computes <code>N<sub>c</sub> ≈ 0</code> and reverts to the immiscible rock curves. The feature is active; the grid cannot see it. The m(p) formulation sidesteps this entirely because v(p) is reconstructed from the radial inflow relation at the well scale, not the cell scale.</li>
+    </ul>
+- heading: Significance and Contribution
+  body_html: |-
+    <p><strong>Generalisation from one fluid type to all.</strong> The 1996 SPE-30714 paper solved gas-condensate well deliverability. The 1997 IBC paper makes the same machinery work for volatile oils, black oils, dry gas, and injection wells, in either BO or EOS formulation. The total-mobility integrand and the CCE-on-produced-composition recipe are what every commercial simulator's coarse-grid well treatment now follows when it handles compositional well constraints without local grid refinement.</p>
+    <p><strong>The Whitson-Fevang capillary-number form.</strong> The fixed-k<sub>rg</sub>/k<sub>ro</sub> interpolation between immiscible and straight-line miscible end-points is the methodological alternative to Coats's saturation-based IFT-threshold model. The choice trades fine-grid cell-by-cell applicability for a two-parameter fit instead of a four-parameter one. For coarse-grid well-performance calculation (the dominant industrial use case) this is the right trade. The form is recalibrated in the 1999 SCA-40899 paper with new Berea data and again in the 2003 TIPM paper with combined Heriot-Watt + Delft regression.</p>
+    <p><strong>Phase 3 momentum.</strong> The 1997 IBC paper sits between SPE-30714 (1996) and the 2000 Phase Behavior monograph. <mark>Whitson</mark> and Fevang are working through the implications of the three-region model: how to treat any fluid (this paper), how to measure the underlying k<sub>r</sub> data without saturations (1999 SCA-40899), how to consolidate the theory (2003 TIPM with Sævareid). The IBC paper is the engineering generalisation; the SCA paper is the laboratory programme; the TIPM paper is the theorem and the design procedure.</p>
+  box_style: influence
+- heading: Knowledge Built Upon
+  body_html: |-
+    <ul>
+    <li><strong>Fevang &amp; Whitson (1996) SPE-30714</strong> — the three-region gas-condensate pseudopressure method that the 1997 paper generalises</li>
+    <li>Evinger &amp; Muskat (1942) — the steady-state two-phase pseudopressure idea; the Region 1 k<sub>rg</sub>/k<sub>ro</sub> framework</li>
+    <li>Al-Hussainy, Ramey &amp; Crawford (1966) — the single-phase pseudopressure form used in the refined v(p) calculation</li>
+    <li>Coats (1980) — the saturation-based IFT-threshold model the Whitson-Fevang form is an alternative to</li>
+    <li>Henderson et al. and ResLab gas-condensate k<sub>r</sub>(N<sub>c</sub>) measurements — the fitting data for the original n ≈ -0.75 exponent</li>
+    <li>Peaceman (1978/1983) — the well-radius formulation underlying the steady-state well constant C</li>
+    </ul>
+  box_style: connections
+- heading: What It Contributed To
+  body_html: |-
+    <ul>
+    <li><strong>Sævareid, Whitson &amp; Fevang (1999) SCA-40899</strong> — experimental ResLab measurements refining the f(N<sub>c</sub>) calibration to <code>α = 10<sup>4</sup>/√(kφ)</code> with n = -0.64 on Berea</li>
+    <li><strong>Whitson, Fevang &amp; Sævareid (2003)</strong> TIPM — combined Heriot-Watt + Delft regression giving <code>α = 2×10<sup>4</sup>/√(kφ)</code> with n = 0.7; the consolidated journal treatment</li>
+    <li><strong>Whitson &amp; Brule (2000) SPE Monograph "Phase Behavior"</strong>, Chapter 7 — the textbook presentation of the generalised pseudopressure well treatment</li>
+    <li>Default coarse-grid pseudopressure well treatment for compositional reservoir simulation in commercial simulators (Eclipse, SENSOR, tNavigator) for any fluid type and any well direction</li>
+    <li>Subsequent gas-condensate and volatile-oil deliverability analyses that use a single procedure across the field-development lifecycle without changing PVT formulation</li>
+    <li>The fixed-k<sub>rg</sub>/k<sub>ro</sub> capillary-number interpolation is the basis for the Whitson-Fevang-Sævareid 2003 endpoint-scaling procedure for heterogeneous strata</li>
+    </ul>
+  box_style: connections
+- heading: Key Collaborators
+  body_html: |-
+    <p><strong>Øivind Fevang</strong> — second NTH PhD with Curtis (defended 1995). The 1997 IBC paper extends Øivind's three-region dissertation work to a unified framework across fluid systems and well directions. Continued through the gas-condensate-bound (GCB) project sponsored by BP, Chevron, INA, Mobil, Norsk Hydro, NFR, NPD, Occidental, and Saga.</p>

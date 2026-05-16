@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Takahashi, Fevang & Whitson (2002) - ECM Fluid Characterisation for Gas Injection</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Fluid Characterisation for Gas Injection Study using Equilibrium Contact Mixing</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> K. Takahashi (BUNDUQ Co. Ltd.), Øivind Fevang (PERA), <mark>Curtis H. Whitson</mark> (NTNU / PERA)</p>
+  <p><strong>Venue:</strong> 10th Abu Dhabi International Petroleum Exhibition and Conference, 13-16 October 2002</p>
+  <p><strong>Paper number:</strong> SPE-78483</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">ECM</span> <span class="tag">Gas Injection</span> <span class="tag">Compositional Gradient</span> <span class="tag">Multi-Sample EOS</span> <span class="tag">Near-Critical</span> <span class="tag">Abu Dhabi</span> <span class="tag">MCV Tuning</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>A compositionally graded near-critical oil reservoir in Abu Dhabi where no representative gas-cap sample was available. Twenty fluid samples from 13 wells; 36 CCE, 18 DLE, 60 SEP, 4 multi-contact swelling (MCV), 3 slimtube tests. The PVT challenge: tune one EOS for the entire column from oil-zone samples alone, then predict the gas cap. The paper extends the Fevang-Whitson 1994 SPE-28829 ECM construction from cross-sample reconstruction to a missing-gas-cap synthesis problem, and quantifies how much the missing-sample correction matters.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>ECM test as workaround for missing gas-cap sample.</strong> Procedure: (1) collect separator samples from an oil well producing with gas coning; (2) recombine separator liquid and vapour roughly 50/50 by volume to produce a recombined fluid representing the GOC-region mixture; (3) perform a full-volume PVT equilibration (24 hours agitation plus settle) to produce equilibrium gas-phase and equilibrium oil-phase samples; (4) measure composition and PVT of both equilibrium phases separately; (5) use the ECM equilibrium data as "representative" GOC data for EOS regression. The EOS is then tuned so that an isothermal compositional-gradient calculation from an oil-zone sample reproduces the ECM equilibrium phases at the GOC depth, tying the EOS to the near-critical transition behaviour without an actual gas-cap sample.</li>
+<li><strong>Multi-sample single-EOS Gaussian-quadrature framework.</strong> Extension of the 1989 Whitson-Anderson-Søreide approach. For sample <em>j</em> the pseudo-fraction <em>i</em> mole fraction is <code>z<sub>i</sub><sup>(j)</sup> = z<sub>C7+</sub><sup>(j)</sup> · W<sub>i</sub> · f(X<sub>i</sub><sup>(j)</sup>)</code>. Fixed across samples: the 5-node Gaussian quadrature abscissae and weights, shape parameter <code>α</code>, node count. Variable per sample: <code>η<sup>(j)</sup>, M<sub>N</sub><sup>(j)</sup></code>, and the measured C<sub>7+</sub> composition. All samples share the same physical pseudocomponent set with different proportions. Abu Dhabi parameters: <code>α = 1.7</code>, <code>η = 90</code>, <code>M<sub>N</sub> = 500</code>; final 16-component EOS matched 20 samples within 0.5% of measured saturation pressures.</li>
+<li><strong>Representative-sample selection via trend-match against observed depth distributions.</strong> After tuning the multi-sample EOS, compute a compositional-gradient prediction from each sample's composition as anchor at its sampling depth. The sample whose prediction best reproduces the observed depth cloud of <code>p<sub>s</sub></code>, GOR, C<sub>1</sub>, C<sub>7+</sub>, M<sub>C7+</sub>, and H<sub>2</sub>S becomes the "most representative" sample for GOC prediction. The empirical-representativeness reframe: a sample earns the label by winning the trend-match, not by being intrinsically more reliable. Decision rule for ties: weight <code>p<sub>s</sub></code>-vs-depth most heavily.</li>
+<li><strong>Multi-contact swelling tests with multiple injection gases are essential for near-critical tuning.</strong> CCE, CVD, DLE probe single-composition behaviour at different pressures. They do not probe the composition-varying path the reservoir traverses during gas injection. For near-critical fluids the EOS regressed against depletion data alone misses the critical transition. The Abu Dhabi practice used 4 MCV tests from different wells with different injection gases; the initial depletion-only EOS under-predicted MCV saturation pressures by 8-15% at moderate injection-gas ratios. The final EOS regressed against depletion plus MCV matches all 4 MCV experiments within ±3%. Multiple injection gases (not just one) are needed because each gas probes a different direction of the near-critical composition-pressure surface.</li>
+<li><strong>ECM data materially enriches predicted gas-cap C<sub>7+</sub> composition.</strong> The quantification for Abu Dhabi: without ECM, the EOS predicts gas-cap C<sub>7+</sub> at 4.54 mol% and C<sub>1</sub> at 62.04%. With ECM, the same column gives C<sub>7+</sub> at 8.60% and C<sub>1</sub> at 56.02%. The gas-cap classification shifts from lean to medium-rich. The bias direction is systematic - depletion-only EOS tuning under-predicts gas-cap C<sub>7+</sub> richness. Downstream economic consequence: an under-rich gas-cap assumption over-predicts oil vaporisation, over-states miscibility, and understates remaining oil-in-place. For near-critical compositionally-graded reservoirs without a gas-cap sample, ECM is not an academic exercise; it materially changes the engineering conclusion.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>ECM lives.</strong> The 1994 Fevang-Whitson SPE-28829 paper introduced the Equilibrium Contact Mixing framework for sample reconstruction in saturated reservoirs. This 2002 paper extends the framework to a different problem (synthesise missing gas-cap data) and demonstrates that the framework is robust enough to support an operator-scale gas-injection study where direct sampling was infeasible.</p>
+<p><strong>The multi-sample single-EOS principle becomes the field-wide-EOS-development standard.</strong> Combined with the Orocual 2000 SPE-63088 work, this 2002 paper anchors the position that one EOS describes one continuous fluid system, regardless of compositional gradients, near-critical transitions, or compartmental complications. The principle is now the spine of the Whitson AS workflow.</p>
+<p><strong>The MCV recommendation is operationally consequential.</strong> Curtis's framing: CCE tells you what happens at constant composition; MCV tells you what happens when the composition changes. Near the critical point, the composition-change physics dominates, and EOS tuning without MCV data systematically misses by 10% or more on saturation pressures along the gas-injection path. This finding still drives Whitson AS recommendations for gas-injection PVT programmes.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Fevang-Whitson 1994 SPE-28829 - the ECM framework</li>
+<li>Whitson-Anderson-Søreide 1989/1990 - multi-sample shared-pseudocomponent C<sub>7+</sub> Gaussian quadrature</li>
+<li>Smith et al. 2000 SPE-63088 - triple-plot QC and single-EOS-across-compartments</li>
+<li>Zick 1986 condensing/vaporising miscibility mechanism (the near-critical transition this paper tunes against)</li>
+<li>Hearn-Whitson 1995 SPE-29115 - density-distance diagnostic and CV-mechanism EOS tuning</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Brule 2000 SPE Monograph - the ECM framework appears in the sampling chapter as canonical practice</li>
+<li>Høier-Cheng-Whitson 2004 SPE-90379 undersaturated gas-oil miscibility framework - the multi-sample EOS is the prerequisite</li>
+<li>Younus 2019 URTeC-551 field-wide EOS workflow</li>
+<li>Operator gas-injection PVT programmes - MCV is now standard for near-critical fluids</li>
+<li>The 2023-2025 Whitson AS sampling-uncertainty series - same multi-sample framework with formalised error budgets</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>K. Takahashi</strong> — BUNDUQ Co. Ltd. (Abu Dhabi National Oil Company / Qatar Petroleum joint operator).</p><p><strong>Øivind Fevang</strong> — PERA. The Fevang-Whitson partnership through gas-condensate, ECM, and now multi-sample EOS work.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

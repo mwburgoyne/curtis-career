@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Carlsen et al. (2019) - Compositional Tracking of a Huff-n-Puff Project in the Eagle Ford</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Compositional Tracking of a Huff-n-Puff Project in the Eagle Ford</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Mathias Lia Carlsen, <mark>Curtis H. Whitson</mark>, Mohamad M. Dahouk, Bilal Younus, Ilina Yusra (Whitson AS / NTNU), E. Kerr, J. Nohavitza, M. Thuesen, J. H. Drozd, R. Ambrose (EP Energy), Stian Mydland (Whitson AS / NTNU)</p>
+  <p><strong>Venue:</strong> Unconventional Resources Technology Conference, Denver, 22-24 July 2019</p>
+  <p><strong>Paper number:</strong> URTeC-539</p>
+  <p><strong>DOI:</strong> <a href="https://doi.org/10.15530/urtec-2019-539">10.15530/urtec-2019-539</a></p>
+  <p><strong>Funding:</strong> Innovation Norway</p>
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Huff-n-Puff</span> <span class="tag">EOR</span> <span class="tag">Eagle Ford</span> <span class="tag">SRV Shattered Rock</span> <span class="tag">Compositional Tracking</span> <span class="tag">HnP PVT Experiment</span> <span class="tag">RMI Invariance</span> <span class="tag">Hammock Plot</span> <span class="tag">Numerical Dispersion Reversal</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Companion paper to Carlsen et al. 2019 SPE-196056 (Fluid Sampling in Tight Unconventionals). A Whitson AS plus EP Energy plus NTNU collaboration on gas huff-n-puff (HnP) process characterisation in the Eagle Ford. The paper synthesises three perspectives: fundamental phase behaviour via a proposed new PVT experiment, compositional reservoir simulation via a shattered-rock-volume (SRV) framework, and field-scale performance via a compositional-tracking methodology applied to an Eagle Ford pilot. Seven distinct contributions threaded through the workflow.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>HnP PVT experiment - Constant Volume Injection plus Constant Volume Depletion (CVI-CVD) hybrid.</strong> A novel PVT cell experiment that captures the cyclic build-up / draw-down structure of the HnP process. Step 1: inject gas at constant volume until <code>p<sub>max</sub></code> (mimics the huff). Step 2: single-stage CVD draw down until <code>p<sub>min</sub></code> (mimics the puff); unlike conventional CVD, the initial volume here can be two-phase. Step 3: repeat for the desired cycle count. Multi-stage CVD upgrade yields higher recovery because some production occurs above <code>p<sub>sat</sub></code> where EOR efficiency is higher. Distinct from conventional displacement-focused PVT experiments (slimtube, rising-bubble, vanishing-IFT) which are all predicated on a displacement process that HnP is not.</li>
+<li><strong>Three-scenario phase-behaviour classification with RMI invariance.</strong> Categorises HnP recovery behaviour by where <code>p<sub>min</sub></code> sits relative to <code>p<sub>sat</sub></code> and the first-contact minimum miscibility pressure <code>MMP<sub>FC</sub></code>, yielding three fundamentally different recovery mechanisms: vaporisation-only, mixing-then-vaporisation, mixing-only. Recovery efficiency plotted as <code>RF<sub>C6+</sub></code> vs Relative Moles Injected (RMI) is <em>invariant</em> to the pressure-cycling interval <code>Δp</code> or the number of cycles. RMI is the right independent variable for cross-design comparison; absolute time or cycle count are not.</li>
+<li><strong>SRV multi-scale modelling workflow with rubble-size-dependent recovery.</strong> Three-step procedure for consistent HnP simulation: rubble-fracture single-porosity modelling at cm-to-m scale, upscale to a dual-porosity transfer term, then field / well-scale dual-porosity plus single-porosity composite. End-cycle recovery is inversely proportional to rubble size - smaller rubble means more matrix-fracture surface area means more mixing means more recovery. The workflow lets a small-scale numerical study calibrate the dual-porosity transfer for the field-scale model.</li>
+<li><strong>Dual-porosity vs single-porosity HnP compositional-signature contrast as field diagnostic.</strong> Single-porosity gives a piston-like response with no incremental uplift; dual-porosity with an SRV gives a mixing-driven response with substantial uplift. The two models differ strongly in produced GOR, API, C1, and C7+ trends - and those trends are themselves the diagnostic for which regime the field operates in. Field engineers can identify the operating regime by looking at production-composition trends rather than by argument.</li>
+<li><strong>HnP compositional-tracking methodology with two modes.</strong> EOS-based daily wellstream computation from readily-available production data. Mode 1 (sampling-available, Whitson-Sunjerga 2012): regresses wellstream composition to match all measured oil and gas properties via <code>f<sub>g</sub></code>, C1-C6 slate, and C7+ MW. Mode 2 (production-only, Hoda-Whitson 2013): flashes the most-recent wellstream estimate and recombines to match the producing GOR. Basin-wide 35-component PR EOS C6-C30+.</li>
+<li><strong>Numerical-dispersion sign-reversal for HnP vs conventional gas EOR.</strong> The counter-intuitive numerical finding. Insufficient gridding in conventional miscible displacement gives artificially <em>low</em> recovery (numerical dispersion smears the miscible front). Insufficient gridding in HnP gives artificially <em>high</em> recovery (coarse-grid numerical mixing inflates SRV mixing). Reverses the conventional grid-sensitivity intuition - HnP engineers cannot transfer their displacement-flood grid-refinement habits.</li>
+<li><strong>Confinement concept plus Hammock plot diagnostic.</strong> An HnP control volume around the well and its neighbours frames the injection-gas loss question. The Hammock plot (cumulative injected gas vs average surface tubing pressure, across huff and puff cycles) exposes cycle-to-cycle hysteresis and improving pressure-build-up efficiency between cycles. For perfect confinement the HnP process behaves essentially as gas storage in a very-low-permeability system. The plot makes confinement a measurable quantity rather than an unspoken assumption.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>An experiment designed for the process.</strong> Curtis's teaching pattern: when an EOR process does not fit the standard PVT-experiment toolkit (slimtube, rising-bubble, vanishing-IFT all assume displacement), build the experiment that matches the process. The CVI-CVD hybrid captures HnP's cyclic structure in a PVT cell. The fact that conventional EOR-screening PVT experiments were used for HnP for years despite not matching the process is the kind of intellectual debt this paper resolves.</p>
+<p><strong>RMI as the right independent variable.</strong> The invariance of <code>RF<sub>C6+</sub></code> vs RMI across <code>Δp</code> and cycle count means that HnP recovery efficiency is fundamentally about how many moles you have injected, not how you have cycled them. This is a clean engineering result that simplifies design: optimise total moles injected, set cycling for operational convenience.</p>
+<p><strong>The numerical-dispersion reversal.</strong> Engineers who learned grid-refinement intuition on miscible-displacement floods will get HnP wrong by exactly the wrong sign if they transfer that intuition uncorrected. The paper's explicit warning is the kind of practitioner-protecting result that pays back the cost of reading the paper many times over.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Whitson-Sunjerga 2012 SPE-155499 LRS PVT framework (Mode 1 sampling-available tracking)</li>
+<li>Hoda-Whitson 2013 SPE-164334 well-test rate-to-compositional-wellstream conversion (Mode 2 production-only tracking)</li>
+<li>Carlsen et al. 2019 SPE-196056 fluid-sampling methodology (companion paper)</li>
+<li>Conventional EOR-screening PVT experiments: multi-contact, slimtube, rising-bubble, vanishing-IFT</li>
+<li>Dual-porosity reservoir-simulation framework</li>
+<li>EP Energy Eagle Ford pilot data and operational coordination</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Operator HnP design and forecasting workflows in Eagle Ford, Bakken, Permian, and other liquid-rich basins</li>
+<li>Subsequent Whitson AS HnP and gas-EOR papers 2020-2022</li>
+<li>Mydland-Whitson LRS series 2020-2021</li>
+<li>Carlsen et al. 2021 SPE-205884 NRTA workflow (process-tracking methodology continuity)</li>
+<li>Whitson Academy course material on huff-n-puff EOR in tight unconventionals</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p>Whitson AS team: Mathias Lia Carlsen (first author), Mohamad M. Dahouk, Bilal Younus, Ilina Yusra, Stian Mydland - all senior engineers continuing into the post-2017 Whitson AS era.</p><p>EP Energy team: E. Kerr, J. Nohavitza, M. Thuesen, J. H. Drozd, R. Ambrose - operator-side collaborators providing the Eagle Ford pilot data and field-validation context.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

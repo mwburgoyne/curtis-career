@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Juell, Whitson & Hoda (2009) - Model-Based Integration and Optimisation Gas-Cycling Benchmark</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Model-Based Integration and Optimisation - Gas-Cycling Benchmark</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Aleksander Oma Juell, <mark>Curtis H. Whitson</mark>, Mohammad Faizul Hoda (NTNU / PERA)</p>
+  <p><strong>Venue:</strong> SPE EUROPEC/EAGE Annual Conference and Exhibition, Amsterdam, 8-11 June 2009</p>
+  <p><strong>Paper number:</strong> SPE-121252</p>
+  
+  
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">IAM</span> <span class="tag">Integrated Asset Modelling</span> <span class="tag">Gas Cycling Benchmark</span> <span class="tag">Coupling Error</span> <span class="tag">Multi-Modal NPV</span> <span class="tag">Pipe-It</span> <span class="tag">Petrostreamz</span> <span class="tag">Phase 3</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>An open integrated asset management (IAM) benchmark - the first of its kind in the literature - that any IAM platform can implement and any optimisation algorithm can be tested against. Curtis founded Petrostreamz in 2006 for the Pipe-It workflow software; this paper is one of the public-domain demonstrations of the Pipe-It stack (SENSOR reservoir simulator, Streamz process module, Pipe-It integration with Nelder-Mead Simplex optimiser). The motivation: published IAM case studies (Bailey 2005, Cullick 2003) are typically proprietary and do not permit cross-framework comparison. Without a shared benchmark, "our IAM framework is best" is unfalsifiable marketing.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>The benchmark itself: two gas-condensate reservoirs + 4-stage separator + dew-point-controller + NPV.</strong> Two SPE-3-derived sector reservoir models (lean and rich gas condensates with the Arco 9-component EOS, differing initial composition and permeability distribution). Process: 4-stage separator (56.2 to 1.01 bara) plus a dew-point controller (DPC, a variable-temperature separator from 27°C down to -57°C). DPC gas is split between sales and injection; injection is split between lean and rich reservoirs. NPV with price escalation, discount factor, CO<sub>2</sub>-content penalty, and DPC capital cost that scales with cooling duty. Four optimisation variables: <code>f<sub>g</sub></code> (total injection fraction), <code>f<sub>gl</sub></code> (lean-reservoir injection fraction), <code>t<sub>i</sub></code> (injection end time), <code>T<sub>DPC</sub></code>. Optimisation lifts NPV ~10% over the base case.</li>
+<li><strong>Coupling error scales with project time step <code>Δt<sub>P</sub></code> and inversely with sub-divisions <code>N<sub>s</sub></code>.</strong> At each project time step boundary the reservoir simulators produce well streams, the streams are combined and processed for the surface facility, and the updated injection composition and rate are fed back. Between boundaries the injection is held constant (step-hold approximation) while the actual reservoir streams vary continuously - the coupling error. Three strategies to reduce the error: smaller <code>Δt<sub>P</sub></code>, sub-division averaging over <code>N<sub>s</sub></code> sub-intervals per project step (post-processing on reservoir output, no extra simulator calls), and finer reservoir-simulator output frequency. Recommended operating point for this benchmark: <code>Δt<sub>P</sub> = 1,000</code> days with <code>N<sub>s</sub> = 100</code> divisions gives less than 0.5% NPV error. The diagnostic ask for any IAM vendor: at what <code>Δt<sub>P</sub></code> and with how many <code>N<sub>s</sub></code>?</li>
+<li><strong>IAM NPV objectives are multi-modal and often degenerate; 1-D parameter analysis is essential.</strong> The 4-D NPV objective shows two non-standard behaviours. (1) <strong>Multi-modality</strong>: NPV vs DPC temperature has two local maxima at the bounds (27°C and -57°C) with a minimum in the interior. A simplex starting near the interior minimum can converge to the wrong maximum. The boundary maxima come from DPC capital cost going to zero at either extreme of cooling duty. (2) <strong>Degenerate optimum along a line</strong>: NPV vs <code>(f<sub>g</sub>, f<sub>gl</sub>)</code> has a constant maximum along a line in the <code>f<sub>g</sub></code>-<code>f<sub>gl</sub></code> plane. Multiple combinations give the same optimal NPV. A derivative-based solver stalls at a flat ridge; a simplex finds one optimum along the ridge but cannot identify it as a family. Recommendation: 1-D parameter sweeps for each variable before automated optimisation - cheap insurance against non-convex pathology.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The first open IAM benchmark.</strong> Provides a common ground-truth for comparing integration platforms (Pipe-It, POSC, OpenIAM) and optimisation algorithms (Nelder-Mead, simulated annealing, genetic, NLP). IAM is a software-systems problem before it is an engineering problem; without a shared benchmark, vendor claims about integration quality cannot be falsified.</p>
+<p><strong>The Curtis-Petrostreamz lineage.</strong> Petrostreamz (founded 2006 by Curtis, sold to Tieto in 2018) was built around Pipe-It and the Streamz I/O conversion engine. This 2009 paper is the first public-domain technical demonstration of the Pipe-It stack on a published benchmark.</p>
+<p><strong>The "1-D before optimisation" discipline.</strong> Curtis's framing: the standard engineering instinct is "let the optimiser find the optimum", but IAM objectives are designed to be non-convex by their boundary economics (CAPEX penalty at low cooling duty, tariff jumps at gas specification limits, process-design discontinuities). 1-D parameter plots are a diagnostic about the problem, not a computational shortcut.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Suryanto-Ekstrand-Whitson-Uleberg-Hoda 2003 IPA03 BOz and z-to-z conversion (the precursor stream-management framework that became Pipe-It)</li>
+<li>Kenyon-Behie 1987 SPE-3 Comparative Solution Project (the reservoir base case)</li>
+<li>Whitson-Brule 2000 SPE Monograph - PVT framework</li>
+<li>Bailey et al. 2005, Cullick et al. 2003 - prior IAM case studies (motivating the open-benchmark argument)</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>Rahmawati-Whitson-Foss-Kuntadi 2010 SPE-130768 - the three-reservoir + full-surface extension of this benchmark</li>
+<li>Juell-Whitson 2013 SPE-166380 LRS NPV optimisation - same Pipe-It+SENSOR+Nelder-Mead stack applied to liquid-rich-shale well design</li>
+<li>Ghasemi-Whitson 2014 IPTC-18033 thermal solvent-SAGD optimisation - same pattern applied to thermal recovery</li>
+<li>Petrostreamz commercial Pipe-It product (sold to Tieto in 2018)</li>
+<li>Operator IAM workflows for gas-cycling field-development design</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborators</h2>
+
+<p><strong>Aleksander Oma Juell</strong> — NTNU PhD student under Curtis; gas-cycling benchmarks; later co-author on the 2013 LRS NPV-optimisation paper.</p><p><strong>Mohammad Faizul Hoda</strong> — PERA. Earlier co-author of the 2003 IPA03 Belanak stream-management paper.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>

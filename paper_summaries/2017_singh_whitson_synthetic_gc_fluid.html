@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Singh & Whitson (2017) - Synthetic Fluid Selection for High-Pressure Gas Condensate Flow Tests</title>
+<style>
+  body { font-family: 'Georgia', serif; max-width: 820px; margin: 40px auto; padding: 0 20px; color: #2c2c2c; line-height: 1.7; background: #fafaf7; }
+  h1 { font-size: 1.5em; color: #003366; border-bottom: 2px solid #003366; padding-bottom: 10px; }
+  h2 { font-size: 1.15em; color: #003366; margin-top: 30px; }
+  .meta { background: #eef3f8; padding: 15px 20px; border-radius: 6px; margin: 20px 0; font-size: 0.95em; }
+  .meta p { margin: 4px 0; }
+  .tag { display: inline-block; background: #003366; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; margin-bottom: 4px; }
+  .landmark-inline { display: inline-block; background: #c0392b; color: #fff; padding: 2px 10px; border-radius: 12px; font-size: 0.8em; margin-right: 5px; font-weight: bold; }
+  .influence { background: #f0f7ee; border-left: 4px solid #4a8c3f; padding: 12px 18px; margin: 20px 0; }
+  .connections { background: #fdf6ee; border-left: 4px solid #c48a2a; padding: 12px 18px; margin: 20px 0; }
+  .landmark { background: #fdecea; border-left: 4px solid #c53030; padding: 12px 18px; margin: 20px 0; }
+  a { color: #1a5c8a; }
+  .back-link { display: inline-block; margin-bottom: 20px; font-size: 0.9em; }
+  code { background: #f0f0e8; padding: 1px 5px; border-radius: 3px; font-size: 0.92em; }
+  blockquote { border-left: 3px solid #003366; margin: 10px 0; padding: 4px 14px; color: #444; font-style: italic; background: #eef3f8; }
+</style>
+</head>
+<body>
+
+<a class="back-link" href="../index.html">&larr; Back to Career Arc</a>
+
+<h1>Synthetic Fluid Selection for High-Pressure Gas Condensate Flow Tests</h1>
+
+<div class="meta">
+  <p><strong>Authors:</strong> Kameshwar Singh (PERA), <mark>Curtis H. Whitson</mark> (NTNU and PERA)</p>
+  <p><strong>Venue:</strong> SPE Europec featured at 79th EAGE Conference and Exhibition, Paris, 12-15 June 2017</p>
+  <p><strong>Paper number:</strong> SPE-185791</p>
+  
+  <p><strong>Funding:</strong> Norwegian Research Council SkatteFUNN programme</p>
+  
+  <p><strong>Citations:</strong> not catalogued</p>
+  <p><span class="tag">Synthetic Fluid</span> <span class="tag">Gas Condensate</span> <span class="tag">Flow Tests</span> <span class="tag">SRK Zero BIP</span> <span class="tag">Diphenylmethane</span> <span class="tag">Triple Pressure-Dependent Design</span> <span class="tag">PhazeComp</span> <span class="tag">PERA Methodology</span> <span class="tag">Phase 4</span> </p>
+</div>
+
+
+<h2>Context</h2>
+
+<p>Singh is Curtis's long-standing PhD co-author (2000 BO vs EOS, 2005 GOR-recovery, 2007 BOPVT consistency, 2008 layered pseudopressure, 2009 gas-injection IOR, 2011 Tunisia). This paper documents, for the first time in the open literature, a PERA commercial methodology refined over 15 years across 20+ commercial projects for designing <em>synthetic gas condensate fluids</em> that mimic reservoir PVT, viscosity, and interfacial-tension (IFT) behaviour over the full relevant pressure range, enabling large-quantity flow-test experiments using inexpensive, non-toxic laboratory-grade compounds.</p>
+
+
+<h2>Key Contributions</h2>
+
+<ul>
+<li><strong>Three-to-four component synthetic fluid design with C1 plus light-intermediate alkane plus Diphenylmethane heavy aromatic.</strong> The systematic component-slate selection rule:
+    <ul>
+<li><strong>Methane C1</strong> - always included; supplies the gas-phase volumetric and viscosity behaviour.</li>
+<li><strong>Light-intermediate alkane</strong> (C2 to C10) - one or two compounds - supplies the condensate-forming vapour-pressure intermediate behaviour.</li>
+<li><strong>Heavy aromatic</strong> - most often <strong>Diphenylmethane (DPH-C1, C<sub>13</sub>H<sub>12</sub>, M = 168.24, SRK <code>T<sub>c</sub></code> = 760 K, <code>p<sub>c</sub></code> = 27.10 bar, ω = 0.481, shift s = 0.25578, <code>Z<sub>c,vis</sub></code> = 0.24145, parachor 419.2)</strong> - supplies the heavy-end liquid-dropout and IFT contribution.</li>
+</ul>
+    Occasionally n-C9 or n-C10 substitutes for DPH-C1 if it gives a better match.</li>
+<li><strong>SRK EOS with zero binary interaction parameters as the engineered simplification.</strong> All synthetic fluids modelled with Soave-Redlich-Kwong EOS with <em>all</em> BIPs set to zero. Tolerable for synthetic mixtures (but not for reservoir fluids) because synthetic 3-4-component hydrocarbon-only mixtures are dominated by the C1-heavy-aromatic pair interaction, which zero-BIP SRK plus appropriate volume shift captures adequately. Zero BIPs eliminate an entire axis of EOS-tuning non-uniqueness, leaving only composition and synthetic-fluid temperature <code>T<sub>syn</sub></code> as regression variables.</li>
+<li><strong>Triple pressure-dependent property design criterion.</strong> Per Fevang-Whitson 1996 SPERE steady-state flow theory, gas-condensate relative permeability <code>k<sub>rg</sub></code> is a function of the <code>k<sub>rg</sub>/k<sub>ro</sub></code> ratio which is itself a pressure-dependent function of total flowing composition plus PVT properties <code>V<sub>ro</sub>/V<sub>t</sub></code> and <code>μ<sub>g</sub>/μ<sub>o</sub></code>. With capillary-number dependency added for near-well high-velocity conditions, gas-oil IFT <code>σ<sub>go</sub></code> also becomes pressure-dependent. The design target is therefore the <em>triple</em> pressure-dependency <code>(μ<sub>g</sub>/μ<sub>o</sub>, V<sub>ro</sub>/V<sub>t</sub>, σ<sub>go</sub>)</code>, not the raw PVT properties themselves. This is the central methodological insight - design for the dimensionless drivers of flow performance, not for absolute properties.</li>
+<li><strong>Twelve-fluid open-literature validation across the full range of gas-condensate behaviour.</strong> Lean (Arun 1.1%, Khuff 2.5%, SPE-56476 3-11%, NS-LGC 12%) to near-critical (NS-NCGC 45%); sweet to very sour (22% H<sub>2</sub>S Brazeau, 34% H<sub>2</sub>S plus 6.5% CO<sub>2</sub> Caroline); low-T Khuff 104 °C to high-T Arun and North-Sea 163 °C; dewpoint 165-473 bar. <code>T<sub>syn</sub></code> = 50 °C consistently produced the best match across all 12 cases, down-shifted from reservoir temperatures 85-163 °C. The down-shift enables low-cost, ambient-lab-equipment flow tests because high reservoir temperatures are not required to reproduce reservoir behaviour.</li>
+</ul>
+
+
+<h2>Significance and Contribution</h2>
+<div class="influence">
+<p><strong>The right target for synthetic-fluid design.</strong> Curtis's teaching pattern: when running flow tests on a surrogate fluid, the right design target is not "match the PVT exactly" but "match the dimensionless drivers of flow behaviour". The Fevang-Whitson 1996 three-region theory tells us those drivers are <code>(μ<sub>g</sub>/μ<sub>o</sub>, V<sub>ro</sub>/V<sub>t</sub>, σ<sub>go</sub>)</code>. Designing for the triple invariance gives a synthetic fluid that produces representative <code>k<sub>rg</sub></code> in flow tests at conditions far easier to maintain than reservoir.</p>
+<p><strong>Engineered simplification.</strong> The zero-BIP SRK choice is non-obvious - a reservoir engineer would assume BIP tuning is essential. The paper's justification: synthetic mixtures with 3-4 components do not need BIPs because the dominant interaction is well-captured by volume shift alone. Eliminating BIPs as a regression variable removes a degree of freedom that would otherwise generate non-unique fits. This is the right engineering discipline: simplify the model to the minimum that does the job.</p>
+<p><strong>Fifteen years of PERA practice into the open literature.</strong> The paper makes commercial methodology publicly available, with worked examples spanning 12 published reservoir fluids. The consistent <code>T<sub>syn</sub></code> = 50 °C finding across all 12 cases is the kind of empirical anchor that only emerges from long-term practice. Worth noting in any future review of laboratory flow-test design for gas-condensate research.</p>
+</div>
+
+
+<h2>Knowledge Built Upon</h2>
+<div class="connections">
+<ul>
+<li>Fevang-Whitson 1996 SPERE three-region gas-condensate flow theory</li>
+<li>Whitson SPE Monograph 2000 (Chapter 11 on gas-condensate flow)</li>
+<li>Soave-Redlich-Kwong 1972 cubic EOS</li>
+<li>Singh-Whitson 2000 / 2005 / 2007 / 2008 / 2009 / 2011 collaboration series (PVT, BOPVT, layered pseudopressure, gas-injection IOR)</li>
+<li>PhazeComp (Zick Technologies) regression engine</li>
+<li>Published reservoir-fluid datasets: Arun, Khuff, SPE-56476, NS-LGC, NS-NCGC, Brazeau, Caroline</li>
+</ul>
+</div>
+
+
+<h2>What It Contributed To</h2>
+<div class="connections">
+<ul>
+<li>PERA / whitson commercial flow-test design for operator gas-condensate developments</li>
+<li>Subsequent academic flow-test apparatus designs adopting Diphenylmethane as the heavy aromatic surrogate</li>
+<li>Whitson Academy course material on gas-condensate flow physics and synthetic-fluid experimental design</li>
+<li>Singh-Whitson collaboration continuity carrying forward into the 2023-2025 BOPVT and ADNOC papers</li>
+</ul>
+</div>
+
+
+<h2>Key Collaborator</h2>
+
+<p><strong>Kameshwar Singh</strong> — PERA / whitson. Curtis's long-standing PhD co-author and senior engineer collaborator. Six-paper-plus collaboration spanning 2000 through 2025, covering BOPVT consistency, gas-condensate pseudopressure, gas-injection IOR, layered systems, Tunisia field characterisation, synthetic-fluid design (this paper), and the recent SPE-225382 and ADNOC SPE-225405 papers.</p>
+
+
+
+<a class="back-link" href="../index.html" style="display:inline-block;margin-top:30px;">&larr; Back to Career Arc</a>
+
+</body>
+</html>
