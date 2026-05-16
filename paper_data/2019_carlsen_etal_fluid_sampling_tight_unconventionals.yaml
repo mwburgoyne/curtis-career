@@ -5,7 +5,7 @@ authors:
 - Mathias Lia Carlsen
 - Curtis H. Whitson
 - Ali Alavian
-- Snjølfur Ørn Martinsen
+- Sissel Ø. Martinsen
 - Stian Mydland
 - Kameshwar Singh
 - Bilal Younus
@@ -77,4 +77,4 @@ sections:
   box_style: connections
 - heading: Key Collaborators
   body_html: |-
-    <p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; NTNU. First author and lead of the NRTA / LRS workflow series 2019-2022.</p><p><strong>Stian Mydland</strong> — Whitson AS engineer; NTNU PhD. Co-author on numerous Whitson-AS LRS papers.</p><p><strong>Bilal Younus</strong> — Whitson AS engineer. First-author of the companion URTeC-551 Field-wide EOS paper.</p><p><strong>Ali Alavian, Snjølfur Ørn Martinsen, Kameshwar Singh, Ilina Yusra</strong> — Whitson AS engineers; long-standing Whitson-group collaborators continuing into the post-2017 Whitson AS era.</p>
+    <p><strong>Mathias Lia Carlsen</strong> — Whitson AS senior engineer; NTNU. First author and lead of the NRTA / LRS workflow series 2019-2022.</p><p><strong>Stian Mydland</strong> — Whitson AS engineer; NTNU PhD. Co-author on numerous Whitson-AS LRS papers.</p><p><strong>Bilal Younus</strong> — Whitson AS engineer. First-author of the companion URTeC-551 Field-wide EOS paper.</p><p><strong>Ali Alavian, Sissel Ø. Martinsen, Kameshwar Singh, Ilina Yusra</strong> — Whitson AS engineers; long-standing Whitson-group collaborators continuing into the post-2017 Whitson AS era.</p>

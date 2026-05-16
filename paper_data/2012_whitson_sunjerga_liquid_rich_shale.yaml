@@ -3,7 +3,7 @@ title: PVT in Liquid-Rich Shale Reservoirs
 page_title: Whitson & Sunjerga (2012) - PVT in Liquid-Rich Shale Reservoirs
 authors:
 - Curtis H. Whitson
-- Robert B. Sunjerga
+- Snjezana Sunjerga
 authors_affiliation: null
 venue: SPE Annual Technical Conference and Exhibition, San Antonio, Texas, 8–10 October 2012
 paper_number: SPE-155499-MS
@@ -44,7 +44,7 @@ sections:
   body_html: |-
     <p><strong>The reference paper for unconventional PVT.</strong> Every later study of liquid-rich shale phase behaviour - Eagle Ford, Bakken, Avalon, Montney, Vaca Muerta, Wolfcamp, Duvernay - draws on the SPE-155499 framework. The <code>r<sub>pD</sub></code> metric, the multi-mixture CCE, the BO-table extrapolation, and the producing-OGR diagnostic appear in operator workflows, in service-company laboratory procedures, and in the next decade of academic papers from Curtis's group and others.</p>
     <p><strong>The start of Phase 4.</strong> Curtis was 56 and had thirty years of conventional PVT behind him. The SPE-155499 framing - first-principles problem statement, dimensionless metric, laboratory procedure, EOS workflow, simulation gridding, sampling rule - is the template the whitson group repeats through the 2010s and into the 2020s. The 2023-2025 separator-sample series, the H2-UHS work, and the Volve E2E paper all carry the same operational rhythm.</p>
-    <p><strong>Sunjerga.</strong> Robert Sunjerga was the simulation half of the collaboration. The matrix-half-spacing convergence study (roughly 1001 geometrically-graded cells needed across the fracture half-spacing for converged producing OGR) and the constant-OGR analytical result for 1D planar flow are the practical core of the paper. Most engineers who cite SPE-155499 today never run their simulations at that resolution - the more important contribution may have been calling attention to the question.</p>
+    <p><strong>Sunjerga.</strong> Snjezana Sunjerga was the simulation half of the collaboration. The matrix-half-spacing convergence study (roughly 1001 geometrically-graded cells needed across the fracture half-spacing for converged producing OGR) and the constant-OGR analytical result for 1D planar flow are the practical core of the paper. Most engineers who cite SPE-155499 today never run their simulations at that resolution - the more important contribution may have been calling attention to the question.</p>
   box_style: influence
 - heading: Knowledge Built Upon
   body_html: |-
@@ -71,4 +71,4 @@ sections:
   box_style: connections
 - heading: Key Collaborators
   body_html: |-
-    <p><strong>Robert B. Sunjerga</strong> — co-author. Simulation work, including the gridding-convergence study and the constant-OGR analytical solution for 1D planar flow.</p>
+    <p><strong>Snjezana Sunjerga</strong> — co-author. Simulation work, including the gridding-convergence study and the constant-OGR analytical solution for 1D planar flow.</p>

@@ -4,7 +4,7 @@ page_title: Alavian, Whitson & Martinsen (2014) - Global Component Lumping for E
 authors:
 - Seyyed Ali Alavian
 - Curtis H. Whitson
-- Snjølfur Ørn Martinsen
+- Sissel Ø. Martinsen
 authors_affiliation: PERA / NTNU
 venue: SPE Annual Technical Conference and Exhibition, Amsterdam, 27-29 October 2014
 paper_number: SPE-170912
@@ -26,7 +26,7 @@ landmark: false
 sections:
 - heading: Context
   body_html: |-
-    <p>Ali Alavian previously authored CO<sub>2</sub>-EOR and diffusion-in-fractured-reservoir papers with Curtis (2009, 2010). Snjølfur Martinsen co-authored the Pauto Colombia multi-compartment EOS characterisation (Martinsen et al. 2010). The 2014 paper transforms component lumping for EOS pseudoisation from an empirical, heuristic task into a systematic automated global search via three ingredients: combinatorial enumeration of contiguous-lumping scenarios, weighted-RMS quality measurement against a detailed reference EOS rather than fitting to measured data, and a two-stage minimum-miscibility-pressure (MMP) filter that adds miscible-process accuracy without exploding CPU time. Workflow is implemented via Whitson's PhazeComp (Zick Technologies) EOS engine and Pipe-It / Streamz (Petrostreamz) model automation. Three worked examples reduce an EOSxx(34) PR-EOS plus Lohrenz-Bray-Clark (LBC) model to EOSx(15), EOSx(9), and EOSx(6) lumped models.</p>
+    <p>Ali Alavian previously authored CO<sub>2</sub>-EOR and diffusion-in-fractured-reservoir papers with Curtis (2009, 2010). Sissel Ø. Martinsen co-authored the Pauto Colombia multi-compartment EOS characterisation (Martinsen et al. 2010). The 2014 paper transforms component lumping for EOS pseudoisation from an empirical, heuristic task into a systematic automated global search via three ingredients: combinatorial enumeration of contiguous-lumping scenarios, weighted-RMS quality measurement against a detailed reference EOS rather than fitting to measured data, and a two-stage minimum-miscibility-pressure (MMP) filter that adds miscible-process accuracy without exploding CPU time. Workflow is implemented via Whitson's PhazeComp (Zick Technologies) EOS engine and Pipe-It / Streamz (Petrostreamz) model automation. Three worked examples reduce an EOSxx(34) PR-EOS plus Lohrenz-Bray-Clark (LBC) model to EOSx(15), EOSx(9), and EOSx(6) lumped models.</p>
 - heading: Key Contributions
   body_html: |-
     <ul>
@@ -66,4 +66,4 @@ sections:
   box_style: connections
 - heading: Key Collaborators
   body_html: |-
-    <p><strong>Seyyed Ali Alavian</strong> — PERA / whitson. Long-standing Whitson-group collaborator. Co-author with Curtis on 2005 CO<sub>2</sub> recovery mechanisms in fractured reservoirs, 2009 SPE-125362 CO<sub>2</sub>-injection in chalk, 2010 SPE-129637 diffusion in CO<sub>2</sub>-flooded fractured reservoirs, and this 2014 lumping paper.</p><p><strong>Snjølfur Ørn Martinsen</strong> — PERA / NTNU. Co-author with Curtis on the 2010 Pauto Colombia multi-compartment EOS characterisation (Martinsen et al.) and this paper.</p>
+    <p><strong>Seyyed Ali Alavian</strong> — PERA / whitson. Long-standing Whitson-group collaborator. Co-author with Curtis on 2005 CO<sub>2</sub> recovery mechanisms in fractured reservoirs, 2009 SPE-125362 CO<sub>2</sub>-injection in chalk, 2010 SPE-129637 diffusion in CO<sub>2</sub>-flooded fractured reservoirs, and this 2014 lumping paper.</p><p><strong>Sissel Ø. Martinsen</strong> — PERA / NTNU. Co-author with Curtis on the 2010 Pauto Colombia multi-compartment EOS characterisation (Martinsen et al.) and this paper.</p>

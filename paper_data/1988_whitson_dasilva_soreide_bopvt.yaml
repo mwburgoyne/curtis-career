@@ -3,7 +3,7 @@ title: Simplified Compositional Formulation for Modified Black-Oil Simulators
 page_title: Whitson, da Silva & Søreide (1988) - Generalised Black-Oil Formulation
 authors:
 - Curtis H. Whitson (NTH)
-- Eldhose (Flavio) da Silva (Petrofina S.A.)
+- Flavio da Silva (Petrofina S.A.)
 - Ingolf Søreide
 authors_affiliation: NTH
 venue: 63rd SPE Annual Technical Conference and Exhibition, Houston, 2-5 October 1988
@@ -25,7 +25,7 @@ landmark: false
 sections:
 - heading: Context
   body_html: |-
-    <p>By the late 1980s the Norwegian operators were facing two simulation problems that fell between the standard tools. North Sea volatile-oil reservoirs - especially the near-critical fields - showed strong areal and depth-varying surface-oil composition. Traditional black-oil could not represent that. The other problem was nitrogen injection (and other non-equilibrium gas injection) for pressure maintenance and EOR. Fully compositional EOS simulation was the right answer in principle but the run times were prohibitive for full-field studies.</p><p>Curtis was thirty-two and had founded Whitson AS earlier in 1988. Eldhose (Flavio) da Silva was at Petrofina (later Total) and was driving the Ekofisk nitrogen-injection analysis. Ingolf Søreide was Curtis's NTH PhD student finishing the brine-EOS work that would land in <em>Fluid Phase Equilibria</em> in 1992.</p>
+    <p>By the late 1980s the Norwegian operators were facing two simulation problems that fell between the standard tools. North Sea volatile-oil reservoirs - especially the near-critical fields - showed strong areal and depth-varying surface-oil composition. Traditional black-oil could not represent that. The other problem was nitrogen injection (and other non-equilibrium gas injection) for pressure maintenance and EOR. Fully compositional EOS simulation was the right answer in principle but the run times were prohibitive for full-field studies.</p><p>Curtis was thirty-two and had founded Whitson AS earlier in 1988. Flavio da Silva was at Petrofina (later Total) and was driving the Ekofisk nitrogen-injection analysis. Ingolf Søreide was Curtis's NTH PhD student finishing the brine-EOS work that would land in <em>Fluid Phase Equilibria</em> in 1992.</p>
 - heading: Key Contributions
   body_html: |-
     <ul>
@@ -73,4 +73,4 @@ sections:
   box_style: connections
 - heading: Key References
   body_html: |-
-    <p><strong>Eldhose "Flavio" da Silva</strong> at Petrofina (now Total) was driving the Ekofisk nitrogen-injection application and continued collaborating with Curtis through 1993. <strong>Ingolf Søreide</strong> was Curtis's NTH PhD student finishing the brine-EOS work that becomes the 1992 Søreide-Whitson FPE paper. The GBO formulation is the second of three Whitson-Søreide collaborations in this period along with the 1989 capillary-flash note.</p>
+    <p><strong>Flavio da Silva</strong> at Petrofina (now Total) was driving the Ekofisk nitrogen-injection application and continued collaborating with Curtis through 1993. <strong>Ingolf Søreide</strong> was Curtis's NTH PhD student finishing the brine-EOS work that becomes the 1992 Søreide-Whitson FPE paper. The GBO formulation is the second of three Whitson-Søreide collaborations in this period along with the 1989 capillary-flash note.</p>

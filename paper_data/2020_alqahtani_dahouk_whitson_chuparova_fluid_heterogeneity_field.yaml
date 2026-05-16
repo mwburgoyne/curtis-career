@@ -2,7 +2,7 @@ id: 2020_alqahtani_dahouk_whitson_chuparova_fluid_heterogeneity_field
 title: Impact of Fluid Heterogeneity on Tight Unconventional Well GOR Performance
 page_title: Alqahtani, Dahouk, Whitson, Chuparova (2020) - Fluid Heterogeneity on Tight Unconventional Well GOR Performance
 authors:
-- Faisal M. Alqahtani
+- Fahd Alqahtani
 - Mohamad Majzoub Dahouk
 - Curtis H. Whitson
 - Elena Chuparova
@@ -66,4 +66,4 @@ sections:
   box_style: connections
 - heading: Key Collaborators
   body_html: |-
-    <p><strong>Faisal M. Alqahtani</strong> — NTNU PhD candidate; King Saud University funding. Lead of the well-box heterogeneity series 2018-2020 with Curtis.</p><p><strong>Elena Chuparova</strong> — NTNU researcher; subsurface and petrophysical expertise.</p><p><strong>Mohamad Majzoub Dahouk</strong> — Whitson AS engineer; long-standing co-author on the unconventional-PVT cluster.</p>
+    <p><strong>Fahd Alqahtani</strong> — NTNU PhD candidate; King Saud University funding. Lead of the well-box heterogeneity series 2018-2020 with Curtis.</p><p><strong>Elena Chuparova</strong> — NTNU researcher; subsurface and petrophysical expertise.</p><p><strong>Mohamad Majzoub Dahouk</strong> — Whitson AS engineer; long-standing co-author on the unconventional-PVT cluster.</p>

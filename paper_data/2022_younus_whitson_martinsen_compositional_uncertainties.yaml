@@ -4,7 +4,7 @@ page_title: "Younus, Whitson, Martinsen (2022) - Compositional Uncertainties in 
 authors:
 - Bilal Younus
 - Curtis H. Whitson
-- Snjólfur Örn Martinsen
+- Sissel Ø. Martinsen
 whitson_index: 1
 authors_affiliation: "Whitson AS / NTNU"
 venue: "ADIPEC, Abu Dhabi, UAE, 2022"
@@ -63,4 +63,4 @@ sections:
 - heading: Key Collaborators
   body_html: |-
     <p><strong>Bilal Younus</strong> &mdash; Whitson AS senior engineer; first author. First-authored the 2019 URTeC-551 field-wide EOS paper this work depends on; co-author across the 2020-2025 unconventional-PVT cluster.</p>
-    <p><strong>Snj&oacute;lfur &Ouml;rn Martinsen</strong> &mdash; Whitson AS senior engineer; long-standing collaborator on PVT and EOS workflows since the 2010 Martinsen et al. SPE-135085 framework.</p>
+    <p><strong>Sissel &Oslash;. Martinsen</strong> &mdash; Whitson AS senior engineer; long-standing collaborator on PVT and EOS workflows since the 2010 Martinsen et al. SPE-135085 framework.</p>
