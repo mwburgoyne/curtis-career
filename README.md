@@ -41,4 +41,4 @@ Built externally before Curtis's review. `<!-- CURTIS REVIEW -->` HTML comments 
 
 ## Acknowledgements
 
-The summaries are written by Mark Burgoyne. The underlying technical content is Curtis's own across his published corpus. The page palette and structure follow the visual identity of [whitson AS](https://whitson.com) and [Whitson Wiki](https://wiki.whitson.com).
+The summaries are written by Mark Burgoyne. The underlying technical content is Curtis's own across his published corpus.
