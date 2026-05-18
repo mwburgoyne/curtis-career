@@ -46,7 +46,7 @@ sections:
 - heading: Significance and Contribution
   body_html: |-
     <p><strong>MMP is not a fluid property.</strong> The paper's operational reframe. MMP depends on the active displacement mechanism, which depends on composition and pressure. The standard MMP tables in commercial software give one number; the engineer's job is to first determine which mechanism is going to develop and then pick the corresponding MMP. The density-distance diagnostic is the graphical answer for that first question.</p>
-    <p><strong>The Cedric K. Fergusson Medal year.</strong> The 1995 SPE-29115 paper sits in the same era as Curtis's first Cedric K. Fergusson Medal (1997, jointly with Øivind Fevang for SPE-30714 three-region gas-condensate). It is part of the productivity cluster between the 1989 negative-flash paper and the 2000 SPE Monograph that established Curtis as the modern PVT framework's lead author.</p>
+    <p><strong>The Cedric K. Ferguson Award year.</strong> The 1995 SPE-29115 paper sits in the same era as Curtis's first Cedric K. Ferguson Award (1997, with Øivind Fevang on the Medal and Curtis on the Certificate, for SPE-30714 three-region gas-condensate). It is part of the productivity cluster between the 1989 negative-flash paper and the 2000 SPE Monograph that established Curtis as the modern PVT framework's lead author.</p>
     <p><strong>The Zick connection.</strong> The 1995 SPE-29115 references Zick's 1993 unpublished multicell algorithm by way of personal communication. Curtis's continuing reliance on Zick's work through the early 1990s is visible in this paper, as it is in the 1989 negative-flash paper's pizzeria-origin acknowledgement.</p>
   box_style: influence
 - heading: Knowledge Built Upon

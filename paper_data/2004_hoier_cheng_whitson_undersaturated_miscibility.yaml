@@ -39,7 +39,7 @@ sections:
   body_html: |-
     <p><strong>MMP as a system property, not a pair-wise property.</strong> The deeper conceptual move. MMP traditionally describes a single fluid-fluid pair. Høier-Cheng-Whitson 2004 reframes it: in a compositionally graded reservoir under gas injection, the MMP that matters is the <em>system</em> MMP, defined by whether multicontact miscibility develops anywhere in the column and whether the resulting oil bank survives to downstream oils. The gas-injection design question becomes: does my injection gas unlock C/V somewhere in the column? If yes, the operating pressure may be well below the GOC <code>p<sub>sat</sub></code>.</p>
     <p><strong>Phase 3 mature compositional-grading.</strong> The Høier-Whitson trilogy (1998, 2001, 2004) is the methodological backbone of the Whitson group's compositional-grading practice. The 2004 paper is the most operationally consequential of the three because it ties the grading-physics result to a concrete IOR design strategy (point injection at the C/V depth).</p>
-    <p><strong>The Fergusson Medal lineage.</strong> Høier and Whitson jointly received the 2001 SPE Cedric K. Fergusson Medal for the 1998 SPE-49269 paper. This 2004 paper is the continuation of that programme three years later.</p>
+    <p><strong>The Ferguson Award lineage.</strong> Høier and Whitson jointly received the 2002 SPE Cedric K. Ferguson Award for the originating SPE-49269 paper (republished as SPE-63086 after the 1998 SPE ATCE was cancelled). Lars Høier received the Medal; Curtis received the Certificate under the Ferguson rule that the Medal goes to co-authors under the age of 33 at the time the paper is approved. This 2004 paper is the continuation of that programme.</p>
   box_style: influence
 - heading: Knowledge Built Upon
   body_html: |-
@@ -65,5 +65,5 @@ sections:
   box_style: connections
 - heading: Key Collaborators
   body_html: |-
-    <p><strong>Lars Høier</strong> — NTH/NTNU PhD graduate, the Høier of the 1998, 2001, and 2004 compositional-grading papers. Co-recipient with Curtis of the 2001 SPE Cedric K. Fergusson Medal.</p><p><strong>N. Cheng</strong> — co-author. Statoil at the time of the Smørbukk South study.</p>
+    <p><strong>Lars Høier</strong> — NTH/NTNU PhD graduate, the Høier of the 1998, 2001, and 2004 compositional-grading papers. Received the 2002 SPE Cedric K. Ferguson Medal (with Curtis on the Ferguson Certificate) for the SPE-49269 / SPE-63086 paper.</p><p><strong>N. Cheng</strong> — co-author. Statoil at the time of the Smørbukk South study.</p>
 citations_source: OpenAlex (DOI)
