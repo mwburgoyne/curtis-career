@@ -92,7 +92,7 @@
 <strong>SPE-10067 (1981).</strong> The Whitson-Torp constant-volume-depletion paper. The first SPE paper most reservoir engineers associate with Curtis. Material balance applied to measured CVD vapour compositions and liquid saturations recovers liquid compositions, K-values, densities, and the C7+ molecular mass of each phase without the costly liquid-removal flashes of Dodson-Goodwill-Mayer 1953. The Hoffman log <em>Kp</em> vs <em>F</em> plot becomes a data-quality test. 177 citations.
         </div>
 <div class="phase-influence-box">
-<strong>SPE-12233 (1983) — the flagship.</strong> “Characterizing Hydrocarbon Plus Fractions.” The most cited paper of Curtis's career (446 OpenAlex citations). The three-parameter gamma distribution for C7+ molar mass, Gauss-Laguerre quadrature for selecting pseudocomponents, Riazi-Daubert correlations with Watson K anchoring, and refitted constants for high boiling points. Forty years on, every major commercial reservoir simulator and PVT package carries an implementation of this method. Sole author. Written while Curtis was still a PhD candidate at NTH.
+<strong>SPE-12233 (1983) — the flagship.</strong> “Characterizing Hydrocarbon Plus Fractions.” The most cited paper of Curtis's career (446 citations). The three-parameter gamma distribution for C7+ molar mass, Gauss-Laguerre quadrature for selecting pseudocomponents, Riazi-Daubert correlations with Watson K anchoring, and refitted constants for high boiling points. Forty years on, every major commercial reservoir simulator and PVT package carries an implementation of this method. Sole author. Written while Curtis was still a PhD candidate at NTH.
         </div>
 <p>The phase also includes serious commercial work for the major Norwegian operators. The 1980 Sleipner study, the 1981 Phillips Albuskjell study, and similar reports for Norsk Hydro and Saga Petroleum (Tommeliten 1983, Belanak 1985, Ekofisk 1985, Eldfisk 1985, Midgard 1986) are confidential and not listed here individually. They are evidence that Curtis was already the operator-trusted authority on North Sea PVT before he had finished his PhD.</p>
 <p>Six papers from Curtis's flagship 1983 work, together with the 1984 SPE-11200 sensitivity analysis and SPE-12634 critical-property paper, are detailed in the publication list below. The 1981 Haaland MS thesis at NTH, which Curtis advised (with Glasø as official supervisor), experimentally validated the 1980 method on five North Sea oils and fed back into the wider alpha range that appears in SPE-12233 two years later. A clean example of the student-advisor feedback loop refining a published method.</p>
@@ -602,9 +602,7 @@ const authorNormMap = {
   'Snjezana Sunjerga': 'Snjezana Sunjerga',
   'Bilal Younus': 'Bilal Younus',
   'Markus H. Nielsen': 'Markus Hays Nielsen',
-  'Edward C. Wanat': 'Edward C. Wanat',
-  'Mark W. Burgoyne': 'Mark W. Burgoyne',
-  'Milan Stanko': 'Milan Stanko'
+  'Edward C. Wanat': 'Edward C. Wanat'
 };
 
 function normalizeAuthor(name) {
@@ -703,7 +701,7 @@ function buildPubList() {
     var citBadge = '';
     if (p.citations !== null && p.citations !== undefined && p.citations > 0) {
       var cls = p.citations >= 200 ? 'pub-citations landmark' : 'pub-citations';
-      citBadge = '<span class="' + cls + '" title="Citations (OpenAlex)">(' + p.citations.toLocaleString() + ')</span>';
+      citBadge = '<span class="' + cls + '" title="Citations">(' + p.citations.toLocaleString() + ')</span>';
     }
     var authorsStr = p.authors.join(', ');
     var paperNoStr = p.paper_number ? '<span class="pub-paperno">' + escapeHtml(p.paper_number) + '</span>' : '';

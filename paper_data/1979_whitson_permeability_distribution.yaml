@@ -58,4 +58,4 @@ sections:
   box_style: connections
 - heading: Key References
   body_html: |-
-    <p><strong>Sole author.</strong> Internal NTH note. No formal collaborators. The atom extraction notes a 14n-7 footnote convention in the related EUR-183 paper of the following year, which the later SPE-12233 standardises on 14n-6.</p>
+    <p><strong>Sole author.</strong> Internal NTH note. No formal collaborators. A footnote convention of 14n-7 appears in the related EUR-183 paper of the following year; the later SPE-12233 standardises on 14n-6.</p>

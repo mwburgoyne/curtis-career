@@ -29,7 +29,7 @@ landmark: false
 sections:
 - heading: Context
   body_html: |-
-    <p>Whitson AS methodology paper distilling 35 years of field-wide and basin-wide EOS-tuning experience. Table 1 of the paper lists 85+ fields across 6 continents - Norway North Sea, Middle East giants, Australia, SE Asia, and unconventional basins (Montney, Eagle Ford, Bakken, Permian, SCOOP-STACK) - tuned to a single common EOS each. Explicitly cited by the companion Carlsen et al. 2019 SPE-196056 fluid-sampling paper as the field-wide EOS reference underpinning the reservoir-representative sample classification. The paper makes commercial Whitson-group methodology publicly available, with ten distinct atom-level contributions beyond what is in the SPE Monograph 2000 or earlier Whitson papers.</p>
+    <p>Whitson AS methodology paper distilling 35 years of field-wide and basin-wide EOS-tuning experience. Table 1 of the paper lists 85+ fields across 6 continents - Norway North Sea, Middle East giants, Australia, SE Asia, and unconventional basins (Montney, Eagle Ford, Bakken, Permian, SCOOP-STACK) - tuned to a single common EOS each. Explicitly cited by the companion Carlsen et al. 2019 SPE-196056 fluid-sampling paper as the field-wide EOS reference underpinning the reservoir-representative sample classification. The paper makes commercial Whitson-group methodology publicly available, with ten distinct technical contributions beyond what is in the SPE Monograph 2000 or earlier Whitson papers.</p>
 - heading: Key Contributions
   body_html: |-
     <ul>

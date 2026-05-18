@@ -63,9 +63,9 @@ sections:
     <p><strong>A record that exists nowhere else.</strong> The negative flash, the red-and-black-methane consistency test, the Gibbs-Duhem grading shortcut, Michelsen's CVD code, Michelsen's transient-well solution - all are known to the field through their consequences. The personal context, the dinners and the hand-written notes and the open office door at DTU, is recorded here for the first and only time. Without this paper, the Beethoven poster and the green ink would not exist in the literature.</p>
     <p><strong>The acknowledgement of not knowing.</strong> Curtis writes that he <em>"did not really know what that meant"</em> when Michelsen first mentioned Gibbs-Duhem. He writes that he <em>"had no idea"</em> how to solve the simplified flash at his own 1984 defence. He writes openly about his <em>"lack of"</em> deep mathematical understanding. This is an unusual register for a senior figure in any technical field. It is also one of the reasons this paper carries the weight it does.</p>
   box_style: influence
-- heading: The technical atoms embedded in the recollection
+- heading: Technical content embedded in the recollection
   body_html: |-
-    <p>The CurtisClaw atom extraction picks out six pieces of technical content the paper formalises or restates:</p><div class="connections">
+    <p>Six pieces of technical substance the paper formalises or restates inside the narrative:</p><div class="connections">
     <ul>
     <li><strong>The red-and-black-methane consistency test</strong> for BIP mixing rules (Michelsen-Kistenmacher 1990, set up here in narrative form)</li>
     <li><strong>Positive BIPs increase volatility, negative BIPs can cause demixing</strong> - from Michelsen's June 2020 email, with the <code>k<sub>ij</sub> ≈ 0.17</code> threshold for artefactual LLE between identical components</li>

@@ -20,7 +20,7 @@
   {% if funding %}<p><strong>Funding:</strong> {{ funding }}</p>{% endif %}
   {% for m in extra_meta or [] %}<p><strong>{{ m.label }}:</strong> {{ m.value_html | safe }}</p>
   {% endfor %}
-  <p><strong>Citations{% if citations_source %} ({{ citations_source }}){% endif %}:</strong> {{ citations if citations is not none else 'not catalogued' }}{% if citations_note %}, {{ citations_note }}{% endif %}</p>
+  <p><strong>Citations:</strong> {{ citations if citations is not none else 'not catalogued' }}{% if citations_note %}, {{ citations_note }}{% endif %}</p>
   <p>{% if landmark_inline_text %}<span class="landmark-inline">{{ landmark_inline_text | safe }}</span> {% endif %}{% for tag in tags %}<span class="tag">{{ tag | safe }}</span> {% endfor %}</p>
 </div>
 {% if landmark %}
